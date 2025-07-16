@@ -463,6 +463,86 @@ const indigenousGroups = [
         description: "The 'People of the Earth' who successfully resisted Inca and Spanish conquest for centuries, known for their silver jewelry, traditional medicine, and ongoing land rights struggles.",
         tags: ["Silver jewelry", "Traditional medicine", "Land rights"],
         emoji: "🌱"
+    },
+    {
+    name: "Himba",
+    region: "africa",
+    location: "Northern Namibia and Southern Angola",
+    description: "Semi-nomadic pastoralists famous for their distinctive red ochre body paint mixed with butterfat, elaborate hairstyles that indicate social status, and traditional leather clothing.",
+    tags: ["Red ochre", "Hairstyle status", "Pastoralists"],
+    emoji: "💄"
+    },
+    {
+        name: "Hadza",
+        region: "africa",
+        location: "Northern Tanzania",
+        description: "One of the last hunter-gatherer tribes in Africa, speaking a click language and living much as humans did 10,000 years ago, with no hierarchy, property ownership, or calendar.",
+        tags: ["Last hunter-gatherers", "Click language", "No hierarchy"],
+        emoji: "🏹"
+    },
+    {
+        name: "Surma (Suri)",
+        region: "africa",
+        location: "Omo Valley, Ethiopia",
+        description: "Known for their spectacular body modifications including lip plates, intricate scarification patterns, and stick fighting competitions called donga that determine marriage eligibility.",
+        tags: ["Lip plates", "Stick fighting", "Body modifications"],
+        emoji: "💋"
+    },
+    {
+        name: "Hamer",
+        region: "africa",
+        location: "South Omo Zone, Ethiopia",
+        description: "Pastoralists famous for the bull-jumping ceremony that marks the transition to manhood, elaborate hairstyles with clay and butter, and the practice of ritual whipping.",
+        tags: ["Bull jumping", "Clay hairstyles", "Ritual whipping"],
+        emoji: "🐂"
+    },
+    {
+        name: "Ndebele",
+        region: "africa",
+        location: "South Africa and Zimbabwe",
+        description: "Renowned for their geometric wall paintings in brilliant colors, intricate beadwork that communicates messages, and traditional blanket ceremonies marking life transitions.",
+        tags: ["Geometric art", "Beadwork messages", "Wall paintings"],
+        emoji: "🎨"
+    },
+    {
+        name: "Pygmies (Ba'Aka)",
+        region: "africa",
+        location: "Central African Republic and Cameroon",
+        description: "Forest peoples known for their extraordinary musical traditions, including complex polyphonic singing, expert honey hunting, and deep knowledge of medicinal forest plants.",
+        tags: ["Polyphonic music", "Honey hunting", "Forest medicine"],
+        emoji: "🍯"
+    },
+    {
+        name: "Dinka",
+        region: "africa",
+        location: "South Sudan",
+        description: "Tall cattle herders who measure wealth in cattle, practice elaborate scarification, and have a culture where cattle names reflect the animals' colors and patterns.",
+        tags: ["Cattle culture", "Scarification", "Cattle names"],
+        emoji: "🐄"
+    },
+    {
+        name: "Kikuyu",
+        region: "africa",
+        location: "Central Kenya",
+        description: "Agricultural people who traditionally lived around Mount Kenya, known for age-set systems, elaborate initiation ceremonies, and being the ethnic group of Wangari Maathai.",
+        tags: ["Age-set system", "Mount Kenya", "Wangari Maathai"],
+        emoji: "🌾"
+    },
+    {
+        name: "Zulu",
+        region: "africa",
+        location: "KwaZulu-Natal, South Africa",
+        description: "Southern Africa's largest ethnic group, famous for their warrior culture under Shaka Zulu, colorful beadwork with coded messages, and traditional dancing with shields and spears.",
+        tags: ["Shaka Zulu", "Coded beadwork", "Warrior dances"],
+        emoji: "⚔️"
+    },
+    {
+        name: "Amhara",
+        region: "africa",
+        location: "Ethiopian Highlands",
+        description: "Highland people who dominated Ethiopian politics for centuries, keepers of ancient Orthodox Christian traditions, and speakers of Amharic, Ethiopia's official language.",
+        tags: ["Orthodox Christianity", "Ethiopian Highlands", "Amharic language"],
+        emoji: "⛪"
     }
 ];
 
