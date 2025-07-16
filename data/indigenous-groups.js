@@ -527,6 +527,86 @@ const indigenousGroups = [
         description: "Highland people who dominated Ethiopian politics for centuries, keepers of ancient Orthodox Christian traditions, and speakers of Amharic, Ethiopia's official language.",
         tags: ["Orthodox Christianity", "Ethiopian Highlands", "Amharic language"],
         emoji: "⛪"
+    },
+    {
+    name: "Trobriand Islanders",
+    region: "oceania",
+    location: "Trobriand Islands, Papua New Guinea",
+    description: "Famous for their matrilineal society, elaborate yam festivals, kula ring trading system, and being studied by anthropologist Bronisław Malinowski in groundbreaking ethnographic work.",
+    tags: ["Matrilineal society", "Kula ring trade", "Yam festivals"],
+    emoji: "🏝️"
+    },
+    {
+        name: "Sentinelese",
+        region: "oceania",
+        location: "North Sentinel Island, Andaman Islands",
+        description: "One of the world's last uncontacted peoples, living in complete isolation for thousands of years, known for their fierce protection of their island from outside contact.",
+        tags: ["Uncontacted", "Isolated", "Andaman Islands"],
+        emoji: "🏹"
+    },
+    {
+        name: "Tahitian",
+        region: "oceania",
+        location: "Tahiti, French Polynesia",
+        description: "Polynesian people famous for their traditional dance (ori Tahiti), black pearl cultivation, elaborate tattoos (tatau), and the cultural influence on European art through Gauguin.",
+        tags: ["Ori Tahiti dance", "Black pearls", "Tatau tattoos"],
+        emoji: "💃"
+    },
+    {
+        name: "Fijian",
+        region: "oceania",
+        location: "Fiji Islands",
+        description: "Melanesian and Polynesian peoples known for their warrior traditions, elaborate kava ceremonies, traditional bose (village councils), and fire-walking rituals on Beqa Island.",
+        tags: ["Kava ceremonies", "Fire walking", "Bose councils"],
+        emoji: "🔥"
+    },
+    {
+        name: "Samoan",
+        region: "oceania",
+        location: "Samoa Islands",
+        description: "Polynesian people famous for their fa'a Samoa cultural system, traditional pe'a and malu tattoos, fale architecture, and strong family structures (aiga).",
+        tags: ["Fa'a Samoa", "Pe'a tattoos", "Fale houses"],
+        emoji: "🌺"
+    },
+    {
+        name: "Chamorro",
+        region: "oceania",
+        location: "Guam and Northern Mariana Islands",
+        description: "Indigenous Micronesian people known for their ancient latte stone pillars, seafaring traditions, and maintaining cultural identity despite centuries of colonial influence.",
+        tags: ["Latte stones", "Seafaring", "Colonial survival"],
+        emoji: "🗿"
+    },
+    {
+        name: "Kanaka Maoli",
+        region: "oceania",
+        location: "Hawaiian Islands",
+        description: "Native Hawaiians known for their navigation skills across vast Pacific distances, hula dance traditions, lua martial arts, and the concept of mana (spiritual power).",
+        tags: ["Navigation", "Hula dance", "Lua martial arts"],
+        emoji: "🌺"
+    },
+    {
+        name: "Yapese",
+        region: "oceania",
+        location: "Yap Island, Micronesia",
+        description: "Micronesian people famous for their massive stone money discs (rai), traditional stick dancing, and maintaining one of the Pacific's most intact traditional cultures.",
+        tags: ["Stone money", "Stick dancing", "Traditional culture"],
+        emoji: "🪙"
+    },
+    {
+        name: "Tolai",
+        region: "oceania",
+        location: "New Britain, Papua New Guinea",
+        description: "Melanesian people known for their shell money (tabu), elaborate funeral ceremonies, traditional markets, and being among the first Pacific peoples to adopt Christianity.",
+        tags: ["Shell money", "Funeral ceremonies", "Traditional markets"],
+        emoji: "🐚"
+    },
+    {
+        name: "Pitcairn Islanders",
+        region: "oceania",
+        location: "Pitcairn Island, British Overseas Territory",
+        description: "Descendants of Bounty mutineers and Tahitian women, speaking a unique English-Tahitian creole (Pitkern), and maintaining one of the world's smallest communities with 50 residents.",
+        tags: ["Bounty descendants", "Pitkern language", "Smallest community"],
+        emoji: "⛵"
     }
 ];
 
