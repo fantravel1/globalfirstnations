@@ -607,6 +607,166 @@ const indigenousGroups = [
         description: "Descendants of Bounty mutineers and Tahitian women, speaking a unique English-Tahitian creole (Pitkern), and maintaining one of the world's smallest communities with 50 residents.",
         tags: ["Bounty descendants", "Pitkern language", "Smallest community"],
         emoji: "⛵"
+    },
+    {
+    name: "Akha",
+    region: "asia",
+    location: "Northern Thailand, Myanmar, Laos, China",
+    description: "Hill tribe people known for their distinctive silver-adorned headdresses, terraced farming, elaborate gate ceremonies, and maintaining detailed oral genealogies going back 60+ generations.",
+    tags: ["Silver headdresses", "Oral genealogies", "Gate ceremonies"],
+    emoji: "👑"
+    },
+    {
+        name: "Ifugao",
+        region: "asia",
+        location: "Northern Luzon, Philippines",
+        description: "Builders of the spectacular Banaue Rice Terraces, a UNESCO World Heritage site, known as the 'Eighth Wonder of the World' and their sophisticated irrigation system called 'hudhud'.",
+        tags: ["Rice terraces", "UNESCO heritage", "Hudhud irrigation"],
+        emoji: "🌾"
+    },
+    {
+        name: "Kalash",
+        region: "asia",
+        location: "Hindu Kush Mountains, Pakistan",
+        description: "Unique polytheistic people in Islamic Pakistan, known for their colorful festivals, wine-making traditions, distinctive clothing, and claims of descent from Alexander the Great's soldiers.",
+        tags: ["Polytheistic", "Wine making", "Festivals"],
+        emoji: "🍇"
+    },
+    {
+        name: "Mentawai",
+        region: "asia",
+        location: "Mentawai Islands, Indonesia",
+        description: "Traditional animists known for their full-body tattoos (titi), teeth sharpening, living in harmony with jungle spirits, and being some of the world's best surfers.",
+        tags: ["Full-body tattoos", "Teeth sharpening", "Surfing"],
+        emoji: "🏄"
+    },
+    {
+        name: "Bontoc",
+        region: "asia",
+        location: "Mountain Province, Philippines",
+        description: "Former headhunters turned peaceful farmers, famous for their stone-walled rice terraces, traditional dances with spears and shields, and intricate basket weaving.",
+        tags: ["Stone terraces", "Spear dances", "Basket weaving"],
+        emoji: "🛡️"
+    },
+    {
+        name: "Wa",
+        region: "asia",
+        location: "Myanmar-China border",
+        description: "Fierce mountain warriors historically known for headhunting, now famous for their autonomous region, traditional tattooing, and resistance to outside control.",
+        tags: ["Mountain warriors", "Autonomous region", "Traditional tattoos"],
+        emoji: "⚔️"
+    },
+    {
+        name: "Lepcha",
+        region: "asia",
+        location: "Sikkim, India and Nepal",
+        description: "Peaceful 'Children of the Mountains' known for their Buddhist-Bon shamanic blend, traditional archery, medicinal plant knowledge, and unique Lepcha script.",
+        tags: ["Mountain children", "Archery", "Lepcha script"],
+        emoji: "🏹"
+    },
+    {
+        name: "Toda",
+        region: "asia",
+        location: "Nilgiri Hills, Tamil Nadu, India",
+        description: "Pastoral people with unique barrel-vaulted houses, sacred buffalo herding, polyandrous marriage system, and embroidered shawls with geometric patterns.",
+        tags: ["Sacred buffalo", "Polyandry", "Barrel houses"],
+        emoji: "🐃"
+    },
+    {
+        name: "Mongol",
+        region: "asia",
+        location: "Mongolia and Inner Mongolia",
+        description: "Nomadic herders famous for their horses, traditional gers (yurts), throat singing, archery skills, and the legacy of Genghis Khan's empire.",
+        tags: ["Throat singing", "Gers", "Horse culture"],
+        emoji: "🐎"
+    },
+    {
+        name: "Kazakh",
+        region: "asia",
+        location: "Kazakhstan, Western China, Mongolia",
+        description: "Nomadic eagle hunters known for their golden eagles used in hunting, traditional felt-making, horse games, and seasonal migrations across Central Asian steppes.",
+        tags: ["Eagle hunting", "Felt making", "Nomadic"],
+        emoji: "🦅"
+    },
+    {
+        name: "Sherpa",
+        region: "asia",
+        location: "Nepal Himalayas",
+        description: "High-altitude mountain people famous as Everest guides, known for their incredible climbing abilities, Buddhist monasteries, and adaptation to extreme altitudes.",
+        tags: ["Everest guides", "High altitude", "Buddhist"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Batak",
+        region: "asia",
+        location: "North Sumatra, Indonesia",
+        description: "Lake Toba people known for their distinctive boat-shaped houses, complex clan system, traditional music with gondang drums, and former cannibalistic practices.",
+        tags: ["Boat houses", "Gondang drums", "Lake Toba"],
+        emoji: "🏠"
+    },
+    {
+        name: "Orang Asli",
+        region: "asia",
+        location: "Peninsular Malaysia",
+        description: "Original people of Malaysia comprising 18 tribes, known for their blowpipe hunting, jungle survival skills, and maintaining animistic beliefs in modern Malaysia.",
+        tags: ["Blowpipe hunting", "Jungle survival", "18 tribes"],
+        emoji: "🌿"
+    },
+    {
+        name: "Kayan",
+        region: "asia",
+        location: "Myanmar and Thailand border",
+        description: "Known as 'Long Neck' people for brass neck coils worn by women, living in traditional villages and maintaining weaving traditions despite tourism pressures.",
+        tags: ["Brass neck coils", "Long neck", "Traditional weaving"],
+        emoji: "💍"
+    },
+    {
+        name: "Rohingya",
+        region: "asia",
+        location: "Rakhine State, Myanmar",
+        description: "Persecuted Muslim minority known for their boat-building skills, Arabic script adaptation for their language, and tragic refugee crisis fleeing genocide.",
+        tags: ["Boat builders", "Refugee crisis", "Arabic script"],
+        emoji: "🚣"
+    },
+    {
+        name: "Chukchi",
+        region: "asia",
+        location: "Chukotka Peninsula, Russia",
+        description: "Arctic reindeer herders and marine hunters at the easternmost tip of Siberia, known for their shamanic traditions, throat singing, and whale hunting.",
+        tags: ["Reindeer herders", "Whale hunting", "Shamanic"],
+        emoji: "🐋"
+    },
+    {
+        name: "Dayak Iban",
+        region: "asia",
+        location: "Sarawak, Malaysian Borneo",
+        description: "Former 'Sea Dayak' headhunters now known for their elaborate longhouses, intricate tattoos, pua kumbu weaving, and gawai harvest festivals.",
+        tags: ["Longhouses", "Pua kumbu", "Gawai festivals"],
+        emoji: "🏘️"
+    },
+    {
+        name: "Minangkabau",
+        region: "asia",
+        location: "West Sumatra, Indonesia",
+        description: "World's largest matrilineal society with distinctive horn-shaped roofs (rumah gadang), spicy rendang cuisine, and strong tradition of male migration (merantau).",
+        tags: ["Matrilineal", "Horn-shaped roofs", "Rendang cuisine"],
+        emoji: "🏠"
+    },
+    {
+        name: "Balti",
+        region: "asia",
+        location: "Baltistan, Pakistan and Ladakh, India",
+        description: "High-altitude people of the Karakoram range, known for polo played on the world's highest polo ground, apricot cultivation, and Tibetan Buddhist-Islamic blend.",
+        tags: ["High-altitude polo", "Apricot cultivation", "Buddhist-Islamic"],
+        emoji: "🏇"
+    },
+    {
+        name: "Aeta",
+        region: "asia",
+        location: "Philippines",
+        description: "Among the earliest inhabitants of the Philippines, traditionally nomadic hunter-gatherers known for their detailed knowledge of rainforest plants and survival skills.",
+        tags: ["Early inhabitants", "Hunter-gatherers", "Rainforest knowledge"],
+        emoji: "🌳"
     }
 ];
 
