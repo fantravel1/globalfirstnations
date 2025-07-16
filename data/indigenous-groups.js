@@ -304,6 +304,86 @@ const indigenousGroups = [
         tags: ["Lip plates", "Body scarification", "Stick fighting"],
         emoji: "💋"
     }
+    {
+        name: "Purépecha",
+        region: "americas",
+        location: "Michoacán, Mexico",
+        description: "Also called Tarascans, they built a powerful pre-Columbian empire with Tzintzuntzan as capital, never conquered by the Aztecs, and renowned for copper metallurgy and feather mosaics.",
+        tags: ["Copper metallurgy", "Feather art", "Tzintzuntzan"],
+        emoji: "⚱️"
+    },
+    {
+        name: "Mazahua",
+        region: "americas",
+        location: "State of México, Michoacán, Querétaro",
+        description: "Known as 'deer-foot people,' famous for traditional silver crescent earrings worn by women and the elaborate Xita Corpus ceremony honoring ancient rain-bringing spirits.",
+        tags: ["Silver jewelry", "Xita Corpus", "Rain ceremonies"],
+        emoji: "💍"
+    },
+    {
+        name: "Mazatec",
+        region: "americas",
+        location: "Sierra Mazateca, Oaxaca",
+        description: "Mountain people who call themselves 'Ha shuta enima' (People of Custom), world-famous for shamanic use of sacred mushrooms, notably through María Sabina.",
+        tags: ["Sacred mushrooms", "María Sabina", "Mountain shamans"],
+        emoji: "🍄"
+    },
+    {
+        name: "Chinantec",
+        region: "americas",
+        location: "Oaxaca and Veracruz, Mexico",
+        description: "Living in the Chinantla region with 14 different languages, known for elaborate huipiles, VOS sentence structure, and adaptation to highland and lowland environments.",
+        tags: ["14 languages", "Huipiles", "VOS grammar"],
+        emoji: "🌄"
+    },
+    {
+        name: "Triqui",
+        region: "americas",
+        location: "Western Oaxaca, Mexico",
+        description: "Renowned for distinctive woven huipiles and being exceptionally skilled basketball players, living in La Mixteca Baja region with strong community traditions.",
+        tags: ["Basketball champions", "Woven huipiles", "Mountain dwellers"],
+        emoji: "🏀"
+    },
+    {
+        name: "Cora",
+        region: "americas",
+        location: "Nayarit and Jalisco, Mexico",
+        description: "Call themselves Naáyarite, historically resisted Spanish conquest until 1722, with complex sun-worship religion blending pre-Columbian beliefs and Catholicism.",
+        tags: ["Sun worship", "Resistance", "Sierra Madre"],
+        emoji: "☀️"
+    },
+    {
+        name: "Tepehuán",
+        region: "americas",
+        location: "Durango, Chihuahua, Nayarit",
+        description: "Mountain People divided into Northern (Ódami), Southeastern (O'dam), and Southwestern (Audam) groups, known for the great 1616-1619 rebellion against Spanish rule.",
+        tags: ["Mountain dwellers", "1616 rebellion", "Three branches"],
+        emoji: "⛰️"
+    },
+    {
+        name: "Chol",
+        region: "americas",
+        location: "Chiapas, Mexico",
+        description: "Maya people known as 'Winik' (the people), skilled in traditional agriculture, weaving, and maintaining ancient Maya calendar knowledge in tropical rainforest regions.",
+        tags: ["Maya calendar", "Tropical agriculture", "Winik people"],
+        emoji: "📅"
+    },
+    {
+        name: "Mixe",
+        region: "americas",
+        location: "Sierra Mixe, Oaxaca",
+        description: "Autonomous mountain communities with 169,000 people speaking Mixe-Zoquean languages, operating independently with communal property and traditional governance systems.",
+        tags: ["Autonomous communities", "Mountain autonomy", "Communal property"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Chontal de Oaxaca",
+        region: "americas",
+        location: "Coastal Oaxaca, Mexico",
+        description: "Lowland and Highland groups speaking Tequistlatecan languages, possibly related to California Hokan family, with only about 200 fluent speakers remaining.",
+        tags: ["Endangered language", "Coastal culture", "Tequistlatecan"],
+        emoji: "🌊"
+    }
 ];
 
 // Make it available globally
