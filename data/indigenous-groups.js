@@ -1047,6 +1047,166 @@ const indigenousGroups = [
         description: "Pastoralists known as 'Hottentots' by colonizers, famous for their click languages, cattle herding, and being among the first to encounter European settlers.",
         tags: ["Click languages", "Cattle herders", "First contact"],
         emoji: "🐂"
+    },
+    {
+    name: "Thule (Ancestral Inuit)",
+    region: "americas",
+    location: "Arctic Canada, Alaska, Greenland",
+    description: "Ancestors of modern Inuit who developed sophisticated ice-hunting technology, umiak boats, and spread across the Arctic displacing the earlier Dorset culture.",
+    tags: ["Ice hunting", "Umiak boats", "Arctic expansion"],
+    emoji: "🛶"
+    },
+    {
+        name: "Aleut (Unangan)",
+        region: "americas",
+        location: "Aleutian Islands, Alaska",
+        description: "Master sea hunters of the stormy North Pacific, known for their waterproof kayaks (baidarkas), intricate basketry, and survival in one of Earth's harshest marine environments.",
+        tags: ["Sea hunters", "Baidarkas", "Storm survivors"],
+        emoji: "🌊"
+    },
+    {
+        name: "Copper Inuit",
+        region: "americas",
+        location: "Victoria Island and mainland Arctic Canada",
+        description: "Unique Inuit group who used native copper for tools and weapons, lived in snow houses year-round, and had minimal contact with Europeans until the 20th century.",
+        tags: ["Copper tools", "Snow houses", "Late contact"],
+        emoji: "🔨"
+    },
+    {
+        name: "Taíno",
+        region: "americas",
+        location: "Caribbean Islands",
+        description: "Arawakan people who first encountered Columbus, known for their sophisticated agriculture, ball courts (batey), and tragic decimation by disease and colonization.",
+        tags: ["Columbus contact", "Ball courts", "Agricultural"],
+        emoji: "🏐"
+    },
+    {
+        name: "Garifuna",
+        region: "americas",
+        location: "Caribbean coast of Central America",
+        description: "Afro-indigenous people descended from Carib, Arawak, and African slaves, known for their distinctive music, cassava bread, and maritime culture.",
+        tags: ["Afro-indigenous", "Distinctive music", "Cassava bread"],
+        emoji: "🥖"
+    },
+    {
+        name: "Kalinago (Island Carib)",
+        region: "americas",
+        location: "Lesser Antilles, Caribbean",
+        description: "Fierce warriors who gave the Caribbean its name, known for their canoe raids, cassava processing, and resistance to European colonization.",
+        tags: ["Caribbean warriors", "Canoe raids", "Cassava"],
+        emoji: "🛶"
+    },
+    {
+        name: "Tsilhqot'in",
+        region: "americas",
+        location: "British Columbia, Canada",
+        description: "Interior plateau people known for their fierce independence, salmon fishing, and winning a landmark Supreme Court case recognizing Aboriginal title to their lands.",
+        tags: ["Fierce independence", "Salmon fishing", "Land rights victory"],
+        emoji: "🐟"
+    },
+    {
+        name: "Nuu-chah-nulth",
+        region: "americas",
+        location: "Vancouver Island, British Columbia",
+        description: "Pacific Northwest whalers famous for hunting gray whales from cedar canoes, elaborate potlatch ceremonies, and intricate basket weaving.",
+        tags: ["Whale hunters", "Cedar canoes", "Potlatch"],
+        emoji: "🐋"
+    },
+    {
+        name: "Kwakwaka'wakw",
+        region: "americas",
+        location: "Northern Vancouver Island and mainland BC",
+        description: "Master carvers known for their dramatic transformation masks, elaborate potlatch feasts, and the famous Thunderbird and Orca cultural symbols.",
+        tags: ["Transformation masks", "Thunderbird", "Potlatch masters"],
+        emoji: "🎭"
+    },
+    {
+        name: "Makah",
+        region: "americas",
+        location: "Olympic Peninsula, Washington",
+        description: "Only Native American tribe with treaty rights to hunt whales, known for their centuries-old whaling tradition and carved cedar longhouses.",
+        tags: ["Treaty whale hunting", "Cedar longhouses", "Whaling tradition"],
+        emoji: "🐋"
+    },
+    {
+        name: "Awá",
+        region: "americas",
+        location: "Amazon rainforest, Brazil",
+        description: "Nomadic hunter-gatherers considered Brazil's most endangered tribe, known for adopting orphaned animals as pets and their detailed knowledge of rainforest plants.",
+        tags: ["Most endangered", "Animal adoption", "Nomadic hunters"],
+        emoji: "🐒"
+    },
+    {
+        name: "Pirahã",
+        region: "americas",
+        location: "Amazon Basin, Brazil",
+        description: "Amazonian people with the world's most unusual language lacking numbers, colors, or creation myths, living entirely in the present tense.",
+        tags: ["No numbers", "Present tense", "Unusual language"],
+        emoji: "🗣️"
+    },
+    {
+        name: "Matsés",
+        region: "americas",
+        location: "Peru-Brazil border, Amazon",
+        description: "Jaguar people known for their intricate face tattoos, blow dart hunting, use of powerful plant medicines, and recent contact with outside world.",
+        tags: ["Jaguar people", "Face tattoos", "Blow darts"],
+        emoji: "🐆"
+    },
+    {
+        name: "Huaorani",
+        region: "americas",
+        location: "Ecuadorian Amazon",
+        description: "Former fierce warriors who lived in isolation until the 1950s, known for their blowguns, tree house communities, and protecting their rainforest territory.",
+        tags: ["Blowguns", "Tree houses", "Recent contact"],
+        emoji: "🏹"
+    },
+    {
+        name: "Shuar",
+        region: "americas",
+        location: "Ecuador and Peru, Amazon headwaters",
+        description: "Headhunting people famous for creating shrunken heads (tsantsa), living in scattered houses, and their powerful ayahuasca traditions.",
+        tags: ["Shrunken heads", "Ayahuasca", "Headhunters"],
+        emoji: "💀"
+    },
+    {
+        name: "Machiguenga",
+        region: "americas",
+        location: "Urubamba River, Peruvian Amazon",
+        description: "River people known for their geometric textile patterns, sustainable fishing practices, and maintaining traditional plant knowledge despite outside pressures.",
+        tags: ["Geometric textiles", "Sustainable fishing", "Plant knowledge"],
+        emoji: "🎨"
+    },
+    {
+        name: "Wichí",
+        region: "americas",
+        location: "Gran Chaco, Argentina",
+        description: "Hunter-gatherers of the dry Chaco known for their honey hunting, intricate basketry, and adaptation to one of South America's harshest environments.",
+        tags: ["Honey hunting", "Intricate baskets", "Chaco adaptation"],
+        emoji: "🍯"
+    },
+    {
+        name: "Tehuelche",
+        region: "americas",
+        location: "Patagonia, Argentina and Chile",
+        description: "Tall nomadic hunters of Patagonia who impressed early Europeans with their height, known for hunting guanaco and their distinctive cloaks.",
+        tags: ["Tall nomads", "Guanaco hunters", "Distinctive cloaks"],
+        emoji: "🦙"
+    },
+    {
+        name: "Yaghan",
+        region: "americas",
+        location: "Tierra del Fuego, Chile",
+        description: "Canoe people of the world's southernmost inhabited lands, known for their resistance to cold, detailed vocabulary for snow, and tragic near-extinction.",
+        tags: ["Southernmost", "Canoe people", "Cold resistance"],
+        emoji: "🛶"
+    },
+    {
+        name: "Ona (Selk'nam)",
+        region: "americas",
+        location: "Tierra del Fuego, Argentina and Chile",
+        description: "Extinct hunter-gatherers known for their elaborate initiation ceremonies with body painting, shamanic traditions, and tragic genocide by sheep ranchers.",
+        tags: ["Extinct culture", "Body painting", "Initiation ceremonies"],
+        emoji: "🎭"
     }
 ];
 
