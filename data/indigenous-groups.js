@@ -1207,6 +1207,166 @@ const indigenousGroups = [
         description: "Extinct hunter-gatherers known for their elaborate initiation ceremonies with body painting, shamanic traditions, and tragic genocide by sheep ranchers.",
         tags: ["Extinct culture", "Body painting", "Initiation ceremonies"],
         emoji: "🎭"
+    },
+    {
+    name: "Jarawa",
+    region: "asia",
+    location: "Andaman Islands, India",
+    description: "One of the last uncontacted tribes, living as hunter-gatherers on Middle Andaman Island for 60,000 years, fiercely protecting their isolation from the modern world.",
+    tags: ["Uncontacted", "60,000 years", "Fierce isolation"],
+    emoji: "🏹"
+    },
+    {
+        name: "Korowai",
+        region: "oceania",
+        location: "Papua New Guinea",
+        description: "Tree house dwellers living 35 meters above ground in one of Earth's last unexplored regions, practicing cannibalism until recently and having no contact until 1970s.",
+        tags: ["Tree houses", "35 meters high", "Recent contact"],
+        emoji: "🌳"
+    },
+    {
+        name: "Rapa Nui",
+        region: "oceania",
+        location: "Easter Island, Chile",
+        description: "Polynesian people who created the mysterious moai statues on the world's most isolated inhabited island, surviving ecological collapse and slave raids.",
+        tags: ["Moai statues", "Most isolated", "Ecological collapse"],
+        emoji: "🗿"
+    },
+    {
+        name: "Suruwahá",
+        region: "americas",
+        location: "Amazon rainforest, Brazil",
+        description: "Isolated Amazonian people practicing ritual suicide when faced with grief, known for their intricate body painting and recent peaceful contact in the 1980s.",
+        tags: ["Ritual suicide", "Body painting", "1980s contact"],
+        emoji: "🎨"
+    },
+    {
+        name: "Pintupi",
+        region: "oceania",
+        location: "Western Desert, Australia",
+        description: "Last nomadic Aboriginal people to make contact with modern world (1984), living as traditional hunter-gatherers in one of Earth's most arid regions.",
+        tags: ["Last contact 1984", "Desert nomads", "Traditional hunters"],
+        emoji: "🏜️"
+    },
+    {
+        name: "Mashco-Piro",
+        region: "americas",
+        location: "Peruvian Amazon",
+        description: "Uncontacted nomadic people who occasionally emerge from the rainforest, known for their avoidance of outsiders and tragic violent encounters with loggers.",
+        tags: ["Uncontacted", "Occasional emergence", "Logger conflicts"],
+        emoji: "🌿"
+    },
+    {
+        name: "Veddah",
+        region: "asia",
+        location: "Sri Lanka",
+        description: "Indigenous people of Sri Lanka living in forests for thousands of years, speaking an ancient language isolate and practicing traditional hunting and honey gathering.",
+        tags: ["Language isolate", "Forest dwellers", "Honey gatherers"],
+        emoji: "🍯"
+    },
+    {
+        name: "Tanna",
+        region: "oceania",
+        location: "Vanuatu",
+        description: "Melanesian people famous for the John Frum cargo cult, active volcanoes in their backyard, and maintaining kastom (traditional) ways despite outside pressure.",
+        tags: ["Cargo cult", "Active volcanoes", "Kastom ways"],
+        emoji: "🌋"
+    },
+    {
+        name: "Sahrawi",
+        region: "africa",
+        location: "Western Sahara",
+        description: "Desert nomads living in refugee camps for decades, maintaining traditional tent culture, camel herding, and fighting for independence from Morocco.",
+        tags: ["Refugee camps", "Desert nomads", "Independence fight"],
+        emoji: "🏕️"
+    },
+    {
+        name: "Tarkine",
+        region: "oceania",
+        location: "Tasmania, Australia",
+        description: "Palawa people of Tasmania's wilderness, descendants of the world's most isolated human population for 10,000 years before European contact.",
+        tags: ["10,000 year isolation", "Wilderness", "Descendants"],
+        emoji: "🌲"
+    },
+    {
+        name: "Kogi",
+        region: "americas",
+        location: "Sierra Nevada de Santa Marta, Colombia",
+        description: "Descendants of pre-Columbian Tairona civilization, calling themselves 'Elder Brothers' and warning the world about environmental destruction from their mountain isolation.",
+        tags: ["Elder Brothers", "Environmental warnings", "Tairona descendants"],
+        emoji: "⛰️"
+    },
+    {
+        name: "Penan Nomads",
+        region: "asia",
+        location: "Borneo rainforest, Malaysia",
+        description: "Last nomadic people of Borneo, hunter-gatherers with no permanent settlements, speaking in whispers to avoid scaring animals and sharing everything communally.",
+        tags: ["Last nomads", "Whisper hunting", "Communal sharing"],
+        emoji: "🤫"
+    },
+    {
+        name: "Zo'é",
+        region: "americas",
+        location: "Amazon Basin, Brazil",
+        description: "Contacted only in 1987, known for wooden lip plugs (poturu), living naked in the rainforest, and struggling to maintain traditions after recent contact.",
+        tags: ["1987 contact", "Wooden lip plugs", "Living naked"],
+        emoji: "💋"
+    },
+    {
+        name: "Chenchu",
+        region: "asia",
+        location: "Andhra Pradesh, India",
+        description: "Forest-dwelling hunter-gatherers living in the Nallamala Hills, maintaining prehistoric lifestyle with stone tools and intimate knowledge of jungle survival.",
+        tags: ["Stone tools", "Prehistoric lifestyle", "Jungle survival"],
+        emoji: "🔨"
+    },
+    {
+        name: "Raute",
+        region: "asia",
+        location: "Nepal and India border",
+        description: "Nepal's last nomadic people, living in temporary shelters, practicing traditional hunting, and having no permanent settlements or modern possessions.",
+        tags: ["Last nomads", "Temporary shelters", "No possessions"],
+        emoji: "🏕️"
+    },
+    {
+        name: "Moken",
+        region: "asia",
+        location: "Andaman Sea, Thailand and Myanmar",
+        description: "Sea nomads living on boats for most of their lives, with extraordinary underwater vision, traditional knowledge of tsunamis, and declining traditional lifestyle.",
+        tags: ["Sea nomads", "Underwater vision", "Tsunami knowledge"],
+        emoji: "🛶"
+    },
+    {
+        name: "BaYaka",
+        region: "africa",
+        location: "Central African Republic",
+        description: "Forest-dwelling Pygmy people maintaining traditional hunting and gathering in increasingly threatened rainforests, known for their unique yodeling and ritual dances.",
+        tags: ["Forest dwelling", "Unique yodeling", "Threatened forests"],
+        emoji: "🎵"
+    },
+    {
+        name: "Asaro Mud Men",
+        region: "oceania",
+        location: "Papua New Guinea Highlands",
+        description: "Highland warriors famous for their elaborate mud masks and gray clay body covering, using terrifying appearance in ritual warfare and festivals.",
+        tags: ["Mud masks", "Gray clay", "Ritual warfare"],
+        emoji: "👹"
+    },
+    {
+        name: "Kawésqar",
+        region: "americas",
+        location: "Chilean Patagonia",
+        description: "Canoe people of Patagonian fjords, nearly extinct with only 8 fluent speakers remaining, known for their intimate knowledge of treacherous southern waters.",
+        tags: ["8 speakers left", "Canoe people", "Treacherous waters"],
+        emoji: "🛶"
+    },
+    {
+        name: "Onge",
+        region: "asia",
+        location: "Little Andaman Island, India",
+        description: "Hunter-gatherer people reduced to about 100 individuals, maintaining traditional lifestyle on their island, known for their detailed lunar calendar and fire-making skills.",
+        tags: ["100 individuals", "Lunar calendar", "Fire making"],
+        emoji: "🔥"
     }
 ];
 
