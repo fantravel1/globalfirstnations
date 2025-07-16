@@ -767,6 +767,126 @@ const indigenousGroups = [
         description: "Among the earliest inhabitants of the Philippines, traditionally nomadic hunter-gatherers known for their detailed knowledge of rainforest plants and survival skills.",
         tags: ["Early inhabitants", "Hunter-gatherers", "Rainforest knowledge"],
         emoji: "🌳"
+    },
+    {
+    name: "Basque (Euskera)",
+    region: "europe",
+    location: "Basque Country, Spain and France",
+    description: "Europe's oldest surviving culture with a pre-Indo-European language isolate, known for their unique genetics, pelota sport, distinctive architecture, and fierce independence.",
+    tags: ["Language isolate", "Pre-Indo-European", "Pelota sport"],
+    emoji: "🏔️"
+    },
+    {
+        name: "Faroese",
+        region: "europe",
+        location: "Faroe Islands, North Atlantic",
+        description: "North Germanic islanders maintaining ancient traditions like grindadráp whale hunting, chain dancing, and grass-roof houses in one of Europe's most isolated communities.",
+        tags: ["Whale hunting", "Chain dancing", "Grass roofs"],
+        emoji: "🐋"
+    },
+    {
+        name: "Komi",
+        region: "europe",
+        location: "Komi Republic, Northern Russia",
+        description: "Finno-Ugric people with ancient shamanic traditions, distinctive Komi script, reindeer herding, and being among the first to adopt Christianity in the Arctic.",
+        tags: ["Finno-Ugric", "Shamanic traditions", "Komi script"],
+        emoji: "🦌"
+    },
+    {
+        name: "Mari",
+        region: "europe",
+        location: "Mari El Republic, Russia",
+        description: "Last pagan Europeans practicing ancient nature worship in sacred groves, known for their honey-based traditions and resistance to Christianization for over 1000 years.",
+        tags: ["Last pagans", "Sacred groves", "Nature worship"],
+        emoji: "🌳"
+    },
+    {
+        name: "Võro",
+        region: "europe",
+        location: "South Estonia",
+        description: "Finno-Ugric people maintaining distinct Võro language, ancient folk songs (regilaulud), traditional smoke saunas, and bog iron working traditions.",
+        tags: ["Võro language", "Smoke saunas", "Bog iron"],
+        emoji: "🔥"
+    },
+    {
+        name: "Savoyard",
+        region: "europe",
+        location: "Savoy, French Alps",
+        description: "Alpine people with Franco-Provençal language, traditional cheese-making, distinctive chalet architecture, and ancient transhumance pastoral traditions.",
+        tags: ["Franco-Provençal", "Alpine cheese", "Transhumance"],
+        emoji: "🧀"
+    },
+    {
+        name: "Sorbs (Wends)",
+        region: "europe",
+        location: "Lusatia, Eastern Germany",
+        description: "Last Slavic minority in Germany maintaining Sorbian language, elaborate Easter egg painting, traditional costumes, and pre-Christian water spirit beliefs.",
+        tags: ["Slavic minority", "Easter eggs", "Water spirits"],
+        emoji: "🥚"
+    },
+    {
+        name: "Livonian",
+        region: "europe",
+        location: "Northern Latvia and Estonia",
+        description: "Nearly extinct Finno-Ugric coastal people, traditional fishermen and seal hunters with unique Livonian language spoken by fewer than 30 people.",
+        tags: ["Nearly extinct", "Seal hunters", "30 speakers"],
+        emoji: "🦭"
+    },
+    {
+        name: "Karelian",
+        region: "europe",
+        location: "Karelia, Finland and Russia",
+        description: "Finno-Ugric people known for their epic poetry tradition (Kalevala source), distinctive wooden architecture, and forest survival skills.",
+        tags: ["Kalevala epic", "Wooden architecture", "Forest skills"],
+        emoji: "📜"
+    },
+    {
+        name: "Breton",
+        region: "europe",
+        location: "Brittany, Western France",
+        description: "Celtic people maintaining Breton language, traditional fest-noz dancing, distinctive coiffes headdresses, and ancient menhir stone traditions.",
+        tags: ["Celtic language", "Fest-noz dancing", "Menhir stones"],
+        emoji: "🗿"
+    },
+    {
+        name: "Cornish",
+        region: "europe",
+        location: "Cornwall, Southwest England",
+        description: "Celtic people with revived Cornish language, tin mining heritage, distinctive pasty cuisine, and ancient Celtic cross traditions surviving Roman conquest.",
+        tags: ["Revived language", "Tin mining", "Celtic crosses"],
+        emoji: "⛏️"
+    },
+    {
+        name: "Manx",
+        region: "europe",
+        location: "Isle of Man, Irish Sea",
+        description: "Celtic islanders with revived Manx Gaelic, unique three-legged symbol (triskelion), traditional tailless cats, and ancient Tynwald parliament.",
+        tags: ["Manx Gaelic", "Triskelion", "Ancient parliament"],
+        emoji: "🐱"
+    },
+    {
+        name: "Galician",
+        region: "europe",
+        location: "Galicia, Northwest Spain",
+        description: "Celtic-influenced people with Galician language, bagpipe traditions, ancient castro hill forts, and distinct identity from Castilian Spain.",
+        tags: ["Celtic bagpipes", "Castro forts", "Galician language"],
+        emoji: "🎵"
+    },
+    {
+        name: "Kashubian",
+        region: "europe",
+        location: "Pomerania, Northern Poland",
+        description: "Slavic minority with distinct Kashubian language, traditional fishing culture, unique embroidery patterns, and resistance to Germanic assimilation.",
+        tags: ["Kashubian language", "Fishing culture", "Traditional embroidery"],
+        emoji: "🎣"
+    },
+    {
+        name: "Aromanian (Vlach)",
+        region: "europe",
+        location: "Balkans (Greece, Albania, North Macedonia)",
+        description: "Romance-speaking nomadic shepherds, descendants of ancient Dacians/Thracians, known for transhumance lifestyle and maintaining Latin-derived language in Slavic regions.",
+        tags: ["Nomadic shepherds", "Latin remnant", "Transhumance"],
+        emoji: "🐑"
     }
 ];
 
