@@ -770,6 +770,15 @@
         let searchQuery = '';
 
         // Performance optimized JavaScript
+
+        // Configuration
+        const INITIAL_DISPLAY_COUNT = 24; // Optimal number for initial load (6 rows of 4 cards on desktop)
+
+        // Utility function to get random sample from array
+        function getRandomSample(array, count) {
+            const shuffled = [...array].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
         
         // Lazy loading for better performance
         function initializeLazyLoading() {
@@ -810,14 +819,29 @@
         // Optimized search function
         const debouncedSearch = debounce(performSearch, 300);
 
-        // Virtual scrolling for large lists (future enhancement)
-        function renderTribes(tribes) {
-            const grid = document.getElementById('tribesGrid');
+        // Function to show all tribes
+        function showAllTribes() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('tribesGrid').style.display = 'none';
             
+            setTimeout(() => {
+                renderTribes(indigenousGroups, false); // Show all, not initial load
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('tribesGrid').style.display = 'grid';
+            }, 300);
+        }
+
+        // Updated renderTribes function with optional limit
+        function renderTribes(tribes, isInitialLoad = false) {
+            const grid = document.getElementById('tribesGrid');
+    
             // Use DocumentFragment for better performance
             const fragment = document.createDocumentFragment();
-            
-            tribes.forEach(tribe => {
+    
+            // Limit tribes only on initial load
+            const tribesToRender = isInitialLoad ? getRandomSample(tribes, INITIAL_DISPLAY_COUNT) : tribes;
+    
+            tribesToRender.forEach(tribe => {
                 const card = document.createElement('div');
                 card.className = 'tribe-card fade-in';
                 card.innerHTML = `
@@ -835,17 +859,30 @@
                 `;
                 fragment.appendChild(card);
             });
-
+        
             // Clear and append in one operation
             grid.innerHTML = '';
             grid.appendChild(fragment);
-
+        
+            // Add "Show More" button only on initial load
+            if (isInitialLoad && tribes.length > INITIAL_DISPLAY_COUNT) {
+                const showMoreBtn = document.createElement('div');
+                showMoreBtn.className = 'show-more-container';
+                showMoreBtn.innerHTML = `
+                    <button class="show-more-btn" onclick="showAllTribes()">
+                        Show All ${tribes.length} Groups
+                    </button>
+                `;
+                grid.appendChild(showMoreBtn);
+            }
+        
             // Trigger lazy loading
             requestAnimationFrame(() => {
                 initializeLazyLoading();
             });
         }
-
+        
+        // Updated filterTribes function (unlimited results)
         function filterTribes(region) {
             currentFilter = region;
             
@@ -875,14 +912,15 @@
                     );
                 }
                 
-                renderTribes(filteredTribes);
+                renderTribes(filteredTribes, false); // Unlimited results for filtering
                 
                 // Hide loading
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('tribesGrid').style.display = 'grid';
             }, 500);
         }
-
+        
+        // Updated performSearch function (unlimited results)
         function performSearch() {
             const input = document.getElementById('searchInput');
             searchQuery = input.value.trim();
@@ -906,7 +944,7 @@
                     );
                 }
                 
-                renderTribes(filteredTribes);
+                renderTribes(filteredTribes, false); // Unlimited results for search
                 
                 // Hide loading
                 document.getElementById('loading').style.display = 'none';
@@ -961,7 +999,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Use requestAnimationFrame for smooth initialization
             requestAnimationFrame(() => {
-                renderTribes(window.indigenousGroups);
+                if (window.indigenousGroups) {
+                    renderTribes(window.indigenousGroups, true); // NEW - Initial load with limit
+                } else {
+                    console.error('Indigenous groups data not loaded');
+                }
                 initializeLazyLoading();
             });
             
