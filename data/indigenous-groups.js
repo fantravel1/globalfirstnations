@@ -1367,6 +1367,166 @@ const indigenousGroups = [
         description: "Hunter-gatherer people reduced to about 100 individuals, maintaining traditional lifestyle on their island, known for their detailed lunar calendar and fire-making skills.",
         tags: ["100 individuals", "Lunar calendar", "Fire making"],
         emoji: "🔥"
+    },
+    {
+    name: "K'iche' Maya",
+    region: "americas",
+    location: "Guatemala Highlands",
+    description: "Descendants of the powerful K'iche' kingdom, keepers of the Popol Vuh creation epic, maintaining elaborate textile traditions and ancient calendar knowledge.",
+    tags: ["Popol Vuh", "Ancient calendars", "Textile masters"],
+    emoji: "📚"
+    },
+    {
+        name: "Mam Maya",
+        region: "americas",
+        location: "Guatemala and Mexico",
+        description: "Highland Maya people with one of the oldest continuously spoken Maya languages, known for their resistance to Spanish conquest and maintaining traditional governance.",
+        tags: ["Oldest Maya language", "Spanish resistance", "Traditional governance"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Tzotzil Maya",
+        region: "americas",
+        location: "Chiapas, Mexico",
+        description: "Maya people maintaining traditional religious syncretism, elaborate festival cycles, and being part of the Zapatista movement defending indigenous rights.",
+        tags: ["Religious syncretism", "Festival cycles", "Zapatista movement"],
+        emoji: "🎭"
+    },
+    {
+        name: "Inca Quechua",
+        region: "americas",
+        location: "Cusco Region, Peru",
+        description: "Direct descendants of the Inca Empire centered in Cusco, maintaining traditional weaving, terraced agriculture, and speaking the royal Quechua dialect.",
+        tags: ["Inca descendants", "Royal dialect", "Terraced agriculture"],
+        emoji: "👑"
+    },
+    {
+        name: "Aymara",
+        region: "americas",
+        location: "Bolivia, Peru, Chile",
+        description: "Pre-Inca civilization builders of Tiwanaku, maintaining traditional ayllu kinship systems, distinctive textiles, and resistance to colonial assimilation.",
+        tags: ["Tiwanaku builders", "Ayllu kinship", "Colonial resistance"],
+        emoji: "🏛️"
+    },
+    {
+        name: "Cañari",
+        region: "americas",
+        location: "Ecuador",
+        description: "Pre-Inca civilization that fiercely resisted Inca conquest, known for their astronomical knowledge, distinctive architecture, and surviving Spanish colonization.",
+        tags: ["Inca resistance", "Astronomical knowledge", "Distinctive architecture"],
+        emoji: "⭐"
+    },
+    {
+        name: "Buganda",
+        region: "africa",
+        location: "Central Uganda",
+        description: "Powerful kingdom with sophisticated parliamentary system (Lukiiko), elaborate royal ceremonies, distinctive bark cloth traditions, and centralized monarchy.",
+        tags: ["Parliamentary system", "Royal ceremonies", "Bark cloth"],
+        emoji: "👑"
+    },
+    {
+        name: "Ashanti",
+        region: "africa",
+        location: "Ghana",
+        description: "Powerful Gold Coast empire known for the Golden Stool symbol, elaborate kente cloth weaving, sophisticated military organization, and resistance to British colonialism.",
+        tags: ["Golden Stool", "Kente cloth", "Military organization"],
+        emoji: "🪑"
+    },
+    {
+        name: "Buganda",
+        region: "africa",
+        location: "Uganda",
+        description: "Sophisticated kingdom with parliamentary democracy, elaborate royal court, distinctive drumming traditions, and maintaining monarchy within modern Uganda.",
+        tags: ["Parliamentary monarchy", "Royal court", "Traditional drumming"],
+        emoji: "🥁"
+    },
+    {
+        name: "Songhai",
+        region: "africa",
+        location: "Mali, Niger, Burkina Faso",
+        description: "Descendants of the great Songhai Empire, maintaining traditional trading networks, Islamic scholarship centers, and Niger River boat-building traditions.",
+        tags: ["Trading networks", "Islamic scholarship", "Boat building"],
+        emoji: "🚤"
+    },
+    {
+        name: "Yoruba",
+        region: "africa",
+        location: "Nigeria, Benin, Togo",
+        description: "Powerful city-state civilization known for bronze casting, elaborate religious traditions (Ifá), complex urban planning, and influencing African diaspora culture.",
+        tags: ["Bronze casting", "Ifá religion", "Urban planning"],
+        emoji: "🏛️"
+    },
+    {
+        name: "Hausa",
+        region: "africa",
+        location: "Northern Nigeria, Niger",
+        description: "Major trading empire builders known for walled cities, sophisticated commerce, Islamic scholarship, and maintaining traditional emirate systems.",
+        tags: ["Walled cities", "Trade empire", "Emirate systems"],
+        emoji: "🏰"
+    },
+    {
+        name: "Mandinka",
+        region: "africa",
+        location: "West Africa (Mali Empire region)",
+        description: "Descendants of the Mali Empire, keepers of the Sundiata epic tradition, master gold traders, and maintaining griot storytelling traditions.",
+        tags: ["Mali Empire", "Sundiata epic", "Griot storytellers"],
+        emoji: "🎵"
+    },
+    {
+        name: "Ethiopian Highlanders",
+        region: "africa",
+        location: "Ethiopian Highlands",
+        description: "Never-colonized people maintaining one of Africa's oldest Christian kingdoms, unique calendar system, ancient Ge'ez script, and coffee cultivation origins.",
+        tags: ["Never colonized", "Ancient Christianity", "Coffee origins"],
+        emoji: "☕"
+    },
+    {
+        name: "Uzbek",
+        region: "asia",
+        location: "Uzbekistan and Central Asia",
+        description: "Silk Road empire builders known for magnificent cities like Samarkand, sophisticated Islamic architecture, traditional silk weaving, and maintaining Timurid heritage.",
+        tags: ["Silk Road", "Samarkand", "Timurid heritage"],
+        emoji: "🏛️"
+    },
+    {
+        name: "Tibetan",
+        region: "asia",
+        location: "Tibet Autonomous Region, China",
+        description: "High-altitude civilization with unique Buddhist theocracy, distinctive architecture, traditional medicine, and the Dalai Lama spiritual leadership system.",
+        tags: ["Buddhist theocracy", "Traditional medicine", "Dalai Lama"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Khmer",
+        region: "asia",
+        location: "Cambodia",
+        description: "Builders of Angkor Wat temple complex, maintaining classical dance traditions, sophisticated hydraulic engineering, and Theravada Buddhist culture.",
+        tags: ["Angkor Wat", "Classical dance", "Hydraulic engineering"],
+        emoji: "🏛️"
+    },
+    {
+        name: "Balinese",
+        region: "asia",
+        location: "Bali, Indonesia",
+        description: "Hindu-majority island culture known for elaborate temple architecture, sophisticated irrigation systems (subak), traditional dance-drama, and artistic craftsmanship.",
+        tags: ["Hindu culture", "Temple architecture", "Subak irrigation"],
+        emoji: "🛕"
+    },
+    {
+        name: "Javanese",
+        region: "asia",
+        location: "Java, Indonesia",
+        description: "Builders of Borobudur temple, maintaining courtly traditions, sophisticated batik art, shadow puppet theater (wayang), and refined court culture.",
+        tags: ["Borobudur", "Batik art", "Wayang puppets"],
+        emoji: "🎭"
+    },
+    {
+        name: "Han Chinese",
+        region: "asia",
+        location: "China",
+        description: "World's longest continuous civilization, builders of the Great Wall, inventors of paper and gunpowder, maintaining Confucian traditions and complex writing system.",
+        tags: ["Longest civilization", "Great Wall", "Confucian traditions"],
+        emoji: "🏯"
     }
 ];
 
