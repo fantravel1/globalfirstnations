@@ -540,6 +540,37 @@
             font-size: 1rem;
         }
 
+        /* Show More Options */
+        .show-more-container {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .show-more-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .show-more-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .show-more-btn:active {
+            transform: translateY(0);
+        }
+
         /* Footer */
         footer {
             background: var(--text);
