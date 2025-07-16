@@ -1527,6 +1527,158 @@ const indigenousGroups = [
         description: "World's longest continuous civilization, builders of the Great Wall, inventors of paper and gunpowder, maintaining Confucian traditions and complex writing system.",
         tags: ["Longest civilization", "Great Wall", "Confucian traditions"],
         emoji: "🏯"
+    },
+    {
+    name: "Bajau Laut",
+    region: "asia",
+    location: "Sulu Sea, Philippines/Malaysia/Indonesia",
+    description: "Sea nomads who have evolved larger spleens for diving, can hold breath for 13 minutes underwater, and live entirely on boats, literally never setting foot on land.",
+    tags: ["Evolved diving", "13 minute breath", "Never on land"],
+    emoji: "🤿"
+    },
+    {
+        name: "Stromboli Islanders",
+        region: "europe",
+        location: "Stromboli Island, Italy",
+        description: "Volcanic island people living on an active volcano that erupts every 15 minutes, using volcanic ash for agriculture and maintaining ancient fire rituals.",
+        tags: ["Active volcano", "15 minute eruptions", "Fire rituals"],
+        emoji: "🌋"
+    },
+    {
+        name: "Changpa",
+        region: "asia",
+        location: "Changthang Plateau, Ladakh",
+        description: "Highest-altitude nomads on Earth at 5,000m, herding pashmina goats in -40°C temperatures, with enlarged hearts and lungs for extreme altitude survival.",
+        tags: ["5,000m altitude", "-40°C survival", "Enlarged organs"],
+        emoji: "🐐"
+    },
+    {
+        name: "Matmata Berbers",
+        region: "africa",
+        location: "Southern Tunisia",
+        description: "Underground cave dwellers living in subterranean pit houses carved into sandstone, staying cool in 50°C desert heat, featured in Star Wars films.",
+        tags: ["Underground homes", "50°C survival", "Star Wars filming"],
+        emoji: "🕳️"
+    },
+    {
+        name: "Ama Pearl Divers",
+        region: "asia",
+        location: "Japan and Korea",
+        description: "Female free-divers who can dive 25 meters without equipment, holding breath for up to 7 minutes, practicing this tradition for over 2,000 years.",
+        tags: ["25 meter dives", "7 minute breath", "2,000 years"],
+        emoji: "🦪"
+    },
+    {
+        name: "Chachapoyas",
+        region: "americas",
+        location: "Cloud Forest, Peru",
+        description: "Cloud Warriors living in perpetual mist at 3,000m altitude, builders of Kuelap fortress, adapted to life where sun rarely penetrates the clouds.",
+        tags: ["Cloud warriors", "Perpetual mist", "Kuelap fortress"],
+        emoji: "☁️"
+    },
+    {
+        name: "Sahara Tubu",
+        region: "africa",
+        location: "Tibesti Mountains, Chad",
+        description: "Volcano-desert people living around extinct volcanoes in the Sahara, surviving on 3mm annual rainfall, expert navigation by stars and sand patterns.",
+        tags: ["Volcano desert", "3mm rainfall", "Star navigation"],
+        emoji: "🌟"
+    },
+    {
+        name: "Inughuit",
+        region: "americas",
+        location: "Northwest Greenland",
+        description: "Northernmost people on Earth living in total darkness 4 months yearly, hunting on moving sea ice, with traditional knowledge preventing scurvy without vegetables.",
+        tags: ["Northernmost", "4 months darkness", "No scurvy"],
+        emoji: "🌑"
+    },
+    {
+        name: "Bunong",
+        region: "asia",
+        location: "Mondulkiri, Cambodia",
+        description: "Elephant whisperers living in mountain forests, communicating with wild elephants through ancient songs, maintaining spiritual bonds with forest spirits.",
+        tags: ["Elephant whisperers", "Ancient songs", "Forest spirits"],
+        emoji: "🐘"
+    },
+    {
+        name: "Cappadocian Cave Dwellers",
+        region: "asia",
+        location: "Cappadocia, Turkey",
+        description: "Underground city builders carving 18-level subterranean cities in volcanic rock, housing 20,000 people underground with sophisticated ventilation systems.",
+        tags: ["18-level cities", "20,000 underground", "Volcanic rock"],
+        emoji: "🏛️"
+    },
+    {
+        name: "Uyghur Taklamakan",
+        region: "asia",
+        location: "Taklamakan Desert, China",
+        description: "Oasis people surviving in 'Sea of Death' desert, masters of underground irrigation (karez), navigating by sand dune patterns and buried cities.",
+        tags: ["Sea of Death", "Underground irrigation", "Buried cities"],
+        emoji: "🏜️"
+    },
+    {
+        name: "Kawésqar Storm Riders",
+        region: "americas",
+        location: "Patagonian Fjords, Chile",
+        description: "Canoe people navigating the world's stormiest seas year-round, reading weather in cloud formations, surviving 100+ mph winds in small boats.",
+        tags: ["Stormiest seas", "100mph winds", "Weather reading"],
+        emoji: "⛈️"
+    },
+    {
+        name: "Seto Sky Burial",
+        region: "asia",
+        location: "Tibetan Plateau",
+        description: "High-altitude people practicing sky burial at 4,500m, offering bodies to vultures on mountain peaks, believing in feeding the circle of life.",
+        tags: ["Sky burial", "4,500m altitude", "Circle of life"],
+        emoji: "🦅"
+    },
+    {
+        name: "Fayu Swamp People",
+        region: "oceania",
+        location: "Papua New Guinea Swamps",
+        description: "Isolated swampland people living entirely on floating houses, navigating endless marshes, discovered by outside world only in 1979.",
+        tags: ["Floating houses", "Endless marshes", "1979 discovery"],
+        emoji: "🏠"
+    },
+    {
+        name: "Nenana Ice Road People",
+        region: "americas",
+        location: "Alaska",
+        description: "Arctic people reading ice conditions for survival, predicting ice breakup to the hour, living where rivers freeze solid for 8 months yearly.",
+        tags: ["Ice reading", "Predict breakup", "8 month freeze"],
+        emoji: "🧊"
+    },
+    {
+        name: "Mentawai Storm Surfers",
+        region: "asia",
+        location: "Mentawai Islands, Indonesia",
+        description: "Island people who surf massive ocean swells during monsoon storms, using traditional knowledge to read dangerous wave patterns and currents.",
+        tags: ["Storm surfing", "Monsoon waves", "Wave reading"],
+        emoji: "🏄"
+    },
+    {
+        name: "Svaneti Tower People",
+        region: "asia",
+        location: "Georgia Caucasus",
+        description: "Mountain fortress builders living in 1,000-year-old stone towers, surviving avalanches and landslides, maintaining ancient defensive architecture.",
+        tags: ["1,000-year towers", "Avalanche survival", "Fortress builders"],
+        emoji: "🗼"
+    },
+    {
+        name: "Tornado Alley Kiowa",
+        region: "americas",
+        location: "Great Plains, USA",
+        description: "Plains people with traditional tornado prediction knowledge, reading sky patterns to predict severe weather, surviving in Earth's most tornado-active region.",
+        tags: ["Tornado prediction", "Sky reading", "Most tornadoes"],
+        emoji: "🌪️"
+    },
+    {
+        name: "Kamchatka Volcano Shamans",
+        region: "asia",
+        location: "Kamchatka Peninsula, Russia",
+        description: "Volcanic peninsula people living among 30 active volcanoes, practicing fire shamanism, using volcanic hot springs for healing ceremonies.",
+        tags: ["30 active volcanoes", "Fire shamanism", "Volcanic healing"],
+        emoji: "🌋"
     }
 ];
 
