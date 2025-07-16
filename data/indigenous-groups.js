@@ -303,7 +303,7 @@ const indigenousGroups = [
         description: "Pastoralist people famous for the lip plates worn by women, intricate body scarification, and traditional stick fighting competitions.",
         tags: ["Lip plates", "Body scarification", "Stick fighting"],
         emoji: "💋"
-    }
+    },
     {
         name: "Purépecha",
         region: "americas",
