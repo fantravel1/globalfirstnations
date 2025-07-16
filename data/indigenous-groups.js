@@ -383,6 +383,86 @@ const indigenousGroups = [
         description: "Lowland and Highland groups speaking Tequistlatecan languages, possibly related to California Hokan family, with only about 200 fluent speakers remaining.",
         tags: ["Endangered language", "Coastal culture", "Tequistlatecan"],
         emoji: "🌊"
+    },
+    {
+    name: "Tarahumara (Rarámuri)",
+    region: "americas",
+    location: "Sierra Madre Occidental, Chihuahua, Mexico",
+    description: "Renowned as the world's greatest long-distance runners, the Rarámuri can run hundreds of miles in traditional sandals, playing kickball games that last for days across mountain terrain.",
+    tags: ["Ultra-marathoners", "Kickball games", "Mountain runners"],
+    emoji: "🏃"
+    },
+    {
+        name: "Tlingit",
+        region: "americas",
+        location: "Southeast Alaska and British Columbia",
+        description: "Pacific Northwest people famous for their sophisticated clan system, elaborate potlatch ceremonies, and masterful Chilkat blanket weaving using mountain goat wool and cedar bark.",
+        tags: ["Potlatch ceremonies", "Chilkat blankets", "Clan system"],
+        emoji: "🐺"
+    },
+    {
+        name: "Embera",
+        region: "americas",
+        location: "Panama and Colombia",
+        description: "Rainforest dwellers known for their intricate body painting with jagua fruit, living in elevated houses along rivers, and being master canoe craftsmen.",
+        tags: ["Body painting", "River dwellers", "Canoe masters"],
+        emoji: "🛶"
+    },
+    {
+        name: "Seminole",
+        region: "americas",
+        location: "Florida Everglades, United States",
+        description: "The 'Unconquered People' who never signed a peace treaty with the US government, famous for their patchwork clothing, alligator wrestling, and adapting to swampland life.",
+        tags: ["Unconquered", "Patchwork clothing", "Swampland"],
+        emoji: "🐊"
+    },
+    {
+        name: "Selk'nam (Ona)",
+        region: "americas",
+        location: "Tierra del Fuego, Argentina and Chile",
+        description: "Extinct hunter-gatherer people of the southern tip of South America, known for their elaborate initiation ceremonies, body painting, and tragic genocide by settlers.",
+        tags: ["Hunter-gatherers", "Initiation ceremonies", "Extinct culture"],
+        emoji: "🔥"
+    },
+    {
+        name: "Awajún (Aguaruna)",
+        region: "americas",
+        location: "Amazon rainforest, Peru",
+        description: "Fierce warriors who successfully resisted Inca and Spanish conquest, known for head-shrinking practices (tsantsa), shamanic dream practices, and defending their rainforest territory.",
+        tags: ["Head-shrinking", "Dream shamans", "Warriors"],
+        emoji: "🌿"
+    },
+    {
+        name: "Blackfoot (Niitsitapi)",
+        region: "americas",
+        location: "Great Plains of Montana and Alberta",
+        description: "Plains nomads who were master buffalo hunters and horse warriors, with complex bundle ceremonies, tipi paintings that told family histories, and the Sun Dance ritual.",
+        tags: ["Buffalo hunters", "Horse warriors", "Sun Dance"],
+        emoji: "🦬"
+    },
+    {
+        name: "Xingu Peoples",
+        region: "americas",
+        location: "Xingu River Basin, Brazilian Amazon",
+        description: "Multiple peaceful tribes (Kuikuro, Kalapalo, Yawalapiti) sharing the Xingu Indigenous Park, famous for their elaborate festivals, body decoration, and sustainable fishing practices.",
+        tags: ["Multi-tribal", "Peaceful", "Festival culture"],
+        emoji: "🐟"
+    },
+    {
+        name: "Lakota",
+        region: "americas",
+        location: "Great Plains, South Dakota and surrounding states",
+        description: "One of the Seven Council Fires of the Sioux Nation, famous for their resistance led by Sitting Bull and Crazy Horse, vision quests, and the sacred Black Hills.",
+        tags: ["Sitting Bull", "Vision quests", "Black Hills"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Mapuche",
+        region: "americas",
+        location: "Chile and Argentina",
+        description: "The 'People of the Earth' who successfully resisted Inca and Spanish conquest for centuries, known for their silver jewelry, traditional medicine, and ongoing land rights struggles.",
+        tags: ["Silver jewelry", "Traditional medicine", "Land rights"],
+        emoji: "🌱"
     }
 ];
 
