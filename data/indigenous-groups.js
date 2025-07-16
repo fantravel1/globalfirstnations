@@ -41,14 +41,6 @@ const indigenousGroups = [
         emoji: "🪃"
     },
     {
-        name: "Sami",
-        region: "europe",
-        location: "Northern Norway, Sweden, Finland, and Russia",
-        description: "Indigenous people of northern Europe known for reindeer herding, traditional crafts, and the joik musical tradition.",
-        tags: ["Reindeer herding", "Joik", "Sami languages"],
-        emoji: "🦌"
-    },
-    {
         name: "Quechua",
         region: "americas",
         location: "Andes Mountains of South America",
@@ -199,14 +191,6 @@ const indigenousGroups = [
         description: "Arctic people who maintain traditional subsistence hunting and fishing while adapting to modern challenges in the Bering Sea region.",
         tags: ["Arctic hunting", "Marine mammals", "Subsistence"],
         emoji: "🐋"
-    },
-    {
-        name: "Maori",
-        region: "oceania",
-        location: "New Zealand",
-        description: "Polynesian people of New Zealand known for their powerful haka dance, intricate tattoos (ta moko), and strong cultural renaissance movement.",
-        tags: ["Haka", "Ta moko", "Cultural renaissance"],
-        emoji: "🌀"
     },
     {
         name: "San",
