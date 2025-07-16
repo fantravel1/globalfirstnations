@@ -887,6 +887,166 @@ const indigenousGroups = [
         description: "Romance-speaking nomadic shepherds, descendants of ancient Dacians/Thracians, known for transhumance lifestyle and maintaining Latin-derived language in Slavic regions.",
         tags: ["Nomadic shepherds", "Latin remnant", "Transhumance"],
         emoji: "🐑"
+    },
+    {
+    name: "Nuer",
+    region: "africa",
+    location: "South Sudan and Ethiopia",
+    description: "Tall cattle herders who measure wealth and status through cattle ownership, known for ritual scarification, age-set systems, and their resistance to colonial rule.",
+    tags: ["Cattle wealth", "Ritual scars", "Age-sets"],
+    emoji: "🐄"
+    },
+    {
+        name: "Maasai Mara",
+        region: "africa",
+        location: "Kenya and Tanzania border region",
+        description: "Subset of the Maasai people specifically from the famous Masai Mara ecosystem, maintaining traditional pastoralism alongside wildlife conservation.",
+        tags: ["Wildlife coexistence", "Traditional pastoralism", "Conservation"],
+        emoji: "🦒"
+    },
+    {
+        name: "Herero",
+        region: "africa",
+        location: "Namibia and Botswana",
+        description: "Pastoralists known for their distinctive Victorian-era dress adopted after German colonization, elaborate funeral ceremonies, and survival of genocide.",
+        tags: ["Victorian dress", "Genocide survivors", "Funeral ceremonies"],
+        emoji: "👗"
+    },
+    {
+        name: "Bambuti",
+        region: "africa",
+        location: "Ituri Forest, Democratic Republic of Congo",
+        description: "Forest-dwelling Pygmy people with incredible hunting skills using nets and spears, polyphonic music traditions, and deep knowledge of medicinal plants.",
+        tags: ["Net hunting", "Polyphonic music", "Forest medicine"],
+        emoji: "🕷️"
+    },
+    {
+        name: "Oromo",
+        region: "africa",
+        location: "Ethiopia and Kenya",
+        description: "Ethiopia's largest ethnic group with the ancient Gadaa democratic system, known for their coffee cultivation origins and traditional Oromo calendar.",
+        tags: ["Gadaa democracy", "Coffee origins", "Traditional calendar"],
+        emoji: "☕"
+    },
+    {
+        name: "Shona",
+        region: "africa",
+        location: "Zimbabwe and Mozambique",
+        description: "Builders of the Great Zimbabwe stone city, known for their mbira thumb piano music, stone carving traditions, and ancestral spirit mediums (svikiro).",
+        tags: ["Great Zimbabwe", "Mbira music", "Spirit mediums"],
+        emoji: "🏛️"
+    },
+    {
+        name: "Xhosa",
+        region: "africa",
+        location: "Eastern Cape, South Africa",
+        description: "Bantu people known for their click consonants, traditional beadwork, initiation ceremonies, and being Nelson Mandela's ethnic group.",
+        tags: ["Click language", "Beadwork", "Mandela's people"],
+        emoji: "👨"
+    },
+    {
+        name: "Pokot",
+        region: "africa",
+        location: "Kenya and Uganda border",
+        description: "Pastoralists and agriculturalists known for their elaborate body decoration, cattle raiding traditions, and seasonal migration patterns.",
+        tags: ["Body decoration", "Cattle raiding", "Seasonal migration"],
+        emoji: "🎨"
+    },
+    {
+        name: "Mossi",
+        region: "africa",
+        location: "Burkina Faso",
+        description: "West African kingdom builders known for their Mogho Naaba (emperor) traditions, elaborate mask festivals, and resistance to Islamic conversion.",
+        tags: ["Kingdom builders", "Mask festivals", "Islamic resistance"],
+        emoji: "👑"
+    },
+    {
+        name: "Sukuma",
+        region: "africa",
+        location: "Northern Tanzania",
+        description: "Tanzania's largest ethnic group known for their traditional snake dances, cotton cultivation, and elaborate coming-of-age ceremonies.",
+        tags: ["Snake dances", "Cotton cultivation", "Coming-of-age"],
+        emoji: "🐍"
+    },
+    {
+        name: "Lobi",
+        region: "africa",
+        location: "Burkina Faso, Ghana, Ivory Coast",
+        description: "Known for their fortress-like adobe houses, wooden sculpture traditions, and maintaining animistic beliefs despite outside religious pressure.",
+        tags: ["Fortress houses", "Wooden sculptures", "Animistic beliefs"],
+        emoji: "🏠"
+    },
+    {
+        name: "Turkana",
+        region: "africa",
+        location: "Northern Kenya",
+        description: "Nomadic pastoralists living in one of the world's harshest environments, known for their elaborate jewelry, cattle culture, and adaptation to extreme heat.",
+        tags: ["Desert nomads", "Elaborate jewelry", "Extreme heat"],
+        emoji: "🌵"
+    },
+    {
+        name: "Afar",
+        region: "africa",
+        location: "Afar Triangle, Ethiopia/Eritrea/Djibouti",
+        description: "Salt miners living in one of Earth's hottest places, known for extracting salt from ancient lake beds and trading camel caravans across the desert.",
+        tags: ["Salt mining", "Hottest place", "Camel caravans"],
+        emoji: "🧂"
+    },
+    {
+        name: "Beja",
+        region: "africa",
+        location: "Eastern Sudan, Egypt, Eritrea",
+        description: "Nomadic camel herders of the Red Sea Hills, speaking Cushitic languages and known for their traditional sword dances and distinctive hair styles.",
+        tags: ["Camel herders", "Sword dances", "Cushitic language"],
+        emoji: "🐪"
+    },
+    {
+        name: "Luba",
+        region: "africa",
+        location: "Democratic Republic of Congo",
+        description: "Central African kingdom builders known for their sophisticated political systems, intricate wood carvings, and elaborate royal investiture ceremonies.",
+        tags: ["Kingdom builders", "Wood carvings", "Royal ceremonies"],
+        emoji: "👑"
+    },
+    {
+        name: "Serer",
+        region: "africa",
+        location: "Senegal and Gambia",
+        description: "Farmers and astronomers known for their complex Serer calendar, traditional wrestling (laamb), and resistance to Islamic conversion for centuries.",
+        tags: ["Serer calendar", "Traditional wrestling", "Astronomers"],
+        emoji: "⭐"
+    },
+    {
+        name: "Tonga",
+        region: "africa",
+        location: "Zambia and Zimbabwe",
+        description: "River people of the Zambezi known for their fishing traditions, distinctive pottery, and displacement by the Kariba Dam construction.",
+        tags: ["River fishing", "Distinctive pottery", "Dam displacement"],
+        emoji: "🎣"
+    },
+    {
+        name: "Baggara",
+        region: "africa",
+        location: "Chad, Sudan, Central African Republic",
+        description: "Arab-African cattle nomads known for their horsemanship, elaborate tent decorations, and traditional camel racing competitions.",
+        tags: ["Cattle nomads", "Horsemanship", "Camel racing"],
+        emoji: "🏇"
+    },
+    {
+        name: "Batwa",
+        region: "africa",
+        location: "Uganda, Rwanda, Burundi, Eastern DRC",
+        description: "Forest-dwelling Pygmy people, original inhabitants of the Great Lakes region, known for their pottery, hunting skills, and marginalization from their ancestral forests.",
+        tags: ["Original inhabitants", "Pottery makers", "Forest displaced"],
+        emoji: "🏺"
+    },
+    {
+        name: "Khoikhoi",
+        region: "africa",
+        location: "South Africa and Namibia",
+        description: "Pastoralists known as 'Hottentots' by colonizers, famous for their click languages, cattle herding, and being among the first to encounter European settlers.",
+        tags: ["Click languages", "Cattle herders", "First contact"],
+        emoji: "🐂"
     }
 ];
 
