@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>About the Indigenous Peoples Repository | Global First Nations</title>
+    <meta name="description" content="Learn about our mission to document, celebrate, and preserve the knowledge of indigenous cultures worldwide through respectful research and indigenous-led collaboration.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.globalfirstnations.com/about">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+    
+    <!-- Mobile Optimizations -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="About IPR">
+    <meta name="application-name" content="Indigenous Repository">
+    <meta name="theme-color" content="#2c5530">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical above-the-fold CSS */
+        :root {
+            /* Earth-inspired universal palette */
+            --forest-green: #2c5530;
+            --earth-brown: #8b4513;
+            --sky-blue: #87ceeb;
+            --sunset-orange: #ff6b35;
+            --sage-green: #9caf88;
+            --sand-beige: #f4e4c1;
+            --ocean-teal: #008b8b;
+            --mountain-purple: #663399;
+            --clay-red: #b85450;
+            --stone-gray: #696969;
+            
+            /* Semantic colors */
+            --primary: var(--forest-green);
+            --secondary: var(--earth-brown);
+            --accent: var(--sunset-orange);
+            --text: #2c3e50;
+            --text-light: #5a6c7d;
+            --bg: #ffffff;
+            --bg-light: #f8f9fa;
+            --border: #e0e0e0;
+            
+            /* Typography */
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --font-display: Georgia, 'Times New Roman', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            align-items: center;
+            height: 70px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        nav li:first-child a {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+            font-weight: 500;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--ocean-teal) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            opacity: 0.95;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: var(--text);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* Mission Cards */
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .mission-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .mission-card h3 {
+            color: var(--primary);
+            margin: 0 0 0.5rem;
+        }
+
+        .mission-card p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Values Section */
+        .values {
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.05) 0%, rgba(0, 139, 139, 0.05) 100%);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            text-align: center;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--ocean-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        /* Team Section */
+        .team {
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--sage-green), var(--ocean-teal));
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section h2::after {
+            display: none;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-height: 48px;
+        }
+
+        .cta-button-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        footer .container {
+            padding: 0 2rem;
+        }
+
+        footer nav {
+            position: static;
+            background: transparent;
+            height: auto;
+            text-align: center;
+            box-shadow: none;
+            border: none;
+        }
+
+        footer h3 {
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        footer li {
+            display: inline-block;
+            margin: 0 1rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: var(--sage-green);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Lists */
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Links */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: auto;
+            margin-right: 1rem;
+            min-width: 48px;
+            min-height: 48px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            /* Safe area for iOS */
+            body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+
+            /* Mobile Navigation */
+            nav {
+                padding: 0;
+                height: 60px;
+                display: flex;
+                align-items: center;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem 1rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                height: calc(100vh - 60px);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                transform: translateX(0);
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid var(--border);
+                font-size: 1.1rem;
+                min-height: 48px;
+            }
+
+            nav li:first-child a {
+                padding: 1rem 1.5rem;
+                position: relative;
+                z-index: 10;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            /* Content adjustments */
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .mission-cards,
+            .values-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            /* Footer mobile */
+            footer .container {
+                padding: 0 1rem;
+            }
+
+            footer nav ul {
+                position: static;
+                transform: none;
+                flex-direction: column;
+                padding: 0;
+                background: transparent;
+                height: auto;
+                box-shadow: none;
+            }
+
+            footer li {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            footer nav a {
+                border-bottom: none;
+                padding: 0.5rem 0;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .mission-card:hover,
+            .cta-button:hover {
+                transform: none;
+            }
+
+            a:active, button:active {
+                opacity: 0.7;
+            }
+        }
+
+        /* Accessibility */
+        :focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 5px 0;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+    </style>
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About the Indigenous Peoples Repository">
+    <meta property="og:description" content="Our mission to document, celebrate, and preserve the knowledge of indigenous cultures worldwide through respectful research.">
+    <meta property="og:image" content="https://www.globalfirstnations.com/images/og-about.jpg">
+    <meta property="og:url" content="https://www.globalfirstnations.com/about">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About the Indigenous Peoples Repository">
+    <meta name="twitter:description" content="Our mission to document, celebrate, and preserve the knowledge of indigenous cultures worldwide.">
+    <meta name="twitter:image" content="https://www.globalfirstnations.com/images/twitter-about.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About the Indigenous Peoples Repository",
+        "description": "Learn about our mission to document and celebrate indigenous cultures worldwide",
+        "url": "https://www.globalfirstnations.com/about",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Indigenous Peoples Repository",
+            "alternateName": "Global First Nations",
+            "url": "https://www.globalfirstnations.com",
+            "logo": "https://www.globalfirstnations.com/logo.png",
+            "foundingDate": "2024",
+            "mission": "To document, celebrate, and preserve the knowledge of indigenous cultures worldwide through respectful research and indigenous-led collaboration.",
+            "sameAs": [
+                "https://www.twitter.com/globalfirstnations",
+                "https://www.facebook.com/globalfirstnations"
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <ul id="mobile-menu">
+            <li><a href="/">Indigenous Peoples</a></li>
+            <li><a href="/peoples">All Peoples</a></li>
+            <li><a href="/regions">Regions</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contribute">Contribute</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span aria-hidden="true">☰</span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About This Project</h1>
+            <p class="hero-subtitle">Documenting and celebrating the world's indigenous cultures with respect, accuracy, and collaboration</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Mission Section -->
+        <section class="mission">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p class="lead">The Indigenous Peoples Repository exists to create a comprehensive, respectful, and accessible resource that celebrates the diversity, resilience, and continuing vitality of indigenous cultures worldwide.</p>
+                
+                <div class="mission-cards">
+                    <div class="mission-card">
+                        <div class="mission-card-icon">📚</div>
+                        <h3>Document</h3>
+                        <p>Preserve and share accurate information about indigenous peoples, their histories, languages, and cultural practices.</p>
+                    </div>
+                    
+                    <div class="mission-card">
+                        <div class="mission-card-icon">🤝</div>
+                        <h3>Collaborate</h3>
+                        <p>Work directly with indigenous communities to ensure authentic representation and support self-determination.</p>
+                    </div>
+                    
+                    <div class="mission-card">
+                        <div class="mission-card-icon">🌱</div>
+                        <h3>Educate</h3>
+                        <p>Foster understanding and respect for indigenous cultures while combating stereotypes and misinformation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values">
+            <div class="container">
+                <h2>Our Values</h2>
+                
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">🎯</div>
+                        <h3>Cultural Respect</h3>
+                        <p>Every piece of content is created with deep respect for the cultures represented, avoiding stereotypes and honoring indigenous perspectives.</p>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">✊</div>
+                        <h3>Self-Determination</h3>
+                        <p>We amplify indigenous voices and link exclusively to indigenous-led organizations, supporting sovereignty and self-representation.</p>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">🔬</div>
+                        <h3>Accuracy</h3>
+                        <p>All information is thoroughly researched from reputable sources, with a commitment to factual accuracy and regular updates.</p>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">🌍</div>
+                        <h3>Accessibility</h3>
+                        <p>Free, open access to information with mobile-optimized design ensures knowledge reaches everyone, everywhere.</p>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">🎨</div>
+                        <h3>Living Cultures</h3>
+                        <p>We present indigenous peoples as vibrant, contemporary communities, not relics of the past.</p>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-icon">🔄</div>
+                        <h3>Continuous Learning</h3>
+                        <p>We remain open to feedback and correction, continuously improving our content and approach.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section class="approach">
+            <div class="container">
+                <h2>Our Approach</h2>
+                
+                <h3>Research Methodology</h3>
+                <p>Each indigenous group page undergoes extensive research using:</p>
+                <ul>
+                    <li>Academic sources and peer-reviewed publications</li>
+                    <li>Indigenous-authored materials and firsthand accounts</li>
+                    <li>Government census data and UN statistics</li>
+                    <li>Verified cultural organizations and museums</li>
+                    <li>Recent news and contemporary sources (within 5 years)</li>
+                </ul>
+                
+                <h3>Design Philosophy</h3>
+                <p>Every page features culturally-inspired design elements that honor each group's artistic traditions while maintaining accessibility and performance standards. Colors, patterns, and visual elements are carefully chosen to reflect cultural significance without appropriation.</p>
+                
+                <h3>Content Standards</h3>
+                <ul>
+                    <li><strong>Present Tense:</strong> We discuss living cultures in the present tense</li>
+                    <li><strong>Balanced Perspective:</strong> Including both historical challenges and contemporary achievements</li>
+                    <li><strong>Named Individuals:</strong> Highlighting specific people and their contributions</li>
+                    <li><strong>Multiple Voices:</strong> Incorporating diverse perspectives within communities</li>
+                    <li><strong>Regular Updates:</strong> Keeping information current and relevant</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact">
+            <div class="container">
+                <h2>Our Impact</h2>
+                <p class="lead">By creating this repository, we aim to:</p>
+                
+                <ul>
+                    <li>Combat misinformation and stereotypes about indigenous peoples</li>
+                    <li>Provide educational resources for students, researchers, and the general public</li>
+                    <li>Support indigenous-led organizations through increased visibility</li>
+                    <li>Preserve and share knowledge about endangered languages and traditions</li>
+                    <li>Foster cross-cultural understanding and respect</li>
+                    <li>Create a model for ethical cultural documentation</li>
+                </ul>
+                
+                <h3>Current Coverage</h3>
+                <p>The repository currently documents over 1,200 indigenous groups across six continents, with each entry providing in-depth information about culture, history, language, and contemporary life. Our goal is to expand this coverage while deepening the quality of existing entries.</p>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team">
+            <div class="container">
+                <h2>Contributors</h2>
+                <p class="lead">This project is maintained by a dedicated team of researchers, developers, and cultural consultants committed to ethical documentation.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-avatar">👥</div>
+                        <h3>Research Team</h3>
+                        <p>Anthropologists and historians ensuring cultural accuracy</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="team-avatar">💻</div>
+                        <h3>Technical Team</h3>
+                        <p>Developers creating accessible, performant web experiences</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="team-avatar">🌏</div>
+                        <h3>Cultural Advisors</h3>
+                        <p>Indigenous consultants guiding respectful representation</p>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 2rem;">
+                    <a href="/contribute">Learn how you can contribute →</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Acknowledgments Section -->
+        <section class="acknowledgments">
+            <div class="container">
+                <h2>Land Acknowledgment</h2>
+                <p>We acknowledge that this digital repository exists on servers powered by infrastructure built on indigenous lands worldwide. We recognize and respect the traditional territories of all indigenous peoples and commit to supporting their sovereignty and self-determination.</p>
+                
+                <h3>Special Thanks</h3>
+                <p>We extend our gratitude to:</p>
+                <ul>
+                    <li>Indigenous communities who have shared their knowledge and stories</li>
+                    <li>Cultural organizations providing guidance and resources</li>
+                    <li>Academic institutions supporting ethical research practices</li>
+                    <li>Individual contributors who help keep information accurate and current</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Get Involved</h2>
+                <p>Help us build a more complete and accurate repository of the world's indigenous cultures</p>
+                <div class="cta-buttons">
+                    <a href="/contribute" class="cta-button cta-button-primary">Contribute Knowledge</a>
+                    <a href="mailto:info@play4tomorrow.com?subject=Indigenous%20Repository%20Support" class="cta-button cta-button-secondary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <nav aria-label="Footer navigation">
+                <h3>Explore More</h3>
+                <ul>
+                    <li><a href="/peoples">All Indigenous Peoples</a></li>
+                    <li><a href="/regions">Browse by Region</a></li>
+                    <li><a href="/languages">Language Families</a></li>
+                    <li><a href="/resources">Educational Resources</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2024 Indigenous Peoples Repository. An open educational resource dedicated to cultural preservation and respect.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (!menuToggle || !mobileMenu) return;
+            
+            function toggleMenu(open) {
+                mobileMenu.classList.toggle('active', open);
+                menuToggle.setAttribute('aria-expanded', open);
+                document.body.style.overflow = open ? 'hidden' : '';
+            }
+            
+            // Toggle menu on button click
+            menuToggle.addEventListener('click', () => toggleMenu(mobileMenu.classList.contains('active') ? false : true));
+            
+            // Close menu when clicking links or pressing Escape
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') toggleMenu(false);
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) toggleMenu(false);
+            });
+        });
+    </script>
+</body>
+</html>
