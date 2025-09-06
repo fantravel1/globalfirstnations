@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Contribute to the Indigenous Peoples Repository | Global First Nations</title>
+    <meta name="description" content="Learn how to contribute knowledge, corrections, and resources to help build a comprehensive and respectful repository of indigenous cultures worldwide.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.globalfirstnations.com/contribute">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+    
+    <!-- Mobile Optimizations -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" name="Contribute">
+    <meta name="application-name" content="Indigenous Repository">
+    <meta name="theme-color" content="#2c5530">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical above-the-fold CSS */
+        :root {
+            /* Earth-inspired universal palette */
+            --forest-green: #2c5530;
+            --earth-brown: #8b4513;
+            --sky-blue: #87ceeb;
+            --sunset-orange: #ff6b35;
+            --sage-green: #9caf88;
+            --sand-beige: #f4e4c1;
+            --ocean-teal: #008b8b;
+            --mountain-purple: #663399;
+            --clay-red: #b85450;
+            --stone-gray: #696969;
+            
+            /* Semantic colors */
+            --primary: var(--forest-green);
+            --secondary: var(--earth-brown);
+            --accent: var(--sunset-orange);
+            --text: #2c3e50;
+            --text-light: #5a6c7d;
+            --bg: #ffffff;
+            --bg-light: #f8f9fa;
+            --border: #e0e0e0;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            
+            /* Typography */
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --font-display: Georgia, 'Times New Roman', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            align-items: center;
+            height: 70px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        nav li:first-child a {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+            font-weight: 500;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--ocean-teal) 0%, var(--sage-green) 100%);
+            color: white;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h50v50H0zM50 50h50v50H50z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            opacity: 0.95;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: var(--text);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* Contribution Cards */
+        .contribution-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contribution-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .contribution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .contribution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contribution-card h3 {
+            color: var(--primary);
+            margin: 0 0 0.5rem;
+        }
+
+        .contribution-card p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Guidelines Section */
+        .guidelines {
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.03) 0%, rgba(0, 139, 139, 0.03) 100%);
+        }
+
+        .guideline-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .guideline-box h3 {
+            margin-top: 0;
+        }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .do-section, .dont-section {
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .do-section {
+            background: rgba(40, 167, 69, 0.1);
+            border: 2px solid var(--success);
+        }
+
+        .dont-section {
+            background: rgba(220, 53, 69, 0.1);
+            border: 2px solid var(--danger);
+        }
+
+        .do-section h4 {
+            color: var(--success);
+        }
+
+        .dont-section h4 {
+            color: var(--danger);
+        }
+
+        /* Process Steps */
+        .process-steps {
+            margin: 3rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-right: 1.5rem;
+        }
+
+        .step-content h4 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            margin-bottom: 0;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--bg-light);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .required {
+            color: var(--danger);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .submit-button {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-height: 48px;
+        }
+
+        .submit-button:hover {
+            background: var(--forest-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 2px solid transparent;
+        }
+
+        .alert-info {
+            background: rgba(13, 202, 240, 0.1);
+            border-color: #0dcaf0;
+            color: #055160;
+        }
+
+        .alert-warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-color: var(--warning);
+            color: #664d03;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            display: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section h2::after {
+            display: none;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        footer .container {
+            padding: 0 2rem;
+        }
+
+        footer nav {
+            position: static;
+            background: transparent;
+            height: auto;
+            text-align: center;
+            box-shadow: none;
+            border: none;
+        }
+
+        footer h3 {
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        footer li {
+            display: inline-block;
+            margin: 0 1rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: var(--sage-green);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Lists */
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: auto;
+            margin-right: 1rem;
+            min-width: 48px;
+            min-height: 48px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            /* Safe area for iOS */
+            body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+
+            /* Mobile Navigation */
+            nav {
+                padding: 0;
+                height: 60px;
+                display: flex;
+                align-items: center;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem 1rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                height: calc(100vh - 60px);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                transform: translateX(0);
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid var(--border);
+                font-size: 1.1rem;
+                min-height: 48px;
+            }
+
+            nav li:first-child a {
+                padding: 1rem 1.5rem;
+                position: relative;
+                z-index: 10;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            /* Content adjustments */
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .contribution-types,
+            .do-dont-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            /* Footer mobile */
+            footer .container {
+                padding: 0 1rem;
+            }
+
+            footer nav ul {
+                position: static;
+                transform: none;
+                flex-direction: column;
+                padding: 0;
+                background: transparent;
+                height: auto;
+                box-shadow: none;
+            }
+
+            footer li {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            footer nav a {
+                border-bottom: none;
+                padding: 0.5rem 0;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /* Accessibility */
+        :focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 5px 0;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+    </style>
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contribute to the Indigenous Peoples Repository">
+    <meta property="og:description" content="Help build a comprehensive and respectful repository of indigenous cultures worldwide through contributions and collaboration.">
+    <meta property="og:image" content="https://www.globalfirstnations.com/images/og-contribute.jpg">
+    <meta property="og:url" content="https://www.globalfirstnations.com/contribute">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contribute to the Indigenous Peoples Repository">
+    <meta name="twitter:description" content="Help build a comprehensive and respectful repository of indigenous cultures worldwide.">
+    <meta name="twitter:image" content="https://www.globalfirstnations.com/images/twitter-contribute.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Contribute to the Indigenous Peoples Repository",
+        "description": "Guidelines and process for contributing to the indigenous cultures documentation project",
+        "url": "https://www.globalfirstnations.com/contribute",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.globalfirstnations.com"
+            },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contribute",
+                "item": "https://www.globalfirstnations.com/contribute"
+            }]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main" class="skip-to-content">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <ul id="mobile-menu">
+            <li><a href="/">Indigenous Peoples</a></li>
+            <li><a href="/peoples">All Peoples</a></li>
+            <li><a href="/regions">Regions</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contribute">Contribute</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span aria-hidden="true">☰</span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Contribute to Our Mission</h1>
+            <p class="hero-subtitle">Help us build a comprehensive, accurate, and respectful repository of the world's indigenous cultures</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Introduction Section -->
+        <section class="intro">
+            <div class="container">
+                <h2>Your Knowledge Matters</h2>
+                <p class="lead">The Indigenous Peoples Repository thrives on collaborative knowledge-sharing. Whether you're a member of an indigenous community, a researcher, educator, or someone passionate about cultural preservation, your contributions help create a more complete and accurate resource.</p>
+                
+                <div class="alert alert-info">
+                    <strong>Priority:</strong> We especially welcome contributions from indigenous community members who can share firsthand knowledge and ensure authentic representation of their cultures.
+                </div>
+            </div>
+        </section>
+
+        <!-- Ways to Contribute -->
+        <section class="ways-to-contribute">
+            <div class="container">
+                <h2>Ways to Contribute</h2>
+                
+                <div class="contribution-types">
+                    <div class="contribution-card">
+                        <div class="contribution-icon">📝</div>
+                        <h3>Content Creation</h3>
+                        <p>Write or expand articles about indigenous groups, especially those currently underrepresented in our repository.</p>
+                    </div>
+                    
+                    <div class="contribution-card">
+                        <div class="contribution-icon">✏️</div>
+                        <h3>Corrections & Updates</h3>
+                        <p>Help us maintain accuracy by reporting errors, outdated information, or suggesting improvements to existing content.</p>
+                    </div>
+                    
+                    <div class="contribution-card">
+                        <div class="contribution-icon">🌐</div>
+                        <h3>Translations</h3>
+                        <p>Translate content to make it accessible in indigenous languages or other widely spoken languages.</p>
+                    </div>
+                    
+                    <div class="contribution-card">
+                        <div class="contribution-icon">📸</div>
+                        <h3>Media Resources</h3>
+                        <p>Share culturally appropriate images, maps, or diagrams with proper permissions and context.</p>
+                    </div>
+                    
+                    <div class="contribution-card">
+                        <div class="contribution-icon">🔗</div>
+                        <h3>Resource Links</h3>
+                        <p>Suggest indigenous-led organizations, cultural centers, or educational resources for inclusion.</p>
+                    </div>
+                    
+                    <div class="contribution-card">
+                        <div class="contribution-icon">🔍</div>
+                        <h3>Fact Checking</h3>
+                        <p>Review existing content for accuracy, especially if you have expertise in specific cultures or regions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guidelines Section -->
+        <section class="guidelines">
+            <div class="container">
+                <h2>Contribution Guidelines</h2>
+                
+                <div class="guideline-box">
+                    <h3>Cultural Sensitivity</h3>
+                    <p>All contributions must respect the dignity, privacy, and self-determination of indigenous peoples. We do not accept content that:</p>
+                    <ul>
+                        <li>Perpetuates stereotypes or presents cultures as "exotic"</li>
+                        <li>Shares sacred or restricted knowledge without proper authorization</li>
+                        <li>Uses outdated or offensive terminology</li>
+                        <li>Presents indigenous peoples only in historical context</li>
+                    </ul>
+                </div>
+
+                <div class="do-dont-grid">
+                    <div class="do-section">
+                        <h4>✅ DO</h4>
+                        <ul>
+                            <li>Use present tense for living cultures</li>
+                            <li>Cite reputable sources</li>
+                            <li>Include contemporary information</li>
+                            <li>Respect indigenous naming preferences</li>
+                            <li>Highlight achievements and resilience</li>
+                            <li>Defer to indigenous voices</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dont-section">
+                        <h4>❌ DON'T</h4>
+                        <ul>
+                            <li>Use past tense for living peoples</li>
+                            <li>Share unverified information</li>
+                            <li>Focus only on "traditional" aspects</li>
+                            <li>Use colonial or outdated names</li>
+                            <li>Romanticize or victimize</li>
+                            <li>Speak on behalf of communities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="guideline-box">
+                    <h3>Content Standards</h3>
+                    <ul>
+                        <li><strong>Accuracy:</strong> All facts must be verifiable through reputable sources</li>
+                        <li><strong>Objectivity:</strong> Present balanced perspectives without bias</li>
+                        <li><strong>Comprehensiveness:</strong> Include historical and contemporary information</li>
+                        <li><strong>Accessibility:</strong> Write clearly for a general audience</li>
+                        <li><strong>Attribution:</strong> Properly credit all sources and contributors</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process">
+            <div class="container">
+                <h2>How to Submit Contributions</h2>
+                
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Prepare Your Contribution</h4>
+                            <p>Gather your information, verify facts, and ensure you have proper permissions for any media. Review our guidelines to ensure your contribution meets our standards.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Submit Via Form or Email</h4>
+                            <p>Use the form below for smaller contributions or email larger submissions to <a href="mailto:info@play4tomorrow.com?subject=Indigenous%20Repository%20Contribution">info@play4tomorrow.com</a> with "Indigenous Repository Contribution" in the subject line.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Review Process</h4>
+                            <p>Our team will review your submission for accuracy, cultural sensitivity, and alignment with our mission. This typically takes 5-10 business days.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Publication or Feedback</h4>
+                            <p>If approved, your contribution will be published with proper attribution. If revisions are needed, we'll provide constructive feedback.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>Note:</strong> For substantial contributions like complete indigenous group profiles, please email us first to discuss the scope and avoid duplication of effort.
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="container">
+                <h2>Quick Contribution Form</h2>
+                <p class="lead" style="text-align: center;">For corrections, updates, or small additions</p>
+                
+                <form class="contact-form" action="mailto:info@play4tomorrow.com?subject=Repository%20Contribution" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Your Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="affiliation">Affiliation (if applicable)</label>
+                        <input type="text" id="affiliation" name="affiliation" placeholder="Organization, institution, or community">
+                        <p class="form-note">Please indicate if you are a member of the indigenous group you're writing about</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contribution-type">Type of Contribution <span class="required">*</span></label>
+                        <select id="contribution-type" name="contribution-type" required>
+                            <option value="">Select a type</option>
+                            <option value="new-content">New Content</option>
+                            <option value="correction">Correction/Update</option>
+                            <option value="translation">Translation</option>
+                            <option value="resources">Resource Links</option>
+                            <option value="media">Media/Images</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="indigenous-group">Indigenous Group/Topic <span class="required">*</span></label>
+                        <input type="text" id="indigenous-group" name="indigenous-group" required placeholder="Which indigenous group or topic does this relate to?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contribution">Your Contribution <span class="required">*</span></label>
+                        <textarea id="contribution" name="contribution" required placeholder="Please provide your contribution, correction, or suggestion here..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sources">Sources/References</label>
+                        <textarea id="sources" name="sources" placeholder="Please list any sources, references, or permissions for your contribution"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="permission" value="yes" required>
+                            I confirm that this information is accurate to the best of my knowledge and that I have permission to share any included content <span class="required">*</span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="attribution" value="yes">
+                            I would like to be credited for this contribution
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Submit Contribution</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Who can contribute?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Anyone with accurate, respectful information about indigenous cultures can contribute. We especially encourage contributions from indigenous community members, scholars, educators, and cultural organizations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        How do you verify information?
+                    </div>
+                    <div class="faq-answer">
+                        <p>All contributions are reviewed by our team and, when possible, verified with indigenous community members or cultural experts. We cross-reference information with academic sources and indigenous-led organizations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Can I contribute in languages other than English?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We welcome contributions in any language, especially indigenous languages. Please indicate the language in your submission, and we'll work on appropriate translation and presentation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        What about sensitive or sacred information?
+                    </div>
+                    <div class="faq-answer">
+                        <p>We respect that some knowledge is not meant to be shared publicly. Never submit sacred, ceremonial, or restricted information without explicit permission from the appropriate cultural authorities. When in doubt, leave it out.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        How are contributors credited?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Contributors who wish to be credited will be acknowledged on the relevant pages and in our contributors section. You can choose to be credited by name, initials, or organization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Your contribution helps preserve and share the rich diversity of indigenous cultures for current and future generations.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <nav aria-label="Footer navigation">
+                <h3>Explore More</h3>
+                <ul>
+                    <li><a href="/peoples">All Indigenous Peoples</a></li>
+                    <li><a href="/regions">Browse by Region</a></li>
+                    <li><a href="/about">About This Project</a></li>
+                    <li><a href="/resources">Educational Resources</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2024 Indigenous Peoples Repository. An open educational resource dedicated to cultural preservation and respect.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (!menuToggle || !mobileMenu) return;
+            
+            function toggleMenu(open) {
+                mobileMenu.classList.toggle('active', open);
+                menuToggle.setAttribute('aria-expanded', open);
+                document.body.style.overflow = open ? 'hidden' : '';
+            }
+            
+            // Toggle menu on button click
+            menuToggle.addEventListener('click', () => toggleMenu(mobileMenu.classList.contains('active') ? false : true));
+            
+            // Close menu when clicking links or pressing Escape
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') toggleMenu(false);
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) toggleMenu(false);
+            });
+        });
+        
+        // FAQ toggle functionality
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isOpen = answer.style.display === 'block';
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+            document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('open'));
+            
+            // Toggle current FAQ
+            if (!isOpen) {
+                answer.style.display = 'block';
+                element.classList.add('open');
+                element.setAttribute('aria-expanded', 'true');
+                // Change + to -
+                element.style.setProperty('content', '"-"');
+            } else {
+                answer.style.display = 'none';
+                element.classList.remove('open');
+                element.setAttribute('aria-expanded', 'false');
+            }
+        }
+        
+        // Update FAQ question pseudo element when open
+        const style = document.createElement('style');
+        style.innerHTML = '.faq-question.open::after { content: "-" !important; }';
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
