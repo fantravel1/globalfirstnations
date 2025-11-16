@@ -1,0 +1,9 @@
+{
+  "id": "rapanui",
+  "name": "Rapa Nui",
+  "location": {"region": "oceania", "countries": ["Chile (Easter Island)"]},
+  "demographics": {"population": "~7,750", "language": {"name": "Rapa Nui", "family": "Austronesian (Polynesian)"}},
+  "culturalIdentity": {"icon": "🗿", "knownFor": "Moai statues, Remote island culture, Rongorongo script, Birdman cult, Environmental collapse theory"},
+  "content": {"introduction": {"whoTheyAre": "The Rapa Nui are the indigenous Polynesian people of Easter Island (Rapa Nui), one of the most remote inhabited islands on Earth. Famous for creating massive stone moai statues (nearly 900 figures, some weighing 80+ tons), the Rapa Nui developed a unique culture in isolation. Following ecological collapse, slave raids, and disease that devastated the population to near-extinction in the 19th century, Rapa Nui culture is experiencing revival, though tensions with Chilean government over land rights continue."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

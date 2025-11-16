@@ -1,0 +1,63 @@
+{
+  "id": "san",
+  "name": "San (Bushmen)",
+  "alternateNames": ["Bushmen", "Basarwa", "!Kung", "Ju/'hoansi"],
+  
+  "location": {
+    "region": "africa",
+    "subregion": "southern_africa",
+    "countries": ["Botswana", "Namibia", "South Africa", "Angola", "Zimbabwe"],
+    "coordinates": {"lat": -22.0, "lng": 22.0}
+  },
+  
+  "demographics": {
+    "population": "~100,000",
+    "populationYear": 2020,
+    "language": {
+      "name": "Khoisan languages (multiple)",
+      "family": "Khoisan",
+      "speakers": "~80,000",
+      "status": "Endangered - multiple distinct languages"
+    }
+  },
+  
+  "culturalIdentity": {
+    "icon": "🏹",
+    "primaryColor": "#D2691E",
+    "secondaryColor": "#F4A460",
+    "dwelling": "Traditional shelters (grass/branch), Modern settlements",
+    "livelihood": "Traditional: Hunter-gatherers; Modern: Mixed/marginalized",
+    "knownFor": "Oldest human culture, Click languages, Rock art, Tracking skills, Egalitarian society",
+    "dietaryNotes": "Traditional: Wild game, gathered plants, tubers; varies by region"
+  },
+  
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The San, also called Bushmen (though this term is considered derogatory by some), are the indigenous hunter-gatherer peoples of Southern Africa, representing one of the oldest continuous cultures on Earth. Genetic studies suggest San peoples have lived in Southern Africa for at least 20,000 years, possibly much longer. The San comprise multiple distinct groups speaking various Khoisan languages characterized by distinctive click consonants. Despite millennia of cultural continuity, the San face severe marginalization, land loss, and cultural erosion in modern nation-states.",
+      "culturalIdentity": "Traditional San society was characterized by small, mobile bands of 25-50 people organized around kinship. Decision-making was consensus-based with no formal chiefs or hierarchical authority, representing one of humanity's most egalitarian social structures. Gender relations were relatively equal, with both men and women contributing essential resources. The San developed sophisticated ecological knowledge, tracking abilities considered among the best in the world, and sustainable hunting-gathering practices that shaped Southern African ecosystems for millennia.",
+      "funFact": "San trackers can identify individual animals from their footprints, determine how long ago they passed, whether they were injured, and even their emotional state. This extraordinary skill has made San trackers invaluable to conservation efforts, with some working as wildlife rangers using traditional knowledge to combat poaching!"
+    },
+    "history": {
+      "origins": "Archaeological and genetic evidence indicates San peoples are descendants of the earliest human populations in Africa. Rock art sites across Southern Africa, some over 27,000 years old, provide continuous record of San presence and culture. Genetic studies show San populations separated from other human groups approximately 100,000-150,000 years ago, making them among the most genetically diverse and oldest human populations. Their languages, featuring click consonants unique to Southern Africa, represent ancient linguistic heritage predating most world language families.",
+      "colonialImpact": "Expansion of Bantu-speaking agricultural peoples from around 2,000 years ago pushed San into more marginal environments. European colonization from the 17th century brought systematic persecution, land appropriation, and near-genocide in some regions. The San were hunted, enslaved, forcibly removed from lands, and their children taken into servitude. By the 20th century, most San had lost access to traditional hunting territories, forced into sedentary poverty on others' lands or government settlements.",
+      "modernHistory": "Post-colonial governments continued marginalizing San peoples. Many San groups were displaced to create national parks and game reserves, ironically removing indigenous people from lands they had sustainably managed for millennia. The 1990s-2000s saw growing advocacy for San rights, including landmark legal victories like the Botswana High Court's 2006 ruling recognizing San rights to ancestral lands in the Central Kalahari Game Reserve (though implementation remains contested). Today, most San live in poverty on the margins of southern African societies, though cultural revitalization and land rights movements continue."
+    }
+  },
+  
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Bushmen_hunting.jpg/800px-Bushmen_hunting.jpg", "alt": "San hunters with traditional weapons", "caption": "San hunters with traditional bows and arrows demonstrating tracking and hunting skills refined over thousands of years", "credit": "Wikimedia Commons (CC BY-SA 2.0)"}
+  ],
+  
+  "references": [
+    {"type": "book", "authors": ["Lee, Richard B."], "year": 2012, "title": "The Dobe Ju/'hoansi", "publisher": "Wadsworth", "isbn": "978-1111828776"},
+    {"type": "book", "authors": ["Barnard, Alan"], "year": 2019, "title": "Bushmen: Kalahari Hunter-Gatherers and Their Descendants", "publisher": "Cambridge University Press", "isbn": "978-1108481090"}
+  ],
+  
+  "metadata": {
+    "lastUpdated": "2025-01-16",
+    "completionStatus": "complete",
+    "wordCount": 1200,
+    "imageCount": 1,
+    "referenceCount": 2
+  }
+}

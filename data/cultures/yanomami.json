@@ -1,0 +1,9 @@
+{
+  "id": "yanomami",
+  "name": "Yanomami",
+  "location": {"region": "americas", "countries": ["Brazil", "Venezuela"]},
+  "demographics": {"population": "~38,000", "language": {"name": "Yanomaman languages", "family": "Yanomaman"}},
+  "culturalIdentity": {"icon": "🌴", "knownFor": "Amazon rainforest, Communal shabono houses, Face painting, Shamanism, Isolated until recently"},
+  "content": {"introduction": {"whoTheyAre": "The Yanomami are indigenous people inhabiting the Amazon rainforest along the border of Brazil and Venezuela, representing one of the largest relatively isolated indigenous groups in the Americas. Living in circular communal houses (shabonos), practicing slash-and-burn horticulture, and maintaining complex shamanic traditions, the Yanomami face ongoing threats from illegal gold mining, deforestation, and disease. Their situation highlights global conflicts between indigenous rights and resource extraction."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

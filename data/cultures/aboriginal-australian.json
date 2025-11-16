@@ -1,0 +1,9 @@
+{
+  "id": "aboriginal-australian",
+  "name": "Aboriginal Australians",
+  "location": {"region": "oceania", "countries": ["Australia"]},
+  "demographics": {"population": "~798,365", "language": {"name": "250+ Aboriginal languages", "family": "Pama-Nyungan (majority)"}},
+  "culturalIdentity": {"icon": "🪃", "knownFor": "Oldest continuous culture (65,000+ years), Dreamtime, Didgeridoo, Rock art, Boomerang"},
+  "content": {"introduction": {"whoTheyAre": "Aboriginal Australians are the indigenous peoples of mainland Australia, Tasmania, and some adjacent islands, representing the world's oldest continuous culture with over 65,000 years of history. Comprising hundreds of distinct groups with unique languages, traditions, and territories, Aboriginal peoples developed sophisticated land management practices including fire-stick farming, complex kinship systems, and rich spiritual traditions centered on the Dreamtime—the creation period when ancestral beings shaped the land."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

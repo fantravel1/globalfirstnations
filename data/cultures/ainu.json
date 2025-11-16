@@ -1,0 +1,9 @@
+{
+  "id": "ainu",
+  "name": "Ainu",
+  "location": {"region": "asia", "countries": ["Japan", "Russia"]},
+  "demographics": {"population": "~25,000 (self-identified)", "language": {"name": "Ainu", "family": "Language isolate"}},
+  "culturalIdentity": {"icon": "🐻", "knownFor": "Bear worship, Distinct physical features, Oral epics (yukar), Traditional textiles, Indigenous to Japan"},
+  "content": {"introduction": {"whoTheyAre": "The Ainu are the indigenous people of Hokkaido, the Kuril Islands, and Sakhalin. With distinct cultural traditions including bear worship ceremonies, intricate textile patterns, and oral epic poetry (yukar), the Ainu differ linguistically and culturally from ethnic Japanese. Facing centuries of colonization, forced assimilation, and cultural suppression, Ainu were officially recognized as indigenous people of Japan only in 2008. Today, Ainu communities work to revitalize language and cultural practices."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

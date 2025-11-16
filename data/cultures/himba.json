@@ -1,0 +1,9 @@
+{
+  "id": "himba",
+  "name": "Himba",
+  "location": {"region": "africa", "countries": ["Namibia", "Angola"]},
+  "demographics": {"population": "~50,000", "language": {"name": "Otjihimba", "family": "Bantu (Niger-Congo)"}},
+  "culturalIdentity": {"icon": "🪔", "knownFor": "Red ochre body coating, Pastoralism, Traditional dress, Elaborate hairstyles, Cultural preservation"},
+  "content": {"introduction": {"whoTheyAre": "The Himba are semi-nomadic pastoralist people of northern Namibia, known for their distinctive appearance: women and men coat their skin and hair with red ochre mixed with fat, creating a deep red color and protection from the harsh sun. Herding cattle and goats, living in traditional homesteads, and maintaining complex kinship systems, the Himba have largely preserved traditional lifestyles despite modern pressures, making them one of Africa's most photographed and culturally intact pastoral peoples."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

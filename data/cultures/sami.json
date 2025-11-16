@@ -1,0 +1,32 @@
+{
+  "id": "sami",
+  "name": "Sámi",
+  "alternateNames": ["Saami", "Sami", "Laplanders"],
+  "location": {
+    "region": "europe",
+    "countries": ["Norway", "Sweden", "Finland", "Russia"],
+    "coordinates": {"lat": 68.4, "lng": 23.5}
+  },
+  "demographics": {
+    "population": "~80,000-100,000",
+    "language": {
+      "name": "Sámi languages (10 varieties)",
+      "family": "Uralic",
+      "status": "Endangered to vulnerable"
+    }
+  },
+  "culturalIdentity": {
+    "icon": "🦌",
+    "knownFor": "Reindeer herding, Joik singing, Duodji handicrafts, Northern Lights connection, Arctic adaptation"
+  },
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Sámi are the indigenous people of Sápmi, the cultural region spanning northern Norway, Sweden, Finland, and Russia's Kola Peninsula. Known for their traditional reindeer herding, distinctive joik vocal tradition, and colorful traditional dress (gákti), the Sámi represent Europe's only officially recognized indigenous people. Despite centuries of colonization and forced assimilation policies, Sámi culture persists through language revitalization, cultural organizations, and the Sámi parliaments established in Norway, Sweden, and Finland."
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2025-01-16",
+    "completionStatus": "core",
+    "wordCount": 800
+  }
+}
