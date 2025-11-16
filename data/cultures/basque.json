@@ -1,0 +1,9 @@
+{
+  "id": "basque",
+  "name": "Basque",
+  "location": {"region": "europe", "countries": ["Spain", "France"]},
+  "demographics": {"population": "~3,000,000", "language": {"name": "Euskara (Basque)", "family": "Language isolate"}},
+  "culturalIdentity": {"icon": "⚽", "knownFor": "Unique language isolate, Ancient culture, Pelota sport, Strong regional identity, Culinary traditions"},
+  "content": {"introduction": {"whoTheyAre": "The Basque people are an indigenous ethnic group inhabiting the Basque Country region straddling northern Spain and southwestern France. Speaking Euskara, a language unrelated to any other known language (predating Indo-European arrival in Europe), the Basques represent one of Europe's oldest cultures. Known for strong cultural identity, distinctive traditions including pelota (ball game), and world-renowned cuisine, Basques have maintained cultural continuity despite centuries of external pressures."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

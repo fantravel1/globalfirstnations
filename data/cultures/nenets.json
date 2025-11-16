@@ -1,0 +1,9 @@
+{
+  "id": "nenets",
+  "name": "Nenets",
+  "location": {"region": "asia", "countries": ["Russia"]},
+  "demographics": {"population": "~45,000", "language": {"name": "Nenets", "family": "Uralic (Samoyedic)"}},
+  "culturalIdentity": {"icon": "🦌", "knownFor": "Reindeer herding nomads, Arctic Siberia, Chum tents, Longest migration routes, Shamanic traditions"},
+  "content": {"introduction": {"whoTheyAre": "The Nenets are indigenous reindeer herders of the Russian Arctic, inhabiting the tundra of northern Siberia from the White Sea to the Taymyr Peninsula. Leading one of the last great nomadic migrations on Earth, Nenets families move hundreds of miles annually with reindeer herds, living in portable conical tents (chums). Despite Soviet collectivization and ongoing pressures from oil/gas development, many Nenets maintain traditional nomadic lifestyle, representing remarkable adaptation to extreme Arctic conditions."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

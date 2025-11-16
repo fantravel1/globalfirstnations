@@ -1,0 +1,9 @@
+{
+  "id": "yupik",
+  "name": "Yup'ik",
+  "location": {"region": "arctic", "countries": ["United States (Alaska)", "Russia"]},
+  "demographics": {"population": "~34,000", "language": {"name": "Yup'ik", "family": "Eskimo-Aleut"}},
+  "culturalIdentity": {"icon": "🦭", "knownFor": "Arctic hunting, Kayaks, Masks, Subsistence lifestyle, Closely related to Inuit"},
+  "content": {"introduction": {"whoTheyAre": "The Yup'ik are indigenous peoples of western and southwestern Alaska and the Russian Far East, closely related to the Inuit but with distinct cultural traditions. Living in one of Earth's harshest environments, Yup'ik people developed sophisticated subsistence practices including seal hunting, fishing, and gathering. Known for intricate ceremonial masks, kayak construction, and storytelling traditions, Yup'ik communities maintain cultural practices while adapting to climate change and modern economic pressures."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

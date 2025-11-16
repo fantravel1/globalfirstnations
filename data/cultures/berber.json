@@ -1,0 +1,9 @@
+{
+  "id": "berber",
+  "name": "Berber (Amazigh)",
+  "location": {"region": "africa", "countries": ["Morocco", "Algeria", "Tunisia", "Libya", "Mali", "Niger"]},
+  "demographics": {"population": "~30,000,000+", "language": {"name": "Tamazight/Berber languages", "family": "Afro-Asiatic"}},
+  "culturalIdentity": {"icon": "🏜️", "knownFor": "Ancient North African culture, Tifinagh script, Berber carpets, Atlas Mountains, Pre-Arab indigenous people"},
+  "content": {"introduction": {"whoTheyAre": "The Berbers (who call themselves Amazigh, meaning 'free people') are the indigenous peoples of North Africa, predating Arab arrival by thousands of years. Inhabiting areas from Egypt to the Atlantic and from the Mediterranean to the Sahel, Berbers maintained distinct languages (using ancient Tifinagh script), cultural practices, and identities despite successive waves of Phoenician, Roman, Arab, and European influence. Today, Berber cultural revival movements advocate for language rights and cultural recognition."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

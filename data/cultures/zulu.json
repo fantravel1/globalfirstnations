@@ -1,0 +1,9 @@
+{
+  "id": "zulu",
+  "name": "Zulu",
+  "location": {"region": "africa", "countries": ["South Africa", "Zimbabwe", "Zambia"]},
+  "demographics": {"population": "~12,000,000", "language": {"name": "isiZulu", "family": "Bantu (Nguni)"}},
+  "culturalIdentity": {"icon": "🛡️", "knownFor": "Shaka Zulu, Warrior kingdom, Beadwork, Zulu dance, Largest ethnic group in South Africa"},
+  "content": {"introduction": {"whoTheyAre": "The Zulu are a Bantu ethnic group and the largest in South Africa, with over 12 million people. Rising to prominence under King Shaka in the early 19th century, the Zulu Kingdom became a powerful military force with innovative tactics. Known for intricate beadwork (each color and pattern carrying specific meanings), traditional dance, and strong cultural identity, the Zulu played significant roles in South African history including resistance against British colonialism and the anti-apartheid struggle."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

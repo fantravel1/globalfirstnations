@@ -1,0 +1,9 @@
+{
+  "id": "tuareg",
+  "name": "Tuareg",
+  "location": {"region": "africa", "countries": ["Mali", "Niger", "Algeria", "Libya", "Burkina Faso"]},
+  "demographics": {"population": "~2,500,000", "language": {"name": "Tamasheq/Tamajeq", "family": "Berber"}},
+  "culturalIdentity": {"icon": "🐪", "knownFor": "Desert nomads, Blue veils, Tifinagh script, Salt caravans, Matrilineal society"},
+  "content": {"introduction": {"whoTheyAre": "The Tuareg are nomadic Berber people inhabiting the Sahara Desert across North and West Africa. Known as 'Blue People' for their indigo-dyed clothing that stains their skin, Tuareg society is notably matrilineal with women holding property rights and men wearing face veils. Traditionally controlling trans-Saharan trade routes and conducting salt caravans, the Tuareg maintain distinct cultural identity while facing challenges from drought, political instability, and sedentarization pressures."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

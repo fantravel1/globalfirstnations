@@ -1,0 +1,343 @@
+{
+  "id": "maori",
+  "name": "Māori",
+  "alternateNames": ["Tangata whenua"],
+
+  "location": {
+    "region": "oceania",
+    "countries": ["New Zealand (Aotearoa)"],
+    "coordinates": {
+      "lat": -41.2865,
+      "lng": 174.7762
+    }
+  },
+
+  "demographics": {
+    "population": "~775,836",
+    "populationYear": 2018,
+    "language": {
+      "name": "Te Reo Māori",
+      "family": "Austronesian (Polynesian)",
+      "speakers": "~185,955",
+      "status": "Revitalizing - Official language of New Zealand"
+    }
+  },
+
+  "culturalIdentity": {
+    "icon": "🌿",
+    "primaryColor": "#000000",
+    "secondaryColor": "#FFFFFF",
+    "dwelling": "Wharenui (meeting house), Modern homes",
+    "livelihood": "Traditional: Fishing, Horticulture; Modern: Diverse economy",
+    "knownFor": "Haka, Whakairo (carving), Moko (tattoo), Waka (canoes), Treaty of Waitangi",
+    "dietaryNotes": "Traditional: Kūmara, seafood, hangi cooking; Modern diverse diet"
+  },
+
+  "quickFacts": {
+    "region": "Aotearoa (New Zealand)",
+    "traditionalDwelling": "Wharenui",
+    "primaryLivelihood": "Fishing & Horticulture",
+    "distinctiveFeature": "Polynesian navigators, Haka tradition"
+  },
+
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Māori are the indigenous Polynesian people of Aotearoa (New Zealand), who arrived via ocean-going canoes from eastern Polynesia approximately 700-800 years ago. Through sophisticated navigation techniques reading stars, ocean currents, and bird migrations, these master seafarers settled previously uninhabited islands and developed a distinct culture adapted to New Zealand's temperate environment. Today, Māori make up approximately 17% of New Zealand's population and have achieved significant cultural and political recognition, with Te Reo Māori as an official language and Māori culture integral to New Zealand's national identity.",
+
+      "culturalIdentity": "Māori social organization centers on whānau (extended family), hapū (sub-tribe), and iwi (tribe). Each iwi traces descent from ancestors who arrived on specific migration canoes (waka). Land (whenua) holds profound spiritual and genealogical significance, with mountains, rivers, and forests regarded as ancestors. The concept of mana (prestige, power, spiritual authority) and tapu (sacredness, restriction) govern social interactions and relationship with the environment. Whakapapa (genealogy) connects people to ancestors, land, and each other, forming the foundation of Māori identity.",
+
+      "funFact": "The Māori haka—a powerful ceremonial dance involving vigorous movements, rhythmic chanting, and fierce facial expressions—has gained worldwide recognition through New Zealand's All Blacks rugby team. However, haka serve many purposes beyond intimidating opponents: they welcome guests, celebrate achievements, honor the dead, and express unity. Different iwi have their own distinct haka, with 'Ka Mate,' composed by Te Rauparaha in the 1820s, being among the most famous!"
+    },
+
+    "history": {
+      "origins": "Linguistic, archaeological, and genetic evidence indicates Māori ancestors originated from eastern Polynesia, likely the Society Islands or Marquesas. Traditional Māori oral histories speak of the 'Great Fleet' of migration canoes that arrived around 1350 CE, though archaeological evidence suggests earlier arrival around 1250-1300 CE. These master navigators brought kumara (sweet potato), dogs, rats, and other plants, developing sophisticated horticulture in New Zealand's cooler climate. The name 'Māori' meaning 'normal' or 'ordinary,' was adopted to distinguish indigenous people from European 'Pākehā' arrivals.",
+
+      "preContact": "Pre-European Māori society developed complex social, political, and economic systems. They built fortified pā (villages) on strategic hilltops, created extensive agricultural systems including kumara storage pits, and developed sophisticated arts including whakairo (carving), raranga (weaving), and moko (tattoo). Inter-tribal warfare was common, fought over resources, mana, and utu (reciprocity/revenge). Warriors gained prestige through combat, and captured enemies might be enslaved or, in some circumstances, consumed in ritualized cannibalism that absorbed enemy mana. Trade networks distributed resources like pounamu (greenstone) and obsidian across the islands.",
+
+      "colonialImpact": "European contact began with Abel Tasman in 1642, followed by James Cook in 1769. Initial interactions involved trade, particularly for European tools, weapons, and eventually firearms, which intensified inter-tribal conflicts during the 'Musket Wars' (1807-1845) that decimated some iwi. British colonization accelerated after 1840 when approximately 540 Māori chiefs signed Te Tiriti o Waitangi (Treaty of Waitangi), though significant differences between English and Māori versions created ongoing disputes. The treaty promised Māori rangatiratanga (chieftainship) over their lands while ceding kawanatanga (governorship) to Britain, but systematic land confiscation, cultural suppression, and marginalization followed. The New Zealand Wars (1845-1872) saw Māori resistance to land loss, resulting in further confiscations.",
+
+      "modernHistory": "The 20th century brought continued marginalization but also growing activism. Māori populations declined to critical levels by 1900 but recovered through the century. Urbanization after WWII disrupted traditional tribal structures as Māori moved to cities for work. The 1970s Māori Renaissance saw resurgence of language, culture, and political activism. The Waitangi Tribunal, established 1975, investigates Treaty breaches and has resulted in settlements returning lands and resources to iwi. Te Reo Māori became an official language in 1987. Today, Māori hold reserved parliamentary seats, operate major economic entities through iwi corporations, and have achieved significant cultural recognition, though disparities in health, education, and incarceration persist."
+    },
+
+    "culture": {
+      "traditionalLife": "Traditional Māori life centered on the pā (fortified village) or kainga (unfortified settlement), with the wharenui (meeting house) serving as the spiritual and social heart of the community. Daily activities included fishing, hunting birds (including the now-extinct moa), gathering seafood, and cultivating kumara in elaborate storage pit systems. Men performed heavy labor, warfare, and carving; women managed weaving, gathering, and childcare, though these roles had flexibility. Communal work (mahi tahi) and food-sharing reflected collective values. Seasons dictated activities, with harvests celebrated through festivals.",
+
+      "artAndCraftsmanship": "Māori artistic traditions demonstrate sophisticated technical and aesthetic achievements. Whakairo (carving) adorns meeting houses, canoes, and weapons with intricate spiral patterns representing ancestors and genealogies. Each carved figure tells stories connecting past and present. Raranga (weaving) using flax produces clothing, baskets, and floor mats with complex patterns. Tā moko (traditional tattoo) uses chisels to create permanent facial and body markings indicating rank, genealogy, and achievements—facial moko are unique as fingerprints. Contemporary Māori artists blend traditional motifs with modern media, achieving international recognition.",
+
+      "spiritualityAndBeliefs": "Māori spirituality centers on relationships between atua (gods), ancestors, humans, and the natural world. Major atua include Ranginui (sky father), Papatūānuku (earth mother), Tāne (god of forests), Tangaroa (god of the sea), and others. Creation stories describe how Tāne separated his parents to bring light to the world. Mauri (life force) exists in all things. Tapu restricts certain places, objects, and activities to protect their sacredness. Tohunga (priests/experts) maintained ritual knowledge, performed ceremonies, and mediated with the spiritual realm. While Christianity is now widespread, many Māori maintain traditional spiritual understanding alongside Christian beliefs.",
+
+      "languageRevitalization": "Te Reo Māori faced severe decline through the 20th century due to policies discouraging indigenous language use, including corporal punishment for speaking Māori in schools. By the 1980s, fewer than 20% of Māori spoke the language. However, grassroots activism led to Kōhanga Reo (language nest) preschools, Kura Kaupapa Māori (full-immersion schools), and eventually official language status in 1987. Today, Te Reo Māori is taught in many schools, used in media and government, and knowledge is growing among Māori and non-Māori New Zealanders alike, representing one of the world's most successful indigenous language revitalization efforts.",
+
+      "marae": "The marae (courtyard and associated buildings, particularly the wharenui) serves as the spiritual and social center of Māori communities. Each marae belongs to a specific hapū or iwi. The wharenui represents an ancestor, with the ridgepole as the spine, rafters as ribs, and entrance as the mouth. Formal visits (hui) follow strict protocols (tikanga): visitors are called onto the marae through karanga (call), perform a haka or waiata (song), exchange speeches (whaikōrero), and share hongi (pressing of noses). The marae serves for celebrations, tangi (funerals), meetings, and maintaining tribal identity."
+    },
+
+    "contemporary": {
+      "challenges": [
+        {
+          "issue": "Socioeconomic Disparities",
+          "description": "Māori have higher rates of poverty, unemployment, and lower average incomes compared to non-Māori New Zealanders"
+        },
+        {
+          "issue": "Health Inequities",
+          "description": "Higher rates of diabetes, heart disease, and lower life expectancy; COVID-19 highlighted ongoing healthcare access issues"
+        },
+        {
+          "issue": "Education Gaps",
+          "description": "Lower rates of tertiary education completion, though improving through targeted programs"
+        },
+        {
+          "issue": "Incarceration",
+          "description": "Māori are over-represented in the criminal justice system, comprising over 50% of prison population while being 17% of total population"
+        },
+        {
+          "issue": "Housing Crisis",
+          "description": "Higher rates of homelessness, overcrowding, and substandard housing conditions"
+        },
+        {
+          "issue": "Cultural Appropriation",
+          "description": "Ongoing concerns about non-Māori commercial use of cultural symbols and practices without proper recognition"
+        },
+        {
+          "issue": "Treaty Settlement Process",
+          "description": "While progress has been made, many iwi still await fair settlement of historic Treaty grievances"
+        }
+      ],
+
+      "adaptations": [
+        {
+          "area": "Political Representation",
+          "description": "Reserved Māori parliamentary seats since 1867; Māori political parties; significant Māori presence in government and leadership roles"
+        },
+        {
+          "area": "Economic Development",
+          "description": "Treaty settlements have created major iwi-owned economic entities managing billions in assets including fisheries, forestry, and property"
+        },
+        {
+          "area": "Education Initiatives",
+          "description": "Kōhanga Reo, Kura Kaupapa Māori, Wānanga (Māori tertiary institutions), and mainstream schools teaching Te Reo Māori"
+        },
+        {
+          "area": "Cultural Renaissance",
+          "description": "Resurgence of traditional arts, increased use of Te Reo Māori in public life, māori Television, and cultural festivals"
+        },
+        {
+          "area": "Legal Framework",
+          "description": "Waitangi Tribunal provides mechanism for addressing Treaty breaches; protection of taonga (treasures) including language and traditional knowledge"
+        },
+        {
+          "area": "Media Presence",
+          "description": "Māori Television, radio stations, and increasing representation in mainstream media; Māori filmmakers gaining international recognition"
+        },
+        {
+          "area": "Environmental Guardianship",
+          "description": "Recognition of Māori as kaitiaki (guardians) of natural resources; legal personhood granted to Whanganui River and Te Urewera forest"
+        }
+      ],
+
+      "preservation": "Māori cultural preservation occurs through multiple channels: iwi maintain marae and pass on tikanga; educational institutions from preschool to university teach language and culture; the Māori Language Commission (Te Taura Whiri i te Reo Māori) promotes language use; museums and cultural centers preserve taonga; master carvers and weavers train apprentices; and national celebrations like Matariki (Māori New Year) reinforce cultural identity across all New Zealanders.",
+
+      "notableIndividuals": [
+        {
+          "name": "Dame Whina Cooper (1895-1994)",
+          "achievement": "Legendary activist who led the 1975 Māori land rights march; pivotal figure in Māori rights movement"
+        },
+        {
+          "name": "Sir Apirana Ngata (1874-1950)",
+          "achievement": "Lawyer, politician, and cultural leader who promoted Māori land development and cultural revival"
+        },
+        {
+          "name": "Kiri Te Kanawa (1944-)",
+          "achievement": "World-renowned opera singer, Dame Commander of the British Empire"
+        },
+        {
+          "name": "Taika Waititi (1975-)",
+          "achievement": "Oscar-winning filmmaker and actor known for 'Jojo Rabbit,' 'Thor: Ragnarok,' and promoting Māori culture globally"
+        },
+        {
+          "name": "Hone Heke (1807-1850)",
+          "achievement": "Chief who led resistance against British colonization; famous for repeatedly cutting down the British flagpole at Kororareka"
+        },
+        {
+          "name": "Dr. Ranginui Walker (1932-2016)",
+          "achievement": "Prominent academic, historian, and advocate for Māori rights and bicultural society"
+        }
+      ]
+    }
+  },
+
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg",
+      "alt": "Traditional Māori wharenui (carved meeting house)",
+      "caption": "Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg",
+      "alt": "Māori performing the haka",
+      "caption": "Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg",
+      "alt": "Traditional Māori tā moko facial tattoo",
+      "caption": "Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg",
+      "alt": "Traditional Māori waka (war canoe)",
+      "caption": "Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Maori_waka.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg",
+      "alt": "Traditional Māori flax weaving (raranga)",
+      "caption": "Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg",
+      "alt": "Waitangi Day celebration with traditional waka",
+      "caption": "Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg"
+    }
+  ],
+
+  "references": [
+    {
+      "type": "book",
+      "authors": ["King, Michael"],
+      "year": 2003,
+      "title": "The Penguin History of New Zealand",
+      "publisher": "Penguin Books",
+      "location": "Auckland",
+      "isbn": "978-0143019671"
+    },
+    {
+      "type": "book",
+      "authors": ["Walker, Ranginui"],
+      "year": 2004,
+      "title": "Ka Whawhai Tonu Matou: Struggle Without End",
+      "publisher": "Penguin Books",
+      "location": "Auckland",
+      "isbn": "978-0143020530"
+    },
+    {
+      "type": "book",
+      "authors": ["Mead, Hirini Moko"],
+      "year": 2003,
+      "title": "Tikanga Māori: Living by Māori Values",
+      "publisher": "Huia Publishers",
+      "location": "Wellington",
+      "isbn": "978-1877283001"
+    },
+    {
+      "type": "book",
+      "authors": ["Orange, Claudia"],
+      "year": 2011,
+      "title": "The Treaty of Waitangi",
+      "publisher": "Bridget Williams Books",
+      "location": "Wellington",
+      "isbn": "978-1877242489"
+    },
+    {
+      "type": "book",
+      "authors": ["Salmond, Anne"],
+      "year": 1975,
+      "title": "Hui: A Study of Maori Ceremonial Gatherings",
+      "publisher": "Reed Publishing",
+      "location": "Auckland",
+      "isbn": "978-0790001302"
+    },
+    {
+      "type": "web",
+      "title": "Te Ara - The Encyclopedia of New Zealand: Māori",
+      "organization": "New Zealand Government",
+      "url": "https://teara.govt.nz/en/maori",
+      "accessDate": "2025-01-16"
+    },
+    {
+      "type": "web",
+      "title": "Te Taura Whiri i te Reo Māori - Māori Language Commission",
+      "organization": "Māori Language Commission",
+      "url": "https://www.tetaurawhiri.govt.nz",
+      "accessDate": "2025-01-16"
+    },
+    {
+      "type": "journal",
+      "authors": ["Durie, Mason"],
+      "year": 1998,
+      "title": "Whaiora: Māori Health Development",
+      "journal": "Oxford University Press",
+      "location": "Auckland",
+      "isbn": "978-0195583199"
+    }
+  ],
+
+  "relatedCultures": {
+    "similar": [
+      {
+        "id": "hawaiian",
+        "name": "Native Hawaiian",
+        "icon": "🌺",
+        "location": "Hawaiian Islands",
+        "similarity": "Fellow Polynesian peoples sharing linguistic roots, navigation traditions, and cultural practices",
+        "relationshipType": "Polynesian Relatives"
+      },
+      {
+        "id": "samoan",
+        "name": "Samoan",
+        "icon": "🌴",
+        "location": "Samoa",
+        "similarity": "Close Polynesian relatives with shared ancestral origins and cultural traditions",
+        "relationshipType": "Polynesian Relatives"
+      }
+    ],
+    "regional": [
+      {
+        "id": "aboriginal-australian",
+        "name": "Aboriginal Australian",
+        "icon": "🪃",
+        "location": "Australia",
+        "similarity": "Indigenous peoples of neighboring landmass, though culturally and linguistically distinct; share some experiences of colonization",
+        "relationshipType": "Regional Neighbors"
+      },
+      {
+        "id": "melanesian",
+        "name": "Melanesian Peoples",
+        "icon": "🏝️",
+        "location": "Pacific Islands",
+        "similarity": "Pacific island neighbors with different linguistic and cultural origins but shared oceanic environment",
+        "relationshipType": "Pacific Neighbors"
+      }
+    ],
+    "contrasting": [
+      {
+        "id": "inuit",
+        "name": "Inuit",
+        "icon": "🐻‍❄️",
+        "location": "Arctic",
+        "similarity": "Both master navigators adapted to challenging environments, but polar opposite climates (Arctic vs temperate Pacific)",
+        "relationshipType": "Environmental Contrast"
+      }
+    ]
+  },
+
+  "metadata": {
+    "lastUpdated": "2025-01-16",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 3512,
+    "imageCount": 6,
+    "referenceCount": 8,
+    "contributors": ["Indigenous Peoples Research Database Team"],
+    "version": "1.0.0"
+  }
+}

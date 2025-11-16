@@ -1,0 +1,9 @@
+{
+  "id": "cherokee",
+  "name": "Cherokee",
+  "location": {"region": "americas", "countries": ["United States"]},
+  "demographics": {"population": "~390,902", "language": {"name": "Cherokee (Tsalagi)", "family": "Iroquoian"}},
+  "culturalIdentity": {"icon": "🌳", "knownFor": "Sequoyah's syllabary, Trail of Tears, written language, tribal sovereignty"},
+  "content": {"introduction": {"whoTheyAre": "The Cherokee are one of the indigenous peoples of the Southeastern United States, originally inhabiting areas of present-day North Carolina, Tennessee, Georgia, and Alabama. Known for adopting a written syllabary created by Sequoyah in 1821, the Cherokee established a constitutional government and newspaper before forced removal on the Trail of Tears (1838-1839) killed thousands and relocated the nation to Indian Territory (Oklahoma). Today, the Cherokee Nation is the largest federally recognized tribe in the United States."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}

@@ -1,0 +1,9 @@
+{
+  "id": "hmong",
+  "name": "Hmong",
+  "location": {"region": "asia", "countries": ["China", "Vietnam", "Laos", "Thailand", "USA"]},
+  "demographics": {"population": "~9,000,000", "language": {"name": "Hmong", "family": "Hmong-Mien"}},
+  "culturalIdentity": {"icon": "🌾", "knownFor": "Story cloths (paj ntaub), Mountain agriculture, Vietnam War assistance, Diaspora communities, New Year celebrations"},
+  "content": {"introduction": {"whoTheyAre": "The Hmong are an ethnic group from the mountainous regions of China, Vietnam, Laos, and Thailand. Known for intricate story cloths (paj ntaub) depicting history and cultural narratives, the Hmong practiced slash-and-burn agriculture and maintained animist spiritual traditions. After assisting the United States during the Vietnam War, many Hmong faced persecution and fled as refugees, creating significant diaspora communities in the U.S., France, and Australia while maintaining strong cultural identity."}},
+  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+}
