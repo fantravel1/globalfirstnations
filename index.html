@@ -1,259 +1,452 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>Indigenous Peoples Repository | Celebrating 1,200+ Cultural Heritage Worldwide</title>
+    <meta name="title" content="Indigenous Peoples Repository | Celebrating 1,200+ Cultural Heritage Worldwide">
+    <meta name="description" content="Discover and explore 1,200+ indigenous peoples from around the world. Comprehensive repository documenting cultures, traditions, histories, and contemporary life of First Nations globally.">
+    <meta name="keywords" content="indigenous peoples, First Nations, tribes, cultural heritage, world cultures, ethnography, anthropology, native peoples, aboriginal cultures, traditional knowledge">
+    <meta name="author" content="Indigenous Peoples Repository">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Global">
+    <meta name="geo.position" content="0;0">
+    <meta name="ICBM" content="0, 0">
+
     <!-- Mobile Performance Optimizations -->
-    <link rel="preload" href="data:font/woff2;base64," as="font" type="font/woff2" crossorigin>
-    <meta name="theme-color" content="#2563eb">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preload" href="/data/indigenous-groups.js" as="script">
+    <meta name="theme-color" content="#2c5530" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a3320" media="(prefers-color-scheme: dark)">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    
-    <!-- Preconnect to improve loading -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    
-    <!-- Critical CSS inlined for faster loading -->
-    <title>Indigenous Peoples Repository | Celebrating Cultural Heritage Worldwide</title>
-    <meta name="description" content="A comprehensive repository documenting indigenous groups and tribes from around the world, celebrating their unique cultures, traditions, and heritage.">
-    <meta name="keywords" content="indigenous peoples, tribes, cultural heritage, world cultures, ethnography, anthropology">
-    <meta name="author" content="Indigenous Peoples Repository">
-    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Indigenous Peoples">
+    <meta name="application-name" content="Indigenous Peoples Repository">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.globalfirstnations.com/">
+
+    <!-- Alternate Languages (for future international versions) -->
+    <link rel="alternate" hreflang="en" href="https://www.globalfirstnations.com/">
+    <link rel="alternate" hreflang="x-default" href="https://www.globalfirstnations.com/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2c5530">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://indigenous-peoples-repository.vercel.app">
-    <meta property="og:title" content="Indigenous Peoples Repository">
-    <meta property="og:description" content="A comprehensive repository documenting indigenous groups and tribes from around the world">
-    <meta property="og:image" content="https://indigenous-peoples-repository.vercel.app/og-image.jpg">
+    <meta property="og:url" content="https://www.globalfirstnations.com/">
+    <meta property="og:site_name" content="Indigenous Peoples Repository">
+    <meta property="og:title" content="Indigenous Peoples Repository | Celebrating Cultural Heritage Worldwide">
+    <meta property="og:description" content="Discover 1,200+ indigenous peoples from around the world. Comprehensive repository documenting cultures, traditions, and contemporary life of First Nations globally.">
+    <meta property="og:image" content="https://www.globalfirstnations.com/images/og-image.jpg">
+    <meta property="og:image:secure_url" content="https://www.globalfirstnations.com/images/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Indigenous Peoples Repository - Celebrating global cultural diversity">
+    <meta property="og:locale" content="en_US">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://indigenous-peoples-repository.vercel.app">
-    <meta property="twitter:title" content="Indigenous Peoples Repository">
-    <meta property="twitter:description" content="A comprehensive repository documenting indigenous groups and tribes from around the world">
-    <meta property="twitter:image" content="https://indigenous-peoples-repository.vercel.app/og-image.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.globalfirstnations.com/">
+    <meta name="twitter:title" content="Indigenous Peoples Repository | Celebrating Cultural Heritage">
+    <meta name="twitter:description" content="Discover 1,200+ indigenous peoples from around the world with comprehensive cultural documentation.">
+    <meta name="twitter:image" content="https://www.globalfirstnations.com/images/twitter-card.jpg">
+    <meta name="twitter:image:alt" content="Indigenous Peoples Repository">
+    <meta name="twitter:creator" content="@globalfirstnations">
+    <meta name="twitter:site" content="@globalfirstnations">
 
-    <link rel="canonical" href="https://indigenous-peoples-repository.vercel.app">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
-    
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Indigenous Peoples Repository",
+      "alternateName": "Global First Nations",
+      "url": "https://www.globalfirstnations.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.globalfirstnations.com/images/logo.png",
+        "width": 600,
+        "height": 600
+      },
+      "description": "A comprehensive repository documenting indigenous groups and tribes from around the world",
+      "foundingDate": "2024",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@play4tomorrow.com",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/globalfirstnations",
+        "https://www.twitter.com/globalfirstnations"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - WebSite with Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Indigenous Peoples Repository",
+      "url": "https://www.globalfirstnations.com",
+      "description": "Comprehensive repository documenting indigenous peoples from around the world",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.globalfirstnations.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.globalfirstnations.com/"
+      }]
+    }
+    </script>
+
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Indigenous Peoples Repository?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Indigenous Peoples Repository is a comprehensive resource documenting over 1,200 indigenous groups from around the world, celebrating their unique cultures, traditions, and heritage with respect and authenticity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many indigenous peoples are documented?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our repository currently documents over 1,200 indigenous groups across 94 countries and 6 continents, representing 1,200+ languages and diverse cultural traditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the information culturally respectful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all content is created with deep respect for the cultures represented, avoiding stereotypes and honoring indigenous perspectives. We work with cultural consultants and indigenous-led organizations."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Speakable Content for Voice Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Indigenous Peoples Repository",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-content", ".stats-section"]
+      }
+    }
+    </script>
+
     <style>
-        /* Performance Optimizations */
-        * {
+        /* ============================================
+           ENHANCED CRITICAL CSS - ACCESSIBILITY FIRST
+           ============================================ */
+
+        /* CSS Variables for theming and dark mode */
+        :root {
+            /* Light Mode Colors - Enhanced Contrast */
+            --primary: #2c5530;
+            --primary-dark: #1a3320;
+            --primary-light: #3d7044;
+            --secondary: #059669;
+            --accent: #d97706;
+            --text: #1a1a1a;
+            --text-light: #4a5568;
+            --text-lighter: #6b7280;
+            --bg: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --focus-ring: 0 0 0 3px rgba(217, 119, 6, 0.5);
+
+            /* Typography Scale */
+            --font-base: 16px;
+            --font-scale: 1.25;
+            --line-height-base: 1.6;
+            --line-height-heading: 1.2;
+
+            /* Spacing Scale */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+
+            /* Touch Targets (minimum 44x44px for accessibility) */
+            --touch-target-min: 44px;
+
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 300ms ease;
+            --transition-slow: 500ms ease;
+
+            /* Z-Index Scale */
+            --z-base: 1;
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-overlay: 300;
+            --z-modal: 400;
+            --z-toast: 500;
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --primary: #3d7044;
+                --primary-dark: #2c5530;
+                --primary-light: #4a855c;
+                --secondary: #10b981;
+                --accent: #fbbf24;
+                --text: #f9fafb;
+                --text-light: #d1d5db;
+                --text-lighter: #9ca3af;
+                --bg: #111827;
+                --bg-secondary: #1f2937;
+                --bg-tertiary: #374151;
+                --border: #4b5563;
+                --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+                --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        /* Light Mode Override */
+        [data-theme="light"] {
+            --primary: #2c5530;
+            --primary-dark: #1a3320;
+            --text: #1a1a1a;
+            --bg: #ffffff;
+        }
+
+        /* Dark Mode Override */
+        [data-theme="dark"] {
+            --primary: #3d7044;
+            --primary-dark: #2c5530;
+            --text: #f9fafb;
+            --bg: #111827;
+            --bg-secondary: #1f2937;
+        }
+
+        /* Base Reset with Accessibility */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Optimize font loading */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--bg);
-            overflow-x: hidden;
+        /* Improved focus styles for keyboard navigation */
+        *:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        *:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            box-shadow: var(--focus-ring);
+        }
+
+        /* Skip to main content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 5px 0;
+            font-weight: 600;
+            z-index: var(--z-modal);
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Root font size - Respects user preferences */
+        html {
+            font-size: 100%; /* Respects browser/user settings */
+            scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
-        /* Improve scroll performance */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            will-change: auto;
-        }
-
-        /* GPU acceleration for animations */
-        .tribe-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            will-change: transform;
-            transform: translateZ(0);
-        }
-
-        .tribe-card:hover {
-            transform: translateY(-5px) translateZ(0);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Optimize image rendering */
-        .tribe-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            color: white;
-            will-change: auto;
-        }
-
-        /* Reduce layout shifts */
-        .tribes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            contain: layout;
-        }
-
-        /* Optimize filters for mobile */
-        .filters {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            contain: layout;
-        }
-
-        .filter-btn {
-            background: white;
-            border: 2px solid var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* Mobile-first responsive design */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 3rem 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .search-container {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
-            .filters {
-                gap: 0.5rem;
-            }
-
-            .filter-btn {
-                font-size: 0.8rem;
-                padding: 0.4rem 0.8rem;
-            }
-
-            .tribes-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .tribe-image {
-                height: 150px;
-                font-size: 4rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-
-        /* Smaller mobile devices */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 0.75rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .tribe-image {
-                height: 120px;
-                font-size: 3.5rem;
-            }
-        }
-
-        /* Reduce animations on slower devices */
+        /* Reduce motion for users who prefer it */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
 
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #059669;
-            --accent: #f59e0b;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --bg: #ffffff;
-            --bg-secondary: #f8fafc;
-            --border: #e5e7eb;
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            line-height: var(--line-height-base);
             color: var(--text);
             background: var(--bg);
             overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* Improved typography hierarchy */
+        h1, h2, h3, h4, h5, h6 {
+            line-height: var(--line-height-heading);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: var(--space-md);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw + 1rem, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw + 0.5rem, 3rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+        }
+
+        /* Links with better contrast */
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            transition: color var(--transition-base);
+        }
+
+        a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Container with safe padding */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 max(var(--space-md), env(safe-area-inset-left)) 0 max(var(--space-md), env(safe-area-inset-right));
+            width: 100%;
         }
 
-        /* Header */
+        /* Enhanced Header with better accessibility */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 100;
-            transition: all 0.3s ease;
+            z-index: var(--z-sticky);
+            transition: all var(--transition-base);
+        }
+
+        @supports (backdrop-filter: blur(10px)) {
+            header {
+                background: rgba(255, 255, 255, 0.85);
+            }
+
+            [data-theme="dark"] header {
+                background: rgba(17, 24, 39, 0.85);
+            }
         }
 
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: var(--space-md) 0;
+            gap: var(--space-lg);
         }
 
+        /* Logo with proper focus state */
         .logo {
-            font-size: 1.5rem;
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: var(--space-sm);
+            padding: var(--space-sm);
+            border-radius: 4px;
         }
 
+        .logo:focus {
+            outline: 2px solid var(--accent);
+        }
+
+        /* Navigation links - Larger touch targets */
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: var(--space-sm);
             margin: 0;
         }
 
@@ -261,42 +454,103 @@
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            transition: color 0.3s ease;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 6px;
+            min-height: var(--touch-target-min);
+            min-width: var(--touch-target-min);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-base);
             position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
+            bottom: 0;
+            left: 50%;
             width: 0;
             height: 2px;
             background: var(--primary);
-            transition: width 0.3s ease;
+            transform: translateX(-50%);
+            transition: width var(--transition-base);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover,
+        .nav-links a[aria-current="page"] {
+            color: var(--primary);
+            background: var(--bg-secondary);
         }
 
-        .mobile-menu {
+        .nav-links a:hover::after,
+        .nav-links a[aria-current="page"]::after {
+            width: 80%;
+        }
+
+        /* Accessibility Controls */
+        .accessibility-controls {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+
+        .theme-toggle,
+        .font-size-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text);
+            min-width: var(--touch-target-min);
+            min-height: var(--touch-target-min);
+            padding: var(--space-sm);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .theme-toggle:hover,
+        .font-size-toggle:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .theme-toggle[aria-pressed="true"] {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-toggle {
             display: none;
             background: none;
-            border: none;
-            font-size: 1.5rem;
+            border: 2px solid var(--border);
+            color: var(--text);
+            min-width: var(--touch-target-min);
+            min-height: var(--touch-target-min);
+            padding: var(--space-sm);
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 1.5rem;
+            transition: all var(--transition-base);
         }
 
-        /* Hero Section */
+        .mobile-menu-toggle:hover,
+        .mobile-menu-toggle[aria-expanded="true"] {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Hero Section with better contrast */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 6rem 0;
+            padding: clamp(4rem, 10vw, 8rem) 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -310,13 +564,15 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="600" cy="300" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="400" cy="700" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="800" cy="600" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.5;
             animation: float 20s infinite linear;
         }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-10px) translateX(5px); }
+            50% { transform: translateY(0px) translateX(10px); }
+            75% { transform: translateY(10px) translateX(5px); }
         }
 
         .hero-content {
@@ -325,138 +581,198 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: white;
             font-weight: 800;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: var(--space-lg);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 600px;
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            margin-bottom: var(--space-xl);
+            opacity: 0.95;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        /* CTA Button with proper contrast and touch target */
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background: var(--accent);
             color: white;
-            padding: 1rem 2rem;
+            padding: var(--space-md) var(--space-xl);
+            min-height: var(--touch-target-min);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 1.125rem;
+            transition: all var(--transition-base);
             box-shadow: var(--shadow);
+            border: 2px solid var(--accent);
         }
 
         .cta-button:hover {
-            background: #d97706;
+            background: #b45309;
+            border-color: #b45309;
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
+            color: white;
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
         }
 
         /* Search Section */
         .search-section {
-            padding: 4rem 0;
+            padding: clamp(3rem, 8vw, 6rem) 0;
             background: var(--bg-secondary);
         }
 
         .search-container {
             display: flex;
-            gap: 1rem;
-            max-width: 600px;
+            gap: var(--space-md);
+            max-width: 700px;
             margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .search-input-wrapper {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
         }
 
         .search-input {
-            flex: 1;
-            padding: 1rem;
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
             border: 2px solid var(--border);
             border-radius: 25px;
             font-size: 1rem;
             outline: none;
-            transition: border-color 0.3s ease;
+            transition: border-color var(--transition-base), box-shadow var(--transition-base);
+            background: var(--bg);
+            color: var(--text);
+            min-height: var(--touch-target-min);
         }
 
         .search-input:focus {
             border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-lighter);
+        }
+
+        /* Label for screen readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
         .search-button {
             background: var(--primary);
             color: white;
-            border: none;
-            padding: 1rem 2rem;
+            border: 2px solid var(--primary);
+            padding: var(--space-md) var(--space-xl);
+            min-height: var(--touch-target-min);
+            min-width: 120px;
             border-radius: 25px;
             cursor: pointer;
             font-weight: 600;
-            transition: background 0.3s ease;
+            font-size: 1rem;
+            transition: all var(--transition-base);
         }
 
         .search-button:hover {
             background: var(--primary-dark);
+            border-color: var(--primary-dark);
         }
 
+        .search-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Filters with larger touch targets */
         .filters {
             display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .filter-btn {
-            background: white;
+            background: var(--bg);
             border: 2px solid var(--border);
-            padding: 0.5rem 1rem;
+            padding: var(--space-sm) var(--space-lg);
+            min-height: var(--touch-target-min);
             border-radius: 25px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
+            transition: all var(--transition-base);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .filter-btn:hover,
-        .filter-btn.active {
+        .filter-btn.active,
+        .filter-btn[aria-pressed="true"] {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
         }
 
-        /* Grid Section */
+        /* Tribe Cards with better accessibility */
         .grid-section {
-            padding: 4rem 0;
+            padding: clamp(3rem, 8vw, 6rem) 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            margin-bottom: 3rem;
+            margin-bottom: var(--space-2xl);
             color: var(--text);
         }
 
         .tribes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
         }
 
         .tribe-card {
-            background: white;
+            background: var(--bg);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: all 0.3s ease;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
             cursor: pointer;
+            border: 1px solid var(--border);
         }
 
         .tribe-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
+        }
+
+        .tribe-card:focus-within {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
         }
 
         .tribe-image {
@@ -467,180 +783,111 @@
             align-items: center;
             justify-content: center;
             font-size: 6rem;
-            color: white;
+            position: relative;
+        }
+
+        /* Add proper alt text support for emojis */
+        .tribe-image::before {
+            content: attr(data-emoji);
+            font-size: 6rem;
         }
 
         .tribe-content {
-            padding: 1.5rem;
+            padding: var(--space-lg);
         }
 
         .tribe-name {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--space-sm);
         }
 
         .tribe-location {
             color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
         }
 
         .tribe-description {
             color: var(--text-light);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
         }
 
         .tribe-tags {
             display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: var(--space-sm);
             flex-wrap: wrap;
         }
 
         .tag {
             background: var(--bg-secondary);
             color: var(--text);
-            padding: 0.25rem 0.75rem;
+            padding: var(--space-xs) var(--space-md);
             border-radius: 15px;
-            font-size: 0.8rem;
+            font-size: 0.875rem;
+            border: 1px solid var(--border);
         }
 
         /* Stats Section */
         .stats-section {
             background: var(--bg-secondary);
-            padding: 4rem 0;
+            padding: clamp(3rem, 8vw, 6rem) 0;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            gap: var(--space-xl);
             text-align: center;
         }
 
         .stat-card {
-            background: white;
-            padding: 2rem;
+            background: var(--bg);
+            padding: var(--space-xl);
             border-radius: 15px;
             box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--space-sm);
+            line-height: 1;
         }
 
         .stat-label {
             color: var(--text-light);
-            font-size: 1rem;
+            font-size: 1.125rem;
+            font-weight: 500;
         }
 
-        /* Show More Options */
-        .show-more-container {
-            grid-column: 1 / -1;
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .show-more-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .show-more-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .show-more-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text);
-            color: white;
-            padding: 3rem 0 1rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-
-        .footer-section a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #374151;
-            padding-top: 1rem;
-            color: #9ca3af;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 4rem 0;
-            }
-
-            .search-container {
-                flex-direction: column;
-            }
-
-            .filters {
-                gap: 0.5rem;
-            }
-
-            .tribes-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Loading Animation */
+        /* Loading States */
         .loading {
             display: none;
             text-align: center;
-            padding: 2rem;
+            padding: var(--space-2xl);
+        }
+
+        .loading[aria-busy="true"] {
+            display: block;
         }
 
         .spinner {
             border: 4px solid var(--border);
             border-top: 4px solid var(--primary);
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
+            margin: 0 auto var(--space-md);
         }
 
         @keyframes spin {
@@ -648,89 +895,332 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Scroll animations */
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: var(--space-2xl) 0 var(--space-md);
+            margin-top: auto;
+        }
+
+        [data-theme="dark"] footer {
+            background: var(--bg-tertiary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-section h3 {
+            margin-bottom: var(--space-md);
+            color: var(--accent);
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            display: block;
+            padding: var(--space-xs) 0;
+            transition: color var(--transition-base);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-md);
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Show More Button */
+        .show-more-container {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin-top: var(--space-xl);
+        }
+
+        .show-more-btn {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+            padding: var(--space-md) var(--space-2xl);
+            min-height: var(--touch-target-min);
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            box-shadow: var(--shadow);
+        }
+
+        .show-more-btn:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Toast Notifications */
+        .toast {
+            position: fixed;
+            bottom: var(--space-xl);
+            right: var(--space-xl);
+            background: var(--bg);
+            color: var(--text);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            z-index: var(--z-toast);
+            max-width: 400px;
+            border-left: 4px solid var(--primary);
+            transform: translateX(calc(100% + var(--space-xl)));
+            transition: transform var(--transition-base);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            border-left-color: var(--secondary);
+        }
+
+        .toast.error {
+            border-left-color: #dc2626;
+        }
+
+        /* Fade in animation */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                padding: var(--space-md);
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-lg);
+                z-index: var(--z-dropdown);
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .search-button {
+                width: 100%;
+            }
+
+            .filters {
+                gap: var(--space-sm);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .toast {
+                left: var(--space-md);
+                right: var(--space-md);
+                bottom: var(--space-md);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header, footer, .filters, .search-section, .cta-button, .accessibility-controls {
+                display: none;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .tribe-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            :root {
+                --border: #000;
+            }
+
+            .tribe-card,
+            .stat-card,
+            button,
+            input {
+                border-width: 2px;
+            }
+        }
     </style>
-    
-     <!-- import indigenous-groups data -->
-     <script src="data/indigenous-groups.js"></script>
-    
+
+    <link rel="preload" href="data/indigenous-groups.js" as="script">
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">
-                Indigenous Peoples Repository
+    <!-- Skip to main content for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with enhanced navigation -->
+    <header role="banner">
+        <nav class="container" role="navigation" aria-label="Main navigation">
+            <a href="/" class="logo" aria-label="Indigenous Peoples Repository Home">
+                <span aria-hidden="true">🌍</span>
+                <span>Indigenous Peoples</span>
             </a>
+
+            <ul class="nav-links" id="mainNav">
+                <li><a href="/" aria-current="page">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contribute.html">Contribute</a></li>
+                <li><a href="mailto:info@play4tomorrow.com">Contact</a></li>
+            </ul>
+
+            <div class="accessibility-controls">
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                    aria-pressed="false"
+                    title="Toggle dark/light mode"
+                >
+                    <span aria-hidden="true">🌙</span>
+                </button>
+
+                <button
+                    class="font-size-toggle"
+                    id="fontSizeToggle"
+                    aria-label="Increase font size"
+                    title="Increase text size"
+                >
+                    <span aria-hidden="true">A+</span>
+                </button>
+
+                <button
+                    class="mobile-menu-toggle"
+                    id="mobileMenuToggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mainNav"
+                >
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero" id="home">
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Celebrating Indigenous Heritage</h1>
-                    <p>Discover and learn about 5,000+ indigenous peoples from around the world. A comprehensive repository documenting cultures, traditions, and histories.</p>
+                    <h1 id="hero-heading">Celebrating Indigenous Heritage</h1>
+                    <p>Discover and learn about 1,200+ indigenous peoples from around the world. A comprehensive repository documenting cultures, traditions, and histories with respect and authenticity.</p>
                     <a href="#explore" class="cta-button">Explore Cultures</a>
                 </div>
             </div>
         </section>
 
-        <section class="search-section" id="explore">
+        <!-- Search Section -->
+        <section class="search-section" id="explore" aria-labelledby="search-heading">
             <div class="container">
+                <h2 id="search-heading" class="sr-only">Search and Filter Indigenous Peoples</h2>
+
                 <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Search for tribes, regions, or cultures..." id="searchInput">
-                    <button class="search-button" onclick="performSearch()">Search</button>
+                    <div class="search-input-wrapper">
+                        <label for="searchInput" class="sr-only">Search for indigenous peoples, regions, or cultures</label>
+                        <input
+                            type="search"
+                            class="search-input"
+                            placeholder="Search for tribes, regions, or cultures..."
+                            id="searchInput"
+                            aria-label="Search indigenous peoples"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                    </div>
+                    <button class="search-button" onclick="performSearch()" aria-label="Perform search">
+                        Search
+                    </button>
                 </div>
-                <div class="filters">
-                    <button class="filter-btn active" onclick="filterTribes('all')">All Regions</button>
-                    <button class="filter-btn" onclick="filterTribes('americas')">Americas</button>
-                    <button class="filter-btn" onclick="filterTribes('africa')">Africa</button>
-                    <button class="filter-btn" onclick="filterTribes('asia')">Asia</button>
-                    <button class="filter-btn" onclick="filterTribes('oceania')">Oceania</button>
-                    <button class="filter-btn" onclick="filterTribes('europe')">Europe</button>
+
+                <div class="filters" role="group" aria-label="Filter by region">
+                    <button class="filter-btn active" onclick="filterTribes('all')" aria-pressed="true">All Regions</button>
+                    <button class="filter-btn" onclick="filterTribes('americas')" aria-pressed="false">Americas</button>
+                    <button class="filter-btn" onclick="filterTribes('africa')" aria-pressed="false">Africa</button>
+                    <button class="filter-btn" onclick="filterTribes('asia')" aria-pressed="false">Asia</button>
+                    <button class="filter-btn" onclick="filterTribes('oceania')" aria-pressed="false">Oceania</button>
+                    <button class="filter-btn" onclick="filterTribes('europe')" aria-pressed="false">Europe</button>
                 </div>
             </div>
         </section>
 
-        <section class="grid-section">
+        <!-- Grid Section -->
+        <section class="grid-section" aria-labelledby="featured-heading">
             <div class="container">
-                <h2 class="section-title fade-in">Featured Indigenous Groups</h2>
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
+                <h2 id="featured-heading" class="section-title fade-in">Featured Indigenous Groups</h2>
+
+                <div class="loading" id="loading" aria-busy="false" aria-live="polite">
+                    <div class="spinner" role="status" aria-label="Loading"></div>
                     <p>Loading indigenous groups...</p>
                 </div>
-                <div class="tribes-grid" id="tribesGrid"></div>
+
+                <div class="tribes-grid" id="tribesGrid" role="list" aria-label="Indigenous peoples"></div>
             </div>
         </section>
 
-        <section class="stats-section">
+        <!-- Stats Section -->
+        <section class="stats-section" aria-labelledby="stats-heading">
             <div class="container">
-                <h2 class="section-title fade-in">Repository Statistics</h2>
-                <div class="stats-grid fade-in">
-                    <div class="stat-card">
-                        <div class="stat-number" id="totalTribes">1,277</div>
+                <h2 id="stats-heading" class="section-title fade-in">Repository Statistics</h2>
+                <div class="stats-grid fade-in" role="list" aria-label="Repository statistics">
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-number" id="totalTribes" aria-label="Total indigenous groups">1,277</div>
                         <div class="stat-label">Indigenous Groups</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="totalRegions">94</div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-number" id="totalRegions" aria-label="Countries represented">94</div>
                         <div class="stat-label">Countries</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="totalLanguages">1,247</div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-number" id="totalLanguages" aria-label="Languages documented">1,247</div>
                         <div class="stat-label">Languages</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="totalContinents">6</div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-number" id="totalContinents" aria-label="Continents covered">6</div>
                         <div class="stat-label">Continents</div>
                     </div>
                 </div>
@@ -738,7 +1228,8 @@
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -747,15 +1238,19 @@
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <p><a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Add">Contribute Data</a></p>
-                    <p><a href="https://www.webuildpillars.com" target="_blank" rel="noopener noreferrer">About Us</a></p>
-                    <p><a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Contact">Contact</a></p>
+                    <nav aria-label="Footer navigation">
+                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Add">Contribute Data</a>
+                        <a href="https://www.webuildpillars.com" target="_blank" rel="noopener noreferrer">About Us</a>
+                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Contact">Contact</a>
+                    </nav>
                 </div>
                 <div class="footer-section">
                     <h3>Resources</h3>
-                    <p><a href="#api">API Access (coming soon)</a></p>
-                    <p><a href="#downloads">Data Downloads (coming soon)</a></p>
-                    <p><a href="#research">Research Tools (coming soon)</a></p>
+                    <nav aria-label="Resources navigation">
+                        <a href="#api">API Access (coming soon)</a>
+                        <a href="#downloads">Data Downloads (coming soon)</a>
+                        <a href="#research">Research Tools (coming soon)</a>
+                    </nav>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -764,42 +1259,153 @@
         </div>
     </footer>
 
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Import indigenous-groups data -->
+    <script src="data/indigenous-groups.js"></script>
+
     <script>
-
-        let currentFilter = 'all';
-        let searchQuery = '';
-
-        // Performance optimized JavaScript
+        // ============================================
+        // ENHANCED JAVASCRIPT - ACCESSIBILITY & UX
+        // ============================================
 
         // Configuration
-        const INITIAL_DISPLAY_COUNT = 24; // Optimal number for initial load (6 rows of 4 cards on desktop)
+        const INITIAL_DISPLAY_COUNT = 24;
+        let currentFilter = 'all';
+        let searchQuery = '';
+        let fontSize = 16;
+
+        // PWA Support - Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(reg => console.log('Service Worker registered:', reg))
+                    .catch(err => console.error('Service Worker registration failed:', err));
+            });
+        }
+
+        // Theme Toggle with Persistence
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            updateThemeButton('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeButton(newTheme);
+            showToast(`Switched to ${newTheme} mode`, 'success');
+        });
+
+        function updateThemeButton(theme) {
+            const icon = theme === 'dark' ? '☀️' : '🌙';
+            const label = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+            themeToggle.innerHTML = `<span aria-hidden="true">${icon}</span>`;
+            themeToggle.setAttribute('aria-label', label);
+            themeToggle.setAttribute('aria-pressed', theme === 'dark');
+        }
+
+        // Font Size Toggle with Persistence
+        const fontSizeToggle = document.getElementById('fontSizeToggle');
+        const savedFontSize = localStorage.getItem('fontSize');
+
+        if (savedFontSize) {
+            fontSize = parseInt(savedFontSize);
+            document.documentElement.style.fontSize = `${fontSize}px`;
+        }
+
+        fontSizeToggle.addEventListener('click', () => {
+            fontSize = fontSize >= 20 ? 16 : fontSize + 2;
+            document.documentElement.style.fontSize = `${fontSize}px`;
+            localStorage.setItem('fontSize', fontSize);
+            showToast(`Font size: ${fontSize}px`, 'success');
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('mobile-open');
+
+            // Trap focus in mobile menu when open
+            if (!isExpanded) {
+                const firstLink = mainNav.querySelector('a');
+                firstLink?.focus();
+            }
+        });
+
+        // Close mobile menu on escape or when clicking outside
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mainNav.classList.contains('mobile-open')) {
+                mobileMenuToggle.click();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (mainNav.classList.contains('mobile-open') &&
+                !mainNav.contains(e.target) &&
+                !mobileMenuToggle.contains(e.target)) {
+                mobileMenuToggle.click();
+            }
+        });
+
+        // Toast Notification System
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            toast.setAttribute('role', 'alert');
+
+            container.appendChild(toast);
+
+            // Trigger animation
+            setTimeout(() => toast.classList.add('show'), 10);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
 
         // Utility function to get random sample from array
         function getRandomSample(array, count) {
             const shuffled = [...array].sort(() => 0.5 - Math.random());
             return shuffled.slice(0, count);
         }
-        
-        // Lazy loading for better performance
+
+        // Enhanced Lazy Loading with Intersection Observer
         function initializeLazyLoading() {
             if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries) => {
+                const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('visible');
-                            imageObserver.unobserve(entry.target);
+                            observer.unobserve(entry.target);
                         }
                     });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '50px'
                 });
 
-                document.querySelectorAll('.fade-in').forEach(el => {
-                    imageObserver.observe(el);
-                });
+                document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
             } else {
-                // Fallback for older browsers
-                document.querySelectorAll('.fade-in').forEach(el => {
-                    el.classList.add('visible');
-                });
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
             }
         }
 
@@ -816,140 +1422,165 @@
             };
         }
 
-        // Optimized search function
         const debouncedSearch = debounce(performSearch, 300);
 
-        // Function to show all tribes
-        function showAllTribes() {
-            document.getElementById('loading').style.display = 'block';
-            document.getElementById('tribesGrid').style.display = 'none';
-            
-            setTimeout(() => {
-                renderTribes(indigenousGroups, false); // Show all, not initial load
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('tribesGrid').style.display = 'grid';
-            }, 300);
-        }
-
-        // Updated renderTribes function with optional limit
+        // Enhanced renderTribes with accessibility
         function renderTribes(tribes, isInitialLoad = false) {
             const grid = document.getElementById('tribesGrid');
-    
+            const loading = document.getElementById('loading');
+
+            // Show loading state
+            loading.setAttribute('aria-busy', 'true');
+            loading.style.display = 'block';
+
             // Use DocumentFragment for better performance
             const fragment = document.createDocumentFragment();
-    
+
             // Limit tribes only on initial load
             const tribesToRender = isInitialLoad ? getRandomSample(tribes, INITIAL_DISPLAY_COUNT) : tribes;
-    
-            tribesToRender.forEach(tribe => {
-                const card = document.createElement('div');
+
+            tribesToRender.forEach((tribe, index) => {
+                const card = document.createElement('article');
                 card.className = 'tribe-card fade-in';
+                card.setAttribute('role', 'listitem');
+                card.setAttribute('aria-labelledby', `tribe-name-${index}`);
+
                 card.innerHTML = `
-                    <div class="tribe-image">
-                        ${tribe.emoji}
+                    <div class="tribe-image" role="img" aria-label="${tribe.name} cultural symbol" data-emoji="${tribe.emoji}">
+                        <span aria-hidden="true">${tribe.emoji}</span>
                     </div>
                     <div class="tribe-content">
-                        <h3 class="tribe-name">${tribe.name}</h3>
-                        <p class="tribe-location">📍 ${tribe.location}</p>
+                        <h3 class="tribe-name" id="tribe-name-${index}">${tribe.name}</h3>
+                        <p class="tribe-location">
+                            <span aria-hidden="true">📍</span>
+                            <span>${tribe.location}</span>
+                        </p>
                         <p class="tribe-description">${tribe.description}</p>
-                        <div class="tribe-tags">
-                            ${tribe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        <div class="tribe-tags" role="list" aria-label="Cultural attributes">
+                            ${tribe.tags.map(tag => `<span class="tag" role="listitem">${tag}</span>`).join('')}
                         </div>
                     </div>
                 `;
+
                 fragment.appendChild(card);
             });
-        
+
             // Clear and append in one operation
             grid.innerHTML = '';
             grid.appendChild(fragment);
-        
+
             // Add "Show More" button only on initial load
             if (isInitialLoad && tribes.length > INITIAL_DISPLAY_COUNT) {
                 const showMoreBtn = document.createElement('div');
                 showMoreBtn.className = 'show-more-container';
                 showMoreBtn.innerHTML = `
-                    <button class="show-more-btn" onclick="showAllTribes()">
-                        Show All Groups
+                    <button class="show-more-btn" onclick="showAllTribes()" aria-label="Show all ${tribes.length} indigenous groups">
+                        Show All ${tribes.length} Groups
                     </button>
                 `;
                 grid.appendChild(showMoreBtn);
             }
-        
+
+            // Hide loading state
+            loading.setAttribute('aria-busy', 'false');
+            loading.style.display = 'none';
+
+            // Announce results to screen readers
+            announceResults(tribesToRender.length, tribes.length);
+
             // Trigger lazy loading
-            requestAnimationFrame(() => {
-                initializeLazyLoading();
-            });
+            requestAnimationFrame(() => initializeLazyLoading());
         }
-        
-        // Updated filterTribes function (unlimited results)
+
+        // Announce results to screen readers
+        function announceResults(shown, total) {
+            const message = `Showing ${shown} of ${total} indigenous groups`;
+            const announcement = document.createElement('div');
+            announcement.setAttribute('role', 'status');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.className = 'sr-only';
+            announcement.textContent = message;
+            document.body.appendChild(announcement);
+            setTimeout(() => announcement.remove(), 1000);
+        }
+
+        // Function to show all tribes
+        function showAllTribes() {
+            let filteredTribes = indigenousGroups;
+
+            if (currentFilter !== 'all') {
+                filteredTribes = indigenousGroups.filter(tribe => tribe.region === currentFilter);
+            }
+
+            if (searchQuery) {
+                filteredTribes = filteredTribes.filter(tribe =>
+                    tribe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    tribe.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    tribe.description.toLowerCase().includes(searchQuery.toLowerCase())
+                );
+            }
+
+            renderTribes(filteredTribes, false);
+            showToast(`Showing all ${filteredTribes.length} groups`, 'success');
+        }
+
+        // Enhanced filterTribes function
         function filterTribes(region) {
             currentFilter = region;
-            
-            // Update active filter button
+
+            // Update active filter button with ARIA
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
             });
             event.target.classList.add('active');
-            
-            // Show loading
-            document.getElementById('loading').style.display = 'block';
-            document.getElementById('tribesGrid').style.display = 'none';
-            
-            // Simulate loading delay
-            setTimeout(() => {
-                let filteredTribes = indigenousGroups;
-                
-                if (region !== 'all') {
-                    filteredTribes = indigenousGroups.filter(tribe => tribe.region === region);
-                }
-                
-                if (searchQuery) {
-                    filteredTribes = filteredTribes.filter(tribe => 
-                        tribe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                        tribe.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                        tribe.description.toLowerCase().includes(searchQuery.toLowerCase())
-                    );
-                }
-                
-                renderTribes(filteredTribes, false); // Unlimited results for filtering
-                
-                // Hide loading
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('tribesGrid').style.display = 'grid';
-            }, 500);
+            event.target.setAttribute('aria-pressed', 'true');
+
+            let filteredTribes = indigenousGroups;
+
+            if (region !== 'all') {
+                filteredTribes = indigenousGroups.filter(tribe => tribe.region === region);
+            }
+
+            if (searchQuery) {
+                filteredTribes = filteredTribes.filter(tribe =>
+                    tribe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    tribe.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    tribe.description.toLowerCase().includes(searchQuery.toLowerCase())
+                );
+            }
+
+            renderTribes(filteredTribes, false);
+
+            const regionName = region === 'all' ? 'All regions' : region.charAt(0).toUpperCase() + region.slice(1);
+            showToast(`Filtered to: ${regionName}`, 'success');
         }
-        
-        // Updated performSearch function (unlimited results)
+
+        // Enhanced performSearch function
         function performSearch() {
             const input = document.getElementById('searchInput');
             searchQuery = input.value.trim();
-            
-            // Show loading
-            document.getElementById('loading').style.display = 'block';
-            document.getElementById('tribesGrid').style.display = 'none';
-            
-            setTimeout(() => {
-                let filteredTribes = indigenousGroups;
-                
-                if (currentFilter !== 'all') {
-                    filteredTribes = filteredTribes.filter(tribe => tribe.region === currentFilter);
-                }
-                
-                if (searchQuery) {
-                    filteredTribes = filteredTribes.filter(tribe => 
-                        tribe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                        tribe.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                        tribe.description.toLowerCase().includes(searchQuery.toLowerCase())
-                    );
-                }
-                
-                renderTribes(filteredTribes, false); // Unlimited results for search
-                
-                // Hide loading
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('tribesGrid').style.display = 'grid';
-            }, 500);
+
+            let filteredTribes = indigenousGroups;
+
+            if (currentFilter !== 'all') {
+                filteredTribes = filteredTribes.filter(tribe => tribe.region === currentFilter);
+            }
+
+            if (searchQuery) {
+                filteredTribes = filteredTribes.filter(tribe =>
+                    tribe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    tribe.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    tribe.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    tribe.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+                );
+            }
+
+            renderTribes(filteredTribes, false);
+
+            if (searchQuery) {
+                showToast(`Found ${filteredTribes.length} results for "${searchQuery}"`, 'success');
+            }
         }
 
         // Search on Enter key with debouncing
@@ -972,41 +1603,44 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Set focus for accessibility
+                    target.setAttribute('tabindex', '-1');
+                    target.focus();
                 }
             });
         });
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Stats counter animation
+        function animateCounter(element, target) {
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
                 }
-            });
-        }, observerOptions);
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            // Removed mobile menu functionality
-        });
+            }, 16);
+        }
 
         // Initialize page with performance optimizations
         document.addEventListener('DOMContentLoaded', function() {
             // Use requestAnimationFrame for smooth initialization
             requestAnimationFrame(() => {
                 if (window.indigenousGroups) {
-                    renderTribes(window.indigenousGroups, true); // NEW - Initial load with limit
+                    renderTribes(window.indigenousGroups, true);
                 } else {
                     console.error('Indigenous groups data not loaded');
+                    showToast('Failed to load data. Please refresh the page.', 'error');
                 }
                 initializeLazyLoading();
             });
-            
+
             // Animate stats counters when visible
             const statsObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1021,11 +1655,28 @@
                     }
                 });
             });
-            
+
             const statsSection = document.querySelector('.stats-section');
             if (statsSection) {
                 statsObserver.observe(statsSection);
             }
+
+            // PWA Install Prompt
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                showToast('Add this app to your home screen for quick access!', 'info');
+            });
+
+            // Network status monitoring
+            window.addEventListener('online', () => {
+                showToast('You are back online!', 'success');
+            });
+
+            window.addEventListener('offline', () => {
+                showToast('You are offline. Some features may be limited.', 'error');
+            });
         });
     </script>
 </body>
