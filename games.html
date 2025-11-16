@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Games | Indigenous Peoples Repository</title>
+    <meta name="description" content="Fun and educational games to learn about indigenous peoples from around the world">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    <link rel="manifest" href="/manifest.json">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-card {
+            background: white;
+            color: #2c3e50;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .game-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .game-description {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .game-difficulty {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .difficulty-easy { color: #27ae60; }
+        .difficulty-medium { color: #f39c12; }
+        .difficulty-hard { color: #e74c3c; }
+
+        .play-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Memory Match Game */
+        .game-container {
+            display: none;
+            background: white;
+            color: #2c3e50;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-container.active {
+            display: block;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #7f8c8d;
+        }
+
+        .back-button {
+            background: #ecf0f1;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #bdc3c7;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .memory-card.flipped {
+            background: white;
+            border: 3px solid #667eea;
+        }
+
+        .memory-card.matched {
+            background: #27ae60;
+            cursor: default;
+            animation: matchPulse 0.6s ease;
+        }
+
+        @keyframes matchPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .memory-card .card-front {
+            display: none;
+        }
+
+        .memory-card.flipped .card-front {
+            display: flex;
+        }
+
+        .memory-card .card-back {
+            display: flex;
+        }
+
+        .memory-card.flipped .card-back {
+            display: none;
+        }
+
+        /* Quiz Styles */
+        .quiz-question {
+            background: #ecf0f1;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .question-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .quiz-option {
+            background: white;
+            border: 3px solid transparent;
+            padding: 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+        }
+
+        .quiz-option:hover {
+            border-color: #667eea;
+            transform: translateX(10px);
+        }
+
+        .quiz-option.selected {
+            border-color: #3498db;
+            background: #ebf5fb;
+        }
+
+        .quiz-option.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+        }
+
+        .quiz-option.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+        }
+
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .quiz-feedback.correct {
+            background: #d5f4e6;
+            color: #27ae60;
+        }
+
+        .quiz-feedback.incorrect {
+            background: #fadbd8;
+            color: #e74c3c;
+        }
+
+        .next-question-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .next-question-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Results Screen */
+        .results-screen {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .results-score {
+            font-size: 5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin: 2rem 0;
+        }
+
+        .results-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .emoji-large {
+            font-size: 8rem;
+            margin: 2rem 0;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .memory-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .game-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .game-header {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .memory-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .memory-card {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Games Selection -->
+        <div id="gamesSelection">
+            <h1>🎮 Learning Games</h1>
+            <p class="subtitle">Make learning about indigenous peoples fun and engaging!</p>
+
+            <div class="games-grid">
+                <div class="game-card" onclick="startMemoryGame()">
+                    <div class="game-icon">🧠</div>
+                    <h2 class="game-title">Memory Match</h2>
+                    <p class="game-description">Match indigenous groups with their locations and symbols!</p>
+                    <div class="game-difficulty difficulty-easy">Easy - Medium</div>
+                    <button class="play-button">Play Now!</button>
+                </div>
+
+                <div class="game-card" onclick="startQuiz()">
+                    <div class="game-icon">❓</div>
+                    <h2 class="game-title">Culture Quiz</h2>
+                    <p class="game-description">Test your knowledge about indigenous peoples around the world!</p>
+                    <div class="game-difficulty difficulty-medium">Medium</div>
+                    <button class="play-button">Start Quiz!</button>
+                </div>
+
+                <div class="game-card" onclick="showComingSoon('Map Explorer')">
+                    <div class="game-icon">🗺️</div>
+                    <h2 class="game-title">Map Explorer</h2>
+                    <p class="game-description">Click on the map to discover indigenous territories!</p>
+                    <div class="game-difficulty difficulty-easy">Easy</div>
+                    <button class="play-button">Coming Soon!</button>
+                </div>
+
+                <div class="game-card" onclick="showComingSoon('Word Scramble')">
+                    <div class="game-icon">🔤</div>
+                    <h2 class="game-title">Word Scramble</h2>
+                    <p class="game-description">Unscramble indigenous language words and names!</p>
+                    <div class="game-difficulty difficulty-medium">Medium</div>
+                    <button class="play-button">Coming Soon!</button>
+                </div>
+
+                <div class="game-card" onclick="showComingSoon('Timeline Challenge')">
+                    <div class="game-icon">⏰</div>
+                    <h2 class="game-title">Timeline Challenge</h2>
+                    <p class="game-description">Put historical events in the correct order!</p>
+                    <div class="game-difficulty difficulty-hard">Hard</div>
+                    <button class="play-button">Coming Soon!</button>
+                </div>
+
+                <div class="game-card" onclick="showComingSoon('Cultural Bingo')">
+                    <div class="game-icon">🎯</div>
+                    <h2 class="game-title">Cultural Bingo</h2>
+                    <p class="game-description">Find indigenous groups matching the criteria!</p>
+                    <div class="game-difficulty difficulty-easy">Easy</div>
+                    <button class="play-button">Coming Soon!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Memory Match Game Container -->
+        <div id="memoryGame" class="game-container">
+            <div class="game-header">
+                <h2>Memory Match Game</h2>
+                <div class="game-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="matchesFound">0</div>
+                        <div class="stat-label">Matches</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="movesCount">0</div>
+                        <div class="stat-label">Moves</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="timerDisplay">0:00</div>
+                        <div class="stat-label">Time</div>
+                    </div>
+                </div>
+                <button class="back-button" onclick="backToGames()">← Back to Games</button>
+            </div>
+
+            <div id="memoryGrid" class="memory-grid"></div>
+
+            <div id="memoryResults" class="results-screen" style="display: none;">
+                <div class="emoji-large">🎉</div>
+                <h2>Congratulations!</h2>
+                <div class="results-score" id="finalMatches"></div>
+                <p class="results-message" id="resultsMessage"></p>
+                <button class="play-button" onclick="startMemoryGame()" style="max-width: 300px; margin: 0 auto;">
+                    Play Again!
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Game Container -->
+        <div id="quizGame" class="game-container">
+            <div class="game-header">
+                <h2>Culture Quiz</h2>
+                <div class="game-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="quizScore">0</div>
+                        <div class="stat-label">Score</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="questionNumber">1</div>
+                        <div class="stat-label">Question</div>
+                    </div>
+                </div>
+                <button class="back-button" onclick="backToGames()">← Back to Games</button>
+            </div>
+
+            <div id="quizContent"></div>
+
+            <div id="quizResults" class="results-screen" style="display: none;">
+                <div class="emoji-large" id="quizEmoji">🎉</div>
+                <h2>Quiz Complete!</h2>
+                <div class="results-score" id="quizFinalScore"></div>
+                <p class="results-message" id="quizResultsMessage"></p>
+                <button class="play-button" onclick="startQuiz()" style="max-width: 300px; margin: 0 auto;">
+                    Try Again!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Memory Match Game
+        let memoryCards = [];
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let moves = 0;
+        let gameTimer = 0;
+        let timerInterval = null;
+
+        const memoryPairs = [
+            { id: 1, content: '🏔️', match: 'Inuit', text: 'Arctic regions' },
+            { id: 2, content: '🦁', match: 'Maasai', text: 'Kenya & Tanzania' },
+            { id: 3, content: '🌳', match: 'Yanomami', text: 'Amazon rainforest' },
+            { id: 4, content: '🐻', match: 'Ainu', text: 'Hokkaido, Japan' },
+            { id: 5, content: '🪃', match: 'Aboriginal', text: 'Australia' },
+            { id: 6, content: '⛰️', match: 'Quechua', text: 'Andes Mountains' }
+        ];
+
+        function startMemoryGame() {
+            document.getElementById('gamesSelection').style.display = 'none';
+            document.getElementById('memoryGame').classList.add('active');
+            document.getElementById('memoryResults').style.display = 'none';
+
+            matchedPairs = 0;
+            moves = 0;
+            gameTimer = 0;
+            flippedCards = [];
+
+            document.getElementById('matchesFound').textContent = '0';
+            document.getElementById('movesCount').textContent = '0';
+            document.getElementById('timerDisplay').textContent = '0:00';
+
+            // Create pairs and shuffle
+            const gameCards = [];
+            memoryPairs.forEach(pair => {
+                gameCards.push({ ...pair, type: 'emoji' });
+                gameCards.push({ ...pair, type: 'text' });
+            });
+
+            memoryCards = shuffleArray(gameCards);
+            renderMemoryCards();
+            startTimer();
+
+            if (window.learnerProfile) {
+                window.learnerProfile.playGame();
+            }
+        }
+
+        function renderMemoryCards() {
+            const grid = document.getElementById('memoryGrid');
+            grid.innerHTML = '';
+
+            memoryCards.forEach((card, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'memory-card';
+                cardElement.dataset.index = index;
+                cardElement.innerHTML = `
+                    <div class="card-front">${card.type === 'emoji' ? card.content : card.text}</div>
+                    <div class="card-back">?</div>
+                `;
+                cardElement.addEventListener('click', () => flipCard(index));
+                grid.appendChild(cardElement);
+            });
+        }
+
+        function flipCard(index) {
+            const card = document.querySelector(`[data-index="${index}"]`);
+            if (card.classList.contains('flipped') || card.classList.contains('matched') || flippedCards.length >= 2) {
+                return;
+            }
+
+            card.classList.add('flipped');
+            flippedCards.push({ index, card: memoryCards[index] });
+
+            if (flippedCards.length === 2) {
+                moves++;
+                document.getElementById('movesCount').textContent = moves;
+                setTimeout(checkMatch, 1000);
+            }
+        }
+
+        function checkMatch() {
+            const [first, second] = flippedCards;
+
+            if (first.card.match === second.card.match) {
+                // Match found!
+                const cards = document.querySelectorAll('.memory-card.flipped');
+                cards.forEach(card => card.classList.add('matched'));
+                matchedPairs++;
+                document.getElementById('matchesFound').textContent = matchedPairs;
+
+                if (matchedPairs === memoryPairs.length) {
+                    setTimeout(showMemoryResults, 500);
+                }
+            } else {
+                // No match
+                const cards = document.querySelectorAll('.memory-card.flipped:not(.matched)');
+                cards.forEach(card => card.classList.remove('flipped'));
+            }
+
+            flippedCards = [];
+        }
+
+        function showMemoryResults() {
+            clearInterval(timerInterval);
+            document.getElementById('memoryGrid').style.display = 'none';
+            document.getElementById('memoryResults').style.display = 'block';
+
+            document.getElementById('finalMatches').textContent = `${matchedPairs}/${memoryPairs.length}`;
+
+            const time = gameTimer;
+            let message = '';
+            if (time < 60) {
+                message = `Amazing! You completed it in ${time} seconds with ${moves} moves!`;
+            } else if (time < 120) {
+                message = `Great job! Completed in ${Math.floor(time / 60)}:${(time % 60).toString().padStart(2, '0')} with ${moves} moves!`;
+            } else {
+                message = `Well done! You finished with ${moves} moves!`;
+            }
+
+            document.getElementById('resultsMessage').textContent = message;
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                gameTimer++;
+                const minutes = Math.floor(gameTimer / 60);
+                const seconds = gameTimer % 60;
+                document.getElementById('timerDisplay').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Quiz Game
+        const quizQuestions = [
+            {
+                question: 'Where do the Inuit people traditionally live?',
+                options: ['Arctic regions', 'Amazon rainforest', 'African savanna', 'Australian outback'],
+                correct: 0,
+                explanation: 'The Inuit people have traditionally inhabited the Arctic regions of Canada, Alaska, and Greenland.'
+            },
+            {
+                question: 'Which indigenous group is known for their distinctive jumping dance called "adumu"?',
+                options: ['Yanomami', 'Maasai', 'Ainu', 'Quechua'],
+                correct: 1,
+                explanation: 'The Maasai warriors perform the adumu, a traditional jumping dance that showcases their strength and agility.'
+            },
+            {
+                question: 'The Aboriginal Australians have the world\'s oldest continuous culture. How old is it?',
+                options: ['20,000 years', '40,000 years', '65,000+ years', '100,000 years'],
+                correct: 2,
+                explanation: 'Aboriginal Australian culture is over 65,000 years old, making it the oldest continuous culture in the world!'
+            },
+            {
+                question: 'Which indigenous group are descendants of the Inca Empire?',
+                options: ['Maasai', 'Quechua', 'Ainu', 'Inuit'],
+                correct: 1,
+                explanation: 'The Quechua people are descendants of the Inca Empire and continue to maintain traditional practices in the Andes Mountains.'
+            },
+            {
+                question: 'The Yanomami people have deep knowledge of rainforest medicine. How many medicinal plants do they know?',
+                options: ['50+', '100+', '300+', '500+'],
+                correct: 3,
+                explanation: 'The Yanomami know over 500 plants that can be used as medicine - incredible traditional knowledge!'
+            }
+        ];
+
+        let currentQuestion = 0;
+        let quizScore = 0;
+
+        function startQuiz() {
+            document.getElementById('gamesSelection').style.display = 'none';
+            document.getElementById('quizGame').classList.add('active');
+            document.getElementById('quizResults').style.display = 'none';
+            document.getElementById('quizContent').style.display = 'block';
+
+            currentQuestion = 0;
+            quizScore = 0;
+
+            document.getElementById('quizScore').textContent = '0';
+            document.getElementById('questionNumber').textContent = '1';
+
+            showQuestion();
+
+            if (window.learnerProfile) {
+                window.learnerProfile.playGame();
+            }
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            const content = document.getElementById('quizContent');
+
+            content.innerHTML = `
+                <div class="quiz-question">
+                    <div class="question-text">${question.question}</div>
+                    <div class="quiz-options">
+                        ${question.options.map((option, index) => `
+                            <div class="quiz-option" onclick="selectAnswer(${index})">
+                                ${option}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectAnswer(selectedIndex) {
+            const question = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+
+            options.forEach((option, index) => {
+                option.style.pointerEvents = 'none';
+                if (index === question.correct) {
+                    option.classList.add('correct');
+                } else if (index === selectedIndex) {
+                    option.classList.add('incorrect');
+                }
+            });
+
+            const isCorrect = selectedIndex === question.correct;
+            if (isCorrect) {
+                quizScore++;
+                document.getElementById('quizScore').textContent = quizScore;
+            }
+
+            const feedback = document.createElement('div');
+            feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.innerHTML = `
+                <strong>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</strong><br>
+                ${question.explanation}
+            `;
+
+            document.querySelector('.quiz-question').appendChild(feedback);
+
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'next-question-btn';
+            nextBtn.textContent = currentQuestion < quizQuestions.length - 1 ? 'Next Question →' : 'See Results';
+            nextBtn.onclick = nextQuestion;
+
+            document.querySelector('.quiz-question').appendChild(nextBtn);
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            document.getElementById('questionNumber').textContent = currentQuestion + 1;
+
+            if (currentQuestion < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quizContent').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+
+            const percentage = Math.round((quizScore / quizQuestions.length) * 100);
+            document.getElementById('quizFinalScore').textContent = `${quizScore}/${quizQuestions.length}`;
+
+            let emoji = '🎉';
+            let message = '';
+
+            if (percentage === 100) {
+                emoji = '👑';
+                message = 'Perfect score! You\'re an indigenous cultures expert!';
+            } else if (percentage >= 80) {
+                emoji = '🌟';
+                message = 'Excellent! You know a lot about indigenous peoples!';
+            } else if (percentage >= 60) {
+                emoji = '👍';
+                message = 'Good job! Keep learning to improve your knowledge!';
+            } else {
+                emoji = '📚';
+                message = 'Nice try! Explore more to learn about these amazing cultures!';
+            }
+
+            document.getElementById('quizEmoji').textContent = emoji;
+            document.getElementById('quizResultsMessage').textContent = message;
+
+            if (window.learnerProfile) {
+                window.learnerProfile.completeQuiz(quizScore, quizQuestions.length);
+            }
+        }
+
+        // Utility Functions
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function backToGames() {
+            document.getElementById('gamesSelection').style.display = 'block';
+            document.getElementById('memoryGame').classList.remove('active');
+            document.getElementById('quizGame').classList.remove('active');
+            clearInterval(timerInterval);
+            document.getElementById('memoryGrid').style.display = 'grid';
+        }
+
+        function showComingSoon(gameName) {
+            alert(`${gameName} is coming soon! We're working hard to bring you more fun learning games. 🚀`);
+        }
+
+        // Load learning profile if available
+        if (localStorage.getItem('learnerProfile')) {
+            const script = document.createElement('script');
+            script.src = '/js/learning-features.js';
+            document.head.appendChild(script);
+        }
+    </script>
+</body>
+</html>
