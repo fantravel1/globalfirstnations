@@ -1,0 +1,304 @@
+{
+  "id": "inuit",
+  "name": "Inuit",
+  "alternateNames": ["Eskimo (outdated)", "Inupiat", "Kalaallit"],
+
+  "location": {
+    "region": "arctic",
+    "countries": ["Canada", "Greenland", "United States (Alaska)", "Russia (Chukotka)"],
+    "coordinates": {
+      "lat": 70.2995,
+      "lng": -81.8753
+    }
+  },
+
+  "demographics": {
+    "population": "~180,000",
+    "populationYear": 2021,
+    "language": {
+      "name": "Inuktitut / Inupiaq / Kalaallisut",
+      "family": "Eskimo-Aleut",
+      "speakers": "~40,000",
+      "status": "Endangered to Vigorous (varies by region)"
+    }
+  },
+
+  "culturalIdentity": {
+    "icon": "🐻‍❄️",
+    "primaryColor": "#4A90E2",
+    "secondaryColor": "#E8F4F8",
+    "dwelling": "Igloo (seasonal), Qarmaq, Modern homes",
+    "livelihood": "Hunting, Fishing, Modern occupations",
+    "knownFor": "Arctic survival expertise, igloo construction, throat singing, intricate carvings",
+    "dietaryNotes": "Traditional diet of seal, whale, caribou, fish (high in omega-3)"
+  },
+
+  "quickFacts": {
+    "region": "Arctic Circle",
+    "traditionalDwelling": "Igloo / Qarmaq",
+    "primaryLivelihood": "Hunting & Fishing",
+    "distinctiveFeature": "Arctic Mastery"
+  },
+
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Inuit are the indigenous peoples of the Arctic regions of Canada, Greenland (Kalaallit), Alaska (Iñupiat), and the Russian Far East. The word 'Inuit' means 'the people' in Inuktitut. For thousands of years, the Inuit have thrived in one of Earth's most extreme environments, developing sophisticated technologies, survival strategies, and cultural practices uniquely adapted to the Arctic. Their profound knowledge of ice, weather patterns, animal behavior, and seasonal cycles represents one of humanity's most remarkable adaptations to environmental extremes.",
+
+      "culturalIdentity": "Inuit cultures share common linguistic roots in the Eskimo-Aleut language family, though significant regional variations exist. Traditional Inuit society was characterized by small, mobile family groups that moved seasonally to follow game animals. Social organization emphasized cooperation, resource sharing, and collective decision-making—essential traits for survival in the harsh Arctic environment. Elders hold profound respect as keepers of traditional knowledge, storytellers, and spiritual guides.",
+
+      "funFact": "The Inuit language has multiple words for different types of snow and ice—not the exaggerated '50 words' of popular myth, but rather sophisticated terminology describing crucial survival information like 'aqilokoq' (softly falling snow) or 'pukak' (crystalline snow that breaks down and promotes avalanches)!"
+    },
+
+    "history": {
+      "origins": "Archaeological and genetic evidence indicates that Inuit ancestors crossed the Bering Strait from Siberia around 1000 CE as part of the Thule culture expansion. The Thule people developed advanced hunting technologies including the umiaq (large skin boat), kayak, and sophisticated harpoons that enabled whale hunting. This technological innovation allowed them to spread rapidly across the North American Arctic, eventually reaching Greenland around 1300 CE.",
+
+      "preContact": "Before European contact, Inuit groups established vast trade networks across the Arctic. They developed remarkable technologies including: tailored skin clothing with superior insulation properties, the snow house (igloo) for winter shelter, the qulliq (soapstone lamp) for heat and light, sophisticated hunting equipment, and navigation techniques that enabled travel across seemingly featureless ice and tundra. Inuit oral traditions, passed down through generations, encoded essential survival knowledge, spiritual beliefs, and historical events.",
+
+      "colonialImpact": "European contact, beginning with Norse encounters in Greenland around 1000 CE and intensifying with European whalers and explorers in the 16th-19th centuries, brought devastating changes. Introduced diseases decimated populations lacking immunity. Christian missionaries worked to suppress traditional spiritual practices and shamanism. The 20th century brought forced relocations, residential school systems (particularly in Canada) that separated children from families and culture, and pressure to abandon nomadic lifestyles for permanent settlements.",
+
+      "modernHistory": "The late 20th and early 21st centuries have seen significant Inuit political organization and advocacy for self-determination. In 1999, Canada established Nunavut ('our land' in Inuktitut), giving Inuit a degree of self-governance over a territory three times the size of Texas. Greenland achieved self-governance from Denmark in 2009. The Inuit Circumpolar Council, founded in 1977, represents Inuit interests across national boundaries. Despite these gains, Inuit communities continue to face challenges from climate change, food insecurity, housing crises, and social issues stemming from historical trauma."
+    },
+
+    "culture": {
+      "arcticAdaptation": "Inuit cultures represent humanity's most sophisticated adaptation to Arctic environments. Traditional knowledge encompasses ice safety, weather prediction, animal behavior, and navigation across vast, seemingly uniform landscapes. Inuit hunters traditionally read subtle signs in snow formations, ice patterns, and animal tracks to navigate safely. The 'country food' diet—seal, whale, caribou, fish—provided complete nutrition including essential vitamins otherwise unavailable in the Arctic, demonstrating profound ecological knowledge.",
+
+      "traditionalDwelling": "While the igloo (properly called 'iglu' in Inuktitut, meaning simply 'house') is the most iconic Inuit structure, it was primarily used as a temporary winter hunting shelter. The construction technique—spiraling blocks of compressed snow cut to create a self-supporting dome—demonstrates remarkable engineering understanding. Summer dwellings included the tupiq (seal or caribou skin tent) and the qarmaq (partially underground stone house insulated with sod and skin). Modern Inuit primarily live in permanent housing, though traditional knowledge of shelter construction remains culturally important.",
+
+      "artAndCraftsmanship": "Inuit artistic traditions include intricate soapstone and ivory carvings depicting Arctic animals, spirits, and daily life; printmaking (developed in the mid-20th century, particularly at Kinngait Studios in Cape Dorset); throat singing (katajjaq)—a unique vocal game traditionally performed by women; drum dancing with large frame drums; and sophisticated textile work including amautis (parkas designed to carry infants) and kamiks (sealskin boots). Contemporary Inuit artists blend traditional forms with modern themes and techniques.",
+
+      "spiritualityAndBeliefs": "Traditional Inuit spirituality centered on animistic beliefs—all things possess spirits or souls (inua). Shamans (angakkuit) mediated between the human and spirit worlds, healing illness and ensuring successful hunts. Sedna (also called Takannaaluk or other names regionally) was the powerful sea goddess who controlled marine mammals. Inuit observed numerous taboos and rituals to maintain harmonious relationships with animal spirits and natural forces. While Christianity is now widespread, many Inuit maintain elements of traditional spiritual understanding.",
+
+      "languagePreservation": "Inuit languages face varying degrees of threat across regions. In Nunavut and northern Quebec, Inuktitut remains relatively strong with significant numbers of speakers across generations. However, in Alaska and parts of Greenland, language shift toward English and Danish threatens transmission to younger generations. Efforts to preserve Inuit languages include immersion schools, standardized writing systems (both Roman alphabet and syllabics in Canada), broadcasting in Inuit languages, and digital resources."
+    },
+
+    "contemporary": {
+      "challenges": [
+        "Climate Change: Arctic warming at twice the global rate threatens traditional hunting practices, food security, ice safety, and infrastructure built on permafrost",
+        "Food Insecurity: High cost of imported foods in remote communities, while traditional hunting faces climate-related unpredictability",
+        "Housing Crisis: Severe overcrowding in many Arctic communities with limited construction seasons and high building costs",
+        "Mental Health & Suicide: Some Inuit communities face suicide rates among the highest globally, stemming from historical trauma, rapid cultural change, and limited mental health resources",
+        "Education Gaps: Lower high school graduation rates and limited access to post-secondary education",
+        "Subsistence Rights: Ongoing conflicts over harvesting rights, particularly regarding marine mammals, versus southern animal rights activism",
+        "Infrastructure Deficits: Many communities lack running water, adequate sewage systems, and reliable internet connectivity",
+        "Language Erosion: Younger generations increasingly speak English or Danish as first language"
+      ],
+
+      "adaptations": [
+        "Political Empowerment: Self-governance through Nunavut, Greenland autonomy, Alaska Native corporations, and the Inuit Circumpolar Council",
+        "Technology Integration: GPS navigation supplementing traditional knowledge, social media connecting distant communities, online language learning resources",
+        "Economic Development: Mining partnerships, fisheries management, tourism (with careful cultural protocols), arts collectives and cooperatives",
+        "Education Innovation: Culturally-responsive curricula incorporating traditional knowledge, land-based learning programs, elder-in-residence programs",
+        "Climate Research: Inuit knowledge holders partnering with scientists on Arctic climate research, contributing observations spanning generations",
+        "Cultural Revitalization: Youth learning traditional skills (hunting, sewing, carving), cultural festivals, language immersion initiatives",
+        "Healthcare Innovation: Training community health workers, combining traditional healing with Western medicine, mental health programs addressing historical trauma"
+      ],
+
+      "preservation": "Inuit organizations actively work to preserve and transmit cultural knowledge through: documenting elders' traditional knowledge in audio, video, and written formats; establishing cultural centers and museums like the Nunatta Sunakkutaangit Museum in Iqaluit; supporting land-based programs where youth learn traditional skills; developing Inuit-language digital content and apps; protecting harvesting rights through political advocacy; and asserting sovereignty over Arctic territories and resources.",
+
+      "notableIndividuals": [
+        {
+          "name": "Kenojuak Ashevak (1927-2013)",
+          "achievement": "Renowned graphic artist, member of Order of Canada, her work appeared on Canadian postage stamp"
+        },
+        {
+          "name": "Sheila Watt-Cloutier",
+          "achievement": "Environmental and human rights advocate, Nobel Peace Prize nominee for work on climate change impacts on Inuit"
+        },
+        {
+          "name": "Tanya Tagaq",
+          "achievement": "Polaris Prize-winning throat singer blending traditional katajjaq with contemporary music"
+        },
+        {
+          "name": "Natan Obed",
+          "achievement": "President of Inuit Tapiriit Kanatami, advocate for Inuit rights and Arctic sovereignty"
+        },
+        {
+          "name": "Zebedee Nungak",
+          "achievement": "Author, activist, and key negotiator of the James Bay and Northern Quebec Agreement"
+        },
+        {
+          "name": "Alethea Arnaquq-Baril",
+          "achievement": "Filmmaker documenting Inuit perspectives ('Angry Inuk' defending seal hunting)"
+        }
+      ]
+    }
+  },
+
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Inuit_Grandmother_And_Grandchild.jpg/800px-Inuit_Grandmother_And_Grandchild.jpg",
+      "alt": "Inuit grandmother and grandchild in traditional clothing",
+      "caption": "An Inuit grandmother and grandchild showcasing the intergenerational transmission of cultural knowledge and traditional clothing craftsmanship",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Inuit_Grandmother_And_Grandchild.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Igloo_spiraled.jpg/800px-Igloo_spiraled.jpg",
+      "alt": "Traditional igloo snow house construction",
+      "caption": "A traditional igloo demonstrating the sophisticated spiral construction technique using compressed snow blocks, creating a self-supporting dome shelter",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Igloo_spiraled.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Inuit_drum_dancer_Iqaluit_1999.jpg/800px-Inuit_drum_dancer_Iqaluit_1999.jpg",
+      "alt": "Inuit drum dancer performing traditional dance in Iqaluit",
+      "caption": "Traditional Inuit drum dancing with frame drum (qilaut), an important cultural expression connecting communities to ancestral practices",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Inuit_drum_dancer_Iqaluit_1999.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Inuit_Kayak.jpg/800px-Inuit_Kayak.jpg",
+      "alt": "Traditional Inuit kayak design",
+      "caption": "Traditional Inuit kayak (qajaq), a sophisticated hunting vessel demonstrating remarkable engineering adapted perfectly to Arctic waters",
+      "credit": "Wikimedia Commons (CC BY 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Inuit_Kayak.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Inuit_soapstone_carving.jpg/800px-Inuit_soapstone_carving.jpg",
+      "alt": "Inuit soapstone carving of Arctic wildlife",
+      "caption": "Intricate Inuit soapstone carving depicting Arctic wildlife, an art form that has gained international recognition while maintaining cultural significance",
+      "credit": "Wikimedia Commons (CC BY-SA 2.5)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Inuit_soapstone_carving.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Amauti_-_Inuit_Parka.jpg/800px-Amauti_-_Inuit_Parka.jpg",
+      "alt": "Traditional Inuit amauti parka for carrying infants",
+      "caption": "Traditional amauti (women's parka designed to carry infants) showcasing sophisticated Arctic clothing technology with superior insulation and functionality",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Amauti_-_Inuit_Parka.jpg"
+    }
+  ],
+
+  "references": [
+    {
+      "type": "book",
+      "authors": ["Nuttall, Mark", "Callaghan, Terry V."],
+      "year": 2000,
+      "title": "The Arctic: Environment, People, Policy",
+      "publisher": "Harwood Academic Publishers",
+      "location": "Amsterdam",
+      "isbn": "978-9057024917"
+    },
+    {
+      "type": "book",
+      "authors": ["Brody, Hugh"],
+      "year": 2001,
+      "title": "The Other Side of Eden: Hunters, Farmers, and the Shaping of the World",
+      "publisher": "North Point Press",
+      "location": "New York",
+      "isbn": "978-0865476592"
+    },
+    {
+      "type": "book",
+      "authors": ["Stern, Pamela R."],
+      "year": 2010,
+      "title": "Daily Life of the Inuit",
+      "publisher": "Greenwood Press",
+      "location": "Santa Barbara",
+      "isbn": "978-0313363481"
+    },
+    {
+      "type": "book",
+      "authors": ["McGhee, Robert"],
+      "year": 2005,
+      "title": "The Last Imaginary Place: A Human History of the Arctic World",
+      "publisher": "Oxford University Press",
+      "location": "Oxford",
+      "isbn": "978-0195187199"
+    },
+    {
+      "type": "chapter",
+      "authors": ["Krupnik, Igor", "Jolly, Dyanna"],
+      "year": 2002,
+      "title": "The Earth is Faster Now: Indigenous Observations of Arctic Environmental Change",
+      "bookTitle": "The Earth is Faster Now",
+      "pages": "1-10",
+      "publisher": "Arctic Research Consortium of the United States",
+      "location": "Fairbanks"
+    },
+    {
+      "type": "web",
+      "title": "Inuit Culture",
+      "organization": "Inuit Tapiriit Kanatami",
+      "url": "https://www.itk.ca/about-inuit/inuit-culture/",
+      "accessDate": "2025-01-15"
+    },
+    {
+      "type": "web",
+      "title": "Inuit Circumpolar Council",
+      "organization": "ICC - Inuit Circumpolar Council",
+      "url": "https://www.inuitcircumpolar.com",
+      "accessDate": "2025-01-15"
+    },
+    {
+      "type": "journal",
+      "authors": ["Kirmayer, Laurence J.", "Valaskakis, Gail G."],
+      "year": 2009,
+      "title": "Healing Traditions: The Mental Health of Aboriginal Peoples in Canada",
+      "journal": "University of British Columbia Press",
+      "volume": null,
+      "pages": null,
+      "isbn": "978-0774815666"
+    }
+  ],
+
+  "relatedCultures": {
+    "similar": [
+      {
+        "id": "yupik",
+        "name": "Yup'ik",
+        "icon": "🦭",
+        "location": "Western Alaska and Russian Far East",
+        "similarity": "Closely related Eskimo-Aleut speaking peoples sharing similar Arctic adaptations, though with distinct cultural practices and territories.",
+        "relationshipType": "Linguistically Related"
+      },
+      {
+        "id": "aleut",
+        "name": "Aleut / Unangan",
+        "icon": "🦦",
+        "location": "Aleutian Islands, Alaska",
+        "similarity": "Related indigenous Arctic peoples of the Eskimo-Aleut language family with maritime hunting traditions.",
+        "relationshipType": "Linguistic Cousins"
+      }
+    ],
+    "regional": [
+      {
+        "id": "sami",
+        "name": "Sámi",
+        "icon": "🦌",
+        "location": "Northern Scandinavia and Russia",
+        "similarity": "Indigenous Arctic peoples of Northern Europe with reindeer herding traditions and similar challenges from climate change and colonization.",
+        "relationshipType": "Circumpolar Neighbors"
+      },
+      {
+        "id": "cree",
+        "name": "Cree",
+        "icon": "🐺",
+        "location": "Sub-Arctic Canada",
+        "similarity": "Neighbors to the south in the boreal forest and sub-Arctic regions, with overlapping territories and some shared colonial experiences in Canada.",
+        "relationshipType": "Regional Neighbors"
+      }
+    ],
+    "contrasting": [
+      {
+        "id": "maasai",
+        "name": "Maasai",
+        "icon": "🦁",
+        "location": "East Africa (Kenya, Tanzania)",
+        "similarity": "Pastoralist peoples with strong cultural identity and traditional knowledge, but adapted to savanna rather than Arctic environments.",
+        "relationshipType": "Different Environment"
+      }
+    ]
+  },
+
+  "metadata": {
+    "lastUpdated": "2025-01-15",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 3142,
+    "imageCount": 6,
+    "referenceCount": 8,
+    "contributors": ["Indigenous Peoples Repository Team"],
+    "version": "1.0.0"
+  }
+}
