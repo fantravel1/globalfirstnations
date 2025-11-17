@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarahumara (Rarámuri) People: Ultra-Runners of Sierra Madre | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃</text></svg>">
+    <style>
+        :root { --canyon-orange: #E65100; --sierra-brown: #4E342E; --copper-gold: #FF6F00; --white: #ecf0f1; --stone-gray: #546E7A; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--canyon-orange) 0%, var(--sierra-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--canyon-orange), var(--copper-gold)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(230,81,0,0.5); border: 5px solid var(--sierra-brown); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--canyon-orange); }
+        nav a { color: var(--canyon-orange); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--canyon-orange); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--canyon-orange); border-right: 3px solid var(--copper-gold); }
+        h2 { color: var(--canyon-orange); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--canyon-orange); }
+        h3 { color: var(--sierra-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--canyon-orange), var(--copper-gold)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--sierra-brown); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--copper-gold), var(--sierra-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--canyon-orange), var(--copper-gold)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--canyon-orange); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--canyon-orange); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--canyon-orange); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏃</span>
+            <h1>The Tarahumara (Rarámuri) People</h1>
+            <p class="tagline">The Running People - Ultra-Marathon Masters - Sierra Madre Canyon Dwellers</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Tarahumara?</h2>
+            <p>The Tarahumara, who call themselves <strong>Rarámuri</strong> ("those who run fast" or "foot-runners"), are an indigenous people inhabiting the rugged <strong>Sierra Madre Occidental</strong> mountains of northern Mexico, primarily in Chihuahua state. With a population of 50,000-70,000, the Rarámuri are world-renowned for their extraordinary <strong>ultra-distance running abilities</strong>, regularly covering 100-200 miles in traditional races while wearing minimal sandals (huaraches). They retreated into the remote Copper Canyon region (Barrancas del Cobre) to escape Spanish colonization, maintaining cultural autonomy in one of North America's most rugged terrains. The Rarámuri practice subsistence agriculture on steep canyon slopes, live in dispersed settlements of cave dwellings and simple houses, and maintain syncretic spiritual traditions blending indigenous and Catholic elements.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~70,000</span><span>Current population</span></div>
+                <div class="stat-card"><span class="stat-number">Rarámuri</span><span>Uto-Aztecan language</span></div>
+                <div class="stat-card"><span class="stat-number">100-200 mi</span><span>Traditional race distances</span></div>
+                <div class="stat-card"><span class="stat-number">Copper Canyon</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Born to Run:</strong> Rarámuri runners have completed modern ultramarathons like the Leadville Trail 100 wearing only handmade huarache sandals and traditional clothing, defeating elite athletes in high-tech gear! Their running prowess inspired the bestselling book "Born to Run" and revolutionized understanding of endurance running.
+            </div>
+
+            <h3>Running Culture & Rarajípari</h3>
+            <p>Running isn't merely recreation for the Rarámuri—it's central to cultural identity, social life, and survival. <strong>Rarajípari</strong> (kick-ball races) involve teams of men running 100-200 miles over mountainous terrain while kicking a small wooden ball, races lasting 24-48 hours with minimal rest. Women play <strong>ariweta</strong>, a similar game using hoops and sticks. These races involve betting, community gathering, and spiritual significance.</p>
+
+            <p>Rarámuri running technique emphasizes <strong>forefoot striking</strong> in minimal footwear, maintaining steady sustainable pace, and mental endurance. They can run continuously for days, covering distances that would hospitalize most people, fueled by <strong>pinole</strong> (toasted ground corn), <strong>chia seeds</strong> (historically providing energy), and <strong>iskiate</strong> (chia seed drink). Scientific studies show Rarámuri possess remarkable cardiovascular efficiency and musculoskeletal adaptations.</p>
+
+            <h3>Life in the Copper Canyon</h3>
+            <p>The Rarámuri inhabit the <strong>Barrancas del Cobre</strong> (Copper Canyon), a network of canyons deeper and larger than the Grand Canyon. This rugged terrain provided refuge from Spanish colonizers and later Mexican authorities. Rarámuri settlements consist of dispersed <strong>ranchos</strong>—small family compounds with simple one-room structures and <strong>cave dwellings</strong> carved into canyon walls, providing shelter from harsh weather.</p>
+
+            <p>Families practice <strong>subsistence agriculture</strong> on terraced plots carved into steep hillsides, growing corn, beans, squash, and other crops. They keep goats, chickens, and cattle, though limited grazing land restricts herds. Seasonal migration patterns have families moving between canyon bottoms (winter) and highlands (summer), adapting to temperature extremes.</p>
+
+            <h3>Spiritual Traditions & Ceremonies</h3>
+            <p>Rarámuri spirituality blends indigenous beliefs with Catholicism, creating unique syncretic practices. <strong>Owirúame</strong> (Father-God) and <strong>Iyerúame</strong> (Mother-God) head the pantheon, with numerous spirits inhabiting natural features. <strong>Owirúame</strong> represents order and life, while his counterpart represents chaos and death, requiring constant balance through proper conduct and ceremony.</p>
+
+            <p>The <strong>yúmari</strong> ceremony is central to Rarámuri spiritual life—multi-day gatherings involving dancing, chanting, drinking <strong>tesgüino</strong> (corn beer), sharing food, and curing rituals conducted by <strong>owirúames</strong> (shamans). <strong>Matachines dances</strong> incorporate Catholic imagery with traditional movements, performed during religious festivals. <strong>Tesgüino</strong> isn't merely alcoholic—it's sacred medicine facilitating community bonding, dispute resolution, and spiritual communication.</p>
+
+            <h3>Social Organization & Community</h3>
+            <p>Rarámuri society emphasizes <strong>autonomy and egalitarianism</strong>. Communities have <strong>sirames</strong> (governors) who coordinate labor, resolve disputes, and represent to outsiders, but hold limited coercive power. Decision-making involves community consensus. The Rarámuri value <strong>korima</strong>—reciprocal sharing ensuring no one goes hungry, with families obligated to share food with those in need.</p>
+
+            <p>Extended families form the basic social unit, with bilateral kinship and flexible residence patterns. Marriage is relatively informal, with couples beginning cohabitation after brief courtship, though formal Catholic weddings increasingly occur. Gender roles are complementary: men clear fields, herd livestock, and hunt; women prepare food, weave baskets, care for children, and manage households.</p>
+
+            <h3>Arts & Material Culture</h3>
+            <p>Rarámuri artistic expression includes <strong>basket weaving</strong> using yucca and pine needles, creating intricate coiled baskets, <strong>pottery</strong> for storage and cooking, and <strong>violin and guitar making</strong> for ceremonial music. Traditional clothing includes bright colored skirts and headbands for women, breechcloths and blankets for men, though Western clothing has become common. <strong>Huaraches</strong>—tire-tread sandals with leather thongs—exemplify Rarámuri practicality and running prowess.</p>
+
+            <h3>Modern Challenges & Cultural Tourism</h3>
+            <p>Contemporary Rarámuri face multiple pressures: <strong>logging</strong> destroying forests, <strong>mining</strong> operations displacing communities, <strong>drug cartels</strong> controlling territory and forcing participation in marijuana cultivation, <strong>tourism</strong> bringing economic opportunity but cultural disruption, and <strong>climate change</strong> affecting agricultural cycles.</p>
+
+            <p>The <strong>Copper Canyon railway (Chepe)</strong> brings thousands of tourists, creating markets for crafts but also exposing communities to outside influences. Some Rarámuri migrate to cities seeking work, often facing discrimination and poverty. Others maintain traditional lifestyles in remote ranchos, practicing agriculture and running traditions.</p>
+
+            <p>The international running community's fascination with Rarámuri has created both opportunities (races, documentaries, cultural exchange) and concerns (romanticization, exploitation, cultural appropriation). Organizations work to support Rarámuri communities through health clinics, schools, and economic development while respecting cultural autonomy. The Rarámuri demonstrate that indigenous knowledge—including running techniques now studied by exercise scientists worldwide—offers valuable alternatives to modern lifestyles, suggesting humans evolved as endurance runners rather than sedentary beings.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarahumara_runner.jpg/800px-Tarahumara_runner.jpg" alt="Rarámuri runner in traditional dress" loading="lazy">
+                    <div class="image-caption">Rarámuri runner in traditional huarache sandals during race</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Copper_Canyon_landscape.jpg/800px-Copper_Canyon_landscape.jpg" alt="Copper Canyon vista" loading="lazy">
+                    <div class="image-caption">Dramatic Copper Canyon (Barrancas del Cobre) landscape</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Rarajipari_ball_race.jpg/800px-Rarajipari_ball_race.jpg" alt="Traditional kick-ball race" loading="lazy">
+                    <div class="image-caption">Rarajípari kick-ball race with wooden ball through mountains</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tarahumara_cave_dwelling.jpg/800px-Tarahumara_cave_dwelling.jpg" alt="Cave dwelling home" loading="lazy">
+                    <div class="image-caption">Traditional Rarámuri cave dwelling in canyon wall</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Tarahumara_basket_weaving.jpg/800px-Tarahumara_basket_weaving.jpg" alt="Handwoven basket" loading="lazy">
+                    <div class="image-caption">Intricately woven Rarámuri basket made from pine needles</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Tarahumara_matachines_dance.jpg/800px-Tarahumara_matachines_dance.jpg" alt="Matachines ceremonial dance" loading="lazy">
+                    <div class="image-caption">Rarámuri performing traditional Matachines dance ceremony</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/yaqui.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Yaqui</h3>
+                    <p class="related-location">Sonora, Mexico</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Northern Mexican indigenous people with similar resistance history.</p>
+                </a>
+                <a href="/peoples/mayo.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Mayo</h3>
+                    <p class="related-location">Sonora/Sinaloa, Mexico</p>
+                    <span class="relationship-badge regional">Cultural Relatives</span>
+                    <p class="related-description">Related northwestern Mexican indigenous culture.</p>
+                </a>
+                <a href="/peoples/tepehuan.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Tepehuán</h3>
+                    <p class="related-location">Chihuahua/Durango, Mexico</p>
+                    <span class="relationship-badge similar">Sierra Neighbors</span>
+                    <p class="related-description">Neighboring Sierra Madre mountain people with similar lifestyle.</p>
+                </a>
+                <a href="/peoples/huichol.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Huichol (Wixárika)</h3>
+                    <p class="related-location">Western Sierra Madre</p>
+                    <span class="relationship-badge regional">Mountain Culture</span>
+                    <p class="related-description">Sierra Madre people maintaining traditional spiritual practices.</p>
+                </a>
+                <a href="/peoples/apache.html" class="related-card">
+                    <div class="related-icon">🏜️</div>
+                    <h3>Apache</h3>
+                    <p class="related-location">Southwest USA/Mexico</p>
+                    <span class="relationship-badge historical">Historical Neighbors</span>
+                    <p class="related-description">Athabaskan people who historically lived north of Rarámuri territory.</p>
+                </a>
+                <a href="/peoples/sherpa.html" class="related-card">
+                    <div class="related-icon">⛰️</div>
+                    <h3>Sherpa</h3>
+                    <p class="related-location">Nepal/Himalayas</p>
+                    <span class="relationship-badge historical">Mountain Endurance</span>
+                    <p class="related-description">Himalayan people famous for high-altitude endurance abilities.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Bennett, Wendell C., & Zingg, Robert M. (1935). <em>The Tarahumara: An Indian Tribe of Northern Mexico</em>. University of Chicago Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Kennedy, John G. (1978). <em>Tarahumara of the Sierra Madre: Beer, Ecology, and Social Organization</em>. AHM Publishing Corporation.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Merrill, William L. (1988). <em>Rarámuri Souls: Knowledge and Social Process in Northern Mexico</em>. Smithsonian Institution Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">McDougall, Christopher. (2009). <em>Born to Run: A Hidden Tribe, Superathletes, and the Greatest Race the World Has Never Seen</em>. Alfred A. Knopf.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Lieberman, Daniel E. (2012). What We Can Learn About Running from Barefoot Running: An Evolutionary Medical Perspective. <em>Exercise and Sport Sciences Reviews</em>, 40(2), 63-72.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Balke, Bruno, & Snow, Clyde. (1965). Anthropological and Physiological Observations on Tarahumara Endurance Runners. <em>American Journal of Physical Anthropology</em>, 23(3), 293-301.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Pintado Cortina, Ana Paula. (2004). <em>Tarahumaras</em>. Comisión Nacional para el Desarrollo de los Pueblos Indígenas.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Rodriguez, Sylvia. (1996). The Matachines Dance: Ritual Symbolism and Interethnic Relations in the Upper Rio Grande Valley. <em>Southwest Studies Monograph</em> No. 94.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarahumara_runner.jpg/800px-Tarahumara_runner.jpg", caption: "Rarámuri runner in traditional huarache sandals during race" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Copper_Canyon_landscape.jpg/800px-Copper_Canyon_landscape.jpg", caption: "Dramatic Copper Canyon (Barrancas del Cobre) landscape" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Rarajipari_ball_race.jpg/800px-Rarajipari_ball_race.jpg", caption: "Rarajípari kick-ball race with wooden ball through mountains" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tarahumara_cave_dwelling.jpg/800px-Tarahumara_cave_dwelling.jpg", caption: "Traditional Rarámuri cave dwelling in canyon wall" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Tarahumara_basket_weaving.jpg/800px-Tarahumara_basket_weaving.jpg", caption: "Intricately woven Rarámuri basket made from pine needles" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Tarahumara_matachines_dance.jpg/800px-Tarahumara_matachines_dance.jpg", caption: "Rarámuri performing traditional Matachines dance ceremony" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

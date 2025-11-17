@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinka People: Tall Cattle Herders of South Sudan | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐂</text></svg>">
+    <style>
+        :root { --dinka-brown: #8B4513; --nile-blue: #4682B4; --savanna-gold: #DAA520; --white: #ecf0f1; --earth-red: #A0522D; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--nile-blue) 0%, var(--savanna-gold) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--nile-blue), var(--dinka-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(70,130,180,0.5); border: 5px solid var(--savanna-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--nile-blue); }
+        nav a { color: var(--nile-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--nile-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--nile-blue); border-right: 3px solid var(--dinka-brown); }
+        h2 { color: var(--nile-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--nile-blue); }
+        h3 { color: var(--dinka-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--nile-blue), var(--dinka-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--savanna-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--savanna-gold), var(--earth-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--nile-blue), var(--dinka-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--nile-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--nile-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--nile-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐂</span>
+            <h1>The Dinka People</h1>
+            <p class="tagline">Tall Cattle Herders of the Sudd - Masters of Scarification Art - Keepers of Nilotic Traditions</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Dinka?</h2>
+            <p>The Dinka (Jieng) are South Sudan's largest ethnic group, numbering over 4.5 million people inhabiting the vast floodplains of the Sudd swamp along the White Nile. Renowned as one of the world's tallest populations (averaging over 6 feet), the Dinka are pastoral people whose entire culture centers on cattle. Cattle provide not just sustenance but social currency, spiritual connection, and cultural identity. Dinka men take individual <strong>cattle names</strong> from their favorite ox, compose praise songs to cattle, and practice elaborate body scarification. The Dinka language, a Western Nilotic tongue, preserves ancient oral traditions including creation myths, genealogies, and folk wisdom. Despite decades of civil war, the Dinka maintain strong cultural practices and have been instrumental in South Sudan's independence movement.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">4.5M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Dinka</span><span>Nilotic language</span></div>
+                <div class="stat-card"><span class="stat-number">6ft+</span><span>Average height</span></div>
+                <div class="stat-card"><span class="stat-number">South Sudan</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Cattle Names and Identity:</strong> Dinka men adopt the name and characteristics of their favorite ox in coming-of-age ceremonies. If a man's ox is named "Makuei" (the spotted one), he becomes Makuei too, composing poetry praising his ox's beauty, strength, and uniqueness. This practice reflects the profound spiritual bond between Dinka and their cattle!
+            </div>
+
+            <h3>Cattle Culture and Pastoral Life</h3>
+            <p>For the Dinka, cattle are not merely livestock but the center of existence. Cattle provide milk, blood (mixed with milk for nutrition), meat, hides for bedding and clothing, dung for fuel and plastering, and urine for washing and hair dying (giving the distinctive orange-red hair color). More importantly, cattle represent <strong>bridewealth</strong> (exchanged in marriage), social status, and spiritual intermediaries between humans and divinity. The Dinka recognize dozens of color patterns in cattle, each with specific names and aesthetic value.</p>
+
+            <p>Dinka practice <strong>transhumance</strong>, moving between permanent villages during rainy season and dry-season cattle camps (wut) near rivers and grazing lands. This seasonal migration shapes Dinka social organization and cultural practices.</p>
+
+            <h3>Scarification and Body Art</h3>
+            <p>Dinka men undergo elaborate <strong>facial scarification</strong> in initiation ceremonies marking transition to adulthood. Parallel horizontal lines carved across the forehead (typically 4-6 lines) signify courage and ethnic identity. This painful process, performed without anesthesia, demonstrates bravery and commitment to Dinka culture. Women also receive scarification, typically on the chest and abdomen, creating decorative patterns. These permanent marks distinguish Dinka from other Nilotic groups and serve as visual ethnic markers.</p>
+
+            <h3>Social Organization and Spirituality</h3>
+            <p>Dinka society organizes around patrilineal clans claiming descent from common ancestors. The <strong>age-set system</strong> groups males initiated together, creating lifelong bonds transcending clan divisions. <strong>Chiefs</strong> (beny bith) and <strong>spiritual leaders</strong> (spear masters) hold authority, with spear masters serving as ritual specialists, rainmakers, and mediators with the divine.</p>
+
+            <p>Dinka spirituality centers on <strong>Nhialic</strong> (the sky divinity), with cattle serving as intermediaries in sacrificial rituals. Spear masters possess sacred spears passed through lineages, representing spiritual power and community welfare. The Dinka believe in life force (wei) animating all living things.</p>
+
+            <h3>Oral Traditions and Poetry</h3>
+            <p>The Dinka maintain rich <strong>oral literature</strong> including creation myths, clan genealogies, cattle songs, and proverbs. Young men compose and perform <strong>praise poems</strong> celebrating their cattle's beauty, their own valor, and their lineage. These performances, accompanied by dancing and singing, occur at cattle camps and social gatherings. Elders preserve historical narratives and legal precedents transmitted orally across generations.</p>
+
+            <h3>Modern Dinka Culture</h3>
+            <p>The Dinka played central roles in Sudan's civil wars (1955-1972, 1983-2005) and South Sudan's 2011 independence. Leaders like John Garang and Salva Kiir are Dinka. Despite conflict, urbanization, and displacement, many Dinka maintain pastoral lifestyles and cultural practices. Cattle camps continue operating, initiation ceremonies persist, and the Dinka language thrives. Urban Dinka often maintain cattle in rural areas, participating in traditional practices during visits. The diaspora community, including prominent figures like NBA player Manute Bol and writer Valentino Achak Deng, work to preserve Dinka culture while adapting to global contexts. Traditional dancing, singing, and wrestling remain popular, with annual festivals celebrating Dinka heritage in South Sudan and diaspora communities worldwide.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800" alt="Dinka herders with cattle" loading="lazy">
+                    <div class="image-caption">Dinka herders with traditional long-horned cattle in Sudd wetlands</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Dinka facial scarification" loading="lazy">
+                    <div class="image-caption">Traditional Dinka facial scarification patterns marking adulthood</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Dinka cattle camp" loading="lazy">
+                    <div class="image-caption">Dry-season cattle camp (wut) with smoke fires to ward off insects</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Dinka traditional dance" loading="lazy">
+                    <div class="image-caption">Traditional Dinka dancing and singing at cultural celebration</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800" alt="Dinka spear and tools" loading="lazy">
+                    <div class="image-caption">Traditional Dinka fishing spears and pastoral tools</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Dinka beadwork" loading="lazy">
+                    <div class="image-caption">Colorful Dinka beadwork and traditional adornments</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/nuer.html" class="related-card">
+                    <div class="related-icon">🐄</div>
+                    <h3>Nuer</h3>
+                    <p class="related-location">South Sudan/Ethiopia</p>
+                    <span class="relationship-badge similar">Nilotic Cousins</span>
+                    <p class="related-description">Fellow Nilotic cattle herders with similar scarification and pastoral culture.</p>
+                </a>
+                <a href="/peoples/maasai.html" class="related-card">
+                    <div class="related-icon">🦁</div>
+                    <h3>Maasai</h3>
+                    <p class="related-location">Kenya/Tanzania</p>
+                    <span class="relationship-badge similar">Cattle Pastoralists</span>
+                    <p class="related-description">East African pastoral people sharing cattle-centered worldview.</p>
+                </a>
+                <a href="/peoples/shilluk.html" class="related-card">
+                    <div class="related-icon">👑</div>
+                    <h3>Shilluk</h3>
+                    <p class="related-location">South Sudan</p>
+                    <span class="relationship-badge regional">Nilotic Neighbors</span>
+                    <p class="related-description">Neighboring Nilotic people along the White Nile with divine kingship.</p>
+                </a>
+                <a href="/peoples/anyuak.html" class="related-card">
+                    <div class="related-icon">🎣</div>
+                    <h3>Anyuak</h3>
+                    <p class="related-location">South Sudan/Ethiopia</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Nilotic people practicing fishing and agriculture along rivers.</p>
+                </a>
+                <a href="/peoples/fulani.html" class="related-card">
+                    <div class="related-icon">🐂</div>
+                    <h3>Fulani</h3>
+                    <p class="related-location">West Africa</p>
+                    <span class="relationship-badge similar">Pastoral Culture</span>
+                    <p class="related-description">West African nomadic herders with parallel cattle-centered society.</p>
+                </a>
+                <a href="/peoples/himba.html" class="related-card">
+                    <div class="related-icon">🌅</div>
+                    <h3>Himba</h3>
+                    <p class="related-location">Namibia</p>
+                    <span class="relationship-badge similar">Pastoral Traditions</span>
+                    <p class="related-description">Southern African pastoralists maintaining traditional cattle culture.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Deng, Francis Mading. (1972). <em>The Dinka of the Sudan</em>. Holt, Rinehart and Winston.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Lienhardt, Godfrey. (1961). <em>Divinity and Experience: The Religion of the Dinka</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Hutchinson, Sharon E. (1996). <em>Nuer Dilemmas: Coping with Money, War, and the State</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Deng, Francis Mading. (1984). <em>The Dinka and Their Songs</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Buxton, Jean. (1973). <em>Religion and Healing in Mandari</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Johnson, Douglas H. (2003). <em>The Root Causes of Sudan's Civil Wars</em>. Indiana University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Cunnison, Ian. (1966). <em>Baggara Arabs: Power and Lineage in a Sudanese Nomad Tribe</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Deng, Valentino Achak. (2006). <em>What Is the What</em>. McSweeney's (Autobiographical account).</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800", caption: "Dinka herders with traditional long-horned cattle in Sudd wetlands" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Traditional Dinka facial scarification patterns marking adulthood" },
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Dry-season cattle camp (wut) with smoke fires to ward off insects" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Traditional Dinka dancing and singing at cultural celebration" },
+            { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800", caption: "Traditional Dinka fishing spears and pastoral tools" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Colorful Dinka beadwork and traditional adornments" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

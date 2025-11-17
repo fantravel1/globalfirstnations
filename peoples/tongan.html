@@ -27,7 +27,51 @@
         
 
         .fun-fact { background: linear-gradient(135deg, var(--ocean-blue), var(--royal-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
-        footer { background: linear-gradient(135deg, var(--royal-red), var(--tapa-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+
+        /* Footer */
+        footer {
+            background: var(--text, #1a1a1a);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #FFD700;
+            font-size: 1.25rem;
+        }
+
+        .footer-section p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
 
         /* Image Gallery Styles */
         .image-gallery { margin: 4rem 0; }
@@ -193,3 +237,81 @@
             <img class="lightbox-image" id="lightboxImage">
             <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About the Repository</h3>
+                    <p>An educational database dedicated to documenting and preserving knowledge about indigenous cultures worldwide with cultural respect and authentic representation.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Database Access</h3>
+                    <nav aria-label="Footer navigation">
+                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Add">Contribute Data</a>
+                        <a href="/dashboard.html">Learning Dashboard</a>
+                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Contact">Contact Team</a>
+                    </nav>
+                </div>
+                <div class="footer-section">
+                    <h3>Featured Cultures</h3>
+                    <nav aria-label="Resources navigation">
+                        <a href="/peoples/maasai.html">Maasai</a>
+                        <a href="/peoples/inuit.html">Inuit</a>
+                        <a href="/games.html">Interactive Learning</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const galleryImages = [
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tongan_kava_ceremony.jpg/800px-Tongan_kava_ceremony.jpg", caption: "Traditional Tongan kava ceremony with formal protocols" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tongan_tapa_cloth.jpg/800px-Tongan_tapa_cloth.jpg", caption: "Tongan ngatu (tapa cloth) with intricate geometric patterns" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tongan_kava_ceremony.jpg/800px-Tongan_kava_ceremony.jpg", caption: "Kava ceremony honoring royal and chiefly hierarchy" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tongan_tapa_cloth.jpg/800px-Tongan_tapa_cloth.jpg", caption: "Women creating traditional ngatu with geometric designs" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tongan_kava_ceremony.jpg/800px-Tongan_kava_ceremony.jpg", caption: "Traditional protocols in Tongan ceremonial gathering" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tongan_tapa_cloth.jpg/800px-Tongan_tapa_cloth.jpg", caption: "Intricate patterns on ceremonial tapa cloth" }
+        ];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            lightboxImage.src = galleryImages[index].src;
+            lightboxCaption.textContent = galleryImages[index].caption;
+            lightbox.style.display = 'block';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            lightboxImage.src = galleryImages[currentImageIndex].src;
+            lightboxCaption.textContent = galleryImages[currentImageIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.style.display === 'block') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeLightbox(-1);
+                if (e.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

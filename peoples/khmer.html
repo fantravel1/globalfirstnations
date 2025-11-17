@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khmer People: Angkor Wat Builders & Classical Dance Heritage | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+    <style>
+        :root { --temple-gold: #D4AF37; --royal-purple: #663399; --jungle-green: #2E7D32; --sunset-orange: #FF6F00; --lotus-pink: #F48FB1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(180deg, var(--sunset-orange) 0%, var(--lotus-pink) 50%, var(--royal-purple) 100%);
+            background-attachment: fixed;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(212,175,55,0.1) 5px, rgba(212,175,55,0.1) 6px);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header {
+            background: linear-gradient(135deg, var(--royal-purple), var(--temple-gold));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(102,51,153,0.4);
+            border-top: 6px solid var(--temple-gold);
+            border-bottom: 6px solid var(--lotus-pink);
+        }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.4); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline {
+            font-size: 1.3em;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            border-left: 5px solid var(--temple-gold);
+        }
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 3px solid var(--royal-purple);
+        }
+        nav a {
+            color: var(--royal-purple);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        nav a:hover { background: var(--royal-purple); color: white; }
+        .content-section {
+            background: rgba(255,255,255,0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-left: 8px solid var(--royal-purple);
+            border-right: 2px solid var(--temple-gold);
+        }
+        h2 {
+            color: var(--royal-purple);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--temple-gold);
+        }
+        h3 { color: var(--royal-purple); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, var(--royal-purple), var(--temple-gold));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid var(--lotus-pink);
+        }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact {
+            background: linear-gradient(135deg, var(--temple-gold), var(--royal-purple));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+        }
+        .temple-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 25px 0;
+            font-size: 1.5em;
+        }
+        footer {
+            background: linear-gradient(135deg, var(--royal-purple), var(--temple-gold));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--royal-purple);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--royal-purple);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+
+        .related-cultures {
+            background: rgba(255,255,255,0.95);
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+            border: 2px solid #e5e7eb;
+        }
+
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+/* References Section */
+        .references-list {
+            margin-top: 2rem;
+        }
+
+        .reference-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 8px;
+            border-left: 4px solid var(--royal-purple);
+        }
+
+        .reference-number {
+            color: var(--royal-purple);
+            font-weight: bold;
+            min-width: 30px;
+        }
+
+        .reference-text {
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏛️</span>
+            <h1>The Khmer People</h1>
+            <p class="tagline">Builders of Angkor Wat - Masters of Classical Dance - Hydraulic Engineering Geniuses</p>
+        </header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/peoples">All Peoples</a>
+            <a href="/regions/asia">Asia</a>
+        </nav>
+        <section class="content-section">
+            <h2>Who Are the Khmer People?</h2>
+            <p>The Khmer people are the dominant ethnic group of Cambodia, comprising approximately 90% of the country's population. As descendants of the Angkor Empire (9th-15th centuries), one of Southeast Asia's most powerful civilizations, the Khmer built the magnificent Angkor Wat temple complex and developed sophisticated hydraulic engineering systems that supported vast urban centers. Today, the Khmer maintain their distinctive cultural identity through Theravada Buddhism, classical dance traditions (particularly the royal ballet), and artistic heritage including intricate stone carving, silk weaving, and shadow puppetry. The Khmer language belongs to the Mon-Khmer branch of Austroasiatic languages and uses a unique script derived from ancient Indian writing systems.</p>
+            <div class="temple-icons">
+                <span style="color: var(--temple-gold);">🏛️</span>
+                <span style="color: var(--royal-purple);">💃</span>
+                <span style="color: var(--jungle-green);">🌾</span>
+                <span style="color: var(--lotus-pink);">🪷</span>
+                <span style="color: var(--sunset-orange);">☸️</span>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~17 million</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Khmer</span><span>Language (Mon-Khmer)</span></div>
+                <div class="stat-card"><span class="stat-number">802-1431 CE</span><span>Angkor Empire Era</span></div>
+                <div class="stat-card"><span class="stat-number">Buddhism</span><span>Theravada Tradition</span></div>
+            </div>
+            <div class="fun-fact">
+                <strong>Engineering Marvel:</strong> The Angkor Empire developed one of the world's most sophisticated pre-industrial hydraulic systems—a network of canals, reservoirs (baray), and moats that controlled monsoon floods, irrigated rice fields year-round, and supported a population exceeding one million in the Angkor region, making it the largest pre-industrial urban center!
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Culture & Traditions</h2>
+            <h3>Angkor Wat and the Temple Legacy</h3>
+            <p>Angkor Wat, built in the early 12th century by King Suryavarman II, represents the pinnacle of Khmer architectural achievement and remains the world's largest religious monument. Originally dedicated to the Hindu god Vishnu, it later became a Buddhist temple, reflecting Cambodia's religious transition. The temple's five towers symbolize Mount Meru, home of the gods in Hindu-Buddhist cosmology, while its bas-reliefs depict epic narratives from the Ramayana and Mahabharata. The broader Angkor Archaeological Park contains over 1,000 temples spanning 400 square kilometers, including the Bayon with its enigmatic stone faces and Ta Prohm, where massive tree roots engulf ancient structures. This architectural heritage profoundly shapes Khmer cultural identity and appears on Cambodia's national flag.</p>
+
+            <h3>Classical Dance and Performing Arts</h3>
+            <p>Khmer classical dance, particularly the royal ballet (Robam Preah Reach Trop), embodies centuries of artistic refinement. Dancers undergo rigorous training from childhood, learning highly stylized movements, hand gestures (mudras), and facial expressions that communicate complex narratives from Hindu-Buddhist mythology. The apsara dance, inspired by celestial nymphs carved on Angkor's temples, features elaborate costumes with golden headdresses and silk sampots. During the Khmer Rouge regime (1975-1979), which targeted artists and intellectuals, 90% of classical dancers perished, nearly extinguishing this tradition. Post-genocide revival efforts, led by surviving master teachers, have successfully transmitted this art to new generations, earning UNESCO recognition as Intangible Cultural Heritage.</p>
+
+            <h3>Hydraulic Engineering and Rice Cultivation</h3>
+            <p>The Angkor civilization's agricultural success relied on innovative water management. Engineers constructed massive reservoirs (baray)—the West Baray alone held 48 million cubic meters—connected by an intricate canal network that captured monsoon rains, prevented flooding, and enabled multiple annual rice harvests. This hydraulic system supported intensive wet-rice cultivation, generating surplus that funded temple construction and sustained large populations. Modern research suggests that over-extension and climatic changes in the 14th-15th centuries stressed this system, contributing to Angkor's decline. Contemporary Khmer farmers continue rice cultivation traditions, with Cambodia remaining a major rice exporter, though modern techniques increasingly supplement traditional methods.</p>
+
+            <h3>Modern Challenges and Cultural Resilience</h3>
+            <p>The 20th century brought tremendous trauma to Khmer society. French colonization (1863-1953), the Vietnam War's spillover, and especially the genocidal Khmer Rouge regime (1975-1979) killed approximately 1.7-2 million Cambodians—nearly a quarter of the population—deliberately targeting educated individuals, artists, and Buddhist monks. This catastrophe severed cultural transmission and created profound intergenerational trauma. Since the 1990s, Cambodians have worked to revive traditional arts, rebuild Buddhist monasteries, and document survivors' testimonies. Contemporary Khmer culture blends traditional practices with global influences, as younger generations navigate modernization while honoring ancestral heritage. Angkor Wat remains a powerful symbol of resilience and national identity.</p>
+        </section>
+
+        <section class="content-section image-gallery-section">
+            <h2 class="section-title">Image Gallery</h2>
+            <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                Explore visual documentation of Khmer culture, traditions, and architectural heritage through these carefully curated images from Wikimedia Commons.
+            </p>
+            <div class="image-gallery">
+                <div class="gallery-item" data-index="0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Angkor_Wat.jpg/800px-Angkor_Wat.jpg"
+                         alt="Angkor Wat temple complex"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Angkor Wat, the world's largest religious monument and masterpiece of Khmer architecture</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Angkor_Wat.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Khmer_classical_dance.jpg/800px-Khmer_classical_dance.jpg"
+                         alt="Khmer classical dance performance"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Khmer classical apsara dancers in traditional golden costumes performing ancient choreography</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Khmer_classical_dance.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bayon_Temple_faces.jpg/800px-Bayon_Temple_faces.jpg"
+                         alt="Bayon Temple stone faces"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">The enigmatic stone faces of Bayon Temple, representing Avalokiteshvara or King Jayavarman VII</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Bayon_Temple_faces.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Angkor_bas_relief.jpg/800px-Angkor_bas_relief.jpg"
+                         alt="Angkor Wat bas-relief carvings"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Intricate bas-relief carvings at Angkor Wat depicting scenes from Hindu epics</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Angkor_bas_relief.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY 2.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Ta_Prohm_temple_trees.jpg/800px-Ta_Prohm_temple_trees.jpg"
+                         alt="Ta Prohm temple with tree roots"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Ta Prohm temple where massive tree roots intertwine with ancient stone structures</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Ta_Prohm_temple_trees.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Cambodian_rice_fields.jpg/800px-Cambodian_rice_fields.jpg"
+                         alt="Cambodian rice paddy fields"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Traditional rice cultivation in Cambodia continues agricultural practices refined during the Angkor period</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Cambodian_rice_fields.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY 2.0)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+            <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightbox-image">
+                <div class="lightbox-caption">
+                    <p id="lightbox-text"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section related-cultures">
+            <h2 class="section-title">Explore Related Cultures</h2>
+            <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                Discover connections between cultures through shared traditions, geographic proximity, or contrasting ways of life.
+            </p>
+            <div class="related-grid">
+                <a href="thai.html" class="related-card">
+                    <div class="related-icon">🇹🇭</div>
+                    <h4 class="related-name">Thai</h4>
+                    <p class="related-location">Thailand</p>
+                    <span class="related-badge">Similar Culture</span>
+                    <p class="related-description">Share Theravada Buddhism, similar classical dance traditions, and historical connections through the Khmer Empire's influence.</p>
+                </a>
+                <a href="lao.html" class="related-card">
+                    <div class="related-icon">🏮</div>
+                    <h4 class="related-name">Lao</h4>
+                    <p class="related-location">Laos</p>
+                    <span class="related-badge">Similar Culture</span>
+                    <p class="related-description">Geographic neighbors sharing Theravada Buddhism and cultural practices influenced by historical Khmer civilization.</p>
+                </a>
+                <a href="vietnamese.html" class="related-card">
+                    <div class="related-icon">🐉</div>
+                    <h4 class="related-name">Vietnamese</h4>
+                    <p class="related-location">Vietnam</p>
+                    <span class="related-badge">Regional Neighbor</span>
+                    <p class="related-description">Neighboring culture with distinct religious traditions (Mahayana Buddhism) but shared Southeast Asian heritage.</p>
+                </a>
+                <a href="inca-quechua.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h4 class="related-name">Inca/Quechua</h4>
+                    <p class="related-location">Andean South America</p>
+                    <span class="related-badge">Parallel Civilization</span>
+                    <p class="related-description">Both built impressive stone monuments and developed sophisticated hydraulic engineering for agriculture.</p>
+                </a>
+                <a href="ifugao.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h4 class="related-name">Ifugao</h4>
+                    <p class="related-location">Philippines</p>
+                    <span class="related-badge">Similar Engineering</span>
+                    <p class="related-description">Both cultures developed remarkable hydraulic systems for rice cultivation, though on different scales.</p>
+                </a>
+                <a href="balinese.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h4 class="related-name">Balinese</h4>
+                    <p class="related-location">Bali, Indonesia</p>
+                    <span class="related-badge">Cultural Cousin</span>
+                    <p class="related-description">Share Hindu-Buddhist heritage, classical dance traditions, and intricate temple architecture.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Coe, Michael D. (2003). <em>Angkor and the Khmer Civilization</em>. Thames & Hudson.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Chandler, David P. (2008). <em>A History of Cambodia</em> (4th ed.). Westview Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Evans, Damian, et al. (2015). Uncovering archaeological landscapes at Angkor using lidar. <em>Proceedings of the National Academy of Sciences</em>, 112(45), 13595-13600.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Shapiro, Toni (1994). <em>Dance and the Spirit of Cambodia</em>. Unpublished PhD dissertation, Cornell University.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Groslier, Bernard-Philippe (1979). La cité hydraulique angkorienne: exploitation ou surexploitation du sol? <em>Bulletin de l'École française d'Extrême-Orient</em>, 66(1), 161-202.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Hinton, Alexander Laban (2005). <em>Why Did They Kill?: Cambodia in the Shadow of Genocide</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Stark, Miriam T. (2006). Pre-Angkorian and Angkorian Cambodia. In <em>Southeast Asia: From Prehistory to History</em>, Ian Glover & Peter Bellwood (eds.), 89-119.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Phim, Toni Samantha, and Thompson, Ashley (1999). <em>Dance in Cambodia</em>. Oxford University Press.</span></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="temple-icons">
+                <span>🏛️ 💃 🌾</span>
+            </div>
+            <p>&copy; 2025 Indigenous Peoples Repository | Honoring indigenous heritage worldwide</p>
+        </footer>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Angkor_Wat.jpg/800px-Angkor_Wat.jpg","alt":"Angkor Wat temple complex","caption":"Angkor Wat, the world's largest religious monument and masterpiece of Khmer architecture","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Angkor_Wat.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Khmer_classical_dance.jpg/800px-Khmer_classical_dance.jpg","alt":"Khmer classical dance performance","caption":"Khmer classical apsara dancers in traditional golden costumes performing ancient choreography","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Khmer_classical_dance.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bayon_Temple_faces.jpg/800px-Bayon_Temple_faces.jpg","alt":"Bayon Temple stone faces","caption":"The enigmatic stone faces of Bayon Temple, representing Avalokiteshvara or King Jayavarman VII","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Bayon_Temple_faces.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Angkor_bas_relief.jpg/800px-Angkor_bas_relief.jpg","alt":"Angkor Wat bas-relief carvings","caption":"Intricate bas-relief carvings at Angkor Wat depicting scenes from Hindu epics","credit":"Wikimedia Commons (CC BY 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Angkor_bas_relief.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Ta_Prohm_temple_trees.jpg/800px-Ta_Prohm_temple_trees.jpg","alt":"Ta Prohm temple with tree roots","caption":"Ta Prohm temple where massive tree roots intertwine with ancient stone structures","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Ta_Prohm_temple_trees.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Cambodian_rice_fields.jpg/800px-Cambodian_rice_fields.jpg","alt":"Cambodian rice paddy fields","caption":"Traditional rice cultivation in Cambodia continues agricultural practices refined during the Angkor period","credit":"Wikimedia Commons (CC BY 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Cambodian_rice_fields.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+</body>
+</html>

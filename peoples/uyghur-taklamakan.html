@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uyghur Taklamakan People: Sea of Death Desert & Karez Irrigation Masters | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏜️</text></svg>">
+    <style>
+        :root { --desert-gold: #DAA520; --turquoise: #40E0D0; --sand-beige: #D2B48C; --oasis-green: #228B22; --silk-red: #DC143C; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(180deg, var(--turquoise) 0%, var(--sand-beige) 50%, var(--desert-gold) 100%);
+            background-attachment: fixed;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(218,165,32,0.1) 5px, rgba(218,165,32,0.1) 6px);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header {
+            background: linear-gradient(135deg, var(--desert-gold), var(--turquoise));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(218,165,32,0.4);
+            border-top: 6px solid var(--silk-red);
+            border-bottom: 6px solid var(--oasis-green);
+        }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.4); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline {
+            font-size: 1.3em;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            border-left: 5px solid var(--silk-red);
+        }
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 3px solid var(--desert-gold);
+        }
+        nav a {
+            color: var(--desert-gold);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        nav a:hover { background: var(--desert-gold); color: white; }
+        .content-section {
+            background: rgba(255,255,255,0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-left: 8px solid var(--desert-gold);
+            border-right: 2px solid var(--turquoise);
+        }
+        h2 {
+            color: var(--desert-gold);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--turquoise);
+        }
+        h3 { color: var(--desert-gold); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, var(--desert-gold), var(--turquoise));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid var(--silk-red);
+        }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact {
+            background: linear-gradient(135deg, var(--silk-red), var(--desert-gold));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px rgba(220,20,60,0.3);
+        }
+        .desert-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 25px 0;
+            font-size: 1.5em;
+        }
+        footer {
+            background: linear-gradient(135deg, var(--desert-gold), var(--silk-red));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--desert-gold);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--desert-gold);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+
+        .related-cultures {
+            background: rgba(255,255,255,0.95);
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+            border: 2px solid #e5e7eb;
+        }
+
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+/* References Section */
+        .references-list {
+            margin-top: 2rem;
+        }
+
+        .reference-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 8px;
+            border-left: 4px solid var(--desert-gold);
+        }
+
+        .reference-number {
+            color: var(--desert-gold);
+            font-weight: bold;
+            min-width: 30px;
+        }
+
+        .reference-text {
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏜️</span>
+            <h1>The Uyghur Taklamakan People</h1>
+            <p class="tagline">"Sea of Death" Desert Dwellers - Karez Irrigation Masters - Silk Road Guardians</p>
+        </header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/peoples">All Peoples</a>
+            <a href="/regions/asia">Asia</a>
+        </nav>
+        <section class="content-section">
+            <h2>Who Are the Uyghur of the Taklamakan?</h2>
+            <p>The Uyghur people are a Turkic ethnic group predominantly inhabiting the Xinjiang Uyghur Autonomous Region in northwestern China, with significant populations also in Kazakhstan, Uzbekistan, and Kyrgyzstan. Those living around the Taklamakan Desert—whose name means "Place of No Return" or "Sea of Death"—have developed extraordinary survival strategies in one of Earth's most inhospitable environments. The Taklamakan, China's largest desert spanning 337,000 square kilometers, features massive sand dunes, extreme temperature swings (from -20°C to 50°C), and virtually no surface water. Uyghur communities survive through the ingenious karez irrigation system—underground channels tapping mountain snowmelt and delivering water to desert oases via gravity-fed tunnels, some extending over 30 kilometers. Historically positioned along the Silk Road, Uyghur culture blends Central Asian, Islamic, and Chinese influences, expressed through distinctive cuisine, music (particularly the muqam traditions), carpet weaving, and architectural styles. Today, approximately 12 million Uyghur face severe political repression and cultural suppression under Chinese government policies.</p>
+            <div class="desert-icons">
+                <span style="color: var(--desert-gold);">🏜️</span>
+                <span style="color: var(--turquoise);">💧</span>
+                <span style="color: var(--oasis-green);">🐪</span>
+                <span style="color: var(--silk-red);">🕌</span>
+                <span style="color: var(--sand-beige);">🎵</span>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~12 million</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Uyghur</span><span>Language (Turkic)</span></div>
+                <div class="stat-card"><span class="stat-number">337,000 km²</span><span>Taklamakan Size</span></div>
+                <div class="stat-card"><span class="stat-number">Karez</span><span>Underground Irrigation</span></div>
+            </div>
+            <div class="fun-fact">
+                <strong>Engineering Marvel:</strong> The karez (qanat) irrigation system represents one of humanity's greatest desert engineering achievements. These underground channels, some over 30 kilometers long and 100 meters deep, tap into aquifers fed by mountain snowmelt, delivering water to desert oases entirely by gravity. Xinjiang contains over 1,000 karez systems totaling 5,000+ kilometers—longer than the Panama Canal and Suez Canal combined! This ancient technology (possibly 2,000+ years old) minimizes evaporation in the scorching desert while providing year-round water.
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Culture & Traditions</h2>
+            <h3>Karez Irrigation: Survival in the Sea of Death</h3>
+            <p>The karez system epitomizes Uyghur ingenuity in conquering the hostile Taklamakan environment. These underground channels begin with vertical wells sunk into mountain foothills to reach groundwater aquifers recharged by snowmelt from the Tian Shan and Kunlun mountains. Horizontal tunnels then slope gently downward, carrying water by gravity to desert settlements sometimes 30+ kilometers away. Vertical access shafts every 20-50 meters allow maintenance and ventilation, appearing as distinctive crater-like holes across the landscape. By running underground, karez minimize water loss to evaporation (critical in extreme heat) and prevent freezing in harsh winters. Construction and maintenance require specialized knowledge passed through families of karez workers (kanqi or muqanni) who navigate dangerous underground tunnels, shoring up walls and removing accumulated silt. This sustainable technology has supported Taklamakan oases for millennia, creating fertile agricultural zones producing grapes, melons, cotton, and wheat amidst otherwise barren desert.</p>
+
+            <h3>Silk Road Heritage and Buried Cities</h3>
+            <p>The Uyghur homeland straddled the Silk Road's crucial northern and southern routes circling the Taklamakan Desert, making Uyghur cities like Kashgar, Turpan, and Hotan vital commercial and cultural crossroads for two millennia. Caravans carrying silk, jade, spices, and ideas between China and the West rested in Uyghur oases, fostering cosmopolitan cultures blending Buddhist, Islamic, Persian, and Chinese influences. The desert itself entombs legendary ancient cities—Loulan, Niya, Gaochang—abandoned when environmental changes or Silk Road route shifts made them untenable. Remarkably preserved by arid conditions, archaeological excavations have recovered Buddhist manuscripts, mummies, textiles, and artifacts illuminating the region's multicultural past. Contemporary Uyghur identity draws deeply from this Silk Road heritage, expressed through architectural styles (distinctive Islamic tile work and desert-adapted mud-brick construction), bazaar commerce, and cuisine incorporating Central Asian, Middle Eastern, and Chinese elements.</p>
+
+            <h3>Muqam Music and Cultural Expression</h3>
+            <p>Uyghur muqam represents one of Central Asia's most sophisticated musical traditions—complex suites combining instrumental compositions, songs, and dance lasting several hours. The Twelve Muqam is the classical form, with each muqam dedicated to different emotional modes and performed on traditional instruments including the dutar (two-stringed lute), rawap (plucked lute), and dap (frame drum). Muqam performance requires years of training in vocal technique, instrumental mastery, and understanding of modal theory. Beyond muqam, Uyghur culture celebrates music and dance at weddings, festivals, and social gatherings, often accompanied by traditional instruments and featuring distinctive spinning dances. UNESCO recognizes Uyghur muqam as Intangible Cultural Heritage. However, Chinese government restrictions on cultural expression, including surveillance and persecution of musicians, threaten this living tradition's survival.</p>
+
+            <h3>Contemporary Crisis: Cultural Genocide</h3>
+            <p>Since approximately 2017, the Chinese government has implemented systematic policies targeting Uyghur cultural, religious, and linguistic identity. Credible reports and leaked documents reveal that over 1 million Uyghur and other Turkic Muslims have been detained in "re-education camps" (concentration camps) where inmates face political indoctrination, forced labor, torture, sexual abuse, and cultural erasure. Mosques have been demolished, Arabic script banned, Islamic practices criminalized, and Uyghur language education eliminated. Mass surveillance using facial recognition, DNA collection, and digital monitoring creates a dystopian police state. Forced sterilization programs target Uyghur women. Children are separated from families and placed in state orphanages. Many international observers, including the U.S. State Department, characterize these policies as genocide and crimes against humanity. The Uyghur diaspora, particularly in Turkey, Central Asia, Europe, and North America, works desperately to document abuses, preserve cultural heritage, and advocate for international intervention to halt what many consider the 21st century's gravest ongoing human rights catastrophe.</p>
+        </section>
+
+        <section class="content-section image-gallery-section">
+            <h2 class="section-title">Image Gallery</h2>
+            <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                Explore visual documentation of Uyghur culture, the Taklamakan Desert, and traditional life through these carefully curated images from Wikimedia Commons.
+            </p>
+            <div class="image-gallery">
+                <div class="gallery-item" data-index="0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Taklamakan_Desert.jpg/800px-Taklamakan_Desert.jpg"
+                         alt="Taklamakan Desert sand dunes"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">The vast Taklamakan Desert—"Sea of Death"—one of the world's largest and most inhospitable deserts</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Taklamakan_Desert.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Karez_irrigation_system.jpg/800px-Karez_irrigation_system.jpg"
+                         alt="Karez underground irrigation system"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Vertical shafts of the karez underground irrigation system that brings water across the desert</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Karez_irrigation_system.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY 2.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Kashgar_old_city.jpg/800px-Kashgar_old_city.jpg"
+                         alt="Traditional Uyghur architecture in Kashgar"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Historic Uyghur architecture in Kashgar's old city, a major Silk Road hub for millennia</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Kashgar_old_city.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Id_Kah_Mosque_Kashgar.jpg/800px-Id_Kah_Mosque_Kashgar.jpg"
+                         alt="Id Kah Mosque in Kashgar"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Id Kah Mosque in Kashgar, one of China's largest mosques and center of Uyghur Islamic culture</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Id_Kah_Mosque_Kashgar.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Uyghur_musician_with_dutar.jpg/800px-Uyghur_musician_with_dutar.jpg"
+                         alt="Uyghur musician playing traditional dutar"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Uyghur musician playing the traditional dutar, central to classical muqam music traditions</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Uyghur_musician_with_dutar.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY 2.0)</a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Turpan_grape_valley.jpg/800px-Turpan_grape_valley.jpg"
+                         alt="Grape cultivation in Turpan oasis"
+                         loading="lazy"
+                         class="gallery-image">
+                    <div class="gallery-caption">
+                        <p class="gallery-text">Grape cultivation in Turpan oasis, made possible by the ancient karez irrigation system</p>
+                        <a href="https://commons.wikimedia.org/wiki/File:Turpan_grape_valley.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+            <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightbox-image">
+                <div class="lightbox-caption">
+                    <p id="lightbox-text"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section related-cultures">
+            <h2 class="section-title">Explore Related Cultures</h2>
+            <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                Discover connections between cultures through shared traditions, geographic proximity, or contrasting ways of life.
+            </p>
+            <div class="related-grid">
+                <a href="kazakh.html" class="related-card">
+                    <div class="related-icon">🐎</div>
+                    <h4 class="related-name">Kazakh</h4>
+                    <p class="related-location">Kazakhstan & Xinjiang</p>
+                    <span class="related-badge">Similar Culture</span>
+                    <p class="related-description">Fellow Turkic people sharing linguistic heritage, Islamic faith, and nomadic pastoral traditions in Central Asia.</p>
+                </a>
+                <a href="uzbek.html" class="related-card">
+                    <div class="related-icon">🕌</div>
+                    <h4 class="related-name">Uzbek</h4>
+                    <p class="related-location">Uzbekistan</p>
+                    <span class="related-badge">Cultural Cousin</span>
+                    <p class="related-description">Close Turkic relatives sharing Silk Road heritage, Islamic traditions, and similar architectural and musical styles.</p>
+                </a>
+                <a href="tibetan.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h4 class="related-name">Tibetan</h4>
+                    <p class="related-location">Tibet/China</p>
+                    <span class="related-badge">Shared Oppression</span>
+                    <p class="related-description">Both face severe cultural suppression and human rights abuses under Chinese government policies.</p>
+                </a>
+                <a href="bedouin.html" class="related-card">
+                    <div class="related-icon">🏜️</div>
+                    <h4 class="related-name">Bedouin</h4>
+                    <p class="related-location">Arabian Desert</p>
+                    <span class="related-badge">Desert Adaptation</span>
+                    <p class="related-description">Both developed sophisticated survival strategies in extreme desert environments with Islamic cultural influences.</p>
+                </a>
+                <a href="tuareg.html" class="related-card">
+                    <div class="related-icon">🐫</div>
+                    <h4 class="related-name">Tuareg</h4>
+                    <p class="related-location">Sahara Desert</p>
+                    <span class="related-badge">Desert Traders</span>
+                    <p class="related-description">Both historically controlled major trade routes through harsh desert regions, developing distinctive cultures.</p>
+                </a>
+                <a href="persian.html" class="related-card">
+                    <div class="related-icon">📜</div>
+                    <h4 class="related-name">Persian</h4>
+                    <p class="related-location">Iran</p>
+                    <span class="related-badge">Cultural Influence</span>
+                    <p class="related-description">Persian culture profoundly influenced Uyghur art, architecture, literature, and irrigation technology along the Silk Road.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Bovingdon, Gardner. (2010). <em>The Uyghurs: Strangers in Their Own Land</em>. Columbia University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Millward, James A. (2007). <em>Eurasian Crossroads: A History of Xinjiang</em>. Columbia University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Warikoo, K. (1996). Central Asia: Emerging New Order. <em>Xinjiang and the Uyghur Problem</em>, 87-104.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bellér-Hann, Ildikó, et al. (2007). <em>Situating the Uyghurs between China and Central Asia</em>. Ashgate Publishing.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Smith Finley, Joanne. (2013). <em>The Art of Symbolic Resistance: Uyghur Identities and Uyghur-Han Relations in Contemporary Xinjiang</em>. Brill.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Roberts, Sean R. (2020). <em>The War on the Uyghurs: China's Internal Campaign against a Muslim Minority</em>. Princeton University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Zenz, Adrian. (2019). 'Thoroughly Reforming them Towards a Healthy Heart Attitude': China's Political Re-Education Campaign in Xinjiang. <em>Central Asian Survey</em>, 38(1), 102-128.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">UNESCO. (2008). <em>Uyghur Muqam of Xinjiang</em>. Representative List of the Intangible Cultural Heritage of Humanity.</span></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="desert-icons">
+                <span>🏜️ 💧 🕌</span>
+            </div>
+            <p>&copy; 2025 Indigenous Peoples Repository | Honoring indigenous heritage worldwide</p>
+        </footer>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Taklamakan_Desert.jpg/800px-Taklamakan_Desert.jpg","alt":"Taklamakan Desert sand dunes","caption":"The vast Taklamakan Desert—\"Sea of Death\"—one of the world's largest and most inhospitable deserts","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Taklamakan_Desert.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Karez_irrigation_system.jpg/800px-Karez_irrigation_system.jpg","alt":"Karez underground irrigation system","caption":"Vertical shafts of the karez underground irrigation system that brings water across the desert","credit":"Wikimedia Commons (CC BY 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Karez_irrigation_system.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Kashgar_old_city.jpg/800px-Kashgar_old_city.jpg","alt":"Traditional Uyghur architecture in Kashgar","caption":"Historic Uyghur architecture in Kashgar's old city, a major Silk Road hub for millennia","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Kashgar_old_city.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Id_Kah_Mosque_Kashgar.jpg/800px-Id_Kah_Mosque_Kashgar.jpg","alt":"Id Kah Mosque in Kashgar","caption":"Id Kah Mosque in Kashgar, one of China's largest mosques and center of Uyghur Islamic culture","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Id_Kah_Mosque_Kashgar.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Uyghur_musician_with_dutar.jpg/800px-Uyghur_musician_with_dutar.jpg","alt":"Uyghur musician playing traditional dutar","caption":"Uyghur musician playing the traditional dutar, central to classical muqam music traditions","credit":"Wikimedia Commons (CC BY 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Uyghur_musician_with_dutar.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Turpan_grape_valley.jpg/800px-Turpan_grape_valley.jpg","alt":"Grape cultivation in Turpan oasis","caption":"Grape cultivation in Turpan oasis, made possible by the ancient karez irrigation system","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Turpan_grape_valley.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kikuyu People: Guardians of Mount Kenya | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <style>
+        :root { --kenya-green: #006400; --mountain-blue: #4169E1; --earth-brown: #8B4513; --white: #ecf0f1; --kenya-red: #C8102E; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--mountain-blue) 0%, var(--kenya-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--kenya-green), var(--earth-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,100,0,0.5); border: 5px solid var(--kenya-red); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--kenya-green); }
+        nav a { color: var(--kenya-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--kenya-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--kenya-green); border-right: 3px solid var(--kenya-red); }
+        h2 { color: var(--kenya-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--kenya-green); }
+        h3 { color: var(--earth-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--kenya-green), var(--earth-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--kenya-red); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--kenya-red), var(--earth-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--kenya-green), var(--earth-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--kenya-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--kenya-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--kenya-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏔️</span>
+            <h1>The Kikuyu People</h1>
+            <p class="tagline">Guardians of Mount Kenya - Agricultural Innovators - People of Wangari Maathai</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Kikuyu?</h2>
+            <p>The Kikuyu (Gikuyu) are Kenya's largest ethnic group, numbering over 8 million people concentrated in the fertile highlands surrounding Mount Kenya (Kirinyaga). The Kikuyu developed sophisticated agricultural societies, transforming highland forests into productive farmland through innovative terracing and crop rotation. They organized society through the <strong>age-set system</strong> (riika) and council of elders (kiama), maintaining governance without centralized chieftaincy until colonial contact. The Kikuyu played pivotal roles in Kenya's independence struggle, with leaders like Jomo Kenyatta (Kenya's first president) emerging from Mau Mau resistance. The Kikuyu are also home to Nobel Peace Prize laureate <strong>Wangari Maathai</strong>, founder of the Green Belt Movement, demonstrating continued environmental leadership rooted in cultural values.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">8M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Kikuyu</span><span>Bantu language</span></div>
+                <div class="stat-card"><span class="stat-number">1963</span><span>Kenya independence</span></div>
+                <div class="stat-card"><span class="stat-number">Central Kenya</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Mount Kenya's Sacred Peak:</strong> The Kikuyu call Mount Kenya "Kirinyaga" (Mountain of Whiteness/Brightness) and believe it's the earthly dwelling of Ngai, the supreme creator. Traditional Kikuyu always built their houses with doors facing the sacred mountain, and elders conducted rituals and sacrifices facing Kirinyaga!
+            </div>
+
+            <h3>Age-Set System and Governance</h3>
+            <p>Traditional Kikuyu society organized around the <strong>age-set system</strong> (riika), with males initiated together forming lifelong cohorts. Every generation progressed through stages: junior warriors, senior warriors, junior elders, and senior elders. The <strong>council of elders</strong> (kiama) governed communities, adjudicating disputes, managing land distribution, and conducting rituals. Unlike neighboring societies with hereditary chiefs, Kikuyu leadership derived from merit, wisdom, and successful age-set progression.</p>
+
+            <p>Female age-sets parallel male systems, with women advancing through stages marked by marriage and childbearing. Elder women wielded significant authority in domestic and community affairs.</p>
+
+            <h3>Agricultural Innovation and Land Tenure</h3>
+            <p>The Kikuyu transformed Kenya's central highlands through innovative agriculture. They practiced <strong>crop rotation</strong>, alternating nitrogen-fixing legumes with cereals to maintain soil fertility. <strong>Terracing</strong> prevented erosion on steep hillsides. Traditional crops included millet, sorghum, sweet potatoes, yams, beans, and bananas. British colonizers later introduced coffee and tea, which became major cash crops.</p>
+
+            <p>Kikuyu land tenure (githaka) vested ownership in clans (mbari) rather than individuals, with family heads allocating plots. This communal system ensured equitable distribution while recognizing individual cultivation rights. Colonial land alienation, which seized Kikuyu highlands for European settlers, sparked profound grievances culminating in Mau Mau resistance.</p>
+
+            <h3>Mau Mau and Independence Struggle</h3>
+            <p>The <strong>Mau Mau uprising</strong> (1952-1960) emerged from Kikuyu resistance to colonial land seizure, forced labor, and political oppression. Fighters retreated to forests around Mount Kenya, conducting guerrilla warfare against British forces. While colonial authorities portrayed Mau Mau as primitive savagery, it represented sophisticated anti-colonial nationalism. The British response included mass detention (over 150,000 Kikuyu), torture, and execution. Though militarily defeated, Mau Mau accelerated Kenya's path to independence in 1963.</p>
+
+            <p><strong>Jomo Kenyatta</strong>, a Kikuyu leader detained during the Emergency, became Kenya's first president, adopting the principle of "Harambee" (pulling together) to unify the nation.</p>
+
+            <h3>Spirituality and Traditional Religion</h3>
+            <p>Traditional Kikuyu religion centers on <strong>Ngai</strong> (God), believed to dwell on Mount Kenya. The Kikuyu practiced sacrifice, prayer, and divination, with elders serving as ritual specialists. The sacred <strong>mugumo tree</strong> (fig tree) marked ritual sites and territorial boundaries. Kikuyu cosmology divides reality into visible and invisible realms, with ancestors (ngoma) influencing living descendants.</p>
+
+            <p>While many Kikuyu adopted Christianity during colonial era, traditional beliefs persist, often syncretized with Christian practices. The mugumo tree remains culturally significant, and ancestral respect continues.</p>
+
+            <h3>Modern Kikuyu Culture</h3>
+            <p>Today, the Kikuyu dominate Kenyan politics, business, and agriculture. Nairobi, Kenya's capital, sits on former Kikuyu land and reflects Kikuyu cultural influence. The Kikuyu maintain entrepreneurial reputations, excelling in commerce, agriculture, and professional fields. <strong>Wangari Maathai's</strong> Green Belt Movement embodies Kikuyu environmental values, planting over 51 million trees across Kenya. Traditional practices including circumcision ceremonies (irua), though modified, continue marking life transitions. Kikuyu music, featuring traditional instruments like the mwomboko (horn) and ndurumo (drum), influences contemporary Kenyan pop music. The Kikuyu language thrives, with radio stations, newspapers, and literature preserving and evolving linguistic heritage. Annual cultural festivals celebrate Kikuyu identity, while the diaspora maintains connections through language schools and cultural associations.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Mount Kenya landscape" loading="lazy">
+                    <div class="image-caption">Mount Kenya (Kirinyaga), sacred mountain and spiritual home of the Kikuyu</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=800" alt="Kikuyu terraced farming" loading="lazy">
+                    <div class="image-caption">Traditional terraced agriculture in Kikuyu highlands preventing erosion</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Traditional Kikuyu council" loading="lazy">
+                    <div class="image-caption">Council of elders (kiama) in traditional decision-making gathering</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Mugumo sacred tree" loading="lazy">
+                    <div class="image-caption">Sacred mugumo (fig) tree used for traditional ceremonies and rituals</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800" alt="Traditional Kikuyu homestead" loading="lazy">
+                    <div class="image-caption">Traditional Kikuyu homestead with doors facing Mount Kenya</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Kikuyu cultural dance" loading="lazy">
+                    <div class="image-caption">Traditional Kikuyu dance and music celebration</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/maasai.html" class="related-card">
+                    <div class="related-icon">🦁</div>
+                    <h3>Maasai</h3>
+                    <p class="related-location">Kenya/Tanzania</p>
+                    <span class="relationship-badge regional">Kenyan Neighbors</span>
+                    <p class="related-description">Neighboring pastoral people with distinct Nilotic culture and traditions.</p>
+                </a>
+                <a href="/peoples/luo.html" class="related-card">
+                    <div class="related-icon">🎣</div>
+                    <h3>Luo</h3>
+                    <p class="related-location">Western Kenya</p>
+                    <span class="relationship-badge regional">Kenyan Community</span>
+                    <p class="related-description">Major Kenyan ethnic group with Nilotic heritage and fishing traditions.</p>
+                </a>
+                <a href="/peoples/kamba.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Kamba</h3>
+                    <p class="related-location">Eastern Kenya</p>
+                    <span class="relationship-badge similar">Bantu Relatives</span>
+                    <p class="related-description">Fellow Bantu people known for wood carving and trading traditions.</p>
+                </a>
+                <a href="/peoples/embu.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Embu</h3>
+                    <p class="related-location">Mount Kenya Region</p>
+                    <span class="relationship-badge similar">Mountain Neighbors</span>
+                    <p class="related-description">Closely related Bantu people sharing Mount Kenya region and culture.</p>
+                </a>
+                <a href="/peoples/meru.html" class="related-card">
+                    <div class="related-icon">🌳</div>
+                    <h3>Meru</h3>
+                    <p class="related-location">Northeast Mount Kenya</p>
+                    <span class="relationship-badge similar">Cultural Cousins</span>
+                    <p class="related-description">Related highland Bantu people with similar agricultural practices.</p>
+                </a>
+                <a href="/peoples/zulu.html" class="related-card">
+                    <div class="related-icon">🛡️</div>
+                    <h3>Zulu</h3>
+                    <p class="related-location">South Africa</p>
+                    <span class="relationship-badge similar">Bantu Family</span>
+                    <p class="related-description">Southern African Bantu people with age-regiment military traditions.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Kenyatta, Jomo. (1938). <em>Facing Mount Kenya: The Tribal Life of the Gikuyu</em>. Secker and Warburg.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Muriuki, Godfrey. (1974). <em>A History of the Kikuyu, 1500-1900</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Leakey, L. S. B. (1977). <em>The Southern Kikuyu Before 1903</em>. Academic Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Elkins, Caroline. (2005). <em>Imperial Reckoning: The Untold Story of Britain's Gulag in Kenya</em>. Henry Holt and Company.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Kershaw, Greet. (1997). <em>Mau Mau from Below</em>. James Currey Publishers.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Maathai, Wangari. (2006). <em>Unbowed: A Memoir</em>. Alfred A. Knopf.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Middleton, John, & Kershaw, Greet. (1965). <em>The Kikuyu and Kamba of Kenya</em>. International African Institute.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Lonsdale, John. (1992). The Moral Economy of Mau Mau. <em>Unhappy Valley: Conflict in Kenya and Africa</em>. Ohio University Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Mount Kenya (Kirinyaga), sacred mountain and spiritual home of the Kikuyu" },
+            { src: "https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=800", caption: "Traditional terraced agriculture in Kikuyu highlands preventing erosion" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Council of elders (kiama) in traditional decision-making gathering" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Sacred mugumo (fig) tree used for traditional ceremonies and rituals" },
+            { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800", caption: "Traditional Kikuyu homestead with doors facing Mount Kenya" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Traditional Kikuyu dance and music celebration" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

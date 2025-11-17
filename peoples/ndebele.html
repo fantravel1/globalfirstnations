@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndebele People: Geometric Art Masters of Southern Africa | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <style>
+        :root { --ndebele-red: #DC143C; --ndebele-blue: #4169E1; --ndebele-yellow: #FFD700; --white: #ecf0f1; --ndebele-green: #228B22; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--ndebele-blue) 0%, var(--ndebele-red) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--ndebele-red), var(--ndebele-blue)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(220,20,60,0.5); border: 5px solid var(--ndebele-yellow); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--ndebele-red); }
+        nav a { color: var(--ndebele-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--ndebele-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--ndebele-red); border-right: 3px solid var(--ndebele-blue); }
+        h2 { color: var(--ndebele-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--ndebele-red); }
+        h3 { color: var(--ndebele-blue); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--ndebele-red), var(--ndebele-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--ndebele-yellow); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--ndebele-yellow), var(--ndebele-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--ndebele-red), var(--ndebele-blue)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--ndebele-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--ndebele-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--ndebele-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🎨</span>
+            <h1>The Ndebele People</h1>
+            <p class="tagline">Masters of Geometric Wall Art - Creators of Beaded Messages - Keepers of Brilliant Colors</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Ndebele?</h2>
+            <p>The Ndebele (amaNdebele) are a Bantu-speaking people of South Africa and Zimbabwe, renowned worldwide for their spectacular <strong>geometric wall paintings</strong> and intricate <strong>beadwork</strong>. The Southern Ndebele of South Africa (approximately 1.5 million) and Northern Ndebele of Zimbabwe (2 million) share cultural heritage while developing distinct traditions. Ndebele women transformed homestead walls into brilliant canvases, creating bold geometric patterns in vivid primary colors—an artistic tradition that evolved during colonial oppression as a form of cultural resistance and communication. The iconic <strong>beaded neck rings</strong> (idzilla) and marriage blankets tell stories through color symbolism. Despite historical displacement and cultural suppression, the Ndebele have preserved and celebrated their artistic heritage, which now influences global design and contemporary African art.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">3.5M+</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">IsiNdebele</span><span>Bantu language</span></div>
+                <div class="stat-card"><span class="stat-number">2 Groups</span><span>North & South</span></div>
+                <div class="stat-card"><span class="stat-number">SA/Zimbabwe</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Beads That Speak:</strong> Ndebele women created elaborate beaded aprons, necklaces, and rings with specific color combinations conveying messages! White beads signify purity and love, red means passion, blue is fidelity, yellow is prosperity, and green represents new life. Young women wore aprons telling their marital status and family lineage through bead patterns!
+            </div>
+
+            <h3>Geometric Wall Painting Tradition</h3>
+            <p>The Ndebele wall painting tradition (<strong>ukugiya</strong>) emerged in the early 20th century, developed by women to beautify homesteads and assert cultural identity during apartheid oppression. Using natural pigments and later commercial paints, women cover exterior walls with bold <strong>geometric patterns</strong>—triangles, chevrons, rectangles, and abstract forms in brilliant reds, blues, greens, yellows, and whites. Each woman develops her unique style, though patterns often reference architectural forms, landscapes, and modern objects like light bulbs and airplanes.</p>
+
+            <p>These murals serve multiple purposes: aesthetic beauty, cultural pride, and silent resistance to cultural erasure. The tradition intensified after forced removals, with elaborate paintings declaring "we are Ndebele, we endure." Grandmother passes knowledge to granddaughter, ensuring artistic continuity.</p>
+
+            <h3>Beadwork and Symbolic Communication</h3>
+            <p>Ndebele <strong>beadwork</strong> ranks among Africa's most sophisticated, with women creating elaborate ceremonial garments. The <strong>idzilla</strong> (brass or beaded neck rings) worn by married women symbolize marital status and are never removed. Young girls wear beaded aprons (iphotiya) that change design as they progress through life stages. Marriage blankets (ndabela) feature intricate geometric beadwork presented during wedding ceremonies.</p>
+
+            <p>Color symbolism conveys complex messages: combinations indicate family lineage, marital status, age group, and personal messages between lovers or family members. This visual language allowed communication when verbal expression was dangerous during apartheid.</p>
+
+            <h3>Historical Origins and Migration</h3>
+            <p>The Northern Ndebele of Zimbabwe emerged from <strong>Mzilikazi's</strong> breakaway from Shaka's Zulu kingdom in the 1820s. Mzilikazi led followers north, conquering territories and absorbing local populations to create the powerful Ndebele kingdom centered at Bulawayo. The British conquered this kingdom in the 1890s, but Ndebele culture persisted.</p>
+
+            <p>The Southern Ndebele remained in present-day South Africa, experiencing Dutch and British colonization. Apartheid policies forcibly removed Ndebele communities from ancestral lands, attempting to suppress cultural practices. This oppression paradoxically strengthened cultural expression through wall painting and beadwork.</p>
+
+            <h3>Social Organization and Ceremonies</h3>
+            <p>Traditional Ndebele society organizes patrilineally, with extended families (umkhaya) living in homesteads featuring the distinctive painted walls. <strong>Initiation ceremonies</strong> (ukuwela/wela) mark boys' and girls' transitions to adulthood, involving seclusion, education in cultural knowledge, and elaborate beadwork presentations. The <strong>Ukuthomba ceremony</strong> celebrates girls reaching womanhood, with families commissioning special beadwork and wall paintings.</p>
+
+            <h3>Modern Ndebele Culture</h3>
+            <p>Today, Ndebele art has achieved global recognition. Artists like <strong>Esther Mahlangu</strong> have exhibited worldwide, collaborated with BMW (painting Art Cars), and brought Ndebele aesthetics to international audiences. The tradition influences contemporary African design, fashion, and architecture. Cultural villages preserve traditional homesteads, allowing visitors to appreciate artistic heritage. Young Ndebele artists blend traditional geometric patterns with contemporary mediums including canvas, digital art, and murals. IsiNdebele language education programs work to preserve linguistic heritage. Annual festivals celebrate Ndebele culture through traditional dancing, singing, and artistic displays. Despite modernization, many Ndebele maintain cultural practices, with grandmothers still teaching granddaughters the sacred art of wall painting, ensuring this brilliant tradition continues inspiring future generations.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=800" alt="Ndebele painted house" loading="lazy">
+                    <div class="image-caption">Traditional Ndebele homestead with vibrant geometric wall paintings</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800" alt="Ndebele woman in traditional dress" loading="lazy">
+                    <div class="image-caption">Ndebele woman wearing traditional beaded neck rings (idzilla) and clothing</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Geometric wall patterns" loading="lazy">
+                    <div class="image-caption">Bold geometric patterns in primary colors covering exterior walls</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Ndebele beadwork detail" loading="lazy">
+                    <div class="image-caption">Intricate beadwork patterns with symbolic color combinations</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Marriage blanket" loading="lazy">
+                    <div class="image-caption">Traditional Ndebele marriage blanket with geometric beadwork designs</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Woman painting wall" loading="lazy">
+                    <div class="image-caption">Ndebele woman applying traditional geometric designs to homestead wall</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/zulu.html" class="related-card">
+                    <div class="related-icon">🛡️</div>
+                    <h3>Zulu</h3>
+                    <p class="related-location">South Africa</p>
+                    <span class="relationship-badge historical">Historical Origins</span>
+                    <p class="related-description">Northern Ndebele originated from Zulu kingdom under Mzilikazi's leadership.</p>
+                </a>
+                <a href="/peoples/swazi.html" class="related-card">
+                    <div class="related-icon">👑</div>
+                    <h3>Swazi</h3>
+                    <p class="related-location">Eswatini/South Africa</p>
+                    <span class="relationship-badge regional">Nguni Relatives</span>
+                    <p class="related-description">Fellow Nguni people sharing linguistic and cultural heritage.</p>
+                </a>
+                <a href="/peoples/xhosa.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Xhosa</h3>
+                    <p class="related-location">South Africa</p>
+                    <span class="relationship-badge similar">Bantu Cousins</span>
+                    <p class="related-description">Major South African Bantu group with distinct cultural traditions.</p>
+                </a>
+                <a href="/peoples/shona.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Shona</h3>
+                    <p class="related-location">Zimbabwe</p>
+                    <span class="relationship-badge regional">Zimbabwean Neighbors</span>
+                    <p class="related-description">Majority Zimbabwean people sharing territory with Northern Ndebele.</p>
+                </a>
+                <a href="/peoples/sotho.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Sotho</h3>
+                    <p class="related-location">South Africa/Lesotho</p>
+                    <span class="relationship-badge regional">SA Neighbors</span>
+                    <p class="related-description">Southern African Bantu people with mountain kingdom heritage.</p>
+                </a>
+                <a href="/peoples/herero.html" class="related-card">
+                    <div class="related-icon">👗</div>
+                    <h3>Herero</h3>
+                    <p class="related-location">Namibia</p>
+                    <span class="relationship-badge similar">Distinctive Dress</span>
+                    <p class="related-description">Namibian people known for unique Victorian-inspired traditional dress.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Courtney-Clarke, Margaret. (1986). <em>Ndebele: The Art of an African Tribe</em>. Rizzoli International Publications.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Powell, Ivor. (1995). <em>Ndebele: A People and Their Art</em>. Cross River Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Van Wyk, Gary N. (1998). African Painted Houses: Basotho Dwellings of Southern Africa. <em>African Arts</em>, 31(1), 14-27.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Schneider, Elizabeth Ann. (1985). <em>Paint, Pride and Politics: Aesthetic and Meaning in Transvaal Ndebele Wall Art</em>. University of the Witwatersrand.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Nettleton, Anitra. (1989). History and the Myth of Zulu Sculpture. <em>African Arts</em>, 22(3), 48-51+86-87.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Rasmussen, R. Kent. (1979). <em>Mzilikazi of the Ndebele</em>. Heinemann Educational Books.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Levinsohn, Rhoda. (1984). Art and Craft of Southern Africa. <em>Delta Books</em>.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Becker, Peter. (1979). <em>Hill of Destiny: The Life and Times of Moshesh, Founder of the Basotho</em>. Longman.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1566140967404-b8b3932483f5?w=800", caption: "Traditional Ndebele homestead with vibrant geometric wall paintings" },
+            { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800", caption: "Ndebele woman wearing traditional beaded neck rings (idzilla) and clothing" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Bold geometric patterns in primary colors covering exterior walls" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Intricate beadwork patterns with symbolic color combinations" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Traditional Ndebele marriage blanket with geometric beadwork designs" },
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Ndebele woman applying traditional geometric designs to homestead wall" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

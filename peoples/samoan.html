@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samoan | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Samoan people - their Fa'a Samoa cultural system, pe'a and malu tattoos, fale architecture, aiga family structures, and Polynesian heritage.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌺</text></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Samoan colors - ocean blues, tropical greens, coral reds */
+            --samoan-blue: #0066CC;
+            --ocean-deep: #003D7A;
+            --tropical-teal: #00A896;
+            --coral-red: #E63946;
+            --sunset-orange: #F77F00;
+            --palm-green: #06A77D;
+            --sand-beige: #F4E8C1;
+            --sky-blue: #48CAE4;
+            --white: #FFFFFF;
+            --dark-text: #1A1A1A;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--dark-text);
+            background: #F5F5F5;
+        }
+
+        /* Samoan Pattern Border - Wave motif */
+        .samoan-border-top {
+            height: 16px;
+            background: linear-gradient(90deg,
+                var(--samoan-blue) 0%,
+                var(--coral-red) 25%,
+                var(--palm-green) 50%,
+                var(--coral-red) 75%,
+                var(--samoan-blue) 100%
+            );
+            position: relative;
+        }
+
+        .samoan-border-top::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--samoan-blue) 0px,
+                var(--samoan-blue) 30px,
+                var(--white) 30px,
+                var(--white) 40px,
+                var(--coral-red) 40px,
+                var(--coral-red) 50px,
+                var(--white) 50px,
+                var(--white) 60px
+            );
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(to bottom, var(--white), #F8F8F8);
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--samoan-blue);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--ocean-deep);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--coral-red);
+        }
+
+        .breadcrumb-separator {
+            color: #999;
+        }
+
+        /* Hero Section - Pacific Ocean & Sky */
+        .hero {
+            background: linear-gradient(180deg,
+                #0077BE 0%,
+                #0066CC 25%,
+                #48CAE4 50%,
+                #00A896 75%,
+                #06A77D 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Wave patterns */
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q150,80 300,60 T600,60 T900,60 T1200,60 L1200,120 L0,120 Z" fill="%23FFFFFF" opacity="0.2"/><path d="M0,80 Q200,100 400,80 T800,80 T1200,80 L1200,120 L0,120 Z" fill="%23E63946" opacity="0.15"/></svg>') bottom center no-repeat;
+            background-size: cover;
+        }
+
+        /* Tropical flower decoration */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="%23FFFFFF" opacity="0.1"/></svg>') center center no-repeat;
+            background-size: contain;
+            animation: floatRotate 15s ease-in-out infinite;
+        }
+
+        @keyframes floatRotate {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+            animation: gentleFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        /* Quick Facts - Samoan colors theme */
+        .quick-facts {
+            background: linear-gradient(135deg, var(--ocean-deep), #004a94);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 5px solid var(--coral-red);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(230, 57, 70, 0.4);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--samoan-blue) 0px,
+                var(--samoan-blue) 20px,
+                var(--white) 20px,
+                var(--white) 25px,
+                var(--coral-red) 25px,
+                var(--coral-red) 45px
+            );
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--coral-red);
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--coral-red);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #B8D4E8;
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ocean-deep);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--coral-red);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--samoan-blue);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #212121;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--coral-red);
+        }
+
+        /* Cultural Concept Box */
+        .cultural-box {
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFE8D6 100%);
+            border: 4px solid var(--samoan-blue);
+            border-left: 12px solid var(--coral-red);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .cultural-box::before {
+            content: '🌺';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 3.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+
+        .cultural-box h4 {
+            color: var(--ocean-deep);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .cultural-box p {
+            color: #424242;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Special Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            border: 4px solid var(--samoan-blue);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.2);
+        }
+
+        .info-box h4 {
+            color: var(--samoan-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .info-box p {
+            color: #1565C0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-facts {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--samoan-blue);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--samoan-blue);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+
+        .related-cultures {
+            background: rgba(255,255,255,0.95);
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+            border: 2px solid #e5e7eb;
+        }
+
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+/* Academic References Styles */
+        .academic-references {
+            max-width: 1200px;
+            margin: 4rem auto 2rem;
+            padding: 0 2rem;
+        }
+
+        .references-list {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .reference-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+        }
+
+        .reference-number {
+            font-weight: 700;
+            color: var(--coral-red);
+            flex-shrink: 0;
+        }
+
+        .reference-text {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .reference-text em {
+            font-style: italic;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
+    
+        /* Footer */
+        footer {
+            background: var(--text, #1a1a1a);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #FFD700;
+            font-size: 1.25rem;
+        }
+
+        .footer-section p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Samoan Pattern Border -->
+    <div class="samoan-border-top"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-nav">
+            <a href="/">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="/">All Cultures</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="/?region=oceania">Oceania</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Samoan</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Pacific Ocean -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="culture-icon">🌺</div>
+            <h1>Samoan</h1>
+            <p class="hero-subtitle">Guardians of Fa'a Samoa - The Samoan Way</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span>👥</span>
+                    <span>~250,000 people</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>🗣️</span>
+                    <span>Samoan (Gagana Samoa)</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Samoa & American Samoa</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="main-content">
+            <!-- Article Content -->
+            <article class="article-content">
+                <section class="content-section">
+                    <h2 class="section-title">Who Are the Samoan People?</h2>
+
+                    <p class="content-text">
+                        The Samoan people are indigenous Polynesians inhabiting the Samoan Islands in the central South Pacific Ocean. With over 3,000 years of continuous settlement, Samoans have maintained one of the Pacific's most resilient cultural systems, known as Fa'a Samoa (the Samoan Way). This comprehensive cultural framework governs all aspects of life, from family organization to social hierarchy, spiritual beliefs to artistic expression. Samoans are renowned for preserving their language, traditional tattooing practices (tatau), distinctive architecture, and complex social structures despite centuries of external pressures from colonization and globalization.
+                    </p>
+
+                    <div class="cultural-box">
+                        <h4>Fa'a Samoa - The Samoan Way</h4>
+                        <p>
+                            Fa'a Samoa encompasses the entire Samoan cultural worldview, emphasizing communal living, respect for elders, and reciprocal relationships. Central to this system is the matai (chief) system, where each extended family (aiga) is led by a titled chief who holds authority and responsibility for family welfare. The concept of tautua (service) requires family members to contribute to communal wellbeing, while va fealoaloa'i (sacred relationships) governs proper behavior between people. Fa'a Samoa prioritizes collective prosperity over individual success, family obligations over personal desires, and traditional values over modern conveniences, creating one of the Pacific's strongest cultural identities.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>The Sacred Art of Tatau:</strong> Samoan tattooing represents one of the world's oldest continuous tattooing traditions, dating back over 2,000 years. The pe'a (male tattoo covering waist to knees) and malu (female tattoo on thighs) are intricate geometric patterns applied using traditional hand-tapping tools made from bone, turtle shell, and wood. The painful, multi-day process serves as a rite of passage demonstrating courage, commitment to culture, and readiness for adult responsibilities. Each pattern element carries specific meaning related to genealogy, status, and cultural values. Modern Samoans continue this practice, making Samoa unique among Pacific nations in maintaining pre-contact tattooing traditions.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Ancient Origins & Migration</h2>
+
+                    <p class="content-text">
+                        Archaeological and linguistic evidence indicates Samoa was settled around 1000 BCE by Lapita people, making it one of the oldest continuously inhabited Polynesian islands. Samoans developed a sophisticated maritime culture, mastering long-distance ocean navigation using star paths, wave patterns, and bird migrations. Traditional oral histories recount journeys to Tonga, Fiji, and other Pacific islands, establishing Samoa as a cultural heartland from which Polynesian migrations spread eastward to the Cook Islands, Tahiti, and eventually Hawaii and Aotearoa (New Zealand). Samoan navigators traveled thousands of miles in double-hulled canoes called va'a, demonstrating remarkable seafaring knowledge.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>The Matai System - Chiefs and Governance</h4>
+                        <p>
+                            Pre-European Samoan society organized around the matai system, which continues today. Each aiga (extended family) selects a matai through consensus to hold the family's chiefly title. Matai represent their families in village councils (fono), make decisions about communal lands, settle disputes, and ensure family prosperity. Two types of titles exist: ali'i (high chiefs with genealogical prestige) and tulafale (talking chiefs who serve as orators and advisors). This indigenous governance system coexists with national government structures, demonstrating Samoa's successful integration of traditional and modern political systems. Villages maintain significant autonomy through matai councils, preserving cultural continuity.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        Traditional Samoan society developed complex social hierarchies, artistic traditions, and architectural innovations. Villages centered around the malae (central open space) for ceremonies and gatherings. Skilled craftspeople created fine mats (ie toga), tapa cloth (siapo), woodcarvings, and distinctive fale architecture. Warfare between villages and districts was common, with warriors demonstrating courage and strategic skills. Religious beliefs centered on ancestors and nature spirits, with high chiefs holding spiritual authority. The introduction of Christianity in the 1830s transformed spiritual practices while Fa'a Samoa adapted and endured.
+                    </p>
+                </section>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of Samoan culture, traditions, and daily life through these carefully curated images.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Samoan_fale.jpg/800px-Samoan_fale.jpg"
+                             alt="Traditional Samoan fale architecture"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Samoan fale (open-sided house) with distinctive thatched roof and lack of walls, designed for tropical climate and communal living</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Samoan_fale.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Samoan_pe%27a_tattoo.jpg/800px-Samoan_pe%27a_tattoo.jpg"
+                             alt="Traditional Samoan pe'a tattoo"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Pe'a traditional male tattoo covering the body from waist to knees, applied using hand-tapping methods passed down for over 2,000 years</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Samoan_pe%27a_tattoo.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Samoan_siva_dance.jpg/800px-Samoan_siva_dance.jpg"
+                             alt="Samoan siva dance performance"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Samoan siva dance featuring graceful hand movements and storytelling through gesture, often performed at cultural celebrations</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Samoan_siva_dance.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Samoan_ava_ceremony.jpg/800px-Samoan_ava_ceremony.jpg"
+                             alt="Traditional Samoan ava ceremony"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional ava (kava) ceremony where the ceremonial drink is prepared and served according to strict protocols reflecting social hierarchy</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Samoan_ava_ceremony.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Samoan_siapo_tapa.jpg/800px-Samoan_siapo_tapa.jpg"
+                             alt="Traditional Samoan siapo (tapa cloth)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Samoan siapo (tapa cloth) decorated with traditional geometric patterns, made from beaten bark and used in ceremonies and exchanges</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Samoan_siapo_tapa.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samoan_fire_knife_dance.jpg/800px-Samoan_fire_knife_dance.jpg"
+                             alt="Samoan fire knife dance performance"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Modern Samoan fire knife dance (ailao afi) showcasing athletic skill and bravery, evolved from traditional knife dance into spectacular performance</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Samoan_fire_knife_dance.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section">
+                    <h2 class="section-title">Cultural Traditions & Practices</h2>
+
+                    <p class="content-text">
+                        Samoan architecture reflects the culture's emphasis on communal living and openness. The traditional fale is an oval or circular structure with a domed thatched roof supported by wooden posts, completely open on the sides without walls. This design allows air circulation in the tropical climate while facilitating social interaction and collective activities. Different fale types serve specific purposes: the fale tele (large house) for gatherings and ceremonies, fale afolau (longhouse) for extended families, and smaller structures for storage or cooking. Woven blinds (pola) can be lowered during rain or for privacy. The fale's openness embodies Fa'a Samoa values of transparency, accessibility, and community.
+                    </p>
+
+                    <div class="cultural-box">
+                        <h4>Aiga - The Extended Family Network</h4>
+                        <p>
+                            The aiga (extended family) forms the foundation of Samoan society, extending beyond nuclear families to include multiple generations, distant relatives, and adopted members. Each aiga shares communal lands, fishing rights, and responsibilities under the leadership of the matai. Family members contribute labor, resources, and support to collective enterprises, receiving in return security, identity, and belonging. The concept of fa'alavelave (family obligations) requires participation in weddings, funerals, title investitures, and other ceremonies through gift exchanges of fine mats, money, and food. This reciprocal system creates strong social bonds but can also create financial pressures on families attempting to meet traditional obligations in modern economies.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        Traditional Samoan performing arts demonstrate sophisticated aesthetic and cultural expression. The siva is a graceful dance emphasizing fluid hand movements, storytelling gestures, and rhythmic coordination. The fa'ataupati (slap dance) features synchronized group choreography with rhythmic body percussion. Songs (pese) accompany dances, telling stories of love, war, genealogy, and daily life. The modern fire knife dance (ailao afi) evolved from traditional war dances, showcasing athletic prowess and bravery. These performances remain central to cultural celebrations, connecting contemporary Samoans to ancestral traditions while entertaining and educating audiences worldwide.
+                    </p>
+
+                    <p class="content-text">
+                        <em>This page celebrates the enduring strength and cultural richness of the Samoan people—from ancient navigators to modern cultural ambassadors maintaining Fa'a Samoa for future generations. The Samoan Way continues strong.</em>
+                    </p>
+                </section>
+            </article>
+
+            <!-- Quick Facts Sidebar -->
+            <aside class="quick-facts">
+                <h3>Quick Facts</h3>
+
+                <div class="fact-item">
+                    <div class="fact-label">Population</div>
+                    <div class="fact-value">~250,000</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language</div>
+                    <div class="fact-value">Samoan (Gagana Samoa)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Family</div>
+                    <div class="fact-value">Austronesian (Polynesian)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Speakers</div>
+                    <div class="fact-value">~510,000</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Traditional Dwelling</div>
+                    <div class="fact-value">Fale</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Primary Livelihood</div>
+                    <div class="fact-value">Fishing & Agriculture</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Known For</div>
+                    <div class="fact-value">Tatau, Fa'a Samoa, Matai system</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Settlement Date</div>
+                    <div class="fact-value">~1000 BCE</div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Related Cultures Section -->
+    <section class="related-cultures">
+        <h2 class="section-title">Explore Related Cultures</h2>
+        <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+            Discover connections between cultures through shared traditions, geographic proximity, or contrasting ways of life.
+        </p>
+        <div class="related-grid">
+
+            <a href="maori.html" class="related-card">
+                <div class="related-icon">🌿</div>
+                <h4 class="related-name">Māori</h4>
+                <p class="related-location">Aotearoa (New Zealand)</p>
+                <span class="related-badge">Similar Culture</span>
+                <p class="related-description">Fellow Polynesian descendants who migrated from eastern Polynesia, sharing linguistic roots and cultural practices with Samoans</p>
+            </a>
+
+            <a href="tongan.html" class="related-card">
+                <div class="related-icon">🌴</div>
+                <h4 class="related-name">Tongan</h4>
+                <p class="related-location">Tonga</p>
+                <span class="related-badge">Similar Culture</span>
+                <p class="related-description">Close Polynesian neighbors with historical connections through migration, intermarriage, and shared cultural elements</p>
+            </a>
+
+            <a href="kanaka-maoli.html" class="related-card">
+                <div class="related-icon">🌊</div>
+                <h4 class="related-name">Kanaka Maoli</h4>
+                <p class="related-location">Hawaii</p>
+                <span class="related-badge">Similar Culture</span>
+                <p class="related-description">Native Hawaiian relatives sharing Polynesian ancestry, navigation traditions, and cultural values including mana and kapu (tapu)</p>
+            </a>
+
+            <a href="fijian.html" class="related-card">
+                <div class="related-icon">🥥</div>
+                <h4 class="related-name">Fijian</h4>
+                <p class="related-location">Fiji</p>
+                <span class="related-badge">Regional Neighbor</span>
+                <p class="related-description">Western Pacific neighbors with Melanesian heritage but historical cultural exchange and connections with Samoa</p>
+            </a>
+
+            <a href="tahitian.html" class="related-card">
+                <div class="related-icon">🏝️</div>
+                <h4 class="related-name">Tahitian</h4>
+                <p class="related-location">French Polynesia</p>
+                <span class="related-badge">Similar Culture</span>
+                <p class="related-description">Eastern Polynesian relatives sharing language family, tattooing traditions, and similar social structures</p>
+            </a>
+
+            <a href="rapanui.html" class="related-card">
+                <div class="related-icon">🗿</div>
+                <h4 class="related-name">Rapanui</h4>
+                <p class="related-location">Easter Island</p>
+                <span class="related-badge">Similar Culture</span>
+                <p class="related-description">Remote Polynesian cousins who migrated from western Polynesia, demonstrating extreme Pacific navigation capabilities</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Academic References Section -->
+    <section class="academic-references">
+        <h2 class="section-title">Academic References & Further Reading</h2>
+        <div class="references-list">
+            <div class="reference-item">
+                <span class="reference-number">1.</span>
+                <span class="reference-text">
+                    Mead, M. (1928). <em>Coming of Age in Samoa</em>. William Morrow & Company.
+                </span>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">2.</span>
+                <span class="reference-text">
+                    Freeman, D. (1983). <em>Margaret Mead and Samoa</em>. Harvard University Press.
+                </span>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">3.</span>
+                <span class="reference-text">
+                    Mageo, J. M. (1998). <em>Theorizing Self in Samoa: Emotions, Genders, and Sexualities</em>. University of Michigan Press.
+                </span>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">4.</span>
+                <span class="reference-text">
+                    Schoeffel, P. (1999). Samoan Exchange and 'Fine Mats': An Historical Reconsideration. <em>Journal of the Polynesian Society</em>.
+                </span>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">5.</span>
+                <span class="reference-text">
+                    Tcherkézoff, S. (2008). <em>First Contacts in Polynesia: The Samoan Case</em>. ANU Press.
+                </span>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">6.</span>
+                <span class="reference-text">
+                    Mallon, S., Māhina-Tuai, K., & Salesa, D. I. (2012). <em>Tangata O Le Moana: New Zealand and the People of the Pacific</em>. Te Papa Press.
+                </span>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">7.</span>
+                <span class="reference-text">
+                    Macpherson, C., & Macpherson, L. (2009). <em>The Warm Winds of Change: Globalisation in Contemporary Samoa</em>. Auckland University Press.
+                </span>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">8.</span>
+                <span class="reference-text">
+                    Duranti, A. (1994). <em>From Grammar to Politics: Linguistic Anthropology in a Western Samoan Village</em>. University of California Press.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <div class="samoan-border-top"></div>
+
+    <script>
+        if (window.learnerProfile) {
+            window.learnerProfile.visitGroup({
+                id: 'samoan',
+                name: 'Samoan',
+                region: 'oceania',
+                continent: 'oceania'
+            });
+        }
+    </script>
+
+    <script>
+        // Lightbox functionality
+        const galleryImages = [
+            {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Samoan_fale.jpg/800px-Samoan_fale.jpg","alt":"Traditional Samoan fale architecture","caption":"Traditional Samoan fale (open-sided house) with distinctive thatched roof and lack of walls, designed for tropical climate and communal living","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Samoan_fale.jpg"},
+            {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Samoan_pe%27a_tattoo.jpg/800px-Samoan_pe%27a_tattoo.jpg","alt":"Traditional Samoan pe'a tattoo","caption":"Pe'a traditional male tattoo covering the body from waist to knees, applied using hand-tapping methods passed down for over 2,000 years","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Samoan_pe%27a_tattoo.jpg"},
+            {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Samoan_siva_dance.jpg/800px-Samoan_siva_dance.jpg","alt":"Samoan siva dance performance","caption":"Traditional Samoan siva dance featuring graceful hand movements and storytelling through gesture, often performed at cultural celebrations","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Samoan_siva_dance.jpg"},
+            {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Samoan_ava_ceremony.jpg/800px-Samoan_ava_ceremony.jpg","alt":"Traditional Samoan ava ceremony","caption":"Traditional ava (kava) ceremony where the ceremonial drink is prepared and served according to strict protocols reflecting social hierarchy","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Samoan_ava_ceremony.jpg"},
+            {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Samoan_siapo_tapa.jpg/800px-Samoan_siapo_tapa.jpg","alt":"Traditional Samoan siapo (tapa cloth)","caption":"Samoan siapo (tapa cloth) decorated with traditional geometric patterns, made from beaten bark and used in ceremonies and exchanges","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Samoan_siapo_tapa.jpg"},
+            {"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samoan_fire_knife_dance.jpg/800px-Samoan_fire_knife_dance.jpg","alt":"Samoan fire knife dance performance","caption":"Modern Samoan fire knife dance (ailao afi) showcasing athletic skill and bravery, evolved from traditional knife dance into spectacular performance","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Samoan_fire_knife_dance.jpg"}
+        ];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About the Repository</h3>
+                    <p>An educational database dedicated to documenting and preserving knowledge about indigenous cultures worldwide with cultural respect and authentic representation.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Database Access</h3>
+                    <nav aria-label="Footer navigation">
+                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Add">Contribute Data</a>
+                        <a href="/dashboard.html">Learning Dashboard</a>
+                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Contact">Contact Team</a>
+                    </nav>
+                </div>
+                <div class="footer-section">
+                    <h3>Featured Cultures</h3>
+                    <nav aria-label="Resources navigation">
+                        <a href="/peoples/maasai.html">Maasai</a>
+                        <a href="/peoples/inuit.html">Inuit</a>
+                        <a href="/games.html">Interactive Learning</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
