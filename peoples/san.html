@@ -4,11 +4,408 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San (Bushmen) | Indigenous Peoples Research Database</title>
-    <meta name="description" content="Explore the San (Bushmen) people - their history, culture, traditions, and contemporary life.">
+    <meta name="description" content="Explore the San people - one of Earth's oldest cultures, their rock art, click languages, tracking expertise, and ancient hunter-gatherer heritage.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏹</text></svg>">
-    <link rel="stylesheet" href="/css/culture-page.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Ancient earth tones - rock art palette */
+            --ochre-red: #CC5500;
+            --ochre-yellow: #CC8800;
+            --rock-brown: #8B4513;
+            --sand-tan: #D2B48C;
+            --desert-beige: #F5DEB3;
+            --burnt-sienna: #E97451;
+            --ancient-charcoal: #3E2723;
+            --stone-gray: #9E9E9E;
+            --clay-orange: #D2691E;
+            --kalahari-sand: #EDC9AF;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--ancient-charcoal);
+            background: linear-gradient(to bottom, #F5F5DC, #FAF0E6);
+        }
+
+        /* Rock Art Border - Ancient Petroglyphs */
+        .rock-art-border {
+            height: 20px;
+            background: linear-gradient(90deg,
+                var(--rock-brown) 0%,
+                var(--ochre-red) 25%,
+                var(--ochre-yellow) 50%,
+                var(--burnt-sienna) 75%,
+                var(--rock-brown) 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rock-art-border::before {
+            content: '🏹 · ☀️ · 🦌 · 👣 · ✋ · 🏹 · ☀️ · 🦌 · 👣 · ✋';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--desert-beige);
+            opacity: 0.6;
+            animation: scrollPetroglyphs 40s linear infinite;
+        }
+
+        @keyframes scrollPetroglyphs {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(to bottom, var(--desert-beige), var(--kalahari-sand));
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--rock-brown);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--rock-brown);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--ochre-red);
+        }
+
+        .breadcrumb-separator {
+            color: var(--stone-gray);
+        }
+
+        /* Hero Section - Kalahari Desert Sunset */
+        .hero {
+            background: linear-gradient(180deg,
+                #8B4513 0%,
+                #A0522D 20%,
+                #CD853F 40%,
+                #DEB887 60%,
+                #F4A460 80%,
+                #FFD700 100%
+            );
+            color: var(--ancient-charcoal);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ancient rock art cave painting background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><circle cx="50" cy="50" r="25" fill="%23CC5500" opacity="0.15"/><circle cx="150" cy="80" r="20" fill="%238B4513" opacity="0.12"/><path d="M200,100 L220,120 L200,140 L180,120 Z" fill="%23CC8800" opacity="0.1"/><circle cx="300" cy="60" r="30" fill="%23E97451" opacity="0.13"/><path d="M80,200 Q100,180 120,200 T160,200" stroke="%23CC5500" stroke-width="3" fill="none" opacity="0.1"/><circle cx="250" cy="220" r="15" fill="%23D2691E" opacity="0.12"/></svg>');
+            background-repeat: repeat;
+            opacity: 0.3;
+        }
+
+        /* Handprint - Ancient Cave Art */
+        .hero::after {
+            content: '✋';
+            position: absolute;
+            bottom: 40px;
+            right: 80px;
+            font-size: 8rem;
+            opacity: 0.15;
+            color: var(--ochre-red);
+            transform: rotate(-15deg);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 12px rgba(139, 69, 19, 0.4));
+            animation: ancientPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes ancientPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 6px rgba(139, 69, 19, 0.3);
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(139, 69, 19, 0.25);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(139, 69, 19, 0.3);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #FFFEF0, #FFF8DC);
+            box-shadow: 0 0 40px rgba(139, 69, 19, 0.2);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        /* Quick Facts - Rock and Ochre */
+        .quick-facts {
+            background: linear-gradient(135deg, var(--rock-brown), #6D4C41);
+            color: var(--desert-beige);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 5px solid var(--ochre-red);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(204, 85, 0, 0.3);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--ochre-red) 0px,
+                var(--ochre-red) 15px,
+                var(--ochre-yellow) 15px,
+                var(--ochre-yellow) 30px,
+                var(--burnt-sienna) 30px,
+                var(--burnt-sienna) 45px
+            );
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--ochre-red);
+            font-family: 'Georgia', serif;
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--ochre-yellow);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sand-tan);
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--rock-brown);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 4px solid var(--ochre-red);
+            font-family: 'Georgia', serif;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--ochre-yellow);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #3E2723;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: bold;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--ochre-red);
+        }
+
+        /* Ancient Heritage Box - Rock Art Inspired */
+        .ancient-box {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            border: 4px solid var(--rock-brown);
+            border-left: 12px solid var(--ochre-red);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.25);
+            position: relative;
+        }
+
+        .ancient-box::before {
+            content: '👣';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 3.5rem;
+            filter: drop-shadow(0 4px 8px rgba(139, 69, 19, 0.3));
+        }
+
+        .ancient-box h4 {
+            color: var(--rock-brown);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+            font-weight: 800;
+        }
+
+        .ancient-box p {
+            color: var(--ancient-charcoal);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Click Language Box */
+        .click-box {
+            background: linear-gradient(135deg, #FFE4B5 0%, #FFDAB9 100%);
+            border: 4px solid var(--ochre-yellow);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(204, 136, 0, 0.2);
+        }
+
+        .click-box h4 {
+            color: var(--rock-brown);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .click-box p {
+            color: #5D4037;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-facts {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Ancient Rock Art Border -->
+    <div class="rock-art-border"></div>
+
+    <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -21,11 +418,12 @@
         </div>
     </nav>
 
+    <!-- Hero Section - Kalahari Desert -->
     <header class="hero">
         <div class="hero-content">
             <div class="culture-icon">🏹</div>
             <h1>San (Bushmen)</h1>
-            <p class="hero-subtitle">Indigenous People of Africa</p>
+            <p class="hero-subtitle">Earth's Oldest Living Culture - 100,000 Years of Heritage</p>
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <span>👥</span>
@@ -33,42 +431,132 @@
                 </div>
                 <div class="hero-meta-item">
                     <span>🗣️</span>
-                    <span>Khoisan languages (multiple)</span>
+                    <span>Khoisan Click Languages</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Kalahari & Southern Africa</span>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <div class="content-wrapper">
         <div class="main-content">
+            <!-- Article Content -->
             <article class="article-content">
                 <section class="content-section">
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="content-text">The San, also called Bushmen (though this term is considered derogatory by some), are the indigenous hunter-gatherer peoples of Southern Africa, representing one of the oldest continuous cultures on Earth. Genetic studies suggest San peoples have lived in Southern Africa for at least 20,000 years, possibly much longer. The San comprise multiple distinct groups speaking various Khoisan languages characterized by distinctive click consonants. Despite millennia of cultural continuity, the San face severe marginalization, land loss, and cultural erosion in modern nation-states.</p>
-                    <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
+                    <h2 class="section-title">Ancient Hunter-Gatherers</h2>
+
+                    <p class="content-text">
+                        The San, also called Bushmen (though this term is considered derogatory by some), are the indigenous hunter-gatherer peoples of Southern Africa, representing one of the oldest continuous cultures on Earth. Genetic studies suggest San peoples have lived in Southern Africa for at least 20,000 years, possibly much longer. The San comprise multiple distinct groups speaking various Khoisan languages characterized by distinctive click consonants. Despite millennia of cultural continuity, the San face severe marginalization, land loss, and cultural erosion in modern nation-states.
+                    </p>
+
+                    <div class="ancient-box">
+                        <h4>World's Most Ancient Living Culture</h4>
+                        <p>
+                            Archaeological and genetic evidence indicates San peoples are descendants of the earliest human populations in Africa. Rock art sites across Southern Africa, some over 27,000 years old, provide continuous record of San presence and culture. Genetic studies show San populations separated from other human groups approximately 100,000-150,000 years ago, making them among the most genetically diverse and oldest human populations. Their languages, featuring click consonants unique to Southern Africa, represent ancient linguistic heritage predating most world language families.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>Master Trackers:</strong> San trackers can identify individual animals from their footprints, determine how long ago they passed, whether they were injured, and even their emotional state. This extraordinary skill has made San trackers invaluable to conservation efforts, with some working as wildlife rangers using traditional knowledge to combat poaching!
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Egalitarian Society</h2>
+
+                    <p class="content-text">
+                        Traditional San society was characterized by small, mobile bands of 25-50 people organized around kinship. Decision-making was consensus-based with no formal chiefs or hierarchical authority, representing one of humanity's most egalitarian social structures. Gender relations were relatively equal, with both men and women contributing essential resources. The San developed sophisticated ecological knowledge, tracking abilities considered among the best in the world, and sustainable hunting-gathering practices that shaped Southern African ecosystems for millennia.
+                    </p>
+
+                    <div class="click-box">
+                        <h4>Click Languages - Ancient Linguistic Heritage</h4>
+                        <p>
+                            Khoisan languages are characterized by distinctive click consonants produced by creating suction with the tongue against different parts of the mouth. These languages represent some of humanity's oldest linguistic heritage, predating the spread of Bantu, Indo-European, and other major language families. However, many Khoisan languages are now critically endangered as younger generations shift to dominant national languages.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Survival & Struggle</h2>
+
+                    <p class="content-text">
+                        Expansion of Bantu-speaking agricultural peoples from around 2,000 years ago pushed San into more marginal environments. European colonization from the 17th century brought systematic persecution, land appropriation, and near-genocide in some regions. The San were hunted, enslaved, forcibly removed from lands, and their children taken into servitude. By the 20th century, most San had lost access to traditional hunting territories, forced into sedentary poverty on others' lands or government settlements.
+                    </p>
+
+                    <div class="ancient-box">
+                        <h4>Fight for Land Rights</h4>
+                        <p>
+                            Post-colonial governments continued marginalizing San peoples. Many San groups were displaced to create national parks and game reserves, ironically removing indigenous people from lands they had sustainably managed for millennia. The 1990s-2000s saw growing advocacy for San rights, including landmark legal victories like the Botswana High Court's 2006 ruling recognizing San rights to ancestral lands in the Central Kalahari Game Reserve (though implementation remains contested). Today, most San live in poverty on the margins of southern African societies, though cultural revitalization and land rights movements continue.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <em>This page honors the resilience and ancient heritage of the San people—humanity's oldest living culture, masters of tracking and sustainable living, and survivors of millennia of change. Their story is humanity's story.</em>
+                    </p>
                 </section>
             </article>
 
+            <!-- Quick Facts Sidebar -->
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
+
                 <div class="fact-item">
                     <div class="fact-label">Population</div>
                     <div class="fact-value">~100,000</div>
                 </div>
+
                 <div class="fact-item">
                     <div class="fact-label">Language</div>
-                    <div class="fact-value">Khoisan languages (multiple)</div>
+                    <div class="fact-value">Khoisan Languages</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Family</div>
+                    <div class="fact-value">Khoisan (Click)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Speakers</div>
+                    <div class="fact-value">~80,000</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Traditional Livelihood</div>
+                    <div class="fact-value">Hunter-Gatherers</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Known For</div>
+                    <div class="fact-value">Rock Art, Tracking, Click Languages</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Heritage</div>
+                    <div class="fact-value">100,000+ Years</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Region</div>
+                    <div class="fact-value">Southern Africa</div>
                 </div>
             </aside>
         </div>
     </div>
+
+    <!-- Rock Art Footer -->
+    <div class="rock-art-border"></div>
 
     <script>
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'san',
                 name: 'San (Bushmen)',
-                region: 'africa'
+                region: 'africa',
+                continent: 'africa'
             });
         }
     </script>

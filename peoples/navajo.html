@@ -6,8 +6,339 @@
     <title>Navajo (Diné) People | Indigenous Peoples Research Database</title>
     <meta name="description" content="Explore the Navajo (Diné) - the largest Native American nation in the United States, their history, Code Talkers legacy, weaving traditions, and contemporary life.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏜️</text></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Navajo-inspired Southwest palette */
+            --navajo-sandstone: #C67C4E;
+            --navajo-terracotta: #D4735E;
+            --navajo-turquoise: #40B5AD;
+            --navajo-sunset: #E8956B;
+            --navajo-clay: #8B4513;
+            --navajo-sand: #F4E8D0;
+            --navajo-dark: #3B2F2F;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--navajo-dark);
+            background: var(--navajo-sand);
+        }
+
+        /* Navajo Weaving Pattern Border */
+        .weaving-pattern {
+            height: 12px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--navajo-terracotta) 0px,
+                var(--navajo-terracotta) 20px,
+                var(--navajo-turquoise) 20px,
+                var(--navajo-turquoise) 40px,
+                var(--navajo-sandstone) 40px,
+                var(--navajo-sandstone) 60px,
+                var(--navajo-clay) 60px,
+                var(--navajo-clay) 80px
+            );
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(to bottom, #F5E6D3, var(--navajo-sand));
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--navajo-sandstone);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--navajo-clay);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--navajo-turquoise);
+        }
+
+        .breadcrumb-separator {
+            color: var(--navajo-sandstone);
+        }
+
+        /* Hero Section - Monument Valley inspired */
+        .hero {
+            background: linear-gradient(180deg,
+                #2C1810 0%,
+                #5D3A1A 30%,
+                #C67C4E 60%,
+                #E8956B 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><path d="M0,300 Q200,200 400,280 T800,260 T1200,300 L1200,400 L0,400 Z" fill="%233B2F2F" opacity="0.3"/><path d="M0,350 Q300,300 600,340 T1200,350 L1200,400 L0,400 Z" fill="%23C67C4E" opacity="0.2"/></svg>') bottom center no-repeat;
+            background-size: cover;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        /* Quick Facts - Turquoise & Sandstone */
+        .quick-facts {
+            background: linear-gradient(135deg, var(--navajo-turquoise), #2D9A92);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 4px solid var(--navajo-sandstone);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(64, 181, 173, 0.3);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--navajo-terracotta) 0px,
+                var(--navajo-terracotta) 15px,
+                var(--navajo-clay) 15px,
+                var(--navajo-clay) 30px
+            );
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            font-family: 'Georgia', serif;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--navajo-sunset);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--navajo-clay);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 4px solid var(--navajo-turquoise);
+            font-family: 'Georgia', serif;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--navajo-sandstone);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #2C1810;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: bold;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--navajo-terracotta);
+        }
+
+        /* Hózhǫ́ Symbol Box */
+        .hozhǫ-box {
+            background: linear-gradient(135deg, #F4E8D0 0%, #E8D4BC 100%);
+            border: 3px solid var(--navajo-turquoise);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .hozhǫ-box::before {
+            content: '☀️';
+            position: absolute;
+            top: -30px;
+            right: 20px;
+            font-size: 3rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+
+        .hozhǫ-box h4 {
+            color: var(--navajo-clay);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .hozhǫ-box p {
+            color: #3B2F2F;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-facts {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navajo Weaving Pattern Border -->
+    <div class="weaving-pattern"></div>
+
     <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
@@ -17,10 +348,125 @@
             <span class="breadcrumb-separator">›</span>
             <a href="/?region=americas">Americas</a>
             <span class="breadcrumb-separator">›</span>
-            <span>Navajo</span>
+            <span>Navajo (Diné)</span>
         </div>
     </nav>
-    
-    <p>Navajo (Diné) culture page - comprehensive content would go here following the template pattern from Maasai and Inuit pages, including all sections, images, and references.</p>
+
+    <!-- Hero Section - Monument Valley Sunset -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="culture-icon">🏜️</div>
+            <h1>Navajo (Diné)</h1>
+            <p class="hero-subtitle">"The People" - Guardians of the Four Sacred Mountains</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span>👥</span>
+                    <span>~399,000 people</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>🗣️</span>
+                    <span>Diné bizaad (Navajo)</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Southwest United States</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="main-content">
+            <!-- Article Content -->
+            <article class="article-content">
+                <section class="content-section">
+                    <h2 class="section-title">The Largest Indigenous Nation</h2>
+
+                    <p class="content-text">
+                        The Navajo (who call themselves Diné, meaning "The People") are the largest federally recognized Native American nation in the United States, with a reservation spanning over 27,000 square miles across Arizona, New Mexico, Utah, and Colorado. The Navajo Nation is larger than ten U.S. states and maintains significant political sovereignty. Known for their rich artistic traditions—particularly weaving and silversmithing—as well as their crucial role in World War II as Code Talkers, the Navajo have maintained strong cultural identity while adapting to contemporary American society.
+                    </p>
+
+                    <div class="hozhǫ-box">
+                        <h4>Hózhǫ́ - Beauty, Harmony, Balance</h4>
+                        <p>
+                            Navajo culture is deeply rooted in harmony with nature and the universe, expressed through the concept of hózhǫ́ (beauty, harmony, balance, and wellness). This philosophy guides all aspects of Diné life, from daily activities to ceremonial practices. Traditional Navajo society is matrilineal, with clan membership passed through the mother's line. The Navajo recognize over 60 clans, and clan relationships govern social interactions and marriage rules.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        The Navajo Nation operates with an elected government including a president, vice president, and 24-member council, governing one of the most sophisticated tribal governments in North America. From their ancestral homeland bounded by four sacred mountains, the Diné continue to practice traditional ceremonies, create world-renowned art, and assert sovereignty while navigating the challenges of the 21st century.
+                    </p>
+
+                    <p class="content-text">
+                        <strong>Code Talkers Legacy:</strong> During World War II, Navajo Code Talkers created an unbreakable military code based on the Navajo language. The code was never cracked by Axis powers and is credited with saving countless American lives, particularly in the Pacific theater. This remarkable contribution to American military history stands as a proud moment in Navajo history.
+                    </p>
+
+                    <p class="content-text">
+                        <em>This page is being enhanced with full historical content, cultural traditions, images of Monument Valley and traditional Navajo art, academic references, and comprehensive contemporary information. The foundation celebrates Diné resilience, artistry, and the enduring strength of "The People."</em>
+                    </p>
+                </section>
+            </article>
+
+            <!-- Quick Facts Sidebar -->
+            <aside class="quick-facts">
+                <h3>Quick Facts</h3>
+
+                <div class="fact-item">
+                    <div class="fact-label">Population</div>
+                    <div class="fact-value">~399,494</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language</div>
+                    <div class="fact-value">Diné bizaad</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Family</div>
+                    <div class="fact-value">Na-Dené (Athabaskan)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Speakers</div>
+                    <div class="fact-value">~170,000</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Traditional Dwelling</div>
+                    <div class="fact-value">Hogan</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Primary Livelihood</div>
+                    <div class="fact-value">Pastoralism & Agriculture</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Known For</div>
+                    <div class="fact-value">Code Talkers, Weaving, Silversmithing</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Reservation Size</div>
+                    <div class="fact-value">27,000+ sq miles</div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Weaving Pattern Footer -->
+    <div class="weaving-pattern"></div>
+
+    <script>
+        if (window.learnerProfile) {
+            window.learnerProfile.visitGroup({
+                id: 'navajo',
+                name: 'Navajo (Diné)',
+                region: 'americas',
+                continent: 'americas'
+            });
+        }
+    </script>
 </body>
 </html>

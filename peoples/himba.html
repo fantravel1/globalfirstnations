@@ -4,11 +4,411 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Himba | Indigenous Peoples Research Database</title>
-    <meta name="description" content="Explore the Himba people - their history, culture, traditions, and contemporary life.">
+    <meta name="description" content="Explore the Himba people - their distinctive red ochre traditions, pastoral culture, traditional lifestyles, and cultural preservation in Namibia.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
-    <link rel="stylesheet" href="/css/culture-page.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Red Ochre - Otjize Palette */
+            --ochre-red: #C1440E;
+            --ochre-deep: #A0410D;
+            --burnt-sienna: #E97451;
+            --terracotta: #CC5544;
+            --red-clay: #B85042;
+            --dusty-red: #C17767;
+            --namibian-sand: #E6C9A8;
+            --desert-tan: #D2B48C;
+            --earth-brown: #7C3F2D;
+            --cattle-brown: #8B4513;
+            --ash-gray: #B0A090;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #3E2723;
+            background: linear-gradient(to bottom, #FFF3E0, #FFEBEE);
+        }
+
+        /* Ochre Pattern Border */
+        .ochre-border {
+            height: 20px;
+            background: linear-gradient(90deg,
+                var(--ochre-deep) 0%,
+                var(--ochre-red) 20%,
+                var(--burnt-sienna) 40%,
+                var(--terracotta) 60%,
+                var(--ochre-red) 80%,
+                var(--ochre-deep) 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ochre-border::before {
+            content: '◆ ● ■ ◆ ● ■ ◆ ● ■ ◆ ● ■ ◆ ● ■';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-size: 0.75rem;
+            color: var(--namibian-sand);
+            opacity: 0.6;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(to bottom, var(--namibian-sand), #FAEBD7);
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--ochre-red);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--earth-brown);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--ochre-red);
+        }
+
+        .breadcrumb-separator {
+            color: var(--ash-gray);
+        }
+
+        /* Hero Section - Namibian Sunset */
+        .hero {
+            background: linear-gradient(180deg,
+                #BF360C 0%,
+                #D84315 15%,
+                #E64A19 30%,
+                #FF5722 45%,
+                #FF6F42 60%,
+                #FF8A65 75%,
+                #FFAB91 90%,
+                #FFD9B3 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Pastoral landscape silhouette */
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 140px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140"><path d="M0,80 L200,85 L400,75 L600,80 L800,70 L1000,75 L1200,80 L1200,140 L0,140 Z" fill="%237C3F2D" opacity="0.6"/><ellipse cx="300" cy="90" rx="40" ry="25" fill="%238B4513" opacity="0.5"/><ellipse cx="500" cy="85" rx="35" ry="22" fill="%238B4513" opacity="0.5"/><ellipse cx="700" cy="88" rx="38" ry="24" fill="%238B4513" opacity="0.5"/></svg>') bottom center no-repeat;
+            background-size: cover;
+        }
+
+        /* Sacred fire smoke */
+        .hero::after {
+            content: '🔥';
+            position: absolute;
+            bottom: 80px;
+            left: 120px;
+            font-size: 2.5rem;
+            opacity: 0.4;
+            animation: fireFlicker 2s ease-in-out infinite;
+        }
+
+        @keyframes fireFlicker {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(191, 54, 12, 0.6));
+            animation: ochrePulse 5s ease-in-out infinite;
+        }
+
+        @keyframes ochrePulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.08) rotate(5deg); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 12px rgba(124, 63, 45, 0.7);
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(124, 63, 45, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #FFFAF0, #FFF5E6);
+            box-shadow: 0 0 40px rgba(193, 68, 14, 0.2);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        /* Quick Facts - Red Ochre Theme */
+        .quick-facts {
+            background: linear-gradient(135deg, var(--ochre-red), var(--ochre-deep));
+            color: var(--namibian-sand);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 5px solid var(--burnt-sienna);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(193, 68, 14, 0.4);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--burnt-sienna) 0px,
+                var(--burnt-sienna) 18px,
+                var(--terracotta) 18px,
+                var(--terracotta) 36px,
+                var(--red-clay) 36px,
+                var(--red-clay) 54px
+            );
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--burnt-sienna);
+            font-family: 'Georgia', serif;
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--burnt-sienna);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--desert-tan);
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ochre-deep);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--ochre-red);
+            font-family: 'Georgia', serif;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--burnt-sienna);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #3E2723;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--ochre-red);
+        }
+
+        /* Otjize Box - Red Ochre Tradition */
+        .otjize-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+            border: 4px solid var(--ochre-red);
+            border-left: 12px solid var(--ochre-deep);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(193, 68, 14, 0.3);
+            position: relative;
+        }
+
+        .otjize-box::before {
+            content: '🪔';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 3.5rem;
+            filter: drop-shadow(0 4px 8px rgba(193, 68, 14, 0.4));
+        }
+
+        .otjize-box h4 {
+            color: var(--ochre-deep);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+            font-weight: 800;
+        }
+
+        .otjize-box p {
+            color: #BF360C;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Pastoral Life Box */
+        .pastoral-box {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+            border: 4px solid var(--cattle-brown);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.2);
+        }
+
+        .pastoral-box h4 {
+            color: var(--cattle-brown);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .pastoral-box p {
+            color: #5D4037;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-facts {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Red Ochre Border -->
+    <div class="ochre-border"></div>
+
+    <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -21,11 +421,12 @@
         </div>
     </nav>
 
+    <!-- Hero Section - Namibian Sunset -->
     <header class="hero">
         <div class="hero-content">
             <div class="culture-icon">🪔</div>
             <h1>Himba</h1>
-            <p class="hero-subtitle">Indigenous People of Africa</p>
+            <p class="hero-subtitle">The Red Ochre People of Namibia</p>
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <span>👥</span>
@@ -35,40 +436,130 @@
                     <span>🗣️</span>
                     <span>Otjihimba</span>
                 </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Northern Namibia</span>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <div class="content-wrapper">
         <div class="main-content">
+            <!-- Article Content -->
             <article class="article-content">
                 <section class="content-section">
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="content-text">The Himba are semi-nomadic pastoralist people of northern Namibia, known for their distinctive appearance: women and men coat their skin and hair with red ochre mixed with fat, creating a deep red color and protection from the harsh sun. Herding cattle and goats, living in traditional homesteads, and maintaining complex kinship systems, the Himba have largely preserved traditional lifestyles despite modern pressures, making them one of Africa's most photographed and culturally intact pastoral peoples.</p>
-                    <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
+                    <h2 class="section-title">Pastoralists of the Kunene</h2>
+
+                    <p class="content-text">
+                        The Himba are semi-nomadic pastoralist people of northern Namibia, known for their distinctive appearance: women and men coat their skin and hair with red ochre mixed with fat, creating a deep red color and protection from the harsh sun. Herding cattle and goats, living in traditional homesteads, and maintaining complex kinship systems, the Himba have largely preserved traditional lifestyles despite modern pressures, making them one of Africa's most photographed and culturally intact pastoral peoples.
+                    </p>
+
+                    <div class="otjize-box">
+                        <h4>Otjize - The Sacred Red Ochre</h4>
+                        <p>
+                            The Himba's most distinctive feature is otjize—a paste made from red ochre (hematite), butterfat, and aromatic resins. Women and men apply this mixture daily to their skin and elaborately braided hair, creating the iconic deep red-brown appearance. Far more than cosmetic, otjize serves multiple purposes: it protects skin from the harsh Namibian sun, acts as insect repellent, cleanses skin in a water-scarce environment, and holds profound cultural significance representing earth, blood, and life itself. The practice is central to Himba identity and beauty standards.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>Sacred Fire:</strong> At the center of every Himba homestead burns the okuruwo (sacred ancestral fire), maintained continuously and never allowed to die. This fire serves as connection to ancestors, a place for prayers and offerings, and the spiritual heart of the family. The fire's keeper holds special responsibility for maintaining this link to the past.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Pastoral Culture</h2>
+
+                    <div class="pastoral-box">
+                        <h4>Cattle & Traditional Livelihood</h4>
+                        <p>
+                            Cattle are central to Himba life, representing wealth, status, and cultural identity. Families herd cattle, goats, and sometimes sheep in semi-nomadic patterns following seasonal rains and pasture. Cattle provide milk (the dietary staple), hides for clothing and housing, and are crucial for bride wealth payments and social transactions. Men traditionally herd and care for cattle, while women manage homesteads, milk animals, gather wild foods, and care for children. This division of labor reflects deep cultural patterns and gender roles.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        Himba society is patrilineal, with descent traced through the father's line, and organized into clans. Social structure emphasizes kinship obligations, respect for elders, and communal cooperation. Polygyny is practiced, with wealthy men supporting multiple wives in separate households. Elaborate hairstyles indicate age and social status: children wear two braids forward, unmarried women have many small braids, and married women wear distinctive decorative headpieces.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Cultural Preservation & Challenges</h2>
+
+                    <p class="content-text">
+                        The Himba have maintained traditional lifestyles more successfully than many African peoples, partly due to their remote location in the arid Kunene region. However, they face mounting pressures: proposed dam projects threaten ancestral lands, drought and climate change strain pastoral livelihoods, tourism brings cultural commodification, and younger generations increasingly seek education and modern opportunities.
+                    </p>
+
+                    <div class="otjize-box">
+                        <h4>Living Tradition</h4>
+                        <p>
+                            Despite challenges, many Himba continue practicing traditional ways. Women still wear traditional leather skirts and minimal clothing, maintain elaborate ochre-coated hairstyles, and craft distinctive metal and shell jewelry. Men herd cattle using ancestral knowledge of the landscape. Sacred fires burn in homesteads. The Himba language (Otjihimba, closely related to Herero) remains vibrant. While the future may bring changes, the Himba's commitment to cultural preservation has made them symbols of resilience and continuity in a rapidly modernizing world.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <em>This page honors the Himba people—the Red Ochre People of Namibia, keepers of ancestral fires, masters of pastoral life in harsh lands, and a culture that continues to thrive with dignity and beauty.</em>
+                    </p>
                 </section>
             </article>
 
+            <!-- Quick Facts Sidebar -->
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
+
                 <div class="fact-item">
                     <div class="fact-label">Population</div>
                     <div class="fact-value">~50,000</div>
                 </div>
+
                 <div class="fact-item">
                     <div class="fact-label">Language</div>
                     <div class="fact-value">Otjihimba</div>
                 </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Family</div>
+                    <div class="fact-value">Bantu (Niger-Congo)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Region</div>
+                    <div class="fact-value">Kunene, Namibia</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Livelihood</div>
+                    <div class="fact-value">Pastoral (Cattle Herding)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Known For</div>
+                    <div class="fact-value">Red Ochre, Hairstyles, Traditions</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Sacred Symbol</div>
+                    <div class="fact-value">Okuruwo (Ancestral Fire)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Social Structure</div>
+                    <div class="fact-value">Patrilineal Clans</div>
+                </div>
             </aside>
         </div>
     </div>
+
+    <!-- Ochre Footer -->
+    <div class="ochre-border"></div>
 
     <script>
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'himba',
                 name: 'Himba',
-                region: 'africa'
+                region: 'africa',
+                continent: 'africa'
             });
         }
     </script>

@@ -4,11 +4,405 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuareg | Indigenous Peoples Research Database</title>
-    <meta name="description" content="Explore the Tuareg people - their history, culture, traditions, and contemporary life.">
+    <meta name="description" content="Explore the Tuareg people - 'Blue People' of the Sahara, their indigo veils, Tifinagh script, matrilineal society, and nomadic desert culture.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐪</text></svg>">
-    <link rel="stylesheet" href="/css/culture-page.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Indigo Blue - The Blue People */
+            --indigo-deep: #1A237E;
+            --indigo-royal: #283593;
+            --indigo-bright: #3949AB;
+            --indigo-light: #5C6BC0;
+            --desert-gold: #DAA520;
+            --sahara-sand: #EDC9AF;
+            --sahara-tan: #D2B48C;
+            --desert-sunset: #FF7043;
+            --silver: #C0C0C0;
+            --night-purple: #4A148C;
+            --sky-blue: #1976D2;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #1A1A1A;
+            background: linear-gradient(to bottom, #E3F2FD, #FFF8E1);
+        }
+
+        /* Tifinagh Pattern Border - Ancient Berber Script */
+        .tifinagh-border {
+            height: 18px;
+            background: linear-gradient(90deg,
+                var(--indigo-deep) 0%,
+                var(--indigo-royal) 33%,
+                var(--indigo-bright) 66%,
+                var(--indigo-deep) 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tifinagh-border::before {
+            content: 'ⵣ ⵜ ⴰ ⵔ ⴻ ⴳ · ⵣ ⵜ ⴰ ⵔ ⴻ ⴳ · ⵣ ⵜ ⴰ ⵔ ⴻ ⴳ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--desert-gold);
+            letter-spacing: 8px;
+            opacity: 0.8;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(to bottom, var(--sahara-sand), #FFF8DC);
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--indigo-royal);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--indigo-deep);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--desert-gold);
+        }
+
+        .breadcrumb-separator {
+            color: var(--silver);
+        }
+
+        /* Hero Section - Saharan Night Sky */
+        .hero {
+            background: linear-gradient(180deg,
+                #0D47A1 0%,
+                #1565C0 15%,
+                #1976D2 30%,
+                #1E88E5 45%,
+                #42A5F5 60%,
+                #64B5F6 75%,
+                #90CAF9 90%,
+                #DAA520 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Desert dunes silhouette */
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 180px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180"><path d="M0,120 Q200,60 400,100 T800,80 T1200,100 L1200,180 L0,180 Z" fill="%23DAA520" opacity="0.9"/><path d="M0,140 Q250,90 500,130 T1000,110 T1200,130 L1200,180 L0,180 Z" fill="%23EDC9AF" opacity="0.7"/></svg>') bottom center no-repeat;
+            background-size: cover;
+        }
+
+        /* Stars in the desert night */
+        .hero::after {
+            content: '✨';
+            position: absolute;
+            top: 30px;
+            right: 100px;
+            font-size: 2rem;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(218, 165, 32, 0.5));
+            animation: camelWalk 6s ease-in-out infinite;
+        }
+
+        @keyframes camelWalk {
+            0%, 100% { transform: translateX(0px) rotate(-3deg); }
+            50% { transform: translateX(15px) rotate(3deg); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 12px rgba(26, 35, 126, 0.6);
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(26, 35, 126, 0.25);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(218, 165, 32, 0.4);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, #FAFAFA, #FFF8E1);
+            box-shadow: 0 0 40px rgba(26, 35, 126, 0.15);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        /* Quick Facts - Indigo Blue */
+        .quick-facts {
+            background: linear-gradient(135deg, var(--indigo-deep), var(--indigo-royal));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 5px solid var(--desert-gold);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.3);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--desert-gold) 0px,
+                var(--desert-gold) 20px,
+                var(--silver) 20px,
+                var(--silver) 25px,
+                var(--desert-gold) 25px,
+                var(--desert-gold) 45px
+            );
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--desert-gold);
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--desert-gold);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sahara-sand);
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--indigo-deep);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--indigo-bright);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--desert-gold);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #212121;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--indigo-royal);
+        }
+
+        /* Blue People Box - Indigo Culture */
+        .blue-box {
+            background: linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%);
+            border: 4px solid var(--indigo-bright);
+            border-left: 12px solid var(--indigo-deep);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(57, 73, 171, 0.25);
+            position: relative;
+        }
+
+        .blue-box::before {
+            content: '🐪';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 3.5rem;
+            filter: drop-shadow(0 4px 8px rgba(26, 35, 126, 0.3));
+        }
+
+        .blue-box h4 {
+            color: var(--indigo-deep);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .blue-box p {
+            color: #1A237E;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Matrilineal Society Box */
+        .matrilineal-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            border: 4px solid var(--desert-gold);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(218, 165, 32, 0.2);
+        }
+
+        .matrilineal-box h4 {
+            color: #BF360C;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .matrilineal-box p {
+            color: #4E342E;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-facts {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Tifinagh Script Border -->
+    <div class="tifinagh-border"></div>
+
+    <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -21,54 +415,145 @@
         </div>
     </nav>
 
+    <!-- Hero Section - Saharan Sky -->
     <header class="hero">
         <div class="hero-content">
             <div class="culture-icon">🐪</div>
             <h1>Tuareg</h1>
-            <p class="hero-subtitle">Indigenous People of Africa</p>
+            <p class="hero-subtitle">Kel Tamasheq - The Blue People of the Sahara</p>
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <span>👥</span>
-                    <span>~2,500,000 people</span>
+                    <span>~2.5 million people</span>
                 </div>
                 <div class="hero-meta-item">
                     <span>🗣️</span>
                     <span>Tamasheq/Tamajeq</span>
                 </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Sahara Desert</span>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <div class="content-wrapper">
         <div class="main-content">
+            <!-- Article Content -->
             <article class="article-content">
                 <section class="content-section">
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="content-text">The Tuareg are nomadic Berber people inhabiting the Sahara Desert across North and West Africa. Known as 'Blue People' for their indigo-dyed clothing that stains their skin, Tuareg society is notably matrilineal with women holding property rights and men wearing face veils. Traditionally controlling trans-Saharan trade routes and conducting salt caravans, the Tuareg maintain distinct cultural identity while facing challenges from drought, political instability, and sedentarization pressures.</p>
-                    <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
+                    <h2 class="section-title">Desert Nomads of the Sahara</h2>
+
+                    <p class="content-text">
+                        The Tuareg are nomadic Berber people inhabiting the Sahara Desert across North and West Africa. Known as 'Blue People' for their indigo-dyed clothing that stains their skin, Tuareg society is notably matrilineal with women holding property rights and men wearing face veils. Traditionally controlling trans-Saharan trade routes and conducting salt caravans, the Tuareg maintain distinct cultural identity while facing challenges from drought, political instability, and sedentarization pressures.
+                    </p>
+
+                    <div class="blue-box">
+                        <h4>The Blue People - Indigo Tradition</h4>
+                        <p>
+                            The Tuareg are famously known as "the Blue People" because of their distinctive indigo-dyed clothing, particularly the tagelmust (face veil worn by men). The deep blue indigo dye, traditionally derived from local plants, gradually transfers to the skin, creating a blue-tinted complexion. This iconic appearance has become synonymous with Tuareg identity. In Tuareg culture, men veil their faces while women do not—reversing a pattern found in many other Islamic societies. The tagelmust serves both practical purposes (protection from sand and sun) and cultural significance (marking adult male status).
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>Tifinagh Script:</strong> The Tuareg use Tifinagh, an ancient Berber writing system with geometric characters that has been used for over 2,000 years. This script appears in rock inscriptions across the Sahara and remains in use today for writing Tamasheq language. The script's survival among the Tuareg, even as it disappeared elsewhere, demonstrates their cultural resilience and commitment to preserving heritage.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Matrilineal Society</h2>
+
+                    <div class="matrilineal-box">
+                        <h4>Women's Rights & Property</h4>
+                        <p>
+                            Tuareg society is notably matrilineal, with descent traced through the mother's line. Women enjoy significant rights uncommon in the broader region: they can own property, inherit wealth, divorce freely, and maintain control of their belongings in marriage. Tuareg women are traditionally literate and hold important roles in preserving culture and knowledge. They are not required to veil, move freely in society, and participate actively in decision-making. This gender structure contrasts sharply with many neighboring societies and reflects pre-Islamic Berber traditions.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        Traditional Tuareg economy centered on nomadic pastoralism (raising camels, goats, sheep) and controlling lucrative trans-Saharan trade routes. The famous salt caravans of Tuareg traders crossed the Sahara carrying slabs of salt from desert mines to southern markets, returning with goods like gold, ivory, and kola nuts. This trade created wealth and cultural exchange across the desert for centuries.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Modern Challenges</h2>
+
+                    <p class="content-text">
+                        Today, Tuareg populations are distributed across Mali, Niger, Algeria, Libya, and Burkina Faso, often finding themselves marginalized minorities in modern nation-states. Recurring droughts have devastated traditional pastoral livelihoods, forcing many toward sedentary life. Political conflicts, particularly in Mali and Niger, have displaced communities. Some Tuareg groups have engaged in armed rebellions seeking autonomy or rights recognition, leading to cycles of conflict and instability.
+                    </p>
+
+                    <div class="blue-box">
+                        <h4>Cultural Preservation</h4>
+                        <p>
+                            Despite immense pressures, Tuareg communities continue practicing traditional music, poetry, and arts. The imzad (single-string violin played by women) and tende (drum) accompany gatherings and ceremonies. Tuareg silver jewelry, particularly the distinctive Tuareg cross, represents sophisticated craftsmanship. Language revitalization efforts promote Tamasheq and Tifinagh script. While the nomadic way of life faces existential threats, Tuareg cultural identity remains strong across the Sahara.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <em>This page honors the Tuareg—the Blue People of the Sahara, guardians of ancient trade routes, keepers of Tifinagh script, and a people who have navigated the world's largest desert for millennia with dignity, resilience, and enduring cultural pride.</em>
+                    </p>
                 </section>
             </article>
 
+            <!-- Quick Facts Sidebar -->
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
+
                 <div class="fact-item">
                     <div class="fact-label">Population</div>
-                    <div class="fact-value">~2,500,000</div>
+                    <div class="fact-value">~2.5 million</div>
                 </div>
+
                 <div class="fact-item">
                     <div class="fact-label">Language</div>
                     <div class="fact-value">Tamasheq/Tamajeq</div>
                 </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Family</div>
+                    <div class="fact-value">Berber (Afroasiatic)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Writing System</div>
+                    <div class="fact-value">Tifinagh Script</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Traditional Livelihood</div>
+                    <div class="fact-value">Nomadic Pastoralism</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Known For</div>
+                    <div class="fact-value">Indigo Veils, Salt Caravans, Matrilineal</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Regions</div>
+                    <div class="fact-value">Mali, Niger, Algeria, Libya</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Nickname</div>
+                    <div class="fact-value">"The Blue People"</div>
+                </div>
             </aside>
         </div>
     </div>
+
+    <!-- Tifinagh Footer -->
+    <div class="tifinagh-border"></div>
 
     <script>
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'tuareg',
                 name: 'Tuareg',
-                region: 'africa'
+                region: 'africa',
+                continent: 'africa'
             });
         }
     </script>
