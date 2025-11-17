@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karen People: Culture, History & Heritage | Indigenous Peoples Repository</title>
+    <meta name="description" content="Discover the rich culture of the Karen people of Myanmar and Thailand, their weaving traditions, hill tribes heritage, and resilient spirit.">
+    <link rel="canonical" href="https://www.globalfirstnations.com/peoples/karen">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <style>
+        :root {
+            --mountain-green: #27ae60;
+            --forest-dark: #1e8449;
+            --karen-red: #e74c3c;
+            --weave-white: #ecf0f1;
+            --bamboo-tan: #d2b48c;
+            --mist-grey: #95a5a6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2d3436;
+            background: linear-gradient(180deg, var(--mist-grey) 0%, var(--mountain-green) 40%, var(--forest-dark) 100%);
+            background-attachment: fixed;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(39, 174, 96, 0.05) 20px, rgba(39, 174, 96, 0.05) 40px);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header {
+            background: linear-gradient(135deg, var(--mountain-green) 0%, var(--karen-red) 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(39, 174, 96, 0.4);
+        }
+        h1 { font-size: 3.5em; margin-bottom: 15px; text-shadow: 3px 3px 6px rgba(0,0,0,0.3); }
+        .icon { font-size: 4em; display: inline-block; margin-right: 20px; }
+        .tagline {
+            font-size: 1.4em;
+            opacity: 0.95;
+            font-style: italic;
+            margin-top: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+        }
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid var(--mountain-green);
+        }
+        nav a {
+            color: var(--forest-dark);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        nav a:hover { background: var(--mountain-green); color: white; transform: translateY(-2px); }
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-left: 8px solid var(--mountain-green);
+        }
+        h2 {
+            color: var(--forest-dark);
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--mountain-green);
+        }
+        h3 { color: var(--mountain-green); font-size: 1.8em; margin: 30px 0 15px 0; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, var(--mountain-green), var(--forest-dark));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+            border: 3px solid var(--weave-white);
+        }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact {
+            background: linear-gradient(135deg, var(--karen-red), var(--mountain-green));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+        }
+        footer {
+            background: linear-gradient(135deg, var(--forest-dark), var(--mist-grey));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            nav a { display: block; margin: 10px 0; }
+            .content-section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏔️</span>
+            <h1>The Karen People</h1>
+            <p class="tagline">Weavers of the Mountains - Guardians of Tradition - Children of the Hills</p>
+        </header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/peoples">All Peoples</a>
+            <a href="/regions/asia">Asia</a>
+            <a href="#culture">Culture</a>
+            <a href="#history">History</a>
+            <a href="#contemporary">Today</a>
+        </nav>
+        <section class="content-section">
+            <h2>Who Are the Karen?</h2>
+            <p>The Karen (also Kayin) are one of Southeast Asia's largest ethnic minorities, primarily inhabiting the mountainous borderlands between Myanmar (Burma) and Thailand. Comprising various subgroups including S'gaw, Pwo, and Kayan (known for neck coils), the Karen have maintained distinct cultural identities despite centuries of external pressures. They are renowned for their intricate weaving, agricultural knowledge, and strong community bonds.</p>
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~7M</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">S'gaw/Pwo</span><span>Languages</span></div>
+                <div class="stat-card"><span class="stat-number">Myanmar/Thailand</span><span>Homeland</span></div>
+                <div class="stat-card"><span class="stat-number">Weaving</span><span>Cultural Art</span></div>
+            </div>
+            <div class="fun-fact">
+                <strong>Fun Fact:</strong> Karen weavers create incredibly intricate patterns on backstrap looms, with some complex designs taking months to complete - each pattern tells stories and represents clan identity!
+            </div>
+        </section>
+        <section class="content-section" id="culture">
+            <h2>Cultural Traditions</h2>
+            <h3>Weaving Arts</h3>
+            <p>Karen weaving is a highly developed art form. Women use backstrap looms to create intricate textiles with complex patterns in red, white, and black. Different Karen subgroups have distinct patterns. Weaving knowledge passes from mother to daughter, preserving centuries of tradition and cultural identity.</p>
+            <h3>Hill Agriculture</h3>
+            <p>Karen practice rotational swidden agriculture, growing rice, vegetables, and fruits in mountain clearings. This requires sophisticated environmental knowledge about soil, seasons, and forest regeneration. Rice cultivation is central to Karen life, with ceremonies marking planting and harvest.</p>
+            <h3>Neck Rings Tradition</h3>
+            <p>The Kayan (sometimes called 'long-neck Karen') women's brass neck coils are a distinctive practice of one Karen subgroup. Girls begin wearing coils around age 5, adding rings over years. The practice represents cultural identity and beauty ideals passed through generations.</p>
+        </section>
+        <section class="content-section" id="history">
+            <h2>History</h2>
+            <p>Karen oral traditions speak of origins far to the north, with migrations southward over millennia to the mountains of Southeast Asia. British colonization and Christian missionaries significantly impacted Karen communities in the 19th century. Since 1949, various Karen groups have been in armed conflict with Myanmar's central government, seeking autonomy. This has caused massive displacement and refugee flows to Thailand.</p>
+        </section>
+        <section class="content-section" id="contemporary">
+            <h2>Contemporary Life</h2>
+            <p>Today, Karen communities exist in Myanmar, Thailand (including refugee camps), and diaspora worldwide. They face challenges including armed conflict, displacement, and cultural tourism exploitation, but actively preserve their heritage through weaving cooperatives, Karen-language education, traditional festivals, and advocacy for rights and cultural preservation.</p>
+        </section>
+        <footer>
+            <p>&copy; 2025 Indigenous Peoples Repository | Honoring and preserving indigenous heritage worldwide</p>
+        </footer>
+    </div>
+</body>
+</html>

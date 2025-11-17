@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixtec | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Mixtec - ancient codices, gold metallurgy, pictographic writing, and terraced agriculture of Oaxaca.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛰️</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --oaxaca-red: #C62828; --gold-bright: #FFD700; --codex-brown: #6D4C41; --stepped-orange: #FF6F00; --turquoise: #00897B; --corn-yellow: #FBC02D; --adobe-tan: #D7CCC8; }
+        body { font-family: 'Georgia', serif; line-height: 1.8; color: #3E2723; background: linear-gradient(to bottom, #FFF3E0, #FFE0B2); }
+        .stepped-border { height: 16px; background: repeating-linear-gradient(90deg, var(--oaxaca-red) 0px, var(--oaxaca-red) 15px, transparent 15px, transparent 20px, var(--gold-bright) 20px, var(--gold-bright) 35px, transparent 35px, transparent 40px, var(--stepped-orange) 40px, var(--stepped-orange) 55px, transparent 55px, transparent 60px); position: relative; }
+        .stepped-border::after { content: '📜 · 🌽 · ⛰️ · ✨ · 📜 · 🌽 · ⛰️ · ✨'; position: absolute; top: -5px; left: 50%; transform: translateX(-50%); color: rgba(198, 40, 40, 0.4); font-size: 1.5rem; }
+        .breadcrumb { background: linear-gradient(to bottom, #FFF8E1, #FFECB3); padding: 1rem 2rem; border-bottom: 4px solid var(--codex-brown); }
+        .breadcrumb-nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--codex-brown); text-decoration: none; font-weight: 700; }
+        .breadcrumb-nav a:hover { color: var(--oaxaca-red); }
+        .breadcrumb-separator { color: #BCAAA4; }
+        .hero { background: linear-gradient(180deg, #BF360C 0%, #D84315 20%, #E64A19 40%, #FF5722 60%, #FF7043 80%, #FFAB91 100%); color: white; padding: 8rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 160px; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 160"><polygon points="0,160 200,100 400,110 600,90 800,105 1000,95 1200,110 1200,160" fill="%236D4C41" opacity="0.5"/><rect x="300" y="80" width="20" height="15" fill="%23FFD700" opacity="0.3"/><rect x="700" y="70" width="20" height="15" fill="%23FFD700" opacity="0.3"/></svg>') bottom center no-repeat; background-size: cover; }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .culture-icon { font-size: 6rem; margin-bottom: 1.5rem; filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6)); }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; margin-bottom: 1rem; text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); letter-spacing: 3px; }
+        .hero-subtitle { font-size: clamp(1.25rem, 3vw, 1.75rem); margin-bottom: 2.5rem; opacity: 0.95; font-style: italic; }
+        .hero-meta { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; font-size: 1.1rem; }
+        .hero-meta-item { display: flex; align-items: center; gap: 0.75rem; background: rgba(109, 76, 65, 0.4); padding: 0.75rem 1.5rem; border-radius: 30px; backdrop-filter: blur(10px); border: 2px solid rgba(255, 215, 0, 0.4); }
+        .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; background: white; box-shadow: 0 0 40px rgba(109, 76, 65, 0.2); }
+        .main-content { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; }
+        .quick-facts { background: linear-gradient(135deg, var(--codex-brown), #4E342E); color: white; padding: 2rem; border-radius: 15px; border: 5px solid var(--gold-bright); position: sticky; top: 2rem; height: fit-content; box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4); }
+        .quick-facts::before { content: ''; position: absolute; top: -5px; left: -5px; right: -5px; height: 10px; background: repeating-linear-gradient(90deg, var(--oaxaca-red) 0px, var(--oaxaca-red) 15px, var(--gold-bright) 15px, var(--gold-bright) 30px, var(--stepped-orange) 30px, var(--stepped-orange) 45px); }
+        .quick-facts h3 { font-size: 1.75rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 3px solid var(--gold-bright); font-weight: 900; }
+        .fact-item { margin-bottom: 1.5rem; padding-left: 1rem; border-left: 4px solid var(--corn-yellow); }
+        .fact-label { font-size: 0.875rem; opacity: 0.9; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 1px; }
+        .fact-value { font-size: 1.25rem; font-weight: 700; }
+        .section-title { font-size: 2.5rem; font-weight: 800; color: var(--codex-brown); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 5px solid var(--oaxaca-red); position: relative; }
+        .section-title::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 120px; height: 5px; background: var(--gold-bright); }
+        .content-text { font-size: 1.15rem; line-height: 1.9; color: #3E2723; margin-bottom: 1.5rem; text-align: justify; }
+        .content-text::first-letter { font-size: 4rem; font-weight: 900; float: left; line-height: 1; margin: 0 0.1em 0 0; color: var(--oaxaca-red); }
+        .codex-box { background: linear-gradient(135deg, #FFF8E1 0%, #FFE082 100%); border: 4px solid var(--stepped-orange); border-left: 12px solid var(--oaxaca-red); border-radius: 15px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 6px 20px rgba(255, 111, 0, 0.25); position: relative; }
+        .codex-box::before { content: '📜'; position: absolute; top: -40px; right: 20px; font-size: 4rem; }
+        .codex-box h4 { color: var(--stepped-orange); font-size: 1.6rem; margin-bottom: 1rem; font-weight: 800; }
+        .codex-box p { color: #5D4037; font-size: 1.05rem; line-height: 1.7; font-style: italic; }
+        @media (max-width: 1024px) { .main-content { grid-template-columns: 1fr; } .quick-facts { position: static; margin-bottom: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="stepped-border"></div>
+    <nav class="breadcrumb"><div class="breadcrumb-nav"><a href="/">Home</a><span class="breadcrumb-separator">›</span><a href="/">All Cultures</a><span class="breadcrumb-separator">›</span><a href="/?region=americas">Americas</a><span class="breadcrumb-separator">›</span><span>Mixtec</span></div></nav>
+    <header class="hero"><div class="hero-content"><div class="culture-icon">⛰️</div><h1>Mixtec</h1><p class="hero-subtitle">People of the Rain - Masters of Gold & Ancient Codices</p><div class="hero-meta"><div class="hero-meta-item"><span>👥</span><span>~830,000 people</span></div><div class="hero-meta-item"><span>🗣️</span><span>Tu'un savi</span></div><div class="hero-meta-item"><span>📍</span><span>Oaxaca, Mexico</span></div></div></div></header>
+    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">Ancient Codices & Gold Masters</h2><p class="content-text">The Mixtec (Ñuu Savi or 'People of the Rain') are an indigenous Mesoamerican people inhabiting the mountainous region of Oaxaca in southern Mexico. With over 800,000 people, they represent one of Mexico's largest indigenous groups. The Mixtec developed one of Mesoamerica's most sophisticated civilizations, creating magnificent gold jewelry, detailed pictographic codices recording histories and genealogies, and terraced agricultural systems adapting to steep mountain terrain.</p><div class="codex-box"><h4>Pictographic Codices - Written History</h4><p>Mixtec goldsmiths created some of the most exquisite gold jewelry in pre-Columbian Americas! Using lost-wax casting and filigree techniques, they crafted intricate pieces featuring gods, animals, and geometric designs. The famous treasures of Tomb 7 at Monte Albán—hundreds of gold, jade, turquoise, and crystal objects—represent the finest Mesoamerican metalwork ever discovered!</p></div><p class="content-text"><strong>Eight Surviving Codices:</strong> Eight Mixtec codices survive, painted on deerskin using mineral and organic pigments. These folding screen books record dynastic histories, genealogies, conquests, and ritual events spanning centuries. The pictographic system uses images representing people, places, dates, and events readable by trained specialists.</p><p class="content-text"><em>This page celebrates the Mixtec—whose codices preserve centuries of history, whose goldsmiths created masterworks of unmatched beauty, and whose terraced fields transformed steep mountains into productive farmland.</em></p></section></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~830,000</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Tu'un savi</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Oto-Manguean</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~517,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Adobe houses</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Terraced agriculture</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Codices, Gold metallurgy</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Oaxaca mountains</div></div></aside></div></div>
+    <div class="stepped-border"></div>
+    <script>if (window.learnerProfile) { window.learnerProfile.visitGroup({ id: 'mixtec', name: 'Mixtec', region: 'americas', continent: 'americas' }); }</script>
+</body>
+</html>

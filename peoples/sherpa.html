@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sherpa People: Himalayan Culture & Mountaineering Heritage | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <style>
+        :root { --mountain-blue: #5b8fb9; --snow-white: #ecf0f1; --prayer-red: #e74c3c; --sky-light: #d6eaf8; --stone-grey: #566573; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(180deg, var(--sky-light) 0%, var(--mountain-blue) 50%, var(--stone-grey) 100%);
+            background-attachment: fixed;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(236,240,241,0.1) 5px, rgba(236,240,241,0.1) 6px);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header {
+            background: linear-gradient(135deg, var(--mountain-blue), var(--stone-grey));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(91,143,185,0.4);
+            border-top: 6px solid var(--prayer-red);
+            border-bottom: 6px solid var(--snow-white);
+        }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.4); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline {
+            font-size: 1.3em;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            border-left: 5px solid var(--snow-white);
+        }
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 3px solid var(--mountain-blue);
+        }
+        nav a {
+            color: var(--stone-grey);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        nav a:hover { background: var(--mountain-blue); color: white; }
+        .content-section {
+            background: rgba(255,255,255,0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-left: 8px solid var(--mountain-blue);
+            border-right: 2px solid var(--prayer-red);
+        }
+        h2 {
+            color: var(--stone-grey);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--mountain-blue);
+        }
+        h3 { color: var(--mountain-blue); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, var(--mountain-blue), var(--stone-grey));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid var(--snow-white);
+        }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact {
+            background: linear-gradient(135deg, var(--prayer-red), var(--mountain-blue));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px rgba(231,76,60,0.3);
+        }
+        .prayer-flags {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 25px 0;
+            font-size: 1.5em;
+        }
+        footer {
+            background: linear-gradient(135deg, var(--stone-grey), var(--mountain-blue));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏔️</span>
+            <h1>The Sherpa People</h1>
+            <p class="tagline">Guardians of the Himalayas - Masters of Everest - Children of the High Peaks</p>
+        </header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/peoples">All Peoples</a>
+            <a href="/regions/asia">Asia</a>
+        </nav>
+        <section class="content-section">
+            <h2>Who Are the Sherpa?</h2>
+            <p>The Sherpa are an ethnic group native to the Himalayan regions of Nepal, primarily the Khumbu region below Mount Everest. Renowned worldwide for their mountaineering skills and high-altitude expertise, the Sherpa possess unique physiological adaptations to extreme altitude and maintain rich Tibetan Buddhist traditions.</p>
+            <div class="prayer-flags">
+                <span style="color: #3498db;">🏔️</span>
+                <span style="color: #e74c3c;">🙏</span>
+                <span style="color: #f39c12;">⛰️</span>
+                <span style="color: #27ae60;">🏔️</span>
+                <span style="color: #9b59b6;">🙏</span>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~150,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Sherpa</span><span>Language (Tibetic)</span></div>
+                <div class="stat-card"><span class="stat-number">Himalayas</span><span>Mountain Home</span></div>
+                <div class="stat-card"><span class="stat-number">Everest</span><span>Sacred Mountain</span></div>
+            </div>
+            <div class="fun-fact">
+                <strong>Amazing Adaptation:</strong> Sherpa people have genetic adaptations that help them thrive at extreme altitudes where others struggle - their bodies produce more hemoglobin and use oxygen more efficiently, making them natural mountaineers!
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>Culture & Traditions</h2>
+            <h3>Tibetan Buddhism</h3>
+            <p>Sherpa practice Tibetan Buddhism with monasteries like Tengboche serving as spiritual centers. Prayer wheels, mani stones, and prayer flags are ubiquitous. The Mani Rimdu festival features masked dances and Buddhist teachings celebrating their deep spiritual heritage.</p>
+            <h3>Mountaineering Excellence</h3>
+            <p>Sherpa mountaineering expertise is legendary. They carry heavy loads, fix ropes, establish camps, and rescue climbers at extreme altitudes. Many Sherpa have summited Everest dozens of times. Tenzing Norgay's 1953 summit with Edmund Hillary brought global recognition to Sherpa mountaineering prowess.</p>
+            <h3>Traditional Livelihood</h3>
+            <p>Beyond mountaineering, Sherpa practice high-altitude agriculture and yak herding. They grow potatoes, barley, and buckwheat in terraced fields. Yaks provide meat, milk, wool, and transportation in this challenging mountain environment.</p>
+        </section>
+        <footer>
+            <div class="prayer-flags">
+                <span>🏔️ 🙏 ⛰️</span>
+            </div>
+            <p>&copy; 2025 Indigenous Peoples Repository | Honoring indigenous heritage worldwide</p>
+        </footer>
+    </div>
+</body>
+</html>

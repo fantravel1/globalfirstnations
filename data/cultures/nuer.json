@@ -1,0 +1,246 @@
+{
+  "id": "nuer",
+  "name": "Nuer",
+  "alternateNames": ["Naath"],
+
+  "location": {
+    "region": "africa",
+    "countries": ["South Sudan", "Ethiopia"],
+    "coordinates": {
+      "lat": 8.5,
+      "lng": 31.5
+    }
+  },
+
+  "demographics": {
+    "population": "~1,800,000",
+    "populationYear": 2020,
+    "language": {
+      "name": "Nuer",
+      "family": "Nilotic",
+      "speakers": "~1,400,000",
+      "status": "Vigorous"
+    }
+  },
+
+  "culturalIdentity": {
+    "icon": "🐃",
+    "primaryColor": "#6c5353",
+    "secondaryColor": "#5b8fb9",
+    "dwelling": "Tukul (round huts)",
+    "livelihood": "Pastoralism and agriculture",
+    "knownFor": "Cattle culture, scarification patterns, clan system",
+    "dietaryNotes": "Milk, sorghum, fish, occasional meat"
+  },
+
+  "quickFacts": {
+    "region": "Upper Nile Region",
+    "traditionalDwelling": "Tukul",
+    "primaryLivelihood": "Agro-pastoralism",
+    "distinctiveFeature": "Facial Scarification"
+  },
+
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Nuer (who call themselves 'Naath') are a Nilotic ethnic group concentrated in the Greater Upper Nile region of South Sudan and the Gambela region of western Ethiopia. They are one of the largest ethnic groups in South Sudan and are renowned pastoralists whose lives revolve around cattle. The Nuer inhabit the vast wetlands and grasslands along the White Nile and its tributaries, where they have developed a sophisticated system of seasonal migration between permanent settlements and cattle camps.",
+
+      "culturalIdentity": "Nuer society is organized around an elaborate segmentary lineage system and age-sets. Cattle are absolutely central to Nuer identity, economy, and spirituality. The Nuer are also known for their distinctive facial scarification patterns (gaar), particularly horizontal lines across the forehead, which mark passage to adulthood and clan affiliation. Their kinship system is one of the most extensively studied in anthropology.",
+
+      "funFact": "The Nuer have hundreds of words to describe cattle based on color patterns, horn shapes, and other characteristics - a cow is never just 'a cow' but is described in elaborate poetic detail!"
+    },
+
+    "history": {
+      "origins": "The Nuer share common origins with other Nilotic peoples, migrating southward from the Nile Valley region over several centuries. They are believed to have separated from the closely related Dinka people around 600-1000 years ago. Archaeological and oral evidence suggests they moved into their current territories in the Upper Nile region, adapting to the seasonal flooding patterns of the Sudd wetlands.",
+
+      "expansion": "Between the 17th and 19th centuries, the Nuer underwent a period of expansion, moving into territories previously held by Dinka, Anuak, and other groups. This expansion was driven by cattle needs, population growth, and possibly environmental changes. The Nuer developed a reputation as fierce warriors and successful cattle raiders, though relationships with neighbors involved both conflict and cooperation.",
+
+      "colonialImpact": "During the Anglo-Egyptian Condominium (1899-1956), British colonial authorities attempted to control Nuer territories. The Nuer resisted colonial rule through a series of uprisings in the 1920s and 1930s. Colonial policies disrupted traditional governance, imposed borders, and introduced Christianity and Western education. The anthropologist E.E. Evans-Pritchard conducted extensive fieldwork among the Nuer in the 1930s, producing landmark ethnographic studies.",
+
+      "modernConflict": "The Nuer have been profoundly affected by Sudan's civil wars (1955-1972, 1983-2005) and the ongoing conflicts in South Sudan since independence in 2011. The wars have caused massive displacement, loss of life, and destruction of livelihoods. Cattle raiding has been militarized and politicized. Despite these challenges, the Nuer have maintained strong cultural identity and continue to value their pastoral traditions."
+    },
+
+    "culture": {
+      "cattleCulture": "Cattle are the absolute center of Nuer life, providing milk, meat, hides, and dung for fuel. Beyond material value, cattle have immense spiritual and social significance. Individuals are identified with cattle, taking 'ox-names' based on a favorite bull. Marriages require bridewealth payments in cattle. Cattle feature prominently in prayers, blessings, and sacrifices. The Nuer say 'Man without cattle is not a man.'",
+
+      "scarification": "Nuer boys undergo initiation ceremonies between ages 14-18 that include receiving facial scarification (gaar) - typically six horizontal lines cut across the forehead from ear to ear. This painful process marks transition to manhood and creates permanent clan markers. The deep cuts are made with a sharp blade and allowed to heal into raised keloid scars. Women traditionally had different scarification patterns on their bodies.",
+
+      "socialOrganization": "Nuer society operates through a segmentary lineage system of remarkable complexity. People belong to nested levels of patrilineal descent groups - from nuclear families to lineages to clans to tribal sections. This 'ordered anarchy' allows Nuer to function without centralized political authority. Age-sets created through initiation provide another organizing principle, creating bonds that cross lineage divisions.",
+
+      "seasonalMigration": "The Nuer practice transhumance adapted to the dramatic seasonal flooding of the Sudd wetlands. During the rainy season (May-October), they live in permanent villages on higher ground, cultivating sorghum and other crops. In the dry season, young men take cattle to riverside camps (wec) where grazing remains, while others remain in villages. This seasonal movement has been central to Nuer life for centuries.",
+
+      "religion": "Traditional Nuer religion centers on Kwoth (God/Spirit), a supreme being associated with the sky. Cattle play key roles in religious life as sacrificial animals. The Nuer practice divination, recognize various nature spirits, and maintain elaborate rituals for births, deaths, marriages, and other transitions. Many Nuer today practice Christianity, often blended with traditional beliefs.",
+
+      "marriageAndKinship": "Marriage among the Nuer requires substantial bridewealth (typically 20-40 cattle), creating alliances between families. The Nuer practice levirate marriage (widow marries deceased husband's brother) and ghost marriage (children born to a deceased man's wife are considered his). These practices ensure continuity of lineages and proper kinship relations. Descent is strictly patrilineal."
+    },
+
+    "contemporary": {
+      "challenges": [
+        "Armed Conflict: Ongoing civil war and intercommunal violence in South Sudan",
+        "Displacement: Hundreds of thousands displaced by conflict",
+        "Cattle Raiding: Traditional practice militarized with automatic weapons",
+        "Environmental Pressure: Climate change affecting flooding patterns and pastures",
+        "Food Insecurity: Conflict and drought causing periodic famines",
+        "Healthcare Access: Minimal medical facilities in remote areas",
+        "Education: Limited schools and extremely low literacy rates",
+        "Economic Hardship: Few opportunities beyond subsistence pastoralism",
+        "Political Marginalization: Limited voice in national politics despite large population"
+      ],
+
+      "adaptations": [
+        "Diaspora Communities: Significant Nuer populations in refugee camps and abroad",
+        "Education Pursuit: Growing recognition of education's importance despite challenges",
+        "NGO Engagement: Working with humanitarian organizations",
+        "Radio Communication: Use of radio for news and connection across vast distances",
+        "Market Participation: Increased engagement with cash economy and markets",
+        "Peace Initiatives: Community-led peace and reconciliation efforts",
+        "Agricultural Intensification: Some groups increasing crop cultivation"
+      ],
+
+      "preservation": "Despite extraordinary challenges, the Nuer maintain strong cultural identity through continuation of cattle-keeping traditions, practice of scarification and initiation ceremonies, maintenance of clan and lineage systems, oral traditions preserving history and values, Nuer language transmission to new generations, and diaspora communities maintaining cultural connections.",
+
+      "notableIndividuals": [
+        {
+          "name": "Riek Machar",
+          "achievement": "Political leader and former Vice President of South Sudan"
+        },
+        {
+          "name": "Nyaruach Lueth",
+          "achievement": "South Sudanese-American model and activist"
+        },
+        {
+          "name": "Emmanuel Jal",
+          "achievement": "Musician and former child soldier turned peace activist (part Nuer)"
+        }
+      ]
+    }
+  },
+
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Nuer_man_with_cattle.jpg/800px-Nuer_man_with_cattle.jpg",
+      "alt": "Nuer man with cattle displaying facial scarification",
+      "caption": "Nuer man with his cattle, showing traditional facial scarification (gaar) marks",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Nuer_man_with_cattle.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Nuer_scarification.jpg/800px-Nuer_scarification.jpg",
+      "alt": "Close-up of Nuer facial scarification patterns",
+      "caption": "Traditional Nuer gaar scarification - horizontal lines marking adulthood and clan identity",
+      "credit": "Wikimedia Commons (CC BY 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Nuer_scarification.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Nuer_village_Sudd.jpg/800px-Nuer_village_Sudd.jpg",
+      "alt": "Nuer village in the Sudd wetlands",
+      "caption": "Nuer village with traditional tukul huts in the vast Sudd wetlands of South Sudan",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Nuer_village_Sudd.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nuer_cattle_camp.jpg/800px-Nuer_cattle_camp.jpg",
+      "alt": "Nuer cattle camp during dry season",
+      "caption": "Dry season cattle camp where Nuer herdsmen stay with their cattle",
+      "credit": "Wikimedia Commons (CC BY 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Nuer_cattle_camp.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Nuer_women.jpg/800px-Nuer_women.jpg",
+      "alt": "Nuer women in traditional dress",
+      "caption": "Nuer women wearing traditional beaded jewelry and clothing",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Nuer_women.jpg"
+    }
+  ],
+
+  "references": [
+    {
+      "type": "book",
+      "authors": ["Evans-Pritchard, E. E."],
+      "year": 1940,
+      "title": "The Nuer: A Description of the Modes of Livelihood and Political Institutions of a Nilotic People",
+      "publisher": "Oxford University Press",
+      "location": "Oxford",
+      "isbn": "978-0195003222"
+    },
+    {
+      "type": "book",
+      "authors": ["Hutchinson, S. E."],
+      "year": 1996,
+      "title": "Nuer Dilemmas: Coping with Money, War, and the State",
+      "publisher": "University of California Press",
+      "location": "Berkeley",
+      "isbn": "978-0520204799"
+    },
+    {
+      "type": "book",
+      "authors": ["Johnson, D. H."],
+      "year": 2016,
+      "title": "South Sudan: A New History for a New Nation",
+      "publisher": "Ohio University Press",
+      "location": "Athens, OH",
+      "isbn": "978-0821421925"
+    },
+    {
+      "type": "article",
+      "authors": ["Holtzman, J."],
+      "year": 2000,
+      "title": "Nuer Journeys, Nuer Lives: Sudanese Refugees in Minnesota",
+      "journal": "Cultural Anthropology",
+      "volume": "15",
+      "issue": "3",
+      "pages": "387-417"
+    },
+    {
+      "type": "web",
+      "title": "Nuer People",
+      "organization": "South Sudan Heritage Foundation",
+      "url": "https://www.southsudanheritage.org",
+      "accessDate": "2025-01-15"
+    }
+  ],
+
+  "relatedCultures": {
+    "similar": [
+      {
+        "id": "dinka",
+        "name": "Dinka",
+        "icon": "🐄",
+        "location": "South Sudan",
+        "similarity": "Closely related Nilotic people sharing language roots, cattle culture, and scarification practices.",
+        "relationshipType": "Sister Culture"
+      }
+    ],
+    "regional": [
+      {
+        "id": "anuak",
+        "name": "Anuak",
+        "icon": "🌾",
+        "location": "South Sudan and Ethiopia",
+        "similarity": "Neighboring Nilotic group with different but related cultural practices.",
+        "relationshipType": "Regional Neighbor"
+      }
+    ],
+    "contrasting": [
+      {
+        "id": "maasai",
+        "name": "Maasai",
+        "icon": "🦁",
+        "location": "East Africa",
+        "similarity": "Fellow Nilotic pastoralists with strong cattle cultures but different environments.",
+        "relationshipType": "Cultural Cousins"
+      }
+    ]
+  },
+
+  "metadata": {
+    "lastUpdated": "2025-01-15",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 2789,
+    "imageCount": 5,
+    "referenceCount": 5,
+    "contributors": ["Indigenous Peoples Repository Team"],
+    "version": "1.0.0"
+  }
+}

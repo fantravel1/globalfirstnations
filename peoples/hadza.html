@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadza | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Hadza - last true hunter-gatherers in Africa, click language, ancient lifestyle, and egalitarian society.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏹</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --savanna-tan: #D7A86E; --baobab-brown: #8D6E63; --hunter-ochre: #BF8040; --grass-gold: #C5A952; --earth-red: #A0522D; --lake-blue: #5DADE2; --acacia-green: #6B8E23; }
+        body { font-family: 'Georgia', serif; line-height: 1.8; color: #3E2723; background: linear-gradient(to bottom, #FFF8DC, #F5DEB3); }
+        .hunter-border { height: 18px; background: repeating-linear-gradient(90deg, var(--savanna-tan) 0px, var(--savanna-tan) 30px, var(--baobab-brown) 30px, var(--baobab-brown) 60px, var(--acacia-green) 60px, var(--acacia-green) 90px); position: relative; }
+        .hunter-border::after { content: '🏹 · 🌳 · 🦌 · 🍯 · 🏹 · 🌳 · 🦌 · 🍯'; position: absolute; top: -2px; left: 50%; transform: translateX(-50%); color: rgba(141, 110, 99, 0.3); font-size: 1.2rem; }
+        .breadcrumb { background: linear-gradient(to bottom, #FFFACD, #F5DEB3); padding: 1rem 2rem; border-bottom: 4px solid var(--baobab-brown); }
+        .breadcrumb-nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--baobab-brown); text-decoration: none; font-weight: 700; }
+        .breadcrumb-nav a:hover { color: var(--earth-red); }
+        .breadcrumb-separator { color: #C5A952; }
+        .hero { background: linear-gradient(180deg, #8B7355 0%, #A0826D 20%, #B8956A 40%, #D2A86E 60%, #E6C794 80%, #F4E1C1 100%); color: white; padding: 8rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><ellipse cx="300" cy="100" rx="60" ry="20" fill="%238D6E63" opacity="0.3"/><ellipse cx="700" cy="95" rx="70" ry="25" fill="%238D6E63" opacity="0.3"/><ellipse cx="1000" cy="105" rx="50" ry="15" fill="%238D6E63" opacity="0.3"/><rect x="500" y="50" width="8" height="70" fill="%236B8E23" opacity="0.4"/></svg>') bottom center no-repeat; background-size: cover; }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .culture-icon { font-size: 7rem; margin-bottom: 1.5rem; filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6)); animation: bowReady 6s ease-in-out infinite; }
+        @keyframes bowReady { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; margin-bottom: 1rem; text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); letter-spacing: 2px; }
+        .hero-subtitle { font-size: clamp(1.25rem, 3vw, 1.75rem); margin-bottom: 2.5rem; opacity: 0.95; font-style: italic; }
+        .hero-meta { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; font-size: 1.1rem; }
+        .hero-meta-item { display: flex; align-items: center; gap: 0.75rem; background: rgba(141, 110, 99, 0.4); padding: 0.75rem 1.5rem; border-radius: 30px; backdrop-filter: blur(10px); border: 2px solid rgba(197, 169, 82, 0.4); }
+        .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; background: white; box-shadow: 0 0 40px rgba(141, 110, 99, 0.2); }
+        .main-content { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; }
+        .quick-facts { background: linear-gradient(135deg, var(--baobab-brown), #6D4C41); color: white; padding: 2rem; border-radius: 15px; border: 5px solid var(--savanna-tan); position: sticky; top: 2rem; height: fit-content; box-shadow: 0 8px 24px rgba(215, 168, 110, 0.4); }
+        .quick-facts::before { content: ''; position: absolute; top: -5px; left: -5px; right: -5px; height: 10px; background: repeating-linear-gradient(90deg, var(--savanna-tan) 0px, var(--savanna-tan) 20px, var(--acacia-green) 20px, var(--acacia-green) 40px); }
+        .quick-facts h3 { font-size: 1.75rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 3px solid var(--savanna-tan); font-weight: 900; }
+        .fact-item { margin-bottom: 1.5rem; padding-left: 1rem; border-left: 4px solid var(--grass-gold); }
+        .fact-label { font-size: 0.875rem; opacity: 0.9; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 1px; }
+        .fact-value { font-size: 1.25rem; font-weight: 700; }
+        .section-title { font-size: 2.5rem; font-weight: 800; color: var(--baobab-brown); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 5px solid var(--hunter-ochre); position: relative; }
+        .section-title::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 120px; height: 5px; background: var(--acacia-green); }
+        .content-text { font-size: 1.15rem; line-height: 1.9; color: #3E2723; margin-bottom: 1.5rem; text-align: justify; }
+        .content-text::first-letter { font-size: 4rem; font-weight: 900; float: left; line-height: 1; margin: 0 0.1em 0 0; color: var(--earth-red); }
+        .ancient-box { background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%); border: 4px solid var(--grass-gold); border-left: 12px solid var(--earth-red); border-radius: 15px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 6px 20px rgba(197, 169, 82, 0.25); position: relative; }
+        .ancient-box::before { content: '🦴'; position: absolute; top: -40px; right: 20px; font-size: 4rem; }
+        .ancient-box h4 { color: var(--baobab-brown); font-size: 1.6rem; margin-bottom: 1rem; font-weight: 800; }
+        .ancient-box p { color: #5D4037; font-size: 1.05rem; line-height: 1.7; font-style: italic; }
+        @media (max-width: 1024px) { .main-content { grid-template-columns: 1fr; } .quick-facts { position: static; margin-bottom: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="hunter-border"></div>
+    <nav class="breadcrumb"><div class="breadcrumb-nav"><a href="/">Home</a><span class="breadcrumb-separator">›</span><a href="/">All Cultures</a><span class="breadcrumb-separator">›</span><a href="/?region=africa">Africa</a><span class="breadcrumb-separator">›</span><span>Hadza</span></div></nav>
+    <header class="hero"><div class="hero-content"><div class="culture-icon">🏹</div><h1>Hadza</h1><p class="hero-subtitle">Last Hunter-Gatherers - Ancient Lifestyle Preserved</p><div class="hero-meta"><div class="hero-meta-item"><span>👥</span><span>~1,300 people</span></div><div class="hero-meta-item"><span>🗣️</span><span>Hadzane</span></div><div class="hero-meta-item"><span>📍</span><span>Lake Eyasi, Tanzania</span></div></div></div></header>
+    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">50,000 Years Unchanged</h2><p class="content-text">The Hadza (or Hadzabe) are one of the last remaining hunter-gatherer societies on Earth, living in the area around Lake Eyasi in northern Tanzania. With only about 1,300 people, fewer than 400 Hadza still practice traditional hunting and foraging lifestyles. The Hadza have lived in their territory for tens of thousands of years, representing an ancient way of life predating agriculture. They speak Hadzane, a language isolate with click consonants, unrelated to other African languages.</p><div class="ancient-box"><h4>Most Ancient Lifestyle on Earth</h4><p>Genetic studies indicate the Hadza are among Africa's most ancient populations, having lived in Tanzania for at least 50,000 years! Their language, Hadzane, is a click language isolate showing no clear relationship to other African languages, suggesting extraordinary antiquity. The Hadza likely represent descendants of some of humanity's earliest populations, maintaining a hunting-gathering lifestyle while neighboring peoples adopted agriculture!</p></div><p class="content-text"><strong>Radical Egalitarianism:</strong> The Hadza have no chiefs, elders, or formal leaders. Decisions emerge through discussion and consensus. Successful hunters gain no special status—sharing is so obligatory that skilled hunters sometimes avoid bringing meat to camp to escape sharing demands. This organizational structure fascinates anthropologists studying human cooperation.</p><p class="content-text"><em>This page honors the Hadza—whose ancestors hunted these same lands for 50,000 years, whose egalitarian society challenges assumptions about human hierarchy, and whose click language preserves extraordinary linguistic antiquity.</em></p></section></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~1,300</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Hadzane</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Language isolate</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~1,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Temporary grass huts</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Hunting & foraging</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Last hunter-gatherers</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Lake Eyasi, Tanzania</div></div></aside></div></div>
+    <div class="hunter-border"></div>
+    <script>if (window.learnerProfile) { window.learnerProfile.visitGroup({ id: 'hadza', name: 'Hadza', region: 'africa', continent: 'africa' }); }</script>
+</body>
+</html>

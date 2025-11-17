@@ -1,0 +1,341 @@
+{
+  "id": "guarani",
+  "name": "Guaraní",
+  "alternateNames": ["Avá Guaraní", "Guarani people"],
+
+  "location": {
+    "region": "americas",
+    "subregion": "south_america",
+    "countries": ["Paraguay", "Brazil", "Argentina", "Bolivia"],
+    "coordinates": {
+      "lat": -25.2637,
+      "lng": -57.5759
+    }
+  },
+
+  "demographics": {
+    "population": "~6,000,000",
+    "populationYear": 2020,
+    "language": {
+      "name": "Guaraní (Avañe'ẽ)",
+      "family": "Tupian",
+      "speakers": "~6,500,000",
+      "status": "Official language of Paraguay, widely spoken and healthy"
+    }
+  },
+
+  "culturalIdentity": {
+    "icon": "🌿",
+    "primaryColor": "#006747",
+    "secondaryColor": "#FFFFFF",
+    "dwelling": "Óga (traditional communal house), Modern homes",
+    "livelihood": "Traditional: Slash-and-burn agriculture, hunting, fishing; Modern: Agriculture, diverse economy",
+    "knownFor": "Bilingual nation (Paraguay), Jesuit Missions, Yerba mate culture, Musical traditions, Language preservation",
+    "dietaryNotes": "Manioc, corn, sweet potatoes, beans, fish; yerba mate tea; chipa (cheese bread)"
+  },
+
+  "quickFacts": {
+    "region": "Paraguay and surrounding areas",
+    "traditionalDwelling": "Óga (communal house)",
+    "primaryLivelihood": "Agriculture & fishing",
+    "distinctiveFeature": "Only indigenous language co-official in a nation (Paraguay)"
+  },
+
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Guaraní are one of the most culturally influential indigenous peoples of South America, inhabiting the region spanning Paraguay, southern Brazil, northeastern Argentina, and southeastern Bolivia. With over 6 million speakers, Guaraní is unique among indigenous American languages as one of Paraguay's two official languages, spoken by over 90% of the population including non-indigenous Paraguayans. This remarkable language preservation makes Paraguay the only officially bilingual indigenous-Spanish speaking nation in the Americas. The Guaraní have maintained strong cultural identity despite centuries of colonization, blending traditional practices with Catholic and modern influences while keeping their language vibrantly alive.",
+
+      "culturalIdentity": "Traditional Guaraní identity centers on ñande reko (our way of life), emphasizing communal values, reciprocity, and connection to the land. Communities traditionally organized around tekoha (the place where one lives according to Guaraní customs), with extended families living in communal houses. Leadership came from tuvichás (chiefs) and spiritual guidance from pajés (shamans) who mediated between physical and spiritual realms. The concept of ñandereko encompasses not just lifeways but a holistic worldview including cosmology, social organization, and relationship with nature. Land is sacred—not property to be owned but a living entity providing sustenance and spiritual grounding.",
+
+      "funFact": "Paraguay is the only country in the Americas where an indigenous language—Guaraní—is spoken by the majority of the population! Over 90% of Paraguayans speak Guaraní, including people without indigenous ancestry. In rural areas, many speak Guaraní more fluently than Spanish. The language is used in government, media, education, music, and daily life. This extraordinary language vitality shows how indigenous culture can thrive and influence an entire nation, making Paraguay truly bilingual and bicultural!"
+    },
+
+    "history": {
+      "origins": "Archaeological and linguistic evidence indicates Guaraní ancestors lived in the Amazon basin before migrating southward approximately 2,000-3,000 years ago, bringing agriculture and ceramic technologies. They spread throughout the Río de la Plata basin, developing distinct subgroups including Chiriguano, Mbya, Kaiowá, and Paraguayan Guaraní. By the time of European contact, Guaraní communities occupied a vast territory characterized by tropical and subtropical forests and river systems, practicing slash-and-burn agriculture combined with hunting and fishing.",
+
+      "preContact": "Pre-colonial Guaraní lived in semi-permanent villages near rivers, practicing sustainable slash-and-burn agriculture growing manioc, corn, sweet potatoes, beans, and squash. Villages consisted of large communal houses (óga) housing extended families under matrilocal residence patterns—men moved to their wives' families. Communities maintained loose political organization, with temporary alliances formed during warfare. Guaraní developed sophisticated pottery decorated with painted and incised designs, wove cotton textiles, and practiced intricate featherwork. Spiritual life centered on pajés who conducted ceremonies, healed illness, and led communities in maintaining cosmic balance.",
+
+      "colonialImpact": "Spanish arrival in the early 1500s dramatically transformed Guaraní life. Unlike violent conquest elsewhere, many Guaraní initially allied with Spanish against rival indigenous groups, leading to extensive mestizaje (racial mixing). The Jesuit Reductions (missions) established from 1609-1767 gathered Guaraní communities into organized settlements where they practiced Christianity while maintaining Guaraní language and many cultural elements. The Jesuit system created a unique hybrid society with communal agriculture, European-style architecture, and flourishing arts—especially baroque music performed in Guaraní. When Spain expelled the Jesuits in 1767, the reduction system collapsed, but it had permanently integrated Guaraní language into colonial and eventually national Paraguayan culture.",
+
+      "modernHistory": "Paraguay's independence (1811) created a nation profoundly influenced by Guaraní culture. The devastating Triple Alliance War (1864-1870) killed the majority of Paraguay's male population, further entrenching Guaraní as the dominant domestic language. The 20th century brought increasing pressure on remaining autonomous Guaraní communities, especially in Brazil where expansion displaced groups like the Kaiowá from traditional lands. In Paraguay, official bilingualism (1992 Constitution) recognized Guaraní's importance. However, indigenous Guaraní communities—as distinct from mestizo Guaraní-speakers—continue facing land loss, poverty, and marginalization, particularly in Brazil and Argentina where they lack Paraguay's linguistic-cultural acceptance."
+    },
+
+    "culture": {
+      "traditionalLife": "Traditional Guaraní life organized around the tekoha (territory containing everything needed for ñande reko—the Guaraní way of life). Extended families lived in óga (large communal houses) with hammocks for sleeping and minimal furniture. Women managed manioc gardens using slash-and-burn cultivation, processed food, made pottery, and wove cotton. Men cleared forest, hunted with bows and arrows, fished, and defended the community. Children learned through observation and participation in daily activities. Seasonal festivals marked agricultural cycles, featuring communal feasting, dancing, and spiritual ceremonies led by pajés.",
+
+      "artAndCraftsmanship": "Guaraní artistic traditions reflect both utilitarian needs and spiritual expression. Women created pottery with distinctive geometric designs and anthropomorphic features, using local clays and natural pigments. Basket weaving using palm fibers produces containers, mats, and decorative items. The Guaraní developed sophisticated featherwork creating headdresses, arrows, and ceremonial objects using brilliant tropical bird feathers. String instruments like the Paraguayan harp and guitar developed from European instruments but were adapted with Guaraní musical sensibilities, creating a unique musical tradition. Contemporary Guaraní artists work in various media while maintaining connection to traditional aesthetics.",
+
+      "spiritualityAndBeliefs": "Guaraní spirituality recognizes multiple realms of existence and numerous spiritual beings. Ñanderu (Our Father) and Ñandesy (Our Mother) are primordial creator deities. Tupã represents thunder and remains associated with Christianity's God through syncretic blending. Jasy Jatere, Kurupi, and other forest spirits interact with humans, sometimes helping, sometimes threatening. The concept of tekojoja (reciprocity and living in harmony) guides relationships between humans, nature, and spirits. Pajés (shamans) conduct healing ceremonies, divination, and mediate with spirits through tobacco smoke, sacred songs, and ritual dances. The Guaraní concept of 'land without evil' (Yvy Marae'ỹ)—a terrestrial paradise—inspired historical migrations seeking spiritual perfection.",
+
+      "languageSuccess": "Guaraní's extraordinary preservation success stems from multiple factors: extensive mestizaje created a hybrid population maintaining the indigenous language; Jesuit Reductions promoted Guaraní literacy and literature; rural isolation preserved traditional language domains; and Guaraní became a symbol of Paraguayan national identity distinct from Spanish-speaking neighbors. The 1992 Constitution made Guaraní co-official with Spanish. Today, Guaraní is taught in schools, used in government and media, and thrives in popular music and literature. Jopara—a mixed Spanish-Guaraní code common in Paraguay—demonstrates the language's vitality and adaptability.",
+
+      "yerbaMate": "Yerba mate, a caffeinated infusion from the Ilex paraguariensis plant, is central to Guaraní culture and remains Paraguay's national drink. The Guaraní cultivated yerba mate long before European contact, drinking it during ceremonies and social gatherings. The Guaraní taught Jesuit missionaries and Spanish colonists to prepare and drink mate, which spread throughout the Southern Cone. Today, sharing mate—passed around a circle with each person drinking from the same vessel—maintains Guaraní values of community and reciprocity across Paraguayan society, transcending ethnic boundaries."
+    },
+
+    "contemporary": {
+      "challenges": [
+        {
+          "issue": "Land Dispossession",
+          "description": "Especially severe in Brazil where agribusiness expansion has displaced Kaiowá and other Guaraní from ancestral lands, leading to confinement on tiny reservations"
+        },
+        {
+          "issue": "Violence and Persecution",
+          "description": "Guaraní communities in Brazil face violence from ranchers and agricultural interests; high rates of suicide among Guaraní Kaiowá related to land loss and cultural stress"
+        },
+        {
+          "issue": "Poverty and Marginalization",
+          "description": "Indigenous Guaraní communities experience higher poverty rates, malnutrition, and limited access to services despite national Guaraní language use"
+        },
+        {
+          "issue": "Cultural Distinction",
+          "description": "In Paraguay, ethnic Guaraní indigenous people are often conflated with mestizo Guaraní-speakers, obscuring specific indigenous community needs and rights"
+        },
+        {
+          "issue": "Environmental Degradation",
+          "description": "Deforestation, agribusiness expansion, and development destroying traditional territories and subsistence resources"
+        },
+        {
+          "issue": "Language Varieties",
+          "description": "While Paraguayan Guaraní thrives, other dialects spoken by indigenous communities (Mbya, Kaiowá, etc.) receive less support and face endangerment"
+        },
+        {
+          "issue": "Healthcare Access",
+          "description": "Limited access to culturally appropriate healthcare; displacement disrupting traditional medicine practices"
+        }
+      ],
+
+      "adaptations": [
+        {
+          "area": "Language Vitality",
+          "description": "Guaraní remains vibrantly alive in Paraguay across all social classes; used in education, government, media, music, and daily life"
+        },
+        {
+          "area": "Cultural Expression",
+          "description": "Guaraní music, dance, and arts flourish in both traditional and contemporary forms; Guaraní poetry and literature recognized internationally"
+        },
+        {
+          "area": "Political Organizing",
+          "description": "Indigenous Guaraní communities forming organizations to advocate for land rights, especially in Brazil through groups like Aty Guasu"
+        },
+        {
+          "area": "Land Recovery",
+          "description": "Some communities successfully reclaiming traditional territories through legal battles and direct occupation"
+        },
+        {
+          "area": "Education Access",
+          "description": "Bilingual education programs teaching Guaraní; growing number of indigenous teachers and culturally appropriate curricula"
+        },
+        {
+          "area": "International Advocacy",
+          "description": "Engaging UN mechanisms and international human rights organizations to pressure governments for land rights and protection"
+        },
+        {
+          "area": "Economic Initiatives",
+          "description": "Traditional agriculture cooperatives, artisan markets selling crafts, eco-tourism in some communities"
+        }
+      ],
+
+      "preservation": "Guaraní cultural preservation benefits from the language's remarkable vitality in Paraguay, where Guaraní culture influences national identity. However, ethnic Guaraní communities work to maintain distinct indigenous identity separate from mestizo national culture. Elders transmit traditional knowledge of agriculture, medicinal plants, ceremonies, and cosmology. Communities maintain pajé traditions and spiritual practices despite Catholic influence. In Brazil and Argentina, Guaraní organizations advocate for land rights while preserving cultural practices. The challenge lies in protecting indigenous Guaraní communities' specific rights and territories while celebrating the broader cultural influence.",
+
+      "notableIndividuals": [
+        {
+          "name": "Augusto Roa Bastos (1917-2005)",
+          "achievement": "Renowned Paraguayan author who incorporated Guaraní language and culture into Spanish-language literature; won Cervantes Prize (though mestizo, deeply engaged with Guaraní culture)"
+        },
+        {
+          "name": "Marçal de Souza Tupã-y (1920-1983)",
+          "achievement": "Guaraní-Kaiowá leader who fought for indigenous land rights in Brazil; assassinated for his activism"
+        },
+        {
+          "name": "Sonia Guajajara (1974-)",
+          "achievement": "Brazilian indigenous leader and politician advocating for indigenous rights; first Indigenous Minister of Indigenous Peoples in Brazil (though Guajajara, works with Guaraní communities)"
+        },
+        {
+          "name": "David Galeano Olivera (1942-)",
+          "achievement": "Paraguayan Guaraní poet and educator promoting Guaraní language and literature"
+        },
+        {
+          "name": "Susy Delgado",
+          "achievement": "Guaraní educator and activist promoting indigenous education and Guaraní language in formal education systems"
+        }
+      ]
+    }
+  },
+
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Guarani_village.jpg/800px-Guarani_village.jpg",
+      "alt": "Traditional Guaraní village setting",
+      "caption": "Guaraní community in traditional forest setting, maintaining connection to land central to ñande reko (Guaraní way of life)",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Guarani_village.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Yerba_mate_preparation.jpg/800px-Yerba_mate_preparation.jpg",
+      "alt": "Traditional yerba mate preparation",
+      "caption": "Yerba mate, central to Guaraní culture, shared communally in a ritual demonstrating reciprocity and social bonds",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Yerba_mate_preparation.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Guarani_pottery.jpg/800px-Guarani_pottery.jpg",
+      "alt": "Traditional Guaraní pottery with geometric designs",
+      "caption": "Guaraní pottery featuring distinctive geometric and anthropomorphic designs, created by women using traditional techniques",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Guarani_pottery.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Jesuit_Mission_ruins_Paraguay.jpg/800px-Jesuit_Mission_ruins_Paraguay.jpg",
+      "alt": "Ruins of Jesuit Mission in Paraguay",
+      "caption": "Ruins of Jesuit Reductions where Guaraní developed unique hybrid society blending indigenous and European elements while preserving language",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Jesuit_Mission_ruins_Paraguay.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Guarani_text.jpg/800px-Guarani_text.jpg",
+      "alt": "Text written in Guaraní language",
+      "caption": "Guaraní text—the language thrives as co-official language of Paraguay, spoken by over 90% of the population",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Guarani_text.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Guarani_children.jpg/800px-Guarani_children.jpg",
+      "alt": "Guaraní children in community",
+      "caption": "Guaraní children learning traditional culture and language, maintaining cultural transmission across generations",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Guarani_children.jpg"
+    }
+  ],
+
+  "references": [
+    {
+      "type": "book",
+      "authors": ["Ganson, Barbara"],
+      "year": 2003,
+      "title": "The Guaraní under Spanish Rule in the Río de la Plata",
+      "publisher": "Stanford University Press",
+      "location": "Stanford",
+      "isbn": "978-0804746700"
+    },
+    {
+      "type": "book",
+      "authors": ["Chamorro, Graciela"],
+      "year": 1998,
+      "title": "A espiritualidade Guarani: uma teologia ameríndia da palavra",
+      "publisher": "Sinodal",
+      "location": "São Leopoldo",
+      "isbn": "978-8523308605"
+    },
+    {
+      "type": "book",
+      "authors": ["Melià, Bartomeu"],
+      "year": 1997,
+      "title": "El Guaraní conquistado y reducido: Ensayos de etnohistoria",
+      "publisher": "Universidad Católica",
+      "location": "Asunción",
+      "isbn": "978-9925900022"
+    },
+    {
+      "type": "book",
+      "authors": ["Reed, Richard K."],
+      "year": 1995,
+      "title": "Prophets of Agroforestry: Guaraní Communities and Commercial Gathering",
+      "publisher": "University of Texas Press",
+      "location": "Austin",
+      "isbn": "978-0292770744"
+    },
+    {
+      "type": "journal",
+      "authors": ["Wilbert, Johannes", "Simoneau, Karin"],
+      "year": 1987,
+      "title": "Folk Literature of the Guaraní Indians",
+      "journal": "UCLA Latin American Center Publications",
+      "location": "Los Angeles"
+    },
+    {
+      "type": "book",
+      "authors": ["Cadogan, León"],
+      "year": 1997,
+      "title": "Ayvu Rapyta: Textos míticos de los Mbyá-Guaraní del Guairá",
+      "publisher": "CEADUC-CEPAG",
+      "location": "Asunción",
+      "isbn": "978-9925001576"
+    },
+    {
+      "type": "web",
+      "title": "Aty Guasu - Great Assembly of Guaraní Kaiowá",
+      "organization": "Guaraní Indigenous Organization",
+      "url": "https://www.survival-international.org/tribes/guarani",
+      "accessDate": "2025-01-17"
+    },
+    {
+      "type": "book",
+      "authors": ["Gow, Peter"],
+      "year": 2001,
+      "title": "An Amazonian Myth and Its History",
+      "publisher": "Oxford University Press",
+      "location": "Oxford",
+      "isbn": "978-0198236931"
+    }
+  ],
+
+  "relatedCultures": {
+    "similar": [
+      {
+        "id": "tupi",
+        "name": "Tupí",
+        "icon": "🌴",
+        "location": "Brazil",
+        "similarity": "Closely related Tupian-speaking peoples sharing linguistic roots and many cultural elements; historically occupied coastal Brazil",
+        "relationshipType": "Linguistic Relatives"
+      },
+      {
+        "id": "mapuche",
+        "name": "Mapuche",
+        "icon": "🌳",
+        "location": "Chile, Argentina",
+        "similarity": "Major South American indigenous group with strong cultural preservation and identity",
+        "relationshipType": "South American Indigenous Peoples"
+      }
+    ],
+    "regional": [
+      {
+        "id": "quechua",
+        "name": "Quechua",
+        "icon": "⛰️",
+        "location": "Andean region",
+        "similarity": "Major South American indigenous language with millions of speakers, different geographic and cultural region",
+        "relationshipType": "South American Indigenous Peoples"
+      },
+      {
+        "id": "aymara",
+        "name": "Aymara",
+        "icon": "🏔️",
+        "location": "Bolivia, Peru",
+        "similarity": "Andean indigenous people in neighboring countries, different cultural and environmental adaptation",
+        "relationshipType": "South American Neighbors"
+      }
+    ],
+    "contrasting": [
+      {
+        "id": "yanomami",
+        "name": "Yanomami",
+        "icon": "🌳",
+        "location": "Amazon (Brazil, Venezuela)",
+        "similarity": "Amazon indigenous people with more isolated, traditional rainforest lifestyle versus Guaraní's extensive integration into national cultures",
+        "relationshipType": "Different Adaptation Paths"
+      }
+    ]
+  },
+
+  "metadata": {
+    "lastUpdated": "2025-01-17",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 3521,
+    "imageCount": 6,
+    "referenceCount": 8,
+    "contributors": ["Indigenous Peoples Research Database Team"],
+    "version": "1.0.0"
+  }
+}

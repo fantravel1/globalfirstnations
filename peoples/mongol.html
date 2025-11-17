@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mongol People: Culture, History & Heritage | Indigenous Peoples Repository</title>
+    <meta name="description" content="Discover the rich culture of the Mongol people, their nomadic traditions, horse culture, and legacy of the great Mongol Empire.">
+    <meta name="keywords" content="Mongol, Mongolia, nomadic, steppe, Genghis Khan, ger, yurt, horse culture, throat singing">
+
+    <link rel="canonical" href="https://www.globalfirstnations.com/peoples/mongol">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐎</text></svg>">
+
+    <style>
+        :root {
+            --sky-blue: #3498db;
+            --eternal-blue: #2980b9;
+            --cloud-white: #ecf0f1;
+            --snow-white: #ffffff;
+            --steppe-green: #7fb069;
+            --horse-brown: #8b7355;
+            --ger-cream: #f5e6d3;
+            --eagle-grey: #566573;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2d3436;
+            background: linear-gradient(180deg, var(--eternal-blue) 0%, var(--sky-blue) 30%, var(--steppe-green) 70%, var(--horse-brown) 100%);
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Steppe grassland pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background-image:
+                repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(127, 176, 105, 0.1) 3px, rgba(127, 176, 105, 0.1) 4px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Floating cloud element */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 15%;
+            right: 10%;
+            width: 400px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(ellipse,
+                var(--cloud-white) 0%,
+                rgba(236, 240, 241, 0.5) 50%,
+                transparent 100%);
+            opacity: 0.3;
+            animation: drift-clouds 40s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes drift-clouds {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-100px); }
+        }
+
+        @keyframes horse-gallop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--eternal-blue) 0%, var(--sky-blue) 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(41, 128, 185, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sky pattern border */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--cloud-white) 0px,
+                var(--cloud-white) 40px,
+                var(--eternal-blue) 40px,
+                var(--eternal-blue) 80px
+            );
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--eternal-blue) 0px,
+                var(--eternal-blue) 40px,
+                var(--cloud-white) 40px,
+                var(--cloud-white) 80px
+            );
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: horse-gallop 3s ease-in-out infinite;
+        }
+
+        .icon {
+            font-size: 4em;
+            display: inline-block;
+            margin-right: 20px;
+            animation: horse-gallop 2s ease-in-out infinite;
+        }
+
+        .tagline {
+            font-size: 1.4em;
+            opacity: 0.95;
+            font-style: italic;
+            margin-top: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            border-left: 5px solid var(--cloud-white);
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid var(--sky-blue);
+        }
+
+        nav a {
+            color: var(--eternal-blue);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: var(--sky-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-left: 8px solid var(--eternal-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ger circular accent */
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--sky-blue);
+            opacity: 0.1;
+        }
+
+        h2 {
+            color: var(--eternal-blue);
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--sky-blue);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--steppe-green);
+        }
+
+        h3 {
+            color: var(--sky-blue);
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: '⚔';
+            color: var(--horse-brown);
+            margin-right: 12px;
+            font-size: 0.8em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(236, 240, 241, 0.2));
+            border-left: 6px solid var(--sky-blue);
+            border-right: 6px solid var(--eternal-blue);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .fun-fact {
+            background: linear-gradient(135deg, var(--sky-blue), var(--eternal-blue));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px rgba(41, 128, 185, 0.3);
+            position: relative;
+        }
+
+        .fun-fact::before {
+            content: '🐎';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2em;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--sky-blue), var(--eternal-blue));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            transition: transform 0.3s ease;
+            border: 3px solid var(--cloud-white);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .challenges-grid, .adaptations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .challenge-card, .adaptation-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--eternal-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .challenge-card:hover, .adaptation-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+        }
+
+        .adaptation-card {
+            border-left-color: var(--steppe-green);
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 12px 0;
+            line-height: 1.8;
+        }
+
+        li::marker {
+            color: var(--sky-blue);
+        }
+
+        .individual-card {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(127, 176, 105, 0.1));
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border-left: 5px solid var(--eternal-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .individual-name {
+            color: var(--eternal-blue);
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--eagle-grey), var(--eternal-blue));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .icon { font-size: 3em; }
+            nav a { display: block; margin: 10px 0; }
+            .content-section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <span class="icon">🐎</span>
+                <h1>The Mongol People</h1>
+                <p class="tagline">Children of the Eternal Blue Sky - Masters of the Steppe - Riders of the Wind</p>
+            </div>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/peoples">All Peoples</a>
+            <a href="/regions/asia">Asia</a>
+            <a href="#culture">Culture</a>
+            <a href="#history">History</a>
+            <a href="#contemporary">Today</a>
+        </nav>
+
+        <section class="content-section">
+            <h2>Who Are the Mongols?</h2>
+
+            <p>The Mongol people are indigenous to the vast steppes of Central Asia, primarily inhabiting modern Mongolia, Inner Mongolia (China), and parts of Russia. The Mongols are one of history's most renowned nomadic peoples, famous for establishing the largest contiguous land empire under Genghis Khan in the 13th century. Today, many Mongols continue their ancestral nomadic pastoral lifestyle, herding horses, sheep, goats, cattle, and camels across the endless grasslands, living in portable felt tents called gers (yurts).</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">~10M</span>
+                    <span>Population</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Mongolian</span>
+                    <span>Language</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Steppe</span>
+                    <span>Homeland</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Nomadic</span>
+                    <span>Tradition</span>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Fun Fact:</strong> Traditional Mongol children learn to ride horses as young as 3-4 years old, and horse racing competitions feature child jockeys as young as 5 racing across the open steppe!
+            </div>
+        </section>
+
+        <section class="content-section" id="culture">
+            <h2>Cultural Traditions</h2>
+
+            <h3>Horse Culture</h3>
+            <p>Horses are central to Mongol identity and survival. Mongols have developed unique horse breeds perfectly adapted to the harsh steppe climate. Children learn to ride almost as soon as they can walk. Airag (fermented mare's milk) is the traditional beverage. Horse racing is one of the 'three manly games' celebrated at Naadam festivals. Horses provide transportation, food, and companionship - they are truly partners in nomadic life.</p>
+
+            <div class="highlight-box">
+                <h3>The Ger (Yurt)</h3>
+                <p>The ger is the traditional Mongol dwelling - a circular felt-covered lattice tent that can be assembled or disassembled in hours. The ger's circular design and central hearth create efficient heating in the harsh steppe climate. Interior arrangement follows strict customs:</p>
+                <ul>
+                    <li>The door always faces south toward warmth and light</li>
+                    <li>The north is the honored position reserved for guests and elders</li>
+                    <li>Men's and women's sides are traditionally designated</li>
+                    <li>The central hearth is sacred, never stepped over</li>
+                </ul>
+                <p>Modern Mongols still use gers even in cities, maintaining this ancient connection to nomadic heritage.</p>
+            </div>
+
+            <h3>Nomadic Pastoralism</h3>
+            <p>Traditional Mongols practice seasonal migration with their livestock, moving four or more times annually to follow grass and water. The 'five snouts' (horse, cattle/yak, camel, sheep, goat) are herded together. This lifestyle requires intimate environmental knowledge, cooperative labor, and specialized skills in animal husbandry, weather prediction, and navigation across vast unmarked landscapes.</p>
+
+            <h3>Naadam Festival</h3>
+            <p>Naadam is Mongolia's greatest festival, celebrating the 'three manly games': wrestling (bökh), horse racing, and archery. Held in July, Naadam features spectacular displays of traditional skills. Wrestling has ancient rituals and ranks with evocative names like 'elephant' and 'falcon.' Horse races cover 15-30 kilometers across open steppe. Archery demonstrates historical military prowess.</p>
+
+            <h3>Music & Arts</h3>
+            <p>Mongolian throat singing (khöömei) produces multiple pitches simultaneously, imitating steppe sounds like wind and rivers. The morin khuur (horsehead fiddle) is the national instrument, featuring a carved horse head and horse-hair strings producing haunting melodies. Traditional arts include felt-making, leather-working, metalwork, and elaborate costumes embroidered with traditional patterns.</p>
+
+            <h3>Religion & Spirituality</h3>
+            <p>Mongols traditionally practiced shamanism venerating the Eternal Blue Sky (Möngke Khökh Tengri) and Mother Earth. Tibetan Buddhism spread in the 16th century and became dominant, blending with shamanistic practices. Ovoo cairns mark sacred mountains and crossroads where travelers make offerings. Modern Mongols often blend Buddhist, shamanistic, and secular worldviews.</p>
+        </section>
+
+        <section class="content-section" id="history">
+            <h2>History</h2>
+
+            <h3>The Mongol Empire</h3>
+            <p>In 1206, Temüjin was proclaimed Genghis Khan (Universal Ruler) after uniting the Mongol tribes. Under Genghis Khan and his successors, the Mongols conquered the largest contiguous land empire in history, stretching from Korea to Hungary and from Siberia to Southeast Asia. The Mongol Empire facilitated unprecedented trade and cultural exchange along the Silk Road, though conquest involved significant violence.</p>
+
+            <h3>Post-Empire Period</h3>
+            <p>After the empire's collapse, Mongols returned to their pastoral roots under various khanates. The Qing Dynasty conquered Mongolia in the 17th century, dividing it into Outer Mongolia and Inner Mongolia. Tibetan Buddhism became deeply integrated with traditional shamanism during this period.</p>
+
+            <h3>Modern Era</h3>
+            <p>Outer Mongolia declared independence in 1911, becoming the Mongolian People's Republic in 1924 as a Soviet satellite state. Mongolia transitioned to democracy in 1990 after the Soviet collapse. Today, Mongolia balances modernity with nomadic traditions, while Inner Mongolia remains part of China.</p>
+        </section>
+
+        <section class="content-section" id="contemporary">
+            <h2>Contemporary Life</h2>
+
+            <h3>Current Challenges</h3>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <strong>Urbanization</strong>
+                    <p>Over 60% of Mongols now live in cities</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Dzud Events</strong>
+                    <p>Severe winters killing massive numbers of livestock</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Climate Change</strong>
+                    <p>Desertification and changing precipitation</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Mining Operations</strong>
+                    <p>Large-scale mining disrupting traditional lands</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Air Pollution</strong>
+                    <p>Ulaanbaatar among world's most polluted cities</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Cultural Erosion</strong>
+                    <p>Younger generations losing traditional skills</p>
+                </div>
+            </div>
+
+            <h3>Adaptations & Innovations</h3>
+            <div class="adaptations-grid">
+                <div class="adaptation-card">
+                    <strong>Solar Power</strong>
+                    <p>Nomads adopting solar panels for ger electricity</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>Mobile Technology</strong>
+                    <p>Cell phones enabling better communication</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>Cultural Tourism</strong>
+                    <p>Providing income for nomadic families</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>Cashmere Industry</strong>
+                    <p>Goat herding for lucrative markets</p>
+                </div>
+            </div>
+
+            <h3>Notable Individuals</h3>
+            <div class="individual-card">
+                <div class="individual-name">Genghis Khan</div>
+                <p>Founded the Mongol Empire, largest contiguous empire in history</p>
+            </div>
+            <div class="individual-card">
+                <div class="individual-name">Tsakhiagiin Elbegdorj</div>
+                <p>Democratic leader, President of Mongolia (2009-2017)</p>
+            </div>
+            <div class="individual-card">
+                <div class="individual-name">Batmönkhiin Battsetseg</div>
+                <p>Renowned throat singer and cultural ambassador</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Indigenous Peoples Repository | Honoring and preserving indigenous heritage worldwide</p>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">
+                <a href="/" style="color: white; margin: 0 10px;">Home</a> |
+                <a href="/peoples" style="color: white; margin: 0 10px;">All Peoples</a> |
+                <a href="/about" style="color: white; margin: 0 10px;">About</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

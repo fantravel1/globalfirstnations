@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moken People: Sea Nomads of the Andaman | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    <style>
+        :root { --ocean-blue: #3498db; --deep-sea: #16a085; --coral: #e74c3c; --sand: #f39c12; --wave-white: #ecf0f1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--deep-sea) 60%, #1a5c4d 100%);
+            background-attachment: fixed;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(0deg, transparent 0px, transparent 30px, rgba(255,255,255,0.03) 30px, rgba(255,255,255,0.03) 32px);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header {
+            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-sea));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(22, 160, 133, 0.5);
+        }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.4); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline {
+            font-size: 1.3em;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            border-left: 5px solid var(--coral);
+        }
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 3px solid var(--ocean-blue);
+        }
+        nav a {
+            color: var(--deep-sea);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        nav a:hover { background: var(--ocean-blue); color: white; }
+        .content-section {
+            background: rgba(255,255,255,0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-left: 8px solid var(--ocean-blue);
+        }
+        h2 {
+            color: var(--deep-sea);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--ocean-blue);
+        }
+        h3 { color: var(--ocean-blue); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-sea));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid var(--wave-white);
+        }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact {
+            background: linear-gradient(135deg, var(--coral), var(--ocean-blue));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px rgba(231,76,60,0.3);
+        }
+        footer {
+            background: linear-gradient(135deg, #1a5c4d, var(--deep-sea));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🌊</span>
+            <h1>The Moken People</h1>
+            <p class="tagline">Sea Nomads of the Andaman - Masters of the Deep - Children of the Waves</p>
+        </header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/peoples">All Peoples</a>
+            <a href="/regions/asia">Asia</a>
+        </nav>
+        <section class="content-section">
+            <h2>Who Are the Moken?</h2>
+            <p>The Moken are seafaring people of the Andaman Sea, known as 'Sea Gypsies.' They have traditionally lived a nomadic existence aboard their kabang boats, spending most of their lives at sea. They are extraordinary free divers with the remarkable ability to see clearly underwater - an adaptation developed through generations of marine life.</p>
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~2,500</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Moken</span><span>Language (Endangered)</span></div>
+                <div class="stat-card"><span class="stat-number">Andaman Sea</span><span>Traditional Waters</span></div>
+                <div class="stat-card"><span class="stat-number">Kabang</span><span>Boat Homes</span></div>
+            </div>
+            <div class="fun-fact">
+                <strong>Amazing Ability:</strong> Moken children develop the ability to see clearly underwater by learning to control their pupils and eye lenses - a skill that takes years to develop and allows them to hunt fish underwater with remarkable accuracy!
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>Culture & Way of Life</h2>
+            <h3>Marine Adaptations</h3>
+            <p>Moken possess remarkable physical and cultural adaptations to marine life. They can dive to 20 meters and stay submerged for several minutes. Children develop the ability to constrict pupils and change lens shape to see clearly underwater. They have exceptional knowledge of fish behavior, coral reefs, tides, and currents.</p>
+            <h3>Traditional Boats</h3>
+            <p>Traditional kabang boats served as floating homes for entire families. Built from local wood without nails, families cooked, slept, and raised children aboard. Today, few kabang remain as most Moken have been forced to settle on land.</p>
+            <h3>Contemporary Challenges</h3>
+            <p>Traditional sea nomadism has largely ended. Most Moken now live in settled communities, facing statelessness, poverty, and cultural loss. However, they work to preserve their heritage through teaching traditional knowledge, language preservation, and advocating for maritime rights.</p>
+        </section>
+        <footer>
+            <p>&copy; 2025 Indigenous Peoples Repository | Honoring indigenous heritage worldwide</p>
+        </footer>
+    </div>
+</body>
+</html>

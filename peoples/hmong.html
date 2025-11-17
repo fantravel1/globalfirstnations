@@ -3,12 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hmong | Indigenous Peoples Research Database</title>
-    <meta name="description" content="Explore the Hmong people - their history, culture, traditions, and contemporary life.">
+    <title>Hmong People | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Hmong - mountain people known for intricate story cloths (paj ntaub), vibrant textiles, and rich cultural traditions.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
-    <link rel="stylesheet" href="/css/culture-page.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --hmong-red: #DC143C;
+            --story-blue: #4169E1;
+            --textile-green: #228B22;
+            --embroidery-yellow: #FFD700;
+            --mountain-purple: #8B008B;
+            --cloth-pink: #FF1493;
+            --hill-brown: #8B4513;
+            --vibrant-orange: #FF8C00;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2F2F2F;
+            background: #FFF8F0;
+        }
+
+        .textile-border {
+            height: 20px;
+            background: repeating-linear-gradient(90deg,
+                var(--hmong-red) 0px, var(--hmong-red) 15px,
+                var(--story-blue) 15px, var(--story-blue) 30px,
+                var(--textile-green) 30px, var(--textile-green) 45px,
+                var(--embroidery-yellow) 45px, var(--embroidery-yellow) 60px,
+                var(--mountain-purple) 60px, var(--mountain-purple) 75px
+            );
+        }
+
+        .breadcrumb {
+            background: linear-gradient(to bottom, #FFFAF0, #FFF8F0);
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--hmong-red);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--hill-brown);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover { color: var(--hmong-red); }
+        .breadcrumb-separator { color: var(--vibrant-orange); }
+
+        .hero {
+            background: linear-gradient(180deg,
+                #8B008B 0%,
+                #B22222 20%,
+                #DC143C 40%,
+                #FF8C00 60%,
+                #FFD700 80%,
+                #FFE4B5 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(45deg,
+                transparent,
+                transparent 30px,
+                rgba(255, 255, 255, 0.05) 30px,
+                rgba(255, 255, 255, 0.05) 60px
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+            animation: riceGrow 5s ease-in-out infinite;
+        }
+
+        @keyframes riceGrow {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(139, 0, 139, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(220, 20, 60, 0.15);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        .quick-facts {
+            background: linear-gradient(135deg, var(--hmong-red), var(--mountain-purple));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 4px solid var(--embroidery-yellow);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            height: 10px;
+            background: repeating-linear-gradient(90deg,
+                var(--embroidery-yellow) 0px, var(--embroidery-yellow) 15px,
+                var(--story-blue) 15px, var(--story-blue) 30px
+            );
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--embroidery-yellow);
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--cloth-pink);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--hmong-red);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--hmong-red);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--embroidery-yellow);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #2F2F2F;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--hmong-red);
+        }
+
+        .story-cloth-box {
+            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 100%);
+            border: 4px solid var(--hmong-red);
+            border-left: 12px solid var(--embroidery-yellow);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.25);
+            position: relative;
+        }
+
+        .story-cloth-box::before {
+            content: '🧵';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 4rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .story-cloth-box h4 {
+            color: var(--hmong-red);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .story-cloth-box p {
+            color: #8B008B;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content { grid-template-columns: 1fr; }
+            .quick-facts { position: static; margin-bottom: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 5rem 1.5rem; }
+            .content-wrapper { padding: 2rem 1.5rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
+    <div class="textile-border"></div>
+
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -25,16 +321,11 @@
         <div class="hero-content">
             <div class="culture-icon">🌾</div>
             <h1>Hmong</h1>
-            <p class="hero-subtitle">Indigenous People of Asia</p>
+            <p class="hero-subtitle">Mountain People of Southeast Asia</p>
             <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <span>👥</span>
-                    <span>~9,000,000 people</span>
-                </div>
-                <div class="hero-meta-item">
-                    <span>🗣️</span>
-                    <span>Hmong</span>
-                </div>
+                <div class="hero-meta-item"><span>👥</span><span>~9 million people</span></div>
+                <div class="hero-meta-item"><span>🗣️</span><span>Hmong Language</span></div>
+                <div class="hero-meta-item"><span>📍</span><span>China, Vietnam, Laos, Thailand</span></div>
             </div>
         </div>
     </header>
@@ -43,32 +334,51 @@
         <div class="main-content">
             <article class="article-content">
                 <section class="content-section">
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="content-text">The Hmong are an ethnic group from the mountainous regions of China, Vietnam, Laos, and Thailand. Known for intricate story cloths (paj ntaub) depicting history and cultural narratives, the Hmong practiced slash-and-burn agriculture and maintained animist spiritual traditions. After assisting the United States during the Vietnam War, many Hmong faced persecution and fled as refugees, creating significant diaspora communities in the U.S., France, and Australia while maintaining strong cultural identity.</p>
-                    <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
+                    <h2 class="section-title">Keepers of Story Cloths</h2>
+
+                    <p class="content-text">
+                        The Hmong are an ethnic group from the mountainous regions of China, Vietnam, Laos, and Thailand. Known for intricate story cloths (paj ntaub) depicting history and cultural narratives, the Hmong practiced slash-and-burn agriculture and maintained animist spiritual traditions. After assisting the United States during the Vietnam War, many Hmong faced persecution and fled as refugees, creating significant diaspora communities in the U.S., France, and Australia while maintaining strong cultural identity.
+                    </p>
+
+                    <div class="story-cloth-box">
+                        <h4>Paj Ntaub - Story Cloths & Embroidery</h4>
+                        <p>
+                            Paj ntaub (pronounced "pa ndau") means "flower cloth" in Hmong, referring to the intricate embroidery and appliqué techniques passed down through generations. Traditional needlework features vibrant geometric patterns, symbolic motifs, and narrative scenes depicting Hmong history, folk tales, and daily life. After the Vietnam War, story cloths emerged as a unique art form, with Hmong women creating detailed embroidered narratives documenting their experiences—village life, war, escape, and resettlement. These textiles serve as both artistic expression and historical record, preserving Hmong cultural memory through needle and thread.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>New Year Celebrations:</strong> The Hmong New Year marks the end of harvest season and beginning of the new lunar year. Celebrations feature vibrant traditional clothing, ball-tossing courtship games, music, dancing, and elaborate feasts. The festival strengthens community bonds and preserves cultural traditions, especially important for diaspora communities maintaining connections to Hmong heritage.
+                    </p>
+
+                    <p class="content-text">
+                        <em>This page celebrates the Hmong—mountain people who create stunning story cloths, maintain rich oral traditions, and preserve cultural identity across continents despite persecution, displacement, and challenges of diaspora life.</em>
+                    </p>
                 </section>
             </article>
 
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
-                <div class="fact-item">
-                    <div class="fact-label">Population</div>
-                    <div class="fact-value">~9,000,000</div>
-                </div>
-                <div class="fact-item">
-                    <div class="fact-label">Language</div>
-                    <div class="fact-value">Hmong</div>
-                </div>
+                <div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~9 million</div></div>
+                <div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Hmong</div></div>
+                <div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Hmong-Mien</div></div>
+                <div class="fact-item"><div class="fact-label">Traditional Region</div><div class="fact-value">Southeast Asian mountains</div></div>
+                <div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Story cloths (paj ntaub)</div></div>
+                <div class="fact-item"><div class="fact-label">Diaspora</div><div class="fact-value">USA, France, Australia</div></div>
+                <div class="fact-item"><div class="fact-label">Livelihood</div><div class="fact-value">Mountain agriculture</div></div>
             </aside>
         </div>
     </div>
+
+    <div class="textile-border"></div>
 
     <script>
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'hmong',
                 name: 'Hmong',
-                region: 'asia'
+                region: 'asia',
+                continent: 'asia'
             });
         }
     </script>

@@ -1,0 +1,343 @@
+{
+  "id": "mixtec",
+  "name": "Mixtec",
+  "alternateNames": ["Ñuu Savi", "Ñuu Dzavui", "People of the Rain"],
+
+  "location": {
+    "region": "americas",
+    "subregion": "mesoamerica",
+    "countries": ["Mexico"],
+    "states": ["Oaxaca", "Guerrero", "Puebla"],
+    "coordinates": {
+      "lat": 17.0594,
+      "lng": -97.6728
+    }
+  },
+
+  "demographics": {
+    "population": "~830,000",
+    "populationYear": 2020,
+    "language": {
+      "name": "Tu'un savi (Mixtec)",
+      "family": "Oto-Manguean (Mixtecan)",
+      "speakers": "~517,000",
+      "status": "Vulnerable but widely spoken"
+    }
+  },
+
+  "culturalIdentity": {
+    "icon": "⛰️",
+    "primaryColor": "#8B4513",
+    "secondaryColor": "#FFD700",
+    "dwelling": "Adobe houses (traditional), Modern homes",
+    "livelihood": "Traditional: Agriculture (terraced farming), artisan crafts; Modern: Agriculture, crafts, diverse economy, migration",
+    "knownFor": "Ancient codices, Turquoise mosaics, Gold metallurgy, Terraced agriculture, Complex pictographic writing system",
+    "dietaryNotes": "Corn, beans, squash, chili peppers; Traditional: turkey, venison; mole sauce varieties"
+  },
+
+  "quickFacts": {
+    "region": "Oaxaca mountains, Mexico",
+    "traditionalDwelling": "Adobe houses",
+    "primaryLivelihood": "Terraced agriculture & crafts",
+    "distinctiveFeature": "Pre-Columbian codices and gold craftsmanship"
+  },
+
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Mixtec (who call themselves Ñuu Savi or Ñuu Dzavui, meaning 'People of the Rain' or 'People of the Nation of Rain') are an indigenous Mesoamerican people inhabiting the mountainous region of Oaxaca, Guerrero, and Puebla in southern Mexico. With over 800,000 people speaking Mixtec languages, they represent one of Mexico's largest indigenous groups. The Mixtec developed one of Mesoamerica's most sophisticated civilizations, creating magnificent gold jewelry, detailed pictographic codices recording histories and genealogies, and terraced agricultural systems adapting to steep mountain terrain. Today, Mixtec communities maintain cultural traditions while many have migrated throughout Mexico, the United States, and beyond, creating transnational communities.",
+
+      "culturalIdentity": "Mixtec identity centers on connection to ñuu (community/homeland) and lineage. Traditional Mixtec society was highly stratified with hereditary nobility (yya), commoners (tay ñuu), and historically, slaves. Rulers traced descent from divine ancestors, documented in elaborate pictographic codices. The concept of ñuu encompasses physical territory, community, and cosmic significance. Each ñuu had its own yya (ruler) and local deity. Modern Mixtec identity blends indigenous traditions with Catholic practices introduced during Spanish colonization, creating unique syncretic beliefs and ceremonies. Despite migration, Mixtecs maintain strong ties to home communities, returning for festivals and life events.",
+
+      "funFact": "Mixtec goldsmiths created some of the most exquisite gold jewelry in pre-Columbian Americas! Using lost-wax casting and filigree techniques, they crafted intricate pieces featuring gods, animals, and geometric designs. When Mixtec craftsmen moved to the Zapotec city of Monte Albán, they created the famous treasures of Tomb 7—hundreds of gold, jade, turquoise, and crystal objects representing the finest Mesoamerican metalwork ever discovered. Spanish conquistadors were so impressed by Mixtec gold they sent artisans to Spain to teach European goldsmiths these advanced techniques!"
+    },
+
+    "history": {
+      "origins": "Archaeological evidence indicates the Mixtec region has been inhabited for over 3,000 years. By 1500 BCE, early Mixtec communities practiced agriculture and created pottery. The Mixtec as a distinct cultural group emerged around 900-1200 CE during the Post-Classic period when they built powerful city-states including Tilantongo, Yanhuitlán, and Tututepec. The region's rugged mountains fostered development of numerous independent polities (ñuus) sometimes allied, sometimes warring. Mixtec rulers commissioned elaborate codices documenting genealogies linking them to gods and legitimizing their rule.",
+
+      "preContact": "Pre-contact Mixtec civilization achieved remarkable cultural and technological sophistication. Master craftsmen created gold jewelry, turquoise mosaics, polychrome pottery, and carved stone monuments. Mixtec scribes painted detailed codices on deer skin recording histories, genealogies, tribute lists, and ritual calendars using a complex pictographic writing system. The Mixtec developed terrace farming systems adapting to steep slopes, growing corn, beans, squash, and other crops. Powerful city-states like Tututepec controlled vast territories. The Mixtec frequently intermarried with neighboring Zapotec nobility, creating political alliances. Warfare between ñuus was common, with victors exacting tribute from defeated rivals.",
+
+      "colonialImpact": "Spanish conquest came in 1521-1522 with Hernán Cortés' invasion. Many Mixtec rulers initially allied with Spanish against the Aztec Empire, which had conquered some Mixtec territories. However, Spanish colonization brought devastating changes: population collapse from European diseases (smallpox, measles), forced labor through encomienda and repartimiento systems, Catholic missionization suppressing indigenous religion, and land appropriation. Despite these pressures, Mixtec communities maintained distinct identity. Some Mixtec nobility worked within Spanish systems, using legal documents and land titles to protect communal territories. The codices tradition ended, but oral traditions, agricultural practices, and community structures persisted.",
+
+      "modernHistory": "Mexico's independence (1821) and later reforms brought new challenges. The 19th-century liberal reforms privatized communal lands, though Mixtec communities resisted. The Mexican Revolution (1910-1920) affected Mixtec regions with various factions recruiting or conscripting Mixtec people. The 20th century brought increased migration: first to Mexican cities, later to the United States. Today, large Mixtec communities exist in California, Oregon, and other U.S. states, maintaining language and customs while adapting to new environments. Mixtec activism has increased, advocating for indigenous rights, land protection, and cultural preservation. Despite challenges, Mixtec language and cultural practices remain vibrant."
+    },
+
+    "culture": {
+      "traditionalLife": "Traditional Mixtec life centers on the household and ñuu (community). Extended families live in compounds with adobe houses built around patios. Agriculture follows seasonal cycles: planting corn, beans, and squash in spring, harvesting in fall. Men primarily work fields and tend livestock; women prepare food (including elaborate moles), weave textiles, and manage households, though roles show flexibility. The tequio (communal labor) system requires community members to contribute work for collective projects—church maintenance, road repairs, festivals. Cargo systems rotate ceremonial and administrative responsibilities among families, distributing costs and honors of sponsoring religious festivals.",
+
+      "artAndCraftsmanship": "Mixtec artistic traditions combine ancient techniques with colonial and modern influences. Pottery includes polychrome vessels with geometric and naturalistic designs, particularly the Mixteca-Puebla style ceramics. Weaving produces rebozos (shawls), huipiles (tunics), and other textiles with intricate patterns, often using backstrap looms as in pre-Columbian times. Palm weaving creates hats, baskets, and mats. Some communities maintain metalworking traditions, though the elaborate gold work of the past is rare. Contemporary Mixtec artists work in various media while drawing on traditional motifs and aesthetics, achieving recognition in Mexican and international art markets.",
+
+      "spiritualityAndBeliefs": "Mixtec spirituality blends pre-Columbian beliefs with Catholic practices, creating unique syncretic traditions. Traditional Mixtec cosmology recognized numerous deities associated with natural forces, including Dzahui (rain god), Ñuhu (Earth deity), and the creator couple. Sacred caves, mountains, and springs remain sites of offering and prayer. Catholic saints are venerated but often associated with earlier deities—for example, Saint Mark corresponds to rain ceremonies. Curanderos (traditional healers) use herbal medicines, ritual cleansings, and spiritual interventions to treat illness. Day names from the 260-day ritual calendar still hold significance in some communities. Major festivals blend Catholic and indigenous elements.",
+
+      "languageVariety": "Tu'un savi (Mixtec) comprises approximately 50+ distinct languages or dialects, many mutually unintelligible, rather than a single unified language. This linguistic diversity reflects the region's geographic fragmentation and historical political independence of different ñuus. Major variants include Mixteco Bajo (Lowland), Mixteco Alto (Highland), and Mixteco de la Costa (Coastal). Despite this diversity, approximately 517,000 people speak Mixtec varieties, making it one of Mexico's most widely spoken indigenous languages. Challenges include lack of standardized writing, dialectal fragmentation complicating education materials, and pressure from Spanish. Literacy rates in Mixtec are low, though some communities have developed educational programs.",
+
+      "codicesHeritage": "Pre-Columbian Mixtec codices represent extraordinary achievements in Mesoamerican writing and art. Eight Mixtec codices survive: Codex Zouche-Nuttall, Codex Vindobonensis, Codex Bodley, Codex Colombino-Becker, and others. Painted on deerskin using mineral and organic pigments, these folding screen books record dynastic histories, genealogies, conquests, and ritual events spanning centuries. The pictographic system uses images representing people, places, dates, and events readable by trained specialists. Though the codices tradition ended with Spanish conquest, scholars continue deciphering these documents, revealing detailed Mixtec history. The codices remain sources of immense pride and cultural identity for contemporary Mixtec people."
+    },
+
+    "contemporary": {
+      "challenges": [
+        {
+          "issue": "Migration and Displacement",
+          "description": "Massive migration to Mexican cities and United States due to poverty and lack of opportunities; family separation and cultural disruption"
+        },
+        {
+          "issue": "Language Loss",
+          "description": "Younger generations increasingly speaking Spanish, particularly in urban areas and migrant communities; dialectal fragmentation complicating preservation"
+        },
+        {
+          "issue": "Poverty and Marginalization",
+          "description": "High poverty rates in Mixtec regions; limited infrastructure, healthcare, and educational resources; discrimination against indigenous peoples"
+        },
+        {
+          "issue": "Land Degradation",
+          "description": "Soil erosion, deforestation, and water scarcity threatening traditional agriculture; climate change affecting rainfall patterns"
+        },
+        {
+          "issue": "Exploitation of Migrants",
+          "description": "Mixtec migrant workers facing exploitation, discrimination, and poor working conditions in agriculture, construction, and service sectors"
+        },
+        {
+          "issue": "Cultural Erosion",
+          "description": "Pressure to assimilate into mestizo Mexican culture; loss of traditional practices, especially among migrants"
+        },
+        {
+          "issue": "Limited Political Representation",
+          "description": "Underrepresentation in state and national governments; marginalization in policy decisions affecting indigenous communities"
+        }
+      ],
+
+      "adaptations": [
+        {
+          "area": "Transnational Communities",
+          "description": "Mixtec migrants maintaining connections to home communities through hometown associations, remittances, and regular returns for festivals"
+        },
+        {
+          "area": "Cultural Organizations",
+          "description": "Formation of Mixtec cultural centers and advocacy organizations in Mexico and United States promoting language, arts, and rights"
+        },
+        {
+          "area": "Artisan Cooperatives",
+          "description": "Cooperatives marketing traditional crafts including textiles, pottery, and palm weaving, providing income and preserving skills"
+        },
+        {
+          "area": "Bilingual Education",
+          "description": "Some schools offering Mixtec-Spanish bilingual education, though challenges remain with dialectal diversity and materials development"
+        },
+        {
+          "area": "Agricultural Innovation",
+          "description": "Combining traditional terracing and crops with modern techniques; organic coffee cultivation; sustainable agriculture projects"
+        },
+        {
+          "area": "Political Activism",
+          "description": "Increasing Mixtec participation in indigenous rights movements; advocacy for land rights, cultural recognition, and anti-discrimination"
+        },
+        {
+          "area": "Media Representation",
+          "description": "Mixtec-language radio programs, social media use, and cultural content creation sharing Mixtec perspectives and culture"
+        }
+      ],
+
+      "preservation": "Mixtec cultural preservation occurs through community-level practices and organized initiatives. Elders transmit oral traditions, agricultural knowledge, and artisan skills. Hometown festivals bring migrants home to participate in traditional ceremonies, reinforcing cultural connections. Cultural centers in Oaxaca and migrant destinations teach Mixtec language and traditions. Scholars collaborate with communities to document languages, oral histories, and traditional knowledge. The codices, displayed in museums worldwide, inspire cultural pride. Despite challenges of poverty and migration, Mixtec maintain strong ethnic identity and commitment to preserving their distinct culture and languages.",
+
+      "notableIndividuals": [
+        {
+          "name": "Eight Deer Jaguar Claw (1063-1115)",
+          "achievement": "Legendary Mixtec ruler documented in Codex Zouche-Nuttall; unified several city-states through conquest and political marriages"
+        },
+        {
+          "name": "Francisco Toledo (1940-2019)",
+          "achievement": "Internationally renowned artist and activist from Juchitán, Oaxaca (Zapotec but worked with Mixtec communities); promoted indigenous arts and rights"
+        },
+        {
+          "name": "Yásnaya Elena Aguilar Gil (1981-)",
+          "achievement": "Linguist, writer, and activist from Ayutla Mixe; advocate for indigenous language rights and linguistic diversity (Mixe but influential in Oaxacan indigenous movements)"
+        },
+        {
+          "name": "Juventino Jiménez Ramos",
+          "achievement": "Mixtec artist and cultural advocate preserving traditional Mixtec arts and promoting cultural education"
+        },
+        {
+          "name": "Centolia Maldonado Vásquez",
+          "achievement": "Mixtec migrant advocate and founder of Organización del Pueblo Explotado y Oprimido, fighting for migrant workers' rights"
+        }
+      ]
+    }
+  },
+
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg",
+      "alt": "Page from Mixtec Codex Zouche-Nuttall",
+      "caption": "Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg",
+      "alt": "Ancient Mixtec gold jewelry from Tomb 7",
+      "caption": "Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg",
+      "alt": "Terraced agriculture in Oaxaca mountains",
+      "caption": "Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg",
+      "alt": "Traditional Mixtec polychrome pottery",
+      "caption": "Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg",
+      "alt": "Mixtec village in Oaxaca mountains",
+      "caption": "Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg",
+      "alt": "Traditional Mixtec woven textiles",
+      "caption": "Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg"
+    }
+  ],
+
+  "references": [
+    {
+      "type": "book",
+      "authors": ["Terraciano, Kevin"],
+      "year": 2001,
+      "title": "The Mixtecs of Colonial Oaxaca: Ñudzahui History, Sixteenth Through Eighteenth Centuries",
+      "publisher": "Stanford University Press",
+      "location": "Stanford",
+      "isbn": "978-0804740630"
+    },
+    {
+      "type": "book",
+      "authors": ["Pohl, John M.D."],
+      "year": 1994,
+      "title": "The Politics of Symbolism in the Mixtec Codices",
+      "publisher": "Vanderbilt University",
+      "location": "Nashville",
+      "isbn": "978-0826514073"
+    },
+    {
+      "type": "book",
+      "authors": ["Spores, Ronald"],
+      "year": 1967,
+      "title": "The Mixtec Kings and Their People",
+      "publisher": "University of Oklahoma Press",
+      "location": "Norman",
+      "isbn": "978-0806110523"
+    },
+    {
+      "type": "book",
+      "authors": ["Joyce, Arthur A."],
+      "year": 2010,
+      "title": "Mixtecs, Zapotecs, and Chatinos: Ancient Peoples of Southern Mexico",
+      "publisher": "Wiley-Blackwell",
+      "location": "Malden",
+      "isbn": "978-1405189026"
+    },
+    {
+      "type": "book",
+      "authors": ["Jansen, Maarten", "Pérez Jiménez, Gabina Aurora"],
+      "year": 2011,
+      "title": "The Mixtec Pictorial Manuscripts: Time, Agency and Memory in Ancient Mexico",
+      "publisher": "Brill",
+      "location": "Leiden",
+      "isbn": "978-9004180932"
+    },
+    {
+      "type": "book",
+      "authors": ["Monaghan, John"],
+      "year": 1995,
+      "title": "The Covenants with Earth and Rain: Exchange, Sacrifice, and Revelation in Mixtec Sociality",
+      "publisher": "University of Oklahoma Press",
+      "location": "Norman",
+      "isbn": "978-0806127309"
+    },
+    {
+      "type": "journal",
+      "authors": ["Kearney, Michael"],
+      "year": 2000,
+      "title": "Transnational Oaxacan Indigenous Identity: The Case of Mixtecs and Zapotecs",
+      "journal": "Identities: Global Studies in Culture and Power",
+      "volume": "7",
+      "issue": "2"
+    },
+    {
+      "type": "web",
+      "title": "Foundation for the Advancement of Mesoamerican Studies - Mixtec Resources",
+      "organization": "FAMSI",
+      "url": "http://www.famsi.org/",
+      "accessDate": "2025-01-17"
+    }
+  ],
+
+  "relatedCultures": {
+    "similar": [
+      {
+        "id": "zapotec",
+        "name": "Zapotec",
+        "icon": "🌽",
+        "location": "Oaxaca, Mexico",
+        "similarity": "Neighboring Oaxacan indigenous people with intertwined history, frequent intermarriage between nobility, shared Mesoamerican cultural elements",
+        "relationshipType": "Regional Partners"
+      },
+      {
+        "id": "nahua",
+        "name": "Nahua",
+        "icon": "🦅",
+        "location": "Central Mexico",
+        "similarity": "Major Mesoamerican group sharing cultural elements including codices tradition, terraced agriculture, and complex social hierarchies",
+        "relationshipType": "Mesoamerican Peoples"
+      }
+    ],
+    "regional": [
+      {
+        "id": "maya",
+        "name": "Maya",
+        "icon": "🌟",
+        "location": "Southern Mexico, Guatemala, Belize",
+        "similarity": "Major Mesoamerican civilization with advanced writing systems, monumental architecture, though different language family and cultural specifics",
+        "relationshipType": "Mesoamerican Neighbors"
+      },
+      {
+        "id": "mixtec",
+        "name": "Mixe",
+        "icon": "⛰️",
+        "location": "Oaxaca, Mexico",
+        "similarity": "Neighboring Oaxacan indigenous group, different language family (Mixe-Zoque) but shared regional characteristics",
+        "relationshipType": "Oaxacan Neighbors"
+      }
+    ],
+    "contrasting": [
+      {
+        "id": "navajo",
+        "name": "Navajo",
+        "icon": "🏜️",
+        "location": "Southwest United States",
+        "similarity": "Indigenous people in geographically proximate but culturally distinct region; nomadic vs. sedentary agricultural traditions",
+        "relationshipType": "North American Indigenous Contrast"
+      }
+    ]
+  },
+
+  "metadata": {
+    "lastUpdated": "2025-01-17",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 3487,
+    "imageCount": 6,
+    "referenceCount": 8,
+    "contributors": ["Indigenous Peoples Research Database Team"],
+    "version": "1.0.0"
+  }
+}

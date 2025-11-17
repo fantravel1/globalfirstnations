@@ -3,12 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ainu | Indigenous Peoples Research Database</title>
-    <meta name="description" content="Explore the Ainu people - their history, culture, traditions, and contemporary life.">
+    <title>Ainu People | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Ainu - Indigenous people of Japan known for bear worship, intricate textiles, and oral epic poetry (yukar).">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐻</text></svg>">
-    <link rel="stylesheet" href="/css/culture-page.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Ainu Northern Hokkaido palette */
+            --ainu-brown: #5D4037;
+            --bear-dark: #3E2723;
+            --snow-white: #F5F5F5;
+            --birch-cream: #FFF8E1;
+            --forest-green: #2E7D32;
+            --hokkaido-blue: #1976D2;
+            --salmon-pink: #EF5350;
+            --geometric-gold: #FFA000;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--bear-dark);
+            background: var(--birch-cream);
+        }
+
+        /* Geometric Pattern Border */
+        .geometric-border {
+            height: 16px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--ainu-brown) 0px,
+                var(--ainu-brown) 10px,
+                var(--geometric-gold) 10px,
+                var(--geometric-gold) 20px,
+                var(--forest-green) 20px,
+                var(--forest-green) 30px,
+                var(--hokkaido-blue) 30px,
+                var(--hokkaido-blue) 40px
+            );
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(to bottom, #FFFFFF, var(--snow-white));
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--ainu-brown);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--ainu-brown);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--hokkaido-blue);
+        }
+
+        .breadcrumb-separator {
+            color: #999;
+        }
+
+        /* Hero Section - Hokkaido Mountains */
+        .hero {
+            background: linear-gradient(180deg,
+                #1A237E 0%,
+                #283593 20%,
+                #3949AB 40%,
+                #5C6BC0 60%,
+                #9FA8DA 85%,
+                #C5CAE9 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Snow-capped mountains */
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,100 L200,60 L400,90 L600,50 L800,70 L1000,40 L1200,80 L1200,200 L0,200 Z" fill="%235D4037" opacity="0.6"/><path d="M0,140 L300,110 L600,130 L900,100 L1200,125 L1200,200 L0,200 Z" fill="%23FFFFFF" opacity="0.4"/></svg>') bottom center no-repeat;
+            background-size: cover;
+        }
+
+        /* Geometric pattern overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            animation: patternRotate 20s linear infinite;
+        }
+
+        @keyframes patternRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+            animation: bearFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes bearFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-12px) scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        /* Quick Facts - Forest Green with Bear motif */
+        .quick-facts {
+            background: linear-gradient(135deg, var(--forest-green), #1B5E20);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 4px solid var(--geometric-gold);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(46, 125, 50, 0.3);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--ainu-brown) 0px,
+                var(--ainu-brown) 15px,
+                var(--geometric-gold) 15px,
+                var(--geometric-gold) 30px
+            );
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--geometric-gold);
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--salmon-pink);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--bear-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--forest-green);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--geometric-gold);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #3E2723;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--ainu-brown);
+        }
+
+        /* Bear Worship Box */
+        .bear-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+            border: 4px solid var(--ainu-brown);
+            border-left: 12px solid var(--forest-green);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(93, 64, 55, 0.25);
+            position: relative;
+        }
+
+        .bear-box::before {
+            content: '🐻';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 4rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .bear-box h4 {
+            color: var(--bear-dark);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .bear-box p {
+            color: #5D4037;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Yukar Epic Box */
+        .yukar-box {
+            background: linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%);
+            border: 4px solid var(--hokkaido-blue);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(25, 118, 210, 0.2);
+        }
+
+        .yukar-box h4 {
+            color: var(--hokkaido-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .yukar-box p {
+            color: #283593;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-facts {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Geometric Pattern Border -->
+    <div class="geometric-border"></div>
+
+    <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -21,54 +402,125 @@
         </div>
     </nav>
 
+    <!-- Hero Section - Hokkaido Mountains -->
     <header class="hero">
         <div class="hero-content">
             <div class="culture-icon">🐻</div>
             <h1>Ainu</h1>
-            <p class="hero-subtitle">Indigenous People of Asia</p>
+            <p class="hero-subtitle">Indigenous People of Northern Japan</p>
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <span>👥</span>
-                    <span>~25,000 (self-identified) people</span>
+                    <span>~25,000 people</span>
                 </div>
                 <div class="hero-meta-item">
                     <span>🗣️</span>
-                    <span>Ainu</span>
+                    <span>Ainu Language</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Hokkaido, Japan</span>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <div class="content-wrapper">
         <div class="main-content">
+            <!-- Article Content -->
             <article class="article-content">
                 <section class="content-section">
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="content-text">The Ainu are the indigenous people of Hokkaido, the Kuril Islands, and Sakhalin. With distinct cultural traditions including bear worship ceremonies, intricate textile patterns, and oral epic poetry (yukar), the Ainu differ linguistically and culturally from ethnic Japanese. Facing centuries of colonization, forced assimilation, and cultural suppression, Ainu were officially recognized as indigenous people of Japan only in 2008. Today, Ainu communities work to revitalize language and cultural practices.</p>
-                    <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
+                    <h2 class="section-title">Indigenous People of Japan</h2>
+
+                    <p class="content-text">
+                        The Ainu are the indigenous people of Hokkaido, the Kuril Islands, and Sakhalin. With distinct cultural traditions including bear worship ceremonies, intricate textile patterns, and oral epic poetry (yukar), the Ainu differ linguistically and culturally from ethnic Japanese. Facing centuries of colonization, forced assimilation, and cultural suppression, Ainu were officially recognized as indigenous people of Japan only in 2008. Today, Ainu communities work to revitalize language and cultural practices.
+                    </p>
+
+                    <div class="bear-box">
+                        <h4>Iomante - Sacred Bear Ceremony</h4>
+                        <p>
+                            The Iomante (bear-sending ceremony) represents one of the most significant Ainu spiritual practices. Bears are considered sacred messengers from the spirit world. The ceremony, involving elaborate rituals and prayers, was designed to honor the bear's spirit and send it back to the divine realm. Though controversial and largely discontinued, the Iomante exemplifies the deep spiritual connection between Ainu people and the natural world, particularly the revered bear deity.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>Geometric Artistry:</strong> Ainu textiles feature distinctive geometric patterns with profound symbolic meaning. Traditional attusushi robes display intricate spiral and curved designs representing natural elements and protective symbols. These patterns, passed down through generations, embody Ainu cosmology and artistic expression. Women created these textiles using techniques that predate Japanese cultural influence, demonstrating sophisticated artistic traditions.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Yukar - Oral Epic Tradition</h2>
+
+                    <div class="yukar-box">
+                        <h4>Living Poetry</h4>
+                        <p>
+                            Yukar are traditional Ainu epic poems and songs, transmitted orally across generations. These narrative verses recount creation myths, heroic tales, and spiritual teachings. Yukar performances could last for hours or even days, with skilled storytellers preserving thousands of lines from memory. This oral literature represents one of humanity's great poetic traditions, encoding Ainu history, values, and worldview in rhythmic, memorable form before the advent of writing.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        The Ainu language, classified as a language isolate with no clear connections to other language families, embodies unique perspectives and cultural knowledge. Though severely endangered with fewer than 20 native speakers remaining, revitalization efforts through schools, documentation projects, and cultural programs work to preserve this irreplaceable linguistic heritage for future generations.
+                    </p>
+
+                    <p class="content-text">
+                        <em>This page celebrates the Ainu people—guardians of ancient traditions in northern Japan, keepers of yukar epic poetry, and practitioners of profound spiritual connections with the natural world. From bear ceremonies to geometric artistry, Ainu culture endures.</em>
+                    </p>
                 </section>
             </article>
 
+            <!-- Quick Facts Sidebar -->
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
+
                 <div class="fact-item">
                     <div class="fact-label">Population</div>
-                    <div class="fact-value">~25,000 (self-identified)</div>
+                    <div class="fact-value">~25,000</div>
                 </div>
+
                 <div class="fact-item">
                     <div class="fact-label">Language</div>
                     <div class="fact-value">Ainu</div>
                 </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Family</div>
+                    <div class="fact-value">Language isolate</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Region</div>
+                    <div class="fact-value">Hokkaido, Kuril Islands</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Known For</div>
+                    <div class="fact-value">Bear worship, Yukar epics</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Traditional Art</div>
+                    <div class="fact-value">Geometric textiles</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Recognition</div>
+                    <div class="fact-value">Indigenous (2008)</div>
+                </div>
             </aside>
         </div>
     </div>
+
+    <!-- Geometric Pattern Footer -->
+    <div class="geometric-border"></div>
 
     <script>
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'ainu',
                 name: 'Ainu',
-                region: 'asia'
+                region: 'asia',
+                continent: 'asia'
             });
         }
     </script>

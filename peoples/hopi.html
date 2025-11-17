@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopi | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Hopi - mesa-top pueblos for 1000+ years, kachina ceremonies, dry farming expertise, and prophecy traditions.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌽</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --mesa-orange: #FF6F00; --desert-tan: #FFAB40; --kachina-blue: #0277BD; --corn-yellow: #FDD835; --pueblo-brown: #6D4C41; --sandstone: #BCAAA4; --sky-turquoise: #00BCD4; }
+        body { font-family: 'Georgia', serif; line-height: 1.8; color: #3E2723; background: linear-gradient(to bottom, #FFECB3, #FFE082); }
+        .kachina-border { height: 20px; background: repeating-linear-gradient(90deg, var(--mesa-orange) 0px, var(--mesa-orange) 20px, var(--kachina-blue) 20px, var(--kachina-blue) 40px, var(--corn-yellow) 40px, var(--corn-yellow) 60px, var(--pueblo-brown) 60px, var(--pueblo-brown) 80px); position: relative; }
+        .kachina-border::after { content: '🌽 · 🪶 · 🏜️ · 🎭 · 🌽 · 🪶 · 🏜️ · 🎭'; position: absolute; top: -2px; left: 50%; transform: translateX(-50%); color: rgba(255, 111, 0, 0.3); font-size: 1.3rem; }
+        .breadcrumb { background: linear-gradient(to bottom, #FFF3E0, #FFE0B2); padding: 1rem 2rem; border-bottom: 4px solid var(--pueblo-brown); }
+        .breadcrumb-nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        .breadcrumb-nav a { color: var(--pueblo-brown); text-decoration: none; font-weight: 700; }
+        .breadcrumb-nav a:hover { color: var(--mesa-orange); }
+        .breadcrumb-separator { color: #BCAAA4; }
+        .hero { background: linear-gradient(180deg, #E65100 0%, #F57C00 20%, #FF6F00 40%, #FF8F00 60%, #FFA726 80%, #FFCC80 100%); color: white; padding: 8rem 2rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 100px; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><polygon points="0,100 200,60 400,65 600,55 800,60 1000,55 1200,60 1200,100 0,100" fill="%236D4C41" opacity="0.5"/><rect x="250" y="50" width="30" height="50" fill="%23BCAAA4" opacity="0.4"/><rect x="700" y="45" width="35" height="55" fill="%23BCAAA4" opacity="0.4"/></svg>') bottom center no-repeat; background-size: cover; }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .culture-icon { font-size: 7rem; margin-bottom: 1.5rem; filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6)); }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; margin-bottom: 1rem; text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); letter-spacing: 2px; }
+        .hero-subtitle { font-size: clamp(1.25rem, 3vw, 1.75rem); margin-bottom: 2.5rem; opacity: 0.95; font-style: italic; }
+        .hero-meta { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; font-size: 1.1rem; }
+        .hero-meta-item { display: flex; align-items: center; gap: 0.75rem; background: rgba(109, 76, 65, 0.4); padding: 0.75rem 1.5rem; border-radius: 30px; backdrop-filter: blur(10px); border: 2px solid rgba(253, 216, 53, 0.4); }
+        .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; background: white; box-shadow: 0 0 40px rgba(255, 111, 0, 0.2); }
+        .main-content { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; }
+        .quick-facts { background: linear-gradient(135deg, var(--pueblo-brown), #5D4037); color: white; padding: 2rem; border-radius: 15px; border: 5px solid var(--mesa-orange); position: sticky; top: 2rem; height: fit-content; box-shadow: 0 8px 24px rgba(255, 111, 0, 0.4); }
+        .quick-facts::before { content: ''; position: absolute; top: -5px; left: -5px; right: -5px; height: 10px; background: repeating-linear-gradient(90deg, var(--mesa-orange) 0px, var(--mesa-orange) 15px, var(--kachina-blue) 15px, var(--kachina-blue) 30px, var(--corn-yellow) 30px, var(--corn-yellow) 45px); }
+        .quick-facts h3 { font-size: 1.75rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 3px solid var(--mesa-orange); font-weight: 900; }
+        .fact-item { margin-bottom: 1.5rem; padding-left: 1rem; border-left: 4px solid var(--corn-yellow); }
+        .fact-label { font-size: 0.875rem; opacity: 0.9; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 1px; }
+        .fact-value { font-size: 1.25rem; font-weight: 700; }
+        .section-title { font-size: 2.5rem; font-weight: 800; color: var(--pueblo-brown); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 5px solid var(--mesa-orange); position: relative; }
+        .section-title::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 120px; height: 5px; background: var(--kachina-blue); }
+        .content-text { font-size: 1.15rem; line-height: 1.9; color: #3E2723; margin-bottom: 1.5rem; text-align: justify; }
+        .content-text::first-letter { font-size: 4rem; font-weight: 900; float: left; line-height: 1; margin: 0 0.1em 0 0; color: var(--mesa-orange); }
+        .dry-farming-box { background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%); border: 4px solid var(--desert-tan); border-left: 12px solid var(--mesa-orange); border-radius: 15px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 6px 20px rgba(255, 171, 64, 0.25); position: relative; }
+        .dry-farming-box::before { content: '🌽'; position: absolute; top: -40px; right: 20px; font-size: 4rem; }
+        .dry-farming-box h4 { color: var(--mesa-orange); font-size: 1.6rem; margin-bottom: 1rem; font-weight: 800; }
+        .dry-farming-box p { color: #5D4037; font-size: 1.05rem; line-height: 1.7; font-style: italic; }
+        @media (max-width: 1024px) { .main-content { grid-template-columns: 1fr; } .quick-facts { position: static; margin-bottom: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="kachina-border"></div>
+    <nav class="breadcrumb"><div class="breadcrumb-nav"><a href="/">Home</a><span class="breadcrumb-separator">›</span><a href="/">All Cultures</a><span class="breadcrumb-separator">›</span><a href="/?region=americas">Americas</a><span class="breadcrumb-separator">›</span><span>Hopi</span></div></nav>
+    <header class="hero"><div class="hero-content"><div class="culture-icon">🌽</div><h1>Hopi</h1><p class="hero-subtitle">Peaceful People - 1000+ Years on the Mesas</p><div class="hero-meta"><div class="hero-meta-item"><span>👥</span><span>~19,338 people</span></div><div class="hero-meta-item"><span>🗣️</span><span>Hopi</span></div><div class="hero-meta-item"><span>📍</span><span>Arizona mesas</span></div></div></div></header>
+    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">Ancient Mesa Villages</h2><p class="content-text">The Hopi (Hopituh Shi-nu-mu, meaning 'Peaceful People') are a Pueblo people inhabiting northeastern Arizona, primarily on three mesas. The Hopi have continuously occupied their villages for over 1,000 years—among the longest continuously inhabited settlements in North America. The ancient village of Oraibi on Third Mesa, founded around 1100 CE, competes for the title of oldest continuously inhabited settlement in the United States.</p><div class="dry-farming-box"><h4>Dry Farming Mastery</h4><p>Despite receiving less than 10 inches of rain annually—less than most deserts—Hopi farmers successfully grow corn, beans, squash, and melons using ancient dry farming techniques perfected over centuries! They plant crops in deep sand dunes that retain moisture from minimal rains, select drought-resistant seed varieties cultivated for generations, and time planting with spiritual ceremonies.</p></div><p class="content-text"><strong>Kachina Ceremonies:</strong> From winter solstice through mid-summer, kachinas dwell in Hopi villages, impersonated by initiated men wearing elaborate masks and costumes who perform ceremonial dances bringing rain, fertility, and blessings. These ceremonies remain mostly closed to non-Hopi, protecting sacred knowledge from commercialization.</p><p class="content-text"><em>This page honors the Hopi—whose ancestors have lived on mesa tops for over 1,000 years, whose farmers coax crops from desert sand, and whose kachina ceremonies maintain cosmic balance between earth and sky.</em></p></section></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~19,338</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Hopi</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Uto-Aztecan</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~5,000-6,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Multi-story pueblo</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Dry farming corn</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Kachina ceremonies, Ancient villages</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Arizona mesas</div></div></aside></div></div>
+    <div class="kachina-border"></div>
+    <script>if (window.learnerProfile) { window.learnerProfile.visitGroup({ id: 'hopi', name: 'Hopi', region: 'americas', continent: 'americas' }); }</script>
+</body>
+</html>

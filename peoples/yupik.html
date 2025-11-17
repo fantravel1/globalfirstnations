@@ -3,12 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yup'ik | Indigenous Peoples Research Database</title>
-    <meta name="description" content="Explore the Yup'ik people - their history, culture, traditions, and contemporary life.">
+    <title>Yup'ik People | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Yup'ik - Alaska coastal indigenous people known for ceremonial masks, kayak construction, and maritime hunting.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦭</text></svg>">
-    <link rel="stylesheet" href="/css/culture-page.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ocean-blue: #006994;
+            --seal-grey: #6C757D;
+            --ice-white: #E8F4F8;
+            --kayak-brown: #8B7355;
+            --coastal-teal: #008B8B;
+            --mask-red: #DC143C;
+            --driftwood-tan: #D2B48C;
+            --aurora-purple: #9B59B6;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2F4F4F;
+            background: var(--ice-white);
+        }
+
+        .wave-border {
+            height: 16px;
+            background: linear-gradient(90deg, var(--ocean-blue) 0%, var(--coastal-teal) 50%, var(--ocean-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-border::before {
+            content: '〰️ 〰️ 〰️ 〰️ 〰️ 〰️ 〰️ 〰️ 〰️ 〰️';
+            position: absolute;
+            width: 200%;
+            font-size: 0.9rem;
+            animation: waves 10s linear infinite;
+        }
+
+        @keyframes waves {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .breadcrumb {
+            background: linear-gradient(to bottom, #FFFFFF, var(--ice-white));
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--ocean-blue);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover { color: var(--coastal-teal); }
+        .breadcrumb-separator { color: var(--seal-grey); }
+
+        .hero {
+            background: linear-gradient(180deg,
+                #003F5C 0%,
+                #006994 25%,
+                #008B8B 50%,
+                #4682B4 75%,
+                #87CEEB 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,50 Q300,30 600,50 T1200,50" stroke="%23FFFFFF" stroke-width="3" fill="none" opacity="0.5"/><path d="M0,70 Q300,50 600,70 T1200,70" stroke="%23FFFFFF" stroke-width="2" fill="none" opacity="0.3"/></svg>') bottom center no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+            animation: sealSwim 5s ease-in-out infinite;
+        }
+
+        @keyframes sealSwim {
+            0%, 100% { transform: translateY(0px) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(0, 139, 139, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(0, 105, 148, 0.15);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        .quick-facts {
+            background: linear-gradient(135deg, var(--ocean-blue), var(--coastal-teal));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 4px solid var(--mask-red);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(220, 20, 60, 0.3);
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--mask-red);
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--driftwood-tan);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ocean-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--ocean-blue);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--mask-red);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #2F4F4F;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--ocean-blue);
+        }
+
+        .mask-box {
+            background: linear-gradient(135deg, #FFF8DC 0%, #FFE4B5 100%);
+            border: 4px solid var(--mask-red);
+            border-left: 12px solid var(--ocean-blue);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.25);
+            position: relative;
+        }
+
+        .mask-box::before {
+            content: '🎭';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 4rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .mask-box h4 {
+            color: var(--mask-red);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .mask-box p {
+            color: #8B4513;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content { grid-template-columns: 1fr; }
+            .quick-facts { position: static; margin-bottom: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 5rem 1.5rem; }
+            .content-wrapper { padding: 2rem 1.5rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
+    <div class="wave-border"></div>
+
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -25,16 +312,11 @@
         <div class="hero-content">
             <div class="culture-icon">🦭</div>
             <h1>Yup'ik</h1>
-            <p class="hero-subtitle">Indigenous People of Arctic</p>
+            <p class="hero-subtitle">Alaska Coastal Maritime Hunters</p>
             <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <span>👥</span>
-                    <span>~34,000 people</span>
-                </div>
-                <div class="hero-meta-item">
-                    <span>🗣️</span>
-                    <span>Yup'ik</span>
-                </div>
+                <div class="hero-meta-item"><span>👥</span><span>~34,000 people</span></div>
+                <div class="hero-meta-item"><span>🗣️</span><span>Yup'ik Language</span></div>
+                <div class="hero-meta-item"><span>📍</span><span>Western Alaska</span></div>
             </div>
         </div>
     </header>
@@ -43,32 +325,51 @@
         <div class="main-content">
             <article class="article-content">
                 <section class="content-section">
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="content-text">The Yup'ik are indigenous peoples of western and southwestern Alaska and the Russian Far East, closely related to the Inuit but with distinct cultural traditions. Living in one of Earth's harshest environments, Yup'ik people developed sophisticated subsistence practices including seal hunting, fishing, and gathering. Known for intricate ceremonial masks, kayak construction, and storytelling traditions, Yup'ik communities maintain cultural practices while adapting to climate change and modern economic pressures.</p>
-                    <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
+                    <h2 class="section-title">Maritime Hunters of Alaska</h2>
+
+                    <p class="content-text">
+                        The Yup'ik are indigenous peoples of western and southwestern Alaska and the Russian Far East, closely related to the Inuit but with distinct cultural traditions. Living in one of Earth's harshest environments, Yup'ik people developed sophisticated subsistence practices including seal hunting, fishing, and gathering. Known for intricate ceremonial masks, kayak construction, and storytelling traditions, Yup'ik communities maintain cultural practices while adapting to climate change and modern economic pressures.
+                    </p>
+
+                    <div class="mask-box">
+                        <h4>Ceremonial Masks & Spiritual Traditions</h4>
+                        <p>
+                            Yup'ik ceremonial masks represent spirits, animals, and mythological beings, serving as powerful intermediaries between the physical and spiritual worlds. Carved from driftwood, painted with natural pigments, and adorned with feathers, fur, and other materials, these masks transformed dancers into spiritual beings during winter ceremonies. Each mask tells stories, honors animal spirits, and maintains balance with the natural world. The Bladder Festival honored seal spirits, ensuring future hunting success. Though some ceremonies declined under missionary influence, mask-making traditions are experiencing revival as Yup'ik people reclaim cultural heritage.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>Kayak Masters:</strong> The Yup'ik qayaq (kayak) represents sophisticated engineering adapted to coastal waters. Built from seal or walrus skin stretched over driftwood frames, these lightweight vessels enabled hunting in rough seas and ice. Yup'ik kayakers developed remarkable skills, performing rolls and maneuvers essential for survival in Arctic waters. Traditional knowledge of kayak construction and use continues through cultural programs.
+                    </p>
+
+                    <p class="content-text">
+                        <em>This page celebrates the Yup'ik—Alaska coastal people practicing maritime hunting, creating ceremonial masks, maintaining storytelling traditions, and adapting ancestral knowledge to contemporary Arctic life.</em>
+                    </p>
                 </section>
             </article>
 
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
-                <div class="fact-item">
-                    <div class="fact-label">Population</div>
-                    <div class="fact-value">~34,000</div>
-                </div>
-                <div class="fact-item">
-                    <div class="fact-label">Language</div>
-                    <div class="fact-value">Yup'ik</div>
-                </div>
+                <div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~34,000</div></div>
+                <div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Yup'ik</div></div>
+                <div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Eskimo-Aleut</div></div>
+                <div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Western Alaska</div></div>
+                <div class="fact-item"><div class="fact-label">Livelihood</div><div class="fact-value">Maritime hunting, Fishing</div></div>
+                <div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Ceremonial masks, Kayaks</div></div>
+                <div class="fact-item"><div class="fact-label">Relation</div><div class="fact-value">Closely related to Inuit</div></div>
             </aside>
         </div>
     </div>
+
+    <div class="wave-border"></div>
 
     <script>
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'yupik',
-                name: 'Yup'ik',
-                region: 'arctic'
+                name: "Yup'ik",
+                region: 'arctic',
+                continent: 'arctic'
             });
         }
     </script>

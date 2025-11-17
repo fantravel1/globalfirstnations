@@ -4,11 +4,388 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aboriginal Australians | Indigenous Peoples Research Database</title>
-    <meta name="description" content="Explore the Aboriginal Australians people - their history, culture, traditions, and contemporary life.">
+    <meta name="description" content="Explore Aboriginal Australians - the world's oldest continuous culture with Dreamtime spirituality, dot painting, and 65,000+ years of history.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪃</text></svg>">
-    <link rel="stylesheet" href="/css/culture-page.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Aboriginal Australian ochre palette */
+            --ochre-red: #A0522D;
+            --ochre-yellow: #DAA520;
+            --ochre-brown: #8B4513;
+            --earth-orange: #D2691E;
+            --desert-sand: #F4A460;
+            --outback-red: #B22222;
+            --white-clay: #FAEBD7;
+            --charcoal-black: #2F2F2F;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--charcoal-black);
+            background: var(--white-clay);
+        }
+
+        /* Dot Painting Pattern Border */
+        .dot-border {
+            height: 20px;
+            background: var(--ochre-brown);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dot-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle, var(--ochre-yellow) 2px, transparent 2px),
+                radial-gradient(circle, var(--white-clay) 2px, transparent 2px);
+            background-size: 20px 20px, 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(to bottom, #FFF8DC, var(--white-clay));
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--ochre-red);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--ochre-brown);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--outback-red);
+        }
+
+        .breadcrumb-separator {
+            color: var(--desert-sand);
+        }
+
+        /* Hero Section - Australian Outback */
+        .hero {
+            background: linear-gradient(180deg,
+                #654321 0%,
+                #8B4513 15%,
+                #A0522D 30%,
+                #CD853F 50%,
+                #DAA520 70%,
+                #F4A460 90%,
+                #FAEBD7 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dreamtime dots pattern overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle, rgba(255, 255, 255, 0.15) 3px, transparent 3px),
+                radial-gradient(circle, rgba(255, 215, 0, 0.2) 2px, transparent 2px);
+            background-size: 40px 40px, 60px 60px;
+            background-position: 0 0, 20px 20px;
+            opacity: 0.6;
+        }
+
+        /* Uluru silhouette */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150"><ellipse cx="600" cy="100" rx="400" ry="80" fill="%238B4513" opacity="0.7"/><path d="M200,120 Q400,80 600,100 T1000,110 L1200,150 L0,150 Z" fill="%23A0522D" opacity="0.5"/></svg>') bottom center no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+            animation: boomerangSpin 8s ease-in-out infinite;
+        }
+
+        @keyframes boomerangSpin {
+            0%, 100% { transform: rotate(0deg) translateY(0px); }
+            25% { transform: rotate(90deg) translateY(-10px); }
+            50% { transform: rotate(180deg) translateY(0px); }
+            75% { transform: rotate(270deg) translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(139, 69, 19, 0.4);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(160, 82, 45, 0.15);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        /* Quick Facts - Ochre colors */
+        .quick-facts {
+            background: linear-gradient(135deg, var(--ochre-red), var(--ochre-brown));
+            color: var(--white-clay);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 4px solid var(--ochre-yellow);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.3);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            height: 12px;
+            background-image: radial-gradient(circle, var(--ochre-yellow) 2px, transparent 2px);
+            background-size: 15px 15px;
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--ochre-yellow);
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--desert-sand);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ochre-brown);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--ochre-red);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--ochre-yellow);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #2F2F2F;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--outback-red);
+        }
+
+        /* Dreamtime Box */
+        .dreamtime-box {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            border: 4px solid var(--ochre-red);
+            border-left: 12px solid var(--ochre-yellow);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(160, 82, 45, 0.25);
+            position: relative;
+        }
+
+        .dreamtime-box::before {
+            content: '✨';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 4rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .dreamtime-box h4 {
+            color: var(--ochre-brown);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .dreamtime-box p {
+            color: #654321;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Art Box */
+        .art-box {
+            background: linear-gradient(135deg, #FFF0E6 0%, #FFE4B5 100%);
+            border: 4px solid var(--earth-orange);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(210, 105, 30, 0.2);
+        }
+
+        .art-box h4 {
+            color: var(--earth-orange);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .art-box p {
+            color: #8B4513;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-facts {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Dot Painting Border -->
+    <div class="dot-border"></div>
+
+    <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -21,11 +398,12 @@
         </div>
     </nav>
 
+    <!-- Hero Section - Australian Outback -->
     <header class="hero">
         <div class="hero-content">
             <div class="culture-icon">🪃</div>
             <h1>Aboriginal Australians</h1>
-            <p class="hero-subtitle">Indigenous People of Oceania</p>
+            <p class="hero-subtitle">The World's Oldest Continuous Culture - 65,000+ Years</p>
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <span>👥</span>
@@ -33,42 +411,117 @@
                 </div>
                 <div class="hero-meta-item">
                     <span>🗣️</span>
-                    <span>250+ Aboriginal languages</span>
+                    <span>250+ Languages</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Australia</span>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <div class="content-wrapper">
         <div class="main-content">
+            <!-- Article Content -->
             <article class="article-content">
                 <section class="content-section">
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="content-text">Aboriginal Australians are the indigenous peoples of mainland Australia, Tasmania, and some adjacent islands, representing the world's oldest continuous culture with over 65,000 years of history. Comprising hundreds of distinct groups with unique languages, traditions, and territories, Aboriginal peoples developed sophisticated land management practices including fire-stick farming, complex kinship systems, and rich spiritual traditions centered on the Dreamtime—the creation period when ancestral beings shaped the land.</p>
-                    <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
+                    <h2 class="section-title">Ancient Custodians of the Land</h2>
+
+                    <p class="content-text">
+                        Aboriginal Australians are the indigenous peoples of mainland Australia, Tasmania, and some adjacent islands, representing the world's oldest continuous culture with over 65,000 years of history. Comprising hundreds of distinct groups with unique languages, traditions, and territories, Aboriginal peoples developed sophisticated land management practices including fire-stick farming, complex kinship systems, and rich spiritual traditions centered on the Dreamtime—the creation period when ancestral beings shaped the land.
+                    </p>
+
+                    <div class="dreamtime-box">
+                        <h4>The Dreamtime - Tjukurrpa</h4>
+                        <p>
+                            The Dreamtime (Tjukurrpa in many Aboriginal languages) is the sacred era of creation when ancestral spirit beings traveled across the formless land, creating all natural features—mountains, rivers, plants, animals, and people. These creation stories are not merely mythology but living law, explaining the relationships between people, land, and all living things. Songlines—paths across the land marked by songs describing the route and the creation events—serve as both spiritual maps and historical records, encoding detailed geographical and cultural knowledge passed down through countless generations.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>Fire-Stick Farming:</strong> Aboriginal peoples practiced sophisticated land management for millennia, using controlled burning to maintain ecosystems, promote plant growth, and manage wildlife populations. This "fire-stick farming" created the park-like landscapes early European settlers mistook for wilderness. Modern conservation increasingly recognizes the ecological wisdom of these traditional practices, with Aboriginal land management techniques now being reintroduced to prevent catastrophic wildfires and restore biodiversity.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2 class="section-title">Art and Cultural Expression</h2>
+
+                    <div class="art-box">
+                        <h4>Dot Painting and Rock Art</h4>
+                        <p>
+                            Aboriginal art represents one of the world's oldest continuous artistic traditions. Rock art sites dating back over 40,000 years contain some of humanity's earliest artistic expressions. The distinctive dot painting style, while developed in the Western Desert region in the 1970s for commercial purposes, draws on traditional body painting and ground designs. Using ochre pigments—red, yellow, white, and black—Aboriginal artists create works encoding Dreamtime stories, mapping country, and transmitting cultural knowledge through visual symbols understood within their cultural context.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        Before European colonization, Aboriginal Australians spoke over 250 distinct languages, representing immense linguistic diversity. Today, many of these languages are critically endangered or extinct, though revitalization efforts work to preserve and restore Aboriginal languages. The didgeridoo, a wind instrument developed in northern Australia, produces complex rhythmic sounds used in ceremonies and storytelling, demonstrating sophisticated acoustic knowledge and musical traditions.
+                    </p>
+
+                    <p class="content-text">
+                        <em>This page honors Aboriginal Australians—the world's oldest continuous culture, custodians of ancient wisdom, creators of timeless art, and keepers of Dreamtime knowledge spanning more than 65,000 years of human heritage.</em>
+                    </p>
                 </section>
             </article>
 
+            <!-- Quick Facts Sidebar -->
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
+
                 <div class="fact-item">
                     <div class="fact-label">Population</div>
                     <div class="fact-value">~798,365</div>
                 </div>
+
                 <div class="fact-item">
-                    <div class="fact-label">Language</div>
-                    <div class="fact-value">250+ Aboriginal languages</div>
+                    <div class="fact-label">Languages</div>
+                    <div class="fact-value">250+ (historically)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Family</div>
+                    <div class="fact-value">Pama-Nyungan (majority)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">History</div>
+                    <div class="fact-value">65,000+ years</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Known For</div>
+                    <div class="fact-value">Dreamtime, Dot painting</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Traditional Instrument</div>
+                    <div class="fact-value">Didgeridoo</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Land Management</div>
+                    <div class="fact-value">Fire-stick farming</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Status</div>
+                    <div class="fact-value">Oldest continuous culture</div>
                 </div>
             </aside>
         </div>
     </div>
+
+    <!-- Dot Painting Footer -->
+    <div class="dot-border"></div>
 
     <script>
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'aboriginal-australian',
                 name: 'Aboriginal Australians',
-                region: 'oceania'
+                region: 'oceania',
+                continent: 'oceania'
             });
         }
     </script>

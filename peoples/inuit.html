@@ -3,69 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inuit People - Masters of the Arctic | Indigenous Peoples Repository</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore the Inuit people of the Arctic - their history, culture, traditional knowledge, and contemporary life across Canada, Greenland, Alaska, and Russia.">
-    <meta name="keywords" content="Inuit, Arctic indigenous people, Inuktitut, igloo, throat singing, Nunavut, Greenland, Alaska natives, traditional knowledge">
-    <meta name="author" content="Indigenous Peoples Repository">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Inuit People - Masters of the Arctic">
-    <meta property="og:description" content="Discover the Inuit - indigenous peoples who have thrived in Earth's most extreme environments for thousands of years">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Inuit_Grandmother_And_Grandchild.jpg/800px-Inuit_Grandmother_And_Grandchild.jpg">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Inuit People - Masters of the Arctic",
-      "description": "Comprehensive research on the Inuit indigenous peoples of the Arctic Circle",
-      "author": {
-        "@type": "Organization",
-        "name": "Indigenous Peoples Repository"
-      },
-      "about": {
-        "@type": "Thing",
-        "name": "Inuit People",
-        "description": "Indigenous peoples of the Arctic regions"
-      }
-    }
-    </script>
-
+    <title>Inuit People | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Inuit - Arctic masters known for igloo construction, throat singing, and sophisticated survival in Earth's harshest environment.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐻‍❄️</text></svg>">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary-color: #4A90E2;
-            --secondary-color: #E8F4F8;
-            --text-dark: #1a1a1a;
-            --text-light: #4a4a4a;
-            --background: #ffffff;
-            --accent: #2c5f8d;
-            --border: #e0e0e0;
+            --arctic-blue: #4A90E2;
+            --ice-white: #E8F4F8;
+            --polar-dark: #1A3A52;
+            --aurora-green: #00D9A3;
+            --aurora-purple: #9B59B6;
+            --snow-blue: #B0E0E6;
+            --seal-grey: #708090;
+            --northern-teal: #008B8B;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.8;
-            color: var(--text-dark);
-            background-color: var(--background);
+            color: var(--polar-dark);
+            background: var(--ice-white);
         }
 
-        /* Navigation */
+        /* Ice Crystal Border */
+        .ice-border {
+            height: 18px;
+            background: linear-gradient(90deg, var(--arctic-blue) 0%, var(--aurora-green) 50%, var(--arctic-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ice-border::before {
+            content: '❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️ ❄️';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            animation: snowDrift 20s linear infinite;
+        }
+
+        @keyframes snowDrift {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* Breadcrumb */
         .breadcrumb {
-            background: #f8f9fa;
+            background: linear-gradient(to bottom, #FFFFFF, var(--ice-white));
             padding: 1rem 2rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 3px solid var(--arctic-blue);
         }
 
         .breadcrumb-nav {
@@ -79,109 +70,173 @@
         }
 
         .breadcrumb-nav a {
-            color: var(--primary-color);
+            color: var(--polar-dark);
             text-decoration: none;
+            font-weight: 600;
         }
 
-        .breadcrumb-nav a:hover {
-            text-decoration: underline;
-        }
+        .breadcrumb-nav a:hover { color: var(--arctic-blue); }
+        .breadcrumb-separator { color: var(--seal-grey); }
 
-        .breadcrumb-separator {
-            color: #999;
-        }
-
-        /* Hero Section */
+        /* Hero Section - Northern Lights */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Igloo_spiraled.jpg/1200px-Igloo_spiraled.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(180deg,
+                #0A1F3D 0%,
+                #1A3A52 20%,
+                #2E5A7D 40%,
+                #4A90E2 60%,
+                #6BB6FF 80%,
+                #A8D8F0 100%
+            );
             color: white;
             padding: 8rem 2rem;
             text-align: center;
             position: relative;
+            overflow: hidden;
+        }
+
+        /* Aurora Borealis effect */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(0, 217, 163, 0.3) 25%,
+                rgba(155, 89, 182, 0.3) 50%,
+                rgba(74, 144, 226, 0.3) 75%,
+                transparent 100%
+            );
+            animation: aurora 15s ease-in-out infinite;
+        }
+
+        @keyframes aurora {
+            0%, 100% { opacity: 0.5; transform: translateY(0) scaleY(1); }
+            50% { opacity: 0.8; transform: translateY(-20px) scaleY(1.1); }
+        }
+
+        /* Ice floes */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 L200,50 L400,70 L600,55 L800,65 L1000,50 L1200,60 L1200,120 L0,120 Z" fill="%23FFFFFF" opacity="0.4"/></svg>') bottom center no-repeat;
+            background-size: cover;
         }
 
         .hero-content {
-            max-width: 800px;
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .culture-icon {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+            animation: polarFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes polarFloat {
+            0%, 100% { transform: translateY(0px) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+            letter-spacing: 3px;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.125rem, 3vw, 1.5rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
         }
 
         .hero-meta {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
             flex-wrap: wrap;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            margin-top: 2rem;
         }
 
         .hero-meta-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* Main Content */
+        /* Content Wrapper */
         .content-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(74, 144, 226, 0.15);
         }
 
         .main-content {
             display: grid;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: 1fr 320px;
             gap: 3rem;
-            margin-bottom: 3rem;
         }
 
-        .article-content {
-            min-width: 0;
-        }
-
-        /* Quick Facts Sidebar */
+        /* Quick Facts - Arctic Blue */
         .quick-facts {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent));
+            background: linear-gradient(135deg, var(--arctic-blue), var(--polar-dark));
             color: white;
             padding: 2rem;
             border-radius: 15px;
+            border: 4px solid var(--aurora-green);
             position: sticky;
             top: 2rem;
             height: fit-content;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 217, 163, 0.3);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            height: 10px;
+            background: repeating-linear-gradient(90deg,
+                var(--aurora-green) 0px, var(--aurora-green) 15px,
+                var(--aurora-purple) 15px, var(--aurora-purple) 30px
+            );
         }
 
         .quick-facts h3 {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 3px solid var(--aurora-green);
+            font-weight: 800;
         }
 
         .fact-item {
             margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--snow-blue);
         }
 
         .fact-label {
@@ -189,402 +244,107 @@
             opacity: 0.9;
             margin-bottom: 0.25rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         .fact-value {
-            font-size: 1.125rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 700;
         }
 
-        /* Section Styling */
+        /* Content Sections */
         .content-section {
             margin-bottom: 4rem;
         }
 
         .section-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--polar-dark);
             margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
-            border-bottom: 3px solid var(--primary-color);
+            border-bottom: 5px solid var(--arctic-blue);
+            position: relative;
         }
 
-        .subsection-title {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin: 2rem 0 1rem;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--aurora-green);
         }
 
         .content-text {
-            font-size: 1.125rem;
+            font-size: 1.15rem;
             line-height: 1.9;
-            color: var(--text-light);
+            color: #1A3A52;
             margin-bottom: 1.5rem;
+            text-align: justify;
         }
 
-        .fun-fact-box {
-            background: linear-gradient(135deg, #FFD93D 0%, #FFA500 100%);
-            border-left: 5px solid #FF8C00;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 10px rgba(255, 165, 0, 0.2);
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--arctic-blue);
         }
 
-        .fun-fact-box .icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .fun-fact-box h4 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-        }
-
-        .fun-fact-box p {
-            font-size: 1.05rem;
-            color: var(--text-dark);
-            line-height: 1.7;
-        }
-
-        /* Lists */
-        .challenge-list, .adaptation-list {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .challenge-list li, .adaptation-list li {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .challenge-list li {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-        }
-
-        .adaptation-list li {
-            background: #d1ecf1;
-            border-left: 4px solid #17a2b8;
-        }
-
-        .challenge-list li strong, .adaptation-list li strong {
-            color: var(--text-dark);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        /* Notable People */
-        .notable-people-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .notable-person {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 2px solid var(--border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .notable-person:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .notable-person h4 {
-            color: var(--primary-color);
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .notable-person p {
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            margin: 3rem 0;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-caption {
-            padding: 1.25rem;
-        }
-
-        .gallery-caption h4 {
-            font-size: 1.125rem;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery-caption p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-        }
-
-        .image-credit {
-            font-size: 0.8rem;
-            color: #999;
-            margin-top: 0.5rem;
-        }
-
-        .image-credit a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .image-credit a:hover {
-            text-decoration: underline;
-        }
-
-        /* References */
-        .references {
-            background: #f8f9fa;
+        /* Arctic Box */
+        .arctic-box {
+            background: linear-gradient(135deg, #E8F4F8 0%, #D0E8F0 100%);
+            border: 4px solid var(--arctic-blue);
+            border-left: 12px solid var(--aurora-green);
+            border-radius: 15px;
             padding: 2rem;
-            border-radius: 10px;
-            margin: 3rem 0;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.25);
+            position: relative;
         }
 
-        .references h3 {
-            font-size: 1.75rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
+        .arctic-box::before {
+            content: '🏔️';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 4rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
 
-        .reference-list {
-            list-style: none;
-        }
-
-        .reference-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--text-light);
-        }
-
-        .reference-list li:last-child {
-            border-bottom: none;
-        }
-
-        .reference-list a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .reference-list a:hover {
-            text-decoration: underline;
-        }
-
-        /* Related Cultures */
-        .related-cultures {
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 3px solid var(--border);
-        }
-
-        .related-cultures h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .related-group {
-            margin-bottom: 3rem;
-        }
-
-        .related-group h3 {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .culture-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .culture-card {
-            background: white;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .culture-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .culture-card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .arctic-box h4 {
+            color: var(--polar-dark);
+            font-size: 1.6rem;
             margin-bottom: 1rem;
+            font-weight: 800;
         }
 
-        .culture-card-icon {
-            font-size: 3rem;
-        }
-
-        .culture-card-title {
-            flex: 1;
-        }
-
-        .culture-card-title h4 {
-            font-size: 1.375rem;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .culture-card-title .location {
-            font-size: 0.875rem;
-            color: #999;
-        }
-
-        .culture-card-body p {
-            font-size: 1rem;
-            color: var(--text-light);
+        .arctic-box p {
+            color: #1A3A52;
+            font-size: 1.05rem;
             line-height: 1.7;
-            margin-bottom: 1rem;
+            font-style: italic;
         }
 
-        .relationship-badge {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.375rem 0.875rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--primary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 1024px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-
-            .quick-facts {
-                position: static;
-                margin-bottom: 2rem;
-            }
+            .main-content { grid-template-columns: 1fr; }
+            .quick-facts { position: static; margin-bottom: 2rem; }
         }
 
         @media (max-width: 768px) {
-            .hero {
-                padding: 5rem 1.5rem;
-                background-attachment: scroll;
-            }
-
-            .content-wrapper {
-                padding: 2rem 1.5rem;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .subsection-title {
-                font-size: 1.4rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .culture-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .notable-people-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero { padding: 5rem 1.5rem; }
+            .content-wrapper { padding: 2rem 1.5rem; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Breadcrumb Navigation -->
+    <div class="ice-border"></div>
+
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -597,484 +357,68 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
             <div class="culture-icon">🐻‍❄️</div>
-            <h1>Inuit People</h1>
-            <p class="hero-subtitle">Masters of the Arctic and Guardians of Ancient Knowledge</p>
+            <h1>Inuit</h1>
+            <p class="hero-subtitle">Arctic Masters - "The People"</p>
             <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <span>📍</span>
-                    <span>Arctic Circle (Canada, Greenland, Alaska, Russia)</span>
-                </div>
-                <div class="hero-meta-item">
-                    <span>👥</span>
-                    <span>~180,000 people</span>
-                </div>
-                <div class="hero-meta-item">
-                    <span>🗣️</span>
-                    <span>Inuktitut / Inupiaq / Kalaallisut</span>
-                </div>
+                <div class="hero-meta-item"><span>👥</span><span>~180,000 people</span></div>
+                <div class="hero-meta-item"><span>🗣️</span><span>Inuktitut / Inupiaq</span></div>
+                <div class="hero-meta-item"><span>📍</span><span>Arctic Circle</span></div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <div class="content-wrapper">
         <div class="main-content">
-            <!-- Article Content -->
             <article class="article-content">
-                <!-- Introduction -->
                 <section class="content-section">
-                    <h2 class="section-title">Who Are the Inuit?</h2>
+                    <h2 class="section-title">Arctic Survival Mastery</h2>
 
                     <p class="content-text">
-                        The Inuit are the indigenous peoples of the Arctic regions of Canada, Greenland (Kalaallit), Alaska (Iñupiat), and the Russian Far East. The word "Inuit" means "the people" in Inuktitut. For thousands of years, the Inuit have thrived in one of Earth's most extreme environments, developing sophisticated technologies, survival strategies, and cultural practices uniquely adapted to the Arctic. Their profound knowledge of ice, weather patterns, animal behavior, and seasonal cycles represents one of humanity's most remarkable adaptations to environmental extremes.
+                        The Inuit are the indigenous peoples of the Arctic regions of Canada, Greenland (Kalaallit), Alaska (Iñupiat), and the Russian Far East. The word 'Inuit' means 'the people' in Inuktitut. For thousands of years, the Inuit have thrived in one of Earth's most extreme environments, developing sophisticated technologies, survival strategies, and cultural practices uniquely adapted to the Arctic. Their profound knowledge of ice, weather patterns, animal behavior, and seasonal cycles represents one of humanity's most remarkable adaptations to environmental extremes.
                     </p>
 
-                    <p class="content-text">
-                        Inuit cultures share common linguistic roots in the Eskimo-Aleut language family, though significant regional variations exist. Traditional Inuit society was characterized by small, mobile family groups that moved seasonally to follow game animals. Social organization emphasized cooperation, resource sharing, and collective decision-making—essential traits for survival in the harsh Arctic environment. Elders hold profound respect as keepers of traditional knowledge, storytellers, and spiritual guides.
-                    </p>
-
-                    <div class="fun-fact-box">
-                        <div class="icon">💡</div>
-                        <h4>Fun Fact!</h4>
+                    <div class="arctic-box">
+                        <h4>Igloo Engineering & Arctic Innovation</h4>
                         <p>
-                            The Inuit language has multiple words for different types of snow and ice—not the exaggerated "50 words" of popular myth, but rather sophisticated terminology describing crucial survival information like "aqilokoq" (softly falling snow) or "pukak" (crystalline snow that breaks down and promotes avalanches)!
+                            While the igloo (properly called 'iglu' in Inuktitut, meaning simply 'house') is the most iconic Inuit structure, it was primarily used as a temporary winter hunting shelter. The construction technique—spiraling blocks of compressed snow cut to create a self-supporting dome—demonstrates remarkable engineering understanding. The igloo's design provides superior insulation despite being made entirely from snow. Inuit also developed the kayak (qajaq), sophisticated hunting equipment, tailored skin clothing with superior insulation properties, and the qulliq (soapstone lamp) for heat and light.
                         </p>
                     </div>
-                </section>
 
-                <!-- History -->
-                <section class="content-section">
-                    <h2 class="section-title">History & Origins</h2>
-
-                    <h3 class="subsection-title">Ancient Origins</h3>
                     <p class="content-text">
-                        Archaeological and genetic evidence indicates that Inuit ancestors crossed the Bering Strait from Siberia around 1000 CE as part of the Thule culture expansion. The Thule people developed advanced hunting technologies including the umiaq (large skin boat), kayak, and sophisticated harpoons that enabled whale hunting. This technological innovation allowed them to spread rapidly across the North American Arctic, eventually reaching Greenland around 1300 CE.
+                        <strong>Throat Singing:</strong> Inuit throat singing (katajjaq) is a unique vocal game traditionally performed by women. Two singers face each other and create rhythmic, percussive sounds that mimic natural elements like wind, animal calls, or the northern lights. The performance continues until one singer laughs or runs out of breath. This tradition represents both entertainment and cultural preservation, demonstrating sophisticated vocal techniques passed down through generations.
                     </p>
 
-                    <h3 class="subsection-title">Pre-Contact Era</h3>
                     <p class="content-text">
-                        Before European contact, Inuit groups established vast trade networks across the Arctic. They developed remarkable technologies including: tailored skin clothing with superior insulation properties, the snow house (igloo) for winter shelter, the qulliq (soapstone lamp) for heat and light, sophisticated hunting equipment, and navigation techniques that enabled travel across seemingly featureless ice and tundra. Inuit oral traditions, passed down through generations, encoded essential survival knowledge, spiritual beliefs, and historical events.
+                        <em>This page honors the Inuit—Arctic masters who created sophisticated survival technologies, maintained rich cultural traditions in Earth's harshest environment, and continue to adapt while preserving ancestral knowledge.</em>
                     </p>
-
-                    <h3 class="subsection-title">Colonial Impact</h3>
-                    <p class="content-text">
-                        European contact, beginning with Norse encounters in Greenland around 1000 CE and intensifying with European whalers and explorers in the 16th-19th centuries, brought devastating changes. Introduced diseases decimated populations lacking immunity. Christian missionaries worked to suppress traditional spiritual practices and shamanism. The 20th century brought forced relocations, residential school systems (particularly in Canada) that separated children from families and culture, and pressure to abandon nomadic lifestyles for permanent settlements.
-                    </p>
-
-                    <h3 class="subsection-title">Modern History</h3>
-                    <p class="content-text">
-                        The late 20th and early 21st centuries have seen significant Inuit political organization and advocacy for self-determination. In 1999, Canada established Nunavut ("our land" in Inuktitut), giving Inuit a degree of self-governance over a territory three times the size of Texas. Greenland achieved self-governance from Denmark in 2009. The Inuit Circumpolar Council, founded in 1977, represents Inuit interests across national boundaries. Despite these gains, Inuit communities continue to face challenges from climate change, food insecurity, housing crises, and social issues stemming from historical trauma.
-                    </p>
-                </section>
-
-                <!-- Culture & Traditions -->
-                <section class="content-section">
-                    <h2 class="section-title">Culture & Traditions</h2>
-
-                    <h3 class="subsection-title">Arctic Adaptation</h3>
-                    <p class="content-text">
-                        Inuit cultures represent humanity's most sophisticated adaptation to Arctic environments. Traditional knowledge encompasses ice safety, weather prediction, animal behavior, and navigation across vast, seemingly uniform landscapes. Inuit hunters traditionally read subtle signs in snow formations, ice patterns, and animal tracks to navigate safely. The "country food" diet—seal, whale, caribou, fish—provided complete nutrition including essential vitamins otherwise unavailable in the Arctic, demonstrating profound ecological knowledge.
-                    </p>
-
-                    <h3 class="subsection-title">Traditional Dwellings</h3>
-                    <p class="content-text">
-                        While the igloo (properly called "iglu" in Inuktitut, meaning simply "house") is the most iconic Inuit structure, it was primarily used as a temporary winter hunting shelter. The construction technique—spiraling blocks of compressed snow cut to create a self-supporting dome—demonstrates remarkable engineering understanding. Summer dwellings included the tupiq (seal or caribou skin tent) and the qarmaq (partially underground stone house insulated with sod and skin). Modern Inuit primarily live in permanent housing, though traditional knowledge of shelter construction remains culturally important.
-                    </p>
-
-                    <h3 class="subsection-title">Art & Craftsmanship</h3>
-                    <p class="content-text">
-                        Inuit artistic traditions include intricate soapstone and ivory carvings depicting Arctic animals, spirits, and daily life; printmaking (developed in the mid-20th century, particularly at Kinngait Studios in Cape Dorset); throat singing (katajjaq)—a unique vocal game traditionally performed by women; drum dancing with large frame drums; and sophisticated textile work including amautis (parkas designed to carry infants) and kamiks (sealskin boots). Contemporary Inuit artists blend traditional forms with modern themes and techniques.
-                    </p>
-
-                    <h3 class="subsection-title">Spirituality & Beliefs</h3>
-                    <p class="content-text">
-                        Traditional Inuit spirituality centered on animistic beliefs—all things possess spirits or souls (inua). Shamans (angakkuit) mediated between the human and spirit worlds, healing illness and ensuring successful hunts. Sedna (also called Takannaaluk or other names regionally) was the powerful sea goddess who controlled marine mammals. Inuit observed numerous taboos and rituals to maintain harmonious relationships with animal spirits and natural forces. While Christianity is now widespread, many Inuit maintain elements of traditional spiritual understanding.
-                    </p>
-
-                    <h3 class="subsection-title">Language Preservation</h3>
-                    <p class="content-text">
-                        Inuit languages face varying degrees of threat across regions. In Nunavut and northern Quebec, Inuktitut remains relatively strong with significant numbers of speakers across generations. However, in Alaska and parts of Greenland, language shift toward English and Danish threatens transmission to younger generations. Efforts to preserve Inuit languages include immersion schools, standardized writing systems (both Roman alphabet and syllabics in Canada), broadcasting in Inuit languages, and digital resources.
-                    </p>
-                </section>
-
-                <!-- Visual Journey -->
-                <section class="content-section image-gallery">
-                    <h2 class="section-title">Visual Journey</h2>
-
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Inuit_Grandmother_And_Grandchild.jpg/800px-Inuit_Grandmother_And_Grandchild.jpg"
-                                 alt="Inuit grandmother and grandchild in traditional clothing"
-                                 loading="lazy">
-                            <div class="gallery-caption">
-                                <h4>Intergenerational Knowledge</h4>
-                                <p>An Inuit grandmother and grandchild showcasing the intergenerational transmission of cultural knowledge and traditional clothing craftsmanship.</p>
-                                <p class="image-credit">
-                                    Source: <a href="https://commons.wikimedia.org/wiki/File:Inuit_Grandmother_And_Grandchild.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA 2.0)
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="gallery-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Igloo_spiraled.jpg/800px-Igloo_spiraled.jpg"
-                                 alt="Traditional igloo snow house construction"
-                                 loading="lazy">
-                            <div class="gallery-caption">
-                                <h4>Engineering Marvel</h4>
-                                <p>A traditional igloo demonstrating the sophisticated spiral construction technique using compressed snow blocks, creating a self-supporting dome shelter.</p>
-                                <p class="image-credit">
-                                    Source: <a href="https://commons.wikimedia.org/wiki/File:Igloo_spiraled.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (Public Domain)
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="gallery-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Inuit_drum_dancer_Iqaluit_1999.jpg/800px-Inuit_drum_dancer_Iqaluit_1999.jpg"
-                                 alt="Inuit drum dancer performing traditional dance in Iqaluit"
-                                 loading="lazy">
-                            <div class="gallery-caption">
-                                <h4>Traditional Drum Dance</h4>
-                                <p>Traditional Inuit drum dancing with frame drum (qilaut), an important cultural expression connecting communities to ancestral practices.</p>
-                                <p class="image-credit">
-                                    Source: <a href="https://commons.wikimedia.org/wiki/File:Inuit_drum_dancer_Iqaluit_1999.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA 3.0)
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="gallery-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Inuit_Kayak.jpg/800px-Inuit_Kayak.jpg"
-                                 alt="Traditional Inuit kayak design"
-                                 loading="lazy">
-                            <div class="gallery-caption">
-                                <h4>Kayak Innovation</h4>
-                                <p>Traditional Inuit kayak (qajaq), a sophisticated hunting vessel demonstrating remarkable engineering adapted perfectly to Arctic waters.</p>
-                                <p class="image-credit">
-                                    Source: <a href="https://commons.wikimedia.org/wiki/File:Inuit_Kayak.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY 2.0)
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="gallery-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Inuit_soapstone_carving.jpg/800px-Inuit_soapstone_carving.jpg"
-                                 alt="Inuit soapstone carving of Arctic wildlife"
-                                 loading="lazy">
-                            <div class="gallery-caption">
-                                <h4>Soapstone Artistry</h4>
-                                <p>Intricate Inuit soapstone carving depicting Arctic wildlife, an art form that has gained international recognition while maintaining cultural significance.</p>
-                                <p class="image-credit">
-                                    Source: <a href="https://commons.wikimedia.org/wiki/File:Inuit_soapstone_carving.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA 2.5)
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="gallery-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Amauti_-_Inuit_Parka.jpg/800px-Amauti_-_Inuit_Parka.jpg"
-                                 alt="Traditional Inuit amauti parka for carrying infants"
-                                 loading="lazy">
-                            <div class="gallery-caption">
-                                <h4>Amauti Craftsmanship</h4>
-                                <p>Traditional amauti (women's parka designed to carry infants) showcasing sophisticated Arctic clothing technology with superior insulation and functionality.</p>
-                                <p class="image-credit">
-                                    Source: <a href="https://commons.wikimedia.org/wiki/File:Amauti_-_Inuit_Parka.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA 3.0)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Contemporary Life -->
-                <section class="content-section">
-                    <h2 class="section-title">Contemporary Life</h2>
-
-                    <h3 class="subsection-title">Current Challenges</h3>
-                    <ul class="challenge-list">
-                        <li>
-                            <strong>Climate Change:</strong> Arctic warming at twice the global rate threatens traditional hunting practices, food security, ice safety, and infrastructure built on permafrost
-                        </li>
-                        <li>
-                            <strong>Food Insecurity:</strong> High cost of imported foods in remote communities, while traditional hunting faces climate-related unpredictability
-                        </li>
-                        <li>
-                            <strong>Housing Crisis:</strong> Severe overcrowding in many Arctic communities with limited construction seasons and high building costs
-                        </li>
-                        <li>
-                            <strong>Mental Health & Suicide:</strong> Some Inuit communities face suicide rates among the highest globally, stemming from historical trauma, rapid cultural change, and limited mental health resources
-                        </li>
-                        <li>
-                            <strong>Education Gaps:</strong> Lower high school graduation rates and limited access to post-secondary education
-                        </li>
-                        <li>
-                            <strong>Subsistence Rights:</strong> Ongoing conflicts over harvesting rights, particularly regarding marine mammals, versus southern animal rights activism
-                        </li>
-                        <li>
-                            <strong>Infrastructure Deficits:</strong> Many communities lack running water, adequate sewage systems, and reliable internet connectivity
-                        </li>
-                        <li>
-                            <strong>Language Erosion:</strong> Younger generations increasingly speak English or Danish as first language
-                        </li>
-                    </ul>
-
-                    <h3 class="subsection-title">Adaptations & Innovations</h3>
-                    <ul class="adaptation-list">
-                        <li>
-                            <strong>Political Empowerment:</strong> Self-governance through Nunavut, Greenland autonomy, Alaska Native corporations, and the Inuit Circumpolar Council
-                        </li>
-                        <li>
-                            <strong>Technology Integration:</strong> GPS navigation supplementing traditional knowledge, social media connecting distant communities, online language learning resources
-                        </li>
-                        <li>
-                            <strong>Economic Development:</strong> Mining partnerships, fisheries management, tourism (with careful cultural protocols), arts collectives and cooperatives
-                        </li>
-                        <li>
-                            <strong>Education Innovation:</strong> Culturally-responsive curricula incorporating traditional knowledge, land-based learning programs, elder-in-residence programs
-                        </li>
-                        <li>
-                            <strong>Climate Research:</strong> Inuit knowledge holders partnering with scientists on Arctic climate research, contributing observations spanning generations
-                        </li>
-                        <li>
-                            <strong>Cultural Revitalization:</strong> Youth learning traditional skills (hunting, sewing, carving), cultural festivals, language immersion initiatives
-                        </li>
-                        <li>
-                            <strong>Healthcare Innovation:</strong> Training community health workers, combining traditional healing with Western medicine, mental health programs addressing historical trauma
-                        </li>
-                    </ul>
-
-                    <h3 class="subsection-title">Cultural Preservation</h3>
-                    <p class="content-text">
-                        Inuit organizations actively work to preserve and transmit cultural knowledge through: documenting elders' traditional knowledge in audio, video, and written formats; establishing cultural centers and museums like the Nunatta Sunakkutaangit Museum in Iqaluit; supporting land-based programs where youth learn traditional skills; developing Inuit-language digital content and apps; protecting harvesting rights through political advocacy; and asserting sovereignty over Arctic territories and resources.
-                    </p>
-
-                    <h3 class="subsection-title">Notable Individuals</h3>
-                    <div class="notable-people-grid">
-                        <div class="notable-person">
-                            <h4>Kenojuak Ashevak</h4>
-                            <p>Renowned graphic artist (1927-2013), member of Order of Canada, her work appeared on Canadian postage stamp</p>
-                        </div>
-                        <div class="notable-person">
-                            <h4>Sheila Watt-Cloutier</h4>
-                            <p>Environmental and human rights advocate, Nobel Peace Prize nominee for work on climate change impacts on Inuit</p>
-                        </div>
-                        <div class="notable-person">
-                            <h4>Tanya Tagaq</h4>
-                            <p>Polaris Prize-winning throat singer blending traditional katajjaq with contemporary music</p>
-                        </div>
-                        <div class="notable-person">
-                            <h4>Natan Obed</h4>
-                            <p>President of Inuit Tapiriit Kanatami, advocate for Inuit rights and Arctic sovereignty</p>
-                        </div>
-                        <div class="notable-person">
-                            <h4>Zebedee Nungak</h4>
-                            <p>Author, activist, and key negotiator of the James Bay and Northern Quebec Agreement</p>
-                        </div>
-                        <div class="notable-person">
-                            <h4>Alethea Arnaquq-Baril</h4>
-                            <p>Filmmaker documenting Inuit perspectives ('Angry Inuk' defending seal hunting)</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Academic References -->
-                <section class="references">
-                    <h3>📚 Academic References & Further Reading</h3>
-                    <ol class="reference-list">
-                        <li>
-                            Nuttall, M., & Callaghan, T. V. (2000). <em>The Arctic: Environment, People, Policy</em>. Amsterdam: Harwood Academic Publishers. ISBN: 978-9057024917
-                        </li>
-                        <li>
-                            Brody, H. (2001). <em>The Other Side of Eden: Hunters, Farmers, and the Shaping of the World</em>. New York: North Point Press. ISBN: 978-0865476592
-                        </li>
-                        <li>
-                            Stern, P. R. (2010). <em>Daily Life of the Inuit</em>. Santa Barbara: Greenwood Press. ISBN: 978-0313363481
-                        </li>
-                        <li>
-                            McGhee, R. (2005). <em>The Last Imaginary Place: A Human History of the Arctic World</em>. Oxford: Oxford University Press. ISBN: 978-0195187199
-                        </li>
-                        <li>
-                            Krupnik, I., & Jolly, D. (2002). "The Earth is Faster Now: Indigenous Observations of Arctic Environmental Change." In <em>The Earth is Faster Now</em> (pp. 1-10). Fairbanks: Arctic Research Consortium of the United States.
-                        </li>
-                        <li>
-                            Kirmayer, L. J., & Valaskakis, G. G. (2009). <em>Healing Traditions: The Mental Health of Aboriginal Peoples in Canada</em>. University of British Columbia Press. ISBN: 978-0774815666
-                        </li>
-                        <li>
-                            Inuit Tapiriit Kanatami. (2025). "Inuit Culture." Retrieved from <a href="https://www.itk.ca/about-inuit/inuit-culture/" target="_blank" rel="noopener">https://www.itk.ca/about-inuit/inuit-culture/</a>
-                        </li>
-                        <li>
-                            Inuit Circumpolar Council. (2025). Retrieved from <a href="https://www.inuitcircumpolar.com" target="_blank" rel="noopener">https://www.inuitcircumpolar.com</a>
-                        </li>
-                    </ol>
                 </section>
             </article>
 
-            <!-- Quick Facts Sidebar -->
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
-
-                <div class="fact-item">
-                    <div class="fact-label">Region</div>
-                    <div class="fact-value">Arctic Circle</div>
-                </div>
-
-                <div class="fact-item">
-                    <div class="fact-label">Countries</div>
-                    <div class="fact-value">Canada, Greenland, USA (Alaska), Russia</div>
-                </div>
-
-                <div class="fact-item">
-                    <div class="fact-label">Population</div>
-                    <div class="fact-value">~180,000</div>
-                </div>
-
-                <div class="fact-item">
-                    <div class="fact-label">Language Family</div>
-                    <div class="fact-value">Eskimo-Aleut</div>
-                </div>
-
-                <div class="fact-item">
-                    <div class="fact-label">Primary Languages</div>
-                    <div class="fact-value">Inuktitut, Inupiaq, Kalaallisut</div>
-                </div>
-
-                <div class="fact-item">
-                    <div class="fact-label">Traditional Dwelling</div>
-                    <div class="fact-value">Igloo, Qarmaq</div>
-                </div>
-
-                <div class="fact-item">
-                    <div class="fact-label">Primary Livelihood</div>
-                    <div class="fact-value">Hunting & Fishing</div>
-                </div>
-
-                <div class="fact-item">
-                    <div class="fact-label">Known For</div>
-                    <div class="fact-value">Arctic survival, igloo construction, throat singing, carvings</div>
-                </div>
+                <div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~180,000</div></div>
+                <div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Inuktitut / Inupiaq</div></div>
+                <div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Eskimo-Aleut</div></div>
+                <div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Igloo / Qarmaq</div></div>
+                <div class="fact-item"><div class="fact-label">Livelihood</div><div class="fact-value">Hunting & Fishing</div></div>
+                <div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Arctic mastery, Igloos</div></div>
+                <div class="fact-item"><div class="fact-label">Art</div><div class="fact-value">Soapstone carving</div></div>
             </aside>
         </div>
-
-        <!-- Related Cultures -->
-        <section class="related-cultures">
-            <h2>🌐 Explore Related Cultures</h2>
-
-            <div class="related-group">
-                <h3>🔗 Linguistically Related Cultures</h3>
-                <div class="culture-cards">
-                    <div class="culture-card">
-                        <div class="culture-card-header">
-                            <div class="culture-card-icon">🦭</div>
-                            <div class="culture-card-title">
-                                <h4>Yup'ik</h4>
-                                <p class="location">Western Alaska and Russian Far East</p>
-                            </div>
-                        </div>
-                        <div class="culture-card-body">
-                            <p>Closely related Eskimo-Aleut speaking peoples sharing similar Arctic adaptations, though with distinct cultural practices and territories.</p>
-                            <span class="relationship-badge">Linguistically Related</span>
-                        </div>
-                    </div>
-
-                    <div class="culture-card">
-                        <div class="culture-card-header">
-                            <div class="culture-card-icon">🦦</div>
-                            <div class="culture-card-title">
-                                <h4>Aleut / Unangan</h4>
-                                <p class="location">Aleutian Islands, Alaska</p>
-                            </div>
-                        </div>
-                        <div class="culture-card-body">
-                            <p>Related indigenous Arctic peoples of the Eskimo-Aleut language family with maritime hunting traditions.</p>
-                            <span class="relationship-badge">Linguistic Cousins</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="related-group">
-                <h3>🗺️ Regional Neighbors</h3>
-                <div class="culture-cards">
-                    <div class="culture-card">
-                        <div class="culture-card-header">
-                            <div class="culture-card-icon">🦌</div>
-                            <div class="culture-card-title">
-                                <h4>Sámi</h4>
-                                <p class="location">Northern Scandinavia and Russia</p>
-                            </div>
-                        </div>
-                        <div class="culture-card-body">
-                            <p>Indigenous Arctic peoples of Northern Europe with reindeer herding traditions and similar challenges from climate change and colonization.</p>
-                            <span class="relationship-badge">Circumpolar Neighbors</span>
-                        </div>
-                    </div>
-
-                    <div class="culture-card">
-                        <div class="culture-card-header">
-                            <div class="culture-card-icon">🐺</div>
-                            <div class="culture-card-title">
-                                <h4>Cree</h4>
-                                <p class="location">Sub-Arctic Canada</p>
-                            </div>
-                        </div>
-                        <div class="culture-card-body">
-                            <p>Neighbors to the south in the boreal forest and sub-Arctic regions, with overlapping territories and some shared colonial experiences in Canada.</p>
-                            <span class="relationship-badge">Regional Neighbors</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="related-group">
-                <h3>🌏 Contrasting Environments</h3>
-                <div class="culture-cards">
-                    <div class="culture-card">
-                        <div class="culture-card-header">
-                            <div class="culture-card-icon">🦁</div>
-                            <div class="culture-card-title">
-                                <h4>Maasai</h4>
-                                <p class="location">East Africa (Kenya, Tanzania)</p>
-                            </div>
-                        </div>
-                        <div class="culture-card-body">
-                            <p>Pastoralist peoples with strong cultural identity and traditional knowledge, but adapted to savanna rather than Arctic environments.</p>
-                            <span class="relationship-badge">Different Environment</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">↑</div>
+    <div class="ice-border"></div>
 
     <script>
-        // Back to Top functionality
-        const backToTop = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Track visit for learning features
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'inuit',
                 name: 'Inuit',
                 region: 'arctic',
-                continent: 'americas'
+                continent: 'arctic'
             });
         }
     </script>
