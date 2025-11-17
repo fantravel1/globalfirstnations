@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emberá People: Rainforest Artists of Panama & Colombia | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐆</text></svg>">
+    <style>
+        :root { --jungle-green: #1B5E20; --jagua-black: #212121; --river-blue: #0277BD; --white: #ecf0f1; --bark-brown: #4E342E; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--jungle-green) 0%, var(--bark-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--jungle-green), var(--jagua-black)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(27,94,32,0.5); border: 5px solid var(--river-blue); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--jungle-green); }
+        nav a { color: var(--jungle-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--jungle-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--jungle-green); border-right: 3px solid var(--river-blue); }
+        h2 { color: var(--jungle-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--jungle-green); }
+        h3 { color: var(--jagua-black); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--jungle-green), var(--jagua-black)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--river-blue); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--river-blue), var(--jungle-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--jungle-green), var(--jagua-black)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--jungle-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--jungle-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--jungle-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐆</span>
+            <h1>The Emberá People</h1>
+            <p class="tagline">Rainforest Guardians - Masters of Jagua Body Art - River People of Darién</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Emberá?</h2>
+            <p>The Emberá (also spelled Embera) are an indigenous people inhabiting the rainforests of eastern Panama and northwestern Colombia, particularly the Darién Gap region—one of the world's most biodiverse and remote rainforest areas. With a population of approximately 33,000 in Panama and 70,000+ in Colombia, the Emberá maintain semi-nomadic traditions centered around rivers, which serve as their highways through dense jungle. The Emberá are renowned for their distinctive <strong>jagua body painting</strong>—intricate temporary tattoos created from the dark blue-black juice of the jagua fruit (Genipa americana)—and their exceptional <strong>basket weaving</strong>, which UNESCO has recognized as intangible cultural heritage. They live in harmony with the rainforest, possessing vast botanical and ecological knowledge.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~103,000</span><span>Current population</span></div>
+                <div class="stat-card"><span class="stat-number">Emberá</span><span>Chocó language family</span></div>
+                <div class="stat-card"><span class="stat-number">Darién Gap</span><span>Traditional homeland</span></div>
+                <div class="stat-card"><span class="stat-number">2 Nations</span><span>Panama/Colombia</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Living Body Art:</strong> Emberá jagua body painting uses the fruit of Genipa americana, which turns dark blue-black when oxidized on skin and lasts 2-3 weeks! This same plant juice inspired modern "jagua tattoos" sold worldwide, though traditional designs carry deep cultural and spiritual meanings.
+            </div>
+
+            <h3>Rainforest Adaptation & River Life</h3>
+            <p>The Emberá have adapted remarkably to rainforest life, building <strong>tambos</strong>—elevated houses on stilts made from palm wood and thatched with palm fronds—that protect from flooding, animals, and insects. These open-air structures stay cool in tropical heat and can be quickly rebuilt when communities migrate along rivers. The Emberá are expert navigators of the region's complex river systems, using <strong>piraguas</strong> (dugout canoes) carved from single tree trunks to travel, fish, and transport goods.</p>
+
+            <p>Traditional Emberá subsistence combines horticulture (plantains, yuca, bananas), fishing, hunting, and gathering. They possess encyclopedic knowledge of rainforest plants used for medicine, construction, food, and spiritual purposes. This botanical expertise makes them sought-after guides and collaborators for ethnobotanists and pharmaceutical researchers.</p>
+
+            <h3>Jagua Body Art & Aesthetics</h3>
+            <p>The Emberá are famous for <strong>jagua body painting</strong> (píntaderas), an art form passed down through generations. Artists, usually women, paint elaborate geometric and zoomorphic designs on faces, torsos, arms, and legs using fine sticks or their fingers. Designs traditionally represented clan affiliation, life events, protection from spirits, and beauty. The dark patterns contrast dramatically against skin, creating stunning temporary body art.</p>
+
+            <p>Traditional Emberá dress is minimal in hot, humid climates: men historically wore loincloths while women wore wraparound skirts (parumas) woven from tree bark or plant fibers. Beadwork necklaces, armbands, and anklets in bright colors provide additional decoration. For ceremonies and tourist encounters, elaborate beadwork and jagua designs showcase Emberá artistic traditions.</p>
+
+            <h3>Basket Weaving Excellence</h3>
+            <p>Emberá <strong>basket weaving</strong> (cestas) represents one of Central America's finest fiber arts. Women weave tight, waterproof baskets from <strong>chunga palm</strong> (Astrocaryum standleyanum) and other fibers, dyed with natural plant colors to create intricate geometric patterns. These baskets traditionally stored food, carried babies, and held sacred objects. Today, they're also important income sources, with museum-quality pieces commanding high prices in international markets.</p>
+
+            <h3>Spiritual Beliefs & Jaibanás</h3>
+            <p>Emberá spirituality centers on <strong>jaibanás</strong>—shamans who mediate between human and spirit worlds, heal illnesses, conduct ceremonies, and protect communities from malevolent forces. Jaibanás use medicinal plants, chanting, and rituals to diagnose and treat both physical and spiritual ailments. They possess deep knowledge of psychoactive plants used in healing and divination.</p>
+
+            <p>The Emberá believe in numerous spirits inhabiting the forest, rivers, and mountains. Maintaining proper relationships with these beings through respect, offerings, and taboos ensures successful hunting, fishing, and community wellbeing. Certain animals like jaguars and harpy eagles hold special spiritual significance.</p>
+
+            <h3>Music & Oral Traditions</h3>
+            <p>Emberá culture includes rich musical traditions featuring drums, flutes, and maracas. Songs transmit history, teach moral lessons, and accompany ceremonies. Oral storytelling preserves creation myths, legendary heroes, and cultural knowledge across generations, with elders serving as living libraries of traditional wisdom.</p>
+
+            <h3>Modern Challenges & Cultural Tourism</h3>
+            <p>Today's Emberá face multiple challenges: deforestation, mining, drug trafficking routes through their territory, forced displacement by armed groups in Colombia, and pressure from the Panama Canal expansion. Many communities have adopted <strong>cultural tourism</strong>, inviting visitors to their villages to experience traditional dances, jagua painting, crafts, and rainforest knowledge. This provides income while sharing culture, though it also raises questions about commodification and authenticity.</p>
+
+            <p>Emberá communities increasingly organize for land rights, environmental protection, and political representation. In Panama, the <strong>Comarca Emberá-Wounaan</strong> (established 1983) provides semi-autonomous territory, though resource conflicts continue. Colombian Emberá advocate for territorial rights and protection from violence. Language preservation programs, cultural schools, and youth initiatives work to maintain Emberá identity amid globalization pressures.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Embera_jagua_body_painting.jpg/800px-Embera_jagua_body_painting.jpg" alt="Emberá jagua body art" loading="lazy">
+                    <div class="image-caption">Traditional Emberá jagua body painting with intricate designs</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Embera_village_stilts.jpg/800px-Embera_village_stilts.jpg" alt="Emberá village on stilts" loading="lazy">
+                    <div class="image-caption">Traditional Emberá tambo houses on stilts along river</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Embera_basket_weaving.jpg/800px-Embera_basket_weaving.jpg" alt="Emberá basket with geometric patterns" loading="lazy">
+                    <div class="image-caption">Intricately woven Emberá basket with natural dye patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Embera_woman_beadwork.jpg/800px-Embera_woman_beadwork.jpg" alt="Emberá woman with beadwork" loading="lazy">
+                    <div class="image-caption">Emberá woman wearing traditional colorful beadwork jewelry</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Embera_dugout_canoe.jpg/800px-Embera_dugout_canoe.jpg" alt="Emberá piragua canoe" loading="lazy">
+                    <div class="image-caption">Traditional Emberá piragua (dugout canoe) on jungle river</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Embera_traditional_dance.jpg/800px-Embera_traditional_dance.jpg" alt="Emberá cultural dance" loading="lazy">
+                    <div class="image-caption">Emberá performing traditional dance with music and costumes</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/kuna.html" class="related-card">
+                    <div class="related-icon">🌴</div>
+                    <h3>Kuna (Guna)</h3>
+                    <p class="related-location">Panama/Colombia</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Indigenous Panamanian people with autonomous territory and textile traditions.</p>
+                </a>
+                <a href="/peoples/wounaan.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Wounaan</h3>
+                    <p class="related-location">Panama/Colombia</p>
+                    <span class="relationship-badge similar">Close Relatives</span>
+                    <p class="related-description">Linguistically and culturally related people sharing Darién territory.</p>
+                </a>
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🌳</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Amazon</p>
+                    <span class="relationship-badge similar">Rainforest Culture</span>
+                    <p class="related-description">South American rainforest people with similar ecological adaptation.</p>
+                </a>
+                <a href="/peoples/kayapo.html" class="related-card">
+                    <div class="related-icon">🦜</div>
+                    <h3>Kayapó</h3>
+                    <p class="related-location">Brazilian Amazon</p>
+                    <span class="relationship-badge similar">Body Art Tradition</span>
+                    <p class="related-description">Amazon people renowned for body painting and environmental activism.</p>
+                </a>
+                <a href="/peoples/bribri.html" class="related-card">
+                    <div class="related-icon">🍫</div>
+                    <h3>Bribri</h3>
+                    <p class="related-location">Costa Rica</p>
+                    <span class="relationship-badge regional">Central American Culture</span>
+                    <p class="related-description">Costa Rican indigenous people with rainforest traditions.</p>
+                </a>
+                <a href="/peoples/shipibo-konibo.html" class="related-card">
+                    <div class="related-icon">🌀</div>
+                    <h3>Shipibo-Konibo</h3>
+                    <p class="related-location">Peruvian Amazon</p>
+                    <span class="relationship-badge similar">Amazonian Art Tradition</span>
+                    <p class="related-description">Peruvian rainforest people with distinctive geometric art patterns.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Kane, Stephanie. (1994). <em>The Phantom Gringo Boat: Shamanic Discourse and Development in Panama</em>. Smithsonian Institution Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Torres de Araúz, Reina. (1966). <em>Estudio Etnológico e Histórico de la Cultura Chocó</em>. Centro de Investigaciones Antropológicas.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Vasco Uribe, Luis Guillermo. (1985). <em>Jaibanás: Los Verdaderos Hombres</em>. Biblioteca Banco Popular.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Isacsson, Sven-Erik. (1993). Transformations of Eternity: On Man and Cosmos in Emberá Thought. <em>Acta Universitatis Gothoburgensis</em>.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Stipeck, Cathy, & Carmichael, Elizabeth. (2001). <em>The Art of Being Kuna: Layers of Meaning Among the Kuna of Panama</em>. British Museum Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Herlihy, Peter H. (2003). Participatory Research Mapping of Indigenous Lands in Darién, Panama. <em>Human Organization</em>, 62(4), 315-331.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Pinto García, Constanza. (2008). <em>Emberá: Territorios, Movilidad y Resistencia</em>. Editorial Universidad del Rosario.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Rubenstein, Steven Lee. (2001). Colonialism, the Shuar Federation, and the Ecuadorian State. <em>Environment and Planning D: Society and Space</em>, 19(3), 263-293.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Embera_jagua_body_painting.jpg/800px-Embera_jagua_body_painting.jpg", caption: "Traditional Emberá jagua body painting with intricate designs" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Embera_village_stilts.jpg/800px-Embera_village_stilts.jpg", caption: "Traditional Emberá tambo houses on stilts along river" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Embera_basket_weaving.jpg/800px-Embera_basket_weaving.jpg", caption: "Intricately woven Emberá basket with natural dye patterns" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Embera_woman_beadwork.jpg/800px-Embera_woman_beadwork.jpg", caption: "Emberá woman wearing traditional colorful beadwork jewelry" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Embera_dugout_canoe.jpg/800px-Embera_dugout_canoe.jpg", caption: "Traditional Emberá piragua (dugout canoe) on jungle river" },
+            { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Embera_traditional_dance.jpg/800px-Embera_traditional_dance.jpg", caption: "Emberá performing traditional dance with music and costumes" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>
