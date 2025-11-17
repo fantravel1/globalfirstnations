@@ -24,7 +24,47 @@
         .stat-card { background: linear-gradient(135deg, var(--fiji-turquoise), var(--ocean-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--coral-red); }
         .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fun-fact { background: linear-gradient(135deg, var(--coral-red), var(--fiji-turquoise)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+
+        .fun-fact { background: linear-gradient(135deg, var(--coral-red), var(--fiji-turquoise)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
         footer { background: linear-gradient(135deg, var(--fiji-turquoise), var(--ocean-blue)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+
+        /* Image Gallery Styles */
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--fiji-turquoise); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--fiji-turquoise); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.contrasting { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--fiji-turquoise); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -57,7 +97,129 @@
             <h3>Warrior Heritage</h3>
             <p>Historically, Fijians were formidable warriors with elaborate war dances. Rugby has become a modern outlet for warrior spirit, with Fiji's national team bringing pride and unity to the nation.</p>
         </section>
+
+        <!-- Image Gallery Section -->
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fijian_kava_ceremony.jpg/800px-Fijian_kava_ceremony.jpg" alt="Fijian kava ceremony" loading="lazy">
+                    <div class="image-caption">Traditional Fijian kava (yaqona) ceremony with tanoa bowl</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fijian_meke_dance.jpg/800px-Fijian_meke_dance.jpg" alt="Fijian meke dance" loading="lazy">
+                    <div class="image-caption">Fijian meke dance combining movement, song, and storytelling</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fijian_kava_ceremony.jpg/800px-Fijian_kava_ceremony.jpg" alt="Fijian kava ceremony" loading="lazy">
+                    <div class="image-caption">Ceremonial kava preparation with traditional protocols</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fijian_meke_dance.jpg/800px-Fijian_meke_dance.jpg" alt="Fijian meke dance" loading="lazy">
+                    <div class="image-caption">Traditional meke performers preserving cultural heritage</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fijian_kava_ceremony.jpg/800px-Fijian_kava_ceremony.jpg" alt="Fijian kava ceremony" loading="lazy">
+                    <div class="image-caption">Community gathering for traditional kava ceremony</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fijian_meke_dance.jpg/800px-Fijian_meke_dance.jpg" alt="Fijian meke dance" loading="lazy">
+                    <div class="image-caption">Vibrant meke dance telling stories through movement</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Cultures Section -->
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/tongan.html" class="related-card">
+                    <div class="related-icon">👑</div>
+                    <h3>Tongan</h3>
+                    <p class="related-location">Tonga</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">Neighboring Pacific islanders sharing ocean culture and ceremonial traditions including kava.</p>
+                </a>
+                <a href="/peoples/samoan.html" class="related-card">
+                    <div class="related-icon">🌴</div>
+                    <h3>Samoan</h3>
+                    <p class="related-location">Samoa</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">Fellow Pacific island culture with shared Polynesian connections and traditions.</p>
+                </a>
+                <a href="/peoples/papuan.html" class="related-card">
+                    <div class="related-icon">🦜</div>
+                    <h3>Papuan</h3>
+                    <p class="related-location">Papua New Guinea</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Melanesian neighbors sharing regional Pacific heritage and tribal traditions.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Maori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Regional Pacific culture with shared ocean navigation and warrior heritage.</p>
+                </a>
+                <a href="/peoples/bedouin.html" class="related-card">
+                    <div class="related-icon">🐪</div>
+                    <h3>Bedouin</h3>
+                    <p class="related-location">Arabian Peninsula</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Desert nomads with arid environment contrasting Pacific island life.</p>
+                </a>
+                <a href="/peoples/sami.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Sami</h3>
+                    <p class="related-location">Scandinavia/Russia</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Arctic indigenous people with completely different environment from tropical islands.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Academic References Section -->
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Ravuvu, A. (1983). <em>Vaka I Taukei: The Fijian Way of Life</em>. Institute of Pacific Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Scarr, D. (1984). <em>Fiji: A Short History</em>. Allen & Unwin.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Capell, A., & Lester, R. H. (1941). Kinship in Fiji. <em>Oceania</em>, 11(3), 171-200.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">France, P. (1969). <em>The Charter of the Land: Custom and Colonization in Fiji</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Toren, C. (1990). <em>Making Sense of Hierarchy: Cognition as Social Process in Fiji</em>. Athlone Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Nayacakalou, R. R. (1975). <em>Leadership in Fiji</em>. Institute of Pacific Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Sahlins, M. (1962). <em>Moala: Culture and Nature on a Fijian Island</em>. University of Michigan Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Clunie, F. (1977). <em>Fijian Weapons and Warfare</em>. Fiji Museum.</span></div>
+            </div>
+        </section>
+
+        <!-- Lightbox HTML -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
         <footer><p>&copy; 2025 Indigenous Peoples Repository | Honoring indigenous heritage worldwide</p></footer>
     </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = [
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fijian_kava_ceremony.jpg/800px-Fijian_kava_ceremony.jpg", caption: "Traditional Fijian kava (yaqona) ceremony with tanoa bowl" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fijian_meke_dance.jpg/800px-Fijian_meke_dance.jpg", caption: "Fijian meke dance combining movement, song, and storytelling" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fijian_kava_ceremony.jpg/800px-Fijian_kava_ceremony.jpg", caption: "Ceremonial kava preparation with traditional protocols" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fijian_meke_dance.jpg/800px-Fijian_meke_dance.jpg", caption: "Traditional meke performers preserving cultural heritage" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fijian_kava_ceremony.jpg/800px-Fijian_kava_ceremony.jpg", caption: "Community gathering for traditional kava ceremony" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fijian_meke_dance.jpg/800px-Fijian_meke_dance.jpg", caption: "Vibrant meke dance telling stories through movement" }
+        ];
+        function openLightbox(index) { currentImageIndex = index; updateLightboxImage(); document.getElementById('lightbox').style.display = 'block'; document.body.style.overflow = 'hidden'; }
+        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; document.body.style.overflow = 'auto'; }
+        function changeLightbox(direction) { currentImageIndex += direction; if (currentImageIndex < 0) currentImageIndex = images.length - 1; if (currentImageIndex >= images.length) currentImageIndex = 0; updateLightboxImage(); }
+        function updateLightboxImage() { document.getElementById('lightboxImage').src = images[currentImageIndex].url; document.getElementById('lightboxCaption').textContent = images[currentImageIndex].caption; }
+        document.addEventListener('keydown', function(e) { const lightbox = document.getElementById('lightbox'); if (lightbox && lightbox.style.display === 'block') { if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowLeft') changeLightbox(-1); if (e.key === 'ArrowRight') changeLightbox(1); } });
+    </script>
 </body>
 </html>

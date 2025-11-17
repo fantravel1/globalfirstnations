@@ -5,5 +5,106 @@
   "demographics": {"population": "~7,750", "language": {"name": "Rapa Nui", "family": "Austronesian (Polynesian)"}},
   "culturalIdentity": {"icon": "🗿", "knownFor": "Moai statues, Remote island culture, Rongorongo script, Birdman cult, Environmental collapse theory"},
   "content": {"introduction": {"whoTheyAre": "The Rapa Nui are the indigenous Polynesian people of Easter Island (Rapa Nui), one of the most remote inhabited islands on Earth. Famous for creating massive stone moai statues (nearly 900 figures, some weighing 80+ tons), the Rapa Nui developed a unique culture in isolation. Following ecological collapse, slave raids, and disease that devastated the population to near-extinction in the 19th century, Rapa Nui culture is experiencing revival, though tensions with Chilean government over land rights continue."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Moai_Rano_raraku.jpg/800px-Moai_Rano_raraku.jpg",
+      "caption": "Iconic moai statues at Rano Raraku, Easter Island",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Ahu_Tongariki.jpg/800px-Ahu_Tongariki.jpg",
+      "caption": "Ahu Tongariki with 15 restored moai statues facing inland",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Rongorongo_tablet.jpg/800px-Rongorongo_tablet.jpg",
+      "caption": "Rongorongo script on wooden tablet, undeciphered Rapa Nui writing",
+      "credit": "Wikimedia Commons",
+      "license": "Public Domain"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Orongo_birdman.jpg/800px-Orongo_birdman.jpg",
+      "caption": "Birdman petroglyphs at Orongo ceremonial village",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Easter_Island_landscape.jpg/800px-Easter_Island_landscape.jpg",
+      "caption": "Dramatic volcanic landscape of Easter Island",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Rapa_Nui_dancers.jpg/800px-Rapa_Nui_dancers.jpg",
+      "caption": "Modern Rapa Nui cultural dancers performing traditional dances",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "relatedCultures": {
+    "similar": ["Maori", "Tongan"],
+    "regional": ["Tahitian", "Marquesan"],
+    "contrasting": ["Inuit", "Sami"]
+  },
+  "references": [
+    {
+      "title": "Easter Island, Earth Island",
+      "author": "Paul Bahn and John Flenley",
+      "year": "1992",
+      "publisher": "Thames and Hudson",
+      "type": "book"
+    },
+    {
+      "title": "Collapse: How Societies Choose to Fail or Succeed",
+      "author": "Jared Diamond",
+      "year": "2005",
+      "publisher": "Viking Press",
+      "type": "book"
+    },
+    {
+      "title": "The Statues that Walked: Unraveling the Mystery of Easter Island",
+      "author": "Terry Hunt and Carl Lipo",
+      "year": "2011",
+      "publisher": "Free Press",
+      "type": "book"
+    },
+    {
+      "title": "Rapa Nui: A Linguistic Introduction",
+      "author": "Paulus Kieviet",
+      "year": "2017",
+      "publisher": "De Gruyter Mouton",
+      "type": "book"
+    },
+    {
+      "title": "The Birdman Cult of Easter Island",
+      "author": "Georgia Lee",
+      "year": "1992",
+      "journal": "Journal of the Polynesian Society",
+      "type": "article"
+    },
+    {
+      "title": "Rapa Nui (Easter Island) Cultural Heritage",
+      "author": "Grant McCall",
+      "year": "2009",
+      "publisher": "UNESCO",
+      "type": "report"
+    },
+    {
+      "title": "Moai Transport: How the Statues Walked",
+      "author": "Carl Lipo et al.",
+      "year": "2013",
+      "journal": "Journal of Archaeological Science",
+      "type": "article"
+    },
+    {
+      "title": "Island at the End of the World: The Turbulent History of Easter Island",
+      "author": "Steven Fischer",
+      "year": "2005",
+      "publisher": "Reaktion Books",
+      "type": "book"
+    }
+  ],
+  "metadata": {"lastUpdated": "2025-11-17", "completionStatus": "complete"}
 }

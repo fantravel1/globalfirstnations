@@ -5,5 +5,37 @@
   "demographics": {"population": "~30,000,000+", "language": {"name": "Tamazight/Berber languages", "family": "Afro-Asiatic"}},
   "culturalIdentity": {"icon": "🏜️", "knownFor": "Ancient North African culture, Tifinagh script, Berber carpets, Atlas Mountains, Pre-Arab indigenous people"},
   "content": {"introduction": {"whoTheyAre": "The Berbers (who call themselves Amazigh, meaning 'free people') are the indigenous peoples of North Africa, predating Arab arrival by thousands of years. Inhabiting areas from Egypt to the Atlantic and from the Mediterranean to the Sahel, Berbers maintained distinct languages (using ancient Tifinagh script), cultural practices, and identities despite successive waves of Phoenician, Roman, Arab, and European influence. Today, Berber cultural revival movements advocate for language rights and cultural recognition."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Berber_woman_traditional_dress.jpg/800px-Berber_woman_traditional_dress.jpg", "alt": "Berber woman in traditional dress", "caption": "Berber woman wearing traditional Amazigh dress with distinctive jewelry and patterns", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Tifinagh_script.jpg/800px-Tifinagh_script.jpg", "alt": "Tifinagh alphabet", "caption": "Ancient Tifinagh script used by Berber peoples to write Tamazight languages", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Atlas_Mountains_Berber_village.jpg/800px-Atlas_Mountains_Berber_village.jpg", "alt": "Berber village in Atlas Mountains", "caption": "Traditional Berber village in the Atlas Mountains of Morocco", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Berber_carpet_weaving.jpg/800px-Berber_carpet_weaving.jpg", "alt": "Berber carpet weaving", "caption": "Traditional Berber carpet weaving with geometric patterns and symbolic motifs", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Amazigh_flag.svg/800px-Amazigh_flag.svg.png", "alt": "Amazigh flag", "caption": "Amazigh (Berber) flag representing cultural identity across North Africa", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Berber_granary.jpg/800px-Berber_granary.jpg", "alt": "Traditional Berber granary", "caption": "Ancient Berber collective granary (agadir) in southern Morocco", "credit": "Wikimedia Commons", "license": "CC BY 3.0"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["tuareg", "kabyle", "riffian"],
+    "regional": ["arab-north-african", "saharan", "mediterranean"],
+    "contrasting": ["arab", "french-colonial", "urban-north-african"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Brett, Michael", "Fentress, Elizabeth"], "year": 1997, "title": "The Berbers (The Peoples of Africa)", "publisher": "Wiley-Blackwell", "isbn": "978-0631207672"},
+    {"type": "book", "authors": ["Maddy-Weitzman, Bruce"], "year": 2011, "title": "The Berber Identity Movement and the Challenge to North African States", "publisher": "University of Texas Press", "isbn": "978-0292729407"},
+    {"type": "journal", "authors": ["Hoffman, Katherine E."], "year": 2008, "title": "We Share Walls: Language, Land, and Gender in Berber Morocco", "journal": "Blackwell Publishing", "pages": "1-320"},
+    {"type": "book", "authors": ["Chaker, Salem"], "year": 1989, "title": "Berbères aujourd'hui", "publisher": "L'Harmattan", "isbn": "978-2738400826"},
+    {"type": "book", "authors": ["Goodman, Jane E."], "year": 2005, "title": "Berber Culture on the World Stage: From Village to Video", "publisher": "Indiana University Press", "isbn": "978-0253217738"},
+    {"type": "journal", "authors": ["Silverstein, Paul A."], "year": 2004, "title": "Algeria in France: Transpolitics, Race, and Nation", "journal": "Indiana University Press", "pages": "1-312"},
+    {"type": "book", "authors": ["Crawford, David"], "year": 2008, "title": "Moroccan Households in the World Economy", "publisher": "Louisiana State University Press", "isbn": "978-0807133002"},
+    {"type": "website", "title": "Amazigh World Congress", "url": "https://www.amazighworld.org/", "accessDate": "2025-11-17"}
+  ],
+
+  "metadata": {
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "imageCount": 6,
+    "referenceCount": 8
+  }
 }

@@ -17,6 +17,11 @@
     }
   },
   "images": [{"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Bedouin_with_camels.jpg/800px-Bedouin_with_camels.jpg", "alt": "Bedouin man with camels in desert", "caption": "Bedouin herder with dromedary camels in Arabian desert", "credit": "Wikimedia Commons (CC BY-SA 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Bedouin_with_camels.jpg"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Bedouin_tent.jpg/800px-Bedouin_tent.jpg", "alt": "Traditional Bedouin black tent", "caption": "Traditional Bedouin black goat-hair tent (bayt al-sha'ar)", "credit": "Wikimedia Commons (CC BY 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Bedouin_tent.jpg"}],
+  "relatedCultures": {
+    "similar": ["Tuareg", "Berber"],
+    "regional": ["Kalash", "Sherpa"],
+    "contrasting": ["Papuan", "Maori"]
+  },
   "references": [{"type": "book", "authors": ["Lancaster, W.", "Lancaster, F."], "year": 1997, "title": "People, Land and Water in the Arab Middle East", "publisher": "Routledge", "isbn": "978-9057005046"}, {"type": "book", "authors": ["Cole, D. P."], "year": 2003, "title": "Where Have the Bedouin Gone?", "journal": "Anthropological Quarterly", "volume": "76", "issue": "2", "pages": "235-267"}],
   "metadata": {"lastUpdated": "2025-01-15", "completionStatus": "complete", "reviewStatus": "verified", "wordCount": 1534, "imageCount": 2, "referenceCount": 2, "contributors": ["Indigenous Peoples Repository Team"], "version": "1.0.0"}
 }

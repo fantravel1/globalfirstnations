@@ -17,6 +17,11 @@
     }
   },
   "images": [{"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tongan_kava_ceremony.jpg/800px-Tongan_kava_ceremony.jpg", "alt": "Tongan kava ceremony", "caption": "Traditional Tongan kava ceremony with formal protocols", "credit": "Wikimedia Commons (CC BY-SA 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Tongan_kava_ceremony.jpg"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tongan_tapa_cloth.jpg/800px-Tongan_tapa_cloth.jpg", "alt": "Tongan tapa cloth with traditional designs", "caption": "Tongan ngatu (tapa cloth) with intricate geometric patterns", "credit": "Wikimedia Commons (CC BY 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Tongan_tapa_cloth.jpg"}],
+  "relatedCultures": {
+    "similar": ["Fijian", "Samoan"],
+    "regional": ["Maori", "Papuan"],
+    "contrasting": ["Bedouin", "Kalash"]
+  },
   "references": [{"type": "book", "authors": ["Campbell, I. C."], "year": 2015, "title": "Island Kingdom: Tonga Ancient and Modern", "publisher": "Canterbury University Press", "isbn": "978-1927145302"}, {"type": "book", "authors": ["Marcus, G. E."], "year": 1980, "title": "The Nobility and the Chiefly Tradition in the Modern Kingdom of Tonga", "publisher": "Polynesian Society", "isbn": "978-0959741001"}],
   "metadata": {"lastUpdated": "2025-01-15", "completionStatus": "complete", "reviewStatus": "verified", "wordCount": 1534, "imageCount": 2, "referenceCount": 2, "contributors": ["Indigenous Peoples Repository Team"], "version": "1.0.0"}
 }

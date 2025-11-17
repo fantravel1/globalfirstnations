@@ -17,6 +17,11 @@
     }
   },
   "images": [{"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dayak_longhouse.jpg/800px-Dayak_longhouse.jpg", "alt": "Traditional Dayak longhouse", "caption": "Traditional Dayak longhouse in Borneo rainforest", "credit": "Wikimedia Commons (CC BY-SA 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Dayak_longhouse.jpg"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dayak_tattoos.jpg/800px-Dayak_tattoos.jpg", "alt": "Dayak person with traditional tattoos", "caption": "Traditional Dayak tattoos marking status and achievements", "credit": "Wikimedia Commons (CC BY 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Dayak_tattoos.jpg"}],
+  "relatedCultures": {
+    "similar": ["Karen", "Hmong"],
+    "regional": ["Moken", "Iban"],
+    "contrasting": ["Sami", "Bedouin"]
+  },
   "references": [{"type": "book", "authors": ["King, V. T."], "year": 1993, "title": "The Peoples of Borneo", "publisher": "Blackwell", "location": "Oxford", "isbn": "978-0631172109"}, {"type": "book", "authors": ["Sather, C."], "year": 1997, "title": "The Bajau Laut: Adaptation, History and Fate in a Maritime Fishing Society of South-Eastern Sabah", "publisher": "Oxford University Press", "isbn": "978-9835400551"}],
   "metadata": {"lastUpdated": "2025-01-15", "completionStatus": "complete", "reviewStatus": "verified", "wordCount": 1623, "imageCount": 2, "referenceCount": 2, "contributors": ["Indigenous Peoples Repository Team"], "version": "1.0.0"}
 }

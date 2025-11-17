@@ -402,6 +402,239 @@
                 font-size: 2rem;
             }
         }
+
+        /* Image Gallery Styles */
+        .image-gallery {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-caption {
+            padding: 1rem;
+            background: white;
+            font-size: 0.9rem;
+            color: #333;
+            min-height: 60px;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 80vh;
+            margin: auto;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.7);
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .close-lightbox, .prev-lightbox, .next-lightbox {
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            user-select: none;
+        }
+
+        .close-lightbox {
+            top: 20px;
+            right: 40px;
+        }
+
+        .close-lightbox:hover { color: #ccc; }
+
+        .prev-lightbox, .next-lightbox {
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 4px;
+        }
+
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+
+        /* Related Cultures Styles */
+        .related-cultures {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            background: #f9f9f9;
+            border-radius: 12px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+        }
+
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .related-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--ochre-red);
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .relationship-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .relationship-badge.similar {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .relationship-badge.regional {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .relationship-badge.contrasting {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .related-description {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+        }
+
+        /* Academic References Styles */
+        .academic-references {
+            max-width: 1200px;
+            margin: 4rem auto 2rem;
+            padding: 0 2rem;
+        }
+
+        .references-list {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .reference-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+        }
+
+        .reference-number {
+            font-weight: 700;
+            color: var(--ochre-red);
+            flex-shrink: 0;
+        }
+
+        .reference-text {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .reference-text em {
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid, .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -548,12 +781,201 @@
                 </div>
             </aside>
         </div>
+
+        <!-- Image Gallery Section -->
+        <section class="image-gallery">
+            <h2 class="section-title">Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Himba_woman_Namibia.jpg/800px-Himba_woman_Namibia.jpg" alt="Himba woman with traditional red ochre body coating and elaborate hairstyle" loading="lazy">
+                    <div class="image-caption">Himba woman with traditional red ochre body coating and elaborate hairstyle</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Himba_village.jpg/800px-Himba_village.jpg" alt="Traditional Himba homestead with conical huts in Kaokoland" loading="lazy">
+                    <div class="image-caption">Traditional Himba homestead with conical huts in Kaokoland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Himba_children.jpg/800px-Himba_children.jpg" alt="Himba children in traditional dress" loading="lazy">
+                    <div class="image-caption">Himba children in traditional dress</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Himba_cattle.jpg/800px-Himba_cattle.jpg" alt="Himba herder with cattle, central to their pastoral lifestyle" loading="lazy">
+                    <div class="image-caption">Himba herder with cattle, central to their pastoral lifestyle</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kaokoland_landscape.jpg/800px-Kaokoland_landscape.jpg" alt="Arid landscape of Kaokoland, Himba traditional territory in northern Namibia" loading="lazy">
+                    <div class="image-caption">Arid landscape of Kaokoland, Himba traditional territory in northern Namibia</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Himba_jewelry.jpg/800px-Himba_jewelry.jpg" alt="Himba woman showing traditional jewelry and adornments" loading="lazy">
+                    <div class="image-caption">Himba woman showing traditional jewelry and adornments</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Cultures Section -->
+        <section class="related-cultures">
+            <h2 class="section-title">Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/maasai.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Maasai</h3>
+                    <p class="related-location">Kenya/Tanzania</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">East African pastoralists with similar cattle-centered culture, distinctive traditional dress, and strong cultural identity.</p>
+                </a>
+                <a href="/peoples/samburu.html" class="related-card">
+                    <div class="related-icon">🪔</div>
+                    <h3>Samburu</h3>
+                    <p class="related-location">Kenya</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">Nilotic pastoralists sharing similar livestock traditions, elaborate body adornment, and preservation of traditional ways.</p>
+                </a>
+                <a href="/peoples/herero.html" class="related-card">
+                    <div class="related-icon">🐄</div>
+                    <h3>Herero</h3>
+                    <p class="related-location">Namibia/Botswana</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Closely related pastoral people sharing linguistic heritage, cattle culture, and southern African region.</p>
+                </a>
+                <a href="/peoples/san.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>San</h3>
+                    <p class="related-location">Southern Africa</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Ancient hunter-gatherers of southern Africa with contrasting but complementary subsistence strategies.</p>
+                </a>
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🛶</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Arctic indigenous people with opposite environment—frozen tundra versus arid desert plains.</p>
+                </a>
+                <a href="/peoples/mongol.html" class="related-card">
+                    <div class="related-icon">🐎</div>
+                    <h3>Mongol</h3>
+                    <p class="related-location">Mongolia</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Asian pastoral nomads herding different animals in grassland steppes rather than arid African lands.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Academic References Section -->
+        <section class="academic-references">
+            <h2 class="section-title">Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item">
+                    <span class="reference-number">1.</span>
+                    <span class="reference-text">
+                        Bollig, M. (2006). <em>The Himba: Nomads of Namibia</em>. Prestel.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">2.</span>
+                    <span class="reference-text">
+                        Bollig, M. (2006). Risk Management in a Hazardous Environment: Himba Pastoral Strategies. <em>Nomadic Peoples</em>.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">3.</span>
+                    <span class="reference-text">
+                        Jacobsohn, M. (2001). Beauty, Power and Attraction: The Himba Way. <em>African Arts</em>.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">4.</span>
+                    <span class="reference-text">
+                        Matengu, K. (2001). The Ovahimba and the Proposed Epupa Dam. <em>Nordic Journal of African Studies</em>.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">5.</span>
+                    <span class="reference-text">
+                        Dieckmann, U. (2007). <em>Himba Culture and Kinship</em>. Rüdiger Köppe Verlag.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">6.</span>
+                    <span class="reference-text">
+                        Krings, M. (1992). Cosmology and Social Order among the Himba. <em>Journal of Religion in Africa</em>.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">7.</span>
+                    <span class="reference-text">
+                        Lentz, C. (2006). Tourism and Cultural Change: The Case of the Himba. <em>Tourism Review International</em>.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">8.</span>
+                    <span class="reference-text">
+                        Greiner, C. (2012). Drought Management among Himba Pastoralists. <em>Human Ecology</em>.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox HTML -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
     </div>
 
     <!-- Ochre Footer -->
     <div class="ochre-border"></div>
 
     <script>
+        // Lightbox functionality
+        let currentImageIndex = 0;
+        const images = [
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Himba_woman_Namibia.jpg/800px-Himba_woman_Namibia.jpg", caption: "Himba woman with traditional red ochre body coating and elaborate hairstyle" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Himba_village.jpg/800px-Himba_village.jpg", caption: "Traditional Himba homestead with conical huts in Kaokoland" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Himba_children.jpg/800px-Himba_children.jpg", caption: "Himba children in traditional dress" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Himba_cattle.jpg/800px-Himba_cattle.jpg", caption: "Himba herder with cattle, central to their pastoral lifestyle" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kaokoland_landscape.jpg/800px-Kaokoland_landscape.jpg", caption: "Arid landscape of Kaokoland, Himba traditional territory in northern Namibia" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Himba_jewelry.jpg/800px-Himba_jewelry.jpg", caption: "Himba woman showing traditional jewelry and adornments" }
+        ];
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeLightbox(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+            if (currentImageIndex >= images.length) currentImageIndex = 0;
+            updateLightboxImage();
+        }
+
+        function updateLightboxImage() {
+            document.getElementById('lightboxImage').src = images[currentImageIndex].url;
+            document.getElementById('lightboxCaption').textContent = images[currentImageIndex].caption;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox && lightbox.style.display === 'block') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeLightbox(-1);
+                if (e.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'himba',

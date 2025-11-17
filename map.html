@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive World Map | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore 45 indigenous cultures worldwide on an interactive map. Click on any culture marker to learn about their traditions, location, and heritage.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2C5F7C;
+            --primary-teal: #3498db;
+            --accent-gold: #f39c12;
+            --text-dark: #2c3e50;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-teal) 100%);
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-icon {
+            font-size: 3rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 1rem 2rem;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .breadcrumb-nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--primary-teal);
+        }
+
+        .breadcrumb-separator {
+            color: #999;
+        }
+
+        /* Map Container */
+        .map-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .controls {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .controls h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--primary-teal);
+            background: white;
+            color: var(--primary-teal);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            background: var(--primary-teal);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-teal);
+            color: white;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stat-icon {
+            font-size: 1.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+        }
+
+        #map {
+            height: 700px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 3px solid white;
+        }
+
+        /* Legend */
+        .legend {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .legend h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .legend-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .legend-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .legend-icon.africa { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .legend-icon.americas { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .legend-icon.asia { background: linear-gradient(135deg, #f39c12, #d68910); }
+        .legend-icon.oceania { background: linear-gradient(135deg, #1abc9c, #16a085); }
+        .legend-icon.europe { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+
+        .legend-text {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Custom Leaflet Popup */
+        .custom-popup {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .custom-popup .leaflet-popup-content-wrapper {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .popup-content {
+            padding: 0.5rem;
+            min-width: 200px;
+        }
+
+        .popup-icon {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .popup-location {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .popup-link {
+            display: block;
+            background: var(--primary-teal);
+            color: white;
+            text-align: center;
+            padding: 0.6rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .popup-link:hover {
+            background: var(--primary-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            #map {
+                height: 500px;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .legend-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <h1>
+                <span class="header-icon">🗺️</span>
+                Interactive World Map
+            </h1>
+            <p>Explore 45 indigenous cultures across all continents. Click on any marker to learn about their traditions, history, and heritage.</p>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <nav class="breadcrumb-nav">
+            <a href="/">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Interactive Map</span>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="map-container">
+        <!-- Controls -->
+        <div class="controls">
+            <h2>Filter by Region</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-region="all">🌍 All Regions</button>
+                <button class="filter-btn" data-region="africa">🌍 Africa</button>
+                <button class="filter-btn" data-region="americas">🌎 Americas</button>
+                <button class="filter-btn" data-region="asia">🌏 Asia/Pacific</button>
+                <button class="filter-btn" data-region="oceania">🏝️ Oceania</button>
+                <button class="filter-btn" data-region="europe">🏰 Europe</button>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-icon">🗺️</span>
+                    <div>
+                        <div class="stat-label">Total Cultures</div>
+                        <div class="stat-value" id="totalCultures">45</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">📍</span>
+                    <div>
+                        <div class="stat-label">Visible Markers</div>
+                        <div class="stat-value" id="visibleMarkers">45</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div id="map"></div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <h3>Regional Color Guide</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-icon africa">🌍</div>
+                    <span class="legend-text">Africa (12 cultures)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon americas">🌎</div>
+                    <span class="legend-text">Americas (15 cultures)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon asia">🌏</div>
+                    <span class="legend-text">Asia (10 cultures)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon oceania">🏝️</div>
+                    <span class="legend-text">Oceania (5 cultures)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon europe">🏰</div>
+                    <span class="legend-text">Europe (3 cultures)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <script>
+        // Initialize map
+        const map = L.map('map').setView([20, 0], 2);
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 18,
+            minZoom: 2
+        }).addTo(map);
+
+        // Region colors
+        const regionColors = {
+            africa: '#e74c3c',
+            americas: '#3498db',
+            asia: '#f39c12',
+            oceania: '#1abc9c',
+            europe: '#9b59b6'
+        };
+
+        // Culture data with coordinates
+        const cultures = [
+            // Africa
+            { id: 'san', name: 'San', icon: '🏹', region: 'africa', lat: -24.0, lng: 21.0, location: 'Southern Africa' },
+            { id: 'tuareg', name: 'Tuareg', icon: '🏜️', region: 'africa', lat: 18.0, lng: 3.0, location: 'Sahara Desert' },
+            { id: 'himba', name: 'Himba', icon: '🪔', region: 'africa', lat: -19.0, lng: 13.5, location: 'Namibia/Angola' },
+            { id: 'zulu', name: 'Zulu', icon: '🛡️', region: 'africa', lat: -28.5, lng: 30.0, location: 'South Africa' },
+            { id: 'maasai', name: 'Maasai', icon: '🌾', region: 'africa', lat: -2.0, lng: 36.0, location: 'Kenya/Tanzania' },
+            { id: 'dogon', name: 'Dogon', icon: '🏔️', region: 'africa', lat: 14.3, lng: -3.5, location: 'Mali' },
+            { id: 'hadza', name: 'Hadza', icon: '🏹', region: 'africa', lat: -3.8, lng: 35.0, location: 'Tanzania' },
+            { id: 'igbo', name: 'Igbo', icon: '👑', region: 'africa', lat: 6.0, lng: 7.0, location: 'Nigeria' },
+            { id: 'samburu', name: 'Samburu', icon: '🪔', region: 'africa', lat: 1.0, lng: 37.0, location: 'Kenya' },
+            { id: 'wodaabe', name: 'Wodaabe', icon: '🎨', region: 'africa', lat: 13.5, lng: 10.0, location: 'Niger' },
+            { id: 'nuer', name: 'Nuer', icon: '🐄', region: 'africa', lat: 8.5, lng: 31.0, location: 'South Sudan' },
+            { id: 'berber', name: 'Berber', icon: '🏜️', region: 'africa', lat: 31.0, lng: -7.0, location: 'North Africa' },
+
+            // Americas
+            { id: 'navajo', name: 'Navajo', icon: '🏜️', region: 'americas', lat: 36.05, lng: -109.05, location: 'Southwestern USA' },
+            { id: 'cherokee', name: 'Cherokee', icon: '🌿', region: 'americas', lat: 35.5, lng: -83.0, location: 'Southeastern USA' },
+            { id: 'lakota', name: 'Lakota', icon: '🦅', region: 'americas', lat: 44.0, lng: -103.0, location: 'Great Plains, USA' },
+            { id: 'inuit', name: 'Inuit', icon: '🛶', region: 'americas', lat: 70.0, lng: -80.0, location: 'Arctic' },
+            { id: 'quechua', name: 'Quechua', icon: '🏔️', region: 'americas', lat: -13.5, lng: -71.0, location: 'Andes Mountains' },
+            { id: 'mapuche', name: 'Mapuche', icon: '🌋', region: 'americas', lat: -38.0, lng: -71.0, location: 'Chile/Argentina' },
+            { id: 'guarani', name: 'Guaraní', icon: '🌿', region: 'americas', lat: -25.5, lng: -57.0, location: 'Paraguay/Brazil' },
+            { id: 'tlingit', name: 'Tlingit', icon: '🐺', region: 'americas', lat: 57.0, lng: -135.0, location: 'Alaska/Canada' },
+            { id: 'haida', name: 'Haida', icon: '🦅', region: 'americas', lat: 53.0, lng: -132.0, location: 'Haida Gwaii' },
+            { id: 'mixtec', name: 'Mixtec', icon: '🎨', region: 'americas', lat: 17.0, lng: -97.5, location: 'Oaxaca, Mexico' },
+            { id: 'zapotec', name: 'Zapotec', icon: '🏛️', region: 'americas', lat: 17.0, lng: -96.5, location: 'Oaxaca, Mexico' },
+            { id: 'hopi', name: 'Hopi', icon: '🌽', region: 'americas', lat: 35.8, lng: -110.5, location: 'Arizona, USA' },
+            { id: 'yanomami', name: 'Yanomami', icon: '🌴', region: 'americas', lat: 2.0, lng: -64.0, location: 'Amazon Basin' },
+            { id: 'yupik', name: "Yup'ik", icon: '🐟', region: 'americas', lat: 60.0, lng: -163.0, location: 'Alaska/Siberia' },
+            { id: 'rapanui', name: 'Rapa Nui', icon: '🗿', region: 'americas', lat: -27.1, lng: -109.4, location: 'Easter Island' },
+
+            // Asia/Pacific
+            { id: 'ainu', name: 'Ainu', icon: '🐻', region: 'asia', lat: 43.0, lng: 143.0, location: 'Hokkaido, Japan' },
+            { id: 'mongol', name: 'Mongol', icon: '🐎', region: 'asia', lat: 47.0, lng: 105.0, location: 'Mongolia' },
+            { id: 'karen', name: 'Karen', icon: '🌸', region: 'asia', lat: 18.0, lng: 97.5, location: 'Myanmar/Thailand' },
+            { id: 'moken', name: 'Moken', icon: '🌊', region: 'asia', lat: 10.0, lng: 98.0, location: 'Andaman Sea' },
+            { id: 'sherpa', name: 'Sherpa', icon: '🏔️', region: 'asia', lat: 27.8, lng: 86.7, location: 'Nepal' },
+            { id: 'kalash', name: 'Kalash', icon: '🌺', region: 'asia', lat: 35.7, lng: 71.7, location: 'Pakistan' },
+            { id: 'dayak', name: 'Dayak', icon: '🌳', region: 'asia', lat: 0.5, lng: 114.0, location: 'Borneo' },
+            { id: 'bedouin', name: 'Bedouin', icon: '🐪', region: 'asia', lat: 25.0, lng: 45.0, location: 'Arabian Peninsula' },
+            { id: 'hmong', name: 'Hmong', icon: '🌾', region: 'asia', lat: 19.0, lng: 103.0, location: 'Southeast Asia' },
+            { id: 'sami', name: 'Sámi', icon: '🦌', region: 'europe', lat: 68.0, lng: 23.0, location: 'Scandinavia' },
+
+            // Oceania
+            { id: 'maori', name: 'Māori', icon: '🌊', region: 'oceania', lat: -41.0, lng: 174.0, location: 'New Zealand' },
+            { id: 'aboriginal-australian', name: 'Aboriginal Australian', icon: '🪃', region: 'oceania', lat: -25.0, lng: 133.0, location: 'Australia' },
+            { id: 'tongan', name: 'Tongan', icon: '👑', region: 'oceania', lat: -21.2, lng: -175.2, location: 'Tonga' },
+            { id: 'fijian', name: 'Fijian', icon: '🌺', region: 'oceania', lat: -17.7, lng: 178.1, location: 'Fiji' },
+            { id: 'papuan', name: 'Papuan', icon: '🦜', region: 'oceania', lat: -6.3, lng: 144.0, location: 'Papua New Guinea' },
+
+            // Europe
+            { id: 'basque', name: 'Basque', icon: '⚽', region: 'europe', lat: 43.0, lng: -2.0, location: 'Spain/France' },
+            { id: 'nenets', name: 'Nenets', icon: '🦌', region: 'europe', lat: 68.0, lng: 70.0, location: 'Arctic Russia' },
+            { id: 'malagasy', name: 'Malagasy', icon: '🦎', region: 'africa', lat: -19.0, lng: 47.0, location: 'Madagascar' }
+        ];
+
+        // Store all markers
+        let markers = [];
+
+        // Create custom icons
+        function createCustomIcon(icon, color) {
+            return L.divIcon({
+                html: `<div style="background: ${color}; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">${icon}</div>`,
+                className: 'custom-marker',
+                iconSize: [36, 36],
+                iconAnchor: [18, 18],
+                popupAnchor: [0, -18]
+            });
+        }
+
+        // Add markers to map
+        cultures.forEach(culture => {
+            const marker = L.marker([culture.lat, culture.lng], {
+                icon: createCustomIcon(culture.icon, regionColors[culture.region]),
+                culture: culture
+            }).addTo(map);
+
+            // Create popup
+            const popupContent = `
+                <div class="popup-content">
+                    <div class="popup-icon">${culture.icon}</div>
+                    <div class="popup-title">${culture.name}</div>
+                    <div class="popup-location">📍 ${culture.location}</div>
+                    <a href="/peoples/${culture.id}.html" class="popup-link">Explore Culture →</a>
+                </div>
+            `;
+
+            marker.bindPopup(popupContent, {
+                className: 'custom-popup',
+                maxWidth: 250
+            });
+
+            markers.push(marker);
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const region = btn.dataset.region;
+
+                // Update active state
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter markers
+                let visibleCount = 0;
+                markers.forEach(marker => {
+                    const markerCulture = marker.options.culture;
+                    if (region === 'all' || markerCulture.region === region) {
+                        marker.addTo(map);
+                        visibleCount++;
+                    } else {
+                        map.removeLayer(marker);
+                    }
+                });
+
+                // Update stats
+                document.getElementById('visibleMarkers').textContent = visibleCount;
+
+                // Fit bounds to visible markers
+                if (visibleCount > 0) {
+                    const visibleMarkers = markers.filter(m => map.hasLayer(m));
+                    const group = new L.featureGroup(visibleMarkers);
+                    map.fitBounds(group.getBounds().pad(0.1));
+                }
+            });
+        });
+
+        // Track visits
+        if (window.learnerProfile) {
+            window.learnerProfile.recordMapView();
+        }
+    </script>
+</body>
+</html>

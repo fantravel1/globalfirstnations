@@ -358,6 +358,177 @@
             font-style: italic;
         }
 
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(147, 112, 219, 0.3);
+            border: 4px solid var(--sami-red);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(147, 112, 219, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            background: linear-gradient(to bottom, rgba(26, 35, 126, 0.95), rgba(10, 17, 40, 0.95));
+            color: white;
+            padding: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(26, 35, 126, 0.8);
+            margin-top: 1rem;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        /* Related Cultures */
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .culture-card {
+            background: linear-gradient(135deg, #E8F4F8 0%, #D4E9F7 100%);
+            border: 3px solid var(--sami-blue);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 144, 255, 0.2);
+        }
+
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(30, 144, 255, 0.3);
+        }
+
+        .culture-card h4 {
+            color: #1A237E;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .culture-card p {
+            color: #2C3E50;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .culture-card a {
+            display: inline-block;
+            background: var(--sami-red);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .culture-card a:hover {
+            background: var(--aurora-purple);
+        }
+
+        /* References Section */
+        .references-list {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E8E8E8 100%);
+            border: 3px solid var(--sami-blue);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .reference-item {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.6;
+            color: #2C3E50;
+        }
+
+        .reference-item::before {
+            content: '📚';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .reference-item strong {
+            color: #1A237E;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .main-content {
@@ -367,6 +538,14 @@
             .quick-facts {
                 position: static;
                 margin-bottom: 2rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             }
         }
 
@@ -381,6 +560,14 @@
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -439,6 +626,90 @@
 
                     <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
                 </section>
+
+                <!-- Image Gallery Section -->
+                <section class="content-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <div class="image-gallery">
+                        <div class="gallery-item" onclick="openLightbox(0)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Sami_Family_1900.jpg/800px-Sami_Family_1900.jpg" alt="Sami family in traditional dress">
+                            <div class="gallery-caption">Sami family wearing traditional gákti in northern Scandinavia, early 20th century</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(1)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Reindeer_herding_in_Lapland.jpg/800px-Reindeer_herding_in_Lapland.jpg" alt="Sami reindeer herding">
+                            <div class="gallery-caption">Traditional Sami reindeer herding in the Arctic tundra of Sápmi</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(2)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Sami_lavvu.jpg/800px-Sami_lavvu.jpg" alt="Sami lavvu tent">
+                            <div class="gallery-caption">Traditional Sami lavvu (tent) used by reindeer herders in the Arctic wilderness</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(3)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sami_flag.svg/800px-Sami_flag.svg.png" alt="Sami flag">
+                            <div class="gallery-caption">The Sami flag featuring the traditional colors of gákti and representing unity across four nations</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(4)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sami_duodji_handicrafts.jpg/800px-Sami_duodji_handicrafts.jpg" alt="Sami duodji handicrafts">
+                            <div class="gallery-caption">Traditional Sami duodji handicrafts including knife sheaths and decorative items with distinctive patterns</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(5)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Northern_Lights_over_Sapmi.jpg/800px-Northern_Lights_over_Sapmi.jpg" alt="Northern Lights over Sápmi">
+                            <div class="gallery-caption">Aurora Borealis (Northern Lights) over Sápmi, deeply connected to Sami spirituality and culture</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Related Cultures Section -->
+                <section class="content-section">
+                    <h2 class="section-title">Related Cultures</h2>
+                    <div class="related-cultures-grid">
+                        <div class="culture-card">
+                            <h4>Nenets</h4>
+                            <p>Arctic reindeer herders of northern Russia with similar nomadic traditions</p>
+                            <a href="/peoples/nenets.html">Explore</a>
+                        </div>
+                        <div class="culture-card">
+                            <h4>Yupik</h4>
+                            <p>Arctic peoples of Alaska and Siberia sharing similar northern adaptations</p>
+                            <a href="/peoples/yupik.html">Explore</a>
+                        </div>
+                        <div class="culture-card">
+                            <h4>Inuit</h4>
+                            <p>Indigenous Arctic peoples with comparable cultural traditions and challenges</p>
+                            <a href="/peoples/inuit.html">Explore</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Academic References Section -->
+                <section class="content-section">
+                    <h2 class="section-title">Academic References</h2>
+                    <div class="references-list">
+                        <div class="reference-item">
+                            <strong>Lehtola, Veli-Pekka</strong> (2004). <em>The Sámi People: Traditions in Transition</em>. University of Alaska Press. ISBN: 978-1889963341.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Beach, Hugh</strong> (2007). <em>Reindeer Herding and Sami Culture in Northern Scandinavia</em>. Routledge. ISBN: 978-0754639664.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Minde, Henry</strong> (2005). "Assimilation of the Sami - Implementation and Consequences." <em>Acta Borealia</em>, 20(2), pp. 121-146.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Gaski, Harald</strong> (2011). <em>Sami Culture in a New Era: The Norwegian Sami Experience</em>. Davvi Girji. ISBN: 978-8251624626.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Kuokkanen, Rauna</strong> (2007). <em>Reshaping the University: Responsibility, Indigenous Epistemes, and the Logic of the Gift</em>. University of British Columbia Press. pp. 1-312.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Fur, Gunlög</strong> (2006). <em>Colonialism in the Margins: Cultural Encounters in New Sweden and Lapland</em>. Brill. ISBN: 978-9004153387.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Sami Parliament (Sámediggi)</strong>. Available at: https://www.sametinget.no/ (Accessed: 17 November 2025).
+                        </div>
+                        <div class="reference-item">
+                            <strong>Jernsletten, Regnor</strong> (1997). <em>Sami Traditional Terminology: Professional Terms Concerning Salmon, Reindeer and Snow</em>. Davvi Girji. pp. 1-250.
+                        </div>
+                    </div>
+                </section>
             </article>
 
             <aside class="quick-facts">
@@ -458,7 +729,57 @@
     <!-- Gákti Pattern Border -->
     <div class="gakti-border"></div>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
     <script>
+        const images = [
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Sami_Family_1900.jpg/800px-Sami_Family_1900.jpg",
+                caption: "Sami family wearing traditional gákti in northern Scandinavia, early 20th century"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Reindeer_herding_in_Lapland.jpg/800px-Reindeer_herding_in_Lapland.jpg",
+                caption: "Traditional Sami reindeer herding in the Arctic tundra of Sápmi"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Sami_lavvu.jpg/800px-Sami_lavvu.jpg",
+                caption: "Traditional Sami lavvu (tent) used by reindeer herders in the Arctic wilderness"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sami_flag.svg/800px-Sami_flag.svg.png",
+                caption: "The Sami flag featuring the traditional colors of gákti and representing unity across four nations"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sami_duodji_handicrafts.jpg/800px-Sami_duodji_handicrafts.jpg",
+                caption: "Traditional Sami duodji handicrafts including knife sheaths and decorative items with distinctive patterns"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Northern_Lights_over_Sapmi.jpg/800px-Northern_Lights_over_Sapmi.jpg",
+                caption: "Aurora Borealis (Northern Lights) over Sápmi, deeply connected to Sami spirituality and culture"
+            }
+        ];
+
+        function openLightbox(index) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+
+            img.src = images[index].src;
+            caption.textContent = images[index].caption;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'sami',

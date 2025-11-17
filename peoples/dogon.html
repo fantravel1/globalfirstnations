@@ -42,14 +42,1488 @@
         .dama-box h4 { color: var(--mask-red); font-size: 1.6rem; margin-bottom: 1rem; font-weight: 800; }
         .dama-box p { color: #4E342E; font-size: 1.05rem; line-height: 1.7; font-style: italic; }
         @media (max-width: 1024px) { .main-content { grid-template-columns: 1fr; } .quick-facts { position: static; margin-bottom: 2rem; } }
+    
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color, #333);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--primary-color, #333);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
+    
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color, #333);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--primary-color, #333);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="cliff-border"></div>
     <nav class="breadcrumb"><div class="breadcrumb-nav"><a href="/">Home</a><span class="breadcrumb-separator">›</span><a href="/">All Cultures</a><span class="breadcrumb-separator">›</span><a href="/?region=africa">Africa</a><span class="breadcrumb-separator">›</span><span>Dogon</span></div></nav>
     <header class="hero"><div class="hero-content"><div class="culture-icon">⛰️</div><h1>Dogon</h1><p class="hero-subtitle">People of the Cliffs - Complex Cosmology & Masked Traditions</p><div class="hero-meta"><div class="hero-meta-item"><span>👥</span><span>~800,000 people</span></div><div class="hero-meta-item"><span>🗣️</span><span>Dogon languages</span></div><div class="hero-meta-item"><span>📍</span><span>Mali cliffs</span></div></div></div></header>
-    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">Bandiagara Escarpment</h2><p class="content-text">The Dogon are an ethnic group inhabiting the Bandiagara Escarpment in central Mali, one of Africa's most spectacular landscapes. With approximately 800,000 people, the Dogon are renowned for their dramatic villages built into cliff faces, elaborate masked ceremonies, and sophisticated cosmological knowledge. Fleeing Islamization and warfare, the Dogon settled the cliffs around the 14th-15th centuries, building villages accessible only by climbing steep rock faces.</p><div class="dama-box"><h4>The Dama Funeral Ceremony</h4><p>The Dama funeral ceremony represents Dogon cultural and spiritual life's pinnacle. Conducted by the Awa society weeks or years after death, the Dama features hundreds of masked dancers performing for days. Each mask type—animal, human, or spiritual—performs prescribed dances. The sirige mask, reaching 15-20 feet tall, requires exceptional skill to dance with. The ceremony guides the deceased's soul to the ancestor realm!</p></div><p class="content-text"><strong>Cliff Architecture:</strong> Dogon villages feature extraordinary cliff architecture including granaries perched impossibly on cliff faces! These elevated granaries store millet and other crops safe from moisture, pests, and theft. The granaries have distinctive shapes representing male and female forms, reflecting Dogon cosmological concepts of duality and balance.</p><p class="content-text"><em>This page honors the Dogon—whose ancestors built villages into sheer cliffs, whose masked dancers perform spectacular ceremonies for the deceased, and whose complex cosmology describes the creation of the universe.</em></p></section></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~800,000</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Dogon languages</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Niger-Congo</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~600,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Cliff-side villages</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Millet farming</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Cliff dwellings, Masked dances</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Bandiagara Escarpment</div></div></aside></div></div>
+    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">Bandiagara Escarpment</h2><p class="content-text">The Dogon are an ethnic group inhabiting the Bandiagara Escarpment in central Mali, one of Africa's most spectacular landscapes. With approximately 800,000 people, the Dogon are renowned for their dramatic villages built into cliff faces, elaborate masked ceremonies, and sophisticated cosmological knowledge. Fleeing Islamization and warfare, the Dogon settled the cliffs around the 14th-15th centuries, building villages accessible only by climbing steep rock faces.</p><div class="dama-box"><h4>The Dama Funeral Ceremony</h4><p>The Dama funeral ceremony represents Dogon cultural and spiritual life's pinnacle. Conducted by the Awa society weeks or years after death, the Dama features hundreds of masked dancers performing for days. Each mask type—animal, human, or spiritual—performs prescribed dances. The sirige mask, reaching 15-20 feet tall, requires exceptional skill to dance with. The ceremony guides the deceased's soul to the ancestor realm!</p></div><p class="content-text"><strong>Cliff Architecture:</strong> Dogon villages feature extraordinary cliff architecture including granaries perched impossibly on cliff faces! These elevated granaries store millet and other crops safe from moisture, pests, and theft. The granaries have distinctive shapes representing male and female forms, reflecting Dogon cosmological concepts of duality and balance.</p><p class="content-text"><em>This page honors the Dogon—whose ancestors built villages into sheer cliffs, whose masked dancers perform spectacular ceremonies for the deceased, and whose complex cosmology describes the creation of the universe.</em></p></section>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg"
+                             alt="Dogon village built into Bandiagara Escarpment cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg"
+                             alt="Dogon masked dancers performing Dama ceremony"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg"
+                             alt="Dogon granaries perched on cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg"
+                             alt="Traditional Dogon wooden sculpture"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg"
+                             alt="Dogon togu na (men's house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg"
+                             alt="Bandiagara Escarpment landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg"
+                             alt="Dogon village built into Bandiagara Escarpment cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg"
+                             alt="Dogon masked dancers performing Dama ceremony"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg"
+                             alt="Dogon granaries perched on cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg"
+                             alt="Traditional Dogon wooden sculpture"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg"
+                             alt="Dogon togu na (men's house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg"
+                             alt="Bandiagara Escarpment landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg"
+                             alt="Dogon village built into Bandiagara Escarpment cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg"
+                             alt="Dogon masked dancers performing Dama ceremony"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg"
+                             alt="Dogon granaries perched on cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg"
+                             alt="Traditional Dogon wooden sculpture"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg"
+                             alt="Dogon togu na (men's house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg"
+                             alt="Bandiagara Escarpment landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg"
+                             alt="Dogon village built into Bandiagara Escarpment cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg"
+                             alt="Dogon masked dancers performing Dama ceremony"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg"
+                             alt="Dogon granaries perched on cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg"
+                             alt="Traditional Dogon wooden sculpture"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg"
+                             alt="Dogon togu na (men's house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg"
+                             alt="Bandiagara Escarpment landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg"
+                             alt="Dogon village built into Bandiagara Escarpment cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg"
+                             alt="Dogon masked dancers performing Dama ceremony"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg"
+                             alt="Dogon granaries perched on cliffs"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg"
+                             alt="Traditional Dogon wooden sculpture"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg"
+                             alt="Dogon togu na (men's house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg"
+                             alt="Bandiagara Escarpment landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~800,000</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Dogon languages</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Niger-Congo</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~600,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Cliff-side villages</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Millet farming</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Cliff dwellings, Masked dances</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Bandiagara Escarpment</div></div></aside></div></div>
+    
+    <section class="related-cultures-section">
+        <h2 class="section-title">Explore Related Cultures</h2>
+        <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+            Discover connections between cultures through shared traditions, geographic proximity, or contrasting ways of life.
+        </p>
+        <div class="related-cultures-grid">
+
+                    <a href="bambara.html" class="related-card">
+                        <div class="related-icon">🌾</div>
+                        <h4 class="related-name">Bambara</h4>
+                        <p class="related-location">Mali</p>
+                        <span class="related-badge">Similar Culture</span>
+                        <p class="related-description">Neighboring Malian ethnic group sharing some cultural elements, though Bambara are predominantly Muslim farmers in flatter regions</p>
+                    </a>
+                    <a href="senufo.html" class="related-card">
+                        <div class="related-icon">🎭</div>
+                        <h4 class="related-name">Senufo</h4>
+                        <p class="related-location">Mali, Burkina Faso, Côte d'Ivoire</p>
+                        <span class="related-badge">Similar Culture</span>
+                        <p class="related-description">West African people with similar masked ceremonies and wood carving traditions</p>
+                    </a>
+                    <a href="fulani.html" class="related-card">
+                        <div class="related-icon">🐄</div>
+                        <h4 class="related-name">Fulani (Fula)</h4>
+                        <p class="related-location">West Africa</p>
+                        <span class="related-badge">Regional Neighbor</span>
+                        <p class="related-description">Predominantly Muslim pastoralists with whom Dogon have had both trade relationships and recent conflicts over resources</p>
+                    </a>
+                    <a href="bozo.html" class="related-card">
+                        <div class="related-icon">🎣</div>
+                        <h4 class="related-name">Bozo</h4>
+                        <p class="related-location">Mali (Niger River)</p>
+                        <span class="related-badge">Regional Neighbor</span>
+                        <p class="related-description">Malian ethnic group specializing in fishing along Niger River; different subsistence from Dogon farmers</p>
+                    </a>
+                    <a href="maasai.html" class="related-card">
+                        <div class="related-icon">🦁</div>
+                        <h4 class="related-name">Maasai</h4>
+                        <p class="related-location">Kenya, Tanzania</p>
+                        <span class="related-badge">Contrasting Culture</span>
+                        <p class="related-description">East African pastoralists with very different subsistence (cattle herding vs. millet farming) and culture, though both maintain traditional practices</p>
+                    </a>
+        </div>
+    </section>
+
     <div class="cliff-border"></div>
     <script>if (window.learnerProfile) { window.learnerProfile.visitGroup({ id: 'dogon', name: 'Dogon', region: 'africa', continent: 'africa' }); }</script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg","alt":"Dogon village built into Bandiagara Escarpment cliffs","caption":"Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg","alt":"Dogon masked dancers performing Dama ceremony","caption":"Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg","alt":"Dogon granaries perched on cliffs","caption":"Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg","alt":"Traditional Dogon wooden sculpture","caption":"Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg","alt":"Dogon togu na (men's house)","caption":"Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg","alt":"Bandiagara Escarpment landscape","caption":"The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg","alt":"Dogon village built into Bandiagara Escarpment cliffs","caption":"Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg","alt":"Dogon masked dancers performing Dama ceremony","caption":"Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg","alt":"Dogon granaries perched on cliffs","caption":"Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg","alt":"Traditional Dogon wooden sculpture","caption":"Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg","alt":"Dogon togu na (men's house)","caption":"Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg","alt":"Bandiagara Escarpment landscape","caption":"The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg","alt":"Dogon village built into Bandiagara Escarpment cliffs","caption":"Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg","alt":"Dogon masked dancers performing Dama ceremony","caption":"Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg","alt":"Dogon granaries perched on cliffs","caption":"Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg","alt":"Traditional Dogon wooden sculpture","caption":"Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg","alt":"Dogon togu na (men's house)","caption":"Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg","alt":"Bandiagara Escarpment landscape","caption":"The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg","alt":"Dogon village built into Bandiagara Escarpment cliffs","caption":"Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg","alt":"Dogon masked dancers performing Dama ceremony","caption":"Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg","alt":"Dogon granaries perched on cliffs","caption":"Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg","alt":"Traditional Dogon wooden sculpture","caption":"Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg","alt":"Dogon togu na (men's house)","caption":"Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg","alt":"Bandiagara Escarpment landscape","caption":"The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dogon_cliff_village.jpg/800px-Dogon_cliff_village.jpg","alt":"Dogon village built into Bandiagara Escarpment cliffs","caption":"Dogon village dramatically built into Bandiagara Escarpment cliffs, a defensive position adopted centuries ago","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_cliff_village.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Dogon_masked_dancers.jpg/800px-Dogon_masked_dancers.jpg","alt":"Dogon masked dancers performing Dama ceremony","caption":"Dogon masked dancers performing during Dama funeral ceremony, guiding deceased souls to ancestor realm","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_masked_dancers.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dogon_granaries.jpg/800px-Dogon_granaries.jpg","alt":"Dogon granaries perched on cliffs","caption":"Dogon granaries with distinctive shapes perched on steep cliffs, storing millet safe from moisture and pests","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_granaries.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Dogon_sculpture.jpg/800px-Dogon_sculpture.jpg","alt":"Traditional Dogon wooden sculpture","caption":"Dogon wooden sculpture depicting ancestors or mythological figures with characteristic elongated geometric forms","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_sculpture.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Dogon_togu_na.jpg/800px-Dogon_togu_na.jpg","alt":"Dogon togu na (men's house)","caption":"Dogon togu na (men's meeting house) with low roof requiring participants to sit, preventing violence during discussions","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Dogon_togu_na.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Bandiagara_Escarpment.jpg/800px-Bandiagara_Escarpment.jpg","alt":"Bandiagara Escarpment landscape","caption":"The dramatic Bandiagara Escarpment, UNESCO World Heritage Site and home to Dogon people for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Bandiagara_Escarpment.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
 </body>
 </html>

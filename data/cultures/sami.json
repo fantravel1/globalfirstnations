@@ -24,9 +24,38 @@
       "whoTheyAre": "The Sámi are the indigenous people of Sápmi, the cultural region spanning northern Norway, Sweden, Finland, and Russia's Kola Peninsula. Known for their traditional reindeer herding, distinctive joik vocal tradition, and colorful traditional dress (gákti), the Sámi represent Europe's only officially recognized indigenous people. Despite centuries of colonization and forced assimilation policies, Sámi culture persists through language revitalization, cultural organizations, and the Sámi parliaments established in Norway, Sweden, and Finland."
     }
   },
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Sami_Family_1900.jpg/800px-Sami_Family_1900.jpg", "alt": "Sami family in traditional dress", "caption": "Sami family wearing traditional gákti in northern Scandinavia, early 20th century", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Reindeer_herding_in_Lapland.jpg/800px-Reindeer_herding_in_Lapland.jpg", "alt": "Sami reindeer herding", "caption": "Traditional Sami reindeer herding in the Arctic tundra of Sápmi", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Sami_lavvu.jpg/800px-Sami_lavvu.jpg", "alt": "Sami lavvu tent", "caption": "Traditional Sami lavvu (tent) used by reindeer herders in the Arctic wilderness", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sami_flag.svg/800px-Sami_flag.svg.png", "alt": "Sami flag", "caption": "The Sami flag featuring the traditional colors of gákti and representing unity across four nations", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sami_duodji_handicrafts.jpg/800px-Sami_duodji_handicrafts.jpg", "alt": "Sami duodji handicrafts", "caption": "Traditional Sami duodji handicrafts including knife sheaths and decorative items with distinctive patterns", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Northern_Lights_over_Sapmi.jpg/800px-Northern_Lights_over_Sapmi.jpg", "alt": "Northern Lights over Sápmi", "caption": "Aurora Borealis (Northern Lights) over Sápmi, deeply connected to Sami spirituality and culture", "credit": "Wikimedia Commons", "license": "CC BY 2.0"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["nenets", "yupik", "evenki"],
+    "regional": ["norwegian", "swedish", "finnish"],
+    "contrasting": ["mediterranean", "temperate-european", "urban-scandinavian"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Lehtola, Veli-Pekka"], "year": 2004, "title": "The Sámi People: Traditions in Transition", "publisher": "University of Alaska Press", "isbn": "978-1889963341"},
+    {"type": "book", "authors": ["Beach, Hugh"], "year": 2007, "title": "Reindeer Herding and Sami Culture in Northern Scandinavia", "publisher": "Routledge", "isbn": "978-0754639664"},
+    {"type": "journal", "authors": ["Minde, Henry"], "year": 2005, "title": "Assimilation of the Sami - Implementation and Consequences", "journal": "Acta Borealia", "volume": "20", "issue": "2", "pages": "121-146"},
+    {"type": "book", "authors": ["Gaski, Harald"], "year": 2011, "title": "Sami Culture in a New Era: The Norwegian Sami Experience", "publisher": "Davvi Girji", "isbn": "978-8251624626"},
+    {"type": "journal", "authors": ["Kuokkanen, Rauna"], "year": 2007, "title": "Reshaping the University: Responsibility, Indigenous Epistemes, and the Logic of the Gift", "journal": "University of British Columbia Press", "pages": "1-312"},
+    {"type": "book", "authors": ["Fur, Gunlög"], "year": 2006, "title": "Colonialism in the Margins: Cultural Encounters in New Sweden and Lapland", "publisher": "Brill", "isbn": "978-9004153387"},
+    {"type": "website", "title": "Sami Parliament (Sámediggi)", "url": "https://www.sametinget.no/", "accessDate": "2025-11-17"},
+    {"type": "journal", "authors": ["Jernsletten, Regnor"], "year": 1997, "title": "Sami Traditional Terminology: Professional Terms Concerning Salmon, Reindeer and Snow", "journal": "Davvi Girji", "pages": "1-250"}
+  ],
+
   "metadata": {
-    "lastUpdated": "2025-01-16",
-    "completionStatus": "core",
-    "wordCount": 800
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "wordCount": 800,
+    "imageCount": 6,
+    "referenceCount": 8
   }
 }

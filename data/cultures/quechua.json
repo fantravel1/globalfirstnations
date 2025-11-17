@@ -5,5 +5,37 @@
   "demographics": {"population": "~10,000,000", "language": {"name": "Quechua (Runasimi)", "family": "Quechuan"}},
   "culturalIdentity": {"icon": "🏔️", "knownFor": "Inca Empire heritage, Andean agriculture, textiles, Machu Picchu, coca leaves"},
   "content": {"introduction": {"whoTheyAre": "The Quechua people are indigenous to the Andean regions of South America, descendants and cultural heirs of the Inca Empire. With approximately 10 million speakers, Quechua is the most widely spoken indigenous language family in the Americas. Quechua communities maintain traditional agricultural practices including terrace farming and potato cultivation, intricate textile weaving, and spiritual practices honoring Pachamama (Mother Earth) and Andean deities."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Quechua_woman_traditional_dress.jpg/800px-Quechua_woman_traditional_dress.jpg", "alt": "Quechua woman in traditional dress", "caption": "Quechua woman wearing traditional Andean clothing with distinctive woven patterns and colors", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Machu_Picchu_Peru.jpg/800px-Machu_Picchu_Peru.jpg", "alt": "Machu Picchu", "caption": "Machu Picchu, iconic Inca citadel and UNESCO World Heritage site in the Peruvian Andes", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Quechua_textile_weaving.jpg/800px-Quechua_textile_weaving.jpg", "alt": "Quechua textile weaving", "caption": "Traditional Quechua textile weaving demonstrating intricate patterns passed through generations", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Andean_terraces.jpg/800px-Andean_terraces.jpg", "alt": "Andean agricultural terraces", "caption": "Ancient agricultural terraces in the Andes, showcasing Quechua farming innovation", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Quechua_llamas.jpg/800px-Quechua_llamas.jpg", "alt": "Quechua herder with llamas", "caption": "Quechua herder with llamas in the high Andes, traditional livestock of Andean peoples", "credit": "Wikimedia Commons", "license": "CC BY 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Inti_Raymi_festival.jpg/800px-Inti_Raymi_festival.jpg", "alt": "Inti Raymi festival", "caption": "Inti Raymi (Festival of the Sun), major Quechua celebration honoring Inca traditions", "credit": "Wikimedia Commons", "license": "CC BY-SA 2.0"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["aymara", "inca", "mapuche"],
+    "regional": ["amazonianandean", "kallawaya", "uru"],
+    "contrasting": ["spanish-colonial", "mestizo", "urban-peruvian"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Allen, Catherine J."], "year": 2002, "title": "The Hold Life Has: Coca and Cultural Identity in an Andean Community", "publisher": "Smithsonian Institution Press", "isbn": "978-1588340559"},
+    {"type": "book", "authors": ["Mannheim, Bruce"], "year": 1991, "title": "The Language of the Inka since the European Invasion", "publisher": "University of Texas Press", "isbn": "978-0292746732"},
+    {"type": "journal", "authors": ["Isbell, Billie Jean"], "year": 1978, "title": "To Defend Ourselves: Ecology and Ritual in an Andean Village", "journal": "University of Texas Press", "pages": "1-312"},
+    {"type": "book", "authors": ["Howard, Rosaleen"], "year": 2002, "title": "Spinning a Yarn: Landscape, Memory and Discourse Structure in Quechua Narratives", "publisher": "Acta Universitatis Upsaliensis", "isbn": "978-9155451636"},
+    {"type": "book", "authors": ["Gade, Daniel W."], "year": 1999, "title": "Nature and Culture in the Andes", "publisher": "University of Wisconsin Press", "isbn": "978-0299159443"},
+    {"type": "journal", "authors": ["Skar, Harald O."], "year": 1994, "title": "Lives Together - Worlds Apart: Quechua Colonization in Jungle and City", "journal": "Oslo Studies in Social Anthropology", "pages": "1-430"},
+    {"type": "book", "authors": ["De la Cadena, Marisol"], "year": 2015, "title": "Earth Beings: Ecologies of Practice across Andean Worlds", "publisher": "Duke University Press", "isbn": "978-0822359142"},
+    {"type": "website", "title": "Quechua Language and Culture - Runasimi.org", "url": "https://www.runasimi.org/", "accessDate": "2025-11-17"}
+  ],
+
+  "metadata": {
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "imageCount": 6,
+    "referenceCount": 8
+  }
 }

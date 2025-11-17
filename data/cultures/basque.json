@@ -5,5 +5,106 @@
   "demographics": {"population": "~3,000,000", "language": {"name": "Euskara (Basque)", "family": "Language isolate"}},
   "culturalIdentity": {"icon": "⚽", "knownFor": "Unique language isolate, Ancient culture, Pelota sport, Strong regional identity, Culinary traditions"},
   "content": {"introduction": {"whoTheyAre": "The Basque people are an indigenous ethnic group inhabiting the Basque Country region straddling northern Spain and southwestern France. Speaking Euskara, a language unrelated to any other known language (predating Indo-European arrival in Europe), the Basques represent one of Europe's oldest cultures. Known for strong cultural identity, distinctive traditions including pelota (ball game), and world-renowned cuisine, Basques have maintained cultural continuity despite centuries of external pressures."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Basque_dancers.jpg/800px-Basque_dancers.jpg",
+      "caption": "Traditional Basque folk dancers performing at a festival",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pelota_vasca.jpg/800px-Pelota_vasca.jpg",
+      "caption": "Pelota players in traditional Basque ball game",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Basque_farmhouse.jpg/800px-Basque_farmhouse.jpg",
+      "caption": "Traditional Basque baserri (farmhouse) in the countryside",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Euskal_Herria_lauburu.svg/800px-Euskal_Herria_lauburu.svg.png",
+      "caption": "Lauburu, the traditional Basque symbol representing four heads",
+      "credit": "Wikimedia Commons",
+      "license": "Public Domain"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Basque_txalaparta.jpg/800px-Basque_txalaparta.jpg",
+      "caption": "Musicians playing the txalaparta, traditional Basque percussion instrument",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gernika_market.jpg/800px-Gernika_market.jpg",
+      "caption": "Market day in Gernika, historic Basque town",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "relatedCultures": {
+    "similar": ["Sámi", "Berber"],
+    "regional": ["Spanish", "French"],
+    "contrasting": ["Inuit", "Maori"]
+  },
+  "references": [
+    {
+      "title": "The Basque History of the World",
+      "author": "Mark Kurlansky",
+      "year": "1999",
+      "publisher": "Walker & Company",
+      "type": "book"
+    },
+    {
+      "title": "The Basques",
+      "author": "Julio Caro Baroja",
+      "year": "1971",
+      "publisher": "University of Nevada Press",
+      "type": "book"
+    },
+    {
+      "title": "Basque Nationalism and the Spanish State",
+      "author": "Xabier Irujo",
+      "year": "2017",
+      "publisher": "Center for Basque Studies",
+      "type": "book"
+    },
+    {
+      "title": "The Origins of the Basques",
+      "author": "Roger Collins",
+      "year": "1986",
+      "journal": "Antiquity",
+      "type": "article"
+    },
+    {
+      "title": "Euskara: The Basque Language",
+      "author": "Larry Trask",
+      "year": "1997",
+      "publisher": "Routledge",
+      "type": "book"
+    },
+    {
+      "title": "The Basque Series: A Cultural and Political History",
+      "author": "William A. Douglass",
+      "year": "2007",
+      "publisher": "University of Nevada Press",
+      "type": "book"
+    },
+    {
+      "title": "Genetic history of the Basque population",
+      "author": "Various",
+      "year": "2015",
+      "journal": "Current Biology",
+      "type": "article"
+    },
+    {
+      "title": "Basque Cultural Identity",
+      "author": "Joseba Zulaika",
+      "year": "1988",
+      "publisher": "University of Nevada Press",
+      "type": "book"
+    }
+  ],
+  "metadata": {"lastUpdated": "2025-11-17", "completionStatus": "complete"}
 }

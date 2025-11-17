@@ -398,6 +398,654 @@
                 font-size: 2rem;
             }
         }
+    
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color, #333);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--primary-color, #333);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
+    
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color, #333);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--primary-color, #333);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -463,6 +1111,426 @@
                         <strong>The Haka Tradition:</strong> The Māori haka—a powerful ceremonial dance involving vigorous movements, rhythmic chanting, and fierce facial expressions—has gained worldwide recognition through New Zealand's All Blacks rugby team. However, haka serve many purposes beyond intimidating opponents: they welcome guests, celebrate achievements, honor the dead, and express unity. Different iwi have their own distinct haka, with 'Ka Mate,' composed by Te Rauparaha in the 1820s, being among the most famous!
                     </p>
                 </section>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg"
+                             alt="Traditional Māori wharenui (carved meeting house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg"
+                             alt="Māori performing the haka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg"
+                             alt="Traditional Māori tā moko facial tattoo"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg"
+                             alt="Traditional Māori waka (war canoe)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_waka.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg"
+                             alt="Traditional Māori flax weaving (raranga)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg"
+                             alt="Waitangi Day celebration with traditional waka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg"
+                             alt="Traditional Māori wharenui (carved meeting house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg"
+                             alt="Māori performing the haka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg"
+                             alt="Traditional Māori tā moko facial tattoo"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg"
+                             alt="Traditional Māori waka (war canoe)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_waka.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg"
+                             alt="Traditional Māori flax weaving (raranga)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg"
+                             alt="Waitangi Day celebration with traditional waka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg"
+                             alt="Traditional Māori wharenui (carved meeting house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg"
+                             alt="Māori performing the haka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg"
+                             alt="Traditional Māori tā moko facial tattoo"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg"
+                             alt="Traditional Māori waka (war canoe)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_waka.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg"
+                             alt="Traditional Māori flax weaving (raranga)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg"
+                             alt="Waitangi Day celebration with traditional waka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg"
+                             alt="Traditional Māori wharenui (carved meeting house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg"
+                             alt="Māori performing the haka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg"
+                             alt="Traditional Māori tā moko facial tattoo"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg"
+                             alt="Traditional Māori waka (war canoe)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_waka.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg"
+                             alt="Traditional Māori flax weaving (raranga)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg"
+                             alt="Waitangi Day celebration with traditional waka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg"
+                             alt="Traditional Māori wharenui (carved meeting house)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg"
+                             alt="Māori performing the haka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg"
+                             alt="Traditional Māori tā moko facial tattoo"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg"
+                             alt="Traditional Māori waka (war canoe)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_waka.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg"
+                             alt="Traditional Māori flax weaving (raranga)"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg"
+                             alt="Waitangi Day celebration with traditional waka"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
 
                 <section class="content-section">
                     <h2 class="section-title">Historical Journey</h2>
@@ -555,6 +1623,52 @@
     </div>
 
     <!-- Koru Pattern Footer -->
+    
+    <section class="related-cultures-section">
+        <h2 class="section-title">Explore Related Cultures</h2>
+        <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+            Discover connections between cultures through shared traditions, geographic proximity, or contrasting ways of life.
+        </p>
+        <div class="related-cultures-grid">
+
+                    <a href="hawaiian.html" class="related-card">
+                        <div class="related-icon">🌺</div>
+                        <h4 class="related-name">Native Hawaiian</h4>
+                        <p class="related-location">Hawaiian Islands</p>
+                        <span class="related-badge">Similar Culture</span>
+                        <p class="related-description">Fellow Polynesian peoples sharing linguistic roots, navigation traditions, and cultural practices</p>
+                    </a>
+                    <a href="samoan.html" class="related-card">
+                        <div class="related-icon">🌴</div>
+                        <h4 class="related-name">Samoan</h4>
+                        <p class="related-location">Samoa</p>
+                        <span class="related-badge">Similar Culture</span>
+                        <p class="related-description">Close Polynesian relatives with shared ancestral origins and cultural traditions</p>
+                    </a>
+                    <a href="aboriginal-australian.html" class="related-card">
+                        <div class="related-icon">🪃</div>
+                        <h4 class="related-name">Aboriginal Australian</h4>
+                        <p class="related-location">Australia</p>
+                        <span class="related-badge">Regional Neighbor</span>
+                        <p class="related-description">Indigenous peoples of neighboring landmass, though culturally and linguistically distinct; share some experiences of colonization</p>
+                    </a>
+                    <a href="melanesian.html" class="related-card">
+                        <div class="related-icon">🏝️</div>
+                        <h4 class="related-name">Melanesian Peoples</h4>
+                        <p class="related-location">Pacific Islands</p>
+                        <span class="related-badge">Regional Neighbor</span>
+                        <p class="related-description">Pacific island neighbors with different linguistic and cultural origins but shared oceanic environment</p>
+                    </a>
+                    <a href="inuit.html" class="related-card">
+                        <div class="related-icon">🐻‍❄️</div>
+                        <h4 class="related-name">Inuit</h4>
+                        <p class="related-location">Arctic</p>
+                        <span class="related-badge">Contrasting Culture</span>
+                        <p class="related-description">Both master navigators adapted to challenging environments, but polar opposite climates (Arctic vs temperate Pacific)</p>
+                    </a>
+        </div>
+    </section>
+
     <div class="koru-border-top"></div>
 
     <script>
@@ -566,6 +1680,366 @@
                 continent: 'oceania'
             });
         }
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg","alt":"Traditional Māori wharenui (carved meeting house)","caption":"Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg","alt":"Māori performing the haka","caption":"Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg","alt":"Traditional Māori tā moko facial tattoo","caption":"Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg","alt":"Traditional Māori waka (war canoe)","caption":"Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_waka.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg","alt":"Traditional Māori flax weaving (raranga)","caption":"Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg","alt":"Waitangi Day celebration with traditional waka","caption":"Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg","alt":"Traditional Māori wharenui (carved meeting house)","caption":"Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg","alt":"Māori performing the haka","caption":"Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg","alt":"Traditional Māori tā moko facial tattoo","caption":"Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg","alt":"Traditional Māori waka (war canoe)","caption":"Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_waka.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg","alt":"Traditional Māori flax weaving (raranga)","caption":"Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg","alt":"Waitangi Day celebration with traditional waka","caption":"Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg","alt":"Traditional Māori wharenui (carved meeting house)","caption":"Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg","alt":"Māori performing the haka","caption":"Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg","alt":"Traditional Māori tā moko facial tattoo","caption":"Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg","alt":"Traditional Māori waka (war canoe)","caption":"Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_waka.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg","alt":"Traditional Māori flax weaving (raranga)","caption":"Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg","alt":"Waitangi Day celebration with traditional waka","caption":"Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg","alt":"Traditional Māori wharenui (carved meeting house)","caption":"Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg","alt":"Māori performing the haka","caption":"Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg","alt":"Traditional Māori tā moko facial tattoo","caption":"Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg","alt":"Traditional Māori waka (war canoe)","caption":"Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_waka.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg","alt":"Traditional Māori flax weaving (raranga)","caption":"Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg","alt":"Waitangi Day celebration with traditional waka","caption":"Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg/800px-Maori_carved_meeting_house%2C_Ohinemutu%2C_Rotorua%2C_New_Zealand.jpg","alt":"Traditional Māori wharenui (carved meeting house)","caption":"Traditional Māori wharenui showcasing intricate whakairo (carving) representing ancestors and tribal genealogy","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_carved_meeting_house,_Ohinemutu,_Rotorua,_New_Zealand.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Haka_NZ.jpg/800px-Haka_NZ.jpg","alt":"Māori performing the haka","caption":"Māori performing a haka—a ceremonial dance involving vigorous movements, chanting, and expressions of unity and strength","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Haka_NZ.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Maori_Tā_moko_facial_tattoo.jpg/800px-Maori_Tā_moko_facial_tattoo.jpg","alt":"Traditional Māori tā moko facial tattoo","caption":"Traditional tā moko—Māori facial tattoo created with chisels, indicating rank, genealogy, and personal achievements","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_Tā_moko_facial_tattoo.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Maori_waka.jpg/800px-Maori_waka.jpg","alt":"Traditional Māori waka (war canoe)","caption":"Māori waka (canoe) with intricate carvings. Master navigators used these vessels for ocean voyaging and warfare","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_waka.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Maori_weaving.jpg/800px-Maori_weaving.jpg","alt":"Traditional Māori flax weaving (raranga)","caption":"Māori raranga (weaving) using harakeke (flax) to create baskets, clothing, and decorative items with intricate patterns","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Maori_weaving.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Waitangi_Day_celebration.jpg/800px-Waitangi_Day_celebration.jpg","alt":"Waitangi Day celebration with traditional waka","caption":"Waitangi Day celebration commemorating the 1840 Treaty of Waitangi, featuring traditional waka and cultural performances","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Waitangi_Day_celebration.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
     </script>
 </body>
 </html>
