@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- Primary Meta Tags -->
-    <title>Indigenous Peoples Research Database | 1,200+ Cultures Documented Worldwide</title>
-    <meta name="title" content="Indigenous Peoples Research Database | 1,200+ Cultures Documented Worldwide">
-    <meta name="description" content="Comprehensive ethnographic research database documenting 1,200+ indigenous peoples globally. Scholarly repository featuring verified cultural data, historical records, language families, and contemporary research on First Nations communities across six continents.">
+    <title>Indigenous Peoples Database | 45 Cultures Documented Worldwide</title>
+    <meta name="title" content="Indigenous Peoples Database | 45 Cultures Documented Worldwide">
+    <meta name="description" content="Educational database documenting 45 indigenous cultures globally. Explore verified cultural data, historical records, language families, and contemporary research on First Nations communities across six continents.">
     <meta name="keywords" content="indigenous peoples, First Nations, tribes, cultural heritage, world cultures, ethnography, anthropology, native peoples, aboriginal cultures, traditional knowledge">
     <meta name="author" content="Indigenous Peoples Repository">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -27,7 +27,6 @@
     <!-- Mobile Performance Optimizations -->
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="preload" href="/data/indigenous-groups.js" as="script">
     <meta name="theme-color" content="#2c5530" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#1a3320" media="(prefers-color-scheme: dark)">
     <meta name="mobile-web-app-capable" content="yes">
@@ -57,9 +56,9 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.globalfirstnations.com/">
-    <meta property="og:site_name" content="Indigenous Peoples Research Database">
-    <meta property="og:title" content="Indigenous Peoples Research Database | Scholarly Ethnographic Repository">
-    <meta property="og:description" content="Comprehensive academic database documenting 1,200+ indigenous cultures worldwide. Verified ethnographic data, historical research, and cultural heritage documentation across six continents.">
+    <meta property="og:site_name" content="Indigenous Peoples Database">
+    <meta property="og:title" content="Indigenous Peoples Database | Educational Repository">
+    <meta property="og:description" content="Educational database documenting 45 indigenous cultures worldwide. Verified ethnographic data, historical research, and cultural heritage documentation across six continents.">
     <meta property="og:image" content="https://www.globalfirstnations.com/images/og-image.jpg">
     <meta property="og:image:secure_url" content="https://www.globalfirstnations.com/images/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg">
@@ -71,8 +70,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.globalfirstnations.com/">
-    <meta name="twitter:title" content="Indigenous Peoples Research Database | Scholarly Repository">
-    <meta name="twitter:description" content="Academic database documenting 1,200+ indigenous cultures with verified ethnographic data and research across six continents.">
+    <meta name="twitter:title" content="Indigenous Peoples Database | Educational Repository">
+    <meta name="twitter:description" content="Educational database documenting 45 indigenous cultures with verified ethnographic data and research across six continents.">
     <meta name="twitter:image" content="https://www.globalfirstnations.com/images/twitter-card.jpg">
     <meta name="twitter:image:alt" content="Indigenous Peoples Repository">
     <meta name="twitter:creator" content="@globalfirstnations">
@@ -83,8 +82,8 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Indigenous Peoples Research Database",
-      "alternateName": "Global First Nations Research Database",
+      "name": "Indigenous Peoples Database",
+      "alternateName": "Global First Nations Database",
       "url": "https://www.globalfirstnations.com",
       "logo": {
         "@type": "ImageObject",
@@ -92,7 +91,7 @@
         "width": 600,
         "height": 600
       },
-      "description": "A comprehensive scholarly database documenting 1,200+ indigenous cultures worldwide with verified ethnographic data, academic research, and cultural heritage preservation",
+      "description": "An educational database documenting 45 indigenous cultures worldwide with verified ethnographic data, academic research, and cultural heritage preservation",
       "foundingDate": "2024",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -114,7 +113,7 @@
       "@type": "WebSite",
       "name": "Indigenous Peoples Repository",
       "url": "https://www.globalfirstnations.com",
-      "description": "Comprehensive repository documenting indigenous peoples from around the world",
+      "description": "Educational repository documenting 45 indigenous cultures from around the world",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -151,7 +150,7 @@
           "name": "What is the Indigenous Peoples Repository?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Indigenous Peoples Repository is a comprehensive resource documenting over 1,200 indigenous groups from around the world, celebrating their unique cultures, traditions, and heritage with respect and authenticity."
+            "text": "The Indigenous Peoples Repository is an educational resource documenting 45 indigenous cultures from around the world, celebrating their unique cultures, traditions, and heritage with respect and authenticity."
           }
         },
         {
@@ -159,7 +158,7 @@
           "name": "How many indigenous peoples are documented?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our repository currently documents over 1,200 indigenous groups across 94 countries and 6 continents, representing 1,200+ languages and diverse cultural traditions."
+            "text": "Our repository currently documents 45 indigenous cultures across 6 continents, representing approximately 20 language families and diverse cultural traditions."
           }
         },
         {
@@ -735,7 +734,7 @@
             border-color: var(--primary);
         }
 
-        /* Tribe Cards with better accessibility */
+        /* Culture Cards with better accessibility */
         .grid-section {
             padding: clamp(3rem, 8vw, 6rem) 0;
         }
@@ -748,14 +747,14 @@
             color: var(--text);
         }
 
-        .tribes-grid {
+        .cultures-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
             gap: var(--space-xl);
             margin-top: var(--space-xl);
         }
 
-        .tribe-card {
+        .culture-card {
             background: var(--bg);
             border-radius: 15px;
             overflow: hidden;
@@ -763,47 +762,44 @@
             transition: transform var(--transition-base), box-shadow var(--transition-base);
             cursor: pointer;
             border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
-        .tribe-card:hover {
+        .culture-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
 
-        .tribe-card:focus-within {
+        .culture-card:focus-within {
             outline: 2px solid var(--accent);
             outline-offset: 2px;
         }
 
-        .tribe-image {
+        .culture-icon-wrapper {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 6rem;
             position: relative;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
-        /* Add proper alt text support for emojis */
-        .tribe-image::before {
-            content: attr(data-emoji);
-            font-size: 6rem;
-        }
-
-        .tribe-content {
+        .culture-content {
             padding: var(--space-lg);
         }
 
-        .tribe-name {
+        .culture-name {
             font-size: 1.5rem;
             font-weight: 600;
             color: var(--text);
             margin-bottom: var(--space-sm);
         }
 
-        .tribe-location {
+        .culture-location {
             color: var(--text-light);
             font-size: 1rem;
             margin-bottom: var(--space-md);
@@ -812,26 +808,15 @@
             gap: var(--space-xs);
         }
 
-        .tribe-description {
+        .culture-description {
             color: var(--text-light);
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: var(--space-md);
-        }
-
-        .tribe-tags {
-            display: flex;
-            gap: var(--space-sm);
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            background: var(--bg-secondary);
-            color: var(--text);
-            padding: var(--space-xs) var(--space-md);
-            border-radius: 15px;
-            font-size: 0.875rem;
-            border: 1px solid var(--border);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         /* Stats Section */
@@ -938,35 +923,6 @@
             color: #9ca3af;
         }
 
-        /* Show More Button */
-        .show-more-container {
-            grid-column: 1 / -1;
-            display: flex;
-            justify-content: center;
-            margin-top: var(--space-xl);
-        }
-
-        .show-more-btn {
-            background: var(--primary);
-            color: white;
-            border: 2px solid var(--primary);
-            padding: var(--space-md) var(--space-2xl);
-            min-height: var(--touch-target-min);
-            border-radius: 50px;
-            font-size: 1.125rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            box-shadow: var(--shadow);
-        }
-
-        .show-more-btn:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
         /* Toast Notifications */
         .toast {
             position: fixed;
@@ -1066,7 +1022,7 @@
                 color: black;
             }
 
-            .tribe-card {
+            .culture-card {
                 break-inside: avoid;
                 page-break-inside: avoid;
             }
@@ -1078,7 +1034,7 @@
                 --border: #000;
             }
 
-            .tribe-card,
+            .culture-card,
             .stat-card,
             button,
             input {
@@ -1086,8 +1042,6 @@
             }
         }
     </style>
-
-    <link rel="preload" href="data/indigenous-groups.js" as="script">
 </head>
 <body>
     <!-- Skip to main content for screen readers -->
@@ -1096,7 +1050,7 @@
     <!-- Header with enhanced navigation -->
     <header role="banner">
         <nav class="container" role="navigation" aria-label="Main navigation">
-            <a href="/" class="logo" aria-label="Indigenous Peoples Research Database Home">
+            <a href="/" class="logo" aria-label="Indigenous Peoples Database Home">
                 <span aria-hidden="true">🌍</span>
                 <span>Indigenous Peoples Database</span>
             </a>
@@ -1147,9 +1101,9 @@
         <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="hero-heading">Indigenous Peoples Research Database</h1>
-                    <p>A comprehensive scholarly repository documenting 1,200+ indigenous cultures worldwide. Explore verified ethnographic data, cultural heritage documentation, and contemporary research on First Nations communities across six continents.</p>
-                    <a href="#explore" class="cta-button">Access Database</a>
+                    <h1 id="hero-heading">Indigenous Peoples Database</h1>
+                    <p>An educational repository documenting 45 indigenous cultures from around the world. Explore verified cultural data, historical records, and contemporary research on First Nations communities across six continents.</p>
+                    <a href="#explore" class="cta-button">Explore Cultures</a>
                 </div>
             </div>
         </section>
@@ -1157,17 +1111,17 @@
         <!-- Search Section -->
         <section class="search-section" id="explore" aria-labelledby="search-heading">
             <div class="container">
-                <h2 id="search-heading" class="sr-only">Search and Filter Indigenous Peoples</h2>
+                <h2 id="search-heading" class="sr-only">Search and Filter Indigenous Cultures</h2>
 
                 <div class="search-container">
                     <div class="search-input-wrapper">
-                        <label for="searchInput" class="sr-only">Search for indigenous peoples, regions, or cultures</label>
+                        <label for="searchInput" class="sr-only">Search for indigenous cultures, regions, or traditions</label>
                         <input
                             type="search"
                             class="search-input"
-                            placeholder="Search database by culture, region, language family, or ethnographic classification..."
+                            placeholder="Search by culture name, region, or country..."
                             id="searchInput"
-                            aria-label="Search indigenous peoples database"
+                            aria-label="Search indigenous cultures"
                             autocomplete="off"
                             spellcheck="false"
                         >
@@ -1178,12 +1132,13 @@
                 </div>
 
                 <div class="filters" role="group" aria-label="Filter by region">
-                    <button class="filter-btn active" onclick="filterTribes('all')" aria-pressed="true">All Regions</button>
-                    <button class="filter-btn" onclick="filterTribes('americas')" aria-pressed="false">Americas</button>
-                    <button class="filter-btn" onclick="filterTribes('africa')" aria-pressed="false">Africa</button>
-                    <button class="filter-btn" onclick="filterTribes('asia')" aria-pressed="false">Asia</button>
-                    <button class="filter-btn" onclick="filterTribes('oceania')" aria-pressed="false">Oceania</button>
-                    <button class="filter-btn" onclick="filterTribes('europe')" aria-pressed="false">Europe</button>
+                    <button class="filter-btn active" onclick="filterCultures('all')" aria-pressed="true">All Regions</button>
+                    <button class="filter-btn" onclick="filterCultures('americas')" aria-pressed="false">Americas</button>
+                    <button class="filter-btn" onclick="filterCultures('africa')" aria-pressed="false">Africa</button>
+                    <button class="filter-btn" onclick="filterCultures('asia')" aria-pressed="false">Asia</button>
+                    <button class="filter-btn" onclick="filterCultures('oceania')" aria-pressed="false">Oceania</button>
+                    <button class="filter-btn" onclick="filterCultures('arctic')" aria-pressed="false">Arctic</button>
+                    <button class="filter-btn" onclick="filterCultures('europe')" aria-pressed="false">Europe</button>
                 </div>
             </div>
         </section>
@@ -1191,37 +1146,37 @@
         <!-- Grid Section -->
         <section class="grid-section" aria-labelledby="featured-heading">
             <div class="container">
-                <h2 id="featured-heading" class="section-title fade-in">Database Explorer - Featured Cultures</h2>
+                <h2 id="featured-heading" class="section-title fade-in">Explore 45 Indigenous Cultures</h2>
 
                 <div class="loading" id="loading" aria-busy="false" aria-live="polite">
                     <div class="spinner" role="status" aria-label="Loading"></div>
-                    <p>Loading database entries...</p>
+                    <p>Loading cultures...</p>
                 </div>
 
-                <div class="tribes-grid" id="tribesGrid" role="list" aria-label="Indigenous peoples database entries"></div>
+                <div class="cultures-grid" id="culturesGrid" role="list" aria-label="Indigenous cultures"></div>
             </div>
         </section>
 
         <!-- Stats Section -->
         <section class="stats-section" aria-labelledby="stats-heading">
             <div class="container">
-                <h2 id="stats-heading" class="section-title fade-in">Database Coverage & Scope</h2>
+                <h2 id="stats-heading" class="section-title fade-in">Database Statistics</h2>
                 <div class="stats-grid fade-in" role="list" aria-label="Database statistics">
                     <div class="stat-card" role="listitem">
-                        <div class="stat-number" id="totalTribes" aria-label="Total documented cultures">1,277</div>
-                        <div class="stat-label">Documented Cultures</div>
+                        <div class="stat-number" id="totalCultures" aria-label="Total documented cultures">45</div>
+                        <div class="stat-label">Cultures</div>
                     </div>
                     <div class="stat-card" role="listitem">
-                        <div class="stat-number" id="totalRegions" aria-label="Countries represented">94</div>
-                        <div class="stat-label">Countries Represented</div>
-                    </div>
-                    <div class="stat-card" role="listitem">
-                        <div class="stat-number" id="totalLanguages" aria-label="Language families cataloged">1,247</div>
-                        <div class="stat-label">Language Families</div>
+                        <div class="stat-number" id="totalPages" aria-label="Culture pages">45</div>
+                        <div class="stat-label">Culture Pages</div>
                     </div>
                     <div class="stat-card" role="listitem">
                         <div class="stat-number" id="totalContinents" aria-label="Continents with coverage">6</div>
                         <div class="stat-label">Continents</div>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-number" id="totalLanguageFamilies" aria-label="Language families represented">~20</div>
+                        <div class="stat-label">Language Families</div>
                     </div>
                 </div>
             </div>
@@ -1234,27 +1189,27 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>About the Repository</h3>
-                    <p>A comprehensive ethnographic database dedicated to documenting and preserving scholarly knowledge about indigenous cultures worldwide with academic rigor, cultural respect, and authentic representation.</p>
+                    <p>An educational database dedicated to documenting and preserving knowledge about 45 indigenous cultures worldwide with cultural respect and authentic representation.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Database Access</h3>
                     <nav aria-label="Footer navigation">
-                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Add">Contribute Research Data</a>
-                        <a href="/dashboard.html">Learning Progress Dashboard</a>
-                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Contact">Contact Research Team</a>
+                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Add">Contribute Data</a>
+                        <a href="/dashboard.html">Learning Dashboard</a>
+                        <a href="mailto:info@play4tomorrow.com?subject=Global%20First%20Nations%20Contact">Contact Team</a>
                     </nav>
                 </div>
                 <div class="footer-section">
-                    <h3>Research Resources</h3>
+                    <h3>Featured Cultures</h3>
                     <nav aria-label="Resources navigation">
-                        <a href="/peoples/maasai.html">Sample Culture Entry: Maasai</a>
-                        <a href="/peoples/inuit.html">Sample Culture Entry: Inuit</a>
-                        <a href="/games.html">Interactive Learning Modules</a>
+                        <a href="/peoples/maasai.html">Maasai</a>
+                        <a href="/peoples/inuit.html">Inuit</a>
+                        <a href="/games.html">Interactive Learning</a>
                     </nav>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Indigenous Peoples Research Database. Committed to scholarly excellence and cultural preservation.</p>
+                <p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p>
             </div>
         </div>
     </footer>
@@ -1262,16 +1217,24 @@
     <!-- Toast Notification Container -->
     <div id="toastContainer" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <!-- Import indigenous-groups data -->
-    <script src="data/indigenous-groups.js"></script>
-
     <script>
         // ============================================
-        // ENHANCED JAVASCRIPT - ACCESSIBILITY & UX
+        // ENHANCED JAVASCRIPT - LOAD REAL CULTURES
         // ============================================
 
-        // Configuration
-        const INITIAL_DISPLAY_COUNT = 24;
+        // List of all culture IDs (matches JSON files and HTML pages)
+        const CULTURE_IDS = [
+            'maasai', 'inuit', 'navajo', 'maori', 'san', 'sami', 'zulu', 'tuareg',
+            'quechua', 'cherokee', 'aboriginal-australian', 'yupik', 'hmong', 'berber',
+            'basque', 'ainu', 'yanomami', 'rapanui', 'nenets', 'himba', 'lakota',
+            'mapuche', 'guarani', 'tlingit', 'haida', 'mixtec', 'zapotec', 'hopi',
+            'dogon', 'hadza', 'igbo', 'samburu', 'wodaabe', 'nuer', 'malagasy',
+            'mongol', 'karen', 'moken', 'sherpa', 'kalash', 'dayak', 'bedouin',
+            'tongan', 'fijian', 'papuan'
+        ];
+
+        // Store all loaded cultures
+        let allCultures = [];
         let currentFilter = 'all';
         let searchQuery = '';
         let fontSize = 16;
@@ -1340,7 +1303,6 @@
             mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
             mainNav.classList.toggle('mobile-open');
 
-            // Trap focus in mobile menu when open
             if (!isExpanded) {
                 const firstLink = mainNav.querySelector('a');
                 firstLink?.focus();
@@ -1372,20 +1334,91 @@
 
             container.appendChild(toast);
 
-            // Trigger animation
             setTimeout(() => toast.classList.add('show'), 10);
 
-            // Remove after 3 seconds
             setTimeout(() => {
                 toast.classList.remove('show');
                 setTimeout(() => toast.remove(), 300);
             }, 3000);
         }
 
-        // Utility function to get random sample from array
-        function getRandomSample(array, count) {
-            const shuffled = [...array].sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, count);
+        // Load all culture JSON files
+        async function loadAllCultures() {
+            const loading = document.getElementById('loading');
+            loading.setAttribute('aria-busy', 'true');
+
+            try {
+                const loadPromises = CULTURE_IDS.map(async (id) => {
+                    try {
+                        const response = await fetch(`/data/cultures/${id}.json`);
+                        if (!response.ok) throw new Error(`Failed to load ${id}`);
+                        return await response.json();
+                    } catch (error) {
+                        console.error(`Error loading ${id}:`, error);
+                        return null;
+                    }
+                });
+
+                const cultures = await Promise.all(loadPromises);
+                allCultures = cultures.filter(c => c !== null);
+
+                renderCultures(allCultures);
+                loading.setAttribute('aria-busy', 'false');
+            } catch (error) {
+                console.error('Error loading cultures:', error);
+                showToast('Failed to load cultures. Please refresh the page.', 'error');
+                loading.setAttribute('aria-busy', 'false');
+            }
+        }
+
+        // Render culture cards
+        function renderCultures(cultures) {
+            const grid = document.getElementById('culturesGrid');
+            const fragment = document.createDocumentFragment();
+
+            cultures.forEach((culture, index) => {
+                const card = document.createElement('a');
+                card.href = `/peoples/${culture.id}.html`;
+                card.className = 'culture-card fade-in';
+                card.setAttribute('role', 'listitem');
+                card.setAttribute('aria-labelledby', `culture-name-${index}`);
+
+                // Get location string
+                const locationStr = Array.isArray(culture.location.countries)
+                    ? culture.location.countries.join(', ')
+                    : culture.quickFacts?.region || culture.location.region;
+
+                // Get description from introduction or quickFacts
+                const description = culture.content?.introduction?.whoTheyAre?.substring(0, 150) + '...' ||
+                                  culture.culturalIdentity?.knownFor ||
+                                  'Explore this indigenous culture';
+
+                // Use culture's primary color for the background
+                const primaryColor = culture.culturalIdentity?.primaryColor || '#2c5530';
+                const secondaryColor = culture.culturalIdentity?.secondaryColor || '#059669';
+
+                card.innerHTML = `
+                    <div class="culture-icon-wrapper" style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor});">
+                        <span aria-hidden="true">${culture.culturalIdentity.icon}</span>
+                    </div>
+                    <div class="culture-content">
+                        <h3 class="culture-name" id="culture-name-${index}">${culture.name}</h3>
+                        <p class="culture-location">
+                            <span aria-hidden="true">📍</span>
+                            <span>${locationStr}</span>
+                        </p>
+                        <p class="culture-description">${description}</p>
+                    </div>
+                `;
+
+                fragment.appendChild(card);
+            });
+
+            grid.innerHTML = '';
+            grid.appendChild(fragment);
+
+            announceResults(cultures.length);
+            requestAnimationFrame(() => initializeLazyLoading());
         }
 
         // Enhanced Lazy Loading with Intersection Observer
@@ -1409,7 +1442,95 @@
             }
         }
 
-        // Debounced search for better performance
+        // Announce results to screen readers
+        function announceResults(count) {
+            const message = `Showing ${count} indigenous cultures`;
+            const announcement = document.createElement('div');
+            announcement.setAttribute('role', 'status');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.className = 'sr-only';
+            announcement.textContent = message;
+            document.body.appendChild(announcement);
+            setTimeout(() => announcement.remove(), 1000);
+        }
+
+        // Filter cultures by region
+        function filterCultures(region) {
+            currentFilter = region;
+
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
+            event.target.classList.add('active');
+            event.target.setAttribute('aria-pressed', 'true');
+
+            let filteredCultures = allCultures;
+
+            if (region !== 'all') {
+                filteredCultures = allCultures.filter(culture => {
+                    const cultureRegion = culture.location?.region?.toLowerCase() || '';
+                    return cultureRegion === region.toLowerCase() ||
+                           (region === 'americas' && (cultureRegion.includes('north') || cultureRegion.includes('south')));
+                });
+            }
+
+            if (searchQuery) {
+                filteredCultures = applySearch(filteredCultures);
+            }
+
+            renderCultures(filteredCultures);
+
+            const regionName = region === 'all' ? 'All regions' : region.charAt(0).toUpperCase() + region.slice(1);
+            showToast(`Filtered to: ${regionName}`, 'success');
+        }
+
+        // Apply search filter
+        function applySearch(cultures) {
+            const query = searchQuery.toLowerCase();
+            return cultures.filter(culture => {
+                const name = culture.name?.toLowerCase() || '';
+                const countries = culture.location?.countries?.join(' ').toLowerCase() || '';
+                const region = culture.location?.region?.toLowerCase() || '';
+                const knownFor = culture.culturalIdentity?.knownFor?.toLowerCase() || '';
+                const intro = culture.content?.introduction?.whoTheyAre?.toLowerCase() || '';
+
+                return name.includes(query) ||
+                       countries.includes(query) ||
+                       region.includes(query) ||
+                       knownFor.includes(query) ||
+                       intro.includes(query);
+            });
+        }
+
+        // Perform search
+        function performSearch() {
+            const input = document.getElementById('searchInput');
+            searchQuery = input.value.trim();
+
+            let filteredCultures = allCultures;
+
+            if (currentFilter !== 'all') {
+                filteredCultures = allCultures.filter(culture => {
+                    const cultureRegion = culture.location?.region?.toLowerCase() || '';
+                    return cultureRegion === currentFilter.toLowerCase() ||
+                           (currentFilter === 'americas' && (cultureRegion.includes('north') || cultureRegion.includes('south')));
+                });
+            }
+
+            if (searchQuery) {
+                filteredCultures = applySearch(filteredCultures);
+            }
+
+            renderCultures(filteredCultures);
+
+            if (searchQuery) {
+                showToast(`Found ${filteredCultures.length} results for "${searchQuery}"`, 'success');
+            }
+        }
+
+        // Debounced search
         function debounce(func, wait) {
             let timeout;
             return function executedFunction(...args) {
@@ -1424,173 +1545,14 @@
 
         const debouncedSearch = debounce(performSearch, 300);
 
-        // Enhanced renderTribes with accessibility
-        function renderTribes(tribes, isInitialLoad = false) {
-            const grid = document.getElementById('tribesGrid');
-            const loading = document.getElementById('loading');
-
-            // Show loading state
-            loading.setAttribute('aria-busy', 'true');
-            loading.style.display = 'block';
-
-            // Use DocumentFragment for better performance
-            const fragment = document.createDocumentFragment();
-
-            // Limit tribes only on initial load
-            const tribesToRender = isInitialLoad ? getRandomSample(tribes, INITIAL_DISPLAY_COUNT) : tribes;
-
-            tribesToRender.forEach((tribe, index) => {
-                const card = document.createElement('article');
-                card.className = 'tribe-card fade-in';
-                card.setAttribute('role', 'listitem');
-                card.setAttribute('aria-labelledby', `tribe-name-${index}`);
-
-                card.innerHTML = `
-                    <div class="tribe-image" role="img" aria-label="${tribe.name} cultural symbol" data-emoji="${tribe.emoji}">
-                        <span aria-hidden="true">${tribe.emoji}</span>
-                    </div>
-                    <div class="tribe-content">
-                        <h3 class="tribe-name" id="tribe-name-${index}">${tribe.name}</h3>
-                        <p class="tribe-location">
-                            <span aria-hidden="true">📍</span>
-                            <span>${tribe.location}</span>
-                        </p>
-                        <p class="tribe-description">${tribe.description}</p>
-                        <div class="tribe-tags" role="list" aria-label="Cultural attributes">
-                            ${tribe.tags.map(tag => `<span class="tag" role="listitem">${tag}</span>`).join('')}
-                        </div>
-                    </div>
-                `;
-
-                fragment.appendChild(card);
-            });
-
-            // Clear and append in one operation
-            grid.innerHTML = '';
-            grid.appendChild(fragment);
-
-            // Add "Show More" button only on initial load
-            if (isInitialLoad && tribes.length > INITIAL_DISPLAY_COUNT) {
-                const showMoreBtn = document.createElement('div');
-                showMoreBtn.className = 'show-more-container';
-                showMoreBtn.innerHTML = `
-                    <button class="show-more-btn" onclick="showAllTribes()" aria-label="Show all ${tribes.length} indigenous groups">
-                        Show All ${tribes.length} Groups
-                    </button>
-                `;
-                grid.appendChild(showMoreBtn);
-            }
-
-            // Hide loading state
-            loading.setAttribute('aria-busy', 'false');
-            loading.style.display = 'none';
-
-            // Announce results to screen readers
-            announceResults(tribesToRender.length, tribes.length);
-
-            // Trigger lazy loading
-            requestAnimationFrame(() => initializeLazyLoading());
-        }
-
-        // Announce results to screen readers
-        function announceResults(shown, total) {
-            const message = `Showing ${shown} of ${total} indigenous groups`;
-            const announcement = document.createElement('div');
-            announcement.setAttribute('role', 'status');
-            announcement.setAttribute('aria-live', 'polite');
-            announcement.className = 'sr-only';
-            announcement.textContent = message;
-            document.body.appendChild(announcement);
-            setTimeout(() => announcement.remove(), 1000);
-        }
-
-        // Function to show all tribes
-        function showAllTribes() {
-            let filteredTribes = indigenousGroups;
-
-            if (currentFilter !== 'all') {
-                filteredTribes = indigenousGroups.filter(tribe => tribe.region === currentFilter);
-            }
-
-            if (searchQuery) {
-                filteredTribes = filteredTribes.filter(tribe =>
-                    tribe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    tribe.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    tribe.description.toLowerCase().includes(searchQuery.toLowerCase())
-                );
-            }
-
-            renderTribes(filteredTribes, false);
-            showToast(`Showing all ${filteredTribes.length} groups`, 'success');
-        }
-
-        // Enhanced filterTribes function
-        function filterTribes(region) {
-            currentFilter = region;
-
-            // Update active filter button with ARIA
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-pressed', 'false');
-            });
-            event.target.classList.add('active');
-            event.target.setAttribute('aria-pressed', 'true');
-
-            let filteredTribes = indigenousGroups;
-
-            if (region !== 'all') {
-                filteredTribes = indigenousGroups.filter(tribe => tribe.region === region);
-            }
-
-            if (searchQuery) {
-                filteredTribes = filteredTribes.filter(tribe =>
-                    tribe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    tribe.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    tribe.description.toLowerCase().includes(searchQuery.toLowerCase())
-                );
-            }
-
-            renderTribes(filteredTribes, false);
-
-            const regionName = region === 'all' ? 'All regions' : region.charAt(0).toUpperCase() + region.slice(1);
-            showToast(`Filtered to: ${regionName}`, 'success');
-        }
-
-        // Enhanced performSearch function
-        function performSearch() {
-            const input = document.getElementById('searchInput');
-            searchQuery = input.value.trim();
-
-            let filteredTribes = indigenousGroups;
-
-            if (currentFilter !== 'all') {
-                filteredTribes = filteredTribes.filter(tribe => tribe.region === currentFilter);
-            }
-
-            if (searchQuery) {
-                filteredTribes = filteredTribes.filter(tribe =>
-                    tribe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    tribe.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    tribe.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    tribe.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-                );
-            }
-
-            renderTribes(filteredTribes, false);
-
-            if (searchQuery) {
-                showToast(`Found ${filteredTribes.length} results for "${searchQuery}"`, 'success');
-            }
-        }
-
-        // Search on Enter key with debouncing
+        // Search on Enter key
         document.getElementById('searchInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                debouncedSearch();
+                performSearch();
             }
         });
 
-        // Add input event for real-time search (debounced)
+        // Real-time search (debounced)
         document.getElementById('searchInput').addEventListener('input', debouncedSearch);
 
         // Smooth scrolling for anchor links
@@ -1603,7 +1565,6 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Set focus for accessibility
                     target.setAttribute('tabindex', '-1');
                     target.focus();
                 }
@@ -1614,30 +1575,33 @@
         function animateCounter(element, target) {
             const duration = 2000;
             const start = 0;
-            const increment = target / (duration / 16);
+            const isNumeric = typeof target === 'number';
+            const numericTarget = isNumeric ? target : parseInt(target);
+
+            if (isNaN(numericTarget)) {
+                element.textContent = target;
+                return;
+            }
+
+            const increment = numericTarget / (duration / 16);
             let current = start;
 
             const timer = setInterval(() => {
                 current += increment;
-                if (current >= target) {
-                    element.textContent = target.toLocaleString();
+                if (current >= numericTarget) {
+                    element.textContent = target;
                     clearInterval(timer);
                 } else {
-                    element.textContent = Math.floor(current).toLocaleString();
+                    element.textContent = Math.floor(current).toString();
                 }
             }, 16);
         }
 
-        // Initialize page with performance optimizations
+        // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
-            // Use requestAnimationFrame for smooth initialization
+            // Load cultures
             requestAnimationFrame(() => {
-                if (window.indigenousGroups) {
-                    renderTribes(window.indigenousGroups, true);
-                } else {
-                    console.error('Indigenous groups data not loaded');
-                    showToast('Failed to load data. Please refresh the page.', 'error');
-                }
+                loadAllCultures();
                 initializeLazyLoading();
             });
 
@@ -1646,10 +1610,10 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         requestAnimationFrame(() => {
-                            animateCounter(document.getElementById('totalTribes'), 1277);
-                            animateCounter(document.getElementById('totalRegions'), 94);
-                            animateCounter(document.getElementById('totalLanguages'), 1247);
+                            animateCounter(document.getElementById('totalCultures'), 45);
+                            animateCounter(document.getElementById('totalPages'), 45);
                             animateCounter(document.getElementById('totalContinents'), 6);
+                            animateCounter(document.getElementById('totalLanguageFamilies'), '~20');
                         });
                         statsObserver.unobserve(entry.target);
                     }
