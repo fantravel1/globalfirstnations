@@ -1,0 +1,112 @@
+{
+  "id": "moken",
+  "name": "Moken",
+  "alternateNames": ["Sea Gypsies", "Salon", "Chao Ley"],
+  "location": {
+    "region": "asia",
+    "countries": ["Myanmar", "Thailand"],
+    "coordinates": {
+      "lat": 9.5,
+      "lng": 98.0
+    }
+  },
+  "demographics": {
+    "population": "~2,000-3,000",
+    "populationYear": 2020,
+    "language": {
+      "name": "Moken",
+      "family": "Austronesian",
+      "speakers": "~2,500",
+      "status": "Endangered"
+    }
+  },
+  "culturalIdentity": {
+    "icon": "🌊",
+    "primaryColor": "#3498db",
+    "secondaryColor": "#16a085",
+    "dwelling": "Kabang (traditional boats)",
+    "livelihood": "Fishing, diving, marine foraging",
+    "knownFor": "Sea nomadism, exceptional diving ability, boat-dwelling lifestyle",
+    "dietaryNotes": "Seafood, fish, sea cucumbers, mollusks, some rice"
+  },
+  "quickFacts": {
+    "region": "Andaman Sea",
+    "traditionalDwelling": "Kabang boats",
+    "primaryLivelihood": "Marine foraging",
+    "distinctiveFeature": "Underwater vision"
+  },
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Moken are seafaring people of the Andaman Sea, inhabiting waters around the Mergui Archipelago (Myanmar) and Thailand's coast. Known as 'Sea Gypsies,' the Moken have traditionally lived a nomadic existence aboard their kabang boats, spending most of their lives at sea. They are extraordinary free divers, able to dive to significant depths and see clearly underwater - an ability developed through generations of marine adaptation. The Moken possess intimate knowledge of marine ecosystems, weather patterns, and ocean navigation.",
+      "culturalIdentity": "Moken culture revolves around the sea. Traditional Moken spent 8-9 months annually on boats, coming ashore only during monsoons. They developed unique adaptations including exceptional underwater vision, slow heart rates for prolonged diving, and extensive knowledge of marine life. Moken spirituality centers on respect for the sea and its spirits. Their simple material culture, communal sharing, and freedom from terrestrial possessions represent a distinct way of life increasingly threatened by modern pressures.",
+      "funFact": "Moken children develop the ability to see clearly underwater by learning to control their pupils and eye lenses - a skill that takes years to develop and allows them to hunt fish underwater with remarkable accuracy!"
+    },
+    "history": {
+      "origins": "The Moken are part of the broader Austronesian diaspora, related to other sea nomad groups in Southeast Asia. Their ancestors likely migrated from southern China or Taiwan thousands of years ago, eventually specializing in maritime life. Oral traditions speak of ancestral migrations guided by the sea.",
+      "colonialImpact": "Colonial-era borders and modern nation-states disrupted traditional Moken migrations. The creation of Myanmar-Thailand borders cut through traditional territories. Moken, lacking documents or fixed addresses, became stateless. National park designations restricted access to traditional fishing grounds.",
+      "2004Tsunami": "The 2004 Indian Ocean tsunami devastated coastal communities but remarkably spared most Moken. Their intimate knowledge of ocean behavior allowed them to recognize warning signs and move to safety. This demonstrated the value of traditional environmental knowledge, though they still lost boats and possessions.",
+      "modernPressures": "Today, traditional sea nomadism has largely ended. Most Moken now live in settled communities on land, often in poverty. Tourism, commercial fishing, marine conservation restrictions, and lack of citizenship rights have fundamentally altered Moken life. Younger generations are losing traditional knowledge and language."
+    },
+    "culture": {
+      "marineAdaptations": "Moken possess remarkable physical and cultural adaptations to marine life. They can dive to 20 meters and stay submerged for several minutes. Children develop the ability to constrict pupils and change lens shape to see clearly underwater - abilities most humans cannot learn after childhood. Moken have exceptional knowledge of fish behavior, coral reefs, tides, and currents.",
+      "kabangBoats": "Traditional kabang boats served as floating homes for entire families. Built from local wood without nails, kabang featured a covered living area and open deck. Families cooked, slept, and raised children aboard. Boats were rebuilt every few years. Today, few kabang remain as most Moken have been forced to settle on land.",
+      "divingAndForaging": "Moken traditionally survived through free diving, spearfishing, and collecting marine resources. They harvested fish, sea cucumbers, pearls, shells, and other products. Diving was done without modern equipment using only handmade spears and baskets. Women and men both dive, teaching children from young ages.",
+      "spirituality": "Moken believe in spirits (labot) inhabiting the sea, land, and sky. The sea spirit must be respected and appeased. Shamans mediate between human and spirit worlds. Death rituals involve boat burials or sea burials. Moken have simple material possessions, emphasizing spiritual wealth over material accumulation.",
+      "socialStructure": "Traditional Moken society emphasized egalitarianism and sharing. Resources were communal. Leadership was informal, based on knowledge and respect. Extended families formed boat groups traveling together. Marriage was relatively informal. Children learned through observation and participation rather than formal instruction.",
+      "oralTradition": "Moken preserve knowledge through oral traditions, songs, and stories. Navigation knowledge, fishing techniques, and environmental understanding pass through generations verbally. Storytelling during evening gatherings maintains cultural continuity."
+    },
+    "contemporary": {
+      "challenges": [
+        "Sedentarization: Forced settlement destroying nomadic lifestyle",
+        "Statelessness: Lack of citizenship creating legal vulnerabilities",
+        "Marine Restrictions: National parks prohibiting traditional fishing",
+        "Cultural Loss: Younger generations losing language and knowledge",
+        "Poverty: Limited economic opportunities in settled communities",
+        "Education: Language barriers and discrimination in schools",
+        "Health: Poor sanitation and disease in settlements",
+        "Tourism: Exploitative 'sea gypsy' tourism",
+        "Commercial Fishing: Industrial fishing depleting resources",
+        "Climate Change: Rising seas and changing marine ecosystems"
+      ],
+      "adaptations": [
+        "Diving Tourism: Some Moken working as diving guides",
+        "Craft Sales: Selling traditional crafts to tourists",
+        "NGO Support: Organizations documenting culture and advocating rights",
+        "Citizenship Campaigns: Efforts to obtain legal status",
+        "Cultural Centers: Maintaining traditional knowledge",
+        "Language Preservation: Recording Moken language",
+        "Sustainable Fishing: Balancing traditional practices with conservation"
+      ],
+      "preservation": "Moken work to preserve their heritage through teaching children traditional diving and knowledge when possible, maintaining oral traditions and stories, documenting Moken language and customs with researchers, advocating for maritime rights and citizenship, and partnering with conservation organizations that respect traditional practices.",
+      "notableIndividuals": [
+        {"name": "Hook (Moken elder)", "achievement": "Predicted 2004 tsunami, saving his community"},
+        {"name": "Ngui (traditional leader)", "achievement": "Advocating for Moken rights and cultural preservation"}
+      ]
+    }
+  },
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Moken_kabang_boat.jpg/800px-Moken_kabang_boat.jpg", "alt": "Traditional Moken kabang boat", "caption": "Traditional Moken kabang boat, once home to nomadic sea families", "credit": "Wikimedia Commons (CC BY-SA 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Moken_kabang_boat.jpg"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Moken_child_diving.jpg/800px-Moken_child_diving.jpg", "alt": "Moken child diving underwater", "caption": "Young Moken demonstrating exceptional underwater vision and diving ability", "credit": "Wikimedia Commons (CC BY 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Moken_child_diving.jpg"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Moken_village.jpg/800px-Moken_village.jpg", "alt": "Moken settlement on stilts", "caption": "Modern Moken settlement on stilts, reflecting transition from boat to land life", "credit": "Wikimedia Commons (CC BY-SA 3.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Moken_village.jpg"}
+  ],
+  "references": [
+    {"type": "article", "authors": ["Gislén, A.", "Warrant, E. J."], "year": 2003, "title": "Superior underwater vision in a human population of sea gypsies", "journal": "Current Biology", "volume": "13", "issue": "10", "pages": "833-836", "doi": "10.1016/S0960-9822(03)00290-2"},
+    {"type": "book", "authors": ["Ivanoff, J."], "year": 1997, "title": "Moken: Sea-Gypsies of the Andaman Sea", "publisher": "White Lotus Press", "location": "Bangkok", "isbn": "978-9748496726"},
+    {"type": "web", "title": "Moken People", "organization": "Project Moken", "url": "https://www.projectmoken.com", "accessDate": "2025-01-15"}
+  ],
+  "relatedCultures": {
+    "similar": [
+      {"id": "bajau", "name": "Bajau", "icon": "⛵", "location": "Southeast Asia", "similarity": "Fellow sea nomads of Southeast Asian waters with similar maritime adaptations.", "relationshipType": "Cultural Relatives"}
+    ]
+  },
+  "metadata": {
+    "lastUpdated": "2025-01-15",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 1856,
+    "imageCount": 3,
+    "referenceCount": 3,
+    "contributors": ["Indigenous Peoples Repository Team"],
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "id": "wodaabe",
+  "name": "Wodaabe",
+  "alternateNames": ["Bororo", "Mbororo"],
+
+  "location": {
+    "region": "africa",
+    "countries": ["Niger", "Nigeria", "Cameroon", "Chad"],
+    "coordinates": {
+      "lat": 14.5153,
+      "lng": 8.0817
+    }
+  },
+
+  "demographics": {
+    "population": "~250,000",
+    "populationYear": 2020,
+    "language": {
+      "name": "Fula (Fulfulde)",
+      "family": "Niger-Congo",
+      "speakers": "~200,000",
+      "status": "Vigorous"
+    }
+  },
+
+  "culturalIdentity": {
+    "icon": "🎭",
+    "primaryColor": "#e67e22",
+    "secondaryColor": "#f39c12",
+    "dwelling": "Portable tents",
+    "livelihood": "Nomadic pastoralism",
+    "knownFor": "Gerewol beauty festival, elaborate face painting, aesthetic culture",
+    "dietaryNotes": "Milk-based diet, millet porridge, occasional meat"
+  },
+
+  "quickFacts": {
+    "region": "Sahel Region",
+    "traditionalDwelling": "Portable tent structures",
+    "primaryLivelihood": "Nomadic Pastoralism",
+    "distinctiveFeature": "Gerewol Festival"
+  },
+
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Wodaabe (meaning 'people of the taboo' in Fula) are a subgroup of the Fulani ethnic group, renowned for their distinctive nomadic lifestyle across the Sahel region of West Africa. They are particularly famous for their annual Gerewol festival, where men engage in elaborate beauty competitions. The Wodaabe have maintained one of the most intact nomadic cultures in Africa, moving with their zebu cattle herds across Niger, Nigeria, Cameroon, and Chad in search of pasture and water.",
+
+      "culturalIdentity": "The Wodaabe place extraordinary emphasis on physical beauty, charm, and personal magnetism. Their society is characterized by a complex aesthetic code called 'pulaaku' emphasizing reserve, patience, fortitude, and care. Unlike many cultures, Wodaabe men are expected to be beautiful and charming, spending hours preparing elaborate makeup and costumes for courtship displays.",
+
+      "funFact": "At the Gerewol festival, men paint their faces with elaborate patterns, roll their eyes to show the whites, and dance for hours to attract wives - one of the world's most spectacular beauty pageants where men are the contestants!"
+    },
+
+    "history": {
+      "origins": "The Wodaabe trace their ancestry to the Fulani peoples who originated in the Senegal River valley. According to oral traditions, they separated from other Fulani groups centuries ago, choosing to maintain a strictly nomadic lifestyle while other Fulani became semi-sedentary or settled. The Wodaabe believe they are the 'true' or 'pure' Fulani who have preserved the ancient pastoral traditions.",
+
+      "migrations": "For centuries, the Wodaabe have migrated seasonally across the Sahel, following ancient routes determined by the rains and the needs of their cattle. Their migration patterns typically cover hundreds of kilometers annually, from the arid zones near the Sahara Desert during the wet season to southern regions during the dry season. These movements have been remarkably consistent over generations.",
+
+      "colonialImpact": "European colonization in the late 19th and early 20th centuries disrupted traditional migration routes through the imposition of national borders. Colonial authorities often failed to understand or respect Wodaabe land use patterns. Post-colonial policies promoting sedentarization have challenged their nomadic lifestyle. Droughts in the 1970s and 1980s, partly exacerbated by colonial and post-colonial environmental policies, caused significant hardship.",
+
+      "modernHistory": "The Wodaabe continue their nomadic lifestyle despite increasing pressures including climate change, border restrictions, conflicts with settled farmers, and government policies favoring sedentary agriculture. They have demonstrated remarkable adaptability while maintaining core cultural practices, particularly the Gerewol festival which has become a symbol of cultural resilience."
+    },
+
+    "culture": {
+      "pastoralLifestyle": "Cattle, particularly the distinctive humped zebu, are central to Wodaabe identity and economy. The Wodaabe measure wealth in cattle and view herding as the only acceptable occupation for free men. They move in small family groups following seasonal patterns, setting up temporary camps of portable tents that can be quickly assembled and disassembled. Women own the tents and household goods, while men own the cattle.",
+
+      "aestheticCode": "The Wodaabe have developed one of the world's most elaborate male beauty cultures. Physical attractiveness in men is highly valued, particularly features like tall stature, light skin, white teeth, long straight noses, and especially white eyes and compelling stares. Men spend hours preparing elaborate makeup using yellow powder (borowo), red ochre, and black kohl to accentuate their features.",
+
+      "gerewolFestival": "The annual Gerewol festival is the highlight of Wodaabe culture. Young men form lines and dance the Yaake and Geerewol dances for hours, wearing elaborate costumes, face paint, and ornaments. They roll their eyes, flash their teeth, and perform exaggerated facial expressions to display their beauty and charm. Young women serve as judges, choosing their favorites by subtly pointing. These courtship dances can result in marriages or romantic liaisons, including the culturally-sanctioned practice of stealing wives.",
+
+      "socialStructure": "Wodaabe society is organized into lineage groups with a complex system of family relations. They practice cousin marriage to keep cattle within the family. Unusually, the Wodaabe permit a degree of freedom in sexual and marital relationships, including the teegal marriages arranged in youth and the subsequent koobgal love marriages based on beauty and attraction. This relatively open attitude toward relationships is rare among African pastoralists.",
+
+      "dressAndAdornment": "Traditional dress includes flowing robes in vibrant colors, particularly indigo blues and bright oranges. Men wear elaborately decorated leather amulets, beaded necklaces, and tall conical hats during festivals. Women wear brass and silver jewelry, amber beads, and colorful wraps. Body scarification and elaborate braided hairstyles are traditional markers of beauty and status.",
+
+      "values": "The Wodaabe live by a strict moral code called 'pulaaku' encompassing semteende (modesty and reserve), munyal (patience and fortitude), hakkilo (care and forethought), and sagata (hard work). These values govern all aspects of life and distinguish the Wodaabe as a people."
+    },
+
+    "contemporary": {
+      "challenges": [
+        "Climate Change: Increasingly erratic rainfall and desertification affecting pasture availability",
+        "Land Conflicts: Tensions with settled agricultural communities over land and water",
+        "Border Restrictions: National boundaries limiting traditional migration routes",
+        "Drought: More frequent and severe droughts decimating herds",
+        "Education: Limited access to education while maintaining nomadic lifestyle",
+        "Healthcare: Minimal access to modern healthcare in remote areas",
+        "Political Marginalization: Limited representation in national governments",
+        "Cultural Erosion: Pressure to abandon nomadic lifestyle for settled existence"
+      ],
+
+      "adaptations": [
+        "Seasonal Employment: Some Wodaabe taking temporary wage work during dry seasons",
+        "Herd Diversification: Adding goats and sheep to cattle herds for resilience",
+        "Market Integration: Selling dairy products and livestock in urban markets",
+        "Tourism: Limited engagement with cultural tourism around Gerewol festivals",
+        "Communication: Use of mobile phones to coordinate movements and market access",
+        "Advocacy: Increasing engagement with NGOs and rights organizations",
+        "Education Mobility: Some families sending children to mobile schools or boarding schools"
+      ],
+
+      "preservation": "The Wodaabe actively preserve their culture through maintaining annual Gerewol festivals which strengthen cultural identity and transmission, teaching traditional knowledge of animal husbandry and environmental management to younger generations, oral traditions preserving genealogies and migration histories, resistance to sedentarization pressures, and collaboration with researchers and filmmakers to document their culture.",
+
+      "notableIndividuals": [
+        {
+          "name": "Mokao Mouffok",
+          "achievement": "Cultural ambassador representing Wodaabe traditions internationally"
+        },
+        {
+          "name": "Various Gerewol Champions",
+          "achievement": "Winners of annual beauty competitions who gain high social status"
+        }
+      ]
+    }
+  },
+
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Wodaabe_men_at_Gerewol.jpg/800px-Wodaabe_men_at_Gerewol.jpg",
+      "alt": "Wodaabe men in elaborate face paint and costumes at Gerewol festival",
+      "caption": "Wodaabe men dressed in spectacular costumes with intricate face paint performing at the Gerewol festival",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Wodaabe_men_at_Gerewol.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Wodaabe_face_painting.jpg/800px-Wodaabe_face_painting.jpg",
+      "alt": "Close-up of Wodaabe man's elaborate facial decoration",
+      "caption": "Intricate face painting with yellow ochre, red, and black kohl used to accentuate features and beauty",
+      "credit": "Wikimedia Commons (CC BY 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Wodaabe_face_painting.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Wodaabe_nomadic_camp.jpg/800px-Wodaabe_nomadic_camp.jpg",
+      "alt": "Wodaabe nomadic camp with portable tent structures",
+      "caption": "A Wodaabe camp with traditional portable tents that can be quickly assembled and disassembled",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Wodaabe_nomadic_camp.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Wodaabe_cattle.jpg/800px-Wodaabe_cattle.jpg",
+      "alt": "Wodaabe herder with zebu cattle",
+      "caption": "Wodaabe herder with distinctive zebu cattle, the foundation of their pastoral economy",
+      "credit": "Wikimedia Commons (CC BY 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Wodaabe_cattle.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Wodaabe_woman.jpg/800px-Wodaabe_woman.jpg",
+      "alt": "Wodaabe woman in traditional dress and jewelry",
+      "caption": "Wodaabe woman wearing traditional jewelry and colorful wraps",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Wodaabe_woman.jpg"
+    }
+  ],
+
+  "references": [
+    {
+      "type": "book",
+      "authors": ["Beckwith, C.", "Fisher, A."],
+      "year": 1993,
+      "title": "African Ark: People and Ancient Cultures of Ethiopia and the Horn of Africa",
+      "publisher": "Harry N. Abrams",
+      "location": "New York",
+      "isbn": "978-0810919365"
+    },
+    {
+      "type": "book",
+      "authors": ["Dupire, M."],
+      "year": 1996,
+      "title": "Peuls nomades: Étude descriptive des Wodaabe du Sahel nigérien",
+      "publisher": "Karthala",
+      "location": "Paris",
+      "isbn": "978-2865375219"
+    },
+    {
+      "type": "documentary",
+      "title": "Wodaabe: Herdsmen of the Sun",
+      "director": "Werner Herzog",
+      "year": 1989,
+      "studio": "Werner Herzog Filmproduktion"
+    },
+    {
+      "type": "article",
+      "authors": ["Stenning, D. J."],
+      "year": 1959,
+      "title": "Savannah Nomads: A Study of the Wodaabe Pastoral Fulani of Western Bornu Province",
+      "journal": "International African Institute",
+      "location": "London"
+    },
+    {
+      "type": "web",
+      "title": "Wodaabe People",
+      "organization": "Sahel Heritage Foundation",
+      "url": "https://www.sahelheritage.org",
+      "accessDate": "2025-01-15"
+    }
+  ],
+
+  "relatedCultures": {
+    "similar": [
+      {
+        "id": "fulani",
+        "name": "Fulani",
+        "icon": "🐄",
+        "location": "West Africa",
+        "similarity": "Parent ethnic group from which Wodaabe derive, sharing language and some cultural practices.",
+        "relationshipType": "Parent Culture"
+      }
+    ],
+    "regional": [
+      {
+        "id": "tuareg",
+        "name": "Tuareg",
+        "icon": "🐪",
+        "location": "Sahara Desert",
+        "similarity": "Fellow Sahel nomads with rich cultural traditions and desert adaptations.",
+        "relationshipType": "Regional Neighbor"
+      }
+    ],
+    "contrasting": [
+      {
+        "id": "maasai",
+        "name": "Maasai",
+        "icon": "🦁",
+        "location": "East Africa",
+        "similarity": "East African pastoralists with different but equally rich cultural traditions.",
+        "relationshipType": "Similar Lifestyle"
+      }
+    ]
+  },
+
+  "metadata": {
+    "lastUpdated": "2025-01-15",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 2567,
+    "imageCount": 5,
+    "referenceCount": 5,
+    "contributors": ["Indigenous Peoples Repository Team"],
+    "version": "1.0.0"
+  }
+}

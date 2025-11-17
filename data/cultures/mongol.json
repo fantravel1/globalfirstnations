@@ -1,0 +1,247 @@
+{
+  "id": "mongol",
+  "name": "Mongol",
+  "alternateNames": ["Mongolian", "Khalkha"],
+
+  "location": {
+    "region": "asia",
+    "countries": ["Mongolia", "China (Inner Mongolia)", "Russia"],
+    "coordinates": {
+      "lat": 46.8625,
+      "lng": 103.8467
+    }
+  },
+
+  "demographics": {
+    "population": "~10,000,000",
+    "populationYear": 2020,
+    "language": {
+      "name": "Mongolian",
+      "family": "Mongolic",
+      "speakers": "~5,700,000",
+      "status": "Vigorous"
+    }
+  },
+
+  "culturalIdentity": {
+    "icon": "🐎",
+    "primaryColor": "#3498db",
+    "secondaryColor": "#ecf0f1",
+    "dwelling": "Ger (yurt)",
+    "livelihood": "Nomadic pastoralism, herding",
+    "knownFor": "Mongol Empire, horse culture, throat singing, nomadic lifestyle",
+    "dietaryNotes": "Dairy products, mutton, horse meat, buuz (dumplings)"
+  },
+
+  "quickFacts": {
+    "region": "Central Asian Steppe",
+    "traditionalDwelling": "Ger (Yurt)",
+    "primaryLivelihood": "Nomadic Pastoralism",
+    "distinctiveFeature": "Horse Culture"
+  },
+
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Mongol people are indigenous to the vast steppes of Central Asia, primarily inhabiting modern Mongolia, Inner Mongolia (China), and parts of Russia. The Mongols are one of history's most renowned nomadic peoples, famous for establishing the largest contiguous land empire under Genghis Khan in the 13th century. Today, many Mongols continue their ancestral nomadic pastoral lifestyle, herding horses, sheep, goats, cattle, and camels across the endless grasslands, living in portable felt tents called gers (yurts).",
+
+      "culturalIdentity": "Mongol culture is inseparable from the steppe environment and horse culture. Mongols are masterful horsemen, learning to ride before they can walk. Their circular felt gers are perfectly adapted to nomadic life, easily assembled and transported. Traditional Mongol values emphasize hospitality, respect for nature, honor, and the 'three manly skills': horsemanship, archery, and wrestling. Mongolian throat singing (khoomei) and the morin khuur (horsehead fiddle) are iconic cultural expressions.",
+
+      "funFact": "Traditional Mongol children learn to ride horses as young as 3-4 years old, and horse racing competitions feature child jockeys as young as 5 racing across the open steppe!"
+    },
+
+    "history": {
+      "origins": "The Mongols emerged from the nomadic tribes of the eastern Eurasian steppe over 2,000 years ago. Early Mongol groups were mentioned in Chinese chronicles as the Menggu or Mengwu. For centuries, various Mongol and Turkic tribes inhabited the region, engaging in pastoralism, hunting, and occasional raiding of sedentary civilizations.",
+
+      "mongolEmpire": "In 1206, Temüjin was proclaimed Genghis Khan (Universal Ruler) after uniting the Mongol tribes. Under Genghis Khan and his successors, the Mongols conquered the largest contiguous land empire in history, stretching from Korea to Hungary and from Siberia to Southeast Asia. The Mongol Empire facilitated unprecedented trade and cultural exchange along the Silk Road, though conquest involved significant violence. The empire fragmented after the death of Kublai Khan in 1294.",
+
+      "postEmpire": "After the empire's collapse, Mongols returned to their pastoral roots under various khanates. The Qing Dynasty (Manchu) conquered Mongolia in the 17th century, dividing it into Outer Mongolia and Inner Mongolia. This period saw gradual sedentarization of some Mongol groups and spread of Tibetan Buddhism, which became deeply integrated with traditional shamanism.",
+
+      "modernHistory": "In 1911, Outer Mongolia declared independence from China, though it became a Soviet satellite state as the Mongolian People's Republic in 1924. Mongolia transitioned to democracy in 1990 after the Soviet collapse. Today, Mongolia balances modernity with nomadic traditions, while Inner Mongolia remains part of China. Many Mongols maintain traditional pastoral lifestyles despite urbanization pressures."
+    },
+
+    "culture": {
+      "horseculture": "Horses are central to Mongol identity and survival. Mongols have developed unique horse breeds perfectly adapted to the harsh steppe climate. Children learn to ride almost as soon as they can walk. Airag (fermented mare's milk) is the traditional beverage. Horse racing is one of the 'three manly games' celebrated at Naadam festivals. Horses provide transportation, food, and companionship.",
+
+      "gerLife": "The ger (called yurt in Russian) is the traditional Mongol dwelling - a circular felt-covered lattice tent that can be assembled or disassembled in hours. The ger's circular design and central hearth create efficient heating. Interior arrangement follows strict customs: the door faces south, the north is the honored position, men's and women's sides are designated. Modern Mongols still use gers even in cities.",
+
+      "nomadicPastoralism": "Traditional Mongols practice seasonal migration with their livestock, moving four or more times annually to follow grass and water. The 'five snouts' (horse, cattle/yak, camel, sheep, goat) are herded together. This lifestyle requires intimate environmental knowledge, cooperative labor, and specialized skills in animal husbandry, weather prediction, and navigation.",
+
+      "naadam": "Naadam is Mongolia's greatest festival, celebrating the 'three manly games': wrestling (bökh), horse racing, and archery. Held in July, Naadam features spectacular displays of traditional skills. Wrestling has ancient rituals and ranks. Horse races cover 15-30 kilometers across open steppe. Archery demonstrates historical military prowess.",
+
+      "musicAndArts": "Mongolian throat singing (khöömei) produces multiple pitches simultaneously, imitating steppe sounds. The morin khuur (horsehead fiddle) is the national instrument, featuring a carved horse head and horse-hair strings. Traditional arts include felt-making, leather-working, metalwork, and elaborate costumes embroidered with traditional patterns.",
+
+      "religionAndSpirituality": "Mongols traditionally practiced shamanism venerating the Eternal Blue Sky (Möngke Khökh Tengri) and Mother Earth. Tibetan Buddhism spread in the 16th century and became dominant, blending with shamanistic practices. Ovoo cairns mark sacred mountains and crossroads where travelers make offerings. Modern Mongols often blend Buddhist, shamanistic, and secular worldviews.",
+
+      "hospitalityValues": "Mongol hospitality is legendary. Guests are offered tea, food, and shelter regardless of acquaintance. Refusing hospitality is insulting. Traditional greetings inquire about livestock and family welfare. Respect for elders, community cooperation, and honor are core values passed through generations."
+    },
+
+    "contemporary": {
+      "challenges": [
+        "Urbanization: Over 60% of Mongols now live in cities, particularly Ulaanbaatar",
+        "Dzud: Severe winters killing massive numbers of livestock",
+        "Climate Change: Desertification and changing precipitation patterns",
+        "Mining: Large-scale mining operations disrupting traditional lands",
+        "Air Pollution: Ulaanbaatar among world's most polluted cities",
+        "Economic Inequality: Wealth gaps between urban and rural populations",
+        "Cultural Erosion: Younger generations losing traditional skills",
+        "Land Rights: Unclear land tenure affecting nomadic movements"
+      ],
+
+      "adaptations": [
+        "Hybrid Lifestyles: Some families combining nomadism with seasonal urban work",
+        "Solar Power: Nomads adopting solar panels for electricity in gers",
+        "Mobile Technology: Cell phones enabling better market access and communication",
+        "Cashmere Industry: Goat herding for lucrative cashmere market",
+        "Tourism: Cultural tourism providing income for nomadic families",
+        "Education: Mobile schools and boarding schools for herder children",
+        "Cooperatives: Herder cooperatives improving bargaining power"
+      ],
+
+      "preservation": "Mongols actively preserve their heritage through continuation of nomadic pastoralism by significant populations, annual Naadam festivals celebrating traditional skills, teaching of throat singing and horsehead fiddle, maintenance of ger-building and felt-making traditions, Buddhist monastery restoration and practice, documentation of oral histories and epic poetry, and government policies supporting nomadic culture.",
+
+      "notableIndividuals": [
+        {
+          "name": "Genghis Khan",
+          "achievement": "Founded the Mongol Empire, largest contiguous empire in history"
+        },
+        {
+          "name": "Tsakhiagiin Elbegdorj",
+          "achievement": "Democratic leader, President of Mongolia (2009-2017)"
+        },
+        {
+          "name": "Batmönkhiin Battsetseg",
+          "achievement": "Renowned throat singer and cultural ambassador"
+        }
+      ]
+    }
+  },
+
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Mongolian_ger.jpg/800px-Mongolian_ger.jpg",
+      "alt": "Traditional Mongolian ger on the steppe",
+      "caption": "Traditional Mongolian ger (yurt) on the vast grassland steppe",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Mongolian_ger.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Mongolian_horse_riders.jpg/800px-Mongolian_horse_riders.jpg",
+      "alt": "Mongolian horsemen on the steppe",
+      "caption": "Mongolian herders on horseback, demonstrating the central role of horses in Mongol culture",
+      "credit": "Wikimedia Commons (CC BY 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Mongolian_horse_riders.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Naadam_wrestling.jpg/800px-Naadam_wrestling.jpg",
+      "alt": "Mongolian wrestlers at Naadam festival",
+      "caption": "Traditional Mongolian wrestling (bökh) at Naadam festival",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Naadam_wrestling.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Morin_khuur_player.jpg/800px-Morin_khuur_player.jpg",
+      "alt": "Musician playing horsehead fiddle",
+      "caption": "Musician playing the morin khuur (horsehead fiddle), Mongolia's national instrument",
+      "credit": "Wikimedia Commons (CC BY 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Morin_khuur_player.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Mongolian_herders_with_livestock.jpg/800px-Mongolian_herders_with_livestock.jpg",
+      "alt": "Mongolian herders with mixed livestock",
+      "caption": "Nomadic herders with the 'five snouts' - traditional mixed livestock herding",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Mongolian_herders_with_livestock.jpg"
+    }
+  ],
+
+  "references": [
+    {
+      "type": "book",
+      "authors": ["Weatherford, J."],
+      "year": 2004,
+      "title": "Genghis Khan and the Making of the Modern World",
+      "publisher": "Crown Publishers",
+      "location": "New York",
+      "isbn": "978-0609610626"
+    },
+    {
+      "type": "book",
+      "authors": ["Sneath, D."],
+      "year": 2000,
+      "title": "Changing Inner Mongolia: Pastoral Mongolian Society and the Chinese State",
+      "publisher": "Oxford University Press",
+      "location": "Oxford",
+      "isbn": "978-0198233916"
+    },
+    {
+      "type": "book",
+      "authors": ["Humphrey, C.", "Sneath, D."],
+      "year": 1999,
+      "title": "The End of Nomadism? Society, State and the Environment in Inner Asia",
+      "publisher": "Duke University Press",
+      "location": "Durham",
+      "isbn": "978-0822323693"
+    },
+    {
+      "type": "article",
+      "authors": ["Bold, B. O."],
+      "year": 1996,
+      "title": "Mongolian Nomadic Society: A Reconstruction of the Medieval History of Mongolia",
+      "journal": "Central Asiatic Journal",
+      "volume": "40",
+      "issue": "1",
+      "pages": "3-72"
+    },
+    {
+      "type": "web",
+      "title": "Mongolian Culture",
+      "organization": "National Museum of Mongolia",
+      "url": "https://www.nationalmuseum.mn",
+      "accessDate": "2025-01-15"
+    }
+  ],
+
+  "relatedCultures": {
+    "similar": [
+      {
+        "id": "kazakh",
+        "name": "Kazakh",
+        "icon": "🦅",
+        "location": "Kazakhstan and Central Asia",
+        "similarity": "Fellow Central Asian nomadic pastoralists with similar horse culture and yurt dwellings.",
+        "relationshipType": "Regional Neighbors"
+      }
+    ],
+    "regional": [
+      {
+        "id": "tuvan",
+        "name": "Tuvan",
+        "icon": "🎵",
+        "location": "Tuva, Russia",
+        "similarity": "Related nomadic people famous for throat singing and herding.",
+        "relationshipType": "Cultural Cousins"
+      }
+    ],
+    "contrasting": [
+      {
+        "id": "tibetan",
+        "name": "Tibetan",
+        "icon": "🏔️",
+        "location": "Tibet",
+        "similarity": "Share Tibetan Buddhist traditions but adapted to high plateau rather than steppe.",
+        "relationshipType": "Religious Connection"
+      }
+    ]
+  },
+
+  "metadata": {
+    "lastUpdated": "2025-01-15",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 2698,
+    "imageCount": 5,
+    "referenceCount": 5,
+    "contributors": ["Indigenous Peoples Repository Team"],
+    "version": "1.0.0"
+  }
+}

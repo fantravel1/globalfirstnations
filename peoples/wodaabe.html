@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Wodaabe People: Culture, Gerewol Festival & Heritage | Indigenous Peoples Repository</title>
+    <meta name="title" content="Wodaabe People: Culture, Gerewol Festival & Heritage">
+    <meta name="description" content="Discover the extraordinary culture of the Wodaabe people, nomadic pastoralists of the Sahel famous for their Gerewol beauty festival and aesthetic traditions.">
+    <meta name="keywords" content="Wodaabe, Bororo, Niger, Sahel, Gerewol, beauty festival, nomadic pastoralists, Fulani, face painting">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.globalfirstnations.com/peoples/wodaabe">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+
+    <style>
+        :root {
+            --desert-gold: #f39c12;
+            --desert-orange: #e67e22;
+            --desert-red: #d35400;
+            --sahel-yellow: #f9ca24;
+            --ochre-brown: #a0522d;
+            --indigo-blue: #34495e;
+            --festival-pink: #fd79a8;
+            --sand-beige: #f5deb3;
+            --kohl-black: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2d3436;
+            background: linear-gradient(135deg, #f9ca24 0%, #f39c12 35%, #e67e22 70%, #d35400 100%);
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Desert dune patterns */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(ellipse at top, transparent 0%, transparent 40%, rgba(243, 156, 18, 0.1) 100%),
+                repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(211, 84, 0, 0.05) 50px, rgba(211, 84, 0, 0.05) 100px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Animated sun/beauty symbol */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 5%;
+            right: 10%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                var(--sahel-yellow) 0%,
+                var(--desert-gold) 40%,
+                var(--desert-orange) 70%,
+                transparent 100%);
+            opacity: 0.3;
+            animation: pulse-glow 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        /* Face paint pattern animation */
+        @keyframes paint-streak {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(2deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--desert-orange) 0%, var(--desert-red) 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(211, 84, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative face paint stripes */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--sahel-yellow) 0px,
+                var(--sahel-yellow) 20px,
+                var(--kohl-black) 20px,
+                var(--kohl-black) 25px,
+                var(--desert-red) 25px,
+                var(--desert-red) 45px,
+                var(--sahel-yellow) 45px,
+                var(--sahel-yellow) 65px
+            );
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--kohl-black) 0px,
+                var(--kohl-black) 15px,
+                var(--sahel-yellow) 15px,
+                var(--sahel-yellow) 30px,
+                var(--desert-red) 30px,
+                var(--desert-red) 50px,
+                var(--sahel-yellow) 50px,
+                var(--sahel-yellow) 70px
+            );
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+            animation: paint-streak 5s ease-in-out infinite;
+        }
+
+        .icon {
+            font-size: 4em;
+            display: inline-block;
+            margin-right: 20px;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .tagline {
+            font-size: 1.4em;
+            opacity: 0.95;
+            font-style: italic;
+            margin-top: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            border-left: 5px solid var(--sahel-yellow);
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 3px solid var(--desert-orange);
+        }
+
+        nav a {
+            color: var(--desert-red);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: var(--desert-orange);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-left: 8px solid var(--desert-orange);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative paint stroke accent */
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle,
+                var(--sahel-yellow),
+                var(--desert-gold),
+                transparent
+            );
+            opacity: 0.08;
+            border-radius: 50%;
+        }
+
+        h2 {
+            color: var(--desert-red);
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--desert-orange);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 120px;
+            height: 4px;
+            background: var(--sahel-yellow);
+        }
+
+        h3 {
+            color: var(--desert-orange);
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: '◈';
+            color: var(--sahel-yellow);
+            margin-right: 12px;
+            font-size: 0.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(249, 202, 36, 0.15), rgba(243, 156, 18, 0.15));
+            border-left: 6px solid var(--desert-gold);
+            border-right: 6px solid var(--desert-orange);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.2);
+        }
+
+        .fun-fact {
+            background: linear-gradient(135deg, var(--festival-pink), var(--desert-orange));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px rgba(253, 121, 168, 0.4);
+            position: relative;
+        }
+
+        .fun-fact::before {
+            content: '✨';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2em;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--desert-gold), var(--desert-orange));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
+            transition: transform 0.3s ease;
+            border: 3px solid var(--sahel-yellow);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Gerewol festival emphasis */
+        .gerewol-box {
+            background: linear-gradient(135deg, var(--sahel-yellow), var(--festival-pink));
+            color: var(--kohl-black);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(249, 202, 36, 0.5);
+            border: 5px solid var(--desert-orange);
+        }
+
+        .gerewol-box h3 {
+            color: var(--kohl-black);
+            margin-top: 0;
+        }
+
+        .challenges-grid, .adaptations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .challenge-card, .adaptation-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--desert-red);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .challenge-card:hover, .adaptation-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.3);
+        }
+
+        .adaptation-card {
+            border-left-color: var(--sahel-yellow);
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 12px 0;
+            line-height: 1.8;
+        }
+
+        li::marker {
+            color: var(--desert-orange);
+        }
+
+        .individual-card {
+            background: linear-gradient(135deg, rgba(249, 202, 36, 0.1), rgba(243, 156, 18, 0.1));
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border-left: 5px solid var(--desert-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .individual-name {
+            color: var(--desert-red);
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--ochre-brown), var(--desert-red));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Decorative paint dots */
+        .paint-dots {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .paint-dot {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            animation: float-beads 3s ease-in-out infinite;
+        }
+
+        .paint-dot:nth-child(even) {
+            animation-delay: 0.5s;
+        }
+
+        .dot-yellow { background: var(--sahel-yellow); }
+        .dot-red { background: var(--desert-red); }
+        .dot-black { background: var(--kohl-black); }
+        .dot-orange { background: var(--desert-orange); }
+        .dot-pink { background: var(--festival-pink); }
+
+        @keyframes float-beads {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .icon { font-size: 3em; }
+            nav a { display: block; margin: 10px 0; }
+            .content-section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <span class="icon">🎭</span>
+                <h1>The Wodaabe People</h1>
+                <p class="tagline">Masters of Beauty - Nomads of the Sahel - Keepers of the Gerewol</p>
+            </div>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/peoples">All Peoples</a>
+            <a href="/regions/africa">Africa</a>
+            <a href="#culture">Culture</a>
+            <a href="#history">History</a>
+            <a href="#contemporary">Today</a>
+        </nav>
+
+        <section class="content-section">
+            <h2>Who Are the Wodaabe?</h2>
+
+            <p>The Wodaabe (meaning 'people of the taboo' in Fula) are a subgroup of the Fulani ethnic group, renowned for their distinctive nomadic lifestyle across the Sahel region of West Africa. They are particularly famous for their annual Gerewol festival, where men engage in elaborate beauty competitions. The Wodaabe have maintained one of the most intact nomadic cultures in Africa, moving with their zebu cattle herds across Niger, Nigeria, Cameroon, and Chad in search of pasture and water.</p>
+
+            <div class="paint-dots">
+                <span class="paint-dot dot-yellow"></span>
+                <span class="paint-dot dot-red"></span>
+                <span class="paint-dot dot-black"></span>
+                <span class="paint-dot dot-orange"></span>
+                <span class="paint-dot dot-pink"></span>
+                <span class="paint-dot dot-yellow"></span>
+                <span class="paint-dot dot-red"></span>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">~250,000</span>
+                    <span>Population</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Fula</span>
+                    <span>Language (Fulfulde)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Sahel</span>
+                    <span>Region</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Nomadic</span>
+                    <span>Lifestyle</span>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Fun Fact:</strong> At the Gerewol festival, men paint their faces with elaborate patterns, roll their eyes to show the whites, and dance for hours to attract wives - one of the world's most spectacular beauty pageants where men are the contestants!
+            </div>
+        </section>
+
+        <section class="content-section" id="culture">
+            <h2>Cultural Traditions</h2>
+
+            <div class="gerewol-box">
+                <h3>The Gerewol Festival</h3>
+                <p>The annual Gerewol festival is the highlight of Wodaabe culture and one of the most extraordinary cultural events in Africa. Young men form lines and dance the Yaake and Geerewol dances for hours, wearing elaborate costumes, face paint, and ornaments. They roll their eyes, flash their teeth, and perform exaggerated facial expressions to display their beauty and charm.</p>
+
+                <p><strong>The Festival Process:</strong> Men spend hours preparing elaborate makeup using yellow powder (borowo), red ochre, and black kohl to accentuate their features. Young women serve as judges, choosing their favorites by subtly pointing. These courtship dances can result in marriages or romantic liaisons, including the culturally-sanctioned practice of stealing wives.</p>
+            </div>
+
+            <h3>Aesthetic Code & Beauty Standards</h3>
+            <div class="highlight-box">
+                <p>The Wodaabe have developed one of the world's most elaborate male beauty cultures. Physical attractiveness in men is highly valued, particularly features like:</p>
+                <ul>
+                    <li>Tall stature and elegant bearing</li>
+                    <li>Light skin tone</li>
+                    <li>Brilliant white teeth</li>
+                    <li>Long straight noses</li>
+                    <li>White eyes and compelling stares</li>
+                </ul>
+                <p>Men spend hours preparing elaborate makeup to accentuate these features, creating some of the most striking visual displays in human culture.</p>
+            </div>
+
+            <h3>Pastoral Lifestyle</h3>
+            <p>Cattle, particularly the distinctive humped zebu, are central to Wodaabe identity and economy. The Wodaabe measure wealth in cattle and view herding as the only acceptable occupation for free men. They move in small family groups following seasonal patterns, setting up temporary camps of portable tents that can be quickly assembled and disassembled. Women own the tents and household goods, while men own the cattle.</p>
+
+            <h3>The Code of Pulaaku</h3>
+            <p>The Wodaabe live by a strict moral code called 'pulaaku' encompassing:</p>
+            <ul>
+                <li><strong>Semteende:</strong> Modesty and reserve</li>
+                <li><strong>Munyal:</strong> Patience and fortitude</li>
+                <li><strong>Hakkilo:</strong> Care and forethought</li>
+                <li><strong>Sagata:</strong> Hard work</li>
+            </ul>
+
+            <h3>Social Structure & Marriage</h3>
+            <p>Wodaabe society permits a degree of freedom in sexual and marital relationships rare among African pastoralists. They practice two types of marriage: teegal marriages arranged in youth, and subsequent koobgal love marriages based on beauty and attraction. This relatively open attitude toward relationships reflects their values of personal choice and aesthetic appreciation.</p>
+        </section>
+
+        <section class="content-section" id="history">
+            <h2>History</h2>
+
+            <h3>Origins</h3>
+            <p>The Wodaabe trace their ancestry to the Fulani peoples who originated in the Senegal River valley. According to oral traditions, they separated from other Fulani groups centuries ago, choosing to maintain a strictly nomadic lifestyle while other Fulani became semi-sedentary or settled. The Wodaabe believe they are the 'true' or 'pure' Fulani who have preserved the ancient pastoral traditions.</p>
+
+            <h3>Nomadic Migrations</h3>
+            <p>For centuries, the Wodaabe have migrated seasonally across the Sahel, following ancient routes determined by the rains and the needs of their cattle. Their migration patterns typically cover hundreds of kilometers annually, from the arid zones near the Sahara Desert during the wet season to southern regions during the dry season.</p>
+
+            <h3>Colonial & Modern Challenges</h3>
+            <p>European colonization disrupted traditional migration routes through the imposition of national borders. Post-colonial policies promoting sedentarization have challenged their nomadic lifestyle. Droughts in the 1970s and 1980s caused significant hardship. Despite these pressures, the Wodaabe continue their nomadic lifestyle, demonstrating remarkable cultural resilience.</p>
+        </section>
+
+        <section class="content-section" id="contemporary">
+            <h2>Contemporary Life</h2>
+
+            <h3>Current Challenges</h3>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <strong>Climate Change</strong>
+                    <p>Increasingly erratic rainfall and desertification affecting pasture</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Land Conflicts</strong>
+                    <p>Tensions with settled agricultural communities</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Border Restrictions</strong>
+                    <p>National boundaries limiting traditional routes</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Severe Droughts</strong>
+                    <p>More frequent droughts decimating herds</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Education Access</strong>
+                    <p>Limited schooling while maintaining mobility</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Cultural Pressure</strong>
+                    <p>Pressure to abandon nomadic lifestyle</p>
+                </div>
+            </div>
+
+            <h3>Adaptations & Resilience</h3>
+            <div class="adaptations-grid">
+                <div class="adaptation-card">
+                    <strong>Herd Diversification</strong>
+                    <p>Adding goats and sheep for greater resilience</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>Mobile Technology</strong>
+                    <p>Using phones for coordination and markets</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>Cultural Tourism</strong>
+                    <p>Limited engagement around Gerewol festivals</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>Market Integration</strong>
+                    <p>Selling dairy and livestock in urban markets</p>
+                </div>
+            </div>
+
+            <div class="paint-dots">
+                <span class="paint-dot dot-pink"></span>
+                <span class="paint-dot dot-yellow"></span>
+                <span class="paint-dot dot-orange"></span>
+                <span class="paint-dot dot-red"></span>
+                <span class="paint-dot dot-black"></span>
+            </div>
+
+            <h3>Cultural Preservation</h3>
+            <p>The Wodaabe actively preserve their culture through maintaining annual Gerewol festivals which strengthen cultural identity, teaching traditional knowledge of animal husbandry and environmental management to younger generations, preserving oral traditions and genealogies, resisting sedentarization pressures, and collaborating with researchers and filmmakers to document their unique culture.</p>
+        </section>
+
+        <footer>
+            <div class="paint-dots">
+                <span class="paint-dot dot-yellow"></span>
+                <span class="paint-dot dot-red"></span>
+                <span class="paint-dot dot-orange"></span>
+                <span class="paint-dot dot-pink"></span>
+            </div>
+            <p>&copy; 2025 Indigenous Peoples Repository | Honoring and preserving indigenous heritage worldwide</p>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">
+                <a href="/" style="color: white; margin: 0 10px;">Home</a> |
+                <a href="/peoples" style="color: white; margin: 0 10px;">All Peoples</a> |
+                <a href="/about" style="color: white; margin: 0 10px;">About</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

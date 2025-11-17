@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuer People: Culture, History & Heritage | Indigenous Peoples Repository</title>
+    <meta name="description" content="Discover the rich culture of the Nuer people of South Sudan. Learn about their cattle culture, scarification traditions, and life along the White Nile.">
+    <meta name="keywords" content="Nuer, Naath, South Sudan, Ethiopia, cattle culture, scarification, Nilotic peoples, Upper Nile">
+
+    <link rel="canonical" href="https://www.globalfirstnations.com/peoples/nuer">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐃</text></svg>">
+
+    <style>
+        :root {
+            --nile-blue: #5b8fb9;
+            --deep-water: #2c5f7c;
+            --earth-brown: #6c5353;
+            --mud-brown: #8b7355;
+            --reed-green: #7c9473;
+            --cattle-tan: #d2b48c;
+            --scar-dark: #4a3c2e;
+            --sky-light: #b3d4e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2d3436;
+            background: linear-gradient(180deg, var(--sky-light) 0%, var(--nile-blue) 40%, var(--earth-brown) 100%);
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Water ripple effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(91, 143, 185, 0.1) 30px, rgba(91, 143, 185, 0.1) 35px),
+                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(44, 95, 124, 0.05) 40px, rgba(44, 95, 124, 0.05) 45px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Floating Nile element */
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(0deg, var(--deep-water), transparent);
+            opacity: 0.3;
+            animation: gentle-wave 15s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes gentle-wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes float-drift {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(2deg); }
+            66% { transform: translateY(-8px) rotate(-2deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--earth-brown) 0%, var(--deep-water) 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(44, 95, 124, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Scarification pattern border */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--scar-dark) 0px,
+                var(--scar-dark) 80px,
+                transparent 80px,
+                transparent 90px
+            );
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                transparent 10px,
+                var(--scar-dark) 10px,
+                var(--scar-dark) 90px
+            );
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            animation: float-drift 8s ease-in-out infinite;
+        }
+
+        .icon {
+            font-size: 4em;
+            display: inline-block;
+            margin-right: 20px;
+            animation: float-drift 5s ease-in-out infinite;
+        }
+
+        .tagline {
+            font-size: 1.4em;
+            opacity: 0.95;
+            font-style: italic;
+            margin-top: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            border-left: 5px solid var(--nile-blue);
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid var(--earth-brown);
+        }
+
+        nav a {
+            color: var(--deep-water);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: var(--nile-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-left: 8px solid var(--earth-brown);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Water reflection accent */
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                var(--nile-blue),
+                var(--sky-light),
+                transparent
+            );
+            opacity: 0.08;
+        }
+
+        h2 {
+            color: var(--earth-brown);
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--nile-blue);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--deep-water);
+        }
+
+        h3 {
+            color: var(--deep-water);
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: '▬';
+            color: var(--scar-dark);
+            margin-right: 12px;
+            font-size: 0.6em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(91, 143, 185, 0.1), rgba(210, 180, 140, 0.1));
+            border-left: 6px solid var(--nile-blue);
+            border-right: 6px solid var(--earth-brown);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(91, 143, 185, 0.2);
+        }
+
+        .fun-fact {
+            background: linear-gradient(135deg, var(--nile-blue), var(--deep-water));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px rgba(44, 95, 124, 0.3);
+            position: relative;
+        }
+
+        .fun-fact::before {
+            content: '🐃';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2em;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--earth-brown), var(--deep-water));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(108, 83, 83, 0.3);
+            transition: transform 0.3s ease;
+            border: 3px solid var(--cattle-tan);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Scarification pattern emphasis */
+        .scarification-box {
+            background: linear-gradient(135deg, rgba(74, 60, 46, 0.1), rgba(108, 83, 83, 0.1));
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border-top: 3px solid var(--scar-dark);
+            border-bottom: 3px solid var(--scar-dark);
+            position: relative;
+        }
+
+        .scarification-box::before,
+        .scarification-box::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: var(--scar-dark);
+        }
+
+        .scarification-box::before { top: 10px; }
+        .scarification-box::after { bottom: 10px; }
+
+        .challenges-grid, .adaptations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .challenge-card, .adaptation-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--earth-brown);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .challenge-card:hover, .adaptation-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(91, 143, 185, 0.2);
+        }
+
+        .adaptation-card {
+            border-left-color: var(--nile-blue);
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 12px 0;
+            line-height: 1.8;
+        }
+
+        li::marker {
+            color: var(--earth-brown);
+        }
+
+        .individual-card {
+            background: linear-gradient(135deg, rgba(91, 143, 185, 0.1), rgba(210, 180, 140, 0.1));
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border-left: 5px solid var(--deep-water);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .individual-name {
+            color: var(--earth-brown);
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--mud-brown), var(--deep-water));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Decorative scar lines */
+        .scar-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 25px 0;
+            padding: 15px 0;
+        }
+
+        .scar-line {
+            height: 3px;
+            background: var(--scar-dark);
+            border-radius: 2px;
+            opacity: 0.7;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .icon { font-size: 3em; }
+            nav a { display: block; margin: 10px 0; }
+            .content-section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <span class="icon">🐃</span>
+                <h1>The Nuer People</h1>
+                <p class="tagline">People of the White Nile - Keepers of Cattle - Bearers of the Gaar</p>
+            </div>
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/peoples">All Peoples</a>
+            <a href="/regions/africa">Africa</a>
+            <a href="#culture">Culture</a>
+            <a href="#history">History</a>
+            <a href="#contemporary">Today</a>
+        </nav>
+
+        <section class="content-section">
+            <h2>Who Are the Nuer?</h2>
+
+            <p>The Nuer (who call themselves 'Naath') are a Nilotic ethnic group concentrated in the Greater Upper Nile region of South Sudan and the Gambela region of western Ethiopia. They are one of the largest ethnic groups in South Sudan and are renowned pastoralists whose lives revolve around cattle. The Nuer inhabit the vast wetlands and grasslands along the White Nile and its tributaries, where they have developed a sophisticated system of seasonal migration between permanent settlements and cattle camps.</p>
+
+            <div class="scar-lines">
+                <div class="scar-line" style="width: 90%;"></div>
+                <div class="scar-line" style="width: 85%;"></div>
+                <div class="scar-line" style="width: 88%;"></div>
+                <div class="scar-line" style="width: 86%;"></div>
+                <div class="scar-line" style="width: 89%;"></div>
+                <div class="scar-line" style="width: 87%;"></div>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">~1.8M</span>
+                    <span>Population</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Nuer</span>
+                    <span>Language (Nilotic)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Upper Nile</span>
+                    <span>Homeland</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Cattle</span>
+                    <span>Cultural Center</span>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Fun Fact:</strong> The Nuer have hundreds of words to describe cattle based on color patterns, horn shapes, and other characteristics - a cow is never just 'a cow' but is described in elaborate poetic detail!
+            </div>
+        </section>
+
+        <section class="content-section" id="culture">
+            <h2>Cultural Traditions</h2>
+
+            <h3>Cattle Culture</h3>
+            <p>Cattle are the absolute center of Nuer life, providing milk, meat, hides, and dung for fuel. Beyond material value, cattle have immense spiritual and social significance. Individuals are identified with cattle, taking 'ox-names' based on a favorite bull. Marriages require bridewealth payments in cattle. Cattle feature prominently in prayers, blessings, and sacrifices. The Nuer say: "Man without cattle is not a man."</p>
+
+            <div class="scarification-box">
+                <h3>Scarification (Gaar)</h3>
+                <p>Nuer boys undergo initiation ceremonies between ages 14-18 that include receiving facial scarification (gaar) - typically six horizontal lines cut across the forehead from ear to ear. This painful process marks transition to manhood and creates permanent clan markers. The deep cuts are made with a sharp blade and allowed to heal into raised keloid scars, creating distinctive patterns that identify Nuer men throughout their lives.</p>
+            </div>
+
+            <h3>Seasonal Migration</h3>
+            <div class="highlight-box">
+                <p>The Nuer practice transhumance adapted to the dramatic seasonal flooding of the Sudd wetlands:</p>
+                <ul>
+                    <li><strong>Rainy Season (May-October):</strong> Live in permanent villages on higher ground, cultivating sorghum and other crops</li>
+                    <li><strong>Dry Season:</strong> Young men take cattle to riverside camps (wec) where grazing remains, while others stay in villages</li>
+                </ul>
+                <p>This seasonal movement has been central to Nuer life for centuries, allowing them to maximize use of their environment.</p>
+            </div>
+
+            <h3>Social Organization</h3>
+            <p>Nuer society operates through a segmentary lineage system of remarkable complexity. People belong to nested levels of patrilineal descent groups - from nuclear families to lineages to clans to tribal sections. This 'ordered anarchy' allows Nuer to function without centralized political authority. Age-sets created through initiation provide another organizing principle, creating bonds that cross lineage divisions.</p>
+
+            <h3>Marriage & Kinship</h3>
+            <p>Marriage among the Nuer requires substantial bridewealth (typically 20-40 cattle), creating alliances between families. The Nuer practice levirate marriage (widow marries deceased husband's brother) and ghost marriage (children born to a deceased man's wife are considered his). These practices ensure continuity of lineages and proper kinship relations.</p>
+
+            <h3>Religion</h3>
+            <p>Traditional Nuer religion centers on Kwoth (God/Spirit), a supreme being associated with the sky. Cattle play key roles in religious life as sacrificial animals. The Nuer practice divination, recognize various nature spirits, and maintain elaborate rituals for births, deaths, marriages, and other transitions.</p>
+        </section>
+
+        <section class="content-section" id="history">
+            <h2>History</h2>
+
+            <h3>Origins</h3>
+            <p>The Nuer share common origins with other Nilotic peoples, migrating southward from the Nile Valley region over several centuries. They are believed to have separated from the closely related Dinka people around 600-1000 years ago, adapting to the seasonal flooding patterns of the Sudd wetlands.</p>
+
+            <h3>Expansion Era</h3>
+            <p>Between the 17th and 19th centuries, the Nuer underwent a period of expansion, moving into territories previously held by Dinka, Anuak, and other groups. This expansion was driven by cattle needs, population growth, and possibly environmental changes. The Nuer developed a reputation as fierce warriors and successful cattle raiders.</p>
+
+            <h3>Colonial Period</h3>
+            <p>During the Anglo-Egyptian Condominium (1899-1956), British colonial authorities attempted to control Nuer territories. The Nuer resisted colonial rule through a series of uprisings in the 1920s and 1930s. Colonial policies disrupted traditional governance, imposed borders, and introduced Christianity and Western education.</p>
+
+            <h3>Modern Conflicts</h3>
+            <p>The Nuer have been profoundly affected by Sudan's civil wars (1955-1972, 1983-2005) and the ongoing conflicts in South Sudan since independence in 2011. The wars have caused massive displacement, loss of life, and destruction of livelihoods. Despite these extraordinary challenges, the Nuer have maintained strong cultural identity.</p>
+        </section>
+
+        <section class="content-section" id="contemporary">
+            <h2>Contemporary Life</h2>
+
+            <h3>Current Challenges</h3>
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <strong>Armed Conflict</strong>
+                    <p>Ongoing civil war and intercommunal violence</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Mass Displacement</strong>
+                    <p>Hundreds of thousands displaced by conflict</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Militarized Raiding</strong>
+                    <p>Traditional cattle raiding with automatic weapons</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Climate Change</strong>
+                    <p>Altered flooding patterns affecting pastoralism</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Food Insecurity</strong>
+                    <p>Conflict and drought causing periodic famines</p>
+                </div>
+                <div class="challenge-card">
+                    <strong>Limited Education</strong>
+                    <p>Extremely low literacy rates and few schools</p>
+                </div>
+            </div>
+
+            <h3>Adaptations & Resilience</h3>
+            <div class="adaptations-grid">
+                <div class="adaptation-card">
+                    <strong>Diaspora Communities</strong>
+                    <p>Maintaining culture in refugee camps and abroad</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>NGO Engagement</strong>
+                    <p>Working with humanitarian organizations</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>Peace Initiatives</strong>
+                    <p>Community-led reconciliation efforts</p>
+                </div>
+                <div class="adaptation-card">
+                    <strong>Market Participation</strong>
+                    <p>Increased engagement with cash economy</p>
+                </div>
+            </div>
+
+            <h3>Notable Individuals</h3>
+            <div class="individual-card">
+                <div class="individual-name">Riek Machar</div>
+                <p>Political leader and former Vice President of South Sudan</p>
+            </div>
+            <div class="individual-card">
+                <div class="individual-name">Nyaruach Lueth</div>
+                <p>South Sudanese-American model and activist</p>
+            </div>
+            <div class="individual-card">
+                <div class="individual-name">Emmanuel Jal</div>
+                <p>Musician and former child soldier turned peace activist</p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="scar-lines">
+                <div class="scar-line" style="width: 60%; background: rgba(255,255,255,0.4);"></div>
+                <div class="scar-line" style="width: 55%; background: rgba(255,255,255,0.4);"></div>
+                <div class="scar-line" style="width: 58%; background: rgba(255,255,255,0.4);"></div>
+            </div>
+            <p>&copy; 2025 Indigenous Peoples Repository | Honoring and preserving indigenous heritage worldwide</p>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">
+                <a href="/" style="color: white; margin: 0 10px;">Home</a> |
+                <a href="/peoples" style="color: white; margin: 0 10px;">All Peoples</a> |
+                <a href="/about" style="color: white; margin: 0 10px;">About</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

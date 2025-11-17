@@ -3,12 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapa Nui | Indigenous Peoples Research Database</title>
-    <meta name="description" content="Explore the Rapa Nui people - their history, culture, traditions, and contemporary life.">
+    <title>Rapa Nui People | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Rapa Nui - Easter Island's indigenous Polynesian people, creators of massive moai statues and rongorongo script.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗿</text></svg>">
-    <link rel="stylesheet" href="/css/culture-page.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --volcanic-black: #2C2C2C;
+            --lava-red: #8B0000;
+            --pacific-blue: #006994;
+            --stone-grey: #808080;
+            --moai-tan: #D2B48C;
+            --ocean-teal: #008B8B;
+            --island-green: #228B22;
+            --coral-pink: #F08080;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--volcanic-black);
+            background: #F5F5DC;
+        }
+
+        .moai-border {
+            height: 18px;
+            background: linear-gradient(90deg, var(--volcanic-black) 0%, var(--stone-grey) 50%, var(--volcanic-black) 100%);
+            position: relative;
+        }
+
+        .moai-border::before {
+            content: '🗿 🗿 🗿 🗿 🗿 🗿 🗿 🗿 🗿 🗿';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0.4;
+        }
+
+        .breadcrumb {
+            background: linear-gradient(to bottom, #FAFAFA, #F5F5DC);
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--lava-red);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--volcanic-black);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav a:hover { color: var(--lava-red); }
+        .breadcrumb-separator { color: var(--stone-grey); }
+
+        .hero {
+            background: linear-gradient(180deg,
+                #2C2C2C 0%,
+                #4B4B4B 20%,
+                #696969 40%,
+                #808080 60%,
+                #A9A9A9 80%,
+                #D3D3D3 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150"><ellipse cx="300" cy="120" rx="150" ry="40" fill="%238B0000" opacity="0.3"/><ellipse cx="600" cy="115" rx="180" ry="45" fill="%238B0000" opacity="0.3"/><ellipse cx="900" cy="125" rx="160" ry="38" fill="%238B0000" opacity="0.3"/></svg>') bottom center no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7));
+            animation: moaiStand 8s ease-in-out infinite;
+        }
+
+        @keyframes moaiStand {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
+            letter-spacing: 4px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(139, 0, 0, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(44, 44, 44, 0.15);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        .quick-facts {
+            background: linear-gradient(135deg, var(--volcanic-black), var(--stone-grey));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 4px solid var(--lava-red);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(139, 0, 0, 0.3);
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--lava-red);
+            font-weight: 800;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--coral-pink);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--volcanic-black);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--lava-red);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--stone-grey);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #2C2C2C;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--lava-red);
+        }
+
+        .moai-box {
+            background: linear-gradient(135deg, #F5F5DC 0%, #E8E8D0 100%);
+            border: 4px solid var(--stone-grey);
+            border-left: 12px solid var(--lava-red);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(44, 44, 44, 0.25);
+            position: relative;
+        }
+
+        .moai-box::before {
+            content: '🌋';
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            font-size: 4rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .moai-box h4 {
+            color: var(--volcanic-black);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .moai-box p {
+            color: #4B4B4B;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content { grid-template-columns: 1fr; }
+            .quick-facts { position: static; margin-bottom: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 5rem 1.5rem; }
+            .content-wrapper { padding: 2rem 1.5rem; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
+    <div class="moai-border"></div>
+
     <nav class="breadcrumb">
         <div class="breadcrumb-nav">
             <a href="/">Home</a>
@@ -25,16 +310,11 @@
         <div class="hero-content">
             <div class="culture-icon">🗿</div>
             <h1>Rapa Nui</h1>
-            <p class="hero-subtitle">Indigenous People of Oceania</p>
+            <p class="hero-subtitle">Easter Island's Ancient Stone Builders</p>
             <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <span>👥</span>
-                    <span>~7,750 people</span>
-                </div>
-                <div class="hero-meta-item">
-                    <span>🗣️</span>
-                    <span>Rapa Nui</span>
-                </div>
+                <div class="hero-meta-item"><span>👥</span><span>~7,750 people</span></div>
+                <div class="hero-meta-item"><span>🗣️</span><span>Rapa Nui Language</span></div>
+                <div class="hero-meta-item"><span>📍</span><span>Easter Island</span></div>
             </div>
         </div>
     </header>
@@ -43,32 +323,51 @@
         <div class="main-content">
             <article class="article-content">
                 <section class="content-section">
-                    <h2 class="section-title">Introduction</h2>
-                    <p class="content-text">The Rapa Nui are the indigenous Polynesian people of Easter Island (Rapa Nui), one of the most remote inhabited islands on Earth. Famous for creating massive stone moai statues (nearly 900 figures, some weighing 80+ tons), the Rapa Nui developed a unique culture in isolation. Following ecological collapse, slave raids, and disease that devastated the population to near-extinction in the 19th century, Rapa Nui culture is experiencing revival, though tensions with Chilean government over land rights continue.</p>
-                    <p class="content-text"><em>This page is being developed. Full content coming soon with comprehensive history, culture, images, and academic references.</em></p>
+                    <h2 class="section-title">Masters of Monumental Art</h2>
+
+                    <p class="content-text">
+                        The Rapa Nui are the indigenous Polynesian people of Easter Island (Rapa Nui), one of the most remote inhabited islands on Earth. Famous for creating massive stone moai statues (nearly 900 figures, some weighing 80+ tons), the Rapa Nui developed a unique culture in isolation. Following ecological collapse, slave raids, and disease that devastated the population to near-extinction in the 19th century, Rapa Nui culture is experiencing revival, though tensions with Chilean government over land rights continue.
+                    </p>
+
+                    <div class="moai-box">
+                        <h4>Moai - Monumental Stone Guardians</h4>
+                        <p>
+                            The moai are massive stone statues carved from volcanic rock, representing deified ancestors. Nearly 900 moai dot Easter Island, with the largest completed statue standing 10 meters (33 feet) tall and weighing 82 tons. Created between 1250-1500 CE, these monuments demonstrate extraordinary engineering, organizational capacity, and artistic vision. How the Rapa Nui transported these massive statues across the island remains a subject of research and debate. The moai symbolize ancestral power, with each statue believed to channel spiritual energy (mana) to protect and benefit the community.
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        <strong>Rongorongo Script:</strong> The Rapa Nui developed rongorongo, a system of glyphs incised on wooden tablets, representing one of the few independent writing systems developed in Oceania. Though the script remains largely undeciphered, surviving tablets suggest a complex symbolic system encoding spiritual knowledge, genealogies, or historical records. The rongorongo script stands as testament to Rapa Nui intellectual achievement.
+                    </p>
+
+                    <p class="content-text">
+                        <em>This page honors the Rapa Nui—creators of monumental moai statues, developers of rongorongo script, and resilient people maintaining cultural identity on one of Earth's most remote islands.</em>
+                    </p>
                 </section>
             </article>
 
             <aside class="quick-facts">
                 <h3>Quick Facts</h3>
-                <div class="fact-item">
-                    <div class="fact-label">Population</div>
-                    <div class="fact-value">~7,750</div>
-                </div>
-                <div class="fact-item">
-                    <div class="fact-label">Language</div>
-                    <div class="fact-value">Rapa Nui</div>
-                </div>
+                <div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~7,750</div></div>
+                <div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Rapa Nui</div></div>
+                <div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Austronesian (Polynesian)</div></div>
+                <div class="fact-item"><div class="fact-label">Moai Statues</div><div class="fact-value">~900 figures</div></div>
+                <div class="fact-item"><div class="fact-label">Location</div><div class="fact-value">Easter Island (Chile)</div></div>
+                <div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Moai statues, Rongorongo</div></div>
+                <div class="fact-item"><div class="fact-label">Status</div><div class="fact-value">Cultural revival</div></div>
             </aside>
         </div>
     </div>
+
+    <div class="moai-border"></div>
 
     <script>
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'rapanui',
                 name: 'Rapa Nui',
-                region: 'oceania'
+                region: 'oceania',
+                continent: 'oceania'
             });
         }
     </script>
