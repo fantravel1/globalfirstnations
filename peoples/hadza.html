@@ -43,14 +43,1488 @@
         .ancient-box h4 { color: var(--baobab-brown); font-size: 1.6rem; margin-bottom: 1rem; font-weight: 800; }
         .ancient-box p { color: #5D4037; font-size: 1.05rem; line-height: 1.7; font-style: italic; }
         @media (max-width: 1024px) { .main-content { grid-template-columns: 1fr; } .quick-facts { position: static; margin-bottom: 2rem; } }
+    
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color, #333);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--primary-color, #333);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
+    
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color, #333);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--primary-color, #333);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="hunter-border"></div>
     <nav class="breadcrumb"><div class="breadcrumb-nav"><a href="/">Home</a><span class="breadcrumb-separator">›</span><a href="/">All Cultures</a><span class="breadcrumb-separator">›</span><a href="/?region=africa">Africa</a><span class="breadcrumb-separator">›</span><span>Hadza</span></div></nav>
     <header class="hero"><div class="hero-content"><div class="culture-icon">🏹</div><h1>Hadza</h1><p class="hero-subtitle">Last Hunter-Gatherers - Ancient Lifestyle Preserved</p><div class="hero-meta"><div class="hero-meta-item"><span>👥</span><span>~1,300 people</span></div><div class="hero-meta-item"><span>🗣️</span><span>Hadzane</span></div><div class="hero-meta-item"><span>📍</span><span>Lake Eyasi, Tanzania</span></div></div></div></header>
-    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">50,000 Years Unchanged</h2><p class="content-text">The Hadza (or Hadzabe) are one of the last remaining hunter-gatherer societies on Earth, living in the area around Lake Eyasi in northern Tanzania. With only about 1,300 people, fewer than 400 Hadza still practice traditional hunting and foraging lifestyles. The Hadza have lived in their territory for tens of thousands of years, representing an ancient way of life predating agriculture. They speak Hadzane, a language isolate with click consonants, unrelated to other African languages.</p><div class="ancient-box"><h4>Most Ancient Lifestyle on Earth</h4><p>Genetic studies indicate the Hadza are among Africa's most ancient populations, having lived in Tanzania for at least 50,000 years! Their language, Hadzane, is a click language isolate showing no clear relationship to other African languages, suggesting extraordinary antiquity. The Hadza likely represent descendants of some of humanity's earliest populations, maintaining a hunting-gathering lifestyle while neighboring peoples adopted agriculture!</p></div><p class="content-text"><strong>Radical Egalitarianism:</strong> The Hadza have no chiefs, elders, or formal leaders. Decisions emerge through discussion and consensus. Successful hunters gain no special status—sharing is so obligatory that skilled hunters sometimes avoid bringing meat to camp to escape sharing demands. This organizational structure fascinates anthropologists studying human cooperation.</p><p class="content-text"><em>This page honors the Hadza—whose ancestors hunted these same lands for 50,000 years, whose egalitarian society challenges assumptions about human hierarchy, and whose click language preserves extraordinary linguistic antiquity.</em></p></section></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~1,300</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Hadzane</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Language isolate</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~1,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Temporary grass huts</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Hunting & foraging</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Last hunter-gatherers</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Lake Eyasi, Tanzania</div></div></aside></div></div>
+    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">50,000 Years Unchanged</h2><p class="content-text">The Hadza (or Hadzabe) are one of the last remaining hunter-gatherer societies on Earth, living in the area around Lake Eyasi in northern Tanzania. With only about 1,300 people, fewer than 400 Hadza still practice traditional hunting and foraging lifestyles. The Hadza have lived in their territory for tens of thousands of years, representing an ancient way of life predating agriculture. They speak Hadzane, a language isolate with click consonants, unrelated to other African languages.</p><div class="ancient-box"><h4>Most Ancient Lifestyle on Earth</h4><p>Genetic studies indicate the Hadza are among Africa's most ancient populations, having lived in Tanzania for at least 50,000 years! Their language, Hadzane, is a click language isolate showing no clear relationship to other African languages, suggesting extraordinary antiquity. The Hadza likely represent descendants of some of humanity's earliest populations, maintaining a hunting-gathering lifestyle while neighboring peoples adopted agriculture!</p></div><p class="content-text"><strong>Radical Egalitarianism:</strong> The Hadza have no chiefs, elders, or formal leaders. Decisions emerge through discussion and consensus. Successful hunters gain no special status—sharing is so obligatory that skilled hunters sometimes avoid bringing meat to camp to escape sharing demands. This organizational structure fascinates anthropologists studying human cooperation.</p><p class="content-text"><em>This page honors the Hadza—whose ancestors hunted these same lands for 50,000 years, whose egalitarian society challenges assumptions about human hierarchy, and whose click language preserves extraordinary linguistic antiquity.</em></p></section>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg"
+                             alt="Hadza hunters with bows and arrows"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg"
+                             alt="Hadza camp with grass shelters"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg"
+                             alt="Hadza woman digging for tubers"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg"
+                             alt="Lake Eyasi region landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg"
+                             alt="Hadza making fire with hand drill"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza making fire using hand drill technique, essential survival skill passed through generations</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg"
+                             alt="Hadza children playing"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza children learning through play and observation in egalitarian society where formal instruction is minimal</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_children.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg"
+                             alt="Hadza hunters with bows and arrows"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg"
+                             alt="Hadza camp with grass shelters"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg"
+                             alt="Hadza woman digging for tubers"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg"
+                             alt="Lake Eyasi region landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg"
+                             alt="Hadza making fire with hand drill"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza making fire using hand drill technique, essential survival skill passed through generations</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg"
+                             alt="Hadza children playing"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza children learning through play and observation in egalitarian society where formal instruction is minimal</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_children.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg"
+                             alt="Hadza hunters with bows and arrows"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg"
+                             alt="Hadza camp with grass shelters"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg"
+                             alt="Hadza woman digging for tubers"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg"
+                             alt="Lake Eyasi region landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg"
+                             alt="Hadza making fire with hand drill"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza making fire using hand drill technique, essential survival skill passed through generations</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg"
+                             alt="Hadza children playing"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza children learning through play and observation in egalitarian society where formal instruction is minimal</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_children.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg"
+                             alt="Hadza hunters with bows and arrows"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg"
+                             alt="Hadza camp with grass shelters"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg"
+                             alt="Hadza woman digging for tubers"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg"
+                             alt="Lake Eyasi region landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg"
+                             alt="Hadza making fire with hand drill"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza making fire using hand drill technique, essential survival skill passed through generations</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg"
+                             alt="Hadza children playing"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza children learning through play and observation in egalitarian society where formal instruction is minimal</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_children.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg"
+                             alt="Hadza hunters with bows and arrows"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg"
+                             alt="Hadza camp with grass shelters"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg"
+                             alt="Hadza woman digging for tubers"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg"
+                             alt="Lake Eyasi region landscape"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg"
+                             alt="Hadza making fire with hand drill"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza making fire using hand drill technique, essential survival skill passed through generations</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg"
+                             alt="Hadza children playing"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Hadza children learning through play and observation in egalitarian society where formal instruction is minimal</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Hadza_children.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~1,300</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Hadzane</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Language isolate</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~1,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Temporary grass huts</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Hunting & foraging</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Last hunter-gatherers</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Lake Eyasi, Tanzania</div></div></aside></div></div>
+    
+    <section class="related-cultures-section">
+        <h2 class="section-title">Explore Related Cultures</h2>
+        <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+            Discover connections between cultures through shared traditions, geographic proximity, or contrasting ways of life.
+        </p>
+        <div class="related-cultures-grid">
+
+                    <a href="san.html" class="related-card">
+                        <div class="related-icon">🏹</div>
+                        <h4 class="related-name">San (Bushmen)</h4>
+                        <p class="related-location">Southern Africa</p>
+                        <span class="related-badge">Similar Culture</span>
+                        <p class="related-description">Fellow African hunter-gatherers with click languages, though San languages form different family; both represent ancient African populations</p>
+                    </a>
+                    <a href="pygmy.html" class="related-card">
+                        <div class="related-icon">🌳</div>
+                        <h4 class="related-name">Pygmy Peoples</h4>
+                        <p class="related-location">Central Africa</p>
+                        <span class="related-badge">Similar Culture</span>
+                        <p class="related-description">African hunter-gatherer/forager peoples in rainforest environments; different ecology but similar subsistence patterns</p>
+                    </a>
+                    <a href="maasai.html" class="related-card">
+                        <div class="related-icon">🦁</div>
+                        <h4 class="related-name">Maasai</h4>
+                        <p class="related-location">Tanzania, Kenya</p>
+                        <span class="related-badge">Regional Neighbor</span>
+                        <p class="related-description">Neighboring pastoralist people in Tanzania; very different subsistence (cattle vs. hunting) with historical tensions over land</p>
+                    </a>
+                    <a href="datoga.html" class="related-card">
+                        <div class="related-icon">🐄</div>
+                        <h4 class="related-name">Datoga</h4>
+                        <p class="related-location">Tanzania</p>
+                        <span class="related-badge">Regional Neighbor</span>
+                        <p class="related-description">Neighboring agro-pastoralist people competing for land near Lake Eyasi</p>
+                    </a>
+                    <a href="zulu.html" class="related-card">
+                        <div class="related-icon">🛡️</div>
+                        <h4 class="related-name">Zulu</h4>
+                        <p class="related-location">South Africa</p>
+                        <span class="related-badge">Contrasting Culture</span>
+                        <p class="related-description">Large, historically powerful Bantu kingdom with agriculture, centralized government, contrasting with Hadza's small-scale egalitarian hunter-gatherers</p>
+                    </a>
+        </div>
+    </section>
+
     <div class="hunter-border"></div>
     <script>if (window.learnerProfile) { window.learnerProfile.visitGroup({ id: 'hadza', name: 'Hadza', region: 'africa', continent: 'africa' }); }</script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg","alt":"Hadza hunters with bows and arrows","caption":"Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg","alt":"Hadza camp with grass shelters","caption":"Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg","alt":"Hadza woman digging for tubers","caption":"Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg","alt":"Lake Eyasi region landscape","caption":"Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg","alt":"Hadza making fire with hand drill","caption":"Hadza making fire using hand drill technique, essential survival skill passed through generations","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg","alt":"Hadza children playing","caption":"Hadza children learning through play and observation in egalitarian society where formal instruction is minimal","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_children.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg","alt":"Hadza hunters with bows and arrows","caption":"Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg","alt":"Hadza camp with grass shelters","caption":"Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg","alt":"Hadza woman digging for tubers","caption":"Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg","alt":"Lake Eyasi region landscape","caption":"Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg","alt":"Hadza making fire with hand drill","caption":"Hadza making fire using hand drill technique, essential survival skill passed through generations","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg","alt":"Hadza children playing","caption":"Hadza children learning through play and observation in egalitarian society where formal instruction is minimal","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_children.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg","alt":"Hadza hunters with bows and arrows","caption":"Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg","alt":"Hadza camp with grass shelters","caption":"Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg","alt":"Hadza woman digging for tubers","caption":"Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg","alt":"Lake Eyasi region landscape","caption":"Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg","alt":"Hadza making fire with hand drill","caption":"Hadza making fire using hand drill technique, essential survival skill passed through generations","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg","alt":"Hadza children playing","caption":"Hadza children learning through play and observation in egalitarian society where formal instruction is minimal","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_children.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg","alt":"Hadza hunters with bows and arrows","caption":"Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg","alt":"Hadza camp with grass shelters","caption":"Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg","alt":"Hadza woman digging for tubers","caption":"Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg","alt":"Lake Eyasi region landscape","caption":"Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg","alt":"Hadza making fire with hand drill","caption":"Hadza making fire using hand drill technique, essential survival skill passed through generations","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg","alt":"Hadza children playing","caption":"Hadza children learning through play and observation in egalitarian society where formal instruction is minimal","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_children.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hadza_hunters.jpg/800px-Hadza_hunters.jpg","alt":"Hadza hunters with bows and arrows","caption":"Hadza hunters with traditional bows and arrows, maintaining ancient hunting practices","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_hunters.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hadza_camp.jpg/800px-Hadza_camp.jpg","alt":"Hadza camp with grass shelters","caption":"Hadza camp with temporary grass shelters built in hours and abandoned when the group moves to new foraging areas","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_camp.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hadza_woman_digging.jpg/800px-Hadza_woman_digging.jpg","alt":"Hadza woman digging for tubers","caption":"Hadza woman using digging stick to extract tubers, demonstrating foraging expertise providing most calories","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_woman_digging.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lake_Eyasi_landscape.jpg/800px-Lake_Eyasi_landscape.jpg","alt":"Lake Eyasi region landscape","caption":"Lake Eyasi region in northern Tanzania, traditional Hadza territory with savanna and acacia woodlands","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Lake_Eyasi_landscape.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Hadza_making_fire.jpg/800px-Hadza_making_fire.jpg","alt":"Hadza making fire with hand drill","caption":"Hadza making fire using hand drill technique, essential survival skill passed through generations","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_making_fire.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hadza_children.jpg/800px-Hadza_children.jpg","alt":"Hadza children playing","caption":"Hadza children learning through play and observation in egalitarian society where formal instruction is minimal","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Hadza_children.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
 </body>
 </html>

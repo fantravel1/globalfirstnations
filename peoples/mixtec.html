@@ -42,14 +42,1488 @@
         .codex-box h4 { color: var(--stepped-orange); font-size: 1.6rem; margin-bottom: 1rem; font-weight: 800; }
         .codex-box p { color: #5D4037; font-size: 1.05rem; line-height: 1.7; font-style: italic; }
         @media (max-width: 1024px) { .main-content { grid-template-columns: 1fr; } .quick-facts { position: static; margin-bottom: 2rem; } }
+    
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color, #333);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--primary-color, #333);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
+    
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color, #333);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.25rem;
+            background: linear-gradient(to bottom, white, #f8f8f8);
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            color: var(--primary-color, #333);
+            text-decoration: underline;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #lightbox-text {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #lightbox-credit {
+            color: #666;
+            font-size: 0.875rem;
+            text-decoration: none;
+        }
+
+        #lightbox-credit:hover {
+            text-decoration: underline;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg,
+                var(--primary-color, #666),
+                var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="stepped-border"></div>
     <nav class="breadcrumb"><div class="breadcrumb-nav"><a href="/">Home</a><span class="breadcrumb-separator">›</span><a href="/">All Cultures</a><span class="breadcrumb-separator">›</span><a href="/?region=americas">Americas</a><span class="breadcrumb-separator">›</span><span>Mixtec</span></div></nav>
     <header class="hero"><div class="hero-content"><div class="culture-icon">⛰️</div><h1>Mixtec</h1><p class="hero-subtitle">People of the Rain - Masters of Gold & Ancient Codices</p><div class="hero-meta"><div class="hero-meta-item"><span>👥</span><span>~830,000 people</span></div><div class="hero-meta-item"><span>🗣️</span><span>Tu'un savi</span></div><div class="hero-meta-item"><span>📍</span><span>Oaxaca, Mexico</span></div></div></div></header>
-    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">Ancient Codices & Gold Masters</h2><p class="content-text">The Mixtec (Ñuu Savi or 'People of the Rain') are an indigenous Mesoamerican people inhabiting the mountainous region of Oaxaca in southern Mexico. With over 800,000 people, they represent one of Mexico's largest indigenous groups. The Mixtec developed one of Mesoamerica's most sophisticated civilizations, creating magnificent gold jewelry, detailed pictographic codices recording histories and genealogies, and terraced agricultural systems adapting to steep mountain terrain.</p><div class="codex-box"><h4>Pictographic Codices - Written History</h4><p>Mixtec goldsmiths created some of the most exquisite gold jewelry in pre-Columbian Americas! Using lost-wax casting and filigree techniques, they crafted intricate pieces featuring gods, animals, and geometric designs. The famous treasures of Tomb 7 at Monte Albán—hundreds of gold, jade, turquoise, and crystal objects—represent the finest Mesoamerican metalwork ever discovered!</p></div><p class="content-text"><strong>Eight Surviving Codices:</strong> Eight Mixtec codices survive, painted on deerskin using mineral and organic pigments. These folding screen books record dynastic histories, genealogies, conquests, and ritual events spanning centuries. The pictographic system uses images representing people, places, dates, and events readable by trained specialists.</p><p class="content-text"><em>This page celebrates the Mixtec—whose codices preserve centuries of history, whose goldsmiths created masterworks of unmatched beauty, and whose terraced fields transformed steep mountains into productive farmland.</em></p></section></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~830,000</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Tu'un savi</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Oto-Manguean</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~517,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Adobe houses</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Terraced agriculture</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Codices, Gold metallurgy</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Oaxaca mountains</div></div></aside></div></div>
+    <div class="content-wrapper"><div class="main-content"><article class="article-content"><section class="content-section"><h2 class="section-title">Ancient Codices & Gold Masters</h2><p class="content-text">The Mixtec (Ñuu Savi or 'People of the Rain') are an indigenous Mesoamerican people inhabiting the mountainous region of Oaxaca in southern Mexico. With over 800,000 people, they represent one of Mexico's largest indigenous groups. The Mixtec developed one of Mesoamerica's most sophisticated civilizations, creating magnificent gold jewelry, detailed pictographic codices recording histories and genealogies, and terraced agricultural systems adapting to steep mountain terrain.</p><div class="codex-box"><h4>Pictographic Codices - Written History</h4><p>Mixtec goldsmiths created some of the most exquisite gold jewelry in pre-Columbian Americas! Using lost-wax casting and filigree techniques, they crafted intricate pieces featuring gods, animals, and geometric designs. The famous treasures of Tomb 7 at Monte Albán—hundreds of gold, jade, turquoise, and crystal objects—represent the finest Mesoamerican metalwork ever discovered!</p></div><p class="content-text"><strong>Eight Surviving Codices:</strong> Eight Mixtec codices survive, painted on deerskin using mineral and organic pigments. These folding screen books record dynastic histories, genealogies, conquests, and ritual events spanning centuries. The pictographic system uses images representing people, places, dates, and events readable by trained specialists.</p><p class="content-text"><em>This page celebrates the Mixtec—whose codices preserve centuries of history, whose goldsmiths created masterworks of unmatched beauty, and whose terraced fields transformed steep mountains into productive farmland.</em></p></section>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg"
+                             alt="Page from Mixtec Codex Zouche-Nuttall"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg"
+                             alt="Ancient Mixtec gold jewelry from Tomb 7"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg"
+                             alt="Terraced agriculture in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg"
+                             alt="Traditional Mixtec polychrome pottery"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg"
+                             alt="Mixtec village in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg"
+                             alt="Traditional Mixtec woven textiles"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg"
+                             alt="Page from Mixtec Codex Zouche-Nuttall"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg"
+                             alt="Ancient Mixtec gold jewelry from Tomb 7"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg"
+                             alt="Terraced agriculture in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg"
+                             alt="Traditional Mixtec polychrome pottery"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg"
+                             alt="Mixtec village in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg"
+                             alt="Traditional Mixtec woven textiles"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg"
+                             alt="Page from Mixtec Codex Zouche-Nuttall"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg"
+                             alt="Ancient Mixtec gold jewelry from Tomb 7"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg"
+                             alt="Terraced agriculture in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg"
+                             alt="Traditional Mixtec polychrome pottery"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg"
+                             alt="Mixtec village in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg"
+                             alt="Traditional Mixtec woven textiles"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg"
+                             alt="Page from Mixtec Codex Zouche-Nuttall"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg"
+                             alt="Ancient Mixtec gold jewelry from Tomb 7"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg"
+                             alt="Terraced agriculture in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg"
+                             alt="Traditional Mixtec polychrome pottery"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg"
+                             alt="Mixtec village in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg"
+                             alt="Traditional Mixtec woven textiles"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+
+                    <div class="gallery-item" data-index="0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg"
+                             alt="Page from Mixtec Codex Zouche-Nuttall"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg"
+                             alt="Ancient Mixtec gold jewelry from Tomb 7"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg"
+                             alt="Terraced agriculture in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg"
+                             alt="Traditional Mixtec polychrome pottery"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg"
+                             alt="Mixtec village in Oaxaca mountains"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 2.0)</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-index="5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg"
+                             alt="Traditional Mixtec woven textiles"
+                             loading="lazy"
+                             class="gallery-image">
+                        <div class="gallery-caption">
+                            <p class="gallery-text">Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns</p>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div></article><aside class="quick-facts"><h3>Quick Facts</h3><div class="fact-item"><div class="fact-label">Population</div><div class="fact-value">~830,000</div></div><div class="fact-item"><div class="fact-label">Language</div><div class="fact-value">Tu'un savi</div></div><div class="fact-item"><div class="fact-label">Language Family</div><div class="fact-value">Oto-Manguean</div></div><div class="fact-item"><div class="fact-label">Speakers</div><div class="fact-value">~517,000</div></div><div class="fact-item"><div class="fact-label">Traditional Dwelling</div><div class="fact-value">Adobe houses</div></div><div class="fact-item"><div class="fact-label">Primary Livelihood</div><div class="fact-value">Terraced agriculture</div></div><div class="fact-item"><div class="fact-label">Known For</div><div class="fact-value">Codices, Gold metallurgy</div></div><div class="fact-item"><div class="fact-label">Region</div><div class="fact-value">Oaxaca mountains</div></div></aside></div></div>
+    
+    <section class="related-cultures-section">
+        <h2 class="section-title">Explore Related Cultures</h2>
+        <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+            Discover connections between cultures through shared traditions, geographic proximity, or contrasting ways of life.
+        </p>
+        <div class="related-cultures-grid">
+
+                    <a href="zapotec.html" class="related-card">
+                        <div class="related-icon">🌽</div>
+                        <h4 class="related-name">Zapotec</h4>
+                        <p class="related-location">Oaxaca, Mexico</p>
+                        <span class="related-badge">Similar Culture</span>
+                        <p class="related-description">Neighboring Oaxacan indigenous people with intertwined history, frequent intermarriage between nobility, shared Mesoamerican cultural elements</p>
+                    </a>
+                    <a href="nahua.html" class="related-card">
+                        <div class="related-icon">🦅</div>
+                        <h4 class="related-name">Nahua</h4>
+                        <p class="related-location">Central Mexico</p>
+                        <span class="related-badge">Similar Culture</span>
+                        <p class="related-description">Major Mesoamerican group sharing cultural elements including codices tradition, terraced agriculture, and complex social hierarchies</p>
+                    </a>
+                    <a href="maya.html" class="related-card">
+                        <div class="related-icon">🌟</div>
+                        <h4 class="related-name">Maya</h4>
+                        <p class="related-location">Southern Mexico, Guatemala, Belize</p>
+                        <span class="related-badge">Regional Neighbor</span>
+                        <p class="related-description">Major Mesoamerican civilization with advanced writing systems, monumental architecture, though different language family and cultural specifics</p>
+                    </a>
+                    <a href="mixtec.html" class="related-card">
+                        <div class="related-icon">⛰️</div>
+                        <h4 class="related-name">Mixe</h4>
+                        <p class="related-location">Oaxaca, Mexico</p>
+                        <span class="related-badge">Regional Neighbor</span>
+                        <p class="related-description">Neighboring Oaxacan indigenous group, different language family (Mixe-Zoque) but shared regional characteristics</p>
+                    </a>
+                    <a href="navajo.html" class="related-card">
+                        <div class="related-icon">🏜️</div>
+                        <h4 class="related-name">Navajo</h4>
+                        <p class="related-location">Southwest United States</p>
+                        <span class="related-badge">Contrasting Culture</span>
+                        <p class="related-description">Indigenous people in geographically proximate but culturally distinct region; nomadic vs. sedentary agricultural traditions</p>
+                    </a>
+        </div>
+    </section>
+
     <div class="stepped-border"></div>
     <script>if (window.learnerProfile) { window.learnerProfile.visitGroup({ id: 'mixtec', name: 'Mixtec', region: 'americas', continent: 'americas' }); }</script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg","alt":"Page from Mixtec Codex Zouche-Nuttall","caption":"Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg","alt":"Ancient Mixtec gold jewelry from Tomb 7","caption":"Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg","alt":"Terraced agriculture in Oaxaca mountains","caption":"Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg","alt":"Traditional Mixtec polychrome pottery","caption":"Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg","alt":"Mixtec village in Oaxaca mountains","caption":"Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg","alt":"Traditional Mixtec woven textiles","caption":"Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg","alt":"Page from Mixtec Codex Zouche-Nuttall","caption":"Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg","alt":"Ancient Mixtec gold jewelry from Tomb 7","caption":"Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg","alt":"Terraced agriculture in Oaxaca mountains","caption":"Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg","alt":"Traditional Mixtec polychrome pottery","caption":"Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg","alt":"Mixtec village in Oaxaca mountains","caption":"Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg","alt":"Traditional Mixtec woven textiles","caption":"Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg","alt":"Page from Mixtec Codex Zouche-Nuttall","caption":"Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg","alt":"Ancient Mixtec gold jewelry from Tomb 7","caption":"Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg","alt":"Terraced agriculture in Oaxaca mountains","caption":"Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg","alt":"Traditional Mixtec polychrome pottery","caption":"Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg","alt":"Mixtec village in Oaxaca mountains","caption":"Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg","alt":"Traditional Mixtec woven textiles","caption":"Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg","alt":"Page from Mixtec Codex Zouche-Nuttall","caption":"Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg","alt":"Ancient Mixtec gold jewelry from Tomb 7","caption":"Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg","alt":"Terraced agriculture in Oaxaca mountains","caption":"Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg","alt":"Traditional Mixtec polychrome pottery","caption":"Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg","alt":"Mixtec village in Oaxaca mountains","caption":"Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg","alt":"Traditional Mixtec woven textiles","caption":"Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Codex_Zouche-Nuttall.jpg/800px-Codex_Zouche-Nuttall.jpg","alt":"Page from Mixtec Codex Zouche-Nuttall","caption":"Mixtec Codex Zouche-Nuttall, painted on deerskin, recording genealogies and histories using sophisticated pictographic writing","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mixtec_gold_jewelry.jpg/800px-Mixtec_gold_jewelry.jpg","alt":"Ancient Mixtec gold jewelry from Tomb 7","caption":"Exquisite Mixtec gold jewelry from Monte Albán's Tomb 7, demonstrating extraordinary metalworking skill","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_gold_jewelry.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Oaxaca_mountains_terraces.jpg/800px-Oaxaca_mountains_terraces.jpg","alt":"Terraced agriculture in Oaxaca mountains","caption":"Traditional Mixtec terraced agriculture adapting to steep mountain slopes, a system used for centuries","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Oaxaca_mountains_terraces.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mixtec_pottery.jpg/800px-Mixtec_pottery.jpg","alt":"Traditional Mixtec polychrome pottery","caption":"Mixtec polychrome pottery featuring geometric and naturalistic designs in the Mixteca-Puebla style","credit":"Wikimedia Commons (Public Domain)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_pottery.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Mixtec_village_Oaxaca.jpg/800px-Mixtec_village_Oaxaca.jpg","alt":"Mixtec village in Oaxaca mountains","caption":"Mixtec village in the rugged Oaxaca mountains, traditional homeland of the Ñuu Savi people","credit":"Wikimedia Commons (CC BY-SA 2.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_village_Oaxaca.jpg"},{"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mixtec_textiles.jpg/800px-Mixtec_textiles.jpg","alt":"Traditional Mixtec woven textiles","caption":"Mixtec textiles woven using traditional backstrap looms with intricate geometric patterns","credit":"Wikimedia Commons (CC BY-SA 3.0)","creditLink":"https://commons.wikimedia.org/wiki/File:Mixtec_textiles.jpg"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
 </body>
 </html>

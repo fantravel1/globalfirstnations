@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>Browse All 45 Indigenous Cultures | Indigenous Peoples Database</title>
+    <meta name="title" content="Browse All 45 Indigenous Cultures | Indigenous Peoples Database">
+    <meta name="description" content="Explore all 45 documented indigenous cultures worldwide. Filter by region, livelihood, and cultural characteristics. Comprehensive educational database with verified ethnographic data.">
+    <meta name="keywords" content="indigenous peoples, browse cultures, First Nations, tribes, cultural diversity, world cultures, ethnography, anthropology database">
+    <meta name="author" content="Indigenous Peoples Repository">
+    <meta name="robots" content="index, follow">
+
+    <!-- Mobile Performance -->
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <meta name="theme-color" content="#2c5530" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a3320" media="(prefers-color-scheme: dark)">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.globalfirstnations.com/cultures.html">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.globalfirstnations.com/cultures.html">
+    <meta property="og:title" content="Browse All 45 Indigenous Cultures">
+    <meta property="og:description" content="Explore 45 indigenous cultures worldwide with advanced filtering, sorting, and search capabilities.">
+
+    <!-- Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.globalfirstnations.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Browse Cultures",
+        "item": "https://www.globalfirstnations.com/cultures.html"
+      }]
+    }
+    </script>
+
+    <style>
+        /* ============================================
+           ENHANCED CSS - MATCHING INDEX.HTML STYLE
+           ============================================ */
+
+        /* CSS Variables */
+        :root {
+            --primary: #2c5530;
+            --primary-dark: #1a3320;
+            --primary-light: #3d7044;
+            --secondary: #059669;
+            --accent: #d97706;
+            --text: #1a1a1a;
+            --text-light: #4a5568;
+            --text-lighter: #6b7280;
+            --bg: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --focus-ring: 0 0 0 3px rgba(217, 119, 6, 0.5);
+
+            --line-height-base: 1.6;
+            --line-height-heading: 1.2;
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --touch-target-min: 44px;
+            --transition-fast: 150ms ease;
+            --transition-base: 300ms ease;
+            --transition-slow: 500ms ease;
+            --z-base: 1;
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-overlay: 300;
+            --z-modal: 400;
+            --z-toast: 500;
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --primary: #3d7044;
+                --primary-dark: #2c5530;
+                --primary-light: #4a855c;
+                --secondary: #10b981;
+                --accent: #fbbf24;
+                --text: #f9fafb;
+                --text-light: #d1d5db;
+                --text-lighter: #9ca3af;
+                --bg: #111827;
+                --bg-secondary: #1f2937;
+                --bg-tertiary: #374151;
+                --border: #4b5563;
+                --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+                --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        [data-theme="dark"] {
+            --primary: #3d7044;
+            --primary-dark: #2c5530;
+            --text: #f9fafb;
+            --bg: #111827;
+            --bg-secondary: #1f2937;
+        }
+
+        /* Base Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        *:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            box-shadow: var(--focus-ring);
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0 0 5px 0;
+            font-weight: 600;
+            z-index: var(--z-modal);
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            line-height: var(--line-height-base);
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            line-height: var(--line-height-heading);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: var(--space-md);
+        }
+
+        h1 { font-size: clamp(2rem, 5vw + 1rem, 4rem); }
+        h2 { font-size: clamp(1.75rem, 4vw + 0.5rem, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem); }
+
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            transition: color var(--transition-base);
+        }
+
+        a:hover {
+            color: var(--primary-light);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 max(var(--space-md), env(safe-area-inset-left)) 0 max(var(--space-md), env(safe-area-inset-right));
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: var(--z-sticky);
+            transition: all var(--transition-base);
+        }
+
+        [data-theme="dark"] header {
+            background: rgba(17, 24, 39, 0.85);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) 0;
+            gap: var(--space-lg);
+        }
+
+        .logo {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm);
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--space-sm);
+            margin: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 6px;
+            min-height: var(--touch-target-min);
+            display: flex;
+            align-items: center;
+            transition: all var(--transition-base);
+        }
+
+        .nav-links a:hover,
+        .nav-links a[aria-current="page"] {
+            color: var(--primary);
+            background: var(--bg-secondary);
+        }
+
+        .accessibility-controls {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+
+        .theme-toggle,
+        .mobile-menu-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text);
+            min-width: var(--touch-target-min);
+            min-height: var(--touch-target-min);
+            padding: var(--space-sm);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .theme-toggle:hover,
+        .mobile-menu-toggle:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            background: var(--bg-secondary);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-nav a,
+        .breadcrumb-nav span {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-nav span[aria-current="page"] {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .breadcrumb-separator {
+            color: var(--text-lighter);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: clamp(3rem, 8vw, 5rem) 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: white;
+            margin-bottom: var(--space-md);
+        }
+
+        .page-header p {
+            font-size: clamp(1.125rem, 2vw, 1.25rem);
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: var(--space-lg) 0;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--space-lg);
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: var(--space-md);
+        }
+
+        .stat-number {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Controls Section */
+        .controls-section {
+            background: var(--bg-secondary);
+            padding: var(--space-xl) 0;
+            position: sticky;
+            top: 70px;
+            z-index: var(--z-dropdown);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .controls-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-input-wrapper {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: all var(--transition-base);
+            background: var(--bg);
+            color: var(--text);
+            min-height: var(--touch-target-min);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
+        }
+
+        .clear-search {
+            position: absolute;
+            right: var(--space-md);
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: var(--space-sm);
+            font-size: 1.2rem;
+            display: none;
+        }
+
+        .clear-search.visible {
+            display: block;
+        }
+
+        /* Filter & Sort Controls */
+        .filter-sort-controls {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .filter-group,
+        .sort-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label,
+        .sort-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--text);
+        }
+
+        .filter-buttons,
+        .sort-buttons {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn,
+        .sort-btn {
+            background: var(--bg);
+            border: 2px solid var(--border);
+            padding: var(--space-sm) var(--space-md);
+            min-height: var(--touch-target-min);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .filter-btn:hover,
+        .sort-btn:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--primary-light);
+        }
+
+        .filter-btn.active,
+        .sort-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .livelihood-filters {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            margin-top: var(--space-sm);
+        }
+
+        /* Results Info */
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-lg) 0;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+
+        .results-count {
+            font-size: 1.125rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .view-btn {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            color: var(--text);
+        }
+
+        .view-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Cultures Grid */
+        .cultures-section {
+            padding: var(--space-xl) 0 clamp(3rem, 8vw, 6rem);
+        }
+
+        .cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+            gap: var(--space-xl);
+        }
+
+        .cultures-grid.list-view {
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+        }
+
+        .culture-card {
+            background: var(--bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cultures-grid.list-view .culture-card {
+            flex-direction: row;
+        }
+
+        .culture-icon-wrapper {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+        }
+
+        .cultures-grid.list-view .culture-icon-wrapper {
+            width: 200px;
+            height: auto;
+            min-height: 180px;
+        }
+
+        .culture-content {
+            padding: var(--space-lg);
+            flex: 1;
+        }
+
+        .culture-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: var(--space-sm);
+        }
+
+        .culture-meta {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+
+        .culture-meta-item {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .culture-meta-item strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .culture-tags {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            margin-top: var(--space-md);
+        }
+
+        .culture-tag {
+            background: var(--bg-tertiary);
+            color: var(--text-light);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Loading & Empty States */
+        .loading {
+            text-align: center;
+            padding: var(--space-2xl);
+            display: none;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid var(--border);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto var(--space-md);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: var(--space-2xl);
+            display: none;
+        }
+
+        .empty-state.active {
+            display: block;
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .empty-state h3 {
+            color: var(--text);
+            margin-bottom: var(--space-sm);
+        }
+
+        .empty-state p {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: var(--space-2xl) 0 var(--space-md);
+            margin-top: auto;
+        }
+
+        [data-theme="dark"] footer {
+            background: var(--bg-tertiary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-section h3 {
+            margin-bottom: var(--space-md);
+            color: var(--accent);
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            display: block;
+            padding: var(--space-xs) 0;
+            transition: color var(--transition-base);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-md);
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                padding: var(--space-md);
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-lg);
+                z-index: var(--z-dropdown);
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .filter-sort-controls {
+                flex-direction: column;
+            }
+
+            .controls-section {
+                position: relative;
+                top: 0;
+            }
+
+            .cultures-grid.list-view .culture-card {
+                flex-direction: column;
+            }
+
+            .cultures-grid.list-view .culture-icon-wrapper {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header, footer, .controls-section, .stats-bar, .accessibility-controls {
+                display: none;
+            }
+
+            .culture-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <nav class="container" role="navigation" aria-label="Main navigation">
+            <a href="/" class="logo" aria-label="Indigenous Peoples Database Home">
+                <span aria-hidden="true">🌍</span>
+                <span>Indigenous Peoples Database</span>
+            </a>
+
+            <ul class="nav-links" id="mainNav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/cultures.html" aria-current="page">Browse Cultures</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contribute.html">Contribute</a></li>
+            </ul>
+
+            <div class="accessibility-controls">
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                    aria-pressed="false"
+                    title="Toggle dark/light mode"
+                >
+                    <span aria-hidden="true">🌙</span>
+                </button>
+
+                <button
+                    class="mobile-menu-toggle"
+                    id="mobileMenuToggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mainNav"
+                >
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-nav">
+                <li><a href="/">Home</a></li>
+                <li aria-hidden="true" class="breadcrumb-separator">/</li>
+                <li><span aria-current="page">Browse Cultures</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Explore 45 Indigenous Cultures</h1>
+                <p>Discover the rich diversity of indigenous peoples from around the world. Filter by region, livelihood, and cultural characteristics to find cultures of interest.</p>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-bar" aria-label="Culture statistics by region">
+            <div class="container">
+                <div class="stats-container" id="statsContainer">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalCultures">45</div>
+                        <div class="stat-label">Total Cultures</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="africaCount">0</div>
+                        <div class="stat-label">Africa</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="americasCount">0</div>
+                        <div class="stat-label">Americas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="asiaCount">0</div>
+                        <div class="stat-label">Asia</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="europeCount">0</div>
+                        <div class="stat-label">Europe</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="oceaniaCount">0</div>
+                        <div class="stat-label">Oceania</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="arcticCount">0</div>
+                        <div class="stat-label">Arctic</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="controls-section" aria-label="Filter and sort controls">
+            <div class="container">
+                <div class="controls-container">
+                    <!-- Search Bar -->
+                    <div class="search-bar">
+                        <div class="search-input-wrapper">
+                            <label for="searchInput" class="sr-only">Search cultures</label>
+                            <input
+                                type="search"
+                                id="searchInput"
+                                class="search-input"
+                                placeholder="Search by name, region, language, or cultural characteristics..."
+                                aria-label="Search cultures"
+                            >
+                            <button class="clear-search" id="clearSearch" aria-label="Clear search" title="Clear search">×</button>
+                        </div>
+                    </div>
+
+                    <!-- Filters & Sort -->
+                    <div class="filter-sort-controls">
+                        <!-- Region Filter -->
+                        <div class="filter-group">
+                            <label id="regionFilterLabel">Filter by Region</label>
+                            <div class="filter-buttons" role="group" aria-labelledby="regionFilterLabel">
+                                <button class="filter-btn active" data-filter="all" data-type="region">All Regions</button>
+                                <button class="filter-btn" data-filter="africa" data-type="region">Africa</button>
+                                <button class="filter-btn" data-filter="americas" data-type="region">Americas</button>
+                                <button class="filter-btn" data-filter="asia" data-type="region">Asia</button>
+                                <button class="filter-btn" data-filter="europe" data-type="region">Europe</button>
+                                <button class="filter-btn" data-filter="oceania" data-type="region">Oceania</button>
+                                <button class="filter-btn" data-filter="arctic" data-type="region">Arctic</button>
+                            </div>
+                        </div>
+
+                        <!-- Livelihood Filter -->
+                        <div class="filter-group">
+                            <label id="livelihoodFilterLabel">Filter by Livelihood</label>
+                            <div class="livelihood-filters" role="group" aria-labelledby="livelihoodFilterLabel">
+                                <button class="filter-btn active" data-filter="all" data-type="livelihood">All Types</button>
+                                <button class="filter-btn" data-filter="hunter-gatherer" data-type="livelihood">Hunter-Gatherers</button>
+                                <button class="filter-btn" data-filter="pastoralist" data-type="livelihood">Pastoralists</button>
+                                <button class="filter-btn" data-filter="agricultural" data-type="livelihood">Agricultural</button>
+                                <button class="filter-btn" data-filter="maritime" data-type="livelihood">Maritime</button>
+                            </div>
+                        </div>
+
+                        <!-- Sort Options -->
+                        <div class="sort-group">
+                            <label id="sortLabel">Sort By</label>
+                            <div class="sort-buttons" role="group" aria-labelledby="sortLabel">
+                                <button class="sort-btn active" data-sort="name">Alphabetical</button>
+                                <button class="sort-btn" data-sort="population">Population</button>
+                                <button class="sort-btn" data-sort="region">Region</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Info -->
+        <section class="cultures-section">
+            <div class="container">
+                <div class="results-info">
+                    <div class="results-count" id="resultsCount" aria-live="polite">
+                        Showing <strong id="displayedCount">0</strong> of <strong>45</strong> cultures
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid" aria-label="Grid view" title="Grid view">
+                            <span aria-hidden="true">▦</span>
+                        </button>
+                        <button class="view-btn" data-view="list" aria-label="List view" title="List view">
+                            <span aria-hidden="true">☰</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading active" id="loading" aria-live="polite">
+                    <div class="spinner" role="status" aria-label="Loading"></div>
+                    <p>Loading cultures...</p>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-state-icon" aria-hidden="true">🔍</div>
+                    <h3>No cultures found</h3>
+                    <p>Try adjusting your filters or search query.</p>
+                </div>
+
+                <!-- Cultures Grid -->
+                <div class="cultures-grid" id="culturesGrid" role="list"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About the Repository</h3>
+                    <p>An educational database dedicated to documenting and preserving knowledge about 45 indigenous cultures worldwide with cultural respect and authentic representation.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <nav aria-label="Footer navigation">
+                        <a href="/">Home</a>
+                        <a href="/cultures.html">Browse Cultures</a>
+                        <a href="/about.html">About</a>
+                        <a href="/dashboard.html">Learning Dashboard</a>
+                    </nav>
+                </div>
+                <div class="footer-section">
+                    <h3>Get Involved</h3>
+                    <nav aria-label="Resources navigation">
+                        <a href="/contribute.html">Contribute Data</a>
+                        <a href="mailto:info@play4tomorrow.com">Contact Team</a>
+                        <a href="/games.html">Interactive Learning</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // CULTURES BROWSER - ADVANCED FILTERING & SORTING
+        // ============================================
+
+        // List of all culture IDs
+        const CULTURE_IDS = [
+            'maasai', 'inuit', 'navajo', 'maori', 'san', 'sami', 'zulu', 'tuareg',
+            'quechua', 'cherokee', 'aboriginal-australian', 'yupik', 'hmong', 'berber',
+            'basque', 'ainu', 'yanomami', 'rapanui', 'nenets', 'himba', 'lakota',
+            'mapuche', 'guarani', 'tlingit', 'haida', 'mixtec', 'zapotec', 'hopi',
+            'dogon', 'hadza', 'igbo', 'samburu', 'wodaabe', 'nuer', 'malagasy',
+            'mongol', 'karen', 'moken', 'sherpa', 'kalash', 'dayak', 'bedouin',
+            'tongan', 'fijian', 'papuan'
+        ];
+
+        // State management
+        let allCultures = [];
+        let filteredCultures = [];
+        let currentFilters = {
+            region: 'all',
+            livelihood: 'all'
+        };
+        let currentSort = 'name';
+        let currentView = 'grid';
+        let searchQuery = '';
+
+        // Theme management
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            updateThemeButton('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeButton(newTheme);
+        });
+
+        function updateThemeButton(theme) {
+            const icon = theme === 'dark' ? '☀️' : '🌙';
+            themeToggle.innerHTML = `<span aria-hidden="true">${icon}</span>`;
+            themeToggle.setAttribute('aria-pressed', theme === 'dark');
+        }
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('mobile-open');
+        });
+
+        // Load all cultures
+        async function loadAllCultures() {
+            const loading = document.getElementById('loading');
+            loading.classList.add('active');
+
+            try {
+                const loadPromises = CULTURE_IDS.map(async (id) => {
+                    try {
+                        const response = await fetch(`/data/cultures/${id}.json`);
+                        if (!response.ok) throw new Error(`Failed to load ${id}`);
+                        return await response.json();
+                    } catch (error) {
+                        console.error(`Error loading ${id}:`, error);
+                        return null;
+                    }
+                });
+
+                const cultures = await Promise.all(loadPromises);
+                allCultures = cultures.filter(c => c !== null);
+                filteredCultures = [...allCultures];
+
+                updateStats();
+                applyFiltersAndSort();
+                loading.classList.remove('active');
+            } catch (error) {
+                console.error('Error loading cultures:', error);
+                loading.classList.remove('active');
+            }
+        }
+
+        // Update statistics
+        function updateStats() {
+            const regionCounts = {
+                africa: 0,
+                americas: 0,
+                asia: 0,
+                europe: 0,
+                oceania: 0,
+                arctic: 0
+            };
+
+            allCultures.forEach(culture => {
+                const region = culture.location?.region?.toLowerCase() || '';
+                if (region === 'africa') regionCounts.africa++;
+                else if (region === 'americas' || region.includes('america')) regionCounts.americas++;
+                else if (region === 'asia') regionCounts.asia++;
+                else if (region === 'europe') regionCounts.europe++;
+                else if (region === 'oceania') regionCounts.oceania++;
+                else if (region === 'arctic') regionCounts.arctic++;
+            });
+
+            document.getElementById('totalCultures').textContent = allCultures.length;
+            document.getElementById('africaCount').textContent = regionCounts.africa;
+            document.getElementById('americasCount').textContent = regionCounts.americas;
+            document.getElementById('asiaCount').textContent = regionCounts.asia;
+            document.getElementById('europeCount').textContent = regionCounts.europe;
+            document.getElementById('oceaniaCount').textContent = regionCounts.oceania;
+            document.getElementById('arcticCount').textContent = regionCounts.arctic;
+        }
+
+        // Categorize livelihood
+        function categorizeLivelihood(livelihood) {
+            const lh = livelihood?.toLowerCase() || '';
+            if (lh.includes('pastor') || lh.includes('herd')) return 'pastoralist';
+            if (lh.includes('hunt') || lh.includes('gather') || lh.includes('forag')) return 'hunter-gatherer';
+            if (lh.includes('agricult') || lh.includes('farm')) return 'agricultural';
+            if (lh.includes('fish') || lh.includes('maritime') || lh.includes('ocean') || lh.includes('sea')) return 'maritime';
+            return 'other';
+        }
+
+        // Apply filters and sort
+        function applyFiltersAndSort() {
+            let result = [...allCultures];
+
+            // Apply region filter
+            if (currentFilters.region !== 'all') {
+                result = result.filter(culture => {
+                    const region = culture.location?.region?.toLowerCase() || '';
+                    return region === currentFilters.region ||
+                           (currentFilters.region === 'americas' && region.includes('america'));
+                });
+            }
+
+            // Apply livelihood filter
+            if (currentFilters.livelihood !== 'all') {
+                result = result.filter(culture => {
+                    const livelihood = culture.culturalIdentity?.livelihood || '';
+                    return categorizeLivelihood(livelihood) === currentFilters.livelihood;
+                });
+            }
+
+            // Apply search filter
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                result = result.filter(culture => {
+                    const name = culture.name?.toLowerCase() || '';
+                    const countries = culture.location?.countries?.join(' ').toLowerCase() || '';
+                    const region = culture.location?.region?.toLowerCase() || '';
+                    const language = culture.demographics?.language?.name?.toLowerCase() || '';
+                    const knownFor = culture.culturalIdentity?.knownFor?.toLowerCase() || '';
+                    const livelihood = culture.culturalIdentity?.livelihood?.toLowerCase() || '';
+
+                    return name.includes(query) ||
+                           countries.includes(query) ||
+                           region.includes(query) ||
+                           language.includes(query) ||
+                           knownFor.includes(query) ||
+                           livelihood.includes(query);
+                });
+            }
+
+            // Apply sorting
+            result.sort((a, b) => {
+                if (currentSort === 'name') {
+                    return a.name.localeCompare(b.name);
+                } else if (currentSort === 'population') {
+                    const popA = parseInt(a.demographics?.population?.replace(/[^\d]/g, '') || '0');
+                    const popB = parseInt(b.demographics?.population?.replace(/[^\d]/g, '') || '0');
+                    return popB - popA;
+                } else if (currentSort === 'region') {
+                    const regionA = a.location?.region || '';
+                    const regionB = b.location?.region || '';
+                    return regionA.localeCompare(regionB);
+                }
+                return 0;
+            });
+
+            filteredCultures = result;
+            renderCultures();
+        }
+
+        // Render cultures
+        function renderCultures() {
+            const grid = document.getElementById('culturesGrid');
+            const emptyState = document.getElementById('emptyState');
+            const displayedCount = document.getElementById('displayedCount');
+
+            displayedCount.textContent = filteredCultures.length;
+
+            if (filteredCultures.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.add('active');
+                return;
+            }
+
+            emptyState.classList.remove('active');
+
+            const fragment = document.createDocumentFragment();
+
+            filteredCultures.forEach((culture) => {
+                const card = document.createElement('a');
+                card.href = `/peoples/${culture.id}.html`;
+                card.className = 'culture-card fade-in';
+                card.setAttribute('role', 'listitem');
+
+                const locationStr = Array.isArray(culture.location.countries)
+                    ? culture.location.countries.join(', ')
+                    : culture.location.region;
+
+                const primaryColor = culture.culturalIdentity?.primaryColor || '#2c5530';
+                const secondaryColor = culture.culturalIdentity?.secondaryColor || '#059669';
+
+                card.innerHTML = `
+                    <div class="culture-icon-wrapper" style="background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor});">
+                        <span aria-hidden="true">${culture.culturalIdentity.icon}</span>
+                    </div>
+                    <div class="culture-content">
+                        <h3 class="culture-name">${culture.name}</h3>
+                        <div class="culture-meta">
+                            <div class="culture-meta-item">
+                                <span aria-hidden="true">📍</span>
+                                <span><strong>Location:</strong> ${locationStr}</span>
+                            </div>
+                            <div class="culture-meta-item">
+                                <span aria-hidden="true">👥</span>
+                                <span><strong>Population:</strong> ${culture.demographics.population}</span>
+                            </div>
+                            <div class="culture-meta-item">
+                                <span aria-hidden="true">🗣️</span>
+                                <span><strong>Language:</strong> ${culture.demographics.language.name}</span>
+                            </div>
+                            <div class="culture-meta-item">
+                                <span aria-hidden="true">✨</span>
+                                <span><strong>Known for:</strong> ${culture.culturalIdentity.knownFor}</span>
+                            </div>
+                        </div>
+                        <div class="culture-tags">
+                            <span class="culture-tag">${culture.location.region}</span>
+                            <span class="culture-tag">${culture.culturalIdentity.livelihood}</span>
+                        </div>
+                    </div>
+                `;
+
+                fragment.appendChild(card);
+            });
+
+            grid.innerHTML = '';
+            grid.appendChild(fragment);
+
+            requestAnimationFrame(() => initializeLazyLoading());
+        }
+
+        // Lazy loading animation
+        function initializeLazyLoading() {
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '50px'
+                });
+
+                document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            } else {
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+            }
+        }
+
+        // Filter button handlers
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filterType = btn.dataset.type;
+                const filterValue = btn.dataset.filter;
+
+                // Update active state
+                document.querySelectorAll(`.filter-btn[data-type="${filterType}"]`).forEach(b => {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+
+                // Update filter
+                currentFilters[filterType] = filterValue;
+                applyFiltersAndSort();
+            });
+        });
+
+        // Sort button handlers
+        document.querySelectorAll('.sort-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const sortValue = btn.dataset.sort;
+
+                // Update active state
+                document.querySelectorAll('.sort-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+
+                // Update sort
+                currentSort = sortValue;
+                applyFiltersAndSort();
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const clearSearch = document.getElementById('clearSearch');
+
+        searchInput.addEventListener('input', debounce(() => {
+            searchQuery = searchInput.value.trim();
+            clearSearch.classList.toggle('visible', searchQuery.length > 0);
+            applyFiltersAndSort();
+        }, 300));
+
+        clearSearch.addEventListener('click', () => {
+            searchInput.value = '';
+            searchQuery = '';
+            clearSearch.classList.remove('visible');
+            applyFiltersAndSort();
+        });
+
+        // View toggle
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const view = btn.dataset.view;
+
+                document.querySelectorAll('.view-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+
+                const grid = document.getElementById('culturesGrid');
+                grid.classList.toggle('list-view', view === 'list');
+                currentView = view;
+            });
+        });
+
+        // Debounce helper
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllCultures();
+        });
+    </script>
+</body>
+</html>
