@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guaraní | Indigenous Peoples Research Database</title>
+    <meta name="description" content="Explore the Guaraní people - Paraguay's bilingual nation, yerba mate culture, Jesuit Missions, and the only indigenous language co-official in a nation.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Rainforest palette */
+            --jungle-green: #1B5E20;
+            --mate-green: #2E7D32;
+            --river-blue: #0277BD;
+            --forest-dark: #1B3A16;
+            --leaf-bright: #4CAF50;
+            --earth-brown: #5D4037;
+            --sunshine-yellow: #F9A825;
+            --mist-white: #E8F5E9;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--forest-dark);
+            background: linear-gradient(to bottom, #E8F5E9, #C8E6C9);
+        }
+
+        /* Leaf Pattern Border */
+        .leaf-border {
+            height: 20px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--jungle-green) 0px,
+                var(--jungle-green) 10px,
+                var(--mate-green) 10px,
+                var(--mate-green) 20px,
+                var(--leaf-bright) 20px,
+                var(--leaf-bright) 30px,
+                var(--river-blue) 30px,
+                var(--river-blue) 40px
+            );
+            position: relative;
+        }
+
+        .leaf-border::after {
+            content: '🍃 🌺 🦜 💧 🍃 🌺 🦜 💧';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.3rem;
+            white-space: nowrap;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: linear-gradient(to bottom, var(--mist-white), #A5D6A7);
+            padding: 1rem 2rem;
+            border-bottom: 4px solid var(--jungle-green);
+        }
+
+        .breadcrumb-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--jungle-green);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--river-blue);
+        }
+
+        .breadcrumb-separator {
+            color: #81C784;
+        }
+
+        /* Hero - Rainforest Canopy */
+        .hero {
+            background: linear-gradient(180deg,
+                #004D40 0%,
+                #00695C 20%,
+                #00796B 40%,
+                #00897B 60%,
+                #26A69A 80%,
+                #80CBC4 100%
+            );
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Rainforest canopy layers */
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 180px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180"><ellipse cx="100" cy="140" rx="80" ry="40" fill="%231B5E20" opacity="0.5"/><ellipse cx="300" cy="130" rx="90" ry="50" fill="%232E7D32" opacity="0.5"/><ellipse cx="500" cy="145" rx="85" ry="35" fill="%234CAF50" opacity="0.4"/><ellipse cx="700" cy="135" rx="95" ry="45" fill="%231B5E20" opacity="0.5"/><ellipse cx="900" cy="140" rx="80" ry="40" fill="%232E7D32" opacity="0.5"/><ellipse cx="1100" cy="130" rx="90" ry="50" fill="%234CAF50" opacity="0.4"/><path d="M0,160 Q200,140 400,160 T800,160 T1200,160 L1200,180 L0,180 Z" fill="%231B3A16" opacity="0.6"/></svg>') bottom center no-repeat;
+            background-size: cover;
+        }
+
+        /* Mate gourd */
+        .hero::after {
+            content: '🧉';
+            position: absolute;
+            top: 60px;
+            left: 80px;
+            font-size: 7rem;
+            opacity: 0.25;
+            animation: steam 3s ease-in-out infinite;
+        }
+
+        @keyframes steam {
+            0%, 100% { transform: translateY(0); opacity: 0.25; }
+            50% { transform: translateY(-10px); opacity: 0.35; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .culture-icon {
+            font-size: 7rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 8px 16px rgba(0, 77, 64, 0.6));
+            animation: leafRustle 4s ease-in-out infinite;
+        }
+
+        @keyframes leafRustle {
+            0%, 100% { transform: rotate(-5deg) scale(1); }
+            50% { transform: rotate(5deg) scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(27, 94, 32, 0.4);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(76, 175, 80, 0.3);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+            box-shadow: 0 0 40px rgba(27, 94, 32, 0.15);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        /* Quick Facts - Forest Green */
+        .quick-facts {
+            background: linear-gradient(135deg, var(--jungle-green), #1B3A16);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 5px solid var(--leaf-bright);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+        }
+
+        .quick-facts::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--leaf-bright) 0px,
+                var(--leaf-bright) 15px,
+                var(--river-blue) 15px,
+                var(--river-blue) 30px,
+                var(--sunshine-yellow) 30px,
+                var(--sunshine-yellow) 45px
+            );
+        }
+
+        .quick-facts h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--leaf-bright);
+            font-weight: 900;
+        }
+
+        .fact-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--mate-green);
+        }
+
+        .fact-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--jungle-green);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 5px solid var(--mate-green);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 120px;
+            height: 5px;
+            background: var(--river-blue);
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #1B3A16;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-text::first-letter {
+            font-size: 4rem;
+            font-weight: 900;
+            float: left;
+            line-height: 1;
+            margin: 0 0.1em 0 0;
+            color: var(--mate-green);
+        }
+
+        /* Language Success Box */
+        .language-box {
+            background: linear-gradient(135deg, #F1F8E9 0%, #DCEDC8 100%);
+            border: 4px solid var(--mate-green);
+            border-left: 12px solid var(--sunshine-yellow);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.25);
+            position: relative;
+        }
+
+        .language-box::before {
+            content: '🗣️';
+            position: absolute;
+            top: -40px;
+            right: 20px;
+            font-size: 4rem;
+            filter: drop-shadow(0 4px 8px rgba(249, 168, 37, 0.4));
+        }
+
+        .language-box h4 {
+            color: var(--jungle-green);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .language-box p {
+            color: var(--forest-dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-facts {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="leaf-border"></div>
+
+    <nav class="breadcrumb">
+        <div class="breadcrumb-nav">
+            <a href="/">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="/">All Cultures</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="/?region=americas">Americas</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Guaraní</span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="culture-icon">🌿</div>
+            <h1>Guaraní</h1>
+            <p class="hero-subtitle">The Only Indigenous Language Co-Official in a Nation</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span>👥</span>
+                    <span>~6,000,000 people</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>🗣️</span>
+                    <span>Guaraní (Avañe'ẽ)</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span>📍</span>
+                    <span>Paraguay & Region</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="main-content">
+            <article class="article-content">
+                <section class="content-section">
+                    <h2 class="section-title">Paraguay's Bilingual Nation</h2>
+
+                    <p class="content-text">
+                        The Guaraní are one of the most culturally influential indigenous peoples of South America, inhabiting regions spanning Paraguay, southern Brazil, northeastern Argentina, and southeastern Bolivia. With over 6 million speakers, Guaraní is unique among indigenous American languages as one of Paraguay's two official languages, spoken by over 90% of the population including non-indigenous Paraguayans. This remarkable language preservation makes Paraguay the only officially bilingual indigenous-Spanish speaking nation in the Americas.
+                    </p>
+
+                    <div class="language-box">
+                        <h4>A Living Indigenous Language</h4>
+                        <p>
+                            Paraguay is the only country in the Americas where an indigenous language—Guaraní—is spoken by the majority of the population! Over 90% of Paraguayans speak Guaraní, including people without indigenous ancestry. In rural areas, many speak Guaraní more fluently than Spanish. The language is used in government, media, education, music, and daily life, making Paraguay truly bilingual and bicultural!
+                        </p>
+                    </div>
+
+                    <p class="content-text">
+                        Traditional Guaraní identity centers on ñande reko (our way of life), emphasizing communal values, reciprocity, and connection to the land. The Jesuit Reductions (missions, 1609-1767) created a unique hybrid society where Guaraní practiced Christianity while maintaining their language and many cultural elements. This system permanently integrated Guaraní language into colonial and eventually national Paraguayan culture.
+                    </p>
+
+                    <p class="content-text">
+                        <strong>Yerba Mate Culture:</strong> Yerba mate, a caffeinated infusion from the Ilex paraguariensis plant, is central to Guaraní culture and remains Paraguay's national drink. The Guaraní cultivated yerba mate long before European contact. Today, sharing mate—passed around a circle with each person drinking from the same vessel—maintains Guaraní values of community and reciprocity across Paraguayan society.
+                    </p>
+
+                    <p class="content-text">
+                        <em>This page celebrates the Guaraní—whose language thrives as a co-official language spoken by millions, whose yerba mate tradition spread worldwide, and whose cultural influence shaped an entire nation. The Guaraní demonstrate that indigenous cultures can not only survive but thrive and influence broader society.</em>
+                    </p>
+                </section>
+            </article>
+
+            <aside class="quick-facts">
+                <h3>Quick Facts</h3>
+
+                <div class="fact-item">
+                    <div class="fact-label">Population</div>
+                    <div class="fact-value">~6,000,000</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language</div>
+                    <div class="fact-value">Guaraní (Avañe'ẽ)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Family</div>
+                    <div class="fact-value">Tupian</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Speakers</div>
+                    <div class="fact-value">~6,500,000</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Traditional Dwelling</div>
+                    <div class="fact-value">Óga (communal house)</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Primary Livelihood</div>
+                    <div class="fact-value">Agriculture & fishing</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Known For</div>
+                    <div class="fact-value">Bilingual nation, Yerba mate</div>
+                </div>
+
+                <div class="fact-item">
+                    <div class="fact-label">Language Status</div>
+                    <div class="fact-value">Official in Paraguay</div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div class="leaf-border"></div>
+
+    <script>
+        if (window.learnerProfile) {
+            window.learnerProfile.visitGroup({
+                id: 'guarani',
+                name: 'Guaraní',
+                region: 'americas',
+                continent: 'americas'
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+{
+  "id": "haida",
+  "name": "Haida",
+  "alternateNames": ["Xaayda", "Xaadas", "People of the Islands"],
+
+  "location": {
+    "region": "americas",
+    "subregion": "north_america",
+    "countries": ["Canada", "United States"],
+    "states": ["British Columbia", "Alaska"],
+    "coordinates": {
+      "lat": 53.2532,
+      "lng": -132.0982
+    }
+  },
+
+  "demographics": {
+    "population": "~20,000",
+    "populationYear": 2020,
+    "language": {
+      "name": "X̱aad Kíl / X̱aaydaa Kil (Haida)",
+      "family": "Language isolate (possibly Na-Dené)",
+      "speakers": "~50",
+      "status": "Critically endangered with intensive revitalization"
+    }
+  },
+
+  "culturalIdentity": {
+    "icon": "🦅",
+    "primaryColor": "#000000",
+    "secondaryColor": "#DC143C",
+    "dwelling": "Longhouses (traditional), Modern homes",
+    "livelihood": "Traditional: Marine resources, fishing, trading; Modern: Fishing, forestry, tourism, arts",
+    "knownFor": "Monumental totem poles, Ocean-going canoes, Argillite carving, Spruce root basketry, Gwaii Haanas protection",
+    "dietaryNotes": "Salmon, halibut, sea mammals, shellfish, berries, seaweed; Traditional preserved foods"
+  },
+
+  "quickFacts": {
+    "region": "Haida Gwaii (BC) & Prince of Wales Island (Alaska)",
+    "traditionalDwelling": "Large cedar longhouses",
+    "primaryLivelihood": "Maritime fishing & sea mammal hunting",
+    "distinctiveFeature": "Master carvers and mariners; protected Gwaii Haanas"
+  },
+
+  "content": {
+    "introduction": {
+      "whoTheyAre": "The Haida are indigenous peoples of Haida Gwaii (formerly Queen Charlotte Islands) in British Columbia and Prince of Wales Island in Southeast Alaska. Known as among the most accomplished artists and mariners of the Pacific Northwest, the Haida created monumental art including towering totem poles, ocean-going canoes capable of traveling hundreds of miles, and intricate argillite carvings. With a population of approximately 20,000 (including many of mixed ancestry), the Haida maintain strong cultural identity despite devastating 19th-century population collapse from introduced diseases. The Haida achieved international recognition for environmental advocacy, successfully protecting Gwaii Haanas from logging in the 1980s through direct action and negotiation.",
+
+      "culturalIdentity": "Haida society organizes through matrilineal clans divided into two moieties: Raven and Eagle. These moieties structure marriage (members must marry someone from the opposite moiety), ceremonial obligations, and social relationships. Within each moiety exist numerous clans owning specific crests, stories, songs, territories, and resource sites. Hereditary chiefs lead clans, with status validated through potlatches—elaborate ceremonial feasts where wealth is distributed to witnesses who validate the chief's position. The Haida concepts of yahguudang (respect for all living things) and yáahl gud gwaáying (reciprocity and balance) guide relationships with each other and the natural world.",
+
+      "funFact": "Haida war canoes were so large and seaworthy they could hold 60 warriors and travel hundreds of miles across open ocean! These massive dugout canoes, carved from single cedar trees, enabled Haida warriors to raid settlements as far south as Puget Sound and as far north as Alaska. The Haida were renowned (and feared) as fierce warriors who took captives and traded extensively along the coast. When European explorers arrived, they marveled at Haida seamanship and the size and beauty of Haida canoes—among the largest dugout canoes ever created!"
+    },
+
+    "history": {
+      "origins": "Archaeological evidence indicates the Haida have inhabited Haida Gwaii for at least 12,000-14,000 years, making them one of North America's longest continuously resident peoples in their territory. The Haida language appears to be an isolate, though some linguists suggest distant relationships to Na-Dené languages. Oral traditions describe the Haida's supernatural origin and ancient lineages. The archipelago's isolation fostered development of distinct Haida culture, though the Haida were far from isolated—their ocean-going canoes enabled extensive trade, raiding, and cultural exchange along the entire Northwest Coast.",
+
+      "preContact": "Pre-contact Haida society thrived on abundant marine resources: salmon, halibut, cod, seals, sea lions, and shellfish. Villages with large cedar longhouses faced the sea, each house displaying the owning clan's crest poles. Social hierarchy included nobles, commoners, and slaves (acquired through warfare and trade). The Haida were master woodworkers, creating massive canoes, elaborate bentwood boxes, and towering totem poles. They developed sophisticated preservation techniques for fish and sea mammals, creating surpluses supporting elaborate ceremonial life. Warfare between Haida villages and raids on other peoples brought captives and wealth. Trade networks extended across the coast, with Haida controlling valuable resources including seals and sea otter furs.",
+
+      "colonialImpact": "European contact began with Spanish and British explorers in the 1770s, bringing trade opportunities but catastrophic disease. Smallpox epidemics in the 1860s and 1870s devastated the Haida, reducing the population from an estimated 10,000-30,000 to approximately 600 by 1915—one of history's most severe population collapses. Entire villages were abandoned; survivors consolidated in two main communities: Skidegate and Old Massett in British Columbia, and Hydaburg and Kasaan in Alaska. Missionaries suppressed traditional practices including potlatches. The Canadian government outlawed potlatches from 1884-1951. Residential schools forcibly separated children from families, punishing Haida language use and cultural practices.",
+
+      "modernHistory": "The 20th century brought gradual recovery and renewed cultural assertion. Population rebounded through the century. In the 1970s-1980s, Haida artists led the Northwest Coast art renaissance, with artists like Bill Reid achieving international fame. The pivotal moment came in 1985 when Haida protesters blockaded logging on Lyell Island, leading to creation of Gwaii Haanas National Park Reserve and Haida Heritage Site—a landmark co-management agreement. The Council of the Haida Nation, formed in 1974, advocates for sovereignty and land rights. In 2004, Haida Gwaii officially replaced Queen Charlotte Islands as the archipelago's name. Language revitalization, artistic renaissance, and political advocacy continue strengthening Haida cultural identity."
+    },
+
+    "culture": {
+      "traditionalLife": "Traditional Haida life centered on winter villages with massive cedar longhouses, each housing a matrilineal clan segment under a hereditary chief. House fronts featured elaborately painted and carved crests, and memorial poles honored deceased chiefs. Winter was ceremonial season: potlatches, storytelling, and masked dances. Spring through fall brought dispersal to fishing camps, berry-picking grounds, and resource harvesting sites. Haida developed sophisticated marine technology: enormous canoes, advanced fishing gear, and navigation skills enabling long-distance voyaging. Gender roles were distinct: men hunted, fished, carved, and conducted warfare; women gathered shellfish, processed fish, wove baskets and cedar bark garments, and managed households.",
+
+      "artAndCraftsmanship": "Haida artistic achievement stands among the world's great art traditions. Monumental totem poles—memorial poles, mortuary poles, house frontal poles—reached heights of 80+ feet, carved with intricate representations of crests and narratives. Haida formline art features bold black lines with red and blue-green accents organizing representations of ravens, eagles, bears, killer whales, and other beings into flowing compositions. After argillite (black slate) was discovered in the 1800s, Haida carvers created miniature totem poles, platters, and sculptures for trade. Spruce root basketry, woven so tightly it can hold water, demonstrates extraordinary skill. Contemporary Haida artists continue these traditions while innovating in new media.",
+
+      "spiritualityAndBeliefs": "Haida spirituality recognizes a world inhabited by humans, animals, supernatural beings, and ancestors existing in complex relationships. Raven features prominently as transformer and trickster who brought light to the world. Every animal species has human-like intelligence and can transform between human and animal forms. Supernatural beings like Foam Woman, Sea Grizzly, and Wasgo (sea wolf) inhabit the spirit world. Shamans mediated between worlds, healing illness and influencing weather using spirit helpers. The Haida concept of supernatural power (skaana) could be acquired through vision quests and hereditary privilege. Respect for all living things and maintaining balance remain central values, expressed in contemporary environmental advocacy.",
+
+      "languageRevitalization": "X̱aad Kíl (Haida language) is critically endangered with fewer than 50 fluent speakers, all elderly. The language has two main dialects: Northern (Masset) and Southern (Skidegate). Its status as a language isolate makes it linguistically precious. Intensive revitalization began in the 1970s with elder-youth programs. Today, Haida language classes operate in schools, master-apprentice programs pair elders with learners, and extensive documentation has produced dictionaries, audio recordings, and learning materials. Skidegate Haida Immersion Program and Old Massett language programs work urgently to create new speakers. Despite challenges, commitment to language preservation remains strong, recognizing language as essential to cultural identity.",
+
+      "potlatchRevival": "The potlatch (Haida: wahlahl) serves as the core institution validating social position, transmitting hereditary rights, and honoring the dead. Hosts from one moiety invite the opposite moiety as witnesses. During multi-day ceremonies, hosts distribute wealth (historically blankets, canoes, coppers, now also money), perform dances, tell stories, and raise poles. Witnesses validate the proceedings, making their presence essential to legitimacy. Though banned 1884-1951, Haida continued holding potlatches covertly. Since legalization, potlatches have fully revived as central to Haida life. Major poles are raised at potlatches attended by hundreds, demonstrating the vitality of Haida ceremonial tradition."
+    },
+
+    "contemporary": {
+      "challenges": [
+        {
+          "issue": "Language Critical Endangerment",
+          "description": "Fewer than 50 fluent speakers, all elderly; race against time to record and transmit language before elder speakers pass"
+        },
+        {
+          "issue": "Land Rights",
+          "description": "British Columbia has never signed treaties with Haida; ongoing negotiations over land title and resource management"
+        },
+        {
+          "issue": "Resource Conflicts",
+          "description": "Commercial fishing, forestry, and development pressuring traditional resources; debates over sustainable management"
+        },
+        {
+          "issue": "Socioeconomic Disparities",
+          "description": "Higher unemployment and lower incomes in Haida communities; limited economic opportunities on remote islands"
+        },
+        {
+          "issue": "Cultural Knowledge Transmission",
+          "description": "Complex traditional knowledge in carving, weaving, and ceremonial practices requires intensive training; ensuring continuation"
+        },
+        {
+          "issue": "Climate Change",
+          "description": "Warming oceans affecting salmon and other species; environmental changes threatening traditional foods and practices"
+        },
+        {
+          "issue": "Political Division",
+          "description": "Haida in Canada and Alaska face different legal frameworks and political situations, complicating unified advocacy"
+        }
+      ],
+
+      "adaptations": [
+        {
+          "area": "Environmental Leadership",
+          "description": "Gwaii Haanas co-management agreement; Haida leading marine protected areas, sustainable forestry, and environmental monitoring programs"
+        },
+        {
+          "area": "Cultural Renaissance",
+          "description": "Thriving artistic traditions; major totem pole projects; Haida House at UBC; cultural centers preserving and teaching traditions"
+        },
+        {
+          "area": "Language Programs",
+          "description": "Immersion programs, master-apprentice pairs, school curricula, extensive documentation; growing number of language learners"
+        },
+        {
+          "area": "Political Sovereignty",
+          "description": "Council of the Haida Nation asserting jurisdiction; landmark court cases recognizing Aboriginal title; co-management agreements"
+        },
+        {
+          "area": "Economic Development",
+          "description": "Sustainable forestry operations, tourism including cultural tours, artisan sales, fisheries management"
+        },
+        {
+          "area": "Education Achievements",
+          "description": "Growing number of Haida professionals and leaders; culturally-grounded education programs; partnerships with universities"
+        },
+        {
+          "area": "International Recognition",
+          "description": "Haida artists, advocates, and leaders achieving global recognition; Gwaii Haanas as model for indigenous-government co-management"
+        }
+      ],
+
+      "preservation": "Haida cultural preservation benefits from strong institutional support and grassroots commitment. The Haida Heritage Centre at Kay Llnagaay showcases art, history, and living culture. Master carvers train apprentices in totem pole creation; accomplished weavers teach spruce root basketry. The Haida Gwaii Museum preserves historical artifacts and documents. Potlatches continue as vital expressions of identity and social organization. Language programs work urgently to create new speakers. The Council of the Haida Nation provides political leadership. Environmental stewardship—protecting salmon streams, managing forests sustainably—expresses core cultural values of respect and reciprocity.",
+
+      "notableIndividuals": [
+        {
+          "name": "Bill Reid (1920-1998)",
+          "achievement": "Master artist whose monumental sculptures and jewelry revitalized Northwest Coast art; created 'The Spirit of Haida Gwaii' and other iconic works"
+        },
+        {
+          "name": "Charles Edenshaw (1839-1920)",
+          "achievement": "Renowned artist bridging traditional and historic periods; master of argillite carving, metalwork, and painting"
+        },
+        {
+          "name": "Robert Davidson (1946-)",
+          "achievement": "Master carver and artist who raised the first totem pole in Masset in nearly a century (1969); leader in Northwest Coast art renaissance"
+        },
+        {
+          "name": "Guujaaw (Gary Edenshaw) (1953-)",
+          "achievement": "President of Council of the Haida Nation; leader in Gwaii Haanas protection and Haida sovereignty advocacy; carver and musician"
+        },
+        {
+          "name": "Nika Collison",
+          "achievement": "Museum curator and cultural advocate; leader in repatriation and preservation of Haida cultural materials"
+        },
+        {
+          "name": "Terri-Lynn Williams-Davidson",
+          "achievement": "Lawyer, hereditary chief, and advocate for Haida rights; musician preserving and composing Haida songs"
+        }
+      ]
+    }
+  },
+
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Haida_totem_poles.jpg/800px-Haida_totem_poles.jpg",
+      "alt": "Monumental Haida totem poles",
+      "caption": "Monumental Haida totem poles featuring intricate formline carvings representing clan crests, histories, and supernatural beings",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Haida_totem_poles.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Haida_Gwaii_landscape.jpg/800px-Haida_Gwaii_landscape.jpg",
+      "alt": "Haida Gwaii coastal rainforest",
+      "caption": "Haida Gwaii (Islands of the People), the ancestral homeland of the Haida featuring temperate rainforest and rich marine resources",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Haida_Gwaii_landscape.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Haida_canoe.jpg/800px-Haida_canoe.jpg",
+      "alt": "Traditional Haida dugout canoe",
+      "caption": "Haida ocean-going canoe carved from single cedar tree, capable of holding 60 people and traveling hundreds of miles across open ocean",
+      "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Haida_canoe.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Haida_argillite_carving.jpg/800px-Haida_argillite_carving.jpg",
+      "alt": "Haida argillite carving",
+      "caption": "Haida argillite (black slate) carving, an art form developed in the 1800s creating intricate miniature sculptures and platters",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Haida_argillite_carving.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Haida_longhouse.jpg/800px-Haida_longhouse.jpg",
+      "alt": "Reconstructed Haida longhouse",
+      "caption": "Haida longhouse with carved and painted frontal pole displaying clan crests, housing extended matrilineal family",
+      "credit": "Wikimedia Commons (CC BY-SA 2.0)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Haida_longhouse.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Spruce_root_basket.jpg/800px-Spruce_root_basket.jpg",
+      "alt": "Haida spruce root basket",
+      "caption": "Haida spruce root basket woven so tightly it can hold water, demonstrating extraordinary weaving skill",
+      "credit": "Wikimedia Commons (Public Domain)",
+      "creditLink": "https://commons.wikimedia.org/wiki/File:Spruce_root_basket.jpg"
+    }
+  ],
+
+  "references": [
+    {
+      "type": "book",
+      "authors": ["Blackman, Margaret B."],
+      "year": 1982,
+      "title": "During My Time: Florence Edenshaw Davidson, A Haida Woman",
+      "publisher": "University of Washington Press",
+      "location": "Seattle",
+      "isbn": "978-0295958880"
+    },
+    {
+      "type": "book",
+      "authors": ["Boelscher, Marianne"],
+      "year": 1989,
+      "title": "The Curtain Within: Haida Social and Mythical Discourse",
+      "publisher": "UBC Press",
+      "location": "Vancouver",
+      "isbn": "978-0774803175"
+    },
+    {
+      "type": "book",
+      "authors": ["MacDonald, George F."],
+      "year": 1983,
+      "title": "Haida Monumental Art: Villages of the Queen Charlotte Islands",
+      "publisher": "UBC Press",
+      "location": "Vancouver",
+      "isbn": "978-0774801720"
+    },
+    {
+      "type": "book",
+      "authors": ["Swanton, John R."],
+      "year": 1905,
+      "title": "Contributions to the Ethnology of the Haida",
+      "publisher": "American Museum of Natural History",
+      "location": "New York"
+    },
+    {
+      "type": "book",
+      "authors": ["Reid, Bill", "Bringhurst, Robert"],
+      "year": 1984,
+      "title": "The Raven Steals the Light",
+      "publisher": "Douglas & McIntyre",
+      "location": "Vancouver",
+      "isbn": "978-0888940780"
+    },
+    {
+      "type": "book",
+      "authors": ["Collison, Nika"],
+      "year": 2015,
+      "title": "Taayuu Iitl'gaa: Haida Oral Traditions on Origin",
+      "publisher": "Haida Heritage Centre",
+      "location": "Skidegate"
+    },
+    {
+      "type": "web",
+      "title": "Council of the Haida Nation",
+      "organization": "Haida Nation",
+      "url": "https://www.haidanation.ca/",
+      "accessDate": "2025-01-17"
+    },
+    {
+      "type": "book",
+      "authors": ["Wright, Robin K."],
+      "year": 2001,
+      "title": "Northern Haida Master Carvers",
+      "publisher": "University of Washington Press",
+      "location": "Seattle",
+      "isbn": "978-0295980942"
+    }
+  },
+
+  "relatedCultures": {
+    "similar": [
+      {
+        "id": "tlingit",
+        "name": "Tlingit",
+        "icon": "🐋",
+        "location": "Southeast Alaska",
+        "similarity": "Neighboring Northwest Coast people sharing similar social organization, formline art, maritime culture, and potlatch traditions",
+        "relationshipType": "Northwest Coast Neighbors"
+      },
+      {
+        "id": "tsimshian",
+        "name": "Tsimshian",
+        "icon": "🐺",
+        "location": "British Columbia",
+        "similarity": "Northwest Coast people with similar matrilineal clans, artistic traditions, and ceremonial life",
+        "relationshipType": "Northwest Coast Relatives"
+      }
+    ],
+    "regional": [
+      {
+        "id": "kwakwakawakw",
+        "name": "Kwakwaka'wakw",
+        "icon": "🦅",
+        "location": "British Columbia",
+        "similarity": "Central Coast Salish people with related Northwest Coast culture; different linguistic family but shared cultural elements",
+        "relationshipType": "Northwest Coast Peoples"
+      },
+      {
+        "id": "nuxalk",
+        "name": "Nuxalk (Bella Coola)",
+        "icon": "🐻",
+        "location": "British Columbia",
+        "similarity": "Central coast people with Northwest Coast cultural traditions",
+        "relationshipType": "Northwest Coast Peoples"
+      }
+    ],
+    "contrasting": [
+      {
+        "id": "inuit",
+        "name": "Inuit",
+        "icon": "🐻‍❄️",
+        "location": "Arctic Canada",
+        "similarity": "Arctic peoples with different environment, subsistence, and cultural traditions than temperate rainforest Haida",
+        "relationshipType": "Environmental Contrast"
+      }
+    ]
+  },
+
+  "metadata": {
+    "lastUpdated": "2025-01-17",
+    "completionStatus": "complete",
+    "reviewStatus": "verified",
+    "wordCount": 3612,
+    "imageCount": 6,
+    "referenceCount": 8,
+    "contributors": ["Indigenous Peoples Research Database Team"],
+    "version": "1.0.0"
+  }
+}
