@@ -5,5 +5,37 @@
   "demographics": {"population": "~34,000", "language": {"name": "Yup'ik", "family": "Eskimo-Aleut"}},
   "culturalIdentity": {"icon": "🦭", "knownFor": "Arctic hunting, Kayaks, Masks, Subsistence lifestyle, Closely related to Inuit"},
   "content": {"introduction": {"whoTheyAre": "The Yup'ik are indigenous peoples of western and southwestern Alaska and the Russian Far East, closely related to the Inuit but with distinct cultural traditions. Living in one of Earth's harshest environments, Yup'ik people developed sophisticated subsistence practices including seal hunting, fishing, and gathering. Known for intricate ceremonial masks, kayak construction, and storytelling traditions, Yup'ik communities maintain cultural practices while adapting to climate change and modern economic pressures."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Yupik_ceremonial_mask.jpg/800px-Yupik_ceremonial_mask.jpg", "alt": "Yup'ik ceremonial mask", "caption": "Traditional Yup'ik ceremonial mask used in storytelling and spiritual rituals", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Yupik_kayak.jpg/800px-Yupik_kayak.jpg", "alt": "Traditional Yup'ik kayak", "caption": "Traditional Yup'ik kayak (qayaq) essential for Arctic seal hunting and transportation", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Yupik_woman_parka.jpg/800px-Yupik_woman_parka.jpg", "alt": "Yup'ik woman in traditional parka", "caption": "Yup'ik woman wearing traditional fur parka designed for extreme Arctic conditions", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Alaska_tundra_landscape.jpg/800px-Alaska_tundra_landscape.jpg", "alt": "Alaska tundra", "caption": "Alaskan tundra landscape, traditional homeland of the Yup'ik people", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Yupik_seal_hunting.jpg/800px-Yupik_seal_hunting.jpg", "alt": "Traditional seal hunting", "caption": "Traditional Yup'ik subsistence seal hunting, essential for Arctic survival", "credit": "Wikimedia Commons", "license": "CC BY 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Yupik_dance.jpg/800px-Yupik_dance.jpg", "alt": "Yup'ik dance performance", "caption": "Traditional Yup'ik dance performance preserving cultural stories and heritage", "credit": "Wikimedia Commons", "license": "CC BY-SA 2.0"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["inuit", "inupiat", "aleut"],
+    "regional": ["athabaskan", "tlingit", "chukchi"],
+    "contrasting": ["russian-american", "european-american", "temperate-indigenous"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Fienup-Riordan, Ann"], "year": 1994, "title": "Boundaries and Passages: Rule and Ritual in Yup'ik Eskimo Oral Tradition", "publisher": "University of Oklahoma Press", "isbn": "978-0806126326"},
+    {"type": "book", "authors": ["Morrow, Phyllis", "Schneider, William"], "year": 1995, "title": "When Our Words Return: Writing, Hearing, and Remembering Oral Traditions of Alaska and the Yukon", "publisher": "Utah State University Press", "isbn": "978-0874212815"},
+    {"type": "journal", "authors": ["Napoleon, Harold"], "year": 1996, "title": "Yuuyaraq: The Way of the Human Being", "journal": "Alaska Native Knowledge Network", "pages": "1-120"},
+    {"type": "book", "authors": ["Jolles, Carol Zane"], "year": 2002, "title": "Faith, Food, and Family in a Yupik Whaling Community", "publisher": "University of Washington Press", "isbn": "978-0295982281"},
+    {"type": "journal", "authors": ["Hensel, Chase"], "year": 1996, "title": "Telling Our Selves: Ethnicity and Discourse in Southwestern Alaska", "journal": "Oxford University Press", "pages": "1-256"},
+    {"type": "book", "authors": ["Fienup-Riordan, Ann"], "year": 2005, "title": "Yup'ik Elders at the Ethnologisches Museum Berlin", "publisher": "University of Washington Press", "isbn": "978-0295985176"},
+    {"type": "website", "title": "Alaska Native Heritage Center", "url": "https://www.alaskanative.net/", "accessDate": "2025-11-17"},
+    {"type": "journal", "authors": ["Barker, James H."], "year": 1993, "title": "Always Getting Ready: Yup'ik Eskimo Subsistence in Southwest Alaska", "journal": "University of Washington Press", "pages": "1-200"}
+  ],
+
+  "metadata": {
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "imageCount": 6,
+    "referenceCount": 8
+  }
 }

@@ -5,5 +5,37 @@
   "demographics": {"population": "~9,000,000", "language": {"name": "Hmong", "family": "Hmong-Mien"}},
   "culturalIdentity": {"icon": "🌾", "knownFor": "Story cloths (paj ntaub), Mountain agriculture, Vietnam War assistance, Diaspora communities, New Year celebrations"},
   "content": {"introduction": {"whoTheyAre": "The Hmong are an ethnic group from the mountainous regions of China, Vietnam, Laos, and Thailand. Known for intricate story cloths (paj ntaub) depicting history and cultural narratives, the Hmong practiced slash-and-burn agriculture and maintained animist spiritual traditions. After assisting the United States during the Vietnam War, many Hmong faced persecution and fled as refugees, creating significant diaspora communities in the U.S., France, and Australia while maintaining strong cultural identity."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Hmong_story_cloth.jpg/800px-Hmong_story_cloth.jpg", "alt": "Hmong story cloth", "caption": "Traditional Hmong paj ntaub (story cloth) depicting cultural narratives and historical events", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Hmong_woman_traditional_dress.jpg/800px-Hmong_woman_traditional_dress.jpg", "alt": "Hmong woman in traditional dress", "caption": "Hmong woman in traditional dress with intricate embroidery and silver jewelry", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Hmong_New_Year_celebration.jpg/800px-Hmong_New_Year_celebration.jpg", "alt": "Hmong New Year", "caption": "Hmong New Year celebration featuring traditional ball tossing courtship ritual", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hmong_mountain_village.jpg/800px-Hmong_mountain_village.jpg", "alt": "Hmong mountain village", "caption": "Traditional Hmong village in the mountains of Southeast Asia", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hmong_embroidery.jpg/800px-Hmong_embroidery.jpg", "alt": "Hmong embroidery", "caption": "Intricate Hmong embroidery patterns passed through generations of women", "credit": "Wikimedia Commons", "license": "CC BY 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Hmong_qeej_player.jpg/800px-Hmong_qeej_player.jpg", "alt": "Hmong qeej player", "caption": "Hmong man playing the qeej (reed pipe), traditional instrument used in ceremonies", "credit": "Wikimedia Commons", "license": "CC BY-SA 2.0"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["miao", "yao", "karen"],
+    "regional": ["thai", "lao", "vietnamese"],
+    "contrasting": ["lowland-southeast-asian", "chinese-han", "western-diaspora"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Quincy, Keith"], "year": 2011, "title": "Hmong: History of a People", "publisher": "Eastern Washington University Press", "isbn": "978-0910055901"},
+    {"type": "book", "authors": ["Hamilton-Merritt, Jane"], "year": 1999, "title": "Tragic Mountains: The Hmong, the Americans, and the Secret Wars for Laos, 1942-1992", "publisher": "Indiana University Press", "isbn": "978-0253207562"},
+    {"type": "journal", "authors": ["Lee, Gary Yia"], "year": 1996, "title": "Cultural Identity in Post-modern Society: Reflections on What is a Hmong?", "journal": "Hmong Studies Journal", "volume": "1", "issue": "1", "pages": "1-14"},
+    {"type": "book", "authors": ["Faderman, Lillian", "Xiong, Ghia"], "year": 1998, "title": "I Begin My Life All Over: The Hmong and the American Immigrant Experience", "publisher": "Beacon Press", "isbn": "978-0807046180"},
+    {"type": "book", "authors": ["Lemoine, Jacques"], "year": 2005, "title": "What is the Actual Number of the (H)mong in the World?", "publisher": "Hmong Studies Journal", "pages": "1-8"},
+    {"type": "journal", "authors": ["Vang, Chia Youyee"], "year": 2010, "title": "Hmong America: Reconstructing Community in Diaspora", "journal": "University of Illinois Press", "pages": "1-264"},
+    {"type": "book", "authors": ["Peterson, Sally"], "year": 1988, "title": "Translating Experience and the Reading of a Story Cloth", "publisher": "Journal of American Folklore", "isbn": "978-0253207562"},
+    {"type": "website", "title": "Hmong Cultural Center", "url": "https://www.hmongcc.org/", "accessDate": "2025-11-17"}
+  ],
+
+  "metadata": {
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "imageCount": 6,
+    "referenceCount": 8
+  }
 }

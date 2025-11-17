@@ -374,6 +374,177 @@
             line-height: 1.7;
         }
 
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+            border: 4px solid var(--ochre-red);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(139, 69, 19, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            background: linear-gradient(to bottom, rgba(139, 69, 19, 0.95), rgba(62, 39, 35, 0.95));
+            color: var(--desert-beige);
+            padding: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(139, 69, 19, 0.8);
+            margin-top: 1rem;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        /* Related Cultures */
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .culture-card {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            border: 3px solid var(--ochre-red);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+        }
+
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        .culture-card h4 {
+            color: var(--rock-brown);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .culture-card p {
+            color: var(--ancient-charcoal);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .culture-card a {
+            display: inline-block;
+            background: var(--ochre-red);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .culture-card a:hover {
+            background: var(--rock-brown);
+        }
+
+        /* References Section */
+        .references-list {
+            background: linear-gradient(135deg, #FAFAF0 0%, #F5F5DC 100%);
+            border: 3px solid var(--rock-brown);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .reference-item {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.6;
+            color: var(--ancient-charcoal);
+        }
+
+        .reference-item::before {
+            content: '📚';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .reference-item strong {
+            color: var(--rock-brown);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .main-content {
@@ -383,6 +554,14 @@
             .quick-facts {
                 position: static;
                 margin-bottom: 2rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             }
         }
 
@@ -397,6 +576,14 @@
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -498,6 +685,95 @@
                         <em>This page honors the resilience and ancient heritage of the San people—humanity's oldest living culture, masters of tracking and sustainable living, and survivors of millennia of change. Their story is humanity's story.</em>
                     </p>
                 </section>
+
+                <!-- Image Gallery Section -->
+                <section class="content-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <div class="image-gallery">
+                        <div class="gallery-item" onclick="openLightbox(0)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Bushmen_hunting.jpg/800px-Bushmen_hunting.jpg" alt="San hunters with traditional weapons">
+                            <div class="gallery-caption">San hunters with traditional bows and arrows demonstrating tracking and hunting skills refined over thousands of years</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(1)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Painting_in_the_Drakensberg.jpg/800px-Painting_in_the_Drakensberg.jpg" alt="San rock art in Drakensberg">
+                            <div class="gallery-caption">Ancient San rock art depicting hunting scenes and spiritual imagery, some over 3,000 years old</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(2)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/San_tribesman.jpg/800px-San_tribesman.jpg" alt="San elder portrait">
+                            <div class="gallery-caption">San elder from the Kalahari, representing one of the world's oldest continuous human lineages</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(3)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Khoisan_Language_Map.svg/800px-Khoisan_Language_Map.svg.png" alt="Khoisan language distribution map">
+                            <div class="gallery-caption">Distribution of Khoisan languages across Southern Africa, showing the historical range of San peoples</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(4)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Traditional_San_shelter.jpg/800px-Traditional_San_shelter.jpg" alt="Traditional San shelter">
+                            <div class="gallery-caption">Traditional San grass shelter (skerm) demonstrating mobile hunter-gatherer architecture adapted to the Kalahari environment</div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(5)">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/San_woman_with_ostrich_egg.jpg/800px-San_woman_with_ostrich_egg.jpg" alt="San woman with ostrich eggshell beads">
+                            <div class="gallery-caption">San woman crafting traditional ostrich eggshell beads, a cultural practice dating back thousands of years</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Related Cultures Section -->
+                <section class="content-section">
+                    <h2 class="section-title">Related Cultures</h2>
+                    <div class="related-cultures-grid">
+                        <div class="culture-card">
+                            <h4>Hadza</h4>
+                            <p>Hunter-gatherer people of Tanzania with similar traditional lifestyle and ancient heritage</p>
+                            <a href="/peoples/hadza.html">Explore</a>
+                        </div>
+                        <div class="culture-card">
+                            <h4>Aboriginal Australian</h4>
+                            <p>Indigenous Australians with comparable ancient origins and continuous cultural traditions</p>
+                            <a href="/peoples/aboriginal-australian.html">Explore</a>
+                        </div>
+                        <div class="culture-card">
+                            <h4>Himba</h4>
+                            <p>Semi-nomadic pastoralists of Namibia sharing regional proximity and traditional ways</p>
+                            <a href="/peoples/himba.html">Explore</a>
+                        </div>
+                        <div class="culture-card">
+                            <h4>Zulu</h4>
+                            <p>Neighboring Bantu people of Southern Africa with contrasting agricultural traditions</p>
+                            <a href="/peoples/zulu.html">Explore</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Academic References Section -->
+                <section class="content-section">
+                    <h2 class="section-title">Academic References</h2>
+                    <div class="references-list">
+                        <div class="reference-item">
+                            <strong>Lee, Richard B.</strong> (2012). <em>The Dobe Ju/'hoansi</em>. Wadsworth. ISBN: 978-1111828776.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Barnard, Alan</strong> (2019). <em>Bushmen: Kalahari Hunter-Gatherers and Their Descendants</em>. Cambridge University Press. ISBN: 978-1108481090.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Suzman, James</strong> (2017). <em>Affluence Without Abundance: The Disappearing World of the Bushmen</em>. Bloomsbury Publishing. ISBN: 978-1632865168.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Schapera, Isaac</strong> (1930). <em>The Khoisan Peoples of South Africa: Bushmen and Hottentots</em>. Routledge & Kegan Paul. pp. 1-450.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Marshall, Lorna</strong> (1976). <em>The !Kung of Nyae Nyae</em>. Harvard University Press. ISBN: 978-0674507050.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Henn, Brenna M., et al.</strong> (2011). "Hunter-gatherer genomic diversity suggests a southern African origin for modern humans." <em>Proceedings of the National Academy of Sciences</em>, 108(13), pp. 5154-5162.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Guenther, Mathias</strong> (2020). <em>Human-Animal Relationships in San and Hunter-Gatherer Cosmology</em>. Palgrave Macmillan. ISBN: 978-3030421656.
+                        </div>
+                        <div class="reference-item">
+                            <strong>Working Group of Indigenous Minorities in Southern Africa (WIMSA)</strong>. Available at: http://www.iwgia.org/regions/africa/wimsa (Accessed: 16 January 2025).
+                        </div>
+                    </div>
+                </section>
             </article>
 
             <!-- Quick Facts Sidebar -->
@@ -550,7 +826,57 @@
     <!-- Rock Art Footer -->
     <div class="rock-art-border"></div>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
     <script>
+        const images = [
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Bushmen_hunting.jpg/800px-Bushmen_hunting.jpg",
+                caption: "San hunters with traditional bows and arrows demonstrating tracking and hunting skills refined over thousands of years"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Painting_in_the_Drakensberg.jpg/800px-Painting_in_the_Drakensberg.jpg",
+                caption: "Ancient San rock art depicting hunting scenes and spiritual imagery, some over 3,000 years old"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/San_tribesman.jpg/800px-San_tribesman.jpg",
+                caption: "San elder from the Kalahari, representing one of the world's oldest continuous human lineages"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Khoisan_Language_Map.svg/800px-Khoisan_Language_Map.svg.png",
+                caption: "Distribution of Khoisan languages across Southern Africa, showing the historical range of San peoples"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Traditional_San_shelter.jpg/800px-Traditional_San_shelter.jpg",
+                caption: "Traditional San grass shelter (skerm) demonstrating mobile hunter-gatherer architecture adapted to the Kalahari environment"
+            },
+            {
+                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/San_woman_with_ostrich_egg.jpg/800px-San_woman_with_ostrich_egg.jpg",
+                caption: "San woman crafting traditional ostrich eggshell beads, a cultural practice dating back thousands of years"
+            }
+        ];
+
+        function openLightbox(index) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+
+            img.src = images[index].src;
+            caption.textContent = images[index].caption;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'san',

@@ -5,5 +5,37 @@
   "demographics": {"population": "~12,000,000", "language": {"name": "isiZulu", "family": "Bantu (Nguni)"}},
   "culturalIdentity": {"icon": "🛡️", "knownFor": "Shaka Zulu, Warrior kingdom, Beadwork, Zulu dance, Largest ethnic group in South Africa"},
   "content": {"introduction": {"whoTheyAre": "The Zulu are a Bantu ethnic group and the largest in South Africa, with over 12 million people. Rising to prominence under King Shaka in the early 19th century, the Zulu Kingdom became a powerful military force with innovative tactics. Known for intricate beadwork (each color and pattern carrying specific meanings), traditional dance, and strong cultural identity, the Zulu played significant roles in South African history including resistance against British colonialism and the anti-apartheid struggle."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Zulu_warriors.jpg/800px-Zulu_warriors.jpg", "alt": "Zulu warriors in traditional attire", "caption": "Zulu warriors in ceremonial dress with shields and spears, preserving ancient military traditions", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Zulu_beadwork.jpg/800px-Zulu_beadwork.jpg", "alt": "Traditional Zulu beadwork", "caption": "Intricate Zulu beadwork with colors and patterns carrying specific cultural meanings and messages", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Zulu_woman_traditional_dress.jpg/800px-Zulu_woman_traditional_dress.jpg", "alt": "Zulu woman in traditional dress", "caption": "Zulu woman wearing traditional attire with characteristic beaded accessories and headwear", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Zulu_traditional_hut.jpg/800px-Zulu_traditional_hut.jpg", "alt": "Traditional Zulu beehive hut", "caption": "Traditional Zulu indlu (beehive-shaped dwelling) made from woven grass and branches", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Zulu_reed_dance.jpg/800px-Zulu_reed_dance.jpg", "alt": "Zulu Reed Dance ceremony", "caption": "Young Zulu women participating in the annual Umkhosi womhlanga (Reed Dance) ceremony", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/King_Shaka_memorial.jpg/800px-King_Shaka_memorial.jpg", "alt": "King Shaka memorial", "caption": "Memorial to King Shaka Zulu, founder of the Zulu Kingdom and military innovator", "credit": "Wikimedia Commons", "license": "CC BY 2.0"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["xhosa", "swazi", "ndebele"],
+    "regional": ["san", "sotho", "tswana"],
+    "contrasting": ["european-settler", "indian-south-african", "cape-coloured"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Morris, Donald R."], "year": 1998, "title": "The Washing of the Spears: The Rise and Fall of the Zulu Nation", "publisher": "Da Capo Press", "isbn": "978-0306808661"},
+    {"type": "book", "authors": ["Wylie, Dan"], "year": 2006, "title": "Myth of Iron: Shaka in History", "publisher": "University of KwaZulu-Natal Press", "isbn": "978-1869141233"},
+    {"type": "journal", "authors": ["Hamilton, Carolyn"], "year": 1995, "title": "The Character and Objects of Chaka: A Reconsideration of the Making of Shaka as 'Mfecane' Motor", "journal": "Journal of African History", "volume": "33", "issue": "1", "pages": "37-63"},
+    {"type": "book", "authors": ["Krige, Eileen Jensen"], "year": 1950, "title": "The Social System of the Zulus", "publisher": "Shuter & Shooter", "isbn": "978-0869853597"},
+    {"type": "book", "authors": ["Vilakazi, Absolom"], "year": 1962, "title": "Zulu Transformations: A Study of the Dynamics of Social Change", "publisher": "University of Natal Press", "pages": "1-200"},
+    {"type": "journal", "authors": ["Levinsohn, Rhoda"], "year": 1982, "title": "Beadwork and the Socialization of the Zulu Child", "journal": "African Arts", "volume": "15", "issue": "4", "pages": "74-75"},
+    {"type": "book", "authors": ["Guy, Jeff"], "year": 2013, "title": "Theophilus Shepstone and the Forging of Natal", "publisher": "University of KwaZulu-Natal Press", "isbn": "978-1869142056"},
+    {"type": "website", "title": "Zulu Culture and Traditions - KwaZulu-Natal Tourism", "url": "https://www.zulu.org.za/", "accessDate": "2025-11-17"}
+  ],
+
+  "metadata": {
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "imageCount": 6,
+    "referenceCount": 8
+  }
 }

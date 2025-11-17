@@ -5,5 +5,37 @@
   "demographics": {"population": "~25,000 (self-identified)", "language": {"name": "Ainu", "family": "Language isolate"}},
   "culturalIdentity": {"icon": "🐻", "knownFor": "Bear worship, Distinct physical features, Oral epics (yukar), Traditional textiles, Indigenous to Japan"},
   "content": {"introduction": {"whoTheyAre": "The Ainu are the indigenous people of Hokkaido, the Kuril Islands, and Sakhalin. With distinct cultural traditions including bear worship ceremonies, intricate textile patterns, and oral epic poetry (yukar), the Ainu differ linguistically and culturally from ethnic Japanese. Facing centuries of colonization, forced assimilation, and cultural suppression, Ainu were officially recognized as indigenous people of Japan only in 2008. Today, Ainu communities work to revitalize language and cultural practices."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Ainu_elder_portrait.jpg/800px-Ainu_elder_portrait.jpg", "alt": "Ainu elder portrait", "caption": "Ainu elder showing traditional facial tattoos (no longer practiced)", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Ainu_ceremonial_dress.jpg/800px-Ainu_ceremonial_dress.jpg", "alt": "Ainu traditional dress", "caption": "Traditional Ainu clothing featuring distinctive geometric patterns and embroidery", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Ainu_bear_ceremony.jpg/800px-Ainu_bear_ceremony.jpg", "alt": "Ainu bear ceremony", "caption": "Historical depiction of Iyomante (bear sending ceremony), central Ainu spiritual practice", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Ainu_wooden_carving.jpg/800px-Ainu_wooden_carving.jpg", "alt": "Ainu woodcarving", "caption": "Traditional Ainu woodcarving showing intricate designs and spiritual motifs", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Ainu_traditional_house.jpg/800px-Ainu_traditional_house.jpg", "alt": "Ainu traditional dwelling", "caption": "Traditional Ainu chise (thatched house) in Hokkaido", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hokkaido_landscape.jpg/800px-Hokkaido_landscape.jpg", "alt": "Hokkaido landscape", "caption": "Hokkaido landscape, traditional homeland of the Ainu people", "credit": "Wikimedia Commons", "license": "CC BY 3.0"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["nivkh", "uilta", "indigenous-siberian"],
+    "regional": ["japanese", "russian-far-east", "korean"],
+    "contrasting": ["yamato-japanese", "urban-japanese", "modern-east-asian"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Siddle, Richard"], "year": 1996, "title": "Race, Resistance and the Ainu of Japan", "publisher": "Routledge", "isbn": "978-0415136495"},
+    {"type": "book", "authors": ["Lewallen, Ann-Elise"], "year": 2016, "title": "The Fabric of Indigeneity: Ainu Identity, Gender, and Settler Colonialism in Japan", "publisher": "University of New Mexico Press", "isbn": "978-0826357311"},
+    {"type": "journal", "authors": ["Kayano, Shigeru"], "year": 1994, "title": "Our Land Was a Forest: An Ainu Memoir", "journal": "Westview Press", "pages": "1-160"},
+    {"type": "book", "authors": ["Fitzhugh, William W.", "Dubreuil, Chisato O."], "year": 1999, "title": "Ainu: Spirit of a Northern People", "publisher": "University of Washington Press", "isbn": "978-0295978888"},
+    {"type": "journal", "authors": ["DeChicchis, Joseph"], "year": 1995, "title": "The Current Status of the Ainu Language", "journal": "Journal of Multilingual and Multicultural Development", "volume": "16", "issue": "1-2", "pages": "103-124"},
+    {"type": "book", "authors": ["Walker, Brett L."], "year": 2001, "title": "The Conquest of Ainu Lands: Ecology and Culture in Japanese Expansion", "publisher": "University of California Press", "isbn": "978-0520248342"},
+    {"type": "journal", "authors": ["Sjöberg, Katarina"], "year": 1993, "title": "The Return of the Ainu: Cultural Mobilization and the Practice of Ethnicity in Japan", "journal": "Harwood Academic Publishers", "pages": "1-210"},
+    {"type": "website", "title": "Foundation for Research and Promotion of Ainu Culture (FRPAC)", "url": "https://www.ff-ainu.or.jp/english/", "accessDate": "2025-11-17"}
+  ],
+
+  "metadata": {
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "imageCount": 6,
+    "referenceCount": 8
+  }
 }

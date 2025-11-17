@@ -295,6 +295,239 @@
             .content-wrapper { padding: 2rem 1.5rem; }
             .section-title { font-size: 2rem; }
         }
+
+        /* Image Gallery Styles */
+        .image-gallery {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-caption {
+            padding: 1rem;
+            background: white;
+            font-size: 0.9rem;
+            color: #333;
+            min-height: 60px;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 80vh;
+            margin: auto;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.7);
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .close-lightbox, .prev-lightbox, .next-lightbox {
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            user-select: none;
+        }
+
+        .close-lightbox {
+            top: 20px;
+            right: 40px;
+        }
+
+        .close-lightbox:hover { color: #ccc; }
+
+        .prev-lightbox, .next-lightbox {
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 4px;
+        }
+
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+
+        /* Related Cultures Styles */
+        .related-cultures {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            background: #f9f9f9;
+            border-radius: 12px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+        }
+
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .related-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--basque-red);
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .relationship-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .relationship-badge.similar {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .relationship-badge.regional {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .relationship-badge.contrasting {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .related-description {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+        }
+
+        /* Academic References Styles */
+        .academic-references {
+            max-width: 1200px;
+            margin: 4rem auto 2rem;
+            padding: 0 2rem;
+        }
+
+        .references-list {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .reference-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+        }
+
+        .reference-number {
+            font-weight: 700;
+            color: var(--basque-red);
+            flex-shrink: 0;
+        }
+
+        .reference-text {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .reference-text em {
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid, .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -363,11 +596,200 @@
                 <div class="fact-item"><div class="fact-label">Cuisine</div><div class="fact-value">World-renowned</div></div>
             </aside>
         </div>
+
+        <!-- Image Gallery Section -->
+        <section class="image-gallery">
+            <h2 class="section-title">Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Basque_dancers.jpg/800px-Basque_dancers.jpg" alt="Traditional Basque folk dancers performing at a festival" loading="lazy">
+                    <div class="image-caption">Traditional Basque folk dancers performing at a festival</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pelota_vasca.jpg/800px-Pelota_vasca.jpg" alt="Pelota players in traditional Basque ball game" loading="lazy">
+                    <div class="image-caption">Pelota players in traditional Basque ball game</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Basque_farmhouse.jpg/800px-Basque_farmhouse.jpg" alt="Traditional Basque baserri (farmhouse) in the countryside" loading="lazy">
+                    <div class="image-caption">Traditional Basque baserri (farmhouse) in the countryside</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Euskal_Herria_lauburu.svg/800px-Euskal_Herria_lauburu.svg.png" alt="Lauburu, the traditional Basque symbol representing four heads" loading="lazy">
+                    <div class="image-caption">Lauburu, the traditional Basque symbol representing four heads</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Basque_txalaparta.jpg/800px-Basque_txalaparta.jpg" alt="Musicians playing the txalaparta, traditional Basque percussion instrument" loading="lazy">
+                    <div class="image-caption">Musicians playing the txalaparta, traditional Basque percussion instrument</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gernika_market.jpg/800px-Gernika_market.jpg" alt="Market day in Gernika, historic Basque town" loading="lazy">
+                    <div class="image-caption">Market day in Gernika, historic Basque town</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Cultures Section -->
+        <section class="related-cultures">
+            <h2 class="section-title">Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/sami.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Sámi</h3>
+                    <p class="related-location">Scandinavia/Russia</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">Indigenous European people with unique language and culture, maintaining traditional identity across modern nation-state boundaries.</p>
+                </a>
+                <a href="/peoples/berber.html" class="related-card">
+                    <div class="related-icon">🏜️</div>
+                    <h3>Berber</h3>
+                    <p class="related-location">North Africa</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">North African indigenous people with distinct language family, preserving cultural identity despite centuries of external pressures.</p>
+                </a>
+                <a href="/peoples/spanish.html" class="related-card">
+                    <div class="related-icon">🏰</div>
+                    <h3>Spanish</h3>
+                    <p class="related-location">Spain</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Neighboring culture sharing the Iberian Peninsula with centuries of intertwined history and cultural exchange.</p>
+                </a>
+                <a href="/peoples/french.html" class="related-card">
+                    <div class="related-icon">🥖</div>
+                    <h3>French</h3>
+                    <p class="related-location">France</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Adjacent culture in southwestern France where the Basque Country extends across national borders.</p>
+                </a>
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🛶</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Arctic indigenous people with completely different environment, subsistence practices, and cultural adaptations.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Maori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Polynesian indigenous culture with more recent colonization experience, contrasting with ancient Basque continuity.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Academic References Section -->
+        <section class="academic-references">
+            <h2 class="section-title">Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item">
+                    <span class="reference-number">1.</span>
+                    <span class="reference-text">
+                        Kurlansky, M. (1999). <em>The Basque History of the World</em>. Walker & Company.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">2.</span>
+                    <span class="reference-text">
+                        Caro Baroja, J. (1971). <em>The Basques</em>. University of Nevada Press.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">3.</span>
+                    <span class="reference-text">
+                        Irujo, X. (2017). <em>Basque Nationalism and the Spanish State</em>. Center for Basque Studies.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">4.</span>
+                    <span class="reference-text">
+                        Collins, R. (1986). The Origins of the Basques. <em>Antiquity</em>.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">5.</span>
+                    <span class="reference-text">
+                        Trask, L. (1997). <em>Euskara: The Basque Language</em>. Routledge.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">6.</span>
+                    <span class="reference-text">
+                        Douglass, W. A. (2007). <em>The Basque Series: A Cultural and Political History</em>. University of Nevada Press.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">7.</span>
+                    <span class="reference-text">
+                        Various. (2015). Genetic history of the Basque population. <em>Current Biology</em>.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">8.</span>
+                    <span class="reference-text">
+                        Zulaika, J. (1988). <em>Basque Cultural Identity</em>. University of Nevada Press.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox HTML -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
     </div>
 
     <div class="basque-border"></div>
 
     <script>
+        // Lightbox functionality
+        let currentImageIndex = 0;
+        const images = [
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Basque_dancers.jpg/800px-Basque_dancers.jpg", caption: "Traditional Basque folk dancers performing at a festival" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pelota_vasca.jpg/800px-Pelota_vasca.jpg", caption: "Pelota players in traditional Basque ball game" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Basque_farmhouse.jpg/800px-Basque_farmhouse.jpg", caption: "Traditional Basque baserri (farmhouse) in the countryside" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Euskal_Herria_lauburu.svg/800px-Euskal_Herria_lauburu.svg.png", caption: "Lauburu, the traditional Basque symbol representing four heads" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Basque_txalaparta.jpg/800px-Basque_txalaparta.jpg", caption: "Musicians playing the txalaparta, traditional Basque percussion instrument" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gernika_market.jpg/800px-Gernika_market.jpg", caption: "Market day in Gernika, historic Basque town" }
+        ];
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeLightbox(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+            if (currentImageIndex >= images.length) currentImageIndex = 0;
+            updateLightboxImage();
+        }
+
+        function updateLightboxImage() {
+            document.getElementById('lightboxImage').src = images[currentImageIndex].url;
+            document.getElementById('lightboxCaption').textContent = images[currentImageIndex].caption;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox && lightbox.style.display === 'block') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeLightbox(-1);
+                if (e.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+
         if (window.learnerProfile) {
             window.learnerProfile.visitGroup({
                 id: 'basque',

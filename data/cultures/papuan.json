@@ -17,6 +17,11 @@
     }
   },
   "images": [{"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/PNG_highlands_man.jpg/800px-PNG_highlands_man.jpg", "alt": "Papua New Guinea highlands man with traditional decoration", "caption": "Highlands man with elaborate bird of paradise feather headdress and face paint", "credit": "Wikimedia Commons (CC BY-SA 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:PNG_highlands_man.jpg"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/PNG_sing_sing.jpg/800px-PNG_sing_sing.jpg", "alt": "Papua New Guinea sing-sing festival", "caption": "Sing-sing festival featuring spectacular traditional dress and dancing", "credit": "Wikimedia Commons (CC BY 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:PNG_sing_sing.jpg"}],
+  "relatedCultures": {
+    "similar": ["Aboriginal Australian", "Dayak"],
+    "regional": ["Fijian", "Tongan"],
+    "contrasting": ["Sami", "Bedouin"]
+  },
   "references": [{"type": "book", "authors": ["Connolly, B.", "Anderson, R."], "year": 1987, "title": "First Contact: New Guinea's Highlanders Encounter the Outside World", "publisher": "Viking", "isbn": "978-0670819232"}, {"type": "book", "authors": ["Strathern, A."], "year": 1971, "title": "The Rope of Moka: Big-Men and Ceremonial Exchange in Mount Hagen", "publisher": "Cambridge University Press", "isbn": "978-0521097871"}],
   "metadata": {"lastUpdated": "2025-01-15", "completionStatus": "complete", "reviewStatus": "verified", "wordCount": 1578, "imageCount": 2, "referenceCount": 2, "contributors": ["Indigenous Peoples Repository Team"], "version": "1.0.0"}
 }

@@ -17,6 +17,11 @@
     }
   },
   "images": [{"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fijian_kava_ceremony.jpg/800px-Fijian_kava_ceremony.jpg", "alt": "Fijian kava ceremony", "caption": "Traditional Fijian kava (yaqona) ceremony with tanoa bowl", "credit": "Wikimedia Commons (CC BY-SA 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Fijian_kava_ceremony.jpg"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fijian_meke_dance.jpg/800px-Fijian_meke_dance.jpg", "alt": "Fijian meke dance performance", "caption": "Fijian meke dance combining movement, song, and storytelling", "credit": "Wikimedia Commons (CC BY 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Fijian_meke_dance.jpg"}],
+  "relatedCultures": {
+    "similar": ["Tongan", "Samoan"],
+    "regional": ["Papuan", "Maori"],
+    "contrasting": ["Bedouin", "Sami"]
+  },
   "references": [{"type": "book", "authors": ["Ravuvu, A."], "year": 1983, "title": "Vaka I Taukei: The Fijian Way of Life", "publisher": "Institute of Pacific Studies", "isbn": "978-9820100084"}, {"type": "book", "authors": ["Scarr, D."], "year": 1984, "title": "Fiji: A Short History", "publisher": "Allen & Unwin", "isbn": "978-0868611471"}],
   "metadata": {"lastUpdated": "2025-01-15", "completionStatus": "complete", "reviewStatus": "verified", "wordCount": 1534, "imageCount": 2, "referenceCount": 2, "contributors": ["Indigenous Peoples Repository Team"], "version": "1.0.0"}
 }

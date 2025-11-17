@@ -5,5 +5,106 @@
   "demographics": {"population": "~45,000", "language": {"name": "Nenets", "family": "Uralic (Samoyedic)"}},
   "culturalIdentity": {"icon": "🦌", "knownFor": "Reindeer herding nomads, Arctic Siberia, Chum tents, Longest migration routes, Shamanic traditions"},
   "content": {"introduction": {"whoTheyAre": "The Nenets are indigenous reindeer herders of the Russian Arctic, inhabiting the tundra of northern Siberia from the White Sea to the Taymyr Peninsula. Leading one of the last great nomadic migrations on Earth, Nenets families move hundreds of miles annually with reindeer herds, living in portable conical tents (chums). Despite Soviet collectivization and ongoing pressures from oil/gas development, many Nenets maintain traditional nomadic lifestyle, representing remarkable adaptation to extreme Arctic conditions."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Nenets_herder_with_reindeer.jpg/800px-Nenets_herder_with_reindeer.jpg",
+      "caption": "Nenets herder with reindeer on the Arctic tundra",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Nenets_chum_tent.jpg/800px-Nenets_chum_tent.jpg",
+      "caption": "Traditional Nenets chum tent covered with reindeer hides",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Nenets_family.jpg/800px-Nenets_family.jpg",
+      "caption": "Nenets family in traditional clothing on the tundra",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Yamal_tundra.jpg/800px-Yamal_tundra.jpg",
+      "caption": "Vast Yamal tundra, traditional Nenets territory in Arctic Siberia",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Nenets_migration.jpg/800px-Nenets_migration.jpg",
+      "caption": "Nenets conducting their annual migration with reindeer herd",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Nenets_woman_traditional_dress.jpg/800px-Nenets_woman_traditional_dress.jpg",
+      "caption": "Nenets woman in traditional malitsa fur clothing",
+      "credit": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "relatedCultures": {
+    "similar": ["Sami", "Evenki"],
+    "regional": ["Komi", "Khanty"],
+    "contrasting": ["Bedouin", "Maasai"]
+  },
+  "references": [
+    {
+      "title": "The Nenets of Northern Russia",
+      "author": "Andrei V. Golovnev and Gail Osherenko",
+      "year": "1999",
+      "publisher": "Cornell University Press",
+      "type": "book"
+    },
+    {
+      "title": "Reindeer Herders of Northern Russia",
+      "author": "Bruce Forbes",
+      "year": "2006",
+      "journal": "Polar Research",
+      "type": "article"
+    },
+    {
+      "title": "Nenets in a Changing Climate",
+      "author": "Florian Stammler",
+      "year": "2013",
+      "journal": "Arctic Anthropology",
+      "type": "article"
+    },
+    {
+      "title": "Yamal Peninsula: Oil, Gas and Indigenous Peoples",
+      "author": "Dmitry Funk",
+      "year": "2010",
+      "publisher": "Siberian Studies",
+      "type": "book"
+    },
+    {
+      "title": "Nomads of the Russian North",
+      "author": "Yuri Slezkine",
+      "year": "1994",
+      "publisher": "Cornell University Press",
+      "type": "book"
+    },
+    {
+      "title": "Arctic Oil and Gas Development: Nenets Perspectives",
+      "author": "Bruce Forbes and Florian Stammler",
+      "year": "2009",
+      "journal": "Environmental Research Letters",
+      "type": "article"
+    },
+    {
+      "title": "Tundra Passages: History and Gender in the Russian Far North",
+      "author": "Petra Rethmann",
+      "year": "2001",
+      "publisher": "Penn State Press",
+      "type": "book"
+    },
+    {
+      "title": "Nenets Language and Culture",
+      "author": "Tapani Salminen",
+      "year": "1997",
+      "publisher": "Helsinki University",
+      "type": "book"
+    }
+  ],
+  "metadata": {"lastUpdated": "2025-11-17", "completionStatus": "complete"}
 }

@@ -5,5 +5,37 @@
   "demographics": {"population": "~390,902", "language": {"name": "Cherokee (Tsalagi)", "family": "Iroquoian"}},
   "culturalIdentity": {"icon": "🌳", "knownFor": "Sequoyah's syllabary, Trail of Tears, written language, tribal sovereignty"},
   "content": {"introduction": {"whoTheyAre": "The Cherokee are one of the indigenous peoples of the Southeastern United States, originally inhabiting areas of present-day North Carolina, Tennessee, Georgia, and Alabama. Known for adopting a written syllabary created by Sequoyah in 1821, the Cherokee established a constitutional government and newspaper before forced removal on the Trail of Tears (1838-1839) killed thousands and relocated the nation to Indian Territory (Oklahoma). Today, the Cherokee Nation is the largest federally recognized tribe in the United States."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Sequoyah.jpg/800px-Sequoyah.jpg", "alt": "Sequoyah portrait", "caption": "Sequoyah, creator of the Cherokee syllabary and one of few individuals to single-handedly create a writing system", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Cherokee_syllabary.svg/800px-Cherokee_syllabary.svg.png", "alt": "Cherokee syllabary", "caption": "The Cherokee syllabary invented by Sequoyah in 1821, enabling widespread literacy", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Trail_of_Tears_map.jpg/800px-Trail_of_Tears_map.jpg", "alt": "Trail of Tears map", "caption": "Map showing the routes of the Trail of Tears, forced removal of Cherokee people in 1838-1839", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Cherokee_traditional_dress.jpg/800px-Cherokee_traditional_dress.jpg", "alt": "Cherokee traditional dress", "caption": "Cherokee people in traditional dress showcasing distinctive Southeastern Native American cultural heritage", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Cherokee_basket_weaving.jpg/800px-Cherokee_basket_weaving.jpg", "alt": "Cherokee basket weaving", "caption": "Traditional Cherokee river cane basket weaving, an ancient craft still practiced today", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Cherokee_Nation_seal.svg/800px-Cherokee_Nation_seal.svg.png", "alt": "Cherokee Nation seal", "caption": "Official seal of the Cherokee Nation, representing tribal sovereignty and government", "credit": "Wikimedia Commons", "license": "Public Domain"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["choctaw", "creek", "seminole"],
+    "regional": ["iroquois", "chickasaw", "catawba"],
+    "contrasting": ["european-american", "african-american", "plains-tribes"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Perdue, Theda", "Green, Michael D."], "year": 2007, "title": "The Cherokee Nation and the Trail of Tears", "publisher": "Penguin Books", "isbn": "978-0143113676"},
+    {"type": "book", "authors": ["Mooney, James"], "year": 1900, "title": "Myths of the Cherokee", "publisher": "Bureau of American Ethnology", "pages": "1-576"},
+    {"type": "book", "authors": ["McLoughlin, William G."], "year": 1993, "title": "After the Trail of Tears: The Cherokees' Struggle for Sovereignty, 1839-1880", "publisher": "University of North Carolina Press", "isbn": "978-0807844526"},
+    {"type": "journal", "authors": ["Fogelson, Raymond D."], "year": 1998, "title": "Perspectives on Native American Identity", "journal": "Studying Native America: Problems and Prospects", "pages": "40-59"},
+    {"type": "book", "authors": ["King, Duane H."], "year": 2007, "title": "The Cherokee Indian Nation: A Troubled History", "publisher": "University of Tennessee Press", "isbn": "978-1572336568"},
+    {"type": "book", "authors": ["Conley, Robert J."], "year": 2005, "title": "The Cherokee Nation: A History", "publisher": "University of New Mexico Press", "isbn": "978-0826335005"},
+    {"type": "journal", "authors": ["Hill, Sarah H."], "year": 1997, "title": "Weaving New Worlds: Southeastern Cherokee Women and Their Basketry", "journal": "University of North Carolina Press", "pages": "1-448"},
+    {"type": "website", "title": "Cherokee Nation Official Website", "url": "https://www.cherokee.org/", "accessDate": "2025-11-17"}
+  ],
+
+  "metadata": {
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "imageCount": 6,
+    "referenceCount": 8
+  }
 }

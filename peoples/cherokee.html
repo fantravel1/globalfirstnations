@@ -397,6 +397,356 @@
                 font-size: 2rem;
             }
         }
+        /* ============================================
+           IMAGE GALLERY STYLES
+           ============================================ */
+        .image-gallery-section {
+            margin: 4rem 0;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-credit {
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            display: inline-block;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .gallery-credit:hover {
+            border-bottom-color: var(--primary-color, #666);
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 1200px;
+            max-height: 90vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lightbox-image {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .lightbox-caption p {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .lightbox-caption a {
+            color: var(--primary-color, #666);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            z-index: 10001;
+            color: #333;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============================================
+           RELATED CULTURES STYLES
+           ============================================ */
+        .related-cultures-section {
+            margin: 4rem 0;
+            padding: 3rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02));
+            border-radius: 15px;
+        }
+
+        .related-cultures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            border: 3px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color, #666), var(--secondary-color, #999));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .related-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color, #666);
+        }
+
+        .related-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .related-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #333);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .related-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color, #666), var(--secondary-color, #999));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .related-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* ============================================
+           ACADEMIC REFERENCES STYLES
+           ============================================ */
+        .academic-references {
+            margin: 4rem 0 2rem;
+            padding: 0 2rem;
+        }
+
+        .references-list {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .reference-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .reference-item:last-child {
+            border-bottom: none;
+        }
+
+        .reference-number {
+            font-weight: 700;
+            color: var(--primary-color, #666);
+            flex-shrink: 0;
+        }
+
+        .reference-text {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .reference-text em {
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .related-cultures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                font-size: 2rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-image {
+                height: 220px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -496,6 +846,176 @@
                         <em>This page honors the Cherokee people—the Principal People who created a written language, survived genocide, and built one of the most successful tribal nations in America. From the Appalachian homeland to Oklahoma and beyond, Cherokee resilience endures.</em>
                     </p>
                 </section>
+            
+                <!-- Image Gallery Section -->
+                <section class="content-section image-gallery-section">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Explore visual documentation of culture, traditions, and daily life through these carefully curated images from Wikimedia Commons.
+                    </p>
+                    <div class="image-gallery">
+                        <div class="gallery-item" data-index="0">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Sequoyah.jpg/800px-Sequoyah.jpg"
+                                 alt="Sequoyah portrait"
+                                 loading="lazy"
+                                 class="gallery-image">
+                            <div class="gallery-caption">
+                                <p class="gallery-text">Sequoyah, creator of the Cherokee syllabary and one of few individuals to single-handedly create a writing system</p>
+                                <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="1">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Cherokee_syllabary.svg/800px-Cherokee_syllabary.svg.png"
+                                 alt="Cherokee syllabary"
+                                 loading="lazy"
+                                 class="gallery-image">
+                            <div class="gallery-caption">
+                                <p class="gallery-text">The Cherokee syllabary invented by Sequoyah in 1821, enabling widespread literacy</p>
+                                <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Trail_of_Tears_map.jpg/800px-Trail_of_Tears_map.jpg"
+                                 alt="Trail of Tears map"
+                                 loading="lazy"
+                                 class="gallery-image">
+                            <div class="gallery-caption">
+                                <p class="gallery-text">Map showing the routes of the Trail of Tears, forced removal of Cherokee people in 1838-1839</p>
+                                <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Cherokee_traditional_dress.jpg/800px-Cherokee_traditional_dress.jpg"
+                                 alt="Cherokee traditional dress"
+                                 loading="lazy"
+                                 class="gallery-image">
+                            <div class="gallery-caption">
+                                <p class="gallery-text">Cherokee people in traditional dress showcasing distinctive Southeastern Native American cultural heritage</p>
+                                <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY-SA 3.0)</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Cherokee_basket_weaving.jpg/800px-Cherokee_basket_weaving.jpg"
+                                 alt="Cherokee basket weaving"
+                                 loading="lazy"
+                                 class="gallery-image">
+                            <div class="gallery-caption">
+                                <p class="gallery-text">Traditional Cherokee river cane basket weaving, an ancient craft still practiced today</p>
+                                <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (CC BY 2.0)</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-index="5">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Cherokee_Nation_seal.svg/800px-Cherokee_Nation_seal.svg.png"
+                                 alt="Cherokee Nation seal"
+                                 loading="lazy"
+                                 class="gallery-image">
+                            <div class="gallery-caption">
+                                <p class="gallery-text">Official seal of the Cherokee Nation, representing tribal sovereignty and government</p>
+                                <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="gallery-credit">Wikimedia Commons (Public Domain)</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+                    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
+                    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
+                    <div class="lightbox-content">
+                        <img src="" alt="" id="lightbox-image">
+                        <div class="lightbox-caption">
+                            <p id="lightbox-text"></p>
+                            <a href="" target="_blank" rel="noopener noreferrer" id="lightbox-credit"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Cultures Section -->
+                <section class="content-section related-cultures-section">
+                    <h2 class="section-title">Explore Related Cultures</h2>
+                    <p class="content-text" style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                        Discover connections between cultures through shared traditions, geographic proximity, or contrasting ways of life.
+                    </p>
+                    <div class="related-cultures-grid">
+                        <a href="choctaw.html" class="related-card">
+                            <div class="related-icon">🌍</div>
+                            <h4 class="related-name">Choctaw</h4>
+                            <p class="related-location">Unknown</p>
+                            <span class="related-badge">Similar Culture</span>
+                            <p class="related-description">Related culture sharing similar traditions and heritage</p>
+                        </a>
+                        <a href="creek.html" class="related-card">
+                            <div class="related-icon">🌍</div>
+                            <h4 class="related-name">Creek</h4>
+                            <p class="related-location">Unknown</p>
+                            <span class="related-badge">Similar Culture</span>
+                            <p class="related-description">Related culture sharing similar traditions and heritage</p>
+                        </a>
+                        <a href="seminole.html" class="related-card">
+                            <div class="related-icon">🌍</div>
+                            <h4 class="related-name">Seminole</h4>
+                            <p class="related-location">Unknown</p>
+                            <span class="related-badge">Similar Culture</span>
+                            <p class="related-description">Related culture sharing similar traditions and heritage</p>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Academic References Section -->
+                <section class="content-section academic-references">
+                    <h2 class="section-title">Academic References & Further Reading</h2>
+                    <div class="references-list">
+                        <div class="reference-item">
+                            <span class="reference-number">1.</span>
+                            <span class="reference-text">
+                                Perdue, Theda & Green, Michael D. (2007). <em>The Cherokee Nation and the Trail of Tears</em>. Penguin Books. ISBN: 978-0143113676
+                            </span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="reference-number">2.</span>
+                            <span class="reference-text">
+                                Mooney, James (1900). <em>Myths of the Cherokee</em>. Bureau of American Ethnology.
+                            </span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="reference-number">3.</span>
+                            <span class="reference-text">
+                                McLoughlin, William G. (1993). <em>After the Trail of Tears: The Cherokees' Struggle for Sovereignty, 1839-1880</em>. University of North Carolina Press. ISBN: 978-0807844526
+                            </span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="reference-number">4.</span>
+                            <span class="reference-text">
+                                Fogelson, Raymond D. (1998). Perspectives on Native American Identity. <em>Studying Native America: Problems and Prospects</em>, 40-59.
+                            </span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="reference-number">5.</span>
+                            <span class="reference-text">
+                                King, Duane H. (2007). <em>The Cherokee Indian Nation: A Troubled History</em>. University of Tennessee Press. ISBN: 978-1572336568
+                            </span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="reference-number">6.</span>
+                            <span class="reference-text">
+                                Conley, Robert J. (2005). <em>The Cherokee Nation: A History</em>. University of New Mexico Press. ISBN: 978-0826335005
+                            </span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="reference-number">7.</span>
+                            <span class="reference-text">
+                                Hill, Sarah H. (1997). Weaving New Worlds: Southeastern Cherokee Women and Their Basketry. <em>University of North Carolina Press</em>, 1-448.
+                            </span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="reference-number">8.</span>
+                            <span class="reference-text">
+                                Cherokee Nation Official Website. Available at: https://www.cherokee.org/ (Accessed: 2025-11-17)
+                            </span>
+                        </div>
+                    </div>
+                </section>
             </article>
 
             <!-- Quick Facts Sidebar -->
@@ -557,6 +1077,79 @@
                 continent: 'americas'
             });
         }
+    </script>
+
+    <script>
+        // Lightbox functionality
+        const galleryImages = [{"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Sequoyah.jpg/800px-Sequoyah.jpg", "alt": "Sequoyah portrait", "caption": "Sequoyah, creator of the Cherokee syllabary and one of few individuals to single-handedly create a writing system", "credit": "Wikimedia Commons", "creditLink": "https://commons.wikimedia.org"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Cherokee_syllabary.svg/800px-Cherokee_syllabary.svg.png", "alt": "Cherokee syllabary", "caption": "The Cherokee syllabary invented by Sequoyah in 1821, enabling widespread literacy", "credit": "Wikimedia Commons", "creditLink": "https://commons.wikimedia.org"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Trail_of_Tears_map.jpg/800px-Trail_of_Tears_map.jpg", "alt": "Trail of Tears map", "caption": "Map showing the routes of the Trail of Tears, forced removal of Cherokee people in 1838-1839", "credit": "Wikimedia Commons", "creditLink": "https://commons.wikimedia.org"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Cherokee_traditional_dress.jpg/800px-Cherokee_traditional_dress.jpg", "alt": "Cherokee traditional dress", "caption": "Cherokee people in traditional dress showcasing distinctive Southeastern Native American cultural heritage", "credit": "Wikimedia Commons", "creditLink": "https://commons.wikimedia.org"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Cherokee_basket_weaving.jpg/800px-Cherokee_basket_weaving.jpg", "alt": "Cherokee basket weaving", "caption": "Traditional Cherokee river cane basket weaving, an ancient craft still practiced today", "credit": "Wikimedia Commons", "creditLink": "https://commons.wikimedia.org"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Cherokee_Nation_seal.svg/800px-Cherokee_Nation_seal.svg.png", "alt": "Cherokee Nation seal", "caption": "Official seal of the Cherokee Nation, representing tribal sovereignty and government", "credit": "Wikimedia Commons", "creditLink": "https://commons.wikimedia.org"}];
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-image').src = img.url;
+            document.getElementById('lightbox-image').alt = img.alt;
+            document.getElementById('lightbox-text').textContent = img.caption;
+            document.getElementById('lightbox-credit').textContent = img.credit;
+            document.getElementById('lightbox-credit').href = img.creditLink;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery items click
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+                item.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                item.setAttribute('aria-label', 'View image ' + (index + 1));
+            });
+
+            // Lightbox controls
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+            document.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+            document.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+            // Click outside to close
+            document.getElementById('lightbox').addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!document.getElementById('lightbox').classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
     </script>
 </body>
 </html>

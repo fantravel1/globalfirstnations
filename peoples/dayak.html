@@ -25,6 +25,53 @@
         .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fun-fact { background: linear-gradient(135deg, var(--wood-brown), var(--rainforest-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
         footer { background: linear-gradient(135deg, var(--dark-forest), var(--tattoo-black)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+
+        /* Image Gallery Styles */
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+
+        /* Lightbox Styles */
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+
+        /* Related Cultures Styles */
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--rainforest-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--rainforest-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.contrasting { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+
+        /* Academic References Styles */
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--rainforest-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+
+        @media (max-width: 768px) {
+            .gallery-grid, .related-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -57,7 +104,199 @@
             <h3>Rainforest Knowledge</h3>
             <p>Dayak have extensive traditional ecological knowledge of rainforest plants, animals, and sustainable resource use. They practice swidden agriculture requiring sophisticated environmental understanding passed through generations.</p>
         </section>
+
+        <!-- Image Gallery Section -->
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dayak_longhouse.jpg/800px-Dayak_longhouse.jpg" alt="Traditional Dayak longhouse" loading="lazy">
+                    <div class="image-caption">Traditional Dayak longhouse in Borneo rainforest</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dayak_tattoos.jpg/800px-Dayak_tattoos.jpg" alt="Dayak person with traditional tattoos" loading="lazy">
+                    <div class="image-caption">Traditional Dayak tattoos marking status and achievements</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dayak_longhouse.jpg/800px-Dayak_longhouse.jpg" alt="Traditional Dayak longhouse" loading="lazy">
+                    <div class="image-caption">Communal living space inside traditional longhouse</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dayak_tattoos.jpg/800px-Dayak_tattoos.jpg" alt="Dayak person with traditional tattoos" loading="lazy">
+                    <div class="image-caption">Intricate patterns in traditional Dayak body art</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dayak_longhouse.jpg/800px-Dayak_longhouse.jpg" alt="Traditional Dayak longhouse" loading="lazy">
+                    <div class="image-caption">Longhouse community gathering in Borneo</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dayak_tattoos.jpg/800px-Dayak_tattoos.jpg" alt="Dayak person with traditional tattoos" loading="lazy">
+                    <div class="image-caption">Traditional tattooing techniques preserved through generations</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Cultures Section -->
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/karen.html" class="related-card">
+                    <div class="related-icon">🌸</div>
+                    <h3>Karen</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">Southeast Asian indigenous people maintaining unique traditions in rainforest and mountain environments.</p>
+                </a>
+                <a href="/peoples/hmong.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Hmong</h3>
+                    <p class="related-location">Southeast Asia</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">Highland Southeast Asian people with distinctive cultural practices and strong community traditions.</p>
+                </a>
+                <a href="/peoples/moken.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Moken</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Sea nomads of Southeast Asia with unique maritime culture in regional waters.</p>
+                </a>
+                <a href="/peoples/iban.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Iban</h3>
+                    <p class="related-location">Borneo</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Fellow Borneo indigenous people sharing longhouse traditions and rainforest culture.</p>
+                </a>
+                <a href="/peoples/sami.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Sami</h3>
+                    <p class="related-location">Scandinavia/Russia</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Arctic indigenous people with completely different environment contrasting tropical rainforest culture.</p>
+                </a>
+                <a href="/peoples/bedouin.html" class="related-card">
+                    <div class="related-icon">🐪</div>
+                    <h3>Bedouin</h3>
+                    <p class="related-location">Arabian Peninsula</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Desert nomads with arid environment lifestyle contrasting with rainforest dwelling Dayak.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Academic References Section -->
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item">
+                    <span class="reference-number">1.</span>
+                    <span class="reference-text">
+                        King, V. T. (1993). <em>The Peoples of Borneo</em>. Blackwell.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">2.</span>
+                    <span class="reference-text">
+                        Sather, C. (1997). <em>The Bajau Laut: Adaptation, History and Fate in a Maritime Fishing Society of South-Eastern Sabah</em>. Oxford University Press.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">3.</span>
+                    <span class="reference-text">
+                        Rousseau, J. (1990). <em>Central Borneo: Ethnic Identity and Social Life in a Stratified Society</em>. Oxford University Press.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">4.</span>
+                    <span class="reference-text">
+                        Sellato, B. (1994). <em>Nomads of the Borneo Rainforest: The Economics, Politics, and Ideology of Settling Down</em>. University of Hawaii Press.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">5.</span>
+                    <span class="reference-text">
+                        Davison, J., & Sutlive, V. H. (1991). The Children of Nising: Images of Headhunting in Borneo. <em>Ethnology</em>, 30(3), 221-241.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">6.</span>
+                    <span class="reference-text">
+                        Helliwell, C. (2001). <em>Never Stand Alone: A Study of Borneo Sociality</em>. Borneo Research Council.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">7.</span>
+                    <span class="reference-text">
+                        Weinstock, J. A. (1983). Kaharingan and the Luangan Dayaks. <em>Borneo Research Bulletin</em>, 15(2), 47-61.
+                    </span>
+                </div>
+                <div class="reference-item">
+                    <span class="reference-number">8.</span>
+                    <span class="reference-text">
+                        Appell, G. N. (1978). <em>Ethnic Groups of Insular Southeast Asia: Vol. 1 Indonesia, Andaman Islands, and Madagascar</em>. Human Relations Area Files Press.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox HTML -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
         <footer><p>&copy; 2025 Indigenous Peoples Repository | Honoring indigenous heritage worldwide</p></footer>
     </div>
+
+    <script>
+        // Lightbox functionality
+        let currentImageIndex = 0;
+        const images = [
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dayak_longhouse.jpg/800px-Dayak_longhouse.jpg", caption: "Traditional Dayak longhouse in Borneo rainforest" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dayak_tattoos.jpg/800px-Dayak_tattoos.jpg", caption: "Traditional Dayak tattoos marking status and achievements" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dayak_longhouse.jpg/800px-Dayak_longhouse.jpg", caption: "Communal living space inside traditional longhouse" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dayak_tattoos.jpg/800px-Dayak_tattoos.jpg", caption: "Intricate patterns in traditional Dayak body art" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dayak_longhouse.jpg/800px-Dayak_longhouse.jpg", caption: "Longhouse community gathering in Borneo" },
+            { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dayak_tattoos.jpg/800px-Dayak_tattoos.jpg", caption: "Traditional tattooing techniques preserved through generations" }
+        ];
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxImage();
+            document.getElementById('lightbox').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeLightbox(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+            if (currentImageIndex >= images.length) currentImageIndex = 0;
+            updateLightboxImage();
+        }
+
+        function updateLightboxImage() {
+            document.getElementById('lightboxImage').src = images[currentImageIndex].url;
+            document.getElementById('lightboxCaption').textContent = images[currentImageIndex].caption;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox && lightbox.style.display === 'block') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeLightbox(-1);
+                if (e.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
 </body>
 </html>

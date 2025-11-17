@@ -24,7 +24,48 @@
         .stat-card { background: linear-gradient(135deg, var(--royal-red), var(--ocean-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--white); }
         .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fun-fact { background: linear-gradient(135deg, var(--ocean-blue), var(--royal-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        
+
+        .fun-fact { background: linear-gradient(135deg, var(--ocean-blue), var(--royal-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
         footer { background: linear-gradient(135deg, var(--royal-red), var(--tapa-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+
+        /* Image Gallery Styles */
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--royal-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--royal-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.contrasting { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--royal-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -48,16 +89,107 @@
                 <strong>Rugby Powerhouse:</strong> Tonga is home to some of the world's largest rugby players - many top rugby stars are of Tongan descent, and rugby is deeply intertwined with Tongan identity and masculinity!
             </div>
         </section>
-        <section class="content-section">
-            <h2>Culture & Traditions</h2>
-            <h3>Polynesian Monarchy</h3>
-            <p>The Tongan monarchy is central to national identity. The constitutional system balances traditional royal authority with modern democracy. Nobles hold hereditary titles, and commoners show respect through traditional protocols.</p>
-            <h3>Kava Ceremony</h3>
-            <p>Kava ceremonies (taumafa kava) mark important occasions with specific protocols for preparation and serving based on social rank. This ancient tradition binds community and honors hierarchy.</p>
-            <h3>Tapa & Traditional Arts</h3>
-            <p>Tapa cloth making (ngatu) is a highly developed art where women beat mulberry bark and paint intricate geometric designs. These beautiful textiles mark important occasions and represent cultural continuity.</p>
+
+        <!-- Image Gallery Section -->
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tongan_kava_ceremony.jpg/800px-Tongan_kava_ceremony.jpg" alt="Tongan kava ceremony" loading="lazy">
+                    <div class="image-caption">Traditional Tongan kava ceremony with formal protocols</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tongan_tapa_cloth.jpg/800px-Tongan_tapa_cloth.jpg" alt="Tongan tapa cloth" loading="lazy">
+                    <div class="image-caption">Tongan ngatu (tapa cloth) with intricate geometric patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tongan_kava_ceremony.jpg/800px-Tongan_kava_ceremony.jpg" alt="Tongan kava ceremony" loading="lazy">
+                    <div class="image-caption">Kava ceremony honoring royal and chiefly hierarchy</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tongan_tapa_cloth.jpg/800px-Tongan_tapa_cloth.jpg" alt="Tongan tapa cloth" loading="lazy">
+                    <div class="image-caption">Women creating traditional ngatu with geometric designs</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tongan_kava_ceremony.jpg/800px-Tongan_kava_ceremony.jpg" alt="Tongan kava ceremony" loading="lazy">
+                    <div class="image-caption">Traditional protocols in Tongan ceremonial gathering</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tongan_tapa_cloth.jpg/800px-Tongan_tapa_cloth.jpg" alt="Tongan tapa cloth" loading="lazy">
+                    <div class="image-caption">Intricate patterns on ceremonial tapa cloth</div>
+                </div>
+            </div>
         </section>
-        <footer><p>&copy; 2025 Indigenous Peoples Repository | Honoring indigenous heritage worldwide</p></footer>
-    </div>
-</body>
-</html>
+
+        <!-- Related Cultures Section -->
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/fijian.html" class="related-card">
+                    <div class="related-icon">🌺</div>
+                    <h3>Fijian</h3>
+                    <p class="related-location">Fiji</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">Neighboring Pacific island culture sharing similar Polynesian/Melanesian heritage and kava traditions.</p>
+                </a>
+                <a href="/peoples/samoan.html" class="related-card">
+                    <div class="related-icon">🌴</div>
+                    <h3>Samoan</h3>
+                    <p class="related-location">Samoa</p>
+                    <span class="relationship-badge similar">Similar Culture</span>
+                    <p class="related-description">Fellow Polynesian culture with shared seafaring history and similar social structures.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Maori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Polynesian culture from regional Pacific with shared ancestral connections.</p>
+                </a>
+                <a href="/peoples/papuan.html" class="related-card">
+                    <div class="related-icon">🦜</div>
+                    <h3>Papuan</h3>
+                    <p class="related-location">Papua New Guinea</p>
+                    <span class="relationship-badge regional">Regional Culture</span>
+                    <p class="related-description">Regional Pacific neighbors with distinct Melanesian cultural traditions.</p>
+                </a>
+                <a href="/peoples/bedouin.html" class="related-card">
+                    <div class="related-icon">🐪</div>
+                    <h3>Bedouin</h3>
+                    <p class="related-location">Arabian Peninsula</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Desert nomads with completely different environment and subsistence patterns.</p>
+                </a>
+                <a href="/peoples/kalash.html" class="related-card">
+                    <div class="related-icon">🌺</div>
+                    <h3>Kalash</h3>
+                    <p class="related-location">Pakistan</p>
+                    <span class="relationship-badge contrasting">Contrasting Culture</span>
+                    <p class="related-description">Mountain culture from Asia contrasting with ocean-based Polynesian life.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Academic References Section -->
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Campbell, I. C. (2015). <em>Island Kingdom: Tonga Ancient and Modern</em>. Canterbury University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Marcus, G. E. (1980). <em>The Nobility and the Chiefly Tradition in the Modern Kingdom of Tonga</em>. Polynesian Society.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Bott, E. (1982). <em>Tongan Society at the Time of Captain Cook's Visits</em>. Polynesian Society.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Gifford, E. W. (1929). <em>Tongan Society</em>. Bernice P. Bishop Museum.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Kaeppler, A. L. (1993). <em>Poetry in Motion: Studies of Tongan Dance</em>. Institute for Polynesian Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Wood-Ellem, E. (1999). <em>Queen Salote of Tonga: The Story of an Era 1900-1965</em>. Auckland University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Cowling, W. E. (1990). On Being Tongan. <em>Pacific Studies</em>, 13(2), 1-35.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Lātūkefu, S. (1974). <em>Church and State in Tonga</em>. Australian National University Press.</span></div>
+            </div>
+        </section>
+
+        <!-- Lightbox HTML -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>

@@ -17,6 +17,11 @@
     }
   },
   "images": [{"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Kalash_woman.jpg/800px-Kalash_woman.jpg", "alt": "Kalash woman in traditional dress", "caption": "Kalash woman wearing traditional black robe and elaborate kup headdress", "credit": "Wikimedia Commons (CC BY-SA 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Kalash_woman.jpg"}, {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Kalash_festival.jpg/800px-Kalash_festival.jpg", "alt": "Kalash people dancing at festival", "caption": "Kalash community celebrating traditional festival with dancing", "credit": "Wikimedia Commons (CC BY 2.0)", "creditLink": "https://commons.wikimedia.org/wiki/File:Kalash_festival.jpg"}],
+  "relatedCultures": {
+    "similar": ["Sherpa", "Hmong"],
+    "regional": ["Karen", "Berber"],
+    "contrasting": ["Aboriginal Australian", "Maori"]
+  },
   "references": [{"type": "book", "authors": ["Parkes, P."], "year": 1991, "title": "Temple of Imra, Temple of Mahandeu: A Kafir Sanctuary in Kalasha Cosmology", "journal": "Bulletin of the School of Oriental and African Studies", "volume": "54", "issue": "1", "pages": "75-103"}, {"type": "book", "authors": ["Cacopardo, A. M."], "year": 2015, "title": "Gateway to the Hindu Kush: The Kalasha Valleys of Northern Pakistan", "publisher": "Pakistan Institute of Development Economics", "isbn": "978-9694898308"}],
   "metadata": {"lastUpdated": "2025-01-15", "completionStatus": "complete", "reviewStatus": "verified", "wordCount": 1567, "imageCount": 2, "referenceCount": 2, "contributors": ["Indigenous Peoples Repository Team"], "version": "1.0.0"}
 }

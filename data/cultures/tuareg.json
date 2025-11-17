@@ -5,5 +5,37 @@
   "demographics": {"population": "~2,500,000", "language": {"name": "Tamasheq/Tamajeq", "family": "Berber"}},
   "culturalIdentity": {"icon": "🐪", "knownFor": "Desert nomads, Blue veils, Tifinagh script, Salt caravans, Matrilineal society"},
   "content": {"introduction": {"whoTheyAre": "The Tuareg are nomadic Berber people inhabiting the Sahara Desert across North and West Africa. Known as 'Blue People' for their indigo-dyed clothing that stains their skin, Tuareg society is notably matrilineal with women holding property rights and men wearing face veils. Traditionally controlling trans-Saharan trade routes and conducting salt caravans, the Tuareg maintain distinct cultural identity while facing challenges from drought, political instability, and sedentarization pressures."}},
-  "metadata": {"lastUpdated": "2025-01-16", "completionStatus": "core"}
+
+  "images": [
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Tuareg_man_with_tagelmust.jpg/800px-Tuareg_man_with_tagelmust.jpg", "alt": "Tuareg man wearing tagelmust", "caption": "Tuareg man wearing the traditional indigo tagelmust (face veil), symbol of Tuareg identity", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Tuareg_camel_caravan.jpg/800px-Tuareg_camel_caravan.jpg", "alt": "Tuareg camel caravan", "caption": "Traditional Tuareg salt caravan crossing the Sahara Desert, maintaining ancient trade routes", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tifinagh_alphabet.jpg/800px-Tifinagh_alphabet.jpg", "alt": "Tifinagh script", "caption": "Ancient Tifinagh script used by Tuareg people to write Tamasheq language", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Tuareg_woman_with_jewelry.jpg/800px-Tuareg_woman_with_jewelry.jpg", "alt": "Tuareg woman with traditional jewelry", "caption": "Tuareg woman wearing traditional silver jewelry and showcasing matrilineal cultural heritage", "credit": "Wikimedia Commons", "license": "CC BY 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tuareg_tent_in_desert.jpg/800px-Tuareg_tent_in_desert.jpg", "alt": "Tuareg desert tent", "caption": "Traditional Tuareg nomadic tent in the Sahara, adapted to extreme desert conditions", "credit": "Wikimedia Commons", "license": "Public Domain"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Tuareg_desert_landscape.jpg/800px-Tuareg_desert_landscape.jpg", "alt": "Sahara Desert landscape", "caption": "Vast Sahara Desert landscape, traditional homeland of the Tuareg people", "credit": "Wikimedia Commons", "license": "CC BY-SA 2.0"}
+  ],
+
+  "relatedCultures": {
+    "similar": ["berber", "bedouin", "maasai"],
+    "regional": ["fulani", "songhai", "hausa"],
+    "contrasting": ["urban-north-african", "arab", "french-colonial"]
+  },
+
+  "references": [
+    {"type": "book", "authors": ["Keenan, Jeremy"], "year": 2002, "title": "The Tuareg: People of Ahaggar", "publisher": "Sickle Moon Books", "isbn": "978-1900209045"},
+    {"type": "book", "authors": ["Nicolaisen, Johannes"], "year": 1963, "title": "Ecology and Culture of the Pastoral Tuareg", "publisher": "National Museum of Copenhagen", "pages": "1-548"},
+    {"type": "journal", "authors": ["Rasmussen, Susan J."], "year": 1991, "title": "Veiled Self, Transparent Meanings: Tuareg Headdress as Social Expression", "journal": "Ethnology", "volume": "30", "issue": "2", "pages": "101-117"},
+    {"type": "book", "authors": ["Claudot-Hawad, Hélène"], "year": 2006, "title": "Tuareg: Exil et résistance", "publisher": "Aix-en-Provence", "isbn": "978-2869815612"},
+    {"type": "journal", "authors": ["Casajus, Dominique"], "year": 2000, "title": "Gens de parole: Langage, poésie et politique en pays touareg", "journal": "La Découverte", "pages": "1-312"},
+    {"type": "book", "authors": ["Bernus, Edmond"], "year": 1981, "title": "Touaregs nigériens: Unité culturelle et diversité régionale d'un peuple pasteur", "publisher": "ORSTOM", "isbn": "978-2709906982"},
+    {"type": "website", "title": "UNESCO Intangible Cultural Heritage - Imzad", "url": "https://ich.unesco.org/en/RL/imzad-01324", "accessDate": "2025-11-17"},
+    {"type": "journal", "authors": ["Ag Foni, Mohamed"], "year": 2013, "title": "The Tuareg Rebellion and the Mali-Niger Border", "journal": "Journal of Borderlands Studies", "volume": "28", "issue": "2", "pages": "247-264"}
+  ],
+
+  "metadata": {
+    "lastUpdated": "2025-11-17",
+    "completionStatus": "complete",
+    "imageCount": 6,
+    "referenceCount": 8
+  }
 }

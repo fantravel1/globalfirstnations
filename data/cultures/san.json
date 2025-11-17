@@ -45,19 +45,36 @@
   },
   
   "images": [
-    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Bushmen_hunting.jpg/800px-Bushmen_hunting.jpg", "alt": "San hunters with traditional weapons", "caption": "San hunters with traditional bows and arrows demonstrating tracking and hunting skills refined over thousands of years", "credit": "Wikimedia Commons (CC BY-SA 2.0)"}
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Bushmen_hunting.jpg/800px-Bushmen_hunting.jpg", "alt": "San hunters with traditional weapons", "caption": "San hunters with traditional bows and arrows demonstrating tracking and hunting skills refined over thousands of years", "credit": "Wikimedia Commons", "license": "CC BY-SA 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Painting_in_the_Drakensberg.jpg/800px-Painting_in_the_Drakensberg.jpg", "alt": "San rock art in Drakensberg", "caption": "Ancient San rock art depicting hunting scenes and spiritual imagery, some over 3,000 years old", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/San_tribesman.jpg/800px-San_tribesman.jpg", "alt": "San elder portrait", "caption": "San elder from the Kalahari, representing one of the world's oldest continuous human lineages", "credit": "Wikimedia Commons", "license": "CC BY 2.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Khoisan_Language_Map.svg/800px-Khoisan_Language_Map.svg.png", "alt": "Khoisan language distribution map", "caption": "Distribution of Khoisan languages across Southern Africa, showing the historical range of San peoples", "credit": "Wikimedia Commons", "license": "CC BY-SA 3.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Traditional_San_shelter.jpg/800px-Traditional_San_shelter.jpg", "alt": "Traditional San shelter", "caption": "Traditional San grass shelter (skerm) demonstrating mobile hunter-gatherer architecture adapted to the Kalahari environment", "credit": "Wikimedia Commons", "license": "CC BY-SA 4.0"},
+    {"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/San_woman_with_ostrich_egg.jpg/800px-San_woman_with_ostrich_egg.jpg", "alt": "San woman with ostrich eggshell beads", "caption": "San woman crafting traditional ostrich eggshell beads, a cultural practice dating back thousands of years", "credit": "Wikimedia Commons", "license": "CC BY 2.0"}
   ],
+
+  "relatedCultures": {
+    "similar": ["hadza", "aboriginal-australian", "pygmy"],
+    "regional": ["khoi", "himba", "zulu"],
+    "contrasting": ["bantu", "european-settler", "modern-urban"]
+  },
   
   "references": [
     {"type": "book", "authors": ["Lee, Richard B."], "year": 2012, "title": "The Dobe Ju/'hoansi", "publisher": "Wadsworth", "isbn": "978-1111828776"},
-    {"type": "book", "authors": ["Barnard, Alan"], "year": 2019, "title": "Bushmen: Kalahari Hunter-Gatherers and Their Descendants", "publisher": "Cambridge University Press", "isbn": "978-1108481090"}
+    {"type": "book", "authors": ["Barnard, Alan"], "year": 2019, "title": "Bushmen: Kalahari Hunter-Gatherers and Their Descendants", "publisher": "Cambridge University Press", "isbn": "978-1108481090"},
+    {"type": "book", "authors": ["Suzman, James"], "year": 2017, "title": "Affluence Without Abundance: The Disappearing World of the Bushmen", "publisher": "Bloomsbury Publishing", "isbn": "978-1632865168"},
+    {"type": "journal", "authors": ["Schapera, Isaac"], "year": 1930, "title": "The Khoisan Peoples of South Africa: Bushmen and Hottentots", "journal": "Routledge & Kegan Paul", "pages": "1-450"},
+    {"type": "book", "authors": ["Marshall, Lorna"], "year": 1976, "title": "The !Kung of Nyae Nyae", "publisher": "Harvard University Press", "isbn": "978-0674507050"},
+    {"type": "journal", "authors": ["Henn, Brenna M.", "et al."], "year": 2011, "title": "Hunter-gatherer genomic diversity suggests a southern African origin for modern humans", "journal": "Proceedings of the National Academy of Sciences", "volume": "108", "issue": "13", "pages": "5154-5162"},
+    {"type": "book", "authors": ["Guenther, Mathias"], "year": 2020, "title": "Human-Animal Relationships in San and Hunter-Gatherer Cosmology", "publisher": "Palgrave Macmillan", "isbn": "978-3030421656"},
+    {"type": "website", "title": "Working Group of Indigenous Minorities in Southern Africa (WIMSA)", "url": "http://www.iwgia.org/regions/africa/wimsa", "accessDate": "2025-01-16"}
   ],
   
   "metadata": {
-    "lastUpdated": "2025-01-16",
+    "lastUpdated": "2025-11-17",
     "completionStatus": "complete",
     "wordCount": 1200,
-    "imageCount": 1,
-    "referenceCount": 2
+    "imageCount": 6,
+    "referenceCount": 8
   }
 }
