@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tolai People: Shell Money Masters of New Britain | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐚</text></svg>">
+    <style>
+        :root { --tolai-green: #059669; --ocean-blue: #0284c7; --shell-white: #f8fafc; --tabu-brown: #78350f; --cultural-red: #DC2626; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--tolai-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--tolai-green), var(--ocean-blue)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(5,150,105,0.5); border: 5px solid var(--tabu-brown); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--tolai-green); }
+        nav a { color: var(--tolai-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--tolai-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--tolai-green); border-right: 3px solid var(--tabu-brown); }
+        h2 { color: var(--tolai-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--tolai-green); }
+        h3 { color: var(--ocean-blue); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--tolai-green), var(--ocean-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--tabu-brown); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--tabu-brown), var(--tolai-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--tolai-green), var(--ocean-blue)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--tolai-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--tolai-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--tolai-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐚</span>
+            <h1>The Tolai People</h1>
+            <p class="tagline">Masters of Shell Money - Keepers of Tabu Currency - Matrilineal Traders of New Britain</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Tolai?</h2>
+            <p>The Tolai (also known as Kuanua) are an Austronesian people numbering approximately 120,000-150,000 inhabiting the Gazelle Peninsula of East New Britain Province, Papua New Guinea, and nearby islands including the Duke of York Islands. The Tolai are world-renowned for their sophisticated <strong>shell money system</strong> called tabu (also tambu or diwara), made from small shells strung on rattan, which served as currency, wealth storage, and ritual exchange medium predating European contact. They developed a complex <strong>matrilineal society</strong> organized into clans (vunatarai) with land and property inherited through the mother's line, creating distinctive kinship structures unusual in Papua New Guinea. The Tolai established extensive <strong>trading networks</strong> throughout the Bismarck Archipelago, using outrigger canoes for maritime commerce exchanging tabu, food, and crafted goods. They practice a unique blend of traditional kastom (custom) and Christianity, maintaining elaborate ceremonies including mortuary rites featuring massive tabu exchanges, initiation rituals, and the tubuan (masked spirit societies). The Tolai were early adopters of cash crops including copra and cocoa, becoming economically prominent in Papua New Guinea while preserving strong cultural identity and traditional practices.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">120-150K</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">Tabu</span><span>Shell money currency</span></div>
+                <div class="stat-card"><span class="stat-number">Kuanua</span><span>Austronesian language</span></div>
+                <div class="stat-card"><span class="stat-number">New Britain</span><span>Gazelle Peninsula</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Living Shell Money:</strong> Tabu shell money remains in active use today! While Papua New Guinea uses the kina currency, the Tolai still manufacture, trade, and exchange tabu for traditional ceremonies, bride prices, and dispute settlements—one of the world's few functioning indigenous currency systems!
+            </div>
+
+            <h3>Tabu: The Shell Money System</h3>
+            <p>The Tolai's <strong>tabu</strong> (shell money) represents one of the most sophisticated indigenous currency systems documented. Tabu consists of small nassa shells (Nassarius camelus) laboriously harvested from specific reefs, cut, ground, pierced, and strung on rattan in standardized lengths called a fathom (pokono). Production is time-intensive—creating one fathom requires processing hundreds of tiny shells. The shells come in two types: <strong>minat (red/brown shells) valued roughly ten times higher than regular tabu</strong>, and common white/yellow shells. Tabu serves multiple functions: currency for trade, wealth storage, bride price (vartabar), compensation payments (labalaba), and ritual exchange in ceremonies. Large quantities are exchanged at mortuary feasts, with wealthy individuals accumulating coils containing thousands of fathoms. The value fluctuates based on quality, length, and shell type. Specialized Tolai families controlled production, creating economic stratification. Colonial authorities attempted to suppress tabu to force wage labor, but it persisted. Today, tabu production continues using traditional methods, exchanged alongside modern currency in a <strong>dual economy</strong> unique to Tolai society.</p>
+
+            <h3>Matrilineal Social Organization</h3>
+            <p>Tolai society organizes through <strong>matrilineal descent</strong>, with clan membership (vunatarai), property, and land rights inherited through mothers. Unlike most Papua New Guinean societies (typically patrilineal), Tolai children belong to their mother's clan, creating distinctive kinship obligations. Land ownership rests with matrilineal groups, though men typically manage land use. This system creates complex marriage arrangements—men must provide substantial <strong>bride price</strong> (vartabar) in tabu to the bride's matrilineage, compensating for the loss of her labor and children. Divorce returns bride price, creating economic disincentives. Traditional leadership included big men (vunatarai leaders) who gained status through wealth accumulation and distribution, particularly hosting elaborate feasts. The <strong>tubuan</strong> (secret male initiation society) cuts across clan lines, with tubuan masks representing spirits controlling aspects of social life, performing initiations, enforcing rules, and conducting ceremonies. Women have their own secret society, the iniet. This dual system of matrilineal clans and male societies creates nuanced social dynamics balancing female property rights with male ritual authority.</p>
+
+            <h3>Tubuan and Secret Societies</h3>
+            <p>The <strong>tubuan</strong> represents the most powerful traditional institution in Tolai society—a male secret society featuring elaborate cone-shaped masks representing spirits. Tubuan masks, constructed from bark cloth, painted with distinctive designs, and topped with feather crests, are believed to manifest actual spirits during ceremonies. The tubuan "polices" society, enforcing taboos, punishing wrongdoers, and presiding over initiations that transform boys into men through ordeals and secret knowledge transmission. Different tubuan have specific names, personalities, and functions. The masks are stored in sacred men's houses (taraiu) forbidden to women and uninitiated boys—violating this taboo traditionally meant death. Tubuan ceremonies involve dramatic <strong>performances</strong> with dancing, drumming (garamut), and ritual exchanges of massive quantities of tabu. Women have their own parallel society called iniet, with masks and ceremonies from which men are excluded. These complementary secret societies regulate Tolai society, maintaining gender-specific knowledge and ritual authority. Despite Christian conversion, tubuan ceremonies continue in modified forms, demonstrating remarkable cultural persistence and adaptation.</p>
+
+            <h3>Economy and Trade Networks</h3>
+            <p>The Tolai developed extensive <strong>maritime trading networks</strong> throughout the Bismarck Archipelago using sophisticated outrigger canoes. Traditional economy centered on horticulture (taro, yams, sweet potato), fishing, pig raising, and specialized production including tabu manufacture, pottery, and lime production for betel nut chewing. Tolai traders established markets throughout the region, exchanging tabu for obsidian, feathers, food, and other valuables. The introduction of European contact brought dramatic economic change—the Tolai rapidly adopted <strong>copra production</strong> (dried coconut meat for oil) and cocoa cultivation, becoming among Papua New Guinea's most commercially successful indigenous groups. The town of Rabaul, in Tolai territory, became a major colonial commercial center. This economic prominence brought both opportunities and conflicts, including the Tolai uprising of 1969 demanding compensation for land alienation. Today, Tolai engage in cash cropping, wage labor, and business while maintaining traditional exchange systems. The dual economy—modern business and traditional tabu exchange—characterizes contemporary Tolai life, with successful individuals expected to participate in both systems.</p>
+
+            <h3>Contemporary Culture and Challenges</h3>
+            <p>Modern Tolai maintain strong cultural identity while being prominent in Papua New Guinea's national life. The majority identify as Christian (predominantly Methodist/United Church and Catholic), though traditional beliefs and practices persist in <strong>syncretic form</strong>. Kastom (traditional custom) remains central to social life, with mortuary ceremonies, bride price exchanges, and tubuan initiations continuing. The Tolai language (Kuanua) thrives with active transmission to younger generations, though Tok Pisin (creole lingua franca) is widely spoken. Challenges include land pressure from population growth, tension between traditional and modern governance, and the 1994 volcanic destruction of Rabaul, requiring mass relocation. The area experienced violence during the Bougainville Crisis (1988-1998) due to proximity. Young Tolai navigate between expectations of traditional tabu obligations and modern education and employment. Cultural organizations work to document traditional knowledge, maintain tabu production skills, and preserve ceremonial practices. The Tolai demonstrate that indigenous monetary and social systems can persist alongside modern economy, creating hybrid cultural forms that honor tradition while embracing change.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Papua New Guinea coastline" loading="lazy">
+                    <div class="image-caption">The Bismarck Sea and New Britain coastline, Tolai ancestral territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800" alt="Coral reef shells" loading="lazy">
+                    <div class="image-caption">Small shells harvested from reefs to create tabu shell money</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Island village" loading="lazy">
+                    <div class="image-caption">Traditional village on the Gazelle Peninsula of New Britain</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800" alt="Outrigger canoe" loading="lazy">
+                    <div class="image-caption">Outrigger canoe used for fishing and inter-island trade</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800" alt="Tropical vegetation" loading="lazy">
+                    <div class="image-caption">Lush tropical environment of the Gazelle Peninsula</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800" alt="Volcanic landscape" loading="lazy">
+                    <div class="image-caption">Volcanic landscape near Rabaul, destroyed by eruption in 1994</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/huli.html" class="related-card">
+                    <div class="related-icon">🪶</div>
+                    <h3>Huli</h3>
+                    <p class="related-location">Papua New Guinea Highlands</p>
+                    <span class="relationship-badge regional">PNG Neighbors</span>
+                    <p class="related-description">Wig men of Papua New Guinea highlands with elaborate ceremonial dress.</p>
+                </a>
+                <a href="/peoples/trobriand.html" class="related-card">
+                    <div class="related-icon">🐚</div>
+                    <h3>Trobriand Islanders</h3>
+                    <p class="related-location">Milne Bay Province</p>
+                    <span class="relationship-badge similar">Shell Exchange</span>
+                    <p class="related-description">Famous for Kula Ring shell exchange system and matrilineal society.</p>
+                </a>
+                <a href="/peoples/asaro.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Asaro Mud Men</h3>
+                    <p class="related-location">Eastern Highlands</p>
+                    <span class="relationship-badge regional">PNG Cultures</span>
+                    <p class="related-description">Known for distinctive mud masks and ceremonial performances.</p>
+                </a>
+                <a href="/peoples/korowai.html" class="related-card">
+                    <div class="related-icon">🌲</div>
+                    <h3>Korowai</h3>
+                    <p class="related-location">Papua Province</p>
+                    <span class="relationship-badge regional">PNG Island Cultures</span>
+                    <p class="related-description">Tree house builders of Papua maintaining traditional practices.</p>
+                </a>
+                <a href="/peoples/yap.html" class="related-card">
+                    <div class="related-icon">⭕</div>
+                    <h3>Yapese</h3>
+                    <p class="related-location">Micronesia</p>
+                    <span class="relationship-badge similar">Stone Money</span>
+                    <p class="related-description">Pacific islanders famous for massive stone money discs called Rai.</p>
+                </a>
+                <a href="/peoples/kanak.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Kanak</h3>
+                    <p class="related-location">New Caledonia</p>
+                    <span class="relationship-badge regional">Melanesian Neighbors</span>
+                    <p class="related-description">Indigenous Melanesian people of New Caledonia with strong cultural identity.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Epstein, A.L. (1969). <em>Matupit: Land, Politics, and Change among the Tolai of New Britain</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Salisbury, Richard F. (1970). <em>Vunamami: Economic Transformation in a Traditional Society</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Epstein, A.L. (1979). "Tambu: The Shell-Money of the Tolai." <em>In Fantasy and Symbol</em>, R.H. Hook, ed. Academic Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Errington, Frederick & Deborah Gewertz. (1995). <em>Articulating Change in the "Last Unknown"</em>. Westview Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Bradley, Christine. (1982). "Tolai Women and Development." <em>Oral History</em> 10(1):73-90.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Counts, David R. & Dorothy A. Counts. (1970). "The Vula of Kaliai: A Primitive Currency." <em>Journal of the Polynesian Society</em> 79(1):45-60.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Neumann, Klaus. (1992). <em>Not the Way It Really Was: Constructing the Tolai Past</em>. University of Hawaii Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Martin, Keir. (2013). <em>The Death of the Big Men and the Rise of the Big Shots</em>. Berghahn Books.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "The Bismarck Sea and New Britain coastline, Tolai ancestral territory" },
+            { src: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800", caption: "Small shells harvested from reefs to create tabu shell money" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Traditional village on the Gazelle Peninsula of New Britain" },
+            { src: "https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800", caption: "Outrigger canoe used for fishing and inter-island trade" },
+            { src: "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800", caption: "Lush tropical environment of the Gazelle Peninsula" },
+            { src: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800", caption: "Volcanic landscape near Rabaul, destroyed by eruption in 1994" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>
