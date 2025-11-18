@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chontal de Oaxaca People: Coastal Guardians | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    <style>
+        :root { --chontal-ocean: #0277BD; --coastal-sand: #D7CCC8; --lagoon-green: #00796B; --white: #ecf0f1; --sunset-orange: #FF6F00; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--chontal-ocean) 0%, var(--lagoon-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--chontal-ocean), var(--lagoon-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(2,119,189,0.5); border: 5px solid var(--sunset-orange); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--chontal-ocean); }
+        nav a { color: var(--chontal-ocean); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--chontal-ocean); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--chontal-ocean); border-right: 3px solid var(--lagoon-green); }
+        h2 { color: var(--chontal-ocean); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--chontal-ocean); }
+        h3 { color: var(--lagoon-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--chontal-ocean), var(--lagoon-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--sunset-orange); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--sunset-orange), var(--chontal-ocean)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--chontal-ocean), var(--lagoon-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--chontal-ocean); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--chontal-ocean); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--chontal-ocean); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🌊</span>
+            <h1>The Chontal de Oaxaca People</h1>
+            <p class="tagline">Guardians of the Oaxaca Coast - Lagoon Fishermen - Keepers of Lowland Traditions</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Chontal de Oaxaca?</h2>
+            <p>The Chontal de Oaxaca (Slijuala Sihanuk, meaning "Mountain Language People") are an indigenous people inhabiting the coastal lowlands of Oaxaca, Mexico, particularly in the districts of Huamelula, Tehuantepec, and Juchitán near the Pacific coast. With approximately 5,500 speakers, the Chontal language represents one of Mexico's most endangered indigenous languages. Distinct from the Chontal de Tabasco (a Mayan language), Oaxaca Chontal belongs to the Tequistlatecan language family, an isolate showing no proven relationship to other language families—making it linguistically unique and scientifically precious. The Chontal developed a coastal culture adapted to lagoons, estuaries, and tropical lowlands, with fishing, salt extraction, and flood-recession agriculture forming economic foundations. Spanish colonization devastated Chontal communities through disease, forced labor, and land appropriation, reducing them from tens of thousands to a small population concentrated in a few villages. Despite this trauma and ongoing language endangerment, Chontal communities maintain cultural identity through traditional fishing practices, distinctive cuisine, ceremonial life, and efforts to revitalize their unique language.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">5,500</span><span>Language speakers</span></div>
+                <div class="stat-card"><span class="stat-number">Isolate</span><span>Language family</span></div>
+                <div class="stat-card"><span class="stat-number">Pacific Coast</span><span>Homeland region</span></div>
+                <div class="stat-card"><span class="stat-number">Oaxaca</span><span>Home state</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Linguistic Mystery:</strong> The Chontal de Oaxaca language is a complete linguistic mystery! It shows no proven relationship to any other language family in the world, making it a language isolate. Linguists treasure it as a unique window into human linguistic diversity, but with only about 5,500 speakers, this irreplaceable language faces critical endangerment.
+            </div>
+
+            <h3>Coastal and Lagoon Economy</h3>
+            <p>The Chontal developed sophisticated adaptations to <strong>coastal lowland environments</strong>, particularly the lagoons and estuaries of Oaxaca's southern Pacific coast. Traditional economy centered on <strong>fishing</strong> in coastal lagoons using nets, traps, and canoes, harvesting fish, shrimp, crabs, and mollusks. <strong>Salt extraction</strong> from coastal salt pans was economically significant, with Chontal salt traded throughout Oaxaca. During rainy seasons when lagoons flooded adjacent lands, Chontal farmers practiced <strong>flood-recession agriculture</strong>, planting crops in nutrient-rich silt as waters receded. This agricultural system cultivated corn, beans, squash, chilies, and tropical fruits adapted to humid coastal conditions. Mangrove forests provided construction materials, firewood, and habitat for harvested species. The coastal location also facilitated trade networks connecting highland and lowland regions.</p>
+
+            <h3>Language Endangerment and Uniqueness</h3>
+            <p>The <strong>Chontal language</strong> (Slijuala Sihanuk) represents one of the world's linguistic treasures as a complete isolate with no demonstrable relationship to other languages. This uniqueness makes Chontal invaluable for understanding human linguistic diversity and prehistory, but also makes it vulnerable—when it disappears, an entire branch of human language vanishes forever. The language has two main dialects: Highland Chontal and Lowland Chontal, with some mutual intelligibility challenges. Chontal features complex verb morphology and SOV (Subject-Object-Verb) word order. Only about 5,500 speakers remain, mostly elders, with younger generations shifting to Spanish. This critical endangerment has prompted revitalization efforts including documentation projects, bilingual education programs, and community language classes, but intergenerational transmission remains fragile.</p>
+
+            <h3>Colonial Devastation and Demographic Collapse</h3>
+            <p>The Chontal suffered catastrophic population collapse during Spanish colonization. Pre-Hispanic Chontal territory was extensive, with tens of thousands inhabiting the coastal lowlands. Spanish <strong>encomienda</strong> systems imposed forced labor extracting salt and other resources. <strong>Epidemic diseases</strong>—smallpox, measles, typhus—to which indigenous people had no immunity, killed massive proportions of the population. Survivors were concentrated into fewer villages through colonial congregation policies. Land appropriation for Spanish haciendas dispossessed Chontal communities of coastal territories. By the 19th century, only a handful of Chontal villages remained. This demographic and territorial devastation disrupted cultural transmission and created the current situation where Chontal culture survives in just a few communities, making revitalization efforts both urgent and challenging.</p>
+
+            <h3>Cultural Practices and Syncretism</h3>
+            <p>Chontal ceremonial life blends Catholic and indigenous elements in syncretic practices. Traditional <strong>feast days</strong> honor patron saints with processions, special foods, music, and dancing. The <strong>Day of the Dead</strong> is elaborately celebrated with home altars, cemetery vigils, and offerings. Chontal cuisine features distinctive coastal dishes including <strong>fish tamales</strong>, shrimp preparations, and tropical fruits. Traditional healers (curanderos) maintain herbal medicine knowledge using coastal and lowland plants. Some communities continue fishing traditions using techniques passed through generations, though commercial fishing has transformed many practices. Traditional governance included council systems, though these have been largely replaced by Mexican municipal structures.</p>
+
+            <h3>Contemporary Challenges and Revitalization</h3>
+            <p>Modern Chontal communities face multiple challenges: severe language endangerment, poverty, limited economic opportunities, and marginalization within Mexican society. Many young Chontals migrate to cities or the United States for employment, disrupting cultural transmission. The small population size makes community organizing difficult. However, cultural revitalization efforts have emerged. <strong>Language documentation</strong> projects work with elder speakers to record vocabulary, grammar, and oral traditions before they're lost. <strong>Bilingual education</strong> programs in some schools teach Chontal alongside Spanish, though teacher training and materials remain limited. Community cultural centers organize events celebrating Chontal identity. Academic linguists collaborate with communities on language preservation. Traditional fishing cooperatives work to maintain coastal livelihoods. Despite immense challenges, Chontal pride persists—communities recognize their language and culture as irreplaceable heritage worth preserving for future generations, even as they navigate the difficult realities of being a tiny population struggling against forces of cultural homogenization.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Oaxaca coast" loading="lazy">
+                    <div class="image-caption">Pacific coastal lagoons and estuaries of Chontal territory in Oaxaca</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Traditional fishing" loading="lazy">
+                    <div class="image-caption">Traditional fishing practices in coastal lagoons</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=800" alt="Mangrove forest" loading="lazy">
+                    <div class="image-caption">Mangrove forests providing resources for Chontal communities</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=800" alt="Coastal agriculture" loading="lazy">
+                    <div class="image-caption">Traditional flood-recession agriculture in coastal lowlands</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800" alt="Chontal community" loading="lazy">
+                    <div class="image-caption">Chontal community gathering for traditional ceremony</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800" alt="Coastal village" loading="lazy">
+                    <div class="image-caption">Traditional Chontal village along the Oaxaca coast</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/zapotec.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Zapotec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Oaxacan Neighbors</span>
+                    <p class="related-description">Major Oaxacan indigenous group from nearby highlands and valleys.</p>
+                </a>
+                <a href="/peoples/huave.html" class="related-card">
+                    <div class="related-icon">🐟</div>
+                    <h3>Huave</h3>
+                    <p class="related-location">Oaxaca Coast</p>
+                    <span class="relationship-badge regional">Coastal Neighbors</span>
+                    <p class="related-description">Coastal Oaxacan fishing people with language isolate.</p>
+                </a>
+                <a href="/peoples/mixtec.html" class="related-card">
+                    <div class="related-icon">📜</div>
+                    <h3>Mixtec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Oaxacan Culture</span>
+                    <p class="related-description">Major Oaxacan group known for codices and artisanship.</p>
+                </a>
+                <a href="/peoples/mixe.html" class="related-card">
+                    <div class="related-icon">🗻</div>
+                    <h3>Mixe</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Mountain Oaxaca</span>
+                    <p class="related-description">Highland Oaxacan people maintaining strong cultural identity.</p>
+                </a>
+                <a href="/peoples/chatino.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Chatino</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Southern Oaxaca</span>
+                    <p class="related-description">Indigenous Oaxacan group from southern regions.</p>
+                </a>
+                <a href="/peoples/zoque.html" class="related-card">
+                    <div class="related-icon">🌋</div>
+                    <h3>Zoque</h3>
+                    <p class="related-location">Chiapas/Oaxaca</p>
+                    <span class="relationship-badge regional">Neighboring State</span>
+                    <p class="related-description">Indigenous group from neighboring Chiapas with distinct traditions.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Turner, Paul, & Turner, Shirley. (1971). <em>Chontal to Spanish-English, Spanish to Chontal Dictionary</em>. Summer Institute of Linguistics.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Waterhouse, Viola. (1962). <em>The Grammatical Structure of Oaxaca Chontal</em>. Indiana University Publications.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Suárez, Jorge A. (1983). <em>The Mesoamerican Indian Languages</em>. Cambridge University Press. (Includes Chontal classification)</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bartolomé, Miguel A., & Barabas, Alicia M. (1996). <em>Tierra de la Palabra: Historia y etnografía de los chatinos de Oaxaca</em>. INAH-OAXACA. (Comparative coastal Oaxacan groups)</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Campbell, Lyle. (1997). <em>American Indian Languages: The Historical Linguistics of Native America</em>. Oxford University Press. (Chontal linguistic position)</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Carrasco Zúñiga, Abad. (1989). <em>Los chontales de Oaxaca</em>. INI.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">O'Connor, Loretta. (2007). <em>Motion, Transfer, and Transformation: The Grammar of Change in Lowland Chontal</em>. John Benjamins Publishing.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Maddieson, Ian, et al. (2001). <em>Phonetic Structures of Oaxaca Chontal</em>. UCLA Working Papers in Phonetics.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Pacific coastal lagoons and estuaries of Chontal territory in Oaxaca" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Traditional fishing practices in coastal lagoons" },
+            { src: "https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=800", caption: "Mangrove forests providing resources for Chontal communities" },
+            { src: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=800", caption: "Traditional flood-recession agriculture in coastal lowlands" },
+            { src: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800", caption: "Chontal community gathering for traditional ceremony" },
+            { src: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800", caption: "Traditional Chontal village along the Oaxaca coast" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

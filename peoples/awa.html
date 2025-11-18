@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awá People: Brazil's Most Endangered Tribe | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
+    <style>
+        :root { --forest-green: #006400; --danger-red: #DC143C; --earth-brown: #8B4513; --white: #ecf0f1; --canopy-dark: #013220; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--forest-green) 0%, var(--canopy-dark) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--forest-green), var(--earth-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,100,0,0.5); border: 5px solid var(--danger-red); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--forest-green); }
+        nav a { color: var(--forest-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--forest-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--forest-green); border-right: 3px solid var(--danger-red); }
+        h2 { color: var(--forest-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--forest-green); }
+        h3 { color: var(--danger-red); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--forest-green), var(--earth-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--danger-red); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--danger-red), var(--earth-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--forest-green), var(--canopy-dark)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--forest-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--forest-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--forest-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🌳</span>
+            <h1>The Awá People</h1>
+            <p class="tagline">Brazil's Most Endangered Tribe - Last Nomadic Hunter-Gatherers - Guardians of Vanishing Forests</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Awá?</h2>
+            <p>The Awá (also spelled Awá-Guajá) are one of Earth's last nomadic hunter-gatherer peoples and among Brazil's most threatened indigenous groups. Numbering approximately 450-500 individuals, with around 100 maintaining little or no contact with the outside world, the Awá inhabit fragments of Atlantic rainforest in Maranhão state, northeastern Brazil. Their language belongs to the Tupi-Guarani family, closely related to other Amazonian languages. The Awá are renowned for their profound forest knowledge, ability to survive entirely from hunting and gathering without agriculture, and unique practice of raising wild animals—particularly monkeys—as beloved family members. Historically, they lived in small, highly mobile bands, moving through vast territories following game and wild fruits. Today, the Awá face an existential crisis as illegal logging devastates their forests at catastrophic rates. Survival International has called them "the most threatened tribe in the world," with their entire way of life dependent on rapidly disappearing rainforest. Despite unimaginable pressures, contacted Awá groups maintain extraordinary cultural resilience, continuing to practice traditional hunting and animal-raising while advocating fiercely for forest protection.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~450</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">~100</span><span>Uncontacted individuals</span></div>
+                <div class="stat-card"><span class="stat-number">Awá</span><span>Tupi-Guarani language</span></div>
+                <div class="stat-card"><span class="stat-number">Brazil</span><span>Maranhão Atlantic forest</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Animal Companions:</strong> Awá families adopt orphaned wild animals—especially monkeys, coatis, and birds—raising them as cherished family members. Women even breastfeed orphaned baby monkeys! These animals aren't pets but kin, living freely with families and forming deep emotional bonds rarely seen elsewhere.
+            </div>
+
+            <h3>Nomadic Life and Forest Mastery</h3>
+            <p>The Awá traditionally lived as <strong>nomadic hunter-gatherers</strong>, one of the few groups worldwide to survive entirely without agriculture. Small bands of 15-30 people moved continuously through the forest, establishing temporary camps for weeks or months before moving on. Their entire material culture was portable: bows and arrows, hammocks, fiber bags, calabash gourds, and little else. This mobility allowed them to exploit dispersed forest resources without depleting any area. The Awá possess encyclopedic <strong>ecological knowledge</strong>, identifying hundreds of plant and animal species, knowing seasonal fruiting patterns, animal behavior, and reading subtle forest signs invisible to outsiders. They navigate vast territories without maps or compasses, using mental maps of landmarks, river systems, and resource locations. Uncontacted groups maintain this fully nomadic lifestyle, while contacted communities have been pressured into semi-sedentary settlement but continue to make extended forest expeditions for hunting and gathering.</p>
+
+            <h3>Hunting and the Forest as Home</h3>
+            <p><strong>Hunting</strong> provides the Awá's primary sustenance and defines cultural identity. Men are expert archers, using powerful bows (often taller than themselves) and long arrows to hunt monkeys, tapir, peccaries, agoutis, armadillos, and birds high in the forest canopy. Success requires extraordinary skill—shooting a small monkey 30 meters up while it leaps through branches demands split-second accuracy. The Awá also gather forest foods: Brazil nuts, bacaba palm fruits, açaí, wild honey, turtle eggs, and numerous other plants. Women and children contribute significantly to gathering while men focus on hunting. The forest isn't just a resource—it's home, imbued with spiritual meaning. The Awá believe forests contain both visible and invisible inhabitants, including powerful spirits who can help or harm. They practice rituals and taboos to maintain good relations with forest spirits and animal-souls. Interestingly, despite being expert hunters, they also maintain <strong>intimate relationships with animals</strong> as family members, creating a complex ethical framework where certain animals are prey while others are beloved kin.</p>
+
+            <h3>Raising Wild Animals as Family</h3>
+            <p>Perhaps the most distinctive Awá practice is <strong>adopting and raising wild animals</strong>, particularly spider monkeys and capuchin monkeys. When hunters kill a female monkey with young, they bring orphaned infants back to camp where they're adopted into families. Women breastfeed infant monkeys alongside their own children, and the animals become full family members with names and individual personalities. These monkeys (and sometimes coatis, birds, and other animals) live freely but choose to stay with their human families, sleeping in hammocks, playing with children, and traveling during forest moves. The Awá form profound emotional attachments to these animals, mourning their deaths and maintaining relationships for years. This practice reflects a worldview where boundaries between human and animal are permeable, and kinship extends beyond species. It's not domestication—animals retain wild behaviors and freedoms—but rather interspecies adoption based on care and affection.</p>
+
+            <h3>Contact and Survival</h3>
+            <p>The Awá's history is marked by <strong>violence and displacement</strong>. Colonial and later Brazilian expansion brought disease, land theft, and massacres. Some Awá groups made peaceful contact with FUNAI (Brazil's indigenous agency) in the 1980s-1990s, while others fled deeper into forests. Initial contact periods were devastating, with introduced diseases killing many. Contacted groups were settled in designated indigenous territories, experiencing culture shock and dependency on government support. Today, approximately 100 Awá remain <strong>uncontacted</strong>, avoiding outsiders and fleeing when loggers or others approach. Their survival depends entirely on intact forest. Contacted Awá have learned Portuguese, adopted some manufactured goods, and engage with national society, but maintain traditional practices. Many young Awá continue to learn hunting, the Awá language, and forest knowledge from elders, though the pace of cultural change is rapid and deeply concerning to community members who see traditional knowledge slipping away with each generation.</p>
+
+            <h3>The Deforestation Crisis and Survival Fight</h3>
+            <p>The Awá face an existential threat from <strong>illegal logging</strong> that has devastated their territories. Despite legal protection, loggers invade indigenous lands, clear-cutting vast areas to extract valuable hardwoods. Satellite imagery shows shocking deforestation within demarcated Awá territories. This isn't just environmental destruction—it's cultural genocide, as the Awá cannot survive without forest. Logging also brings violence: loggers have attacked Awá people, and uncontacted groups are at extreme risk from forced contact and disease. Cattle ranchers follow loggers, converting forest to pasture. Contacted Awá have become vocal advocates for forest protection, working with organizations like <strong>Survival International</strong> to demand government action. FUNAI operations have expelled some illegal loggers, but enforcement remains inadequate. The Awá's situation highlights the broader crisis facing Amazon indigenous peoples: legally recognized rights undermined by illegal invasion, government inaction, and powerful economic interests. Despite overwhelming odds, the Awá continue fighting for their forests and future, demonstrating remarkable courage and resilience. Their survival represents not just one people's fate but a test of whether humanity will protect Earth's last indigenous hunter-gatherers and the irreplaceable forests they call home.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Amazon rainforest" loading="lazy">
+                    <div class="image-caption">Dense Atlantic rainforest of Maranhão, Awá homeland under threat</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800" alt="Spider monkey" loading="lazy">
+                    <div class="image-caption">Spider monkey, often adopted and raised as family member by Awá</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1623263653347-b3f50c2e05a8?w=800" alt="Traditional bow and arrow" loading="lazy">
+                    <div class="image-caption">Long bow used for canopy hunting, essential Awá survival tool</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Brazil nuts" loading="lazy">
+                    <div class="image-caption">Brazil nuts, important gathered food for nomadic Awá families</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=800" alt="Deforestation" loading="lazy">
+                    <div class="image-caption">Illegal logging devastating Awá territories in Maranhão</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1612620808387-996f91abb3a7?w=800" alt="Forest canopy" loading="lazy">
+                    <div class="image-caption">Pristine forest canopy essential for Awá hunting and survival</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Brazil/Venezuela Amazon</p>
+                    <span class="relationship-badge similar">Amazonian Hunters</span>
+                    <p class="related-description">Major Amazonian group maintaining forest-based subsistence.</p>
+                </a>
+                <a href="/peoples/kayapo.html" class="related-card">
+                    <div class="related-icon">🦜</div>
+                    <h3>Kayapó</h3>
+                    <p class="related-location">Brazil Amazon</p>
+                    <span class="relationship-badge regional">Brazilian Indigenous</span>
+                    <p class="related-description">Fierce territorial defenders fighting deforestation.</p>
+                </a>
+                <a href="/peoples/guarani.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Guaraní</h3>
+                    <p class="related-location">Paraguay/Brazil</p>
+                    <span class="relationship-badge similar">Tupi-Guarani</span>
+                    <p class="related-description">Related language family facing similar land pressures.</p>
+                </a>
+                <a href="/peoples/hadza.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Hadza</h3>
+                    <p class="related-location">Tanzania</p>
+                    <span class="relationship-badge similar">Hunter-Gatherers</span>
+                    <p class="related-description">African hunter-gatherers maintaining nomadic lifestyle.</p>
+                </a>
+                <a href="/peoples/san.html" class="related-card">
+                    <div class="related-icon">🦒</div>
+                    <h3>San</h3>
+                    <p class="related-location">Southern Africa</p>
+                    <span class="relationship-badge similar">Ancient Foragers</span>
+                    <p class="related-description">Ancient hunter-gatherers with profound environmental knowledge.</p>
+                </a>
+                <a href="/peoples/xingu.html" class="related-card">
+                    <div class="related-icon">🛶</div>
+                    <h3>Xingu Peoples</h3>
+                    <p class="related-location">Brazil Amazon</p>
+                    <span class="relationship-badge regional">Brazilian Amazon</span>
+                    <p class="related-description">Protected multi-ethnic complex in Xingu Indigenous Park.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Forline, Louis Carlos. (1997). "The Persistence and Cultural Transformation of the Guajá Indians: Foragers of Maranhão State, Brazil." PhD Dissertation, University of Florida.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Cormier, Loretta A. (2003). <em>Kinship with Monkeys: The Guajá Foragers of Eastern Amazonia</em>. New York: Columbia University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Cormier, Loretta A. (2006). "A Preliminary Review of Neotropical Primates in the Subsistence and Symbolism of Indigenous Lowland South American Peoples." <em>Ecological and Environmental Anthropology</em>, 2(1), 14-32.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Survival International. (2012). <em>Progress Can Kill: How Imposed Development Destroys the Health of Tribal Peoples</em>. London: Survival International.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Garcia, Uirá Felippe. (2010). <em>Karawara: A caça e o mundo dos Awá-Guajá</em>. PhD Dissertation, Universidade de São Paulo.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Forline, Louis, & Assis, Eneida. (2012). "Awá-Guajá Social Organization and the Impact of Contact." In Hames & Vickers (Eds.), <em>The Cambridge Encyclopedia of Hunters and Gatherers</em> (pp. 352-357).</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Walker, Robert S., et al. (2015). "Amazonian Horticulturalists Live in Larger, More Related Groups than Hunter–Gatherers." <em>Evolution and Human Behavior</em>, 36(5), 384-388.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Ribeiro, Darcy. (1996). <em>Os Índios e a Civilização: A Integração das Populações Indígenas no Brasil Moderno</em>. São Paulo: Companhia das Letras.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Dense Atlantic rainforest of Maranhão, Awá homeland under threat" },
+            { src: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800", caption: "Spider monkey, often adopted and raised as family member by Awá" },
+            { src: "https://images.unsplash.com/photo-1623263653347-b3f50c2e05a8?w=800", caption: "Long bow used for canopy hunting, essential Awá survival tool" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Brazil nuts, important gathered food for nomadic Awá families" },
+            { src: "https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=800", caption: "Illegal logging devastating Awá territories in Maranhão" },
+            { src: "https://images.unsplash.com/photo-1612620808387-996f91abb3a7?w=800", caption: "Pristine forest canopy essential for Awá hunting and survival" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

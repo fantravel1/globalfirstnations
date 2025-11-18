@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoikhoi People: First Herders of Southern Africa | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐑</text></svg>">
+    <style>
+        :root { --cape-orange: #FF8C00; --grassland-green: #9ACD32; --click-brown: #8B4513; --white: #ecf0f1; --pastoral-tan: #D2B48C; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--cape-orange) 0%, var(--grassland-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--cape-orange), var(--click-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(255,140,0,0.5); border: 5px solid var(--pastoral-tan); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--cape-orange); }
+        nav a { color: var(--cape-orange); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--cape-orange); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--cape-orange); border-right: 3px solid var(--pastoral-tan); }
+        h2 { color: var(--cape-orange); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--cape-orange); }
+        h3 { color: var(--click-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--cape-orange), var(--click-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--pastoral-tan); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--pastoral-tan), var(--cape-orange)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--cape-orange), var(--click-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--cape-orange); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--cape-orange); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--cape-orange); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐑</span>
+            <h1>The Khoikhoi People</h1>
+            <p class="tagline">First Herders of the Cape - Speakers of Click Languages - Victims of Colonial Genocide</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Khoikhoi?</h2>
+            <p>The Khoikhoi (also called Khoekhoe or, pejoratively, "Hottentots") are one of southern Africa's most ancient indigenous groups, pastoralists who herded cattle and sheep across the Cape region for over 2,000 years before European colonization. The Khoikhoi speak languages characterized by distinctive click consonants—linguistic features shared with the San (Bushmen) hunter-gatherers, together forming the Khoisan peoples. When Dutch colonizers established Cape Town in 1652, the Khoikhoi were the first indigenous Africans they encountered, initiating tragic cycles of land dispossession, disease epidemics (particularly smallpox), cultural erasure, and violence that decimated Khoikhoi society. By the 18th century, Khoikhoi communities had been largely destroyed as distinct political entities, with survivors absorbed into "Coloured" populations or reduced to landless laborers on settler farms. However, Khoikhoi descendants number in the millions across South Africa and Namibia, and recent decades have seen cultural revival movements reclaiming Khoikhoi identity, language, and heritage. The Khoikhoi's sophisticated pastoral economy, complex clan systems, and rich oral traditions demonstrate that they were not the "primitive" peoples colonial stereotypes depicted, but rather advanced societies tragically destroyed by European conquest.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">2,000+</span><span>Years of pastoralism</span></div>
+                <div class="stat-card"><span class="stat-number">Khoekhoe</span><span>Click language family</span></div>
+                <div class="stat-card"><span class="stat-number">1652</span><span>Dutch colonization began</span></div>
+                <div class="stat-card"><span class="stat-number">South Africa/Namibia</span><span>Traditional territory</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>The Click Languages:</strong> Khoikhoi languages feature extraordinary click consonants—sounds made by sucking air through the mouth in various ways. These clicks (represented in writing as ǀ, ǁ, ǃ, ‡) are not just accent but actual consonants crucial to meaning! The Khoekhoe language family has up to five different click types, making it one of the world's most phonetically complex language groups.
+            </div>
+
+            <h3>Ancient Pastoralists of Southern Africa</h3>
+            <p>The Khoikhoi emerged as distinct pastoralist societies around 2,000 years ago, representing Africa's transition from hunter-gatherer to food-producing economies. Archaeological evidence suggests they acquired cattle and sheep (introduced from East Africa) and developed sophisticated <strong>pastoral economies</strong> based on herding, supplemented by hunting, fishing, and gathering wild plants. The Khoikhoi organized into numerous distinct groups including the <strong>Goringhaiqua</strong>, <strong>Gorachouqua</strong>, <strong>Chainouqua</strong>, <strong>Hessequa</strong>, and <strong>Nama</strong>, each controlling specific territories and seasonal migration routes. Their society was organized around <strong>patrilineal clans</strong>, with wealth and status measured in cattle ownership. Cattle were not merely economic assets but social and spiritual capital, used in marriage transactions (lobola), dispute settlements, and religious ceremonies. The Khoikhoi developed expertise in <strong>animal husbandry</strong>, breeding hardy livestock adapted to semi-arid conditions, and managing seasonal migrations between wet and dry pastures to optimize grazing.</p>
+
+            <h3>Social Organization and Material Culture</h3>
+            <p>Khoikhoi society demonstrated sophisticated political organization despite colonial characterizations as "primitive." Leadership came from <strong>chiefs (khoib)</strong> who governed through councils of elders and consensus decision-making rather than autocratic rule. Social status derived from cattle wealth, age, oratorical skill, and genealogy. The Khoikhoi built portable <strong>mat houses (haru oms)</strong>—dome-shaped structures made from bent saplings covered with woven reed mats—easily dismantled and transported during seasonal movements. Material culture included finely crafted <strong>pottery</strong> with distinctive thin-walled, pointed-bottom designs; leather clothing decorated with ochre and beadwork; and sophisticated tools including iron-tipped spears, bows, and knives (ironworking skills likely acquired through trade with Bantu peoples). The Khoikhoi excelled in <strong>copper working</strong>, creating jewelry and ornaments from copper mined in Namaqualand. Their oral traditions preserved historical memory through praise poetry, creation myths, and trickster tales featuring the hare and jackal.</p>
+
+            <h3>Colonial Encounter and Catastrophe</h3>
+            <p>The Dutch East India Company's establishment of a <strong>Cape refreshment station</strong> in 1652 initiated disaster for the Khoikhoi. Initially, relations involved trade—the Khoikhoi exchanging cattle for beads, tobacco, and metal goods. However, Dutch settlers rapidly expanded, seizing Khoikhoi grazing lands and water sources. The Khoikhoi launched resistance wars (particularly the <strong>First and Second Khoikhoi-Dutch Wars</strong> in 1659-1660 and 1673-1677) but were defeated by superior firearms. More devastating were disease epidemics: <strong>smallpox outbreaks</strong> in 1713, 1755, and 1767 killed an estimated 90% of Khoikhoi in some regions—a demographic catastrophe from which they never recovered. Survivors faced systematic oppression: laws prohibited Khoikhoi from owning land, forced them into labor contracts with settlers, and banned traditional leadership structures. Many Khoikhoi became <strong>servants and laborers</strong> on European farms, losing language, culture, and identity. Intermarriage with enslaved peoples from Southeast Asia and Madagascar created the population later classified as "Cape Coloured" under apartheid.</p>
+
+            <h3>Cultural Erasure and Modern Revival</h3>
+            <p>By the 19th century, distinct Khoikhoi political communities had largely disappeared, absorbed into broader "Coloured" or mixed-race populations. The Khoekhoe languages declined precipitously, with only <strong>Nama</strong> (spoken in Namibia) surviving as a living language. The term "Hottentot"—originally a Dutch onomatopoeia mocking Khoikhoi click sounds—became a global symbol of "primitive" peoples, with Khoikhoi individuals like <strong>Saartjie Baartman</strong> exhibited in European "human zoos." This cultural genocide was so complete that many South Africans today are unaware of Khoikhoi heritage. However, recent decades have seen remarkable <strong>cultural revival</strong>. Organizations like the <strong>Khoisan Resistance Movement</strong> and <strong>First Nations Collective</strong> advocate for Khoikhoi recognition as South Africa's indigenous peoples, land rights, and constitutional acknowledgment. Khoikhoi descendants are reclaiming their heritage, learning Nama language, reviving traditional ceremonies, and demanding repatriation of ancestral remains from European museums (including Saartjie Baartman's remains, finally returned in 2002). This revival challenges apartheid and colonial narratives, asserting that the Khoikhoi were not simply victims who disappeared, but resilient peoples whose descendants continue fighting for recognition and justice.</p>
+
+            <h3>The Nama: Surviving Khoikhoi Culture</h3>
+            <p>The <strong>Nama people</strong> of Namibia and South Africa represent the largest surviving Khoikhoi-identifying group, numbering approximately 250,000. The Nama maintained pastoral traditions, Khoekhoe language, and cultural practices through South African colonial rule and apartheid. They played crucial roles in resistance, including the <strong>Nama-German War</strong> (1904-1908) where Nama guerrillas fought German colonizers. German forces responded with genocide, killing thousands in concentration camps and the desert. Today, Nama communities continue traditional pastoralism, speak Khoekhoegowab (Nama language), and maintain cultural festivals. The Nama's survival provides a living link to Khoikhoi heritage, demonstrating that colonialism did not completely erase these ancient peoples. Their continued existence offers hope for broader Khoikhoi cultural revival and recognition as southern Africa's first inhabitants.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1553532435-93d532a45f15?w=800" alt="Cape grasslands" loading="lazy">
+                    <div class="image-caption">Cape grasslands, traditional Khoikhoi grazing territories</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Sheep and cattle" loading="lazy">
+                    <div class="image-caption">Sheep and cattle, cornerstone of Khoikhoi pastoral economy</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Traditional artifacts" loading="lazy">
+                    <div class="image-caption">Traditional Khoikhoi artifacts including pottery and tools</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Cape landscape" loading="lazy">
+                    <div class="image-caption">Cape region landscape, home to Khoikhoi peoples for millennia</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=800" alt="Nama community" loading="lazy">
+                    <div class="image-caption">Contemporary Nama community maintaining Khoikhoi traditions</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Traditional dwelling" loading="lazy">
+                    <div class="image-caption">Reconstructed traditional mat house (haru oms), portable Khoikhoi dwelling</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/san.html" class="related-card">
+                    <div class="related-icon">🏜️</div>
+                    <h3>San (Bushmen)</h3>
+                    <p class="related-location">Southern Africa</p>
+                    <span class="relationship-badge similar">Khoisan Relatives</span>
+                    <p class="related-description">Hunter-gatherer relatives sharing click languages and ancient heritage.</p>
+                </a>
+                <a href="/peoples/nama.html" class="related-card">
+                    <div class="related-icon">🐏</div>
+                    <h3>Nama</h3>
+                    <p class="related-location">Namibia</p>
+                    <span class="relationship-badge similar">Khoikhoi Descendants</span>
+                    <p class="related-description">Largest surviving Khoikhoi group maintaining language and traditions.</p>
+                </a>
+                <a href="/peoples/xhosa.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Xhosa</h3>
+                    <p class="related-location">South Africa</p>
+                    <span class="relationship-badge historical">Historical Interaction</span>
+                    <p class="related-description">Bantu people who absorbed Khoikhoi influences including click consonants.</p>
+                </a>
+                <a href="/peoples/zulu.html" class="related-card">
+                    <div class="related-icon">🛡️</div>
+                    <h3>Zulu</h3>
+                    <p class="related-location">South Africa</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Major South African group sharing territory with Khoikhoi descendants.</p>
+                </a>
+                <a href="/peoples/griqua.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Griqua</h3>
+                    <p class="related-location">South Africa</p>
+                    <span class="relationship-badge similar">Mixed Khoikhoi Descent</span>
+                    <p class="related-description">Mixed Khoikhoi-European community maintaining indigenous identity.</p>
+                </a>
+                <a href="/peoples/herero.html" class="related-card">
+                    <div class="related-icon">🐂</div>
+                    <h3>Herero</h3>
+                    <p class="related-location">Namibia</p>
+                    <span class="relationship-badge regional">Namibian Neighbors</span>
+                    <p class="related-description">Bantu pastoralists sharing Namibian territories with Nama.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Elphick, Richard. (1985). <em>Khoikhoi and the Founding of White South Africa</em>. Ravan Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Penn, Nigel. (2005). <em>The Forgotten Frontier: Colonist and Khoisan on the Cape's Northern Frontier in the 18th Century</em>. Double Storey Books.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Barnard, Alan. (1992). <em>Hunters and Herders of Southern Africa: A Comparative Ethnography of Khoisan Peoples</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Smith, Andrew B. (1992). "Origins and Spread of Pastoralism in Africa." <em>Annual Review of Anthropology</em>, 21: 125-141.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Boonzaier, Emile, et al. (1996). <em>The Cape Herders: A History of the Khoikhoi of Southern Africa</em>. David Philip Publishers.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Guenther, Mathias. (1999). <em>Tricksters and Trancers: Bushman Religion and Society</em>. Indiana University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Wilmsen, Edwin N. (1989). <em>Land Filled with Flies: A Political Economy of the Kalahari</em>. University of Chicago Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Adhikari, Mohamed. (2010). <em>The Anatomy of a South African Genocide: The Extermination of the Cape San Peoples</em>. UCT Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1553532435-93d532a45f15?w=800", caption: "Cape grasslands, traditional Khoikhoi grazing territories" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Sheep and cattle, cornerstone of Khoikhoi pastoral economy" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Traditional Khoikhoi artifacts including pottery and tools" },
+            { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800", caption: "Cape region landscape, home to Khoikhoi peoples for millennia" },
+            { src: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=800", caption: "Contemporary Nama community maintaining Khoikhoi traditions" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Reconstructed traditional mat house (haru oms), portable Khoikhoi dwelling" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

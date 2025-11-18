@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch'ol Maya People: Pyramid Builders of Chiapas | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗿</text></svg>">
+    <style>
+        :root { --chol-jade: #00695C; --pyramid-stone: #795548; --jungle-green: #388E3C; --white: #ecf0f1; --maya-gold: #FFB300; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--chol-jade) 0%, var(--pyramid-stone) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--chol-jade), var(--pyramid-stone)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,105,92,0.5); border: 5px solid var(--maya-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--chol-jade); }
+        nav a { color: var(--chol-jade); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--chol-jade); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--chol-jade); border-right: 3px solid var(--pyramid-stone); }
+        h2 { color: var(--chol-jade); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--chol-jade); }
+        h3 { color: var(--pyramid-stone); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--chol-jade), var(--pyramid-stone)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--maya-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--maya-gold), var(--chol-jade)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--chol-jade), var(--pyramid-stone)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--chol-jade); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--chol-jade); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--chol-jade); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🗿</span>
+            <h1>The Ch'ol Maya People</h1>
+            <p class="tagline">Ancient Pyramid Builders - Descendants of Palenque - Guardians of the Chiapas Jungle</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Ch'ol Maya?</h2>
+            <p>The Ch'ol Maya (Winik, meaning "Person" or "Man" in Ch'ol) are an indigenous Maya people inhabiting the tropical lowlands of northern Chiapas, Mexico, particularly in the municipalities of Tila, Tumbalá, Sabanilla, and Palenque. With approximately 220,000 speakers, Ch'ol is one of the most vital Mayan languages. The Ch'ol are direct descendants of the Classic Maya civilization, with strong historical connections to the great city of Palenque—many Ch'ol communities live in the shadows of ancient pyramids their ancestors built. Their language belongs to the Cholan branch of Mayan languages, closely related to Chontal and Ch'orti'. The Ch'ol developed sophisticated agricultural systems adapted to tropical jungle environments, including milpa rotation and cacao cultivation. They maintain rich ceremonial traditions honoring earth lords (ajaw), rain deities, and sacred caves where ceremonies petition for agricultural abundance. Despite centuries of marginalization, the Ch'ol have preserved their language, traditional governance through cabildo systems, and profound spiritual connections to their ancestral landscape.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">220,000</span><span>Language speakers</span></div>
+                <div class="stat-card"><span class="stat-number">Cholan</span><span>Maya language branch</span></div>
+                <div class="stat-card"><span class="stat-number">Palenque</span><span>Ancestral city</span></div>
+                <div class="stat-card"><span class="stat-number">Chiapas</span><span>Home state</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Pyramid Builders' Descendants:</strong> The Ch'ol Maya are direct descendants of the builders of Palenque, one of the most spectacular ancient Maya cities! Many Ch'ol people live near the ruins where their ancestors created magnificent pyramids, elaborate palaces, and intricate hieroglyphic inscriptions. The Ch'ol language is closely related to the language recorded in Classic Maya texts.
+            </div>
+
+            <h3>Connection to Classic Maya Heritage</h3>
+            <p>The Ch'ol maintain profound connections to <strong>Classic Maya civilization</strong>, particularly the great city of <strong>Palenque</strong> (Lakamha' in Mayan). Archaeological evidence and linguistic analysis confirm Ch'ol ancestors built and inhabited this spectacular ceremonial center during its peak (600-750 CE). The Ch'ol language belongs to the Cholan branch, believed to be closely related to the prestige language of Classic Maya inscriptions. Many Ch'ol communities live near ancient ruins—Palenque, Toniná, and smaller sites—where they maintain spiritual connections through ceremonies at sacred caves and springs. While Classic Maya civilization collapsed in the 9th-10th centuries, Ch'ol people continued inhabiting the region, adapting to post-Classic conditions and later Spanish colonization while maintaining cultural continuity with their illustrious ancestors.</p>
+
+            <h3>Language and Oral Traditions</h3>
+            <p>The <strong>Ch'ol language</strong> is one of the most vigorous Mayan languages with over 220,000 speakers maintaining it as their primary language. Ch'ol belongs to the Western branch of Cholan languages, closely related to Chontal de Tabasco and Ch'orti' of Guatemala. The language features complex verb morphology typical of Mayan languages, with aspect and mood marking. Ch'ol has two main dialect regions: Tila and Tumbalá. Oral traditions preserve creation narratives, stories of the earth lords (ajaw), and historical accounts of migration and settlement. Traditional narratives explain the origins of corn, caves, mountains, and important plants. Despite Spanish dominance and recent evangelical Christian influence disrupting some traditional practices, Ch'ol remains vital in communities, passed from parents to children and used in agriculture, commerce, and daily life.</p>
+
+            <h3>Milpa Agriculture and Jungle Adaptation</h3>
+            <p>The Ch'ol practice sophisticated <strong>milpa agriculture</strong> adapted to tropical jungle environments, cultivating the sacred trilogy of corn, beans, and squash along with chilies, cacao, and fruit trees. Their agricultural system involves careful forest rotation—plots are cleared, burned, cultivated for 2-3 years, then allowed to regrow for 7-10 years, maintaining soil fertility and forest regeneration. The Ch'ol developed extensive knowledge of jungle ecology, using dozens of wild plants for food, medicine, and construction. <strong>Cacao cultivation</strong> has ancient roots, with cacao holding ceremonial importance and economic value. Coffee cultivation was introduced in the 20th century and became economically significant. Agricultural ceremonies involve offerings to the earth lords (ajaw) who control rain, fertility, and wild animals, with rituals performed at caves and springs requesting agricultural abundance.</p>
+
+            <h3>Sacred Caves and Spiritual Practices</h3>
+            <p>The Ch'ol maintain profound spiritual connections to <strong>sacred caves</strong>, considered entrances to the underworld and homes of the earth lords (ajaw). These supernatural beings control rain, fertility, and agricultural success, requiring offerings and prayers from community members. Traditional healers (ilol) conduct ceremonies at caves, making offerings of candles, incense, and ritual foods. The <strong>cargo system</strong> structures community religious life, with individuals rotating through ceremonial offices maintaining Catholic saints' cults that blend with Maya beliefs. Important ceremonies mark agricultural cycles—planting season rituals request rain and protection from pests, while harvest ceremonies give thanks. Some communities maintain the tradition of K'in, a multi-day agricultural ceremony with dancing, offerings, and feasting.</p>
+
+            <h3>Contemporary Ch'ol Communities</h3>
+            <p>Modern Ch'ol communities face significant challenges including poverty, land scarcity, and political marginalization. Many Ch'ol participated in the <strong>1994 Zapatista uprising</strong>, with several municipalities becoming Zapatista strongholds. The uprising brought attention to indigenous demands for land rights, political autonomy, and cultural recognition. Traditional <strong>governance</strong> through ejidos and traditional authorities coexists with Mexican municipal systems. Migration to cities and agricultural labor camps has increased as land pressure grows. Despite challenges, Ch'ol cultural identity remains strong through language maintenance (one of Mexico's most vital indigenous languages), continued agricultural traditions, sacred cave ceremonies, and organized political participation. Ch'ol artisans produce pottery and woven textiles, though less commercially prominent than some Maya groups. Educational programs increasingly include bilingual Ch'ol-Spanish instruction, and Ch'ol intellectuals work documenting traditional knowledge, promoting language preservation, and asserting indigenous rights in contemporary Mexico.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800" alt="Palenque ruins" loading="lazy">
+                    <div class="image-caption">Ancient pyramids of Palenque, built by ancestors of the Ch'ol Maya</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Chiapas jungle" loading="lazy">
+                    <div class="image-caption">Lush tropical jungle of the Ch'ol homeland in northern Chiapas</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=800" alt="Milpa agriculture" loading="lazy">
+                    <div class="image-caption">Traditional milpa agriculture in cleared jungle plots</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1587080266227-677cc2a4e76e?w=800" alt="Cacao cultivation" loading="lazy">
+                    <div class="image-caption">Sacred cacao pods, cultivated by Ch'ol farmers for centuries</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" alt="Sacred cave" loading="lazy">
+                    <div class="image-caption">Sacred cave entrance, home of earth lords in Ch'ol cosmology</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=800" alt="Ch'ol pottery" loading="lazy">
+                    <div class="image-caption">Traditional Ch'ol pottery continuing ancient Maya ceramic traditions</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/tzeltal.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Tzeltal</h3>
+                    <p class="related-location">Chiapas</p>
+                    <span class="relationship-badge regional">Chiapas Neighbors</span>
+                    <p class="related-description">Neighboring Maya group from Chiapas highlands.</p>
+                </a>
+                <a href="/peoples/tzotzil.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Tzotzil</h3>
+                    <p class="related-location">Chiapas</p>
+                    <span class="relationship-badge regional">Highland Maya</span>
+                    <p class="related-description">Highland Maya group sharing Chiapas territory.</p>
+                </a>
+                <a href="/peoples/maya.html" class="related-card">
+                    <div class="related-icon">📅</div>
+                    <h3>Yucatec Maya</h3>
+                    <p class="related-location">Yucatán Peninsula</p>
+                    <span class="relationship-badge similar">Maya Civilization</span>
+                    <p class="related-description">Maya group maintaining Classic Maya heritage.</p>
+                </a>
+                <a href="/peoples/chontal.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Chontal de Tabasco</h3>
+                    <p class="related-location">Tabasco</p>
+                    <span class="relationship-badge similar">Cholan Relatives</span>
+                    <p class="related-description">Closely related Cholan language speakers from coastal lowlands.</p>
+                </a>
+                <a href="/peoples/lacandon.html" class="related-card">
+                    <div class="related-icon">🌳</div>
+                    <h3>Lacandon</h3>
+                    <p class="related-location">Chiapas Jungle</p>
+                    <span class="relationship-badge regional">Jungle Neighbors</span>
+                    <p class="related-description">Isolated Maya group from Lacandon jungle preserving ancient traditions.</p>
+                </a>
+                <a href="/peoples/tojolabal.html" class="related-card">
+                    <div class="related-icon">🏞️</div>
+                    <h3>Tojolabal</h3>
+                    <p class="related-location">Chiapas</p>
+                    <span class="relationship-badge regional">Chiapas Maya</span>
+                    <p class="related-description">Maya group from eastern Chiapas sharing regional history.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Whittaker, Arabelle, & Warkentin, Viola. (1965). <em>Chol Texts on the Supernatural</em>. Summer Institute of Linguistics.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Hopkins, Nicholas A., Josserand, J. Kathryn, & Cruz Guzmán, Ausencio. (2011). <em>A Historical Dictionary of Chol (Mayan): The Lexical Sources from 1789 to 1935</em>. University of Arizona Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Schumann Gálvez, Otto. (1973). <em>La lengua chol de Tila (Chiapas)</em>. UNAM.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Pitarch, Pedro. (2010). <em>The Jaguar and the Priest: An Ethnography of Tzeltal Souls</em>. University of Texas Press. (Comparative Ch'ol/Tzeltal cosmology)</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Josserand, J. Kathryn, & Hopkins, Nicholas A. (2001). <em>Classic Maya Social Identity and Relations in a Cholan Perspective</em>. Foundation for the Advancement of Mesoamerican Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Alejos García, José. (1994). <em>Mosojantel: Etnografía del discurso agrarista entre los choles</em>. UNAM.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Morales Bermúdez, Jesús. (1984). <em>Tumbalá: Una comunidad chol</em>. UNAM.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Attinasi, John. (1973). <em>Lak T'an: A Grammar of the Chol (Mayan) Word</em>. University of Chicago dissertation.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800", caption: "Ancient pyramids of Palenque, built by ancestors of the Ch'ol Maya" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Lush tropical jungle of the Ch'ol homeland in northern Chiapas" },
+            { src: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=800", caption: "Traditional milpa agriculture in cleared jungle plots" },
+            { src: "https://images.unsplash.com/photo-1587080266227-677cc2a4e76e?w=800", caption: "Sacred cacao pods, cultivated by Ch'ol farmers for centuries" },
+            { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800", caption: "Sacred cave entrance, home of earth lords in Ch'ol cosmology" },
+            { src: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=800", caption: "Traditional Ch'ol pottery continuing ancient Maya ceramic traditions" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

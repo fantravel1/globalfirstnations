@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matsés People: Jaguar Warriors of the Amazon | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐆</text></svg>">
+    <style>
+        :root { --jaguar-gold: #DAA520; --jungle-green: #228B22; --warrior-red: #8B0000; --white: #ecf0f1; --forest-black: #1C1C1C; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--jungle-green) 0%, var(--forest-black) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--jungle-green), var(--jaguar-gold)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(218,165,32,0.5); border: 5px solid var(--warrior-red); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--jungle-green); }
+        nav a { color: var(--jungle-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--jungle-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--jungle-green); border-right: 3px solid var(--jaguar-gold); }
+        h2 { color: var(--jungle-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--jungle-green); }
+        h3 { color: var(--warrior-red); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--jungle-green), var(--jaguar-gold)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--warrior-red); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--jaguar-gold), var(--warrior-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--jungle-green), var(--forest-black)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--jungle-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--jungle-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--jungle-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐆</span>
+            <h1>The Matsés People</h1>
+            <p class="tagline">Jaguar Warriors - Masters of Face Tattoos - Guardians of Peru-Brazil Borderlands</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Matsés?</h2>
+            <p>The Matsés (also called Mayoruna) are an indigenous Panoan people inhabiting the remote rainforests along the Peru-Brazil border, particularly the Javari Valley in Brazil and the Yaquerana River basin in Peru. With a population of approximately 3,200 people (2,200 in Peru, 1,000 in Brazil), the Matsés are renowned for their fierce warrior tradition, distinctive facial tattoos and piercings, and profound botanical knowledge. Their name translates roughly as "the people," though outsiders historically called them Mayoruna, meaning "river people." The Matsés remained largely uncontacted until the 1960s-1970s, maintaining a reputation among neighboring groups as formidable warriors who defended their territory aggressively. Their traditional culture features elaborate body modifications, including facial tattoos made from plant dyes and distinctive nose and lip piercings that historically resembled jaguar whiskers, embodying their spiritual connection to these apex predators. Today, the Matsés navigate between traditional forest-based subsistence and increasing integration with national societies, facing challenges from illegal logging, oil exploration, and drug trafficking in their territories.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~3,200</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Matsés</span><span>Panoan language</span></div>
+                <div class="stat-card"><span class="stat-number">1960s</span><span>First sustained contact</span></div>
+                <div class="stat-card"><span class="stat-number">Peru/Brazil</span><span>Javari Valley homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Jaguar Identity:</strong> Matsés warriors traditionally wore palm spine "whiskers" inserted through their noses and upper lips to emulate jaguar faces. This wasn't merely decorative—it embodied their belief in spiritual kinship with jaguars, whom they considered fellow hunters and powerful spirit allies!
+            </div>
+
+            <h3>Contact History and Warrior Tradition</h3>
+            <p>Before sustained contact in the 1960s-70s, the Matsés were known throughout the region as fierce warriors who aggressively defended their territories from intruders—rubber tappers, missionaries, and other indigenous groups. They conducted raids to capture metal tools, firearms, and sometimes women from neighboring settlements. <strong>Warfare</strong> was central to male identity, with successful warriors gaining prestige and ceremonial names commemorating their exploits. Contact came through Summer Institute of Linguistics missionaries in Peru (1969) and FUNAI (Brazilian indigenous agency) in Brazil (1970s), often under traumatic circumstances involving epidemics of introduced diseases. Initial contact periods were devastating, with population declines from measles, influenza, and other infections. Gradually, the Matsés established permanent settlements, though many maintained semi-nomadic patterns, returning to the forest for extended hunting and fishing expeditions. Unlike many contacted groups, the Matsés successfully maintained much of their cultural knowledge and language, partly due to their geographic isolation and relatively recent contact.</p>
+
+            <h3>Body Modification and Cultural Identity</h3>
+            <p>The Matsés are instantly recognizable by their distinctive <strong>facial tattoos and piercings</strong>. Traditionally, both men and women received facial tattoos using plant-based dyes (particularly genipa fruit) applied with palm thorns. Patterns varied by gender and age, with geometric designs around the mouth, cheeks, and forehead marking life stages and achievements. Men wore <strong>palm spine whiskers</strong>—long, thin spines from chambira palm inserted through nose septum and upper lip—creating a jaguar-like appearance. Women wore similar ornaments but often in different configurations. These modifications weren't merely aesthetic but deeply spiritual, connecting wearers to jaguar spirits and marking their identity as Matsés. Young people today receive fewer traditional modifications due to missionary influence and contact with national societies that stigmatize indigenous body practices, though cultural revitalization efforts are encouraging renewed interest in traditional adornments.</p>
+
+            <h3>Hunting, Gathering, and Botanical Mastery</h3>
+            <p>The Matsés are expert <strong>hunters</strong>, using blowguns with poison darts, bows and arrows, and increasingly shotguns. Primary game includes monkeys, peccaries, tapir, birds, and other forest animals. Hunting is imbued with spiritual significance, requiring ritual preparations, dietary restrictions, and respectful treatment of prey. The Matsés possess encyclopedic knowledge of rainforest <strong>plants</strong>—identifying hundreds of species for food, medicine, construction, and ceremonial use. Their pharmacopeia includes powerful medicinal plants, many unknown to Western science. Particularly notable is their use of <strong>frog poison</strong> (kambo/sapo) from the giant monkey frog, which they apply to burns on their skin as a purgative and performance enhancer before hunting. This practice has attracted international attention and appropriation by New Age practitioners, raising concerns about biopiracy. The Matsés practice swidden <strong>agriculture</strong>, cultivating manioc, plantains, corn, and other crops in forest clearings while moving between gardens and hunting territories.</p>
+
+            <h3>Shamanism and Spiritual Practices</h3>
+            <p>Matsés cosmology centers on complex relationships between humans, animals, plants, and powerful spirit beings. <strong>Shamans</strong> (curanderos) mediate these relationships, using ayahuasca and other entheogens to communicate with spirits, diagnose illness, and ensure hunting success. Illness is often attributed to spirit attacks, sorcery, or violations of taboos, requiring shamanic intervention to restore balance. The Matsés believe in multiple souls and complex afterlife journeys. <strong>Jaguars</strong> occupy a special place in spiritual thought—simultaneously hunters like humans, dangerous predators, and potential spirit allies or adversaries. Matsés shamans undergo rigorous training, learning plant knowledge, songs, and techniques passed down through apprenticeship. Their medical knowledge combines empirical botanical expertise with spiritual healing practices.</p>
+
+            <h3>Contemporary Challenges and Cultural Resilience</h3>
+            <p>Today, the Matsés face multiple threats to their territories and ways of life. Illegal <strong>logging</strong> operations penetrate their forests, extracting valuable hardwoods. Drug traffickers use remote rivers for cocaine transport, bringing violence and corruption. Oil companies seek concessions in traditional territories, threatening contamination and forest destruction. In Brazil, the Javari Valley Indigenous Territory provides legal protection but faces constant invasions. Peru's Matsés communities have secured title to some lands but lack contiguous protected territory. Despite pressures, the Matsés demonstrate remarkable resilience. They have established their own <strong>cultural documentation projects</strong>, creating the first Matsés-language encyclopedia of traditional plant knowledge, ensuring younger generations can access ancestral wisdom even as elders pass away. Matsés communities have formed political organizations to defend land rights and demand government services. They've become sophisticated at navigating bureaucratic and legal systems while maintaining cultural identity. Bilingual education programs teach both Matsés language and Spanish/Portuguese, aiming to equip children for both worlds. The Matsés continue to practice hunting, fishing, and gathering, maintaining deep connections to their ancestral forests while adapting to rapidly changing circumstances.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Amazon rainforest river" loading="lazy">
+                    <div class="image-caption">Javari Valley rivers winding through pristine Matsés territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1598977123118-4e30ba3c4f5b?w=800" alt="Jaguar in rainforest" loading="lazy">
+                    <div class="image-caption">Jaguar, spiritual kin to Matsés warriors in rainforest cosmology</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=800" alt="Blowgun and darts" loading="lazy">
+                    <div class="image-caption">Traditional blowgun used for hunting with poison-tipped darts</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1608313139915-8235fcf098dd?w=800" alt="Giant monkey frog" loading="lazy">
+                    <div class="image-caption">Giant monkey frog (Phyllomedusa bicolor) source of kambo medicine</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1612620808387-996f91abb3a7?w=800" alt="Dense Amazon canopy" loading="lazy">
+                    <div class="image-caption">Pristine rainforest canopy of Peru-Brazil borderlands</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1542601098-3adb3b89c6e4?w=800" alt="Medicinal plants" loading="lazy">
+                    <div class="image-caption">Rainforest medicinal plants documented in Matsés encyclopedia</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Brazil/Venezuela Amazon</p>
+                    <span class="relationship-badge similar">Warrior Culture</span>
+                    <p class="related-description">Amazonian warriors maintaining traditional forest lifestyle.</p>
+                </a>
+                <a href="/peoples/huaorani.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Huaorani</h3>
+                    <p class="related-location">Ecuador Amazon</p>
+                    <span class="relationship-badge similar">Forest Hunters</span>
+                    <p class="related-description">Expert blowgun hunters of Ecuador's eastern rainforest.</p>
+                </a>
+                <a href="/peoples/shuar.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Shuar</h3>
+                    <p class="related-location">Ecuador/Peru</p>
+                    <span class="relationship-badge regional">Amazonian Warriors</span>
+                    <p class="related-description">Former headshrinkers maintaining strong territorial defense.</p>
+                </a>
+                <a href="/peoples/shipibo-konibo.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Shipibo-Konibo</h3>
+                    <p class="related-location">Peru Amazon</p>
+                    <span class="relationship-badge regional">Peruvian Neighbors</span>
+                    <p class="related-description">Ayahuasca shamanic tradition and geometric art masters.</p>
+                </a>
+                <a href="/peoples/kayapo.html" class="related-card">
+                    <div class="related-icon">🦜</div>
+                    <h3>Kayapó</h3>
+                    <p class="related-location">Brazil Amazon</p>
+                    <span class="relationship-badge similar">Territorial Defenders</span>
+                    <p class="related-description">Fierce protectors of Amazon territory with lip plates.</p>
+                </a>
+                <a href="/peoples/ashaninka.html" class="related-card">
+                    <div class="related-icon">🌺</div>
+                    <h3>Asháninka</h3>
+                    <p class="related-location">Peru Amazon</p>
+                    <span class="relationship-badge regional">Peruvian Amazon</span>
+                    <p class="related-description">Largest Amazonian group in Peru with distinctive cushma robes.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Romanoff, Steven. (1984). <em>Matses Adaptations in the Peruvian Amazon</em>. PhD Dissertation, Columbia University.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Erikson, Philippe. (1996). <em>La griffe des aïeux: Marquage du corps et démarquages ethniques chez les Matis d'Amazonie</em>. Paris: Peeters.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Fleck, David W., & Harder, John D. (2000). "Matses Indian Rainforest Habitat Classification and Mammalian Diversity in Amazonian Peru." <em>Journal of Ethnobiology</em>, 20(1), 1-36.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Carneiro da Cunha, Manuela, & Almeida, Mauro W. B. de (Eds.). (2002). <em>Enciclopédia da Floresta: O Alto Juruá: práticas e conhecimentos das populações</em>. São Paulo: Companhia das Letras.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Shepard Jr., Glenn H. (1999). "Pharmacognosy and the Senses in Two Amazonian Societies." PhD Dissertation, University of California, Berkeley.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Romanoff, Steven, & Acuña, Zulma. (2004). <em>Matsés: Anciano Sabio de la Medicina Matsés</em>. Iquitos: CETA.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Brabec de Mori, Bernd. (2011). "Tracing Hallucinations: Contributing to a Critical Ethnohistory of Ayahuasca Usage in the Peruvian Amazon." In Labate & Cavnar (Eds.), <em>The Internationalization of Ayahuasca</em> (pp. 23-47).</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Fleck, David W., & Voss, Robert S. (2006). "On the Origin and Cultural Transmission of Matses Kinship Terminologies: A Cross-Cultural Comparison." <em>Ethnology</em>, 45(4), 379-407.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Javari Valley rivers winding through pristine Matsés territory" },
+            { src: "https://images.unsplash.com/photo-1598977123118-4e30ba3c4f5b?w=800", caption: "Jaguar, spiritual kin to Matsés warriors in rainforest cosmology" },
+            { src: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=800", caption: "Traditional blowgun used for hunting with poison-tipped darts" },
+            { src: "https://images.unsplash.com/photo-1608313139915-8235fcf098dd?w=800", caption: "Giant monkey frog (Phyllomedusa bicolor) source of kambo medicine" },
+            { src: "https://images.unsplash.com/photo-1612620808387-996f91abb3a7?w=800", caption: "Pristine rainforest canopy of Peru-Brazil borderlands" },
+            { src: "https://images.unsplash.com/photo-1542601098-3adb3b89c6e4?w=800", caption: "Rainforest medicinal plants documented in Matsés encyclopedia" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

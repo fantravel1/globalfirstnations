@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenk People: Siberian Reindeer Herders of the Taiga | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦌</text></svg>">
+    <style>
+        :root { --evenk-blue: #1E3A8A; --ice-white: #E0F2FE; --taiga-green: #065F46; --white: #ecf0f1; --reindeer-brown: #78350F; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--evenk-blue) 0%, var(--taiga-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--evenk-blue), var(--taiga-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(30,58,138,0.5); border: 5px solid var(--ice-white); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--evenk-blue); }
+        nav a { color: var(--evenk-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--evenk-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--evenk-blue); border-right: 3px solid var(--taiga-green); }
+        h2 { color: var(--evenk-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--evenk-blue); }
+        h3 { color: var(--taiga-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--evenk-blue), var(--taiga-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--ice-white); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--taiga-green), var(--reindeer-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--evenk-blue), var(--taiga-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--evenk-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--evenk-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--evenk-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🦌</span>
+            <h1>The Evenk People</h1>
+            <p class="tagline">Masters of the Taiga - Reindeer Herders of Siberia - Largest Northern Indigenous Group</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Evenk?</h2>
+            <p>The Evenk (also known as Evenki or historically as Tungus) are the largest indigenous group in Siberia, numbering approximately 77,000 people spread across the vast expanse of the Russian Far East from the Yenisei River to Sakhalin Island and south into China and Mongolia. For thousands of years, they have mastered survival in the harsh Siberian taiga through nomadic reindeer herding, hunting, and fishing. The Evenk are renowned for their intimate knowledge of the taiga ecosystem, their exceptional skills in reindeer domestication, and their distinctive conical birchbark-covered tents called chums. Their territory once spanned over 2.5 million square kilometers, making them one of the most geographically dispersed indigenous peoples on Earth. The Evenk developed sophisticated shamanic traditions, intricate beadwork on clothing, and a language rich in terms describing reindeer, snow, and the natural world.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">77,000</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">Evenki</span><span>Tungusic language</span></div>
+                <div class="stat-card"><span class="stat-number">2.5M km²</span><span>Traditional territory</span></div>
+                <div class="stat-card"><span class="stat-number">Russia/China/Mongolia</span><span>Current homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Reindeer Language:</strong> The Evenk language contains over 1,500 words related to reindeer, describing everything from age, color, antler shape, and temperament to specific behaviors and uses. This linguistic richness reflects the central role of reindeer in Evenk culture and survival!
+            </div>
+
+            <h3>Nomadic Taiga Existence</h3>
+            <p>The Evenk perfected a nomadic lifestyle adapted to the extreme Siberian environment, where temperatures can plunge to -60°C in winter. Their traditional yearly cycle involved following reindeer herds through seasonal migrations across hundreds of kilometers of taiga forest. <strong>Reindeer</strong> provided transportation, food (meat and milk), clothing (fur and hide), and tools (bone and antler), making them essential to survival. The Evenk developed the <strong>chum</strong>—a portable conical dwelling covered with birchbark in summer and reindeer hide in winter—that could be assembled or dismantled in under an hour. Their hunting techniques using skis, trained hunting dogs, and knowledge of animal behavior allowed them to track elk, bear, sable, and other game across vast distances.</p>
+
+            <h3>Shamanic Traditions and Spiritual Beliefs</h3>
+            <p>Evenk spirituality centers on <strong>shamanism</strong>, with shamans (called saman) serving as intermediaries between the human world and the spirit realm. Shamans conducted healing ceremonies, divination, and rituals to ensure successful hunts using elaborate costumes adorned with iron pendants, bells, and symbolic imagery. The Evenk worldview recognized spirits inhabiting natural features—mountains, rivers, forests, and animals—requiring respectful treatment and offerings. The <strong>bear cult</strong> held particular significance, with elaborate ceremonies following bear hunts to honor the animal's spirit. Traditional beliefs coexisted with later influences from Russian Orthodox Christianity and Buddhism, creating unique syncretistic practices.</p>
+
+            <h3>Material Culture and Craftsmanship</h3>
+            <p>Evenk material culture reflects ingenious adaptations to the taiga environment. Their distinctive <strong>clothing</strong> featured intricate geometric beadwork, fur trim, and practical designs suited for extreme cold. Women crafted elaborate garments decorated with seed beads, porcupine quills, and metal ornaments in patterns with spiritual significance. The Evenk excelled in <strong>birchbark craft</strong>, creating waterproof containers, canoe coverings, and dwelling materials from this versatile material. Their <strong>reindeer tack</strong>—saddles, bridles, and pack systems—represented sophisticated engineering enabling the use of reindeer for riding and transport, distinguishing them from other reindeer-herding peoples who primarily used reindeer for pulling sleds.</p>
+
+            <h3>Language and Oral Traditions</h3>
+            <p>The Evenki language belongs to the Tungusic family and exhibits remarkable dialectal diversity across the Evenk territory, with speakers sometimes having difficulty understanding distant dialects. Rich <strong>oral traditions</strong> preserved in epic songs (nimnakans), folk tales, and riddles transmitted historical knowledge, moral lessons, and practical survival information across generations. These narratives featured heroes, clever animals (especially the raven trickster figure), and explanations for natural phenomena. Traditional music employed the <strong>untuvatkan</strong> (jaw harp) and singing styles mimicking natural sounds—bird calls, animal cries, and wind through trees.</p>
+
+            <h3>Contemporary Challenges and Revival</h3>
+            <p>Soviet-era policies profoundly disrupted Evenk traditional life through forced sedentarization, collectivization of reindeer herds, and boarding schools that separated children from families and language. Today's Evenk face challenges including <strong>language loss</strong> (fewer than 10,000 fluent speakers remain), industrial development threatening traditional territories, and climate change affecting reindeer migration patterns. However, <strong>cultural revival efforts</strong> are underway, including language documentation projects, traditional craft workshops, and the establishment of Evenk cultural centers. Some communities have returned to nomadic herding, and younger generations are reclaiming traditional practices while adapting them to contemporary circumstances. The Evenk continue to assert rights to traditional lands and resources, working to balance cultural preservation with economic development.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1542144582-1ba00456b5e3?w=800" alt="Siberian reindeer in taiga" loading="lazy">
+                    <div class="image-caption">Reindeer herd in the Siberian taiga, central to Evenk nomadic lifestyle</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800" alt="Birchbark crafts" loading="lazy">
+                    <div class="image-caption">Traditional birchbark containers and crafts used for storage and transport</div>
+                </</div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800" alt="Siberian taiga landscape" loading="lazy">
+                    <div class="image-caption">Vast Siberian taiga forest, traditional territory of the Evenk people</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800" alt="Traditional tent in snow" loading="lazy">
+                    <div class="image-caption">Chum (conical tent) covered with reindeer hide, portable Evenk dwelling</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1478827536114-da961b7f86c2?w=800" alt="Indigenous beadwork patterns" loading="lazy">
+                    <div class="image-caption">Intricate geometric beadwork on traditional Evenk clothing and accessories</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1509390144881-c5c6c49f4f19?w=800" alt="Siberian winter landscape" loading="lazy">
+                    <div class="image-caption">Extreme Siberian winter conditions that Evenk people adapted to survive</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/chukchi.html" class="related-card">
+                    <div class="related-icon">🐋</div>
+                    <h3>Chukchi</h3>
+                    <p class="related-location">Northeastern Siberia</p>
+                    <span class="relationship-badge regional">Siberian Neighbors</span>
+                    <p class="related-description">Arctic whale hunters and reindeer herders of Chukotka peninsula.</p>
+                </a>
+                <a href="/peoples/nanai.html" class="related-card">
+                    <div class="related-icon">🐟</div>
+                    <h3>Nanai</h3>
+                    <p class="related-location">Amur River Region</p>
+                    <span class="relationship-badge similar">Tungusic Relatives</span>
+                    <p class="related-description">Tungusic people famous for fish-skin clothing and Amur River fishing.</p>
+                </a>
+                <a href="/peoples/sami.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Sami</h3>
+                    <p class="related-location">Northern Scandinavia</p>
+                    <span class="relationship-badge similar">Reindeer Herders</span>
+                    <p class="related-description">Arctic reindeer herders with similar nomadic traditions and shamanism.</p>
+                </a>
+                <a href="/peoples/yakut.html" class="related-card">
+                    <div class="related-icon">🐎</div>
+                    <h3>Sakha (Yakut)</h3>
+                    <p class="related-location">Eastern Siberia</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Horse and cattle breeders adapted to extreme Siberian cold.</p>
+                </a>
+                <a href="/peoples/nenets.html" class="related-card">
+                    <div class="related-icon">⛺</div>
+                    <h3>Nenets</h3>
+                    <p class="related-location">Western Siberia</p>
+                    <span class="relationship-badge similar">Arctic Herders</span>
+                    <p class="related-description">Nomadic reindeer herders of the Yamal Peninsula and Arctic tundra.</p>
+                </a>
+                <a href="/peoples/tsaatan.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Tsaatan</h3>
+                    <p class="related-location">Northern Mongolia</p>
+                    <span class="relationship-badge similar">Reindeer Nomads</span>
+                    <p class="related-description">Small group of reindeer herders in Mongolian taiga with similar lifestyle.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Anderson, David G. (2000). <em>Identity and Ecology in Arctic Siberia: The Number One Reindeer Brigade</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Vitebsky, Piers. (2005). <em>Reindeer People: Living with Animals and Spirits in Siberia</em>. HarperCollins.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Fondahl, Gail. (1998). <em>Gaining Ground? Evenkis, Land and Reform in Southeastern Siberia</em>. Allyn & Bacon.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Shirokogoroff, S.M. (1929). <em>Social Organization of the Northern Tungus</em>. Commercial Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Vasilevich, G.M. (1969). <em>Evenki: Historical-Ethnographic Essays (18th - Early 20th Century)</em>. Nauka Publishing.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Brandišauskas, Donatas. (2017). <em>Leaving Footprints in the Taiga: Luck, Spirits and Ambivalence among the Siberian Orochen Reindeer Herders</em>. Berghahn Books.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Sirina, Anna A. (2006). <em>Katanga Evenkis in the 20th Century and the Ordering of their Life World</em>. SibBranch RAS.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Lavrillier, Alexandra, & Gabyshev, Semen. (2017). <em>An Arctic Indigenous Knowledge System of Landscape, Climate, and Human Interactions</em>. Berghahn Books.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1542144582-1ba00456b5e3?w=800", caption: "Reindeer herd in the Siberian taiga, central to Evenk nomadic lifestyle" },
+            { src: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800", caption: "Traditional birchbark containers and crafts used for storage and transport" },
+            { src: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800", caption: "Vast Siberian taiga forest, traditional territory of the Evenk people" },
+            { src: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800", caption: "Chum (conical tent) covered with reindeer hide, portable Evenk dwelling" },
+            { src: "https://images.unsplash.com/photo-1478827536114-da961b7f86c2?w=800", caption: "Intricate geometric beadwork on traditional Evenk clothing and accessories" },
+            { src: "https://images.unsplash.com/photo-1509390144881-c5c6c49f4f19?w=800", caption: "Extreme Siberian winter conditions that Evenk people adapted to survive" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

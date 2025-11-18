@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonga People: Displaced by Kariba Dam | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    <style>
+        :root { --zambezi-blue: #4682B4; --dam-gray: #696969; --earth-brown: #8B4513; --white: #ecf0f1; --water-teal: #008080; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--zambezi-blue) 0%, var(--earth-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--zambezi-blue), var(--dam-gray)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(70,130,180,0.5); border: 5px solid var(--water-teal); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--zambezi-blue); }
+        nav a { color: var(--zambezi-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--zambezi-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--zambezi-blue); border-right: 3px solid var(--water-teal); }
+        h2 { color: var(--zambezi-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--zambezi-blue); }
+        h3 { color: var(--dam-gray); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--zambezi-blue), var(--dam-gray)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--water-teal); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--water-teal), var(--zambezi-blue)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--zambezi-blue), var(--dam-gray)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--zambezi-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--zambezi-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--zambezi-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🌊</span>
+            <h1>The Tonga People</h1>
+            <p class="tagline">Zambezi River People - Displaced by Kariba Dam - Victims of Development Without Consent</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Tonga?</h2>
+            <p>The Tonga (also called BaTonga or Valley Tonga) are a Bantu-speaking people numbering approximately 1.5 million, primarily inhabiting the Zambezi River valley regions of southern Zambia and northern Zimbabwe. For centuries, the Tonga lived sustainably along the Zambezi River, developing sophisticated agricultural systems, fishing traditions, and spiritual practices centered on the river and its spirits. This ancient way of life was catastrophically disrupted between 1955-1959 when colonial authorities forcibly relocated over 57,000 Tonga people to make way for the Kariba Dam—one of the world's largest hydroelectric projects. The displacement was executed with shocking brutality: families were given days to abandon ancestral lands, graves, and sacred sites; compensation was inadequate or nonexistent; and resettlement areas were infertile, tsetse-fly infested regions where Tonga communities faced poverty, disease, and cultural trauma. The Kariba Dam disaster represents one of Africa's most egregious examples of development-induced displacement, where indigenous people paid the price for "progress" that primarily benefited others. Today, displaced Tonga communities continue fighting for recognition, compensation, and rights while struggling to preserve cultural identity fractured by forced relocation.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">1.5M+</span><span>Estimated population</span></div>
+                <div class="stat-card"><span class="stat-number">Tonga/ChiTonga</span><span>Bantu language</span></div>
+                <div class="stat-card"><span class="stat-number">57,000+</span><span>People displaced (Kariba)</span></div>
+                <div class="stat-card"><span class="stat-number">Zambia/Zimbabwe</span><span>Traditional homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>The River God's Revenge:</strong> The Tonga believed in Nyami Nyami, a powerful river god inhabiting the Zambezi. Before Kariba Dam construction began, Tonga elders warned that Nyami Nyami would be angered by blocking the river. In 1957-1958, unprecedented floods destroyed construction work, killing workers. The Tonga saw this as Nyami Nyami's wrath. Even today, many Tonga and some engineers believe the dam is cursed and will eventually fail!
+            </div>
+
+            <h3>Life Before the Dam: River Valley Culture</h3>
+            <p>Before forced displacement, the Tonga had inhabited the fertile <strong>Gwembe Valley</strong> and middle Zambezi region for centuries, developing a sophisticated riverine civilization. Their economy combined <strong>flood-retreat agriculture</strong> (planting crops on nutrient-rich alluvial soil as river waters receded), fishing with elaborate traps and weirs, hunting, and livestock keeping. The Tonga cultivated millet, sorghum, maize, and vegetables in valley gardens that yielded multiple harvests annually. The Zambezi provided abundant fish, particularly during seasonal runs, which the Tonga preserved through smoking and drying. Tonga society was organized into matrilineal clans, with land rights passing through female lines and uncles playing crucial roles in children's upbringing. Villages were governed by chiefs (<strong>basimukowa</strong>) and councils of elders who mediated disputes and allocated land. The Tonga maintained elaborate spiritual practices centered on <strong>Nyami Nyami</strong> (the Zambezi river god), ancestral spirits, and rain-making ceremonies. Sacred sites along the river—including spirit groves, burial grounds, and ceremonial locations—formed the spiritual geography of Tonga life.</p>
+
+            <h3>The Kariba Dam Disaster: Forced Displacement</h3>
+            <p>In the 1950s, the British colonial government (controlling both Northern and Southern Rhodesia—now Zambia and Zimbabwe) decided to build the <strong>Kariba Dam</strong>, creating the world's largest man-made lake at the time. The dam would generate hydroelectric power for mining operations and urban centers hundreds of miles away—not for rural Tonga communities. Over <strong>57,000 Tonga people</strong> were forcibly relocated between 1955-1959, with an additional 30,000 displaced on the Zimbabwean side. The displacement was executed with colonial brutality: Tonga communities received minimal warning (sometimes just days), were prohibited from taking belongings or dismantling houses, and watched helplessly as rising waters submerged their villages, fields, and ancestral graves. <strong>Operation Noah</strong>, the widely publicized wildlife rescue that saved animals from drowning, received more international attention and resources than human displacement. Families were separated, sacred sites were destroyed, and cultural artifacts were lost forever. The Tonga received grossly inadequate compensation—often nothing—and were relocated to <strong>infertile, tsetse-fly infested regions</strong> where previous agricultural systems failed, causing widespread malnutrition and poverty.</p>
+
+            <h3>Aftermath and Continuing Trauma</h3>
+            <p>The displacement's consequences devastated Tonga society. Resettlement areas lacked the fertile alluvial soils of the Zambezi valley, forcing Tonga communities to abandon successful agricultural practices for subsistence farming on marginal lands. <strong>Tsetse flies</strong> in resettlement zones spread sleeping sickness to both humans and cattle, decimating livestock herds that represented wealth and social capital. The flooding destroyed irreplaceable <strong>sacred sites</strong>, severing spiritual connections to ancestors and river deities. Traditional leadership structures collapsed as communities were scattered across different areas. Young people lost connection to cultural practices tied to river life. The Tonga became among the poorest populations in Zambia and Zimbabwe, with limited access to education, healthcare, and economic opportunities. Meanwhile, the dam's electricity powered Zambian copper mines and Zimbabwean cities, with minimal benefit flowing to displaced communities. The Kariba Dam became a symbol of <strong>development injustice</strong>—where indigenous peoples pay the costs while others reap the benefits.</p>
+
+            <h3>Cultural Resilience and Spirituality</h3>
+            <p>Despite catastrophic displacement, the Tonga have maintained cultural identity through resilient practices. Belief in <strong>Nyami Nyami</strong> persists, with the river god represented in carvings and jewelry that have become symbols of Tonga identity and resistance. Many Tonga continue practicing traditional religion alongside Christianity, maintaining ancestor veneration and rainmaking ceremonies adapted to new locations. The Tonga language (ChiTonga) survives as a living tongue, though under pressure from English and other languages. Traditional music featuring drums, leg rattles, and call-and-response songs remains vibrant. <strong>Oral historians</strong> preserve memories of pre-displacement life, passing stories of the Gwembe Valley to younger generations who never experienced it. The annual <strong>Lwiindi Gonde ceremony</strong> celebrates Tonga culture, bringing scattered communities together. These cultural practices represent not just tradition but political resistance—assertions that the Tonga remain a distinct people despite attempts to erase their identity.</p>
+
+            <h3>Modern Struggles and Justice Campaigns</h3>
+            <p>Today's Tonga communities continue fighting for recognition and compensation. Organizations like the <strong>Tonga Development Trust</strong> advocate for reparations, land rights, and benefits from dam-generated electricity. The Tonga argue that they deserve <strong>ongoing compensation</strong> for permanent loss of ancestral lands, not one-time inadequate payments. They demand priority access to dam-produced electricity (which many displaced communities still lack) and share of revenue from Lake Kariba tourism. Legal challenges have sought to recognize displacement as a historical injustice requiring redress. The Tonga case has become a cautionary tale cited in debates about large dam projects worldwide, with displaced communities from India to Brazil drawing parallels to their own struggles. Climate change now threatens to compound the Tonga's suffering: drought has lowered Lake Kariba's water levels, reducing hydroelectric production—meaning the Tonga's sacrifice may not even achieve its stated purpose. The Tonga's story raises fundamental questions about development ethics: Who benefits from "progress"? Who pays the costs? And what obligations do governments have to indigenous peoples whose lands and cultures are sacrificed for national development?</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Kariba Dam wall" loading="lazy">
+                    <div class="image-caption">Kariba Dam, built at the cost of displacing 57,000 Tonga people</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Lake Kariba" loading="lazy">
+                    <div class="image-caption">Lake Kariba, covering ancestral Tonga villages and sacred sites</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Nyami Nyami carving" loading="lazy">
+                    <div class="image-caption">Nyami Nyami, the Zambezi river god central to Tonga spirituality</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Traditional fishing" loading="lazy">
+                    <div class="image-caption">Traditional fishing practices, disrupted by dam construction</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=800" alt="Zambezi River" loading="lazy">
+                    <div class="image-caption">Zambezi River, spiritual and economic center of Tonga life for centuries</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Tonga community" loading="lazy">
+                    <div class="image-caption">Contemporary Tonga community maintaining cultural traditions</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/lozi.html" class="related-card">
+                    <div class="related-icon">🚣</div>
+                    <h3>Lozi</h3>
+                    <p class="related-location">Zambia</p>
+                    <span class="relationship-badge regional">Zambian Neighbors</span>
+                    <p class="related-description">Zambezi floodplain people with similar river-based culture.</p>
+                </a>
+                <a href="/peoples/tswana.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Tswana</h3>
+                    <p class="related-location">Botswana/South Africa</p>
+                    <span class="relationship-badge regional">Southern African Neighbors</span>
+                    <p class="related-description">Major Bantu group sharing regional connections with Tonga.</p>
+                </a>
+                <a href="/peoples/shona.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Shona</h3>
+                    <p class="related-location">Zimbabwe</p>
+                    <span class="relationship-badge regional">Zimbabwean Neighbors</span>
+                    <p class="related-description">Majority group in Zimbabwe, sharing country with Zimbabwean Tonga.</p>
+                </a>
+                <a href="/peoples/bemba.html" class="related-card">
+                    <div class="related-icon">⚔️</div>
+                    <h3>Bemba</h3>
+                    <p class="related-location">Zambia</p>
+                    <span class="relationship-badge regional">Zambian Neighbors</span>
+                    <p class="related-description">Largest ethnic group in Zambia with historical interactions.</p>
+                </a>
+                <a href="/peoples/nuer.html" class="related-card">
+                    <div class="related-icon">🐂</div>
+                    <h3>Nuer</h3>
+                    <p class="related-location">South Sudan</p>
+                    <span class="relationship-badge similar">Dam Displacement</span>
+                    <p class="related-description">Nilotic people also facing displacement from dam projects.</p>
+                </a>
+                <a href="/peoples/nubian.html" class="related-card">
+                    <div class="related-icon">🏺</div>
+                    <h3>Nubians</h3>
+                    <p class="related-location">Sudan/Egypt</p>
+                    <span class="relationship-badge similar">Dam Displacement</span>
+                    <p class="related-description">Ancient people displaced by Aswan High Dam, similar experience to Tonga.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Colson, Elizabeth. (1971). <em>The Social Consequences of Resettlement: The Impact of the Kariba Resettlement upon the Gwembe Tonga</em>. Manchester University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Scudder, Thayer. (2005). <em>The Future of Large Dams: Dealing with Social, Environmental, Institutional and Political Costs</em>. Earthscan.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Colson, Elizabeth. (1960). <em>Social Organization of the Gwembe Tonga</em>. Manchester University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Scudder, Thayer, & Colson, Elizabeth. (1982). "From Welfare to Development: A Conceptual Framework for the Analysis of Dislocated People." In <em>Involuntary Migration and Resettlement</em>, edited by Art Hansen and Anthony Oliver-Smith. Westview Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Reynolds, Norman. (1991). <em>The Design and Construction of the Kariba Dam</em>. Proceedings of the Institution of Civil Engineers.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Cernea, Michael M. (2000). "Risks, Safeguards, and Reconstruction: A Model for Population Displacement and Resettlement." In <em>Risks and Reconstruction: Experiences of Resettlers and Refugees</em>, edited by Michael M. Cernea and Christopher McDowell. World Bank.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Tremmel, Marc. (2012). <em>Dams and Development: A Case Study of the Kariba Dam</em>. VDM Verlag.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Showers, Kate B. (2009). "Congo River's Grand Inga Hydroelectricity Scheme: Linking Environmental History, Policy and Impact." <em>Water History</em>, 1(1): 31-58.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Kariba Dam, built at the cost of displacing 57,000 Tonga people" },
+            { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800", caption: "Lake Kariba, covering ancestral Tonga villages and sacred sites" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Nyami Nyami, the Zambezi river god central to Tonga spirituality" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Traditional fishing practices, disrupted by dam construction" },
+            { src: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=800", caption: "Zambezi River, spiritual and economic center of Tonga life for centuries" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Contemporary Tonga community maintaining cultural traditions" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

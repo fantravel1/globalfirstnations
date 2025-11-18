@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawésqar People: Canoe Nomads of Patagonian Fjords | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛶</text></svg>">
+    <style>
+        :root { --kawesqar-blue: #0277BD; --fjord-gray: #607D8B; --canoe-brown: #5D4037; --white: #ecf0f1; --storm-dark: #37474F; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--kawesqar-blue) 0%, var(--fjord-gray) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--kawesqar-blue), var(--fjord-gray)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(2,119,189,0.5); border: 5px solid var(--canoe-brown); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--kawesqar-blue); }
+        nav a { color: var(--kawesqar-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--kawesqar-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--kawesqar-blue); border-right: 3px solid var(--fjord-gray); }
+        h2 { color: var(--kawesqar-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--kawesqar-blue); }
+        h3 { color: var(--fjord-gray); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--kawesqar-blue), var(--fjord-gray)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--canoe-brown); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--canoe-brown), var(--kawesqar-blue)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--kawesqar-blue), var(--fjord-gray)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--kawesqar-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--kawesqar-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--kawesqar-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🛶</span>
+            <h1>The Kawésqar People</h1>
+            <p class="tagline">Canoe Nomads of the Fjords - Only 8 Speakers Remaining - Masters of Patagonian Waters</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Kawésqar?</h2>
+            <p>The Kawésqar (also spelled Kaweshkar or Alacaluf) are an indigenous people who traditionally inhabited the labyrinth of fjords, channels, and islands along the Pacific coast of southern Chilean Patagonia, from the Gulf of Penas to the Strait of Magellan. For thousands of years, they lived as nomadic marine hunter-gatherers, traveling in bark canoes through some of the world's most inhospitable waters—a region of perpetual rain, freezing winds, and treacherous seas. The Kawésqar developed remarkable maritime adaptations, hunting seals and sea lions, gathering shellfish, and maintaining fires in their canoes as they navigated the complex waterways. Tragically, their population was devastated by introduced diseases, missionization, and cultural destruction following European contact. Today, the Kawésqar language is critically endangered with only approximately 8 elderly speakers remaining, making it one of the world's most endangered languages. Though a few hundred people claim Kawésqar descent, traditional nomadic lifeway has vanished. The Kawésqar represent a unique maritime culture facing imminent extinction, with urgent revitalization efforts attempting to preserve fragments of their extraordinary heritage.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~8</span><span>Fluent speakers left</span></div>
+                <div class="stat-card"><span class="stat-number">Kawésqar</span><span>Language isolate</span></div>
+                <div class="stat-card"><span class="stat-number">400-500</span><span>Ethnic population</span></div>
+                <div class="stat-card"><span class="stat-number">Chilean Patagonia</span><span>Former territory</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Fire in the Canoe:</strong> The Kawésqar kept fires burning constantly in their bark canoes as they traveled the frigid waters! They built clay hearths in the center of their canoes, maintaining fires for warmth, cooking, and signaling. When Europeans first saw hundreds of these fire-bearing canoes at night, the glowing flames reflecting off the water inspired the name "Tierra del Fuego"—Land of Fire.
+            </div>
+
+            <h3>Marine Nomadic Lifeway</h3>
+            <p>The Kawésqar developed one of the world's most specialized <strong>marine nomadic cultures</strong>, spending their entire lives traveling through the maze of Patagonian channels in bark canoes. Their canoes, constructed from tree bark sewn with whale sinew and sealed with seal fat, were essential to survival. Families lived in their canoes for extended periods, only landing occasionally to shelter in temporary dome-shaped huts made from bent poles and seal skins. The Kawésqar hunted <strong>seals, sea lions, and otters</strong> using harpoons and clubs, gathered mussels, limpets, and other shellfish from rocks exposed at low tide, and occasionally hunted land animals. Despite living in one of Earth's wettest, coldest environments, Kawésqar people traditionally wore minimal clothing—mostly seal skin cloaks—and smeared their bodies with seal fat for insulation, appearing extraordinarily hardy to European observers shocked by their apparent indifference to freezing conditions.</p>
+
+            <h3>Language and Endangered Knowledge</h3>
+            <p>The <strong>Kawésqar language</strong> is classified as a language isolate with no proven relationship to other language families, though some linguists group it with Yaghan (another nearly extinct Fuegian language) in a hypothetical Alacalufan family. The language features complex phonology including unusual consonant clusters and is polysynthetic, incorporating multiple morphemes into single words. With only about 8 elderly fluent speakers remaining (primarily living in Puerto Edén, Chile), Kawésqar is critically endangered. The language encodes vast maritime knowledge—specialized vocabulary for weather patterns, water conditions, marine animals, navigation, and canoe construction that took millennia to develop. Linguists and community members are racing to document the language through recordings, dictionaries, and grammatical descriptions before the last speakers pass away, but revitalization faces immense challenges given the tiny speaker population and disruption of traditional maritime context.</p>
+
+            <h3>Colonial Devastation and Population Collapse</h3>
+            <p>European contact brought catastrophic consequences for the Kawésqar. <strong>Epidemic diseases</strong>—measles, smallpox, tuberculosis, influenza—to which they had no immunity killed massive proportions of the population. Pre-contact estimates suggest 2,500-4,000 Kawésqar; by 1925, only about 100 survived. Chilean and European colonists viewed the Kawésqar as "primitives," leading to violent conflicts and displacement from traditional territories. Catholic missions, particularly at Dawson Island, attempted forcing Kawésqar into sedentary life, disrupting nomadic patterns essential to their culture. The missions inadvertently became death traps where concentrated populations facilitated disease transmission. Many Kawésqar were abducted for "human zoo" exhibitions in Europe. The construction of Chilean settlements and introduction of motor boats disrupted traditional territories. By the late 20th century, the nomadic canoe lifeway had completely vanished, with surviving Kawésqar concentrated in the small settlement of Puerto Edén.</p>
+
+            <h3>Contemporary Situation and Challenges</h3>
+            <p>Today, approximately 400-500 people claim Kawésqar ancestry, primarily living in Puerto Edén (pop. ~200, including both indigenous and non-indigenous residents) and other Chilean towns. However, only a handful of elderly people maintain fluent command of the language or direct memory of traditional practices. The Kawésqar face multiple challenges: extreme language endangerment, cultural disruption, poverty, limited economic opportunities in remote Puerto Edén, and marginalization within Chilean society. Younger community members increasingly speak only Spanish and live lifestyles indistinguishable from other rural Chileans. The cold, wet environment that Kawésqar ancestors mastered now requires modern infrastructure and services largely absent in their territory.</p>
+
+            <h3>Revitalization Efforts and Cultural Memory</h3>
+            <p>Despite enormous obstacles, efforts to preserve Kawésqar heritage persist. <strong>Language documentation</strong> projects led by linguists in collaboration with elder speakers have produced dictionaries, grammatical descriptions, and audio recordings. <strong>Cultural centers</strong> in Puerto Edén and Punta Arenas work to transmit knowledge to younger generations. Some community members are learning to construct traditional bark canoes and practice ancestral navigation skills. The Chilean government has granted territorial rights to some traditional areas. Kawésqar activists advocate for cultural recognition, educational programs, and protection of ancestral waters from industrial exploitation. Artists and musicians incorporate Kawésqar themes into contemporary work. However, time is critically short—with each elder speaker who dies, irreplaceable knowledge vanishes. The Kawésqar story represents both the tragedy of cultural extinction and the resilience of indigenous identity persisting against overwhelming odds.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Patagonian fjords" loading="lazy">
+                    <div class="image-caption">Dramatic fjords and channels of Chilean Patagonia, Kawésqar homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Stormy Patagonian coast" loading="lazy">
+                    <div class="image-caption">Stormy waters of the Patagonian channels navigated by Kawésqar canoes</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=800" alt="Seal on rocks" loading="lazy">
+                    <div class="image-caption">Seals and sea lions, primary prey for traditional Kawésqar hunters</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800" alt="Traditional canoe" loading="lazy">
+                    <div class="image-caption">Traditional bark canoe similar to those used by Kawésqar for millennia</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Patagonian forest" loading="lazy">
+                    <div class="image-caption">Dense temperate rainforest providing bark and materials for canoes</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=800" alt="Puerto Edén" loading="lazy">
+                    <div class="image-caption">Puerto Edén, remote settlement where remaining Kawésqar people live</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/selknam.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Selk'nam (Ona)</h3>
+                    <p class="related-location">Tierra del Fuego</p>
+                    <span class="relationship-badge regional">Fuegian Neighbors</span>
+                    <p class="related-description">Extinct land-based hunters from Tierra del Fuego's interior.</p>
+                </a>
+                <a href="/peoples/yamana.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Yámana (Yaghan)</h3>
+                    <p class="related-location">Tierra del Fuego</p>
+                    <span class="relationship-badge similar">Canoe People</span>
+                    <p class="related-description">Fellow canoe nomads from southern channels, critically endangered.</p>
+                </a>
+                <a href="/peoples/chono.html" class="related-card">
+                    <div class="related-icon">🛶</div>
+                    <h3>Chono</h3>
+                    <p class="related-location">Chiloé Archipelago</p>
+                    <span class="relationship-badge historical">Northern Canoe People</span>
+                    <p class="related-description">Extinct canoe people from northern Patagonian channels.</p>
+                </a>
+                <a href="/peoples/mapuche.html" class="related-card">
+                    <div class="related-icon">🌟</div>
+                    <h3>Mapuche</h3>
+                    <p class="related-location">Chile/Argentina</p>
+                    <span class="relationship-badge regional">Mainland Neighbors</span>
+                    <p class="related-description">Major indigenous group from Chilean mainland to the north.</p>
+                </a>
+                <a href="/peoples/tehuelche.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Tehuelche</h3>
+                    <p class="related-location">Patagonia</p>
+                    <span class="relationship-badge regional">Patagonian Neighbors</span>
+                    <p class="related-description">Land-based hunters from eastern Patagonian steppes.</p>
+                </a>
+                <a href="/peoples/wichi.html" class="related-card">
+                    <div class="related-icon">🍯</div>
+                    <h3>Wichí</h3>
+                    <p class="related-location">Gran Chaco, Argentina</p>
+                    <span class="relationship-badge regional">Argentine Indigenous</span>
+                    <p class="related-description">Indigenous group from northern Argentina maintaining cultural practices.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Aguilera Faúndez, Oscar. (2001). <em>Gramática de la lengua kawésqar</em>. Corporación de Desarrollo Indígena.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Emperaire, Joseph. (1958). <em>Los Nómades del Mar</em>. Universidad de Chile.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Legoupil, Dominique. (1997). <em>El Archipiélago del Cabo de Hornos: La Prehistoria de un Hábitat Inhóspito</em>. Ediciones Universidad de Magallanes.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Aguilera Faúndez, Oscar, & Tonko Paterito, José. (2007). <em>Kawésqar: Diccionario Español-Kawésqar</em>. Ediciones Universidad Católica de Temuco.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Martinic Beros, Mateo. (1989). <em>Los Kawéskar: Pescadores y Cazadores Nómadas de los Canales Patagónicos</em>. Revista Chilena de Antropología.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Chapman, Anne. (2010). <em>European Encounters with the Yamana People of Cape Horn</em>. Cambridge University Press. (Comparative Fuegian groups)</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Gusinde, Martin. (1991). <em>Los Indios de Tierra del Fuego: Los Halakwulup</em>. Centro Argentino de Etnología Americana. (Originally 1930s)</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Palacios González, Cristian. (2015). <em>Puerto Edén: El Desvanecimiento de los Nómades del Mar</em>. Pehuén Editores.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Dramatic fjords and channels of Chilean Patagonia, Kawésqar homeland" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Stormy waters of the Patagonian channels navigated by Kawésqar canoes" },
+            { src: "https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=800", caption: "Seals and sea lions, primary prey for traditional Kawésqar hunters" },
+            { src: "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=800", caption: "Traditional bark canoe similar to those used by Kawésqar for millennia" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Dense temperate rainforest providing bark and materials for canoes" },
+            { src: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=800", caption: "Puerto Edén, remote settlement where remaining Kawésqar people live" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

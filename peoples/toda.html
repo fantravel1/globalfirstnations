@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toda People: Sacred Buffalo Herders of the Nilgiri Hills | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐃</text></svg>">
+    <style>
+        :root { --toda-purple: #7C3AED; --buffalo-brown: #78350F; --grass-green: #15803D; --white: #ecf0f1; --sacred-gold: #D97706; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--toda-purple) 0%, var(--grass-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--toda-purple), var(--buffalo-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(124,58,237,0.5); border: 5px solid var(--sacred-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--toda-purple); }
+        nav a { color: var(--toda-purple); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--toda-purple); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--toda-purple); border-right: 3px solid var(--sacred-gold); }
+        h2 { color: var(--toda-purple); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--toda-purple); }
+        h3 { color: var(--buffalo-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--toda-purple), var(--buffalo-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--sacred-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--sacred-gold), var(--toda-purple)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--toda-purple), var(--buffalo-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--toda-purple); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--toda-purple); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--toda-purple); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐃</span>
+            <h1>The Toda People</h1>
+            <p class="tagline">Sacred Buffalo Herders - Barrel-Vaulted Architecture - Guardians of the Nilgiris</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Toda?</h2>
+            <p>The Toda are a small indigenous pastoral community numbering approximately 1,600 people inhabiting the Nilgiri Hills (meaning "Blue Mountains") of Tamil Nadu in southern India. They are renowned for their distinctive culture centered entirely on the veneration and herding of sacred <strong>water buffalo</strong>, which occupy the center of Toda cosmology, economy, and social life. The Toda developed unique <strong>barrel-vaulted houses</strong> called dogles—remarkable architectural structures built entirely without nails using bamboo, rattan, and thatch, featuring tiny entrances requiring crawling to enter. Their complex polyandrous social system (where brothers often share a wife), intricate clan divisions (moieties), and elaborate funeral rituals distinguished them from neighboring groups. The Toda speak their own Dravidian language and maintain distinctive embroidered cloaks (putkuli) as cultural markers. Despite their small population and modernization pressures, the Toda have preserved remarkable cultural continuity, though facing challenges from declining buffalo herds, land loss, and cultural change.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~1,600</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">Sacred</span><span>Buffalo status</span></div>
+                <div class="stat-card"><span class="stat-number">Toda</span><span>Dravidian language</span></div>
+                <div class="stat-card"><span class="stat-number">Nilgiri Hills</span><span>Tamil Nadu, India</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Barrel Houses:</strong> Toda houses (dogles) are architectural marvels—barrel-vaulted structures built without a single nail! The tiny entrances (only 3 feet high) required crawling to enter, possibly for defense or heat retention. Each village also had sacred dairies with even smaller doors!
+            </div>
+
+            <h3>Buffalo-Centered Culture</h3>
+            <p>The Toda's entire cultural system revolves around their distinctive breed of <strong>water buffalo</strong>, which they regard as sacred animals connecting the human and divine realms. Unlike merely economic assets, buffalo possess spiritual significance, with different herds having varying degrees of sacredness. The most sacred buffalo live separately and their milk is processed only by <strong>dairyman-priests</strong> (palol) who undergo purification rituals and maintain strict behavioral codes. These priests live in temple-dairies (ti) away from settlements, following elaborate protocols for milking, processing, and distributing sacred dairy products. Each buffalo has individual names and ritual importance. Traditional Toda subsistence came entirely from buffalo products—milk, ghee, and butter—supplemented through trade with neighboring agricultural peoples. The Toda never killed buffalo or ate meat, maintaining strict vegetarianism and revering their herds.</p>
+
+            <h3>Distinctive Architecture</h3>
+            <p>Toda <strong>barrel-vaulted houses</strong> (dogles) represent unique indigenous architecture found nowhere else. These half-cylindrical structures measure roughly 3-4 meters wide and 6 meters long, constructed from bent bamboo frames covered with thatch. The distinctive <strong>curved roof</strong> extends to ground level on both long sides, with a tiny entrance (about 0.9 meters high and 0.6 meters wide) requiring everyone to crawl inside. Interiors feature no windows and minimal light, creating dark living spaces with raised platforms for sleeping. Villages (munds) typically contained several houses arranged with openings facing east. Even more elaborate were sacred <strong>dairy temples</strong> (ti) with increasingly small doors corresponding to sacredness levels—the innermost sanctums having entrances barely large enough to crawl through. Traditional construction knowledge is declining as modern houses replace dogles.</p>
+
+            <h3>Social Organization and Polyandry</h3>
+            <p>Toda society featured complex organization including division into two exogamous <strong>moieties</strong> (Tartharol and Teivaliol) with further clan subdivisions regulating marriage and social interaction. Traditional marriage practices included <strong>fraternal polyandry</strong>—where multiple brothers shared a wife—and female infanticide to maintain gender imbalances, practices largely abandoned under British colonial pressure and later reforms. The Toda recognized sophisticated kinship terminology and maintained strict ritual purity concepts requiring isolation during certain life events. <strong>Priesthood</strong> formed a hereditary occupation, with dairymen undergoing years of training in ritual procedures. Villages governed through councils of male elders making collective decisions. Traditional social structure emphasized equality within gender and age groups rather than hierarchical authority.</p>
+
+            <h3>Rituals and Spiritual Beliefs</h3>
+            <p>Toda religious life centers on goddess <strong>Teikirzi</strong> and god <strong>Awn</strong>, along with numerous minor deities associated with mountains, streams, and sacred places. They conducted elaborate <strong>funeral ceremonies</strong> involving multiple stages over months or years, including ritual buffalo sacrifices, cremation, and secondary rites. Green funerals involved construction of temporary structures and complex protocols. The Toda maintained sacred groves, stones, and springs throughout the Nilgiris. <strong>Dairy rituals</strong> formed daily religious practice, with milk processing ceremonies following precise traditional formulas. The Toda did not practice agriculture, believing it defiled the sacred landscape. They maintained reciprocal exchange relationships with neighboring Badaga (cultivators) and Kota (artisans), creating a complex inter-tribal economic system unique to the Nilgiris.</p>
+
+            <h3>Contemporary Challenges and Preservation</h3>
+            <p>Today's Toda face existential challenges threatening their distinct way of life. British colonial development of the Nilgiris as a hill station (Ooty/Udhagamandalam), followed by continued urbanization, agriculture, and tourism, has dramatically reduced grazing lands. <strong>Buffalo herds</strong> have declined from thousands to a few hundred, undermining the economic and spiritual foundation of Toda culture. Many Toda now work in towns, with younger generations pursuing education and modern employment. The distinctive <strong>Toda language</strong> faces endangerment with fewer fluent speakers. However, cultural preservation efforts are underway, including documentation of language and traditions, cultural centers, and government recognition of Toda heritage. Some Toda maintain traditional dairy practices on a smaller scale, festivals continue celebrating buffalo and ancestors, and the iconic embroidered cloaks remain powerful cultural symbols. Organizations work to secure land rights and protect remaining grazing areas.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1604431696980-01c0945084e7?w=800" alt="Water buffalo" loading="lazy">
+                    <div class="image-caption">Sacred water buffalo central to Toda culture and spiritual life</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800" alt="Nilgiri Hills" loading="lazy">
+                    <div class="image-caption">Rolling grasslands of the Nilgiri Hills, traditional Toda homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Traditional hut" loading="lazy">
+                    <div class="image-caption">Barrel-vaulted Toda house (dogle) with distinctive curved architecture</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1601123079602-33a1e6c8f11c?w=800" alt="Embroidered textile" loading="lazy">
+                    <div class="image-caption">Toda embroidered cloak (putkuli) with distinctive geometric patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Nilgiri landscape" loading="lazy">
+                    <div class="image-caption">Misty Nilgiri mountain landscape where Toda buffalo graze</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800" alt="Mountain dairy" loading="lazy">
+                    <div class="image-caption">Sacred dairy temple (ti) where ritual milk processing occurs</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/kurumba.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Kurumba</h3>
+                    <p class="related-location">Nilgiri Hills</p>
+                    <span class="relationship-badge regional">Nilgiri Neighbors</span>
+                    <p class="related-description">Honey-gathering tribal people of the Nilgiris with ancient traditions.</p>
+                </a>
+                <a href="/peoples/badaga.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Badaga</h3>
+                    <p class="related-location">Nilgiri Hills</p>
+                    <span class="relationship-badge regional">Trading Partners</span>
+                    <p class="related-description">Agricultural community traditionally trading with Toda for dairy products.</p>
+                </a>
+                <a href="/peoples/kota.html" class="related-card">
+                    <div class="related-icon">🔨</div>
+                    <h3>Kota</h3>
+                    <p class="related-location">Nilgiri Hills</p>
+                    <span class="relationship-badge regional">Artisan Neighbors</span>
+                    <p class="related-description">Blacksmith and musician community in traditional Nilgiri exchange system.</p>
+                </a>
+                <a href="/peoples/masai.html" class="related-card">
+                    <div class="related-icon">🐄</div>
+                    <h3>Maasai</h3>
+                    <p class="related-location">East Africa</p>
+                    <span class="relationship-badge similar">Pastoralists</span>
+                    <p class="related-description">Cattle-herding people with similar livestock-centered culture and traditions.</p>
+                </a>
+                <a href="/peoples/rabari.html" class="related-card">
+                    <div class="related-icon">🐫</div>
+                    <h3>Rabari</h3>
+                    <p class="related-location">Gujarat, India</p>
+                    <span class="relationship-badge similar">Indian Pastoralists</span>
+                    <p class="related-description">Nomadic pastoral community of western India with distinctive embroidery.</p>
+                </a>
+                <a href="/peoples/irula.html" class="related-card">
+                    <div class="related-icon">🐍</div>
+                    <h3>Irula</h3>
+                    <p class="related-location">Tamil Nadu</p>
+                    <span class="relationship-badge regional">Tamil Neighbors</span>
+                    <p class="related-description">Forest-dwelling tribal people of Tamil Nadu known for snake catching.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Rivers, W.H.R. (1906). <em>The Todas</em>. Macmillan and Company.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Emeneau, M.B. (1984). <em>Toda Songs</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Walker, Anthony R. (1986). <em>The Toda of South India: A New Look</em>. Hindustan Publishing Corporation.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Hockings, Paul. (2012). <em>Encyclopedia of the Nilgiri Hills</em>. Manohar Publishers.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Pilot-Raichoor, Christiane. (1997). <em>Toda Landscape: Recent Mutations in the Nilgiri Hills</em>. French Institute of Pondicherry.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Tarafdar, Suchismita. (2016). <em>Toda Tribe: Status of Women and Child</em>. Scholars' Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Emeneau, M.B. (1938). <em>Toda Kinship Terminology</em>. American Anthropologist.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Gardner, Peter M. (2000). <em>Respect and Nonviolence Among Recently Sedentary Foragers</em>. Journal of the Royal Anthropological Institute.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1604431696980-01c0945084e7?w=800", caption: "Sacred water buffalo central to Toda culture and spiritual life" },
+            { src: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800", caption: "Rolling grasslands of the Nilgiri Hills, traditional Toda homeland" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Barrel-vaulted Toda house (dogle) with distinctive curved architecture" },
+            { src: "https://images.unsplash.com/photo-1601123079602-33a1e6c8f11c?w=800", caption: "Toda embroidered cloak (putkuli) with distinctive geometric patterns" },
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Misty Nilgiri mountain landscape where Toda buffalo graze" },
+            { src: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800", caption: "Sacred dairy temple (ti) where ritual milk processing occurs" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

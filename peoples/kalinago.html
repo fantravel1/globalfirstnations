@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalinago People: Last of the Caribbean Warriors | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    <style>
+        :root { --ocean-blue: #0077BE; --caribbean-turquoise: #40E0D0; --warrior-red: #B22222; --white: #ecf0f1; --palm-green: #228B22; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--palm-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--ocean-blue), var(--caribbean-turquoise)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,119,190,0.5); border: 5px solid var(--warrior-red); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--ocean-blue); }
+        nav a { color: var(--ocean-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--ocean-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--ocean-blue); border-right: 3px solid var(--caribbean-turquoise); }
+        h2 { color: var(--ocean-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--ocean-blue); }
+        h3 { color: var(--warrior-red); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--ocean-blue), var(--caribbean-turquoise)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--warrior-red); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--caribbean-turquoise), var(--palm-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--ocean-blue), var(--palm-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--ocean-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--ocean-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--ocean-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🌊</span>
+            <h1>The Kalinago People</h1>
+            <p class="tagline">Last of the Island Carib - Warriors of Dominica - Keepers of Caribbean Heritage</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Kalinago?</h2>
+            <p>The Kalinago, also known as Island Caribs, are the indigenous people of the Lesser Antilles and the last surviving Carib population in the Caribbean islands. Today, approximately 3,000 Kalinago live primarily in the Kalinago Territory (formerly Carib Reserve) on the island of Dominica, making them the only surviving pre-Columbian indigenous community in the Eastern Caribbean. Their ancestors were formidable seafarers and warriors who navigated the Caribbean in massive dugout canoes, establishing settlements throughout the island chain and fiercely resisting European colonization for centuries. The Kalinago language, part of the Cariban family, is largely extinct, though cultural revitalization efforts are recovering vocabulary and traditional knowledge. Historically, the Kalinago were master canoe builders, expert fishers, and skilled horticulturalists who cultivated cassava as their staple crop. They gained a fearsome reputation among European colonizers, who portrayed them as fierce cannibals (the word "cannibal" derives from "Carib"), though modern scholarship reveals these accounts were largely colonial propaganda justifying genocide and enslavement. Today, the Kalinago maintain cultural traditions including basket weaving, canoe carving, cassava processing, and traditional governance while navigating the complexities of maintaining indigenous identity in a post-colonial Caribbean nation.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~3,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Dominica</span><span>Kalinago Territory</span></div>
+                <div class="stat-card"><span class="stat-number">1903</span><span>Reserve established</span></div>
+                <div class="stat-card"><span class="stat-number">Last</span><span>Surviving Island Caribs</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Master Seafarers:</strong> Kalinago warriors navigated the Caribbean in massive dugout canoes (pirogues) carved from single tree trunks, some capable of holding 50-100 people! They sailed hundreds of miles between islands, using stars, currents, and bird flight patterns for navigation—a maritime tradition that enabled them to dominate the Lesser Antilles.
+            </div>
+
+            <h3>Warriors and Seafarers of the Caribbean</h3>
+            <p>Before European contact, the Kalinago were the dominant indigenous group across the Lesser Antilles, having migrated from South America (likely the Guianas and Venezuela) beginning around 1200-1500 CE. They displaced or assimilated earlier Arawakan-speaking peoples (the Taíno and Igneri) through a combination of warfare, marriage, and cultural absorption. <strong>Warfare</strong> was central to Kalinago male identity, with raids conducted against neighboring islands to capture enemies, take wives, and demonstrate prowess. European accounts (often exaggerated) described Kalinago as fierce warriors who used poisoned arrows, clubs, and strategic ambushes. Their <strong>seafaring abilities</strong> were extraordinary—massive dugout canoes allowed long-distance travel, trade, and military expeditions. Kalinago navigators read ocean swells, currents, star positions, and bird behavior to cross open seas between islands. This maritime expertise made them formidable opponents who successfully resisted European colonization longer than any other Caribbean indigenous group, maintaining independence on several islands well into the 18th century.</p>
+
+            <h3>Colonial Resistance and Survival</h3>
+            <p>The Kalinago's encounter with European colonization was catastrophic. Spanish, French, and British colonizers brought disease, warfare, enslavement, and systematic genocide. The indigenous Caribbean population, estimated at millions before contact, collapsed to near-extinction within a century. The Kalinago resisted fiercely, particularly on mountainous islands like Dominica, St. Vincent, and Grenada where rugged terrain provided defensive advantages. They formed alliances with escaped African slaves (creating the <strong>Black Carib</strong> or Garifuna people in St. Vincent), fought guerrilla campaigns, and maintained independence in remote areas. In 1660, British and French colonizers signed a treaty acknowledging Kalinago sovereignty over Dominica and St. Vincent—one of the few such recognitions in colonial history, though it was repeatedly violated. By the 19th century, Kalinago populations had been decimated, forcibly removed (as with the Black Caribs deported from St. Vincent to Central America in 1797), or assimilated. The surviving Kalinago community on Dominica persisted in the island's rugged eastern coast, largely isolated and impoverished.</p>
+
+            <h3>Traditional Culture and Practices</h3>
+            <p>Traditional Kalinago culture centered on <strong>horticulture, fishing, and crafts</strong>. Women cultivated gardens of cassava (manioc), sweet potatoes, yams, beans, peppers, and cotton using slash-and-burn agriculture. <strong>Cassava processing</strong> was particularly important—the toxic root required elaborate processing to remove poison, involving grating, pressing in woven matapi (cassava squeezers), and baking into flatbread (cassava bread/casabe). Men were responsible for <strong>fishing and canoe building</strong>, using elaborate fish traps, nets, harpoons, and bow-and-arrow fishing. Canoe carving from massive gommier trees was a sacred art involving ritual and specialized knowledge. <strong>Basket weaving</strong> using larouma reed and other plant fibers produced intricate geometric patterns and functional items. Social organization featured chiefs (caciques), shamans (boyés) who communicated with spirits and healed using plant medicines, and a gender division of labor with distinct male and female domains. The Kalinago worldview featured numerous spirits inhabiting the natural world—mountains, rivers, forests, and seas—requiring respectful treatment and ritual acknowledgment.</p>
+
+            <h3>The Kalinago Territory and Modern Identity</h3>
+            <p>In 1903, the British colonial government established the <strong>Carib Reserve</strong> (now Kalinago Territory) on Dominica's eastern coast—3,700 acres of rugged, largely marginal land. This gave the Kalinago a territorial base but also confined and marginalized them. The Territory has its own governance structure with an elected <strong>Kalinago Chief</strong> and council, operating within Dominican national framework. For much of the 20th century, the Kalinago faced poverty, limited infrastructure, poor education and health services, and cultural stigmatization. Many migrated to other parts of Dominica or abroad seeking opportunities. However, recent decades have seen significant <strong>cultural revitalization</strong>. The Kalinago have reclaimed pride in their heritage, established cultural centers and heritage sites, and educated Dominicans and visitors about their history. The <strong>Kalinago Barana Autê</strong> (Carib Cultural Village) showcases traditional architecture, crafts, and practices. Basket weaving remains a thriving art form, with Kalinago craftspeople producing internationally recognized work. Traditional canoe carving has been revived, and cassava processing continues in some households.</p>
+
+            <h3>Contemporary Challenges and Cultural Continuity</h3>
+            <p>Today's Kalinago navigate complex challenges of maintaining indigenous identity while participating in modern Dominican society. The <strong>Kalinago language</strong> is functionally extinct, though revitalization efforts are documenting surviving vocabulary and teaching it to younger generations. Most Kalinago speak English Creole and participate in Dominican national culture. Economic opportunities in the Territory remain limited, with many relying on agriculture, fishing, craft sales, and tourism. The 2015 Tropical Storm Erika devastated the Territory, destroying homes and infrastructure, highlighting vulnerability to natural disasters. Land rights and resource access remain contested issues, with ongoing negotiations over territorial boundaries and control. Despite challenges, the Kalinago demonstrate remarkable resilience and cultural continuity. Annual celebrations like <strong>Kalinago Week</strong> feature traditional dances, foods, crafts, and storytelling. Youth programs teach basket weaving, canoe carving, and cultural history. The Kalinago have become powerful advocates for indigenous rights within the Caribbean and internationally, connecting with indigenous movements worldwide. Their survival represents not just cultural persistence but active resistance to centuries of colonization, asserting that Kalinago people and culture endure as living testament to Caribbean indigenous heritage.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Dominica coastline" loading="lazy">
+                    <div class="image-caption">Rugged eastern coast of Dominica, heart of Kalinago Territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800" alt="Dugout canoe" loading="lazy">
+                    <div class="image-caption">Traditional dugout canoe carved from gommier tree trunk</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1615671524827-c1fe3973b648?w=800" alt="Basket weaving" loading="lazy">
+                    <div class="image-caption">Intricate Kalinago basket weaving with geometric patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1598130988226-c7d05e2d1ca4?w=800" alt="Cassava roots" loading="lazy">
+                    <div class="image-caption">Cassava roots, traditional staple requiring complex processing</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Caribbean forest" loading="lazy">
+                    <div class="image-caption">Lush tropical forest of Dominica providing traditional resources</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800" alt="Caribbean sea" loading="lazy">
+                    <div class="image-caption">Caribbean waters once navigated by Kalinago seafaring warriors</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/taino.html" class="related-card">
+                    <div class="related-icon">🏝️</div>
+                    <h3>Taíno</h3>
+                    <p class="related-location">Greater Antilles</p>
+                    <span class="relationship-badge historical">Caribbean Predecessors</span>
+                    <p class="related-description">Earlier Arawakan Caribbean people encountered by Columbus.</p>
+                </a>
+                <a href="/peoples/garifuna.html" class="related-card">
+                    <div class="related-icon">🥁</div>
+                    <h3>Garifuna</h3>
+                    <p class="related-location">Central America</p>
+                    <span class="relationship-badge historical">Black Carib Descendants</span>
+                    <p class="related-description">Mixed Kalinago-African descendants deported from St. Vincent.</p>
+                </a>
+                <a href="/peoples/arawak.html" class="related-card">
+                    <div class="related-icon">🛶</div>
+                    <h3>Arawak</h3>
+                    <p class="related-location">South America/Caribbean</p>
+                    <span class="relationship-badge similar">Language Family</span>
+                    <p class="related-description">South American indigenous group sharing historical connections.</p>
+                </a>
+                <a href="/peoples/warao.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Warao</h3>
+                    <p class="related-location">Venezuela Orinoco Delta</p>
+                    <span class="relationship-badge regional">South American Origin</span>
+                    <p class="related-description">Water-dwelling people of Kalinago's ancestral region.</p>
+                </a>
+                <a href="/peoples/kanaka-maoli.html" class="related-card">
+                    <div class="related-icon">🌺</div>
+                    <h3>Kanaka Maoli</h3>
+                    <p class="related-location">Hawaii</p>
+                    <span class="relationship-badge similar">Island Seafarers</span>
+                    <p class="related-description">Master Polynesian navigators and island culture keepers.</p>
+                </a>
+                <a href="/peoples/chamorro.html" class="related-card">
+                    <div class="related-icon">🏝️</div>
+                    <h3>Chamorro</h3>
+                    <p class="related-location">Guam/Marianas</p>
+                    <span class="relationship-badge similar">Island Indigenous</span>
+                    <p class="related-description">Pacific islanders surviving colonization and maintaining culture.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Honychurch, Lennox. (1997). <em>The Dominica Story: A History of the Island</em>. London: Macmillan Education.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Sued-Badillo, Jalil. (2003). "The Island Caribs: New Approaches to the Question of Ethnicity in the Early Colonial Caribbean." In Whitehead (Ed.), <em>Histories and Historicities in Amazonia</em> (pp. 61-89).</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Allaire, Louis. (1997). "The Lesser Antilles before Columbus." In Wilson (Ed.), <em>The Indigenous People of the Caribbean</em> (pp. 20-28). Gainesville: University Press of Florida.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Hulme, Peter, & Whitehead, Neil L. (Eds.). (1992). <em>Wild Majesty: Encounters with Caribs from Columbus to the Present Day</em>. Oxford: Clarendon Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Forte, Maximilian C. (Ed.). (2006). <em>Indigenous Resurgence in the Contemporary Caribbean: Amerindian Survival and Revival</em>. New York: Peter Lang.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Whitehead, Neil L. (1995). "The Historical Anthropology of Text: The Interpretation of Ralegh's Discoverie of Guiana." <em>Current Anthropology</em>, 36(1), 53-74.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Layng, Anthony. (1983). <em>The Carib Reserve: Identity and Security in the West Indies</em>. Lanham: University Press of America.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Atkinson, Lesley-Gail. (2006). <em>The Earliest Inhabitants: The Dynamics of the Jamaican Taino</em>. Kingston: University of the West Indies Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Rugged eastern coast of Dominica, heart of Kalinago Territory" },
+            { src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800", caption: "Traditional dugout canoe carved from gommier tree trunk" },
+            { src: "https://images.unsplash.com/photo-1615671524827-c1fe3973b648?w=800", caption: "Intricate Kalinago basket weaving with geometric patterns" },
+            { src: "https://images.unsplash.com/photo-1598130988226-c7d05e2d1ca4?w=800", caption: "Cassava roots, traditional staple requiring complex processing" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Lush tropical forest of Dominica providing traditional resources" },
+            { src: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800", caption: "Caribbean waters once navigated by Kalinago seafaring warriors" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

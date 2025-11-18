@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazahua People: Embroidery Masters of Central Mexico | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+    <style>
+        :root { --mazahua-pink: #E91E63; --thread-blue: #2196F3; --earth-brown: #8D6E63; --white: #ecf0f1; --flower-yellow: #FFC107; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--mazahua-pink) 0%, var(--thread-blue) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--mazahua-pink), var(--thread-blue)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(233,30,99,0.5); border: 5px solid var(--flower-yellow); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--mazahua-pink); }
+        nav a { color: var(--mazahua-pink); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--mazahua-pink); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--mazahua-pink); border-right: 3px solid var(--thread-blue); }
+        h2 { color: var(--mazahua-pink); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--mazahua-pink); }
+        h3 { color: var(--thread-blue); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--mazahua-pink), var(--thread-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--flower-yellow); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--flower-yellow), var(--mazahua-pink)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--mazahua-pink), var(--thread-blue)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--mazahua-pink); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--mazahua-pink); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--mazahua-pink); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🧵</span>
+            <h1>The Mazahua People</h1>
+            <p class="tagline">Masters of Embroidery - Guardians of Otomí-Mazahua Traditions - Women of Colorful Rebozos</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Mazahua?</h2>
+            <p>The Mazahua are an indigenous people primarily inhabiting the northwestern State of Mexico and eastern Michoacán in central Mexico. With approximately 326,000 speakers of the Mazahua language (part of the Otomanguean family), they represent one of Mexico's significant indigenous populations. The Mazahua are renowned for their extraordinary textile arts, particularly their elaborately embroidered blouses and colorful rebozos (shawls) that feature intricate floral and geometric patterns. Historically, the Mazahua controlled important agricultural lands in the fertile valleys between the Toluca Basin and Michoacán. Their name derives from "Mazatl Hua," meaning "people of the deer" in Nahuatl, reflecting their ancient totemic connections. Despite centuries of marginalization and the flooding of their traditional lands for Mexico City's water supply, the Mazahua have maintained remarkable cultural resilience, preserving their language, traditional dress, and agricultural practices.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">326,000</span><span>Language speakers</span></div>
+                <div class="stat-card"><span class="stat-number">Otomanguean</span><span>Language family</span></div>
+                <div class="stat-card"><span class="stat-number">State of Mexico</span><span>Primary homeland</span></div>
+                <div class="stat-card"><span class="stat-number">Embroidery</span><span>Renowned craft</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Textile Masters:</strong> Mazahua embroidery is so intricate and colorful that each blouse can take months to complete! The traditional chincuete (blouse) features elaborate cross-stitch embroidery with silk threads in vibrant pinks, blues, yellows, and greens, creating stunning floral patterns that identify the wearer's community.
+            </div>
+
+            <h3>Traditional Textiles and Embroidery</h3>
+            <p>Mazahua women are celebrated as some of Mexico's finest embroiderers, creating spectacular <strong>chincuetes</strong> (traditional blouses) and rebozos adorned with complex floral motifs, birds, and geometric designs. The embroidery technique uses <strong>cross-stitch</strong> and satin stitch on handwoven cotton or commercial fabric, with silk or cotton threads in brilliant colors. Each region has distinct patterns—some favor large roses, others prefer small repeated flowers. The traditional dress also includes <strong>wrap-around skirts</strong> (chincuetes de enredo) woven on backstrap looms with blue and white stripes. Mazahua rebozos are particularly prized for their fine weaving and elaborate fringes. This textile tradition serves as cultural identity marker, economic activity, and artistic expression passed from mothers to daughters across generations.</p>
+
+            <h3>Agricultural Traditions and Land Struggles</h3>
+            <p>The Mazahua traditionally practiced <strong>milpa agriculture</strong>, cultivating corn, beans, and squash together in the time-honored Mesoamerican system. They developed sophisticated knowledge of local ecology, growing diverse maize varieties adapted to highland conditions. However, Mazahua communities faced devastating displacement when the Mexican government constructed the <strong>Miguel Alemán Dam system</strong> in the 1940s-1950s, flooding extensive agricultural lands to provide water for Mexico City. This environmental injustice forced thousands of Mazahua families from their ancestral territories. Today, Mazahua farmers continue cultivating traditional crops while also producing commercial vegetables and flowers. Many Mazahua women have become prominent in movements for water rights and indigenous territorial sovereignty.</p>
+
+            <h3>Language and Oral Traditions</h3>
+            <p>The <strong>Mazahua language</strong> (Jñatrjo or Jñatjo) belongs to the Otopamean branch of Otomanguean languages, closely related to Otomí. It has two main dialects: Eastern (State of Mexico) and Western (Michoacán). Mazahua is a tonal language with complex verb morphology. Despite modernization pressures, Mazahua maintains vitality in rural communities where it serves as the primary language of daily life, agriculture, and ritual. Oral traditions include <strong>narratives</strong> about creation, the origin of corn, and stories explaining natural phenomena. Traditional songs accompany agricultural rituals, weddings, and festivals. Elders preserve knowledge through oral transmission of herbal medicine, agricultural techniques, and community history.</p>
+
+            <h3>Spiritual Practices and Syncretism</h3>
+            <p>Mazahua spirituality blends pre-Hispanic beliefs with Catholicism in a rich syncretic tradition. Agricultural rituals honor <strong>earth deities</strong> and request favorable weather, with offerings made at planting and harvest times. Sacred sites include caves, springs, and mountain peaks where ceremonies petition for rain and agricultural abundance. The <strong>Day of the Dead</strong> (Todos Santos) is elaborately celebrated with home altars decorated with marigolds, candles, and favorite foods of deceased relatives. Saints' feast days combine Catholic masses with traditional dancing, including the Dance of the Viejitos (old men). Traditional healers (curanderos) continue practicing herbal medicine, using local plants for physical and spiritual ailments, maintaining ancient Mazahua medical knowledge.</p>
+
+            <h3>Contemporary Mazahua Identity</h3>
+            <p>Modern Mazahua communities navigate between tradition and modernity, with many people migrating to Mexico City for employment while maintaining strong ties to home villages. <strong>Mazahua women</strong> have become particularly visible in Mexico City as street vendors, often wearing traditional embroidered dress as a proud assertion of identity. Mazahua activists have organized movements defending water rights, indigenous autonomy, and cultural preservation. The <strong>Ejército Zapatista de Mujeres Mazahuas</strong> (Zapatista Army of Mazahua Women) gained attention for protests against water diversion from their communities. Contemporary Mazahua artists and writers are revitalizing cultural pride through literature in Mazahua language, documentation of traditional crafts, and educational programs teaching young people ancestral skills and knowledge.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800" alt="Mazahua embroidery" loading="lazy">
+                    <div class="image-caption">Intricate Mazahua embroidery featuring vibrant floral patterns on traditional blouse</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1617789863662-acf97d90ad16?w=800" alt="Mazahua woman in traditional dress" loading="lazy">
+                    <div class="image-caption">Mazahua woman wearing traditional chincuete and rebozo with elaborate embroidery</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1615791784250-23e9dc5a26b3?w=800" alt="Traditional weaving" loading="lazy">
+                    <div class="image-caption">Backstrap loom weaving technique used for traditional Mazahua textiles</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800" alt="Mazahua agriculture" loading="lazy">
+                    <div class="image-caption">Traditional milpa agriculture with corn, beans, and squash cultivation</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1603048588665-791ca8ead0c3?w=800" alt="Day of the Dead altar" loading="lazy">
+                    <div class="image-caption">Traditional Mazahua Day of the Dead altar with marigolds and offerings</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800" alt="Mazahua market" loading="lazy">
+                    <div class="image-caption">Mazahua women selling traditional crafts and produce at local market</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/otomi.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Otomí</h3>
+                    <p class="related-location">Central Mexico</p>
+                    <span class="relationship-badge similar">Linguistic Relatives</span>
+                    <p class="related-description">Closely related group sharing Otomanguean language family and textile traditions.</p>
+                </a>
+                <a href="/peoples/purepecha.html" class="related-card">
+                    <div class="related-icon">⚔️</div>
+                    <h3>Purépecha</h3>
+                    <p class="related-location">Michoacán</p>
+                    <span class="relationship-badge regional">Western Neighbors</span>
+                    <p class="related-description">Neighboring indigenous group in Michoacán with distinct cultural traditions.</p>
+                </a>
+                <a href="/peoples/nahua.html" class="related-card">
+                    <div class="related-icon">🦅</div>
+                    <h3>Nahua</h3>
+                    <p class="related-location">Central Mexico</p>
+                    <span class="relationship-badge historical">Historic Contact</span>
+                    <p class="related-description">Dominant group in central Mexico who influenced Mazahua naming and culture.</p>
+                </a>
+                <a href="/peoples/matlatzinca.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Matlatzinca</h3>
+                    <p class="related-location">State of Mexico</p>
+                    <span class="relationship-badge regional">Valley Neighbors</span>
+                    <p class="related-description">Small indigenous group sharing the Toluca Valley region with Mazahua.</p>
+                </a>
+                <a href="/peoples/mixtec.html" class="related-card">
+                    <div class="related-icon">📜</div>
+                    <h3>Mixtec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge similar">Textile Artisans</span>
+                    <p class="related-description">Renowned weavers and embroiderers with similar textile excellence.</p>
+                </a>
+                <a href="/peoples/zapotec.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Zapotec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge similar">Indigenous Resilience</span>
+                    <p class="related-description">Indigenous group maintaining strong cultural identity and crafts traditions.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Albores Zárate, Beatriz. (1995). <em>Tules y Sirenas: El Impacto Ecológico y Cultural de la Industrialización en el Alto Lerma</em>. El Colegio Mexiquense.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Millán, Saúl, & Valle Esquivel, Julieta. (2003). <em>La comunidad sin límites: Estructura social y organización comunitaria en las regiones indígenas de México</em>. INAH.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Nolasco Armas, Margarita. (1963). <em>Los Mazahuas del Estado de México</em>. UNAM.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Cortés Ruiz, Efraín. (2006). <em>San Felipe del Progreso: Una mirada histórica</em>. Instituto Mexiquense de Cultura.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Oehmichen Bazán, Cristina. (2005). <em>Identidad, género y relaciones interétnicas: Mazahuas en la Ciudad de México</em>. UNAM.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">García Sánchez, Magdalena. (2004). <em>La condición de la mujer mazahua en el Estado de México</em>. El Colegio Mexiquense.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Knobloch, Franz. (1979). <em>The Art of Otomi Indians</em>. Museum Rietberg Zurich. (Includes Mazahua textiles)</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Sánchez Álvarez, Adriana. (2012). <em>Bordando una identidad: La tradición textil mazahua</em>. Artes de México.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800", caption: "Intricate Mazahua embroidery featuring vibrant floral patterns on traditional blouse" },
+            { src: "https://images.unsplash.com/photo-1617789863662-acf97d90ad16?w=800", caption: "Mazahua woman wearing traditional chincuete and rebozo with elaborate embroidery" },
+            { src: "https://images.unsplash.com/photo-1615791784250-23e9dc5a26b3?w=800", caption: "Backstrap loom weaving technique used for traditional Mazahua textiles" },
+            { src: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800", caption: "Traditional milpa agriculture with corn, beans, and squash cultivation" },
+            { src: "https://images.unsplash.com/photo-1603048588665-791ca8ead0c3?w=800", caption: "Traditional Mazahua Day of the Dead altar with marigolds and offerings" },
+            { src: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800", caption: "Mazahua women selling traditional crafts and produce at local market" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

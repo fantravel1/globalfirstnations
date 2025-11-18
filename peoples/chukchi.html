@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chukchi People: Arctic Whale Hunters of Chukotka | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐋</text></svg>">
+    <style>
+        :root { --chukchi-blue: #0C4A6E; --arctic-white: #F0F9FF; --whale-gray: #475569; --white: #ecf0f1; --sea-teal: #0F766E; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--chukchi-blue) 0%, var(--sea-teal) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--chukchi-blue), var(--whale-gray)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(12,74,110,0.5); border: 5px solid var(--arctic-white); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--chukchi-blue); }
+        nav a { color: var(--chukchi-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--chukchi-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--chukchi-blue); border-right: 3px solid var(--sea-teal); }
+        h2 { color: var(--chukchi-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--chukchi-blue); }
+        h3 { color: var(--whale-gray); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--chukchi-blue), var(--sea-teal)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--arctic-white); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--sea-teal), var(--whale-gray)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--chukchi-blue), var(--sea-teal)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--chukchi-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--chukchi-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--chukchi-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐋</span>
+            <h1>The Chukchi People</h1>
+            <p class="tagline">Arctic Whale Hunters - Masters of the Far Northeast - Guardians of Chukotka</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Chukchi?</h2>
+            <p>The Chukchi (Chukchee, Luoravetlan) are indigenous people of the Chukotka Peninsula in the extreme northeastern corner of Siberia, Russia's easternmost point across the Bering Strait from Alaska. Numbering approximately 16,000 people, they traditionally divided into two groups: the coastal <strong>Ankalyn</strong> (maritime Chukchi) who hunted whales, walruses, and seals, and the inland <strong>Chauchu</strong> (reindeer Chukchi) who herded large reindeer flocks across the tundra. The Chukchi famously resisted Russian colonization for over 150 years, maintaining independence longer than any other Siberian people. They developed sophisticated maritime hunting techniques, including the use of skin boats (baidaras) for pursuing massive bowhead whales in Arctic waters. Their culture features rich shamanic traditions, throat singing, and distinctive semi-subterranean dwellings called yarangas that provide insulation against extreme cold reaching -60°C.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">16,000</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">Chukchi</span><span>Chukotko-Kamchatkan language</span></div>
+                <div class="stat-card"><span class="stat-number">150+</span><span>Years resisting colonization</span></div>
+                <div class="stat-card"><span class="stat-number">Chukotka</span><span>Northeastern Siberia</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Whale Festival Tradition:</strong> During successful whale hunts, the Chukchi held elaborate festivals where the whale's spirit was honored with songs, dances, and offerings. The whale skull was ceremonially returned to the sea to ensure future hunts, reflecting deep spiritual respect for marine animals!
+            </div>
+
+            <h3>Maritime Hunting and Coastal Life</h3>
+            <p>The maritime Chukchi developed extraordinary skills in Arctic sea hunting, pursuing <strong>bowhead whales</strong>, gray whales, walruses, and various seal species. Hunting crews of 6-8 men paddled skin-covered <strong>baidaras</strong> (similar to umiaks) into icy waters to harpoon whales weighing up to 60 tons. A successful whale hunt provided an entire community with food, fuel (blubber for lamps), and materials (bone, baleen, skin) for months. The Chukchi built permanent coastal villages with semi-subterranean houses that took advantage of earth insulation. They processed walrus ivory into intricate carvings and practical tools, developing artistic traditions depicting hunting scenes and animal spirits. Maritime hunting required intimate knowledge of ice conditions, ocean currents, and marine mammal behavior passed through generations.</p>
+
+            <h3>Reindeer Herding and Nomadic Culture</h3>
+            <p>The reindeer Chukchi maintained some of the world's largest domesticated reindeer herds, with wealthy families controlling thousands of animals. Unlike many reindeer peoples who used animals primarily for transport, the Chukchi bred reindeer extensively for <strong>meat production</strong>, developing specialized herding techniques across the Arctic tundra. Nomadic families followed seasonal migration patterns in portable <strong>yarangas</strong>—large tent structures with an inner heated sleeping compartment called a polog made of reindeer skins. Herders faced constant threats from wolves, bears, and harsh weather while managing their flocks. The transition between coastal and inland Chukchi groups occurred through trade, intermarriage, and cultural exchange, with some families maintaining both maritime and herding traditions.</p>
+
+            <h3>Resistance and Cultural Resilience</h3>
+            <p>The Chukchi earned their reputation as fierce warriors through sustained resistance to Russian expansion from the 1640s to 1770s. Unlike other Siberian peoples quickly subdued by Russian forces, the Chukchi fought back effectively using mobility, guerrilla tactics, and their harsh environment as advantages. They wore armor of bone plates and walrus hide, wielded spears and bows, and refused to pay yasak (fur tribute) to Russian authorities. Only after prolonged conflict did Russia negotiate peace, essentially recognizing Chukchi independence in exchange for limited trade. This <strong>resistance legacy</strong> fostered strong cultural pride and identity that persisted through Soviet collectivization and modern challenges.</p>
+
+            <h3>Shamanism and Spiritual Worldview</h3>
+            <p>Chukchi spirituality centers on animistic beliefs recognizing spirits in natural phenomena, animals, and objects. <strong>Shamans</strong> (both male and female) communicated with spirits through drumming, dancing, and trance states, performing healing ceremonies and divination. The Chukchi universe consisted of multiple worlds connected by spirit pathways that shamans could traverse. They practiced elaborate funeral rituals and maintained sacred sites along the coastline and tundra. Distinctive practices included <strong>transformed shamans</strong>—men who adopted female roles and clothing, considered to possess special spiritual power. The Chukchi also developed throat singing traditions and epic narratives recounting heroic deeds, cosmological origins, and moral lessons.</p>
+
+            <h3>Contemporary Life and Challenges</h3>
+            <p>Today's Chukchi face significant challenges including <strong>language endangerment</strong> (fewer than 5,000 fluent speakers), economic disruption following Soviet collectivization's collapse, and climate change affecting both marine and tundra ecosystems. Traditional hunting faces restrictions from international regulations despite its cultural importance and subsistence necessity. However, cultural revival efforts are strengthening, including language education programs, traditional craft workshops, and documentation of oral traditions. Some communities have returned to small-scale herding and coastal hunting while adapting to contemporary economic realities. The Chukchi continue asserting indigenous rights, working to balance cultural preservation with modern development in one of Earth's most extreme environments.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Arctic coastline Chukotka" loading="lazy">
+                    <div class="image-caption">Dramatic Arctic coastline of Chukotka Peninsula, traditional Chukchi homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1589431511678-927f57348c1c?w=800" alt="Walrus on ice" loading="lazy">
+                    <div class="image-caption">Walrus on Arctic ice, important marine resource for coastal Chukchi hunters</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Reindeer herd in snow" loading="lazy">
+                    <div class="image-caption">Reindeer herd on snowy tundra, managed by inland Chukchi herders</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800" alt="Arctic tundra landscape" loading="lazy">
+                    <div class="image-caption">Vast Arctic tundra of Chukotka where reindeer herders migrated seasonally</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Northern lights" loading="lazy">
+                    <div class="image-caption">Aurora borealis over Arctic, featured prominently in Chukchi spiritual beliefs</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800" alt="Arctic ice formation" loading="lazy">
+                    <div class="image-caption">Sea ice formations crucial to traditional Chukchi maritime hunting practices</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/evenk.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Evenk</h3>
+                    <p class="related-location">Central Siberia</p>
+                    <span class="relationship-badge regional">Siberian Neighbors</span>
+                    <p class="related-description">Largest Siberian indigenous group, reindeer herders and taiga hunters.</p>
+                </a>
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🛶</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic North America</p>
+                    <span class="relationship-badge similar">Arctic Hunters</span>
+                    <p class="related-description">Arctic maritime hunters across Bering Strait with similar whale hunting traditions.</p>
+                </a>
+                <a href="/peoples/yupik.html" class="related-card">
+                    <div class="related-icon">🦭</div>
+                    <h3>Yupik</h3>
+                    <p class="related-location">Alaska/Siberia</p>
+                    <span class="relationship-badge regional">Bering Neighbors</span>
+                    <p class="related-description">Alaska and Siberian maritime hunters sharing Bering Sea resources.</p>
+                </a>
+                <a href="/peoples/koryak.html" class="related-card">
+                    <div class="related-icon">🎣</div>
+                    <h3>Koryak</h3>
+                    <p class="related-location">Kamchatka Peninsula</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Kamchatka peninsula people with both coastal and reindeer herding groups.</p>
+                </a>
+                <a href="/peoples/nenets.html" class="related-card">
+                    <div class="related-icon">⛺</div>
+                    <h3>Nenets</h3>
+                    <p class="related-location">Western Siberia</p>
+                    <span class="relationship-badge similar">Reindeer Herders</span>
+                    <p class="related-description">Arctic tundra nomads with extensive reindeer herding traditions.</p>
+                </a>
+                <a href="/peoples/aleut.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Aleut</h3>
+                    <p class="related-location">Aleutian Islands</p>
+                    <span class="relationship-badge similar">Maritime Culture</span>
+                    <p class="related-description">Expert sea hunters of Aleutian Islands and Bering Sea region.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Bogoraz, Waldemar. (1904-1909). <em>The Chukchee</em>. Memoir of the American Museum of Natural History.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Krupnik, Igor, & Vakhtin, Nikolai. (2002). <em>In the "House of Dismay": Knowledge, Culture, and the "Subsistence Crisis" in Chukotka</em>. Etudes/Inuit/Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Forsyth, James. (1992). <em>A History of the Peoples of Siberia: Russia's North Asian Colony 1581-1990</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Vdovin, I.S. (1965). <em>Essays on the History and Ethnography of the Chukchi</em>. Nauka Publishing.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Kerttula, Anna M. (2000). <em>Antler on the Sea: The Yup'ik and Chukchi of the Russian Far East</em>. Cornell University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Gray, Patty A. (2005). <em>The Predicament of Chukotka's Indigenous Movement: Post-Soviet Activism in the Russian Far North</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Krupnik, Igor. (1993). <em>Arctic Adaptations: Native Whalers and Reindeer Herders of Northern Eurasia</em>. University Press of New England.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Schweitzer, Peter, & Gray, Patty A. (2000). <em>The Chukchi and Siberian Yupik of the Russian Far East</em>. Arctic Studies Center.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Dramatic Arctic coastline of Chukotka Peninsula, traditional Chukchi homeland" },
+            { src: "https://images.unsplash.com/photo-1589431511678-927f57348c1c?w=800", caption: "Walrus on Arctic ice, important marine resource for coastal Chukchi hunters" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Reindeer herd on snowy tundra, managed by inland Chukchi herders" },
+            { src: "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800", caption: "Vast Arctic tundra of Chukotka where reindeer herders migrated seasonally" },
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Aurora borealis over Arctic, featured prominently in Chukchi spiritual beliefs" },
+            { src: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800", caption: "Sea ice formations crucial to traditional Chukchi maritime hunting practices" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

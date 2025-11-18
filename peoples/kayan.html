@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayan People: Brass Coil Tradition of Myanmar and Thailand | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+    <style>
+        :root { --kayan-gold: #D97706; --brass-bronze: #B45309; --highland-green: #15803D; --white: #ecf0f1; --ruby-red: #BE123C; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--brass-bronze) 0%, var(--highland-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--kayan-gold), var(--brass-bronze)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(217,119,6,0.5); border: 5px solid var(--ruby-red); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--kayan-gold); }
+        nav a { color: var(--kayan-gold); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--kayan-gold); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--kayan-gold); border-right: 3px solid var(--ruby-red); }
+        h2 { color: var(--kayan-gold); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--kayan-gold); }
+        h3 { color: var(--brass-bronze); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--kayan-gold), var(--brass-bronze)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--ruby-red); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--ruby-red), var(--kayan-gold)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--kayan-gold), var(--brass-bronze)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--kayan-gold); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--kayan-gold); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--kayan-gold); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">💍</span>
+            <h1>The Kayan People</h1>
+            <p class="tagline">Brass Coil Tradition - Kayan Lahwi "Long Neck" Women - Highland Weavers</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Kayan?</h2>
+            <p>The Kayan (also known as Kayan Lahwi or Padaung) are a Tibeto-Burman indigenous people numbering approximately 130,000-150,000 individuals, primarily residing in Kayah State of eastern Myanmar (Burma) with smaller refugee and migrant communities in northern Thailand. The Kayan are world-famous for their distinctive cultural practice of women wearing <strong>brass neck coils</strong> (called neck rings) that create the appearance of elongated necks, earning them the nickname "long neck women." This tradition, maintained by the Kayan Lahwi subgroup, begins in childhood with girls receiving their first coils around age 5-6, gradually adding more rings throughout life until some women wear over 20 coils weighing up to 10 kilograms. Beyond this striking practice, the Kayan developed sophisticated <strong>weaving traditions</strong>, agricultural systems adapted to mountainous terrain, and animistic spiritual beliefs. Their history includes migration from southern China centuries ago, resistance to Burmese domination, and in recent decades, displacement due to Myanmar's civil conflicts, leading many to refugee camps in Thailand where their traditions face both preservation challenges and commercialization through tourism.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">130-150K</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">5-6</span><span>Age coils begin</span></div>
+                <div class="stat-card"><span class="stat-number">Kayan</span><span>Tibeto-Burman language</span></div>
+                <div class="stat-card"><span class="stat-number">Myanmar/Thailand</span><span>Current territory</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Neck Myth Debunked:</strong> Contrary to popular belief, neck coils don't actually elongate the neck! Instead, they push down the collarbone and compress the ribcage, creating the illusion of a longer neck. Women can remove the coils without their necks collapsing—another common myth!
+            </div>
+
+            <h3>The Brass Coil Tradition</h3>
+            <p>The iconic <strong>brass neck coils</strong> (Kayan: "idzila") represent the Kayan's most recognizable cultural practice, maintained primarily by the Kayan Lahwi subgroup. Young girls traditionally receive their first coils around age 5-6 during a special ceremony, with additional rings added periodically throughout childhood and adolescence. The coils—actually a single continuous brass spiral wound around the neck—gradually push down the collarbone and compress the upper ribs over years, creating the distinctive elongated appearance. Some women wear 20-25 coils weighing up to 10 kilograms. The origins and meanings of this practice remain debated—theories include <strong>beauty ideals</strong>, protection against tiger bites (legendary), resemblance to a dragon (mythical ancestor), or distinction from other ethnic groups. Traditionally, coils were rarely removed except for replacement or cleaning. While many young Kayan women continue the practice, others choose not to wear coils, creating generational debates about cultural preservation versus individual choice and changing beauty standards.</p>
+
+            <h3>Weaving and Material Culture</h3>
+            <p>Beyond neck rings, Kayan culture features sophisticated <strong>textile traditions</strong> using backstrap looms to create distinctive fabrics with red backgrounds and geometric patterns. Women weave clothing including traditional dresses and shoulder bags featuring symbolic designs representing mountains, flowers, and cultural identity. The Kayan also wear brass coils on arms and legs, creating complete adornment systems. Traditional <strong>material culture</strong> includes bamboo crafts, basketry, and agricultural tools suited for swidden (slash-and-burn) cultivation in mountainous terrain. Kayan villages traditionally featured elevated wooden houses with thatched roofs, vegetable gardens, and rice storage granaries. They practiced wet-rice cultivation in valley bottoms when possible, supplemented by upland rice and vegetable cultivation on hillsides. Hunting and gathering forest products supplemented agricultural diet.</p>
+
+            <h3>Spiritual Beliefs and Social Organization</h3>
+            <p>Traditional Kayan spirituality centers on <strong>animism</strong> (called Kan Khwan), recognizing spirits inhabiting natural features, ancestors, and household guardians. Spiritual practitioners conduct ceremonies for agricultural cycles, healing, and life transitions. The Kayan believe in multiple souls and maintain elaborate funeral practices to ensure proper transition to the afterlife. Villages (kaung) organized through kinship networks with headmen and councils of elders governing through customary law. The Kayan recognize patrilineal descent with clan exogamy rules. Some Kayan have converted to Christianity (particularly Baptist) or Buddhism, though many maintain traditional beliefs alongside newer religions. Social life traditionally centered on agricultural cooperation, with communal work parties for planting and harvesting creating strong village bonds.</p>
+
+            <h3>Migration and Conflict</h3>
+            <p>The Kayan migrated from southern China to Myanmar centuries ago, settling in the mountainous Kayah State (formerly Karenni State) alongside related Karenni peoples. Throughout the 20th century, Kayah State experienced ongoing conflict between ethnic armies seeking autonomy and Myanmar's central government. Beginning in the 1980s, fighting intensified, forcing many Kayan to flee to Thailand as refugees. Refugee camps near Mae Hong Son in northern Thailand became home to Kayan communities in limbo—unable to return to Myanmar safely but also lacking Thai citizenship or freedom of movement. These camps attracted significant <strong>tourism</strong> focused on viewing "long neck women," creating controversial situations where traditional culture became commercialized, with some viewing it as cultural preservation and economic survival, while critics argue it exploits and commodifies indigenous people.</p>
+
+            <h3>Contemporary Challenges and Cultural Preservation</h3>
+            <p>Today's Kayan face complex challenges navigating between cultural preservation, displacement, and modernization. In Thailand refugee camps, <strong>tourism</strong> provides income but raises ethical concerns about "human zoos" and commercialized tradition. The neck coil tradition itself sparks debate—some view it as essential cultural identity requiring preservation, while others see it as potentially harmful practice that younger generations should freely choose or reject. Myanmar's ongoing instability prevents many refugees from returning home. <strong>Education access</strong> remains limited, with children in camps receiving basic schooling but facing uncertain futures. Cultural organizations work to document Kayan language, traditions, and history while advocating for refugee rights and sustainable development. Some Kayan communities seek ways to preserve cultural heritage—including weaving, language, and spiritual practices—while adapting to changing circumstances. The challenge remains balancing cultural continuity with women's agency, children's welfare, and community economic survival in displacement.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1552799446-159ba9523315?w=800" alt="Woman with brass coils" loading="lazy">
+                    <div class="image-caption">Kayan woman wearing traditional brass neck coils and colorful clothing</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1601123079602-33a1e6c8f11c?w=800" alt="Traditional textiles" loading="lazy">
+                    <div class="image-caption">Handwoven Kayan textiles with distinctive red backgrounds and geometric patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800" alt="Mountain landscape" loading="lazy">
+                    <div class="image-caption">Mountainous terrain of Kayah State, traditional Kayan homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Traditional village" loading="lazy">
+                    <div class="image-caption">Traditional Kayan village with elevated wooden houses and gardens</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1536514072410-5019a3c69182?w=800" alt="Rice cultivation" loading="lazy">
+                    <div class="image-caption">Rice cultivation in mountainous terrain where Kayan practice agriculture</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1478827536114-da961b7f86c2?w=800" alt="Brass coil detail" loading="lazy">
+                    <div class="image-caption">Close detail of brass coils and traditional beaded ornaments</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/karen.html" class="related-card">
+                    <div class="related-icon">🎋</div>
+                    <h3>Karen</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Major ethnic group in Myanmar and Thailand with related Tibeto-Burman origins.</p>
+                </a>
+                <a href="/peoples/karenni.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Karenni</h3>
+                    <p class="related-location">Kayah State</p>
+                    <span class="relationship-badge similar">Related Group</span>
+                    <p class="related-description">Closely related people of Kayah State sharing territory and history with Kayan.</p>
+                </a>
+                <a href="/peoples/chin.html" class="related-card">
+                    <div class="related-icon">💎</div>
+                    <h3>Chin</h3>
+                    <p class="related-location">Myanmar</p>
+                    <span class="relationship-badge similar">Body Modification</span>
+                    <p class="related-description">Myanmar hill people known for women's facial tattoo traditions.</p>
+                </a>
+                <a href="/peoples/hmong.html" class="related-card">
+                    <div class="related-icon">🌸</div>
+                    <h3>Hmong</h3>
+                    <p class="related-location">Southeast Asia</p>
+                    <span class="relationship-badge similar">Highland Culture</span>
+                    <p class="related-description">Mountain people with rich textile traditions across Southeast Asia.</p>
+                </a>
+                <a href="/peoples/lahu.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Lahu</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge regional">Highland Neighbors</span>
+                    <p class="related-description">Tibeto-Burman hill tribe inhabiting similar mountainous border regions.</p>
+                </a>
+                <a href="/peoples/mursi.html" class="related-card">
+                    <div class="related-icon">💋</div>
+                    <h3>Mursi</h3>
+                    <p class="related-location">Ethiopia</p>
+                    <span class="relationship-badge similar">Body Modification</span>
+                    <p class="related-description">Ethiopian people famous for lip plate body modification traditions.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Marlowe, David H. (1979). <em>In the Mosaic: The Cultural Adaptation of Karen Refugees</em>. University Microfilms International.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Goodman, Jane E. (2002). <em>The Proverbial Bourdieu: Habitus and the Politics of Representation in the Ethnography of Kabylia</em>. American Anthropologist.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Falconer, John, et al. (1987). <em>Burma: Political and Economic Situation</em>. Background Brief, British Library.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Kusakabe, Kyoko. (2003). <em>Women's Informal Labour in Transitional Thai–Burmese Border</em>. Gender and Development.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Toyota, Mika. (2005). <em>Subjects of the Nation Without Citizenship: The Case of 'Hill Tribes' in Thailand</em>. In Multiculturalism in Asia, Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Trupp, Alexander. (2014). <em>Exhibiting the 'Other' Then and Now: "Human Zoos" in Southern China and Thailand</em>. Austrian Journal of South-East Asian Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Wilkinson, Ruth M. (2016). <em>Performing the Nation: Identity Politics in the Thai–Burma Borderlands</em>. University of Washington Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Cohen, Paul T. (2000). <em>Resettlement, Opium and Labour Dependence: Akha-Tai Relations in Northern Laos</em>. Development and Change.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1552799446-159ba9523315?w=800", caption: "Kayan woman wearing traditional brass neck coils and colorful clothing" },
+            { src: "https://images.unsplash.com/photo-1601123079602-33a1e6c8f11c?w=800", caption: "Handwoven Kayan textiles with distinctive red backgrounds and geometric patterns" },
+            { src: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800", caption: "Mountainous terrain of Kayah State, traditional Kayan homeland" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Traditional Kayan village with elevated wooden houses and gardens" },
+            { src: "https://images.unsplash.com/photo-1536514072410-5019a3c69182?w=800", caption: "Rice cultivation in mountainous terrain where Kayan practice agriculture" },
+            { src: "https://images.unsplash.com/photo-1478827536114-da961b7f86c2?w=800", caption: "Close detail of brass coils and traditional beaded ornaments" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

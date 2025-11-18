@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luba People: Sacred Kings of the Congo Basin | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👸</text></svg>">
+    <style>
+        :root { --royal-purple: #800080; --congo-green: #006400; --ivory: #FFFFF0; --white: #ecf0f1; --spirit-gold: #FFD700; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--royal-purple) 0%, var(--congo-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--royal-purple), var(--congo-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(128,0,128,0.5); border: 5px solid var(--spirit-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--royal-purple); }
+        nav a { color: var(--royal-purple); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--royal-purple); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--royal-purple); border-right: 3px solid var(--spirit-gold); }
+        h2 { color: var(--royal-purple); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--royal-purple); }
+        h3 { color: var(--congo-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--royal-purple), var(--congo-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--spirit-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--spirit-gold), var(--royal-purple)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--royal-purple), var(--congo-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--royal-purple); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--royal-purple); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--royal-purple); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">👸</span>
+            <h1>The Luba People</h1>
+            <p class="tagline">Sacred Kingship Traditions - Memory Board Keepers - Ancient Empire of Central Africa</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Luba?</h2>
+            <p>The Luba people of the Democratic Republic of Congo are one of Central Africa's most culturally and politically influential ethnic groups, numbering over 6 million. The Luba created one of Africa's great classical civilizations—the Luba Empire (also called the Luba Kingdom or Kingdom of Luba), which flourished from the 15th to 19th centuries in the southeastern savanna region of what is now DRC. The Luba developed sophisticated concepts of sacred kingship (bulopwe), complex political systems balancing centralized and decentralized authority, and remarkable artistic traditions including wood carving, ironworking, and the famous lukasa memory boards—hand-held wooden devices studded with beads and shells that encoded the empire's history, genealogies, and spiritual knowledge. The Luba language (Kiluba or Tshiluba) belongs to the Bantu family and remains widely spoken. Luba political philosophy and governance systems influenced neighboring kingdoms including the Lunda Empire, creating a "Luba-Lunda cultural sphere" across Central Africa. Despite colonialism's disruptions and modern conflicts in eastern DRC, the Luba maintain strong cultural identity and continue to practice traditional governance alongside state systems.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">6M+</span><span>Estimated population</span></div>
+                <div class="stat-card"><span class="stat-number">Kiluba</span><span>Bantu language</span></div>
+                <div class="stat-card"><span class="stat-number">15th-19th C.</span><span>Empire period</span></div>
+                <div class="stat-card"><span class="stat-number">DRC (Katanga)</span><span>Homeland region</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>The Memory Boards (Lukasa):</strong> Luba royal historians called Mbudye used extraordinary mnemonic devices called lukasa—hand-sized wooden boards studded with beads, shells, and pins in intricate patterns. Each lukasa encoded vast amounts of information: royal genealogies, migration histories, sacred locations, and spiritual teachings. A trained mbudye could "read" a lukasa for hours, recounting the empire's complete history—a technology as sophisticated as any written system!
+            </div>
+
+            <h3>Rise of the Luba Empire</h3>
+            <p>The <strong>Luba Empire</strong> emerged in the 15th century in the southeastern savannas near the great lakes of Central Africa, in the region known as Katanga (now southeastern DRC). According to oral traditions, the empire was founded by <strong>Kongolo Mwamba</strong>, a semi-mythical warrior king, and consolidated by <strong>Kalala Ilunga</strong>, who introduced the concept of sacred kingship. At its height in the 18th-19th centuries, the empire controlled territories roughly the size of modern France, governing diverse peoples through an innovative political system. The Luba capital moved periodically, with major centers at <strong>Mwibele</strong> and later locations. The empire's wealth derived from control of <strong>copper and iron resources</strong>, salt production, fishing on the great lakes, agriculture (particularly cassava and millet), and long-distance trade networks extending to both Atlantic and Indian Ocean coasts. The Luba exported copper, iron goods, ivory, and enslaved people, while importing cloth, beads, and other manufactured goods.</p>
+
+            <h3>Sacred Kingship and Political Philosophy</h3>
+            <p>The Luba developed the concept of <strong>bulopwe</strong>—sacred kingship—a political-spiritual philosophy that became Central Africa's most influential governance model. The king (<strong>mulopwe</strong>) was considered semi-divine, embodying the spiritual well-being of the kingdom. Royal investiture involved elaborate rituals where the king's body was literally transformed through sacred substances, creating a divine king distinct from his previous mortal self. The Luba system balanced <strong>centralized spiritual authority</strong> (vested in the sacred king) with <strong>decentralized political power</strong> (exercised by provincial chiefs and councils). The <strong>royal council</strong> included titled officials with specific responsibilities: war leaders, tribute collectors, spiritual advisors, and the crucial <strong>Mbudye society</strong>—royal historians who preserved knowledge through lukasa memory boards and oral traditions. Women held significant power, with queen mothers and royal wives exercising political influence. The Luba system's genius lay in creating loyalty through cultural prestige rather than military coercion—subject peoples voluntarily adopted Luba identity because of its cultural cachet.</p>
+
+            <h3>Artistic Excellence and Material Culture</h3>
+            <p>Luba artistic achievement ranks among Africa's finest. <strong>Wood carving</strong> produced exquisite royal staffs, stools, headrests, bowls, and ceremonial objects featuring refined human figures with elaborate hairstyles and scarification patterns. The famous <strong>Luba-style female caryatid figures</strong>—women supporting bowls or stools on their heads—symbolized women's crucial role in supporting kingship and society. <strong>Ironworking</strong> was both practical craft and sacred art, with blacksmiths holding special social status. The Luba produced high-quality iron tools, weapons, and ceremonial axes (symbols of royal authority). <strong>Body art</strong> included elaborate scarification patterns (particularly the distinctive central abdominal pattern), intricate hairstyles, and adornment with copper and ivory jewelry. The <strong>lukasa memory boards</strong> represent perhaps the Luba's most unique contribution—three-dimensional mnemonic devices that encoded historical, geographical, and spiritual knowledge in tactile form, allowing initiated members of the Mbudye society to preserve and transmit vast amounts of information across generations.</p>
+
+            <h3>Religion and Spiritual Beliefs</h3>
+            <p>Traditional Luba religion centers on <strong>Leza</strong> (or Shakapanga), the supreme creator god, who is distant but ultimately benevolent. More active in daily life are the <strong>bavidye</strong>—spirits of deceased ancestors and nature spirits inhabiting waters, forests, and sacred groves. The Luba practice ancestor veneration, maintaining shrines and making offerings to ensure ancestors' continued protection and blessing. <strong>Spirit mediums</strong> and <strong>diviners</strong> (bilumbu) communicate with the spirit world, diagnosing illness, identifying witches, and providing guidance. The Luba developed complex concepts of witchcraft and anti-witchcraft practices. <strong>Secret societies</strong>, particularly the Mbudye (royal historians) and Bambudye (initiated members), controlled esoteric knowledge and performed crucial ritual functions. Initiation ceremonies marked passage to adulthood, teaching moral codes, history, and practical skills. While many Luba have adopted Christianity (particularly Catholicism), traditional beliefs persist, often syncretically blended with Christian practices.</p>
+
+            <h3>Modern Luba Identity and Challenges</h3>
+            <p>The Luba Empire fragmented in the late 19th century due to Swahili-Arab slave raiders from the east, internal succession disputes, and Belgian colonial conquest. King Leopold II's brutal Congo Free State (1885-1908) devastated Luba territories through forced rubber collection and violence. Under Belgian colonial rule and after independence (1960), the Luba remained politically significant, with <strong>Moïse Tshombe</strong> (a Luba leader) declaring Katanga's secession in 1960-63. The resource-rich Katanga/Shaba region has been at the center of Congolese conflicts, affecting Luba communities. Despite these challenges, the Luba maintain strong cultural identity. Traditional chiefs retain authority alongside state structures, and <strong>Luba governance concepts</strong> continue influencing Congolese politics. Cultural organizations preserve lukasa traditions, wood carving, and oral histories. The Luba language thrives, with substantial literary production. Younger generations balance modern education with traditional knowledge. The Luba face ongoing challenges from armed conflict in eastern DRC, resource exploitation benefiting outsiders, and environmental degradation. Organizations advocate for community rights, cultural preservation, and equitable development that respects Luba heritage while addressing contemporary needs.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Central African savanna" loading="lazy">
+                    <div class="image-caption">Savanna landscape of southeastern DRC, heartland of Luba civilization</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Traditional Luba wood carving" loading="lazy">
+                    <div class="image-caption">Exquisite Luba wood carving featuring characteristic refined human figures</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Lukasa memory board" loading="lazy">
+                    <div class="image-caption">Lukasa memory board with beads encoding royal history and genealogy</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Royal ceremonial staff" loading="lazy">
+                    <div class="image-caption">Ceremonial staff topped with carved female figure, symbol of royal authority</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Traditional ironworking" loading="lazy">
+                    <div class="image-caption">Traditional ironworking, sacred craft central to Luba economy and ritual</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=800" alt="Luba ceremonial mask" loading="lazy">
+                    <div class="image-caption">Ceremonial mask used in initiation and ancestor veneration rituals</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/lunda.html" class="related-card">
+                    <div class="related-icon">👑</div>
+                    <h3>Lunda</h3>
+                    <p class="related-location">DRC/Angola/Zambia</p>
+                    <span class="relationship-badge historical">Cultural Exchange</span>
+                    <p class="related-description">Empire founded by Luba princess, sharing governance traditions.</p>
+                </a>
+                <a href="/peoples/bemba.html" class="related-card">
+                    <div class="related-icon">⚔️</div>
+                    <h3>Bemba</h3>
+                    <p class="related-location">Zambia</p>
+                    <span class="relationship-badge historical">Historical Connection</span>
+                    <p class="related-description">Kingdom influenced by Luba-Lunda political traditions.</p>
+                </a>
+                <a href="/peoples/kongo.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Kongo</h3>
+                    <p class="related-location">DRC/Angola</p>
+                    <span class="relationship-badge regional">Regional Kingdom</span>
+                    <p class="related-description">Powerful western Central African kingdom and cultural center.</p>
+                </a>
+                <a href="/peoples/chokwe.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Chokwe</h3>
+                    <p class="related-location">DRC/Angola</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Renowned artists who traded and interacted with Luba.</p>
+                </a>
+                <a href="/peoples/songye.html" class="related-card">
+                    <div class="related-icon">🗡️</div>
+                    <h3>Songye</h3>
+                    <p class="related-location">DRC</p>
+                    <span class="relationship-badge regional">Neighboring Kingdom</span>
+                    <p class="related-description">Central DRC kingdom sharing artistic and political traditions.</p>
+                </a>
+                <a href="/peoples/yeke.html" class="related-card">
+                    <div class="related-icon">⚡</div>
+                    <h3>Yeke</h3>
+                    <p class="related-location">DRC (Katanga)</p>
+                    <span class="relationship-badge historical">Historical Interaction</span>
+                    <p class="related-description">19th century kingdom that challenged Luba dominance in Katanga.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Reefe, Thomas Q. (1981). <em>The Rainbow and the Kings: A History of the Luba Empire to 1891</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Roberts, Mary Nooter, & Roberts, Allen F. (1996). <em>Memory: Luba Art and the Making of History</em>. Museum for African Art.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Vansina, Jan. (1966). <em>Kingdoms of the Savanna</em>. University of Wisconsin Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Nooter, Mary H. (1991). "Luba Leadership Arts and the Politics of Prestige." <em>African Arts</em>, 24(2): 44-55.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Roberts, Mary Nooter. (1996). "The King is a Woman: Shaping Power in Luba Royal Culture." <em>African Arts</em>, 29(1): 32-43.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Petridis, Constantine. (2007). <em>Lubaale: Luba Heritage and its Memory</em>. Royal Museum for Central Africa.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Mudimbe, V. Y. (1988). <em>The Invention of Africa: Gnosis, Philosophy, and the Order of Knowledge</em>. Indiana University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">De Maret, Pierre. (1999). "The Power of Symbols and the Symbols of Power through Time: Probing the Luba Past." In <em>Beyond Chiefdoms: Pathways to Complexity in Africa</em>, edited by Susan Keech McIntosh. Cambridge University Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800", caption: "Savanna landscape of southeastern DRC, heartland of Luba civilization" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Exquisite Luba wood carving featuring characteristic refined human figures" },
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Lukasa memory board with beads encoding royal history and genealogy" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Ceremonial staff topped with carved female figure, symbol of royal authority" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Traditional ironworking, sacred craft central to Luba economy and ritual" },
+            { src: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=800", caption: "Ceremonial mask used in initiation and ancestor veneration rituals" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batak People: Boat House Builders of Lake Toba | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+    <style>
+        :root { --batak-blue: #1E40AF; --lake-teal: #0D9488; --house-brown: #92400E; --white: #ecf0f1; --cultural-red: #DC2626; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--batak-blue) 0%, var(--lake-teal) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--batak-blue), var(--house-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(30,64,175,0.5); border: 5px solid var(--cultural-red); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--batak-blue); }
+        nav a { color: var(--batak-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--batak-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--batak-blue); border-right: 3px solid var(--cultural-red); }
+        h2 { color: var(--batak-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--batak-blue); }
+        h3 { color: var(--house-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--batak-blue), var(--lake-teal)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--cultural-red); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--cultural-red), var(--batak-blue)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--batak-blue), var(--house-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--batak-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--batak-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--batak-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏠</span>
+            <h1>The Batak People</h1>
+            <p class="tagline">Boat House Architects - Keepers of Lake Toba - Masters of Ulos Weaving</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Batak?</h2>
+            <p>The Batak are a collection of closely related indigenous Austronesian ethnic groups numbering approximately 8.5 million people inhabiting the highlands surrounding Lake Toba in North Sumatra, Indonesia. The term "Batak" encompasses six main subgroups—<strong>Toba Batak, Karo Batak, Pakpak/Dairi, Simalungun, Angkola, and Mandailing</strong>—each with distinct dialects, customs, and identities while sharing cultural commonalities. The Batak are world-renowned for their spectacular <strong>boat-shaped houses</strong> (rumah bolon or jabu) featuring dramatically curved roofs resembling ship hulls, elaborate carved decorations, and raised construction. They developed sophisticated <strong>ulos weaving</strong> traditions creating sacred textiles with deep symbolic meanings used in life-cycle ceremonies. Batak society organized through patrilineal clans (marga) with complex kinship systems, practiced wet-rice agriculture around Lake Toba (the world's largest volcanic lake), and maintained rich oral traditions including the Pustaha (bark-book manuscripts). Despite widespread Christian conversion since the 19th century, the Batak preserve strong cultural identity and traditional practices.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">8.5M</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">6</span><span>Main subgroups</span></div>
+                <div class="stat-card"><span class="stat-number">Batak</span><span>Austronesian language</span></div>
+                <div class="stat-card"><span class="stat-number">Lake Toba</span><span>North Sumatra</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Lake Toba's Origins:</strong> Lake Toba, the Batak ancestral homeland, was formed by a massive supervolcanic eruption 74,000 years ago—the largest eruption in human history! The lake covers 1,145 square kilometers with Samosir Island in its center, traditional heartland of Toba Batak culture!
+            </div>
+
+            <h3>Boat House Architecture</h3>
+            <p>Batak traditional houses (rumah bolon or rumah adat) represent architectural masterpieces featuring distinctive <strong>boat-shaped design</strong> with dramatically curved roofs extending far beyond walls. The Toba Batak houses feature soaring saddle-backed roofs (called jabu) rising up to 15 meters, symbolizing buffalo horns and cosmic connection. Houses are raised on stilts with space beneath for livestock, built entirely from wood without nails using sophisticated joinery. Elaborate <strong>carved decorations</strong> cover gables and panels with motifs including singa (mythical lions), geometric patterns, and symbols representing clan identity and spiritual protection. Interiors were traditionally undivided spaces housing extended families. Villages arranged houses in linear patterns with specific orientations. Traditional Karo houses differ slightly, featuring larger multi-family dwellings. While modern construction has replaced many traditional houses, some villages preserve and maintain these architectural treasures.</p>
+
+            <h3>Ulos Textiles and Weaving Traditions</h3>
+            <p>The Batak developed extraordinary <strong>ulos weaving</strong> traditions creating sacred textiles central to cultural and spiritual life. Ulos (meaning "blanket" or "cloth") are hand-woven fabrics using traditional backstrap looms with intricate patterns in red, black, and white representing different meanings. Specific ulos types are designated for particular ceremonies—birth, marriage, death, and other life transitions. The most sacred ulos possess <strong>spiritual power</strong> (tondi), believed to provide warmth, blessing, and protection. Ulos-giving ceremonies (mangulosi) remain central to Batak social life, with textiles exchanged following complex protocols based on kinship relationships. Different Batak subgroups developed distinctive patterns and styles, though common motifs include zigzags (representing water and mountains), checks, and figurative designs. Traditional natural dyes came from plants, though synthetic dyes are now common. Master weavers maintain technical and spiritual knowledge passed through generations.</p>
+
+            <h3>Clan System and Social Organization</h3>
+            <p>Batak society organized through <strong>patrilineal clans</strong> (marga) tracing descent through male ancestors. Each person inherits their father's marga, creating extensive kinship networks throughout Batak lands. The dalihan na tolu ("three hearth-stones") system structures social relationships into three categories: hula-hula (wife-givers, superior position), dongan tubu (fellow clan members, equals), and boru (wife-receivers, inferior position). This system determines reciprocal obligations, ceremonial exchanges, and social protocol. Traditional villages (huta) were typically inhabited by single clans with a chief (raja) and council of elders. The Batak practiced <strong>adat</strong> (customary law) governing marriage, inheritance, dispute resolution, and ceremonies. Chiefs held authority alongside spiritual specialists including datu (priest-shamans) who practiced divination, healing, and magic using pustaha manuscripts. This traditional governance coexists with modern Indonesian administrative structures.</p>
+
+            <h3>Religion and Spiritual Practices</h3>
+            <p>Pre-Christian Batak religion centered on complex <strong>animistic beliefs</strong> recognizing spirits, ancestors, and deities including Mulajadi Na Bolon (supreme creator god). The Batak cosmology divided existence into three realms—upper world, middle world (human realm), and lower world. <strong>Datu</strong> (priest-shamans, also called guru) mastered spiritual knowledge recorded in pustaha (bark-books written in Batak script) containing divination techniques, herbal medicine, magic spells, and cosmological knowledge. Important rituals included ancestor veneration, agricultural ceremonies, and elaborate funeral practices. Beginning in the 1860s, German Lutheran and Dutch Reformed missionaries achieved widespread conversion. Today, over 90% of Batak identify as Christian (predominantly Protestant), though traditional beliefs persist in modified forms. The unique <strong>Batak Christianity</strong> blends Christian theology with adat practices, including elaborate church ceremonies incorporating ulos exchanges and traditional music.</p>
+
+            <h3>Contemporary Batak Culture</h3>
+            <p>Modern Batak maintain strong cultural identity while being prominent in Indonesian national life. Batak have migrated throughout Indonesia and abroad, establishing communities while maintaining homeland connections. <strong>Traditional music</strong> using gondang (drums), sarune (oboe), and other instruments accompanies ceremonies, with elaborate musical traditions varying by subgroup. The Batak are known for <strong>educational achievement</strong>, producing numerous Indonesian professionals, politicians, and artists. Tourism to Lake Toba and Samosir Island showcases Batak culture through traditional villages, museums, and cultural performances. Challenges include balancing <strong>modernization with tradition</strong>—younger generations navigate between adat obligations and contemporary lifestyles. Cultural organizations work to preserve language (facing pressure from Indonesian), traditional arts, and architectural heritage. Large Batak diaspora communities organize regular clan gatherings and maintain ceremonial practices abroad, ensuring cultural continuity across generations.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1555899434-94d1eb5ba3c6?w=800" alt="Lake Toba" loading="lazy">
+                    <div class="image-caption">Lake Toba, world's largest volcanic lake and Batak ancestral homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1587899897387-091ebd01a6b2?w=800" alt="Traditional Batak house" loading="lazy">
+                    <div class="image-caption">Traditional boat-shaped Batak house with distinctive curved roof</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1601123079602-33a1e6c8f11c?w=800" alt="Ulos textile" loading="lazy">
+                    <div class="image-caption">Sacred ulos textile with intricate geometric patterns and traditional colors</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800" alt="Rice terraces" loading="lazy">
+                    <div class="image-caption">Rice terraces around Lake Toba cultivated by Batak farmers</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Traditional village" loading="lazy">
+                    <div class="image-caption">Traditional Batak village on Samosir Island in Lake Toba</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Carved decoration" loading="lazy">
+                    <div class="image-caption">Elaborate wood carvings on traditional Batak house featuring singa motif</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/toraja.html" class="related-card">
+                    <div class="related-icon">⚰️</div>
+                    <h3>Toraja</h3>
+                    <p class="related-location">Sulawesi, Indonesia</p>
+                    <span class="relationship-badge similar">Boat Architecture</span>
+                    <p class="related-description">Famous for boat-shaped houses and elaborate funeral ceremonies in Sulawesi.</p>
+                </a>
+                <a href="/peoples/minangkabau.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Minangkabau</h3>
+                    <p class="related-location">West Sumatra</p>
+                    <span class="relationship-badge regional">Sumatra Neighbors</span>
+                    <p class="related-description">Matrilineal society of Sumatra with distinctive curved-roof architecture.</p>
+                </a>
+                <a href="/peoples/nias.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Nias</h3>
+                    <p class="related-location">Nias Island</p>
+                    <span class="relationship-badge regional">Island Neighbors</span>
+                    <p class="related-description">Island people off Sumatra with megalithic traditions and war dances.</p>
+                </a>
+                <a href="/peoples/karo.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Karo</h3>
+                    <p class="related-location">North Sumatra</p>
+                    <span class="relationship-badge similar">Batak Subgroup</span>
+                    <p class="related-description">Major Batak subgroup with distinct traditions and multi-family houses.</p>
+                </a>
+                <a href="/peoples/dayak.html" class="related-card">
+                    <div class="related-icon">🏠</div>
+                    <h3>Dayak</h3>
+                    <p class="related-location">Borneo</p>
+                    <span class="relationship-badge similar">Longhouse Builders</span>
+                    <p class="related-description">Indigenous Borneo people with longhouse architecture and rich traditions.</p>
+                </a>
+                <a href="/peoples/ifugao.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Ifugao</h3>
+                    <p class="related-location">Philippines</p>
+                    <span class="relationship-badge similar">Rice Terraces</span>
+                    <p class="related-description">Mountain people famous for ancient rice terraces and traditional culture.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Cunningham, Clark E. (1958). <em>The Postwar Migration of the Toba-Bataks to East Sumatra</em>. Yale University Southeast Asia Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Vergouwen, J.C. (1964). <em>The Social Organisation and Customary Law of the Toba-Batak of Northern Sumatra</em>. Martinus Nijhoff.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Niessen, Sandra A. (1985). <em>Motifs of Life in Toba Batak Texts and Textiles</em>. Foris Publications.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Kozok, Uli. (1999). <em>Waruga Architecture of the Batak of Sumatra</em>. Bijdragen tot de Taal-, Land- en Volkenkunde.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Schreiner, Lothar. (1994). <em>Adat und Evangelium: The Development of Lutheran Church in North Sumatra</em>. Erlanger Verlag für Mission.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Sibeth, Achim. (1991). <em>The Batak: Peoples of the Island of Sumatra</em>. Thames and Hudson.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Rodgers, Susan. (1995). <em>Telling Lives, Telling History: Autobiography and Historical Imagination in Modern Indonesia</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Sherman, D.G. (1990). <em>Rice, Rupees, and Ritual: Economy and Society among the Samosir Batak of Sumatra</em>. Stanford University Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1555899434-94d1eb5ba3c6?w=800", caption: "Lake Toba, world's largest volcanic lake and Batak ancestral homeland" },
+            { src: "https://images.unsplash.com/photo-1587899897387-091ebd01a6b2?w=800", caption: "Traditional boat-shaped Batak house with distinctive curved roof" },
+            { src: "https://images.unsplash.com/photo-1601123079602-33a1e6c8f11c?w=800", caption: "Sacred ulos textile with intricate geometric patterns and traditional colors" },
+            { src: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800", caption: "Rice terraces around Lake Toba cultivated by Batak farmers" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Traditional Batak village on Samosir Island in Lake Toba" },
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Elaborate wood carvings on traditional Batak house featuring singa motif" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>
