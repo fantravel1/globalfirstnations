@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitcairn Islanders: Descendants of the Bounty Mutineers | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+    <style>
+        :root { --pitcairn-blue: #0369a1; --ocean-deep: #0c4a6e; --island-green: #059669; --bounty-brown: #92400e; --white: #ecf0f1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--pitcairn-blue) 0%, var(--ocean-deep) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--pitcairn-blue), var(--island-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(3,105,161,0.5); border: 5px solid var(--bounty-brown); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--pitcairn-blue); }
+        nav a { color: var(--pitcairn-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--pitcairn-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--pitcairn-blue); border-right: 3px solid var(--bounty-brown); }
+        h2 { color: var(--pitcairn-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--pitcairn-blue); }
+        h3 { color: var(--island-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--pitcairn-blue), var(--island-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--bounty-brown); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--bounty-brown), var(--pitcairn-blue)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--pitcairn-blue), var(--ocean-deep)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--pitcairn-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--pitcairn-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--pitcairn-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">⛵</span>
+            <h1>The Pitcairn Islanders</h1>
+            <p class="tagline">Descendants of the Bounty - World's Smallest Democracy - Remote Pacific Community</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Pitcairn Islanders?</h2>
+            <p>The Pitcairn Islanders are the approximately 50 permanent residents of Pitcairn Island, one of Earth's <strong>most remote inhabited territories</strong>, located in the southern Pacific Ocean roughly midway between New Zealand and South America. The population descends from the famous 1789 <strong>HMS Bounty mutineers</strong> and their Polynesian companions (primarily Tahitian women) who settled the uninhabited island in 1790 to escape British justice. Today's Pitcairners carry surnames including Christian, Young, Warren, and Brown—tracing lineage to the original nine mutineers and eighteen Polynesian settlers. They speak a unique <strong>Pitkern language</strong>—a creole blending 18th-century English with Tahitian vocabulary and grammar—serving as their daily language alongside modern English. The island community maintains a distinctive culture combining British colonial heritage with Polynesian influences, strong Seventh-day Adventist faith, and extreme remoteness requiring extraordinary self-sufficiency. As a <strong>British Overseas Territory</strong>, Pitcairn represents one of the world's smallest democracies, with all adult residents voting on community decisions. The population has declined from historical peaks, raising concerns about the community's long-term viability, though recent efforts have attempted to attract new settlers to this unique Pacific society.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~50</span><span>Current population</span></div>
+                <div class="stat-card"><span class="stat-number">1790</span><span>Settlement by mutineers</span></div>
+                <div class="stat-card"><span class="stat-number">Pitkern</span><span>Creole language</span></div>
+                <div class="stat-card"><span class="stat-number">4.6 km²</span><span>Island area</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>World's Loneliest Post Office:</strong> Pitcairn has no airport and no regular shipping! Supply ships arrive 4-10 times per year on unpredictable schedules. Internet came only in 2013 via satellite. Residents navigate treacherous waters in longboats to reach visiting ships—making it one of Earth's most isolated communities!
+            </div>
+
+            <h3>The Bounty Legacy and Settlement</h3>
+            <p>Pitcairn's extraordinary history begins with the 1789 <strong>mutiny on HMS Bounty</strong>, when Master's Mate Fletcher Christian led a rebellion against Captain William Bligh, setting him adrift with loyalists. Led by Christian, nine mutineers sailed to Tahiti, recruited twelve Polynesian women and six men, and searched for an uninhabited refuge. In January 1790 they discovered Pitcairn Island—incorrectly charted on British maps—providing perfect hiding. After stripping and burning the Bounty (its remains still visible underwater), the 27 settlers established a community. The first decade proved violent—within ten years, all mutineer men except one (John Adams) were dead from murder, accidents, or suicide, resulting from conflicts over women, leadership, and alcohol distilled from ti plants. The Polynesian men, treated as servants, rebelled, killing several mutineers before being killed themselves. By 1800, only Adams remained alive with <strong>ten women and 23 children</strong>. Rediscovered by American and British ships in 1808-1814, Adams avoided prosecution, instead becoming the community's patriarch and converting residents to Christianity using the Bounty's salvaged Bible.</p>
+
+            <h3>Pitkern Language and Culture</h3>
+            <p>The Pitcairn Islanders developed <strong>Pitkern</strong> (also Pitcairnese), a unique English-based creole incorporating substantial Tahitian vocabulary, grammar, and pronunciation. The language emerged from the original community where English-speaking mutineers and Tahitian-speaking women needed common communication. Pitkern features distinctive characteristics: Tahitian phonology (including glottal stops), English sentence structure with Tahitian modifications, and hybrid vocabulary ("aklan" for food from English and Tahitian "kai"). Pitkern served as the primary community language for generations, though modern education emphasizes standard English. The language remains vibrant with estimated 50 fluent speakers—though this represents virtually the entire population, making it <strong>critically endangered</strong> due to low speaker numbers and emigration. Cultural practices blend British and Polynesian elements: British legal traditions, Seventh-day Adventist Christianity (adopted in 1887 and now universal), and Polynesian food preparation methods. Traditional foods include fish, coconut, breadfruit, and taro. The community celebrates Bounty Day annually on January 23rd, commemorating the burning of the ship with reenactments and feasts.</p>
+
+            <h3>Governance and Daily Life</h3>
+            <p>Pitcairn operates as a <strong>British Overseas Territory</strong> with unique governance blending British administration and local democracy. The Island Council (equivalent to a legislature) consists of elected councillors making decisions on community matters, land allocation, and development. A Mayor (formerly called Magistrate) serves as chief administrator. All adult residents can vote and participate in Island Council meetings—making Pitcairn arguably the <strong>world's smallest democracy</strong>. British law applies, administered by a Governor based in New Zealand. Daily life centers on subsistence activities: fishing from treacherous coastal waters reached via the famous Hill of Difficulty pathway, cultivating gardens producing fruit and vegetables, and maintaining infrastructure. The community constructed an ingenious <strong>longboat system</strong>—residents navigate aluminum boats through dangerous surf to reach visiting supply ships anchored offshore, transferring cargo and occasional passengers. No airport exists due to terrain constraints. Electricity comes from diesel generators (recently supplemented by solar). Everyone contributes to community labor including road maintenance, longboat operations, and caring for elderly residents. Most adults hold multiple roles—teacher, radio operator, pastor, and farmer simultaneously.</p>
+
+            <h3>Economy and Sustainability</h3>
+            <p>Pitcairn's economy combines <strong>subsistence living</strong> with limited cash income from unique sources. Residents rely on fishing and gardening for food, supplemented by periodic ship-delivered supplies. Cash income derives primarily from selling <strong>.pn internet domains</strong>, Pitcairn postage stamps (highly prized by collectors), and handcrafted goods including carved wooden souvenirs and woven baskets sold to rare cruise ship passengers and online. Honey production from endemic Pitcairn bees provides income and food. The British government provides financial support funding infrastructure, education, and medical services. Most residents receive some form of government payment for community roles. The economy remains highly vulnerable—dependent on unpredictable shipping, stamp collecting hobby viability, and limited tourist arrivals (roughly 10-15 cruise ships annually). Recent initiatives have attempted to establish commercial fishing and expand internet sales. Land is communally managed with parcels allocated by the Island Council. The <strong>sustainability crisis</strong> stems from population decline—emigration to New Zealand for education and employment has reduced the population from historical peaks of 200+, threatening community viability.</p>
+
+            <h3>Contemporary Challenges and Future</h3>
+            <p>The Pitcairn community faces existential challenges threatening its survival. <strong>Population decline</strong> represents the most serious crisis—from 233 residents in 1937, the population dropped to approximately 50, with median age exceeding 50 years. Young people emigrate seeking education and opportunities unavailable on the island. Immigration programs have attracted limited new residents despite offering land and support. The 2004 sexual abuse scandal, resulting in convictions of several men for historical offenses, severely damaged Pitcairn's reputation and complicated recruitment. <strong>Geographic isolation</strong> creates challenges: lack of regular transport, limited medical facilities requiring evacuations for serious illness, and aging infrastructure. Climate change threatens through rising seas, increased storms, and disrupted shipping patterns. Maintaining critical services (school, clinic, communications) becomes difficult with tiny population. Opportunities include expanding eco-tourism for adventurous travelers, developing sustainable fishing, and leveraging internet connectivity for remote work and cultural preservation. The Pitcairn Islanders demonstrate remarkable resilience—descendants of a mutiny who have survived 230+ years of isolation—though their future remains uncertain, dependent on attracting settlers while preserving their unique cultural heritage.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Remote Pacific island" loading="lazy">
+                    <div class="image-caption">Remote volcanic island in the South Pacific, similar to Pitcairn</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Tropical coastline" loading="lazy">
+                    <div class="image-caption">Rocky coastline and dense vegetation characteristic of Pitcairn Island</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800" alt="South Pacific Ocean" loading="lazy">
+                    <div class="image-caption">The vast South Pacific Ocean surrounding Pitcairn's isolation</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800" alt="Traditional boat" loading="lazy">
+                    <div class="image-caption">Small boats essential for reaching supply ships in the deep ocean</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800" alt="Dense island vegetation" loading="lazy">
+                    <div class="image-caption">Lush tropical vegetation covering Pitcairn's volcanic terrain</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800" alt="Historic sailing ship" loading="lazy">
+                    <div class="image-caption">Historic sailing vessel similar to HMS Bounty, whose mutineers founded Pitcairn</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/rapanui.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Rapa Nui</h3>
+                    <p class="related-location">Easter Island</p>
+                    <span class="relationship-badge regional">Pacific Neighbors</span>
+                    <p class="related-description">Polynesian people of Easter Island famous for moai statues and remote location.</p>
+                </a>
+                <a href="/peoples/norfolk.html" class="related-card">
+                    <div class="related-icon">🌴</div>
+                    <h3>Norfolk Islanders</h3>
+                    <p class="related-location">Norfolk Island</p>
+                    <span class="relationship-badge similar">Bounty Descendants</span>
+                    <p class="related-description">Descendants of Pitcairn Islanders who relocated in 1856, speaking Norfuk language.</p>
+                </a>
+                <a href="/peoples/tahitian.html" class="related-card">
+                    <div class="related-icon">🌺</div>
+                    <h3>Tahitian</h3>
+                    <p class="related-location">French Polynesia</p>
+                    <span class="relationship-badge historical">Ancestral Connection</span>
+                    <p class="related-description">Polynesian people of Tahiti, ancestral homeland of Pitcairn's Polynesian founders.</p>
+                </a>
+                <a href="/peoples/tristan.html" class="related-card">
+                    <div class="related-icon">🌋</div>
+                    <h3>Tristan da Cunha</h3>
+                    <p class="related-location">South Atlantic</p>
+                    <span class="relationship-badge similar">Remote Island</span>
+                    <p class="related-description">World's most remote inhabited archipelago with similar isolation challenges.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Māori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge regional">Pacific Polynesian</span>
+                    <p class="related-description">Indigenous Polynesian people of New Zealand with strong cultural traditions.</p>
+                </a>
+                <a href="/peoples/hawaiian.html" class="related-card">
+                    <div class="related-icon">🏝️</div>
+                    <h3>Native Hawaiian</h3>
+                    <p class="related-location">Hawaii</p>
+                    <span class="relationship-badge regional">Pacific Relatives</span>
+                    <p class="related-description">Polynesian people of Hawaii maintaining cultural practices despite colonization.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Nicolson, Robert B. (1965). <em>The Pitcairners</em>. Angus and Robertson.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Ball, Ian M. (1973). <em>Pitcairn: Children of Mutiny</em>. Little, Brown and Company.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Ross, Alan S.C. & A.W. Moverley. (1964). <em>The Pitcairnese Language</em>. Andre Deutsch.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Hoare, Merval. (1999). <em>Norfolk Island: A Revised and Enlarged History 1774-1998</em>. Central Queensland University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Brodie, Walter. (1851). <em>Pitcairn's Island, and the Islanders, in 1850</em>. Whittaker & Co.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Birkett, Dea. (1997). <em>Serpent in Paradise</em>. Anchor Books.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Edmond, Rod. (1997). <em>Representing the South Pacific: Colonial Discourse from Cook to Gauguin</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Luker, Trisha. (2006). "Pitcairn Island: Sexual Offending, Cultural Difference and Ignorance of the Law." <em>Criminal Law Journal</em> 30(1):24-43.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Remote volcanic island in the South Pacific, similar to Pitcairn" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Rocky coastline and dense vegetation characteristic of Pitcairn Island" },
+            { src: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800", caption: "The vast South Pacific Ocean surrounding Pitcairn's isolation" },
+            { src: "https://images.unsplash.com/photo-1502933691298-84fc14542831?w=800", caption: "Small boats essential for reaching supply ships in the deep ocean" },
+            { src: "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800", caption: "Lush tropical vegetation covering Pitcairn's volcanic terrain" },
+            { src: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800", caption: "Historic sailing vessel similar to HMS Bounty, whose mutineers founded Pitcairn" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

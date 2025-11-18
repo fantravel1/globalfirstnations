@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korowai People: Tree House Builders of Papua | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+    <style>
+        :root { --korowai-green: #047857; --forest-dark: #064e3b; --tree-brown: #78350f; --sky-blue: #0284c7; --white: #ecf0f1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--sky-blue) 0%, var(--korowai-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--korowai-green), var(--tree-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(4,120,87,0.5); border: 5px solid var(--forest-dark); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--korowai-green); }
+        nav a { color: var(--korowai-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--korowai-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--korowai-green); border-right: 3px solid var(--tree-brown); }
+        h2 { color: var(--korowai-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--korowai-green); }
+        h3 { color: var(--tree-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--korowai-green), var(--tree-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--forest-dark); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--tree-brown), var(--korowai-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--korowai-green), var(--forest-dark)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--korowai-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--korowai-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--korowai-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🌲</span>
+            <h1>The Korowai People</h1>
+            <p class="tagline">Masters of Tree Houses - Forest Dwellers of Papua - Builders of Sky Homes</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Korowai?</h2>
+            <p>The Korowai (also spelled Kolufo) are an indigenous Papuan people numbering approximately 3,000-4,000 individuals inhabiting the remote rainforests of southeastern Papua (Indonesian New Guinea), primarily in the Mappi Regency. The Korowai gained international attention as builders of spectacular <strong>tree houses</strong> (rumah tinggi) constructed high in the rainforest canopy—some reaching heights of 35-40 meters (115-130 feet) above the ground, among the tallest traditional dwellings on Earth. These remarkable structures, built on towering hardwood trees, served multiple purposes: protection from flooding during monsoons, defense against enemy raids, escape from mosquitoes and ground-dwelling insects, and symbolic connection to the forest canopy. The Korowai practiced a traditional <strong>hunter-gatherer and horticultural lifestyle</strong>, cultivating sago palms (their staple food), hunting with bows and arrows, and fishing in forest streams. They were among the last peoples contacted by outsiders—Dutch missionaries made first peaceful contact only in the 1970s—and many Korowai had no awareness of the existence of other ethnic groups or the outside world. Their society organized into small patrilineal clans living in scattered family groups throughout dense rainforest, maintaining complex spiritual beliefs centered on forest spirits and ancestors. Modern contact has brought dramatic changes, though some remote Korowai continue traditional practices including tree house construction.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">3-4K</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">35-40m</span><span>Tree house heights</span></div>
+                <div class="stat-card"><span class="stat-number">1970s</span><span>First contact</span></div>
+                <div class="stat-card"><span class="stat-number">Papua</span><span>Southeast rainforest</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Living in the Sky:</strong> Korowai tree houses rank among Earth's tallest traditional dwellings! Built without metal tools or nails, a single house might soar 40 meters high—equivalent to a 12-story building—supported by a single massive tree trunk, housing entire extended families above the forest floor!
+            </div>
+
+            <h3>Tree House Architecture</h3>
+            <p>The Korowai's <strong>tree house construction</strong> represents extraordinary architectural achievement using only stone tools, traditional knowledge, and forest materials. Construction begins by selecting a suitable banyan or another tall hardwood tree with strong branches. Men climb the tree and construct a platform secured to branches using rattan bindings and wooden pegs—no nails or metal are used. The floor consists of strips of bark laid across supporting beams. Walls and roof are made from <strong>sago palm leaves</strong> layered to provide waterproofing. A single central fireplace provides warmth, light, and cooking, with smoke venting through the leaf roof. Access is via a notched pole serving as a primitive ladder, which can be pulled up for security. Heights vary—some houses sit 6-8 meters up for convenience, while others soar 35-40 meters, particularly those built for defense or prestige. A typical tree house measures 6-8 meters long by 4 meters wide, housing an extended family of 8-12 people. Construction takes a few weeks with communal labor. Houses last 3-5 years before needing reconstruction. The Korowai report sleeping peacefully despite swaying in winds—the houses flex with tree movement. Modern contact has led many Korowai to build ground-level houses, though tree houses persist in remote areas and for ceremonial purposes.</p>
+
+            <h3>Sago-Based Subsistence</h3>
+            <p>Korowai economy centers on <strong>sago palm</strong> (Metroxylon sagu), their primary carbohydrate source. Sago processing is labor-intensive: men fell mature palms (which die after processing), remove the bark, and pound the starchy pith into pulp. Women wash the pulp through filters, extracting white starch that settles in water. The resulting sago flour is wrapped in leaves and cooked as pancakes or added to soups. A single mature palm yields 200-400 kilograms of sago—enough to feed a family for weeks. The Korowai supplement sago with <strong>hunting and gathering</strong>: hunting wild pigs, cassowaries, possums, and birds using bows and arrows; fishing with bow and arrow or dams in streams; and gathering forest foods including grubs (especially beetle larvae, considered delicacies), fruits, and edible leaves. Small gardens provide bananas, taro, and sweet potatoes. The forest provides all material needs—wood for construction and tools, rattan for binding, leaves for thatch, and bark for clothing. Traditional clothing consisted of minimal bark or leaf coverings; many Korowai wore nothing. Men carried stone axes, bone daggers, and bows with bone-tipped arrows. This subsistence pattern required detailed environmental knowledge passed through generations, including recognition of hundreds of plant species and animal behaviors.</p>
+
+            <h3>Social Organization and Beliefs</h3>
+            <p>Korowai society organized into small <strong>patrilineal clans</strong> (kolufo), with descent traced through fathers. Each clan controlled territory along waterways, with tree houses scattered throughout the rainforest. The basic social unit was the extended family occupying a single tree house. Leadership was informal, based on age, kinship seniority, and personal achievement (particularly in warfare and hunting). The Korowai practiced <strong>endemic warfare</strong> between clans, conducting raids for revenge, women, and territory. Warfare involved ambushes with arrows—fights rarely caused mass casualties but maintained chronic tension. Traditional spiritual beliefs centered on <strong>ghosts and forest spirits</strong>. The Korowai believed in laleo (demons) inhabiting the forest who could possess people, cause illness, and disrupt hunting. Shamanic specialists performed rituals to communicate with spirits and heal illness. The Korowai practiced elaborate mortuary customs including cannibalism of suspected khakhua (evil witches believed to kill through magic)—when someone died mysteriously, the community might identify, kill, and consume the suspected witch. This practice gained sensational media attention but was rooted in genuine belief systems about supernatural evil, not dietary preference.</p>
+
+            <h3>Contact and Modern Change</h3>
+            <p>The Korowai remained uncontacted until the 1970s, when Dutch Reformed missionaries established presence in their territory. First contact was gradual—many Korowai initially fled outsiders or responded with hostility. Early missionaries reported Korowai had <strong>no knowledge of the outside world</strong>, unaware of the ocean, other ethnic groups, or modern technology. Some Korowai reportedly believed outsiders were ghosts or laleo. Peaceful contact eventually allowed missionaries to establish stations, introduce Christianity, and provide basic medical care and metal tools. The Indonesian government later established administrative posts, schools, and clinics. These changes dramatically affected Korowai life: Christianity spread, though traditional beliefs persist; formal education introduced Indonesian language and literacy; metal axes replaced stone tools; clothing became common; and many Korowai moved to ground-level houses near mission stations or government settlements. However, <strong>remote Korowai</strong> maintain traditional practices—tree houses continue to be built, sago remains the staple food, and traditional language and customs persist. Tourism has brought both opportunities (income through cultural tours) and challenges (exploitation and distortion of culture for cameras). Anthropologists debate the extent of cultural change, with some accusing documentaries of staging "primitive" scenes for sensationalism.</p>
+
+            <h3>Contemporary Challenges and Cultural Preservation</h3>
+            <p>Modern Korowai navigate between traditional life and rapid modernization. Many now live in <strong>government settlements</strong> with access to schools, clinics, and markets, adopting modern clothing, Christianity, and Indonesian national identity. However, economic opportunities remain limited—commercial logging threatens traditional forest territories, and cash economy integration creates dependency. Young Korowai increasingly speak Indonesian rather than Korowai language, and traditional skills including tree house construction are declining. Conservation challenges include <strong>forest destruction</strong> from logging and oil palm expansion, threatening both Korowai livelihoods and biodiversity. Tourism presents complex dynamics—while providing income, it can distort culture (tree houses built specifically for tourists, staged "traditional" performances) and violate privacy. Anthropologists and advocacy groups work to support Korowai land rights and cultural preservation. Some Korowai communities are asserting <strong>cultural pride</strong>, maintaining traditional practices while selectively adopting beneficial modern technologies. The Korowai's extraordinary tree house tradition represents remarkable human adaptation to rainforest environments, though its future remains uncertain as younger generations choose modern lifestyles and forest environments face destruction.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800" alt="Dense rainforest" loading="lazy">
+                    <div class="image-caption">Dense tropical rainforest of southeastern Papua, Korowai homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Rainforest canopy" loading="lazy">
+                    <div class="image-caption">Rainforest canopy where Korowai tree houses reach extraordinary heights</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800" alt="Forest stream" loading="lazy">
+                    <div class="image-caption">Forest streams provide fishing and water sources for Korowai communities</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1611194693527-313e77055e4b?w=800" alt="Sago palm" loading="lazy">
+                    <div class="image-caption">Sago palms, the staple food source processed for starch by the Korowai</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Papua landscape" loading="lazy">
+                    <div class="image-caption">Remote Papua landscape of mountains and rainforest</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1616628188540-925618b98318?w=800" alt="Forest dwelling" loading="lazy">
+                    <div class="image-caption">Traditional forest dwelling materials from palm leaves and bark</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/huli.html" class="related-card">
+                    <div class="related-icon">🪶</div>
+                    <h3>Huli</h3>
+                    <p class="related-location">Papua New Guinea Highlands</p>
+                    <span class="relationship-badge regional">Papua Neighbors</span>
+                    <p class="related-description">Highland wig men with elaborate ceremonial traditions and distinctive culture.</p>
+                </a>
+                <a href="/peoples/asaro.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Asaro Mud Men</h3>
+                    <p class="related-location">Eastern Highlands, PNG</p>
+                    <span class="relationship-badge regional">Papua Cultures</span>
+                    <p class="related-description">Known for distinctive mud masks and ceremonial performances in Papua New Guinea.</p>
+                </a>
+                <a href="/peoples/dani.html" class="related-card">
+                    <div class="related-icon">⚔️</div>
+                    <h3>Dani</h3>
+                    <p class="related-location">Western Papua Highlands</p>
+                    <span class="relationship-badge regional">Papua Neighbors</span>
+                    <p class="related-description">Highland warriors of Papua's Baliem Valley with strong traditional practices.</p>
+                </a>
+                <a href="/peoples/sentinelese.html" class="related-card">
+                    <div class="related-icon">🏝️</div>
+                    <h3>Sentinelese</h3>
+                    <p class="related-location">Andaman Islands</p>
+                    <span class="relationship-badge similar">Uncontacted</span>
+                    <p class="related-description">One of the last uncontacted peoples, maintaining complete isolation.</p>
+                </a>
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Amazon</p>
+                    <span class="relationship-badge similar">Rainforest Dwellers</span>
+                    <p class="related-description">Amazonian people with semi-contacted populations and rainforest lifestyle.</p>
+                </a>
+                <a href="/peoples/awa.html" class="related-card">
+                    <div class="related-icon">🌳</div>
+                    <h3>Awá</h3>
+                    <p class="related-location">Brazil</p>
+                    <span class="relationship-badge similar">Recent Contact</span>
+                    <p class="related-description">Recently contacted hunter-gatherers of Brazilian Amazon rainforest.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Stasch, Rupert. (2009). <em>Society of Others: Kinship and Mourning in a West Papuan Place</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Van Enk, Gerrit J. & Lourens de Vries. (1997). <em>The Korowai of Irian Jaya: Their Language in Its Cultural Context</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Raffaele, Paul. (2006). "Sleeping with Cannibals." <em>Smithsonian Magazine</em>, September 2006.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Stasch, Rupert. (2013). "The Poetics of Village Space when Villages are New: Settlement Form as History Making in Papua, Indonesia." <em>American Ethnologist</em> 40(3):555-570.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">De Vries, Lourens. (2012). "Some Remarks on the Use of Bible Translations in Linguistic Fieldwork." <em>Language Documentation & Conservation</em> 6:42-53.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Headland, Thomas N. & Lawrence A. Reid. (1989). "Hunter-Gatherers and Their Neighbors from Prehistory to the Present." <em>Current Anthropology</em> 30(1):43-66.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Rumsey, Alan & James F. Weiner. (2001). <em>Emplaced Myth: Space, Narrative, and Knowledge in Aboriginal Australia and Papua New Guinea</em>. University of Hawaii Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Knauft, Bruce M. (1999). <em>From Primitive to Postcolonial in Melanesia and Anthropology</em>. University of Michigan Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=800", caption: "Dense tropical rainforest of southeastern Papua, Korowai homeland" },
+            { src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800", caption: "Rainforest canopy where Korowai tree houses reach extraordinary heights" },
+            { src: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800", caption: "Forest streams provide fishing and water sources for Korowai communities" },
+            { src: "https://images.unsplash.com/photo-1611194693527-313e77055e4b?w=800", caption: "Sago palms, the staple food source processed for starch by the Korowai" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Remote Papua landscape of mountains and rainforest" },
+            { src: "https://images.unsplash.com/photo-1616628188540-925618b98318?w=800", caption: "Traditional forest dwelling materials from palm leaves and bark" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>
