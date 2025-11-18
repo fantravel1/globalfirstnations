@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazakh People: Eagle Hunters and Nomads of the Central Asian Steppes | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦅</text></svg>">
+    <style>
+        :root { --kazakh-blue: #00AFCA; --steppe-gold: #FFC72C; --sky-blue: #87CEEB; --white: #ecf0f1; --mountain-gray: #708090; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--sky-blue) 0%, var(--mountain-gray) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--kazakh-blue), var(--steppe-gold)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,175,202,0.5); border: 5px solid var(--steppe-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--kazakh-blue); }
+        nav a { color: var(--kazakh-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--kazakh-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--kazakh-blue); border-right: 3px solid var(--steppe-gold); }
+        h2 { color: var(--kazakh-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--kazakh-blue); }
+        h3 { color: var(--steppe-gold); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--kazakh-blue), var(--steppe-gold)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--steppe-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--steppe-gold), var(--kazakh-blue)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--kazakh-blue), var(--steppe-gold)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--kazakh-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--kazakh-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--kazakh-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🦅</span>
+            <h1>The Kazakh People</h1>
+            <p class="tagline">Eagle Hunters of the Altai - Nomadic Horsemen - Guardians of the Eternal Sky</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Kazakhs?</h2>
+            <p>The Kazakh people are a Turkic ethnic group numbering over 18 million, primarily inhabiting Kazakhstan (the world's ninth-largest country) with significant populations in China, Mongolia, Russia, and Uzbekistan. Descended from Turkic and Mongolic nomadic tribes who roamed the Central Asian steppes for millennia, the Kazakhs developed one of history's most sophisticated pastoral nomadic cultures. Their name derives from the Turkic word "qaz" (to wander), reflecting their mobile lifestyle following seasonal pastures with herds of horses, sheep, camels, and cattle across vast grasslands. The Kazakhs are renowned for <strong>eagle hunting</strong> (berkutchi tradition), where trained golden eagles hunt foxes and wolves—a practice requiring years of apprenticeship passed through generations. Their portable felt dwellings called <strong>yurts</strong> (Kazakh: kiiz üy) represent engineering marvels adaptable to extreme continental climates. Despite Soviet sedentarization policies and modernization, many Kazakhs maintain nomadic practices, and their culture—characterized by epic poetry, throat singing, horsemanship games, and animistic-Islamic syncretism—thrives in the 21st century.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">18M+</span><span>Global population</span></div>
+                <div class="stat-card"><span class="stat-number">Kazakh</span><span>Turkic language</span></div>
+                <div class="stat-card"><span class="stat-number">2,724,900 km²</span><span>Kazakhstan area</span></div>
+                <div class="stat-card"><span class="stat-number">7-10 years</span><span>Eagle training period</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Eagle Huntress Legacy:</strong> While berkutchi eagle hunting is traditionally male, women like Aisholpan Nurgaiv have revived female participation, demonstrating that ancient sources mention women hunters. A trained golden eagle can live 30+ years and weigh up to 7kg with a 2-meter wingspan!
+            </div>
+
+            <h3>Nomadic Pastoralism and Seasonal Migration</h3>
+            <p>Kazakh nomadism involved cyclical <strong>jailau</strong> (summer pasture) and <strong>qystau</strong> (winter pasture) migrations covering hundreds of kilometers. Families moved with the seasons: mountain meadows in summer for cool grazing, lowland valleys in winter for shelter. This mobility required intimate ecological knowledge—reading weather patterns, identifying poisonous plants, finding water sources, and managing herd health. The <strong>yurt</strong>, disassembled in 2 hours and carried by camels or horses, provided portable shelter with ingenious circular design optimizing heat retention and structural stability. Felt layers (kiyiz) made from sheep wool provided insulation. The yurt's crown (shanyrak) became Kazakhstan's national symbol, representing family continuity and homeland.</p>
+
+            <h3>Horsemanship and Equestrian Culture</h3>
+            <p>Kazakhs are among history's greatest horse peoples, with the proverb "A Kazakh without a horse is like a bird without wings." Children learned riding before age five, and horses provided transportation, meat, milk (kumis—fermented mare's milk), and military advantage. The <strong>Kazakh horse</strong> breed, compact and hardy, survives extreme temperatures (-40°C to +40°C) and travels long distances on minimal fodder. Traditional games include <strong>kokpar</strong> (tug-of-war over a goat carcass on horseback), <strong>kyz kuu</strong> (catch the girl—a chase game), and <strong>alaman baiga</strong> (cross-country endurance races over 25+ kilometers). These contests demonstrated skills essential for nomadic life and warfare.</p>
+
+            <h3>Eagle Hunting Tradition</h3>
+            <p>The <strong>berkutchi</strong> (eagle hunter) tradition spans over 4,000 years in Central Asia, with Kazakhs as primary practitioners. Hunters capture young golden eagles (<strong>burkut</strong>) from nests, training them through patient bonding, hooded conditioning, and practice hunts. The eagle becomes a lifelong companion, hunting foxes and wolves whose pelts are valuable for winter clothing. Training occurs in harsh winter when pelts are prime. After 7-10 years, hunters release eagles back to the wild to breed. The annual <strong>Golden Eagle Festival</strong> in Mongolia's Bayan-Ölgii province (70% Kazakh population) showcases this art, with competitions testing eagle obedience, speed, and hunting accuracy.</p>
+
+            <h3>Oral Literature and Musical Traditions</h3>
+            <p>Kazakh culture treasures oral literature preserved by <strong>aqyns</strong> (bards) and <strong>jyrshy</strong> (epic performers). Epic poems like the <strong>Alpamys Batyr</strong> and <strong>Qoblandy Batyr</strong> narrate heroic exploits, moral lessons, and historical memory, performed during gatherings with improvised melodies. The <strong>dombra</strong>, a two-stringed lute, accompanies songs and serves as the national instrument. <strong>Kuy</strong> (instrumental compositions) convey stories without words—famous pieces like "Adai" evoke galloping horses. <strong>Throat singing</strong> and improvisational poetry contests (aitys) demonstrate verbal dexterity and cultural knowledge, with competitors exchanging witty verses on philosophical themes.</p>
+
+            <h3>Modern Kazakhstan and Cultural Revival</h3>
+            <p>Kazakhstan gained independence from the Soviet Union in 1991, prompting cultural renaissance after decades of Russification and forced sedentarization. The government promotes <strong>Kazakh language education</strong>, traditional crafts, and nomadic heritage as national identity markers. The capital Nur-Sultan (formerly Astana) features futuristic architecture incorporating traditional motifs like the shanyrak. However, challenges remain: <strong>language shift</strong> to Russian among urban youth, environmental degradation of pastures, and economic pressures reducing nomadic practitioners. Organizations document eagle hunting techniques, yurt-making crafts, and oral traditions. Many Kazakhs balance modernity with heritage—celebrating <strong>Nauryz</strong> (spring equinox festival), practicing traditional hospitality (qonaqasy), and maintaining clan lineages (jeti ata—seven fathers) connecting them to ancestral nomadic roots.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Kazakh eagle hunter" loading="lazy">
+                    <div class="image-caption">Berkutchi (eagle hunter) with trained golden eagle on traditional hunting expedition</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=800" alt="Traditional yurt" loading="lazy">
+                    <div class="image-caption">Traditional Kazakh yurt (kiiz üy) on the steppes with decorative felt coverings</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=800" alt="Kazakh horsemen" loading="lazy">
+                    <div class="image-caption">Kazakh horsemen demonstrating traditional riding skills during Nauryz celebration</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?w=800" alt="Central Asian steppe landscape" loading="lazy">
+                    <div class="image-caption">Vast Central Asian steppe landscape where Kazakhs practiced nomadic pastoralism for millennia</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1598894000393-b182b5e65af1?w=800" alt="Traditional dombra instrument" loading="lazy">
+                    <div class="image-caption">Traditional dombra (two-stringed lute) used to perform epic poems and instrumental kuy</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1583846928307-4f1ef6534d46?w=800" alt="Kazakh traditional dress" loading="lazy">
+                    <div class="image-caption">Traditional Kazakh dress featuring intricate embroidery and fur-trimmed chapan coat</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/mongol.html" class="related-card">
+                    <div class="related-icon">🏇</div>
+                    <h3>Mongol</h3>
+                    <p class="related-location">Mongolia</p>
+                    <span class="relationship-badge similar">Nomadic Kinship</span>
+                    <p class="related-description">Fellow steppe nomads sharing yurt culture, horsemanship, and eagle hunting traditions.</p>
+                </a>
+                <a href="/peoples/tibetan.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Tibetan</h3>
+                    <p class="related-location">Tibet/Himalaya</p>
+                    <span class="relationship-badge regional">High Altitude Neighbors</span>
+                    <p class="related-description">Highland nomadic pastoralists with yak herding and mountain adaptations.</p>
+                </a>
+                <a href="/peoples/sherpa.html" class="related-card">
+                    <div class="related-icon">⛰️</div>
+                    <h3>Sherpa</h3>
+                    <p class="related-location">Nepal/Tibet</p>
+                    <span class="relationship-badge similar">Mountain Heritage</span>
+                    <p class="related-description">Highland people skilled in high-altitude pastoralism and mountain navigation.</p>
+                </a>
+                <a href="/peoples/hmong.html" class="related-card">
+                    <div class="related-icon">🧵</div>
+                    <h3>Hmong</h3>
+                    <p class="related-location">Southeast Asia</p>
+                    <span class="relationship-badge historical">Migration History</span>
+                    <p class="related-description">Mountain people who migrated across Asia maintaining distinct cultural identity.</p>
+                </a>
+                <a href="/peoples/ainu.html" class="related-card">
+                    <div class="related-icon">🐻</div>
+                    <h3>Ainu</h3>
+                    <p class="related-location">Japan/Russia</p>
+                    <span class="relationship-badge regional">Northern Asia</span>
+                    <p class="related-description">Indigenous people of northern Japan with hunting and animistic traditions.</p>
+                </a>
+                <a href="/peoples/karen.html" class="related-card">
+                    <div class="related-icon">🎋</div>
+                    <h3>Karen</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge similar">Textile Traditions</span>
+                    <p class="related-description">Hill people known for weaving and maintaining cultural identity under pressure.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Olcott, Martha Brill. (1995). <em>The Kazakhs</em>. Hoover Institution Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Privratsky, Bruce G. (2001). <em>Muslim Turkistan: Kazak Religion and Collective Memory</em>. Routledge.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Crate, Susan A., & Nuttall, Mark. (2016). <em>Anthropology and Climate Change: From Encounters to Actions</em>. (Chapter on Kazakh pastoralism). Routledge.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Soma, Takuya. (2012). <em>Contemporary Eagle Hunters in Western Mongolia: Sustainability and Changes</em>. Asian Ethnology.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Khazanov, Anatoly M. (1984). <em>Nomads and the Outside World</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Svanberg, Ingvar. (1989). <em>Kazak Refugees in Turkey: A Study of Cultural Persistence and Social Change</em>. Almqvist & Wiksell International.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Levin, Theodore, & Süzükei, Valentina. (2006). <em>Where Rivers and Mountains Sing: Sound, Music, and Nomadism in Tuva and Beyond</em>. Indiana University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Barfield, Thomas J. (1993). <em>The Nomadic Alternative</em>. Prentice Hall.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Berkutchi (eagle hunter) with trained golden eagle on traditional hunting expedition" },
+            { src: "https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=800", caption: "Traditional Kazakh yurt (kiiz üy) on the steppes with decorative felt coverings" },
+            { src: "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=800", caption: "Kazakh horsemen demonstrating traditional riding skills during Nauryz celebration" },
+            { src: "https://images.unsplash.com/photo-1542435503-956c469947f6?w=800", caption: "Vast Central Asian steppe landscape where Kazakhs practiced nomadic pastoralism for millennia" },
+            { src: "https://images.unsplash.com/photo-1598894000393-b182b5e65af1?w=800", caption: "Traditional dombra (two-stringed lute) used to perform epic poems and instrumental kuy" },
+            { src: "https://images.unsplash.com/photo-1583846928307-4f1ef6534d46?w=800", caption: "Traditional Kazakh dress featuring intricate embroidery and fur-trimmed chapan coat" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

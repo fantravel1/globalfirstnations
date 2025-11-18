@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copper Inuit People: Native Copper Tool Makers of the Arctic | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔨</text></svg>">
+    <style>
+        :root { --copper-orange: #B87333; --ice-blue: #E0F2F1; --arctic-white: #F5F5F5; --tundra-green: #2E7D32; --dark-blue: #01579B; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--dark-blue) 0%, var(--tundra-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--dark-blue), var(--copper-orange)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(1,87,155,0.5); border: 5px solid var(--ice-blue); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--copper-orange); }
+        nav a { color: var(--copper-orange); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--copper-orange); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--copper-orange); border-right: 3px solid var(--dark-blue); }
+        h2 { color: var(--copper-orange); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--copper-orange); }
+        h3 { color: var(--dark-blue); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--copper-orange), var(--dark-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--ice-blue); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--tundra-green), var(--copper-orange)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--dark-blue), var(--copper-orange)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--copper-orange); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--copper-orange); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--copper-orange); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🔨</span>
+            <h1>The Copper Inuit People</h1>
+            <p class="tagline">Native Copper Tool Makers - Arctic Hunters - Coronation Gulf Inhabitants</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Copper Inuit?</h2>
+            <p>The Copper Inuit (Inuinnait in Inuktitut, meaning "genuine people") are an Inuit group numbering approximately 2,500 people inhabiting the Coronation Gulf region of the central Canadian Arctic, including Victoria Island, King William Island, and adjacent mainland areas. They are distinguished from other Inuit groups by their unique access to and use of native copper deposits, which they cold-hammered into tools, weapons, and ornaments without smelting—a rare practice among indigenous peoples of the Americas. First encountered by European explorers in the early 1800s, the Copper Inuit maintained their traditional lifestyle longer than most Arctic peoples, living in seasonal snow houses (igloos) in winter and caribou-skin tents in summer, hunting seals, caribou, muskoxen, and fish. The disastrous Franklin Expedition of 1845-1848 passed through their territory, and Copper Inuit oral traditions and archaeological evidence provided crucial information about the expedition's fate. Today the Copper Inuit navigate between traditional practices and modern life in communities like Cambridge Bay, maintaining language, hunting traditions, and cultural identity.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">2,500</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Inuinnaqtun</span><span>Dialect</span></div>
+                <div class="stat-card"><span class="stat-number">Coronation Gulf</span><span>Core territory</span></div>
+                <div class="stat-card"><span class="stat-number">Nunavut, Canada</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Native Copper Technology:</strong> The Copper Inuit were among the few indigenous peoples to work native copper extensively. They collected pure copper nuggets from surface deposits and cold-hammered them into knife blades, harpoon points, ice chisels, needles, and ornaments. This copper came from some of Earth's richest native copper deposits along the Coppermine River—Europeans searching for these deposits helped bring first sustained contact!
+            </div>
+
+            <h3>Arctic Adaptation and Seasonal Lifestyle</h3>
+            <p>The Copper Inuit developed a sophisticated seasonal round adapting to one of Earth's harshest environments. In <strong>winter</strong> (October-May), they built snow houses (igloos/igluvigaq) on sea ice, hunting ringed seals at breathing holes using toggle-head harpoons. Extended family groups gathered in large communal igloos for ceremonies and socializing. The <strong>qulliq</strong> (soapstone seal oil lamp) provided heat and light in the long polar night. Spring brought seal hunting on ice edges and caribou hunting as herds migrated north. <strong>Summer</strong> camps along rivers and coasts used caribou-skin tents. People fished for Arctic char using stone weirs and leisters (fishing spears), hunted caribou with bows and arrows, and gathered eggs from bird colonies. Some groups hunted muskoxen on the tundra. <strong>Fall</strong> focused on caribou hunting to stockpile meat and hides for winter clothing and shelter. This lifestyle required extraordinary knowledge of weather patterns, animal behavior, navigation by stars and ice features, and survival techniques passed through generations.</p>
+
+            <h3>Native Copper Working and Trade</h3>
+            <p>The Coppermine River region and Victoria Island contain surface deposits of nearly pure native copper, unique in the Arctic. The Copper Inuit collected nuggets and cold-hammered them into tools—heating wasn't necessary because native copper is soft and malleable. <strong>Copper knives</strong> (savik) were highly valued for cutting frozen meat and scraping skins. <strong>Harpoon points</strong> and <strong>ulu blades</strong> (women's crescent knives) incorporated copper. However, copper was scarce enough that most tools remained stone, bone, and antler. The Copper Inuit traded copper implements to neighboring groups, creating trade networks extending hundreds of miles. When European explorers like Samuel Hearne (1771) and John Franklin (1820s) reached the Coppermine region seeking copper mines, they were disappointed to find only surface deposits, but this contact initiated sustained European interaction. The Hudson's Bay Company established trading posts in the 1920s-1930s, bringing metal tools that replaced traditional copper implements.</p>
+
+            <h3>First Contact and the Franklin Expedition</h3>
+            <p>European contact came gradually to the Copper Inuit. <strong>Samuel Hearne</strong>, guided by Chipewyan leader Matonabbee, reached the Coppermine River in 1771, encountering Copper Inuit and witnessing the Bloody Falls massacre where Chipewyan attacked a Copper Inuit camp. <strong>John Franklin's</strong> first expedition (1819-1822) mapped the Coppermine region with significant Copper Inuit assistance. Franklin's disastrous third expedition (1845-1848) sought the Northwest Passage but became trapped in ice near King William Island, in Copper Inuit territory. All 129 men died. Copper Inuit encountered expedition survivors and later found bodies, graves, and equipment. Their oral traditions, relayed to explorer John Rae in 1854, revealed that survivors resorted to cannibalism—information that scandalized Victorian Britain. Archaeological discoveries in recent decades, including DNA evidence, confirmed Inuit accounts. Inuit knowledge guided the 2014 and 2016 discoveries of Franklin's ships HMS Erebus and Terror, demonstrating the accuracy and value of indigenous oral history.</p>
+
+            <h3>Cultural Practices and Spiritual Beliefs</h3>
+            <p>Copper Inuit spiritual beliefs centered on <strong>animism</strong>—the world was filled with spirits (inuat) inhabiting animals, natural features, and objects. <strong>Shamans</strong> (angatkut) communicated with spirits to ensure hunting success, cure illnesses, and control weather. The moon (taqqiq) and sea goddess (Sedna/Nuliajuk) were important deities requiring proper respect. <strong>Taboos</strong> governed behavior—menstruating women couldn't hunt, caribou and seal products couldn't mix, and animals required respectful treatment to ensure they'd return. Winter featured <strong>drum dancing</strong>, <strong>throat singing</strong> contests between women, and storytelling preserving history and teaching survival skills. The Copper Inuit had rich oral literature including Kiviuq tales (the wandering hero), animal stories, and historical accounts. <strong>Christianity</strong> arrived with Anglican and Roman Catholic missionaries in the 1920s-1930s, creating syncretic beliefs blending indigenous and Christian elements that persist today.</p>
+
+            <h3>Modern Challenges and Cultural Continuity</h3>
+            <p>The 20th century brought rapid change. The Canadian government's forced sedentarization in the 1950s-1960s moved Copper Inuit from seasonal camps to permanent settlements like <strong>Cambridge Bay</strong> (Iqaluktuuttiaq), the largest community. Residential schools attempted cultural assimilation, separating children from families and forbidding Inuinnaqtun language use—a traumatic experience whose legacy continues. The 1999 creation of <strong>Nunavut Territory</strong> ("Our Land") gave Inuit greater self-governance. Today Copper Inuit balance modern employment in government, mining, and tourism with traditional activities. <strong>Subsistence hunting</strong> of seals, caribou, and fish remains culturally and nutritionally important, though climate change affects ice conditions and animal migrations. The <strong>Inuinnaqtun language</strong>, endangered with fewer young fluent speakers, is being revitalized through immersion programs and digital resources. Artists maintain traditional carving, sewing, and printmaking. Climate change poses existential threats—melting permafrost, changing ice patterns, and shifting animal populations—but Copper Inuit combine traditional knowledge with modern science to adapt while maintaining cultural identity.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=800" alt="Arctic tundra landscape" loading="lazy">
+                    <div class="image-caption">Vast Arctic tundra and frozen sea ice of Copper Inuit territory in Nunavut</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1545166775-79849f43e764?w=800" alt="Snow igloo" loading="lazy">
+                    <div class="image-caption">Traditional snow house (igloo) used by Copper Inuit during winter seal hunting</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800" alt="Caribou herd" loading="lazy">
+                    <div class="image-caption">Caribou herds crucial to Copper Inuit survival for meat, hides, and tools</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=800" alt="Arctic seal" loading="lazy">
+                    <div class="image-caption">Ringed seals hunted at breathing holes through ice using harpoons</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1584467735815-f778f274e296?w=800" alt="Native copper" loading="lazy">
+                    <div class="image-caption">Native copper nuggets cold-hammered into tools, unique Copper Inuit technology</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800" alt="Arctic ice" loading="lazy">
+                    <div class="image-caption">Sea ice platform for winter seal hunting now threatened by climate change</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic Canada/Greenland</p>
+                    <span class="relationship-badge similar">Inuit Relatives</span>
+                    <p class="related-description">Broader Inuit cultural group sharing language, technology, and Arctic adaptation.</p>
+                </a>
+                <a href="/peoples/yupik.html" class="related-card">
+                    <div class="related-icon">🐋</div>
+                    <h3>Yup'ik</h3>
+                    <p class="related-location">Alaska/Siberia</p>
+                    <span class="relationship-badge regional">Eskimo-Aleut Family</span>
+                    <p class="related-description">Related Alaska Native people with marine hunting traditions.</p>
+                </a>
+                <a href="/peoples/nenets.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Nenets</h3>
+                    <p class="related-location">Russian Arctic</p>
+                    <span class="relationship-badge similar">Circumpolar Indigenous</span>
+                    <p class="related-description">Siberian reindeer herders adapting to harsh Arctic environment.</p>
+                </a>
+                <a href="/peoples/sami.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Sámi</h3>
+                    <p class="related-location">Northern Europe</p>
+                    <span class="relationship-badge similar">Arctic Indigenous</span>
+                    <p class="related-description">Scandinavian indigenous people with reindeer herding and Arctic adaptation.</p>
+                </a>
+                <a href="/peoples/blackfoot.html" class="related-card">
+                    <div class="related-icon">🦬</div>
+                    <h3>Blackfoot</h3>
+                    <p class="related-location">Northern Plains</p>
+                    <span class="relationship-badge regional">Canadian Neighbors</span>
+                    <p class="related-description">Plains people to the south with buffalo hunting traditions.</p>
+                </a>
+                <a href="/peoples/haida.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Haida</h3>
+                    <p class="related-location">British Columbia/Alaska</p>
+                    <span class="relationship-badge regional">Canadian Indigenous</span>
+                    <p class="related-description">Pacific Northwest maritime culture with sophisticated technology.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Jenness, Diamond. (1922). <em>The Life of the Copper Eskimos</em>. Report of the Canadian Arctic Expedition 1913-18, Vol. XII. Ottawa.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Damas, David. (1984). "Copper Eskimo." In <em>Handbook of North American Indians, Vol. 5: Arctic</em>, edited by David Damas. Smithsonian Institution.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Rasmussen, Knud. (1932). <em>Intellectual Culture of the Copper Eskimos</em>. Report of the Fifth Thule Expedition 1921-24, Vol. IX. Copenhagen.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Stefansson, Vilhjalmur. (1913). <em>My Life with the Eskimo</em>. Macmillan.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Condon, Richard G. (1996). <em>The Northern Copper Inuit: A History</em>. University of Oklahoma Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">McCartney, Allen P. (Ed.). (1979). <em>Thule Eskimo Culture: An Anthropological Retrospective</em>. National Museum of Man Mercury Series.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Woodman, David C. (1991). <em>Unravelling the Franklin Mystery: Inuit Testimony</em>. McGill-Queen's University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Usher, Peter J. (1971). <em>The Canadian Western Arctic: A Century of Change</em>. Anthropologica 13(1-2): 169-183.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=800", caption: "Vast Arctic tundra and frozen sea ice of Copper Inuit territory in Nunavut" },
+            { src: "https://images.unsplash.com/photo-1545166775-79849f43e764?w=800", caption: "Traditional snow house (igloo) used by Copper Inuit during winter seal hunting" },
+            { src: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800", caption: "Caribou herds crucial to Copper Inuit survival for meat, hides, and tools" },
+            { src: "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=800", caption: "Ringed seals hunted at breathing holes through ice using harpoons" },
+            { src: "https://images.unsplash.com/photo-1584467735815-f778f274e296?w=800", caption: "Native copper nuggets cold-hammered into tools, unique Copper Inuit technology" },
+            { src: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800", caption: "Sea ice platform for winter seal hunting now threatened by climate change" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

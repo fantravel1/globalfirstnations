@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songhai People: Empire Builders and Niger River Civilization | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+    <style>
+        :root { --niger-blue: #4682B4; --sahel-gold: #B8860B; --timbuktu-tan: #D2691E; --white: #ecf0f1; --desert-orange: #FF8C00; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--niger-blue) 0%, var(--timbuktu-tan) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--niger-blue), var(--timbuktu-tan)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(70,130,180,0.5); border: 5px solid var(--sahel-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--niger-blue); }
+        nav a { color: var(--niger-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--niger-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--niger-blue); border-right: 3px solid var(--sahel-gold); }
+        h2 { color: var(--niger-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--niger-blue); }
+        h3 { color: var(--timbuktu-tan); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--niger-blue), var(--timbuktu-tan)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--sahel-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--sahel-gold), var(--timbuktu-tan)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--niger-blue), var(--timbuktu-tan)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--niger-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--niger-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--niger-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏛️</span>
+            <h1>The Songhai People</h1>
+            <p class="tagline">Empire Builders - Niger River Civilization - Timbuktu Scholars</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Songhai?</h2>
+            <p>The Songhai (also spelled Songhay) are a West African ethnic group numbering approximately 4 million people, primarily inhabiting the Niger River valley in modern Mali, Niger, and Benin. They are the descendants and cultural heirs of the <strong>Songhai Empire</strong> (c. 1464-1591), which at its zenith became the largest empire in African history, controlling an area larger than Western Europe. Under emperors like Sunni Ali Ber and Askia Muhammad, the Songhai Empire dominated trans-Saharan trade, making <strong>Timbuktu</strong> and <strong>Gao</strong> centers of Islamic scholarship where thousands of students studied law, astronomy, mathematics, and medicine. The Songhai language belongs to the Nilo-Saharan family, distinguishing it from surrounding Mande and Berber languages. Traditionally, Songhai society combined fishing, farming, and trading along the Niger River, developing sophisticated irrigation agriculture and riverine commerce. Today, Songhai people maintain cultural identity while adapting to modern nation-states, preserving historical memory of their imperial past and river-centered heritage.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">4M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">1464-1591</span><span>Empire period</span></div>
+                <div class="stat-card"><span class="stat-number">Songhai</span><span>Nilo-Saharan language</span></div>
+                <div class="stat-card"><span class="stat-number">Niger River</span><span>Traditional homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Timbuktu's Golden Age:</strong> Under Songhai rule, Timbuktu housed over 100,000 manuscripts and 180 Quranic schools! The Sankore University attracted scholars from across the Islamic world. When European explorers finally reached Timbuktu in the 19th century, they expected streets of gold but found a scholarly city whose greatest treasures were ancient manuscripts—thousands of which survive today!
+            </div>
+
+            <h3>The Songhai Empire and Military Power</h3>
+            <p>The Songhai Empire emerged when <strong>Sunni Ali Ber</strong> (1464-1492) overthrew Mali's weakening control and established Songhai dominance. A brilliant military strategist, Sunni Ali created West Africa's first professional standing army and a fleet of war canoes that controlled the Niger River. His successor, <strong>Askia Muhammad I</strong> (1493-1528), consolidated the empire, creating an efficient administrative system with appointed governors, professional bureaucracy, and standardized weights and measures. The empire's territory stretched from the Atlantic Ocean to modern Nigeria, controlling crucial trade routes connecting sub-Saharan gold and slaves with North African salt and Mediterranean goods. At its peak, the Songhai army numbered 100,000 infantry and 10,000 cavalry. The empire fell in 1591 when Moroccan forces, equipped with firearms, defeated the Songhai at the Battle of Tondibi—demonstrating how gunpowder technology shifted military power, though Songhai resistance continued for decades.</p>
+
+            <h3>Timbuktu and Islamic Scholarship</h3>
+            <p>Under Songhai rule, <strong>Timbuktu</strong> flourished as one of the Islamic world's great intellectual centers. The <strong>Sankore Mosque</strong> functioned as a university where scholars taught Islamic law, theology, astronomy, mathematics, and medicine to thousands of students from across Africa and the Middle East. Askia Muhammad, himself a devout Muslim who made pilgrimage to Mecca, patronized scholars and commissioned mosque construction. The city's libraries contained hundreds of thousands of manuscripts covering topics from astronomy to poetry, law to medicine. Scholars like <strong>Ahmed Baba</strong> (1556-1627), who wrote over 40 books, achieved international renown. Timbuktu's book trade thrived—books were valued more highly than other goods, and families built private libraries spanning generations. Today, these manuscripts, preserved in families and institutions, provide invaluable historical records of African intellectual achievement, challenging racist narratives that denied African literacy and scholarship.</p>
+
+            <h3>Niger River Lifeway and Economy</h3>
+            <p>The <strong>Niger River</strong> shaped Songhai economy and culture. Songhai people developed sophisticated knowledge of the river's seasonal flooding patterns, creating <strong>floating rice cultivation</strong> systems that utilized annual inundations. Fishing communities used specialized techniques including weirs, nets, and collective fishing expeditions timed to the river's cycles. The Niger served as a transportation highway—large canoes carried goods between Timbuktu, Gao, and Djenne, facilitating trade that enriched Songhai cities. Songhai society included specialized occupational groups: <strong>sorko</strong> (fishermen who also served as river priests controlling water spirits), <strong>gow</strong> (hunters), and <strong>gabibi</strong> (farmers). Traditional Songhai religion centered on nature spirits, particularly river spirits and the deity Harakoy Dikko (Master of the Waters), though Islam gradually became dominant among urban populations while rural areas maintained syncretic practices.</p>
+
+            <h3>Social Structure and Cultural Practices</h3>
+            <p>Traditional Songhai society organized hierarchically with nobles, free people, artisans, and enslaved people. The <strong>Askia</strong> (emperor) claimed divine sanction and ruled through a complex bureaucracy. Society divided between sedentary farmers/fishers and nomadic pastoralists. Caste-like occupational groups included griots (jesere), blacksmiths, and leatherworkers. <strong>Spirit possession ceremonies</strong> (holey) remain important, where mediums become possessed by ancestral or nature spirits who diagnose illnesses and prescribe remedies—these ceremonies combine pre-Islamic traditions with Islamic elements. Songhai musical traditions include the <strong>molo</strong> (three-stringed lute) and complex drum ensembles. Life cycle ceremonies mark births, circumcisions, marriages, and deaths with elaborate rituals. The Songhai maintained oral historical traditions, though Islamic literacy supplemented oral knowledge—families preserved genealogies and historical narratives linking them to the empire's glory.</p>
+
+            <h3>Modern Songhai Communities and Challenges</h3>
+            <p>Today's Songhai population concentrates in Mali (around Gao and Timbuktu), western Niger (particularly Niamey region), and northern Benin. Colonial borders divided the Songhai across three nations, complicating cultural unity. The Songhai language has several dialects and is used in education and radio broadcasting in Niger. Environmental challenges severely affect Songhai livelihoods—Sahel desertification, unpredictable rainfall, and changing Niger River flow patterns threaten traditional agriculture and fishing. Political instability, particularly Mali's ongoing conflicts involving Tuareg separatists and jihadist groups, has devastated Songhai regions. Timbuktu suffered damage during the 2012-2013 occupation when militants destroyed historic shrines and manuscripts. Despite challenges, Songhai communities work to preserve cultural heritage—manuscript preservation projects digitize ancient texts, cultural festivals celebrate Songhai music and history, and diaspora communities in West African cities and abroad maintain linguistic and cultural connections. The Songhai historical legacy as builders of Africa's largest empire remains a source of cultural pride and identity.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1581795669633-907e6dc9d6c4?w=800" alt="Timbuktu mosque" loading="lazy">
+                    <div class="image-caption">Sankore Mosque in Timbuktu, center of Islamic learning during Songhai Empire</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Niger River" loading="lazy">
+                    <div class="image-caption">Niger River at sunset, lifeline of Songhai civilization and commerce</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1549890762-1756c6e50e7c?w=800" alt="Ancient manuscripts" loading="lazy">
+                    <div class="image-caption">Historic Timbuktu manuscripts preserving centuries of African scholarship</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Traditional fishing" loading="lazy">
+                    <div class="image-caption">Songhai fishermen on Niger River using traditional techniques</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Gao cityscape" loading="lazy">
+                    <div class="image-caption">Gao, ancient capital of Songhai Empire along Niger River</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Traditional ceremony" loading="lazy">
+                    <div class="image-caption">Songhai spirit possession ceremony blending Islamic and traditional beliefs</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/mandinka.html" class="related-card">
+                    <div class="related-icon">🎵</div>
+                    <h3>Mandinka</h3>
+                    <p class="related-location">Mali/West Africa</p>
+                    <span class="relationship-badge historical">Mali Empire Predecessors</span>
+                    <p class="related-description">Built Mali Empire which Songhai eventually superseded.</p>
+                </a>
+                <a href="/peoples/fulani.html" class="related-card">
+                    <div class="related-icon">🐄</div>
+                    <h3>Fulani</h3>
+                    <p class="related-location">West Africa</p>
+                    <span class="relationship-badge regional">Sahel Neighbors</span>
+                    <p class="related-description">Widespread pastoralist people sharing Sahel region with Songhai.</p>
+                </a>
+                <a href="/peoples/tuareg.html" class="related-card">
+                    <div class="related-icon">🐪</div>
+                    <h3>Tuareg</h3>
+                    <p class="related-location">Sahara Desert</p>
+                    <span class="relationship-badge historical">Trade Partners</span>
+                    <p class="related-description">Berber nomads who controlled trans-Saharan trade routes.</p>
+                </a>
+                <a href="/peoples/hausa.html" class="related-card">
+                    <div class="related-icon">🕌</div>
+                    <h3>Hausa</h3>
+                    <p class="related-location">Northern Nigeria</p>
+                    <span class="relationship-badge regional">Eastern Neighbors</span>
+                    <p class="related-description">City-states that traded with Songhai Empire.</p>
+                </a>
+                <a href="/peoples/bambara.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Bambara</h3>
+                    <p class="related-location">Mali</p>
+                    <span class="relationship-badge regional">Malian Neighbors</span>
+                    <p class="related-description">Mande people who established kingdoms after Songhai's fall.</p>
+                </a>
+                <a href="/peoples/mossi.html" class="related-card">
+                    <div class="related-icon">👑</div>
+                    <h3>Mossi</h3>
+                    <p class="related-location">Burkina Faso</p>
+                    <span class="relationship-badge historical">Southern Rivals</span>
+                    <p class="related-description">Kingdom that resisted Songhai expansion and maintained independence.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Hunwick, John O. (1999). <em>Timbuktu and the Songhay Empire</em>. Brill.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Saad, Elias N. (1983). <em>Social History of Timbuktu: The Role of Muslim Scholars and Notables, 1400-1900</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Levtzion, Nehemia, & Hopkins, J.F.P. (Eds.). (2000). <em>Corpus of Early Arabic Sources for West African History</em>. Marcus Wiener Publishers.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Kati, Mahmoud. (16th century/1981). <em>Tarikh al-Fattash</em>. [Chronicle written during Songhai Empire]</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Gomez, Michael A. (2018). <em>African Dominion: A New History of Empire in Early and Medieval West Africa</em>. Princeton University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Stoller, Paul. (1989). <em>Fusion of the Worlds: An Ethnography of Possession Among the Songhay of Niger</em>. University of Chicago Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Jeppie, Shamil, & Diagne, Souleymane Bachir (Eds.). (2008). <em>The Meanings of Timbuktu</em>. HSRC Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Bovill, E.W. (1968). <em>The Golden Trade of the Moors</em>. Oxford University Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1581795669633-907e6dc9d6c4?w=800", caption: "Sankore Mosque in Timbuktu, center of Islamic learning during Songhai Empire" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Niger River at sunset, lifeline of Songhai civilization and commerce" },
+            { src: "https://images.unsplash.com/photo-1549890762-1756c6e50e7c?w=800", caption: "Historic Timbuktu manuscripts preserving centuries of African scholarship" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Songhai fishermen on Niger River using traditional techniques" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Gao, ancient capital of Songhai Empire along Niger River" },
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Songhai spirit possession ceremony blending Islamic and traditional beliefs" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

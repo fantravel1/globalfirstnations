@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trobriand Islanders: Kula Ring Traders and Matrilineal Society | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐚</text></svg>">
+    <style>
+        :root { --trobriand-green: #2E8B57; --shell-white: #F5F5DC; --ocean-blue: #4682B4; --white: #ecf0f1; --sunset-red: #CD5C5C; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--trobriand-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--trobriand-green), var(--ocean-blue)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(46,139,87,0.5); border: 5px solid var(--sunset-red); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--trobriand-green); }
+        nav a { color: var(--trobriand-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--trobriand-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--trobriand-green); border-right: 3px solid var(--sunset-red); }
+        h2 { color: var(--trobriand-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--trobriand-green); }
+        h3 { color: var(--ocean-blue); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--trobriand-green), var(--ocean-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--sunset-red); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--sunset-red), var(--trobriand-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--trobriand-green), var(--ocean-blue)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--trobriand-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--trobriand-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--trobriand-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐚</span>
+            <h1>The Trobriand Islanders</h1>
+            <p class="tagline">Kula Ring Traders - Matrilineal Society - Yam Harvest Masters of Papua New Guinea</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Trobriand Islanders?</h2>
+            <p>The Trobriand Islanders are an indigenous Melanesian people inhabiting the Trobriand Islands (Kiriwina Islands) in Milne Bay Province of Papua New Guinea. With a population of approximately 25,000 primarily on Kiriwina, the largest island, the Trobrianders gained worldwide anthropological fame through Bronislaw Malinowski's pioneering ethnographic studies in the 1910s-1920s. They are renowned for the <strong>Kula Ring</strong>—an elaborate ceremonial exchange system spanning hundreds of miles and dozens of islands, where sacred shell valuables circulate in opposite directions creating partnerships and alliances that last generations. Trobriand society is distinctly <strong>matrilineal</strong>, with property, clan membership, and identity transmitted through the mother's line, while political power traditionally rests with male chiefs (<strong>guyau</strong>). Yam cultivation forms the cultural and economic foundation, with elaborate harvest displays and competitive yam-growing demonstrating wealth, status, and horticultural mastery. Despite colonial and missionary influences, the Trobrianders maintain strong cultural practices including traditional magic, elaborate ceremonies, and the kula exchange system that continues to bind island communities across the Massim region.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">25,000</span><span>Trobriand population</span></div>
+                <div class="stat-card"><span class="stat-number">Kilivila</span><span>Austronesian language</span></div>
+                <div class="stat-card"><span class="stat-number">Matrilineal</span><span>Kinship system</span></div>
+                <div class="stat-card"><span class="stat-number">Papua New Guinea</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>The Kula Ring's Eternal Circle:</strong> In the kula exchange, red shell necklaces (soulava) travel clockwise around the island ring while white shell armbands (mwali) travel counter-clockwise. These treasured items are never permanently kept—each must be given away within months, creating an endless cycle of reciprocal exchange that can take decades to complete the full circuit!
+            </div>
+
+            <h3>The Kula Ring Exchange System</h3>
+            <p>The <strong>Kula Ring</strong> represents one of humanity's most sophisticated gift-exchange systems, connecting island communities across hundreds of miles of the Massim region. Two types of shell valuables circulate: <strong>soulava</strong> (red shell necklaces) move clockwise, while <strong>mwali</strong> (white shell armbands) move counter-clockwise. These items hold no practical use but immense symbolic and social value. Each piece has a name, history, and reputation—famous items are known across the ring. Kula partnerships (<strong>partnerships</strong>) between individuals on different islands last for life and pass through generations. Partners must eventually reciprocate gifts of equivalent prestige, though timing remains flexible. Kula voyages involve dangerous ocean crossings in sailing canoes, elaborate protocols, and ceremonial exchanges. While kula items circulate, participants also conduct <strong>gimwali</strong> (regular trade) in practical goods. The system creates peace between potentially hostile islands, establishes status and renown, and maintains social bonds. Anthropologist Malinowski's study of kula challenged Western assumptions about "primitive economics," showing complex systems of value, reciprocity, and social relationship that transcend simple commodity exchange.</p>
+
+            <h3>Matrilineal Society and Kinship</h3>
+            <p>Trobriand society is organized around matrilineal descent—individuals belong to their mother's <strong>dala</strong> (matriclan) and inherit rights, property, and identity through maternal lines. Children are considered "of the mother's blood," while the father is viewed as nurturing but not creating kinship. A boy's closest male authority is typically his maternal uncle (<strong>kada</strong>), who holds responsibility for his training and from whom he inherits land and rank. This creates complex family dynamics different from Western nuclear family models. Four major clans divide into sub-clans, each associated with totemic animals, plants, and origin myths. Despite matrilineal descent, political leadership traditionally rests with men—<strong>guyau</strong> (hereditary chiefs) who inherit rank through their mother's line and demonstrate authority through yam wealth, polygamous marriages, and kula success. Women hold significant power through their reproductive role, control over certain resources, and as transmitters of clan identity. This system fascinated early anthropologists and sparked debates about gender, kinship, and social organization that continue in anthropology today.</p>
+
+            <h3>Yam Cultivation and Harvest Ceremonies</h3>
+            <p>Yams (<strong>kuvi</strong>) form the foundation of Trobriand culture, economics, and prestige systems. Yam cultivation is serious business requiring specialized knowledge of varieties, planting times, garden magic, and growing techniques. The finest long yams (<strong>taitu</strong>) can reach 12 feet and represent ultimate horticultural achievement. Annual harvest festivals feature competitive displays where men arrange yams in <strong>yam houses</strong> (bwema) decorated with shells and ornaments, demonstrating wealth and skill. A successful man fills multiple yam houses, giving significant portions to his sister's husband as part of kinship obligations (<strong>urigubu</strong>). This matrilineal harvest tribute flows from brother to sister's household annually, ensuring women and their children are provisioned. Chiefs receive tribute from followers, accumulating vast yam wealth redistributed during feasts and ceremonies. Garden magic (<strong>megwa</strong>) performed by specialists ensures fertility and abundant harvests. The yam season structures the annual calendar—planting, growth, harvest, and distribution anchor social life. While modern cash crops and stores provide alternatives, yam cultivation remains culturally central, demonstrating traditional values of hard work, magical knowledge, generosity, and fulfilling kinship obligations.</p>
+
+            <h3>Magic, Belief, and Ceremonial Life</h3>
+            <p>Magic (<strong>megwa</strong>) permeates Trobriand life, with specialized spells for gardens, canoe-building, fishing, love, weather, and warfare. Magical knowledge is owned by individuals or clans, passed through matrilines, and can be purchased or inherited. Magicians (<strong>towosi</strong>) command respect for their power to ensure success or cause harm. The Trobrianders distinguish between magic (controllable techniques), religion (addressing ancestral spirits), and science (empirical knowledge). <strong>Baloma</strong> (ancestral spirits) return annually during <strong>milamala</strong> festival when villages feast, dance, and perform elaborate ceremonies. Traditional beliefs coexist with Christianity introduced by missionaries. <strong>Sorcery</strong> explanations account for illness and death, with specialists identifying causes. Major ceremonies include harvest festivals, initiation rites, mortuary exchanges (<strong>sagali</strong>) where vast quantities of goods are distributed to honor the dead, and kula expeditions. The <strong>kasimbwa</strong> (cricket-related harvest celebration) features competitive dancing, singing, body decoration, and sexual license. These ceremonies maintain social cohesion, redistribute wealth, honor obligations, and mark important transitions in individual and community life.</p>
+
+            <h3>Contemporary Life and Cultural Continuity</h3>
+            <p>Modern Trobrianders navigate between traditional practices and contemporary challenges as part of Papua New Guinea, which gained independence in 1975. Most live in villages practicing subsistence agriculture supplemented by cash crops (copra, betel nut). Tourism brings visitors attracted by cultural heritage and world-class diving, providing income but raising questions about cultural commodification. The <strong>kula ring continues</strong>, though some fear modern influences threaten its persistence. Young people attend schools teaching English and national curriculum while learning Kilivila and traditional knowledge at home. Out-migration to mainland PNG cities creates tensions between tradition and opportunity. <strong>Women's weaving</strong> of banana-fiber skirts and production of decorative items for sagali (mortuary distributions) remains important. Christianity is widely practiced, often syncretized with traditional beliefs. Health challenges include malaria, maternal mortality, and limited medical facilities. Climate change threatens low-lying islands through sea-level rise and changing weather patterns affecting agriculture and fishing. Cultural revival efforts work to document language, record oral traditions, and teach younger generations traditional navigation, magic, and ceremonies. The Trobriand case demonstrates both remarkable cultural continuity and ongoing adaptation as island communities engage with global forces while maintaining distinctive identity rooted in matrilineal kinship, kula exchange, yam cultivation, and ceremonial life.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Kula ring shell valuables" loading="lazy">
+                    <div class="image-caption">Traditional kula shell necklaces (soulava) and armbands (mwali) used in ceremonial exchange</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Trobriand ceremonial dancers" loading="lazy">
+                    <div class="image-caption">Trobriand dancers in traditional body paint and decorations during harvest festival celebrations</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1505881502353-a1986add3762?w=800" alt="Traditional Trobriand sailing canoe" loading="lazy">
+                    <div class="image-caption">Decorated outrigger sailing canoe used for kula expeditions between islands</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1509233725247-49e657c54213?w=800" alt="Trobriand island landscape" loading="lazy">
+                    <div class="image-caption">Lush tropical landscape of the Trobriand Islands with coastal villages and gardens</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1582735689699-18d6c0969ce4?w=800" alt="Traditional yam house" loading="lazy">
+                    <div class="image-caption">Decorated yam storage house (bwema) displaying harvest wealth and horticultural success</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Trobriand wood carving" loading="lazy">
+                    <div class="image-caption">Intricate traditional wood carvings depicting spirits and clan totems</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/papuan.html" class="related-card">
+                    <div class="related-icon">🪶</div>
+                    <h3>Papuan</h3>
+                    <p class="related-location">Papua New Guinea</p>
+                    <span class="relationship-badge regional">PNG Neighbors</span>
+                    <p class="related-description">Fellow Melanesian peoples of Papua New Guinea with diverse cultural traditions.</p>
+                </a>
+                <a href="/peoples/fijian.html" class="related-card">
+                    <div class="related-icon">🏝️</div>
+                    <h3>Fijian</h3>
+                    <p class="related-location">Fiji</p>
+                    <span class="relationship-badge regional">Melanesian Culture</span>
+                    <p class="related-description">Melanesian-Polynesian culture sharing regional maritime and agricultural traditions.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌀</div>
+                    <h3>Maori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge similar">Cultural Preservation</span>
+                    <p class="related-description">Polynesian culture maintaining strong traditional practices and ceremonial life.</p>
+                </a>
+                <a href="/peoples/yapese.html" class="related-card">
+                    <div class="related-icon">💰</div>
+                    <h3>Yapese</h3>
+                    <p class="related-location">Yap, Micronesia</p>
+                    <span class="relationship-badge similar">Exchange Systems</span>
+                    <p class="related-description">Micronesian culture with unique currency and elaborate trade networks.</p>
+                </a>
+                <a href="/peoples/samoan.html" class="related-card">
+                    <div class="related-icon">🦅</div>
+                    <h3>Samoan</h3>
+                    <p class="related-location">Samoa</p>
+                    <span class="relationship-badge regional">Pacific Islanders</span>
+                    <p class="related-description">Polynesian society with strong matai system and ceremonial exchange traditions.</p>
+                </a>
+                <a href="/peoples/tongan.html" class="related-card">
+                    <div class="related-icon">👑</div>
+                    <h3>Tongan</h3>
+                    <p class="related-location">Tonga</p>
+                    <span class="relationship-badge regional">Pacific Navigation</span>
+                    <p class="related-description">Polynesian kingdom sharing maritime traditions and complex social hierarchies.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Malinowski, Bronislaw. (1922). <em>Argonauts of the Western Pacific</em>. Routledge.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Weiner, Annette B. (1976). <em>Women of Value, Men of Renown: New Perspectives in Trobriand Exchange</em>. University of Texas Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Malinowski, Bronislaw. (1935). <em>Coral Gardens and Their Magic</em>. George Allen & Unwin Ltd.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Weiner, Annette B. (1988). <em>The Trobrianders of Papua New Guinea</em>. Holt, Rinehart and Winston.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Leach, Jerry W., & Leach, Edmund. (1983). <em>The Kula: New Perspectives on Massim Exchange</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Senft, Gunter. (1997). <em>Referring to Space: Studies in Austronesian and Papuan Languages</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Campbell, Shirley F. (2002). <em>The Art of Kula</em>. Berg Publishers.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Scoditti, Giancarlo M. G. (1990). <em>Kitawa: A Linguistic and Aesthetic Analysis of Visual Art in Melanesia</em>. Mouton de Gruyter.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Traditional kula shell necklaces (soulava) and armbands (mwali) used in ceremonial exchange" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Trobriand dancers in traditional body paint and decorations during harvest festival celebrations" },
+            { src: "https://images.unsplash.com/photo-1505881502353-a1986add3762?w=800", caption: "Decorated outrigger sailing canoe used for kula expeditions between islands" },
+            { src: "https://images.unsplash.com/photo-1509233725247-49e657c54213?w=800", caption: "Lush tropical landscape of the Trobriand Islands with coastal villages and gardens" },
+            { src: "https://images.unsplash.com/photo-1582735689699-18d6c0969ce4?w=800", caption: "Decorated yam storage house (bwema) displaying harvest wealth and horticultural success" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Intricate traditional wood carvings depicting spirits and clan totems" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

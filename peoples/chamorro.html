@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamorro People: Latte Stone Builders and Ancient Navigators | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+    <style>
+        :root { --chamorro-red: #DC143C; --latte-stone: #8B7355; --ocean-blue: #1E90FF; --white: #ecf0f1; --palm-green: #228B22; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--palm-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--chamorro-red), var(--latte-stone)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(220,20,60,0.5); border: 5px solid var(--ocean-blue); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--chamorro-red); }
+        nav a { color: var(--chamorro-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--chamorro-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--chamorro-red); border-right: 3px solid var(--ocean-blue); }
+        h2 { color: var(--chamorro-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--chamorro-red); }
+        h3 { color: var(--latte-stone); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--chamorro-red), var(--latte-stone)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--ocean-blue); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--ocean-blue), var(--chamorro-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--chamorro-red), var(--latte-stone)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--chamorro-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--chamorro-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--chamorro-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏛️</span>
+            <h1>The Chamorro People</h1>
+            <p class="tagline">Latte Stone Builders - Ancient Navigators - Indigenous People of the Marianas</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Chamorro?</h2>
+            <p>The Chamorro (also spelled Chamoru) are the indigenous people of the Mariana Islands, including Guam and the Northern Mariana Islands in western Micronesia. With approximately 170,000 people identifying as Chamorro today, they represent one of Micronesia's oldest continuous cultures, with archaeological evidence dating back 4,000 years. The Chamorro are famous for their distinctive <strong>latte stones</strong>—massive coral or limestone pillars topped with hemispherical capstones that supported ancient houses and community buildings. These architectural marvels, some standing over 16 feet tall, demonstrate sophisticated engineering and are iconic symbols of Chamorro heritage. As master seafarers, the Chamorro navigated the Pacific using advanced sailing canoes called <strong>sakman</strong> or <strong>flying proas</strong>, renowned for their speed and unique outrigger design. Despite centuries of colonization by Spain, the United States, and Japan, the Chamorro have maintained their language, traditions, and strong sense of cultural identity while adapting to modern geopolitical realities as U.S. territories.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">170,000</span><span>Chamorro population</span></div>
+                <div class="stat-card"><span class="stat-number">Chamorro</span><span>Austronesian language</span></div>
+                <div class="stat-card"><span class="stat-number">4,000+</span><span>Years of history</span></div>
+                <div class="stat-card"><span class="stat-number">Mariana Islands</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Flying Proas:</strong> Chamorro sailing canoes were so fast and maneuverable that when Ferdinand Magellan first encountered them in 1521, Spanish sailors were astonished. The canoes could reach speeds over 20 knots and change direction without turning around—the crew simply moved the sail to the opposite end!
+            </div>
+
+            <h3>Ancient Latte Period and Society</h3>
+            <p>Chamorro society reached its zenith during the <strong>Latte Period</strong> (800-1700 CE), named after the distinctive stone pillars that supported elevated houses and communal structures. These latte stones required immense labor and engineering knowledge to quarry, transport, and erect. Ancient Chamorro society was organized into matrilineal clans with a complex caste system: <strong>chamorri</strong> (noble class), <strong>achaot</strong> (middle class), and <strong>mana'chang</strong> (lower class). Villages were led by <strong>maga'låhi</strong> (high chiefs) and <strong>maga'håga</strong> (high-ranking women who controlled clan lands). The Chamorro practiced sophisticated agriculture, cultivating rice, taro, yams, and breadfruit, while also fishing and gathering from reef and forest. They developed intricate shell tools, pottery, and weapons including slings that could kill birds in flight.</p>
+
+            <h3>Navigation and Maritime Excellence</h3>
+            <p>The Chamorro were among the Pacific's greatest sailors, navigating between islands using <strong>sakman</strong>—flying proa canoes with a single outrigger that could be sailed in either direction without turning. These vessels featured pandanus-woven sails and could carry dozens of people plus cargo. Chamorro navigators read stars, wave patterns, bird flight, and ocean swells to traverse hundreds of miles of open ocean. They traded with other Micronesian islands and possibly reached the Philippines. The <strong>galaide</strong> (master navigator) held prestigious status, possessing knowledge of routes, weather, and seafaring techniques passed orally through generations. This maritime mastery enabled the Chamorro to maintain an extensive inter-island network, though it also made them vulnerable to later colonial powers seeking strategic Pacific bases.</p>
+
+            <h3>Colonial Impact and Resistance</h3>
+            <p>Chamorro history dramatically changed with Magellan's 1521 arrival, though sustained colonization began with Spanish Jesuit missionaries in 1668. The Spanish period brought devastating disease, forced conversion to Catholicism, and the <strong>Spanish-Chamorro Wars</strong> (1670s-1695), in which the Chamorro fiercely resisted colonial rule. These conflicts and introduced diseases reduced the population from an estimated 50,000-100,000 to just a few thousand by 1710. Spain forcibly relocated survivors to Guam, ending the latte period. Spanish rule continued until 1898 when the U.S. acquired Guam following the Spanish-American War, while Germany purchased the Northern Marianas. During World War II, Japan occupied the islands (1941-1944), subjecting Chamorro to brutal treatment. The U.S. recaptured Guam in 1944, and the islands have remained U.S. territories since, with ongoing debates about decolonization, self-determination, and military presence.</p>
+
+            <h3>Language and Cultural Practices</h3>
+            <p>The Chamorro language blends Austronesian roots with Spanish, Japanese, and English loanwords, reflecting centuries of contact. While English dominates in education and government, Chamorro remains spoken at home and in cultural contexts, with revitalization efforts in schools and media. Traditional practices include <strong>inafa'maolek</strong> (making good/harmony), emphasizing social balance and reciprocity. <strong>Respect</strong> (respetu) for elders is paramount, demonstrated through the greeting <strong>"Håfa Adai"</strong> and asking for <strong>bendision</strong> (blessing) by bowing and pressing elder's hand to one's forehead. Traditional storytelling features <strong>taotaomo'na</strong> (ancestral spirits) and creation legends of Fu'una and Pontan. Chamorro music includes the <strong>chant tradition</strong> and guitar-based <strong>kantan chamorrita</strong>. Traditional healing used medicinal plants like <strong>pågu</strong> (betel nut) and herbal remedies passed through <strong>suruhanu/suruhåna</strong> (traditional healers).</p>
+
+            <h3>Contemporary Chamorro Life and Self-Determination</h3>
+            <p>Modern Chamorro navigate identity as indigenous people within U.S. territory framework. Guam, where Chamorro comprise about 37% of the population, faces issues of military expansion, with U.S. bases occupying significant land. The <strong>decolonization movement</strong> seeks self-determination, with options including independence, free association, or statehood. The Northern Mariana Islands, a U.S. Commonwealth, has its own governance structure. Economic opportunities in tourism, military, and government contrast with concerns about cultural erosion and land rights. The <strong>Guam Museum</strong> and cultural centers preserve heritage, while organizations work to revitalize language and traditions. Young Chamorro increasingly reconnect with traditional navigation, weaving, blacksmithing, and latte construction. Annual celebrations like <strong>Discovery Day</strong> protests have evolved into affirmations of Chamorro survival and cultural pride. Climate change threatens low-lying islands, adding urgency to preservation efforts and questions about the future of Chamorro homeland and sovereignty.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Ancient Chamorro latte stones" loading="lazy">
+                    <div class="image-caption">Ancient latte stones with coral pillars and hemispherical capstones that supported traditional houses</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Traditional Chamorro dancers" loading="lazy">
+                    <div class="image-caption">Chamorro cultural dancers performing traditional dances at island festival celebrations</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Chamorro sailing proa" loading="lazy">
+                    <div class="image-caption">Replica of traditional Chamorro flying proa (sakman) used for inter-island navigation</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1505881502353-a1986add3762?w=800" alt="Guam coastal landscape" loading="lazy">
+                    <div class="image-caption">Pristine beaches and dramatic cliffs of Guam, traditional Chamorro homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1582735689699-18d6c0969ce4?w=800" alt="Traditional Chamorro weaving" loading="lazy">
+                    <div class="image-caption">Traditional pandanus and coconut fiber weaving techniques preserved by Chamorro artisans</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Chamorro ancient pottery" loading="lazy">
+                    <div class="image-caption">Ancient Chamorro pottery shards showing sophisticated ceramic techniques and designs</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/yapese.html" class="related-card">
+                    <div class="related-icon">💰</div>
+                    <h3>Yapese</h3>
+                    <p class="related-location">Yap, Micronesia</p>
+                    <span class="relationship-badge regional">Micronesian Neighbors</span>
+                    <p class="related-description">Fellow Micronesian navigators famous for massive stone money and traditional culture.</p>
+                </a>
+                <a href="/peoples/kanaka-maoli.html" class="related-card">
+                    <div class="related-icon">🌋</div>
+                    <h3>Kanaka Maoli</h3>
+                    <p class="related-location">Hawaii</p>
+                    <span class="relationship-badge similar">Navigation Heritage</span>
+                    <p class="related-description">Polynesian navigators sharing ocean mastery and U.S. territorial status.</p>
+                </a>
+                <a href="/peoples/fijian.html" class="related-card">
+                    <div class="related-icon">🏝️</div>
+                    <h3>Fijian</h3>
+                    <p class="related-location">Fiji</p>
+                    <span class="relationship-badge regional">Pacific Islanders</span>
+                    <p class="related-description">Melanesian seafarers with strong warrior and navigation traditions.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌀</div>
+                    <h3>Maori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge similar">Colonial Resistance</span>
+                    <p class="related-description">Polynesian people who similarly resisted colonization and maintain indigenous rights movements.</p>
+                </a>
+                <a href="/peoples/papuan.html" class="related-card">
+                    <div class="related-icon">🪶</div>
+                    <h3>Papuan</h3>
+                    <p class="related-location">Papua New Guinea</p>
+                    <span class="relationship-badge regional">Western Pacific</span>
+                    <p class="related-description">Melanesian cultures of New Guinea with diverse languages and traditions.</p>
+                </a>
+                <a href="/peoples/samoan.html" class="related-card">
+                    <div class="related-icon">🦅</div>
+                    <h3>Samoan</h3>
+                    <p class="related-location">Samoa</p>
+                    <span class="relationship-badge regional">Pacific Navigation</span>
+                    <p class="related-description">Polynesian master navigators sharing ocean traditions and fa'a Samoa culture.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Cunningham, Lawrence J. (1992). <em>Ancient Chamorro Society</em>. Bess Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Rogers, Robert F. (1995). <em>Destiny's Landfall: A History of Guam</em>. University of Hawaii Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Spoehr, Alexander. (1957). <em>Marianas Prehistory: Archaeological Survey and Excavations on Saipan, Tinian and Rota</em>. Fieldiana: Anthropology.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Diaz, Vicente M., & Kauanui, J. Kēhaulani. (2001). <em>Native Pacific Cultural Studies on the Edge</em>. The Contemporary Pacific, 13(2), 315-342.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Souder, Laura Marie Torres. (1992). <em>Daughters of the Island: Contemporary Chamorro Women Organizers on Guam</em>. University Press of America.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Carson, Mike T. (2014). <em>First Settlement of Remote Oceania: Earliest Sites in the Mariana Islands</em>. Springer.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Underwood, Robert A. (1987). <em>American Education and the Acculturation of the Chamorros of Guam</em>. University of Southern California.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Perez, Michael P. (2002). <em>Pacific Currents: Navigating Chamorro Identity in the Late 20th Century</em>. Journal of Pacific History, 37(1), 73-88.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Ancient latte stones with coral pillars and hemispherical capstones that supported traditional houses" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Chamorro cultural dancers performing traditional dances at island festival celebrations" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Replica of traditional Chamorro flying proa (sakman) used for inter-island navigation" },
+            { src: "https://images.unsplash.com/photo-1505881502353-a1986add3762?w=800", caption: "Pristine beaches and dramatic cliffs of Guam, traditional Chamorro homeland" },
+            { src: "https://images.unsplash.com/photo-1582735689699-18d6c0969ce4?w=800", caption: "Traditional pandanus and coconut fiber weaving techniques preserved by Chamorro artisans" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Ancient Chamorro pottery shards showing sophisticated ceramic techniques and designs" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

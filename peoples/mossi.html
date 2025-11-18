@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mossi People: Kingdom Builders and Burkina Faso's Largest Group | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+    <style>
+        :root { --mossi-red: #C41E3A; --royal-gold: #DAA520; --savanna-green: #6B8E23; --white: #ecf0f1; --earth-brown: #8B7355; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--mossi-red) 0%, var(--savanna-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--mossi-red), var(--savanna-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(196,30,58,0.5); border: 5px solid var(--royal-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--mossi-red); }
+        nav a { color: var(--mossi-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--mossi-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--mossi-red); border-right: 3px solid var(--royal-gold); }
+        h2 { color: var(--mossi-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--mossi-red); }
+        h3 { color: var(--savanna-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--mossi-red), var(--savanna-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--royal-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--royal-gold), var(--savanna-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--mossi-red), var(--savanna-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--mossi-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--mossi-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--mossi-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">👑</span>
+            <h1>The Mossi People</h1>
+            <p class="tagline">Kingdom Builders - Burkina Faso's Largest Group - Resisters of Empire</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Mossi?</h2>
+            <p>The Mossi (Moose, singular Moaga) are the largest ethnic group in Burkina Faso, comprising approximately 52% of the country's population with over 11 million people. They inhabit the central plateau region, with their capital at Ouagadougou. The Mossi established powerful kingdoms beginning in the 11th-13th centuries, most notably the <strong>Mossi Kingdoms</strong> of Ouagadougou, Yatenga, and Tenkodogo, which successfully resisted conquest by both the Mali and Songhai empires—a rare achievement in West African history. The Mossi speak Moore (More), a Gur language, and maintain a highly stratified social structure led by the <strong>Mogho Naba</strong> (Emperor of the Mossi), a position that continues today as a traditional authority. Historically, Mossi society combined agriculture with cavalry warfare, controlling important trans-Saharan trade routes. The Mossi resisted French colonization longer than most West African peoples and maintained cultural continuity despite Islamic and Christian influences, with many preserving traditional religious practices centered on ancestor veneration.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">11M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">11th-13th C</span><span>Kingdom founding</span></div>
+                <div class="stat-card"><span class="stat-number">Moore</span><span>Gur language</span></div>
+                <div class="stat-card"><span class="stat-number">Burkina Faso</span><span>Central plateau</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Unconquered Kingdoms:</strong> The Mossi Kingdoms successfully resisted conquest by the mighty Mali Empire, Songhai Empire, and various Islamic jihads for over 500 years! When Songhai Emperor Askia Muhammad tried to conquer them in the 1490s, the Mossi cavalry defeated his forces. They remained independent until French colonization in the 1890s—even then, resistance continued for decades!
+            </div>
+
+            <h3>The Mossi Kingdoms and Political Organization</h3>
+            <p>According to oral tradition, the Mossi kingdoms were founded by invaders from the east, possibly from present-day northern Ghana or Togo, who intermarried with indigenous Nyonyose people. The legendary princess <strong>Yennenga</strong>, daughter of a Dagomba king, is celebrated as the mother of the Mossi—she fled an unwanted marriage, met and married Riale (a hunter), and their son Ouedraogo founded the first Mossi kingdom. The Mossi political system was highly centralized with the <strong>Mogho Naba</strong> (King of the World) ruling from Ouagadougou, supported by lesser kings (Nanamse) who controlled provinces. This hierarchical structure included ministers, district chiefs, and village headmen, all appointed based on hereditary nobility. The system incorporated both conquered indigenous peoples and ruling class descendants, creating a stratified society of nobles (Nakomse), commoners (Talse), and artisan castes. The Mossi cavalry, armed with lances and swords and mounted on horses adapted to the Sahel environment, made the kingdoms militarily formidable.</p>
+
+            <h3>Resistance to Islam and Empire</h3>
+            <p>Unlike many Sahel peoples, the Mossi kingdoms resisted Islamic conversion and political domination for centuries. When Mali and Songhai empires attempted expansion into Mossi territory, Mossi cavalry repelled them repeatedly. During the 19th century, Islamic jihadist movements that conquered much of West Africa failed to subdue the Mossi—the kingdoms maintained political independence and religious autonomy. This resistance stemmed partly from the Mossi political-religious system where the Mogho Naba's authority derived from traditional religion and ancestor veneration, making Islamic conversion politically problematic. However, Islam gradually spread peacefully through trade contacts, and today many Mossi are Muslim while maintaining traditional practices. The Mossi also resisted French colonization—France didn't fully control Mossi territory until 1897, and resistance continued through the early 1900s. Despite colonial rule and modern state formation, the Mogho Naba continues as an influential traditional authority.</p>
+
+            <h3>Traditional Religion and Social Customs</h3>
+            <p>Traditional Mossi religion centers on <strong>Wende</strong> (the supreme deity) and elaborate ancestor veneration. The <strong>Tengabisi</strong> (earth priests) perform rituals honoring earth spirits and ensuring agricultural fertility, while royal ancestors receive special veneration through the Mogho Naba's ritual authority. Masked societies perform ceremonies marking agricultural seasons, initiations, and funerals—the <strong>Karanga</strong> masks represent protective spirits and appear during important rituals. Traditional Mossi marriage involves complex negotiations and bride-wealth payments, with polygyny common among wealthy men. Society organized through patrilineal clans, with strict rules governing behavior, marriage, and inheritance. The <strong>caste system</strong> divided society into Nakomse (nobles), Talse (farmers), and Nyonyose (original inhabitants), plus specialized artisan groups including blacksmiths, weavers, and griots. Age-grade associations socialized youth and organized communal labor for agriculture, well-digging, and construction.</p>
+
+            <h3>Economy and Material Culture</h3>
+            <p>The Mossi economy traditionally centered on <strong>agriculture</strong>, cultivating millet, sorghum, yams, and groundnuts in the Sahel environment. Intensive farming techniques including manuring, crop rotation, and small-scale irrigation maximized productivity in areas with uncertain rainfall. The Mossi also kept livestock—cattle, goats, and sheep—though in smaller numbers than specialized pastoralist groups. Seasonal migration for agricultural labor became common, with young Mossi men traveling to Ghana and Ivory Coast's cocoa and coffee plantations, sending remittances home. Mossi artisans excelled in <strong>cotton weaving</strong>, producing distinctive striped cloths, and <strong>bronze-casting</strong> for royal regalia and ritual objects. Blacksmiths held special status, producing agricultural implements, weapons, and ritual objects. Women engaged in pottery-making, food processing, and local trade. The Mossi controlled regional trade routes, taxing caravans passing through their territory.</p>
+
+            <h3>Modern Mossi Society and National Identity</h3>
+            <p>The Mossi dominate Burkina Faso demographically and culturally, though the country includes over 60 ethnic groups. The Moore language serves as a lingua franca alongside French (the official language). Ouagadougou, the Mossi capital, is now Burkina Faso's largest city and political capital. The <strong>Mogho Naba</strong> continues as an influential traditional leader—every Friday, the "Ceremony of the False Departure" (Koom-Zam-Yam) reenacts the emperor's ritual attempt to leave the capital, symbolically affirming his commitment to the people. This ceremony attracts tourists and reinforces Mossi cultural identity. However, modern challenges affect Mossi society: environmental degradation and desertification threaten agriculture, population growth creates land pressure, and economic opportunities drive migration to cities and neighboring countries. Islamic and Christian conversions have accelerated, though many maintain syncretic practices. Political instability, including jihadist violence in northern Burkina Faso since 2015, has displaced communities. Despite challenges, Mossi cultural traditions persist through language maintenance, traditional ceremonies, and the continuing symbolic importance of the monarchy in a democratic state.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1609198092358-8b8b0c0b6e5e?w=800" alt="Mogho Naba ceremony" loading="lazy">
+                    <div class="image-caption">Mogho Naba in traditional regalia during weekly Koom-Zam-Yam ceremony</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Traditional masks" loading="lazy">
+                    <div class="image-caption">Mossi Karanga mask used in agricultural and funeral ceremonies</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Village life" loading="lazy">
+                    <div class="image-caption">Mossi village in Burkina Faso's central plateau region</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Agriculture" loading="lazy">
+                    <div class="image-caption">Mossi farmers cultivating millet and sorghum in Sahel conditions</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Traditional weaving" loading="lazy">
+                    <div class="image-caption">Mossi artisan weaving traditional striped cotton cloth</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800" alt="Ouagadougou" loading="lazy">
+                    <div class="image-caption">Ouagadougou, historic Mossi capital and modern Burkina Faso's largest city</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/dagomba.html" class="related-card">
+                    <div class="related-icon">🥁</div>
+                    <h3>Dagomba</h3>
+                    <p class="related-location">Ghana</p>
+                    <span class="relationship-badge historical">Related Origins</span>
+                    <p class="related-description">Gur people from whom Mossi kingdoms' founders allegedly descended.</p>
+                </a>
+                <a href="/peoples/songhai.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Songhai</h3>
+                    <p class="related-location">Mali/Niger</p>
+                    <span class="relationship-badge historical">Resisted Empire</span>
+                    <p class="related-description">Empire that unsuccessfully attempted to conquer Mossi kingdoms.</p>
+                </a>
+                <a href="/peoples/fulani.html" class="related-card">
+                    <div class="related-icon">🐄</div>
+                    <h3>Fulani</h3>
+                    <p class="related-location">West Africa</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Pastoralist people sharing Sahel region with Mossi.</p>
+                </a>
+                <a href="/peoples/dogon.html" class="related-card">
+                    <div class="related-icon">⛰️</div>
+                    <h3>Dogon</h3>
+                    <p class="related-location">Mali</p>
+                    <span class="relationship-badge regional">Gur Relatives</span>
+                    <p class="related-description">Fellow Gur-speaking people with strong traditional religious practices.</p>
+                </a>
+                <a href="/peoples/bambara.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Bambara</h3>
+                    <p class="related-location">Mali</p>
+                    <span class="relationship-badge regional">Western Neighbors</span>
+                    <p class="related-description">Mande people sharing similar savanna agricultural lifestyle.</p>
+                </a>
+                <a href="/peoples/ashanti.html" class="related-card">
+                    <div class="related-icon">🪙</div>
+                    <h3>Ashanti</h3>
+                    <p class="related-location">Ghana</p>
+                    <span class="relationship-badge regional">Southern Neighbors</span>
+                    <p class="related-description">Powerful Akan kingdom that attracted Mossi migrant labor.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Skinner, Elliott P. (1964). <em>The Mossi of the Upper Volta: The Political Development of a Sudanese People</em>. Stanford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Izard, Michel. (1985). <em>Le royaume du Yatenga: Pouvoir politique et résistance au colonialisme</em>. Karthala.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Zahan, Dominique. (1967). "The Mossi Kingdoms." In <em>West African Kingdoms in the Nineteenth Century</em>, edited by Daryll Forde and P.M. Kaberry. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Fiske, Alan Page, & Tchoune, Joseph. (1991). <em>The Structures of Social Life: The Four Elementary Forms of Human Relations</em>. Free Press. [Includes Mossi case study]</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Tauxier, Louis. (1912). <em>Le Noir de Soudan: Pays mossi et gourounsi</em>. Émile Larose.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">McMillan, Della E. (1995). <em>Sahel Visions: Planned Settlement and River Blindness Control in Burkina Faso</em>. University of Arizona Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Schweeger-Hefel, Annemarie. (1980). <em>Masques et statues de Haute-Volta</em>. Société des Africanistes.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Hammond, Peter B. (1966). <em>Yatenga: Technology in the Culture of a West African Kingdom</em>. Free Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1609198092358-8b8b0c0b6e5e?w=800", caption: "Mogho Naba in traditional regalia during weekly Koom-Zam-Yam ceremony" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Mossi Karanga mask used in agricultural and funeral ceremonies" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Mossi village in Burkina Faso's central plateau region" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Mossi farmers cultivating millet and sorghum in Sahel conditions" },
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Mossi artisan weaving traditional striped cotton cloth" },
+            { src: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800", caption: "Ouagadougou, historic Mossi capital and modern Burkina Faso's largest city" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

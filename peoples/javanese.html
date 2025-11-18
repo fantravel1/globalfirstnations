@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javanese People: Batik Masters and Keepers of Borobudur Heritage | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏯</text></svg>">
+    <style>
+        :root { --java-brown: #8B4513; --batik-indigo: #4B0082; --temple-stone: #A9A9A9; --white: #ecf0f1; --rice-gold: #FFD700; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--batik-indigo) 0%, var(--java-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--batik-indigo), var(--java-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(75,0,130,0.5); border: 5px solid var(--rice-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--batik-indigo); }
+        nav a { color: var(--batik-indigo); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--batik-indigo); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--batik-indigo); border-right: 3px solid var(--rice-gold); }
+        h2 { color: var(--batik-indigo); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--batik-indigo); }
+        h3 { color: var(--java-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--batik-indigo), var(--java-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--rice-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--rice-gold), var(--java-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--batik-indigo), var(--java-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--batik-indigo); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--batik-indigo); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--batik-indigo); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏯</span>
+            <h1>The Javanese People</h1>
+            <p class="tagline">Keepers of Borobudur - Batik Masters - Cultural Heart of Indonesia</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Javanese?</h2>
+            <p>The Javanese are Indonesia's largest ethnic group, numbering over 100 million people (approximately 40% of Indonesia's population), primarily inhabiting the island of Java—the world's most populous island. Heirs to millennia-old kingdoms including <strong>Mataram, Majapahit, and Demak Sultanate</strong>, the Javanese developed one of Southeast Asia's most sophisticated civilizations, producing the massive Buddhist monument <strong>Borobudur</strong> (9th century) and Hindu temple complex <strong>Prambanan</strong>. The Javanese language features elaborate speech levels (high, middle, low Javanese) reflecting social hierarchies and the cultural value of refinement (<strong>alus</strong>) over crudeness (kasar). Though predominantly Muslim today following 16th-century conversion, Javanese Islam incorporates Hindu-Buddhist and indigenous animistic elements in syncretic practice called <strong>Kejawen</strong>. The Javanese are renowned for <strong>batik</strong>—UNESCO-recognized wax-resist textile dyeing producing intricate patterns with symbolic meanings—and <strong>wayang kulit</strong> (shadow puppetry) performing Hindu epics through night-long narrations. Javanese philosophy emphasizes harmony, emotional restraint, mysticism, and hierarchical order, values transmitted through courtly arts and still influential in modern Indonesian society.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">100M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Javanese</span><span>Austronesian language</span></div>
+                <div class="stat-card"><span class="stat-number">9th century</span><span>Borobudur construction</span></div>
+                <div class="stat-card"><span class="stat-number">3 levels</span><span>Speech hierarchies</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Borobudur Mystery:</strong> The world's largest Buddhist monument—2,672 relief panels and 504 Buddha statues—was mysteriously abandoned in the 14th century and buried under volcanic ash for centuries. Rediscovered in 1814, its original purpose remains debated!
+            </div>
+
+            <h3>Ancient Kingdoms and Borobudur Legacy</h3>
+            <p>Javanese civilization flourished through powerful kingdoms controlling maritime trade routes. The <strong>Sailendra Dynasty</strong> (8th-9th century) built <strong>Borobudur</strong>, a massive mandala-shaped monument representing Buddhist cosmology with nine stacked platforms leading pilgrims through realms of desire, form, and formlessness to enlightenment. The competing <strong>Sanjaya Dynasty</strong> constructed Hindu <strong>Prambanan</strong> dedicated to the Trimurti. The <strong>Majapahit Empire</strong> (1293-1527) dominated the archipelago at its peak, leaving epic poems like the <em>Nagarakretagama</em> documenting court life. This Hindu-Buddhist heritage created cultural foundations persisting through Islamic conversion, with courts preserving courtly arts, literature, and etiquette serving as cultural repositories.</p>
+
+            <h3>Batik Textile Tradition</h3>
+            <p><strong>Batik</strong> involves applying hot wax to fabric in patterns, dyeing it, removing wax, and repeating for multiple colors—a process requiring weeks for complex pieces. Traditional Javanese batik features motifs like <strong>parang</strong> (diagonal knife pattern—historically reserved for royalty), <strong>kawung</strong> (circular intersecting patterns), and <strong>truntum</strong> (small flower pattern symbolizing eternal love). Each pattern carries symbolic meaning relating to philosophy, status, and occasion. <strong>Batik tulis</strong> (hand-drawn with canting tool) represents the highest art form, while <strong>batik cap</strong> uses copper stamps for faster production. UNESCO recognized batik as Intangible Cultural Heritage in 2009. The cities of <strong>Yogyakarta, Solo, and Pekalongan</strong> remain batik centers, with master artisans (mbatik) passing knowledge through apprenticeship.</p>
+
+            <h3>Wayang Kulit Shadow Puppetry</h3>
+            <p><strong>Wayang kulit</strong> performances bring Hindu epics—<em>Ramayana</em> and <em>Mahabharata</em>—to life through intricate leather puppets projected onto white screens. The <strong>dalang</strong> (puppeteer) manipulates dozens of puppets, provides all voices, directs the gamelan orchestra, and improvises philosophical commentary applying ancient stories to contemporary issues. Performances last all night (8+ hours), with audiences sitting on either side of the screen seeing colored puppets or dramatic shadows. Characters follow iconographic standards: refined heroes have downward-gazing eyes and slender builds (<strong>alus</strong>), while crude demons have bulging eyes and robust bodies (<strong>kasar</strong>). UNESCO recognized wayang kulit as a Masterpiece of Oral and Intangible Heritage in 2003.</p>
+
+            <h3>Javanese Philosophy and Kejawen Mysticism</h3>
+            <p>Javanese culture values <strong>rukun</strong> (harmony), avoiding open conflict through indirect communication and consensus-building. Social interaction follows elaborate etiquette based on speech levels adjusting to interlocutor's status. <strong>Kejawen</strong> represents Javanese mysticism blending Islamic, Hindu, Buddhist, and animistic elements—practitioners may fast, meditate, and seek spiritual power (<strong>kasekten</strong>) through asceticism while maintaining Muslim identity. The sultan's palaces (<strong>kraton</strong>) in Yogyakarta and Solo serve as cultural centers preserving courtly arts, where palace servants (<strong>abdi dalem</strong>) maintain traditions without monetary compensation. Javanese philosophy emphasizes life as journey toward enlightenment through detachment, self-control, and harmonious relationships.</p>
+
+            <h3>Modern Javanese Identity and Challenges</h3>
+            <p>As Indonesia's dominant ethnic group, Javanese significantly influence national culture, politics, and language—Bahasa Indonesia evolved from Malay but incorporates Javanese grammar and vocabulary. Most Indonesian presidents have been Javanese, raising occasional resentment from other ethnic groups. Modern challenges include <strong>urbanization</strong> drawing youth to cities like Jakarta and Surabaya, eroding traditional village structures; <strong>Islamic reform movements</strong> pressuring syncretic Kejawen practices; and <strong>economic pressures</strong> on traditional arts as younger generations pursue modern careers. However, batik experiences renaissance as fashion statement, wayang kulit adapts to contemporary themes, and cultural tourism supports traditional arts. Educational institutions teach Javanese language, gamelan music, and courtly dance, while social media enables new forms of cultural expression. The Javanese navigate modernity while maintaining core values of refinement, harmony, and respect for heritage.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800" alt="Borobudur temple" loading="lazy">
+                    <div class="image-caption">Magnificent Borobudur, the world's largest Buddhist monument built in 9th century</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1583225173914-8bb5b5126d80?w=800" alt="Traditional batik patterns" loading="lazy">
+                    <div class="image-caption">Traditional Javanese batik featuring intricate parang and kawung patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1553653924-39f9a3f1c6e8?w=800" alt="Wayang kulit performance" loading="lazy">
+                    <div class="image-caption">Wayang kulit shadow puppet performance with dalang and gamelan orchestra</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Gamelan instruments" loading="lazy">
+                    <div class="image-caption">Traditional Javanese gamelan orchestra with bronze metallophones and gongs</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800" alt="Rice field landscapes" loading="lazy">
+                    <div class="image-caption">Lush Javanese rice paddies covering the volcanic island's fertile lowlands</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800" alt="Traditional kraton palace" loading="lazy">
+                    <div class="image-caption">Yogyakarta Kraton (Sultan's Palace), cultural center preserving Javanese courtly traditions</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/dayak.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Dayak</h3>
+                    <p class="related-location">Borneo</p>
+                    <span class="relationship-badge regional">Indonesian Neighbors</span>
+                    <p class="related-description">Indigenous peoples of Indonesian Borneo with distinct cultural traditions.</p>
+                </a>
+                <a href="/peoples/ifugao.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Ifugao</h3>
+                    <p class="related-location">Philippines</p>
+                    <span class="relationship-badge similar">Rice Culture</span>
+                    <p class="related-description">Mountain people famous for rice terraces and agricultural traditions.</p>
+                </a>
+                <a href="/peoples/hmong.html" class="related-card">
+                    <div class="related-icon">🧵</div>
+                    <h3>Hmong</h3>
+                    <p class="related-location">Southeast Asia</p>
+                    <span class="relationship-badge similar">Textile Arts</span>
+                    <p class="related-description">Renowned for intricate textile work and embroidery traditions.</p>
+                </a>
+                <a href="/peoples/karen.html" class="related-card">
+                    <div class="related-icon">🎋</div>
+                    <h3>Karen</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge regional">Southeast Asian Culture</span>
+                    <p class="related-description">Hill people maintaining distinct identity and weaving traditions.</p>
+                </a>
+                <a href="/peoples/bajau-laut.html" class="related-card">
+                    <div class="related-icon">⛵</div>
+                    <h3>Bajau Laut</h3>
+                    <p class="related-location">Maritime Southeast Asia</p>
+                    <span class="relationship-badge regional">Archipelago Neighbors</span>
+                    <p class="related-description">Sea nomads inhabiting Indonesian and Philippine waters.</p>
+                </a>
+                <a href="/peoples/tibetan.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Tibetan</h3>
+                    <p class="related-location">Tibet/Himalaya</p>
+                    <span class="relationship-badge similar">Buddhist Heritage</span>
+                    <p class="related-description">Buddhist culture that influenced early Javanese temple architecture.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Geertz, Clifford. (1960). <em>The Religion of Java</em>. University of Chicago Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Anderson, Benedict. (1972). <em>Java in a Time of Revolution: Occupation and Resistance, 1944-1946</em>. Cornell University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Keeler, Ward. (1987). <em>Javanese Shadow Plays, Javanese Selves</em>. Princeton University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Mulder, Niels. (1978). <em>Mysticism and Everyday Life in Contemporary Java</em>. Singapore University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Ricklefs, M.C. (2007). <em>Polarising Javanese Society: Islamic and Other Visions, c. 1830-1930</em>. KITLV Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Elliott, Inger McCabe. (2004). <em>Batik: Fabled Cloth of Java</em>. Periplus Editions.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Becker, Judith. (1979). <em>Traditional Music in Modern Java: Gamelan in a Changing Society</em>. University of Hawaii Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Miksic, John N. (1990). <em>Borobudur: Golden Tales of the Buddhas</em>. Periplus Editions.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800", caption: "Magnificent Borobudur, the world's largest Buddhist monument built in 9th century" },
+            { src: "https://images.unsplash.com/photo-1583225173914-8bb5b5126d80?w=800", caption: "Traditional Javanese batik featuring intricate parang and kawung patterns" },
+            { src: "https://images.unsplash.com/photo-1553653924-39f9a3f1c6e8?w=800", caption: "Wayang kulit shadow puppet performance with dalang and gamelan orchestra" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Traditional Javanese gamelan orchestra with bronze metallophones and gongs" },
+            { src: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800", caption: "Lush Javanese rice paddies covering the volcanic island's fertile lowlands" },
+            { src: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800", caption: "Yogyakarta Kraton (Sultan's Palace), cultural center preserving Javanese courtly traditions" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

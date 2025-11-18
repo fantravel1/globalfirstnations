@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kogi People: Elder Brothers Guardians of Sierra Nevada de Santa Marta | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <style>
+        :root { --kogi-white: #F0F0F0; --sierra-green: #2F5233; --spiritual-gold: #DAA520; --mountain-blue: #4682B4; --earth-brown: #8B7355; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--mountain-blue) 0%, var(--sierra-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--sierra-green), var(--mountain-blue)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(47,82,51,0.5); border: 5px solid var(--spiritual-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--sierra-green); }
+        nav a { color: var(--sierra-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--sierra-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--sierra-green); border-right: 3px solid var(--spiritual-gold); }
+        h2 { color: var(--sierra-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--sierra-green); }
+        h3 { color: var(--mountain-blue); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--sierra-green), var(--mountain-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--spiritual-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--spiritual-gold), var(--sierra-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--sierra-green), var(--mountain-blue)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--sierra-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--sierra-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--sierra-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏔️</span>
+            <h1>The Kogi People</h1>
+            <p class="tagline">"Elder Brothers" - Sierra Nevada de Santa Marta Guardians - Heart of the World Keepers</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Kogi?</h2>
+            <p>The Kogi (also spelled Cogui or Kággaba) are an indigenous people numbering approximately 20,000, inhabiting the Sierra Nevada de Santa Marta mountain range in northern Colombia—an isolated coastal mountain massif rising to 5,775 meters (18,947 feet), the world's highest coastal peak. The Kogi are direct descendants of the ancient Tairona civilization, which created spectacular terraced cities before Spanish conquest. Remarkably, the Kogi maintained cultural isolation by retreating high into the mountains, preserving pre-Columbian beliefs, practices, and social organization more completely than perhaps any other indigenous group in the Americas. They call themselves the "Elder Brothers," spiritual guardians of the "Heart of the World" (their sacred mountain), with a sacred duty to maintain cosmic balance through meditation, offerings, and adherence to spiritual law (<em>Aluna</em>). Modern outsiders they call "Younger Brothers," warning that our materialistic civilization threatens Earth's survival. The Kogi's environmental warnings, delivered through rare filmed messages, have made them globally recognized as prophetic voices for ecological wisdom.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">20,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Kogi</span><span>Chibchan language</span></div>
+                <div class="stat-card"><span class="stat-number">5,775m</span><span>Mountain peak height</span></div>
+                <div class="stat-card"><span class="stat-number">Colombia</span><span>Sierra Nevada</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Aluna: The Great Mother's Thought:</strong> The Kogi believe physical reality is a reflection of <em>Aluna</em>—the spiritual dimension where thought creates reality. Their Mamas (priests) spend years in dark training learning to perceive and work in Aluna, making offerings at sacred sites to maintain balance. They warned that "Younger Brothers" damaging the physical world creates chaos in Aluna, threatening all life—a prophetic environmental message!
+            </div>
+
+            <h3>Descendants of the Tairona Civilization</h3>
+            <p>The Kogi descend from the <strong>Tairona civilization</strong>, which flourished from 200 CE until Spanish conquest. The Tairona built spectacular stone cities with sophisticated terracing, irrigation, and architecture throughout the Sierra Nevada. The site of <strong>Ciudad Perdida</strong> (Lost City), rediscovered in 1972, features over 169 terraces carved into mountainsides, connected by stone pathways, with remains of houses, ceremonial centers, and gold workshops. The Tairona were master goldsmiths, creating intricate ornaments and ritualistic objects. Spanish conquistadors, seeking gold and converts, launched brutal campaigns in the 1500s. The Tairona fiercely resisted but faced superior weapons and disease. Survivors retreated higher into the mountains' most inaccessible regions, beyond Spanish control. There, they preserved their civilization with minimal outside contact for 400+ years, maintaining social structures, spiritual practices, agricultural systems, and astronomical knowledge from before European contact—an almost unique cultural continuity in colonized Americas.</p>
+
+            <h3>Spiritual Training of the Mamas</h3>
+            <p>Kogi society is guided by <strong>Mamas</strong>—spiritual priests who undergo extraordinary training beginning in childhood. Children selected to become Mamas are taken from their families around age 3-9 and raised in complete darkness within caves or stone houses for up to 18 years. During this isolation, they learn sacred knowledge, meditation, divination, oral history, astronomical patterns, and how to perceive <em>Aluna</em>—the spiritual dimension underlying physical reality. They emerge into daylight only after training completes, their senses heightened and minds attuned to spiritual realities. Mamas serve as healers, diviners, mediators, and spiritual authorities. They perform divination using quartz crystals, coca leaves, and meditation. They make ritual offerings (<em>pagamentos</em>) at sacred sites throughout the Sierra Nevada—lakes, peaks, springs—to maintain cosmic balance. The Mamas' authority is absolute in spiritual matters, and major community decisions require their consultation and approval.</p>
+
+            <h3>Traditional Lifestyle and Subsistence</h3>
+            <p>The Kogi practice <strong>vertical agriculture</strong>, cultivating crops at different elevations utilizing the Sierra Nevada's dramatic ecological zones from coastal lowlands to alpine tundra. They grow corn, beans, squash, potatoes, and plantains at different altitudes. <strong>Coca leaves</strong> are sacred and essential—men carry <em>poporos</em> (gourds containing powdered lime from seashells) and coca leaves, constantly chewing coca mixed with lime to produce a mild stimulant. This practice is ritual, social, and symbolic—the poporo represents the feminine, the stick used to extract lime represents the masculine, and their union creates balance. The Kogi live in round thatched-roof houses (<em>nuhues</em>) organized around ceremonial houses (<em>cansamarias</em>) where Mamas conduct rituals. Men wear white cotton tunics and distinctive conical hats; women wear white dresses. White symbolizes purity and spiritual clarity. The Kogi minimize material possessions, viewing accumulation as spiritually corrupting—a stark contrast to modern consumerism.</p>
+
+            <h3>Warning Messages to the World</h3>
+            <p>In 1990, the Kogi made an unprecedented decision: contact the outside world with a warning. They allowed British filmmaker Alan Ereira to create <em>From the Heart of the World: The Elder Brothers' Warning</em>, a documentary where Mamas explain that "Younger Brothers" (modern civilization) are destroying the "Heart of the World" through deforestation, mining, pollution, and climate change. They warned this damages not just physical environment but disrupts Aluna, threatening cosmic balance and all life. The film was broadcast on BBC and gained international attention. Two decades later, finding their warnings unheeded and environmental destruction accelerated, the Kogi contacted Ereira again for <em>Aluna</em> (2012), a more urgent message explaining their worldview and pleading for Younger Brothers to change course before irreversible damage occurs. These rare communications demonstrate the Kogi's deep concern that humanity faces catastrophic consequences from ecological recklessness.</p>
+
+            <h3>Modern Challenges and Cultural Preservation</h3>
+            <p>Despite isolation, the Kogi face mounting pressures. <strong>Armed conflict</strong>—Colombia's decades-long civil war between government, guerrillas (FARC), and paramilitaries—reached their territories, forcing displacement and threatening sacred sites. <strong>Drug trafficking</strong> operations encroached on their lands. <strong>Climate change</strong> melts glaciers on Sierra Nevada peaks that the Kogi consider sacred, disrupting water cycles and spiritual balance. <strong>Illegal mining</strong> and logging destroy forests. However, the Kogi actively defend their territory. The Colombian government recognizes indigenous reserves, granting the Kogi and neighboring Arhuaco, Wiwa, and Kankuamo peoples legal control over much of the Sierra Nevada. The <strong>Gonawindúa Tayrona Organization</strong> represents Kogi interests. They purchase degraded land from colonists to restore forests and sacred sites. Language, traditions, and spiritual practices remain strong—the Kogi language is widely spoken, Mamas continue training in traditional isolation, and young people learn ancestral knowledge. The Kogi demonstrate that indigenous wisdom offers crucial perspectives on sustainability and that maintaining traditional lifeways isn't "primitive" but represents sophisticated understanding of ecological and spiritual interconnection that modern civilization desperately needs to learn.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Sierra Nevada mountains" loading="lazy">
+                    <div class="image-caption">Sierra Nevada de Santa Marta, "Heart of the World" sacred to the Kogi</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800" alt="Cloud forest" loading="lazy">
+                    <div class="image-caption">Cloud forests of Sierra Nevada where Kogi maintain traditional villages</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551244177-9a0275b01119?w=800" alt="Stone terraces" loading="lazy">
+                    <div class="image-caption">Ancient Tairona stone terraces, ancestors of modern Kogi people</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1596977884133-46a0b2d1b3a6?w=800" alt="Agricultural terraces" loading="lazy">
+                    <div class="image-caption">Vertical agriculture practiced by Kogi at different mountain elevations</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800" alt="Mountain peak" loading="lazy">
+                    <div class="image-caption">Snow-capped peaks of Sierra Nevada, sacred sites for Kogi Mamas' rituals</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Tropical forest" loading="lazy">
+                    <div class="image-caption">Biodiverse forests Kogi protect as guardians of ecological balance</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/quechua.html" class="related-card">
+                    <div class="related-icon">🦙</div>
+                    <h3>Quechua</h3>
+                    <p class="related-location">Andes, South America</p>
+                    <span class="relationship-badge similar">Mountain People</span>
+                    <p class="related-description">Andean mountain culture with ancient traditions and vertical agriculture.</p>
+                </a>
+                <a href="/peoples/embera.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Emberá</h3>
+                    <p class="related-location">Colombia/Panama</p>
+                    <span class="relationship-badge regional">Colombian Neighbors</span>
+                    <p class="related-description">Fellow Colombian indigenous people maintaining traditional rainforest culture.</p>
+                </a>
+                <a href="/peoples/aymara.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Aymara</h3>
+                    <p class="related-location">Bolivia/Peru</p>
+                    <span class="relationship-badge similar">Andean Culture</span>
+                    <p class="related-description">High-altitude people with ancient spiritual and agricultural traditions.</p>
+                </a>
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Brazil/Venezuela</p>
+                    <span class="relationship-badge similar">Isolated Culture</span>
+                    <p class="related-description">Amazonian people maintaining traditional lifestyle with minimal outside contact.</p>
+                </a>
+                <a href="/peoples/guarani.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Guaraní</h3>
+                    <p class="related-location">South America</p>
+                    <span class="relationship-badge regional">South American Indigenous</span>
+                    <p class="related-description">Widespread people fighting for territorial and cultural rights.</p>
+                </a>
+                <a href="/peoples/tibetan.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Tibetan</h3>
+                    <p class="related-location">Tibet/Himalayas</p>
+                    <span class="relationship-badge similar">Mountain Spiritual Culture</span>
+                    <p class="related-description">High-altitude people with deep spiritual traditions and mountain guardianship.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Reichel-Dolmatoff, Gerardo. (1985). <em>Los Kogi: Una Tribu de la Sierra Nevada de Santa Marta, Colombia</em> (2 volumes). Procultura.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Ereira, Alan. (1992). <em>The Elder Brothers: A Lost South American People and Their Wisdom</em>. Knopf.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Tayler, Donald. (1997). <em>The Coming of the Sun: A Prologue to Ika and Kogi Mythology</em>. Pitt Rivers Museum.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Reichel-Dolmatoff, Gerardo. (1987). "The Great Mother and the Kogi Universe: A Concise Overview." <em>Journal of Latin American Lore</em> 13(1): 73-113.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Osborn, Ann. (1985). "Tiempo, Clima y Aspectos Socioeconómicos de los Cogui de la Sierra Nevada." In <em>Sierra Nevada: El Mundo de Nunángüe</em>. Fundación Pro-Sierra Nevada.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Vieco, Juan José, Franky, Carlos Eduardo, & Echeverri, Juan Alvaro. (2000). <em>Territorialidad Indígena y Ordenamiento en la Amazonia</em>. Universidad Nacional de Colombia.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Uribe, Carlos Alberto. (2002). "La Gran Sociedad Indígena de la Sierra Nevada de Santa Marta en los Contextos Regional y Nacional." In <em>Los Pueblos Indígenas de Colombia en el Umbral del Nuevo Milenio</em>. DNP.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Ereira, Alan (Director). (2012). <em>Aluna</em> [Documentary film]. Tairona Heritage Trust.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Sierra Nevada de Santa Marta, \"Heart of the World\" sacred to the Kogi" },
+            { src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800", caption: "Cloud forests of Sierra Nevada where Kogi maintain traditional villages" },
+            { src: "https://images.unsplash.com/photo-1551244177-9a0275b01119?w=800", caption: "Ancient Tairona stone terraces, ancestors of modern Kogi people" },
+            { src: "https://images.unsplash.com/photo-1596977884133-46a0b2d1b3a6?w=800", caption: "Vertical agriculture practiced by Kogi at different mountain elevations" },
+            { src: "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800", caption: "Snow-capped peaks of Sierra Nevada, sacred sites for Kogi Mamas' rituals" },
+            { src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800", caption: "Biodiverse forests Kogi protect as guardians of ecological balance" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

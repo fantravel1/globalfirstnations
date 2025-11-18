@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapese People: Stone Money Masters and Micronesian Navigators | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+    <style>
+        :root { --yap-gold: #DAA520; --stone-gray: #708090; --ocean-teal: #008080; --white: #ecf0f1; --coral-orange: #FF7F50; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--ocean-teal) 0%, var(--stone-gray) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--yap-gold), var(--stone-gray)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(218,165,32,0.5); border: 5px solid var(--coral-orange); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--yap-gold); }
+        nav a { color: var(--yap-gold); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--yap-gold); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--yap-gold); border-right: 3px solid var(--coral-orange); }
+        h2 { color: var(--yap-gold); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--yap-gold); }
+        h3 { color: var(--stone-gray); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--yap-gold), var(--ocean-teal)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--coral-orange); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--coral-orange), var(--yap-gold)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--yap-gold), var(--stone-gray)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--yap-gold); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--yap-gold); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--yap-gold); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">💰</span>
+            <h1>The Yapese People</h1>
+            <p class="tagline">Stone Money Masters - Traditional Navigators - Keepers of Micronesian Heritage</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Yapese?</h2>
+            <p>The Yapese people are the indigenous inhabitants of Yap, one of the four states of the Federated States of Micronesia, located in the western Pacific Ocean. With a population of approximately 11,000, the Yapese maintain one of the Pacific's most traditional cultures, famous worldwide for their unique <strong>stone money</strong> system using massive limestone disks called <strong>rai</strong>. These enormous stone wheels, some measuring up to 12 feet in diameter and weighing several tons, represent one of history's most remarkable currencies. The value of rai is determined not by size alone, but by the stone's history, the difficulty of its acquisition from Palau (over 250 miles away), and the lives lost obtaining it. Yapese society is highly structured around a complex <strong>caste system</strong> and matrilineal clans, with strict social protocols governing behavior, dress, and interaction. Traditional navigation, stone platforms, and men's houses (faluw) remain central to cultural identity. Despite modernization, Yap stands out as one of Micronesia's most culturally conservative communities, where traditional dress, customs, and social structures persist in daily life.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">11,000</span><span>Yapese population</span></div>
+                <div class="stat-card"><span class="stat-number">Yapese</span><span>Austronesian language</span></div>
+                <div class="stat-card"><span class="stat-number">13,000</span><span>Stone money pieces (rai)</span></div>
+                <div class="stat-card"><span class="stat-number">Yap Islands</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Immovable Currency:</strong> Yapese stone money (rai) is so large and heavy that it often never moves! When ownership changes hands, the stone stays in place—everyone simply remembers who owns it. One famous rai sits at the bottom of the ocean after its transport canoe sank; it's still considered valuable currency because its ownership history is known!
+            </div>
+
+            <h3>Stone Money and Economic Systems</h3>
+            <p>The Yapese <strong>rai</strong> stone money system represents one of humanity's most fascinating economic innovations. Created from aragonite limestone quarried on Palau's Rock Islands, these massive disks were carved with a central hole and transported 250+ miles by canoe—an incredibly dangerous journey that took months and claimed many lives. The stone's value derives from multiple factors: size, quality of stone, difficulty of acquisition, lives lost during transport, and the stone's known history. Rai served ceremonial and social purposes—resolving disputes, arranging marriages, purchasing land, or compensating for wrongs. Importantly, physical possession mattered less than recognized ownership; oral tradition tracked each stone's owner through generations. Smaller shell money (<strong>yar</strong> and <strong>reng</strong>) served everyday transactions. This unique monetary system fascinated economists, influencing modern understanding of money as social agreement rather than intrinsic value. Today, while modern currency dominates daily commerce, rai continue to change hands for traditional purposes, maintaining their cultural and ceremonial significance.</p>
+
+            <h3>Caste System and Social Structure</h3>
+            <p>Yapese society features one of the Pacific's most elaborate caste systems, with nine distinct ranks ranging from <strong>bulche</strong> (high caste) to <strong>milingai</strong> (low caste). Villages themselves are ranked, with status determining political influence, land rights, and social interactions. The system is matrilineal—individuals inherit caste and land rights through their mother's line. Each person belongs to both a <strong>tabinaw</strong> (land-owning estate) and <strong>genung</strong> (clan). Traditional authority rests with village councils led by <strong>pilung</strong> (chiefs). Strict protocols govern behavior: lower castes must show deference to higher castes through specific paths, seating arrangements, and speech patterns. Traditional dress signals status—high-caste individuals wear particular colors and styles. This hierarchical system, while modified by modern democratic governance, still influences social relationships, marriage patterns, and cultural practices. The <strong>faluw</strong> (men's house) serves as community center where men discuss village matters, share knowledge, and train younger generations in navigation, fishing, and tradition.</p>
+
+            <h3>Navigation and Maritime Heritage</h3>
+            <p>Like their Micronesian neighbors, the Yapese were master navigators who sailed vast ocean distances using sophisticated wayfinding techniques. Traditional navigators (<strong>palu</strong>) learned to read star paths, wave patterns, bird behavior, and ocean swells to traverse hundreds of miles of open water. The Yapese maintained extensive trading networks, most famously the expeditions to Palau to quarry and transport rai stones. These dangerous voyages required expert seamanship, with large sailing canoes (sometimes lashed together as catamarans) carrying stone-working crews across treacherous waters. Navigation knowledge was sacred, passed orally from master to apprentice in the faluw. Traditional sailing canoes featured distinctive designs adapted to local conditions. While modern vessels have largely replaced traditional craft, cultural revival programs work to preserve navigation knowledge, with some Yapese learning traditional techniques through regional wayfinding networks that connect Micronesian island cultures.</p>
+
+            <h3>Traditional Dress and Cultural Preservation</h3>
+            <p>Yap is unique among Pacific islands for the continued daily wearing of traditional dress by many people, especially in villages. Women wear <strong>thu</strong>—colorful woven skirts made from hibiscus fiber or cotton—often bare-breasted as traditional attire, though modern clothing is also common. Men wear <strong>thu</strong> (loincloth). This practice isn't mere costume but daily cultural expression, particularly for older generations and in village settings. Traditional body decoration includes <strong>lavalavas</strong> (flower leis), coconut oil application, and turmeric paste for ceremonies. The Yapese language remains vibrant, spoken at home and taught in schools. Traditional knowledge systems persist: <strong>herbal medicine</strong> using local plants, fishing techniques attuned to lunar cycles, and agricultural practices suited to island ecology. The <strong>Catholic and Protestant churches</strong> coexist with traditional beliefs, creating syncretic practices. Yap's cultural conservatism partly stems from deliberate choices to resist outside influences that eroded tradition elsewhere, though this creates tensions between preservation and modernization desires, especially among youth.</p>
+
+            <h3>Contemporary Challenges and Cultural Tourism</h3>
+            <p>Modern Yapese balance traditional life with contemporary challenges as part of the Federated States of Micronesia, which has a Compact of Free Association with the United States. The economy relies on U.S. aid, fishing rights, subsistence agriculture, and tourism. <strong>Cultural tourism</strong> allows visitors to experience authentic Yapese life—viewing stone money, attending traditional dances, and learning about navigation—providing income while raising concerns about cultural commodification. Out-migration, particularly of educated youth seeking opportunities in Guam, Hawaii, or the U.S. mainland, threatens cultural continuity. Climate change poses existential threats to low-lying atolls and disrupts traditional fishing and farming. The <strong>Yap Visitors Bureau</strong> promotes respectful tourism with strict protocols (visitors must obtain permits for photos, especially of traditionally-dressed people). Educational initiatives teach younger generations Yapese language, navigation, and traditional crafts. The tension between maintaining tradition and engaging with global economy remains central to Yapese life. Yet compared to many Pacific communities, Yap has remarkably preserved its cultural identity, offering lessons in cultural resilience and the possibility of selective modernization that honors ancestral ways.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Yapese stone money rai" loading="lazy">
+                    <div class="image-caption">Massive Yapese rai stone money disk, carved limestone transported from Palau by canoe</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Traditional Yapese dancers" loading="lazy">
+                    <div class="image-caption">Yapese dancers in traditional thu garments performing ceremonial bamboo dance</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1505881502353-a1986add3762?w=800" alt="Traditional Yapese sailing canoe" loading="lazy">
+                    <div class="image-caption">Traditional Yapese sailing canoe used for inter-island navigation and stone money expeditions</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Yapese men's house faluw" loading="lazy">
+                    <div class="image-caption">Traditional faluw (men's house) where navigation knowledge and cultural traditions are transmitted</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1582735689699-18d6c0969ce4?w=800" alt="Yapese traditional weaving" loading="lazy">
+                    <div class="image-caption">Women weaving traditional thu garments from hibiscus fiber and cotton</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1509233725247-49e657c54213?w=800" alt="Yap island landscape" loading="lazy">
+                    <div class="image-caption">Lush tropical landscape of Yap with traditional stone platforms and coastal villages</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/chamorro.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Chamorro</h3>
+                    <p class="related-location">Guam/Marianas</p>
+                    <span class="relationship-badge regional">Micronesian Neighbors</span>
+                    <p class="related-description">Fellow Micronesian culture known for latte stones and ancient navigation heritage.</p>
+                </a>
+                <a href="/peoples/papuan.html" class="related-card">
+                    <div class="related-icon">🪶</div>
+                    <h3>Papuan</h3>
+                    <p class="related-location">Papua New Guinea</p>
+                    <span class="relationship-badge regional">Western Pacific</span>
+                    <p class="related-description">Melanesian neighbors with diverse cultures and traditional exchange systems.</p>
+                </a>
+                <a href="/peoples/fijian.html" class="related-card">
+                    <div class="related-icon">🏝️</div>
+                    <h3>Fijian</h3>
+                    <p class="related-location">Fiji</p>
+                    <span class="relationship-badge regional">Pacific Islanders</span>
+                    <p class="related-description">Melanesian-Polynesian culture sharing Pacific maritime traditions and customs.</p>
+                </a>
+                <a href="/peoples/samoan.html" class="related-card">
+                    <div class="related-icon">🦅</div>
+                    <h3>Samoan</h3>
+                    <p class="related-location">Samoa</p>
+                    <span class="relationship-badge similar">Navigation Heritage</span>
+                    <p class="related-description">Polynesian navigators sharing traditional Pacific seafaring knowledge and customs.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌀</div>
+                    <h3>Maori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge similar">Cultural Preservation</span>
+                    <p class="related-description">Polynesian culture with strong traditions of cultural preservation and revival.</p>
+                </a>
+                <a href="/peoples/tongan.html" class="related-card">
+                    <div class="related-icon">👑</div>
+                    <h3>Tongan</h3>
+                    <p class="related-location">Tonga</p>
+                    <span class="relationship-badge similar">Traditional Structure</span>
+                    <p class="related-description">Polynesian kingdom maintaining strong hierarchical social structures and customs.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Lingenfelter, Sherwood G. (1975). <em>Yap: Political Leadership and Culture Change in an Island Society</em>. University of Hawaii Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Furness, William H. (1910). <em>The Island of Stone Money: Uap of the Carolines</em>. J.B. Lippincott Company.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Gillilland, Cora Lee C. (1975). <em>The Stone Money of Yap: A Numismatic Survey</em>. Smithsonian Institution Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Alkire, William H. (1977). <em>An Introduction to the Peoples and Cultures of Micronesia</em>. Cummings Publishing Company.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Egan, James A. (1998). <em>Taro, Fish and Funerals: Transformations in the Yapese Cultural Topography of Wealth</em>. University of California, Berkeley.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Labby, David. (1976). <em>The Demystification of Yap: Dialectics of Culture on a Micronesian Island</em>. University of Chicago Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Fitzpatrick, Scott M. (2003). <em>Stones of Greatest Value: Yap's Stone Money and the Historical Implications of Value</em>. Archaeology in Oceania, 38(1), 1-12.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Marksbury, Richard A. (1979). <em>Land Tenure and Modernization in the Yap Islands</em>. University of Hawaii Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Massive Yapese rai stone money disk, carved limestone transported from Palau by canoe" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Yapese dancers in traditional thu garments performing ceremonial bamboo dance" },
+            { src: "https://images.unsplash.com/photo-1505881502353-a1986add3762?w=800", caption: "Traditional Yapese sailing canoe used for inter-island navigation and stone money expeditions" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Traditional faluw (men's house) where navigation knowledge and cultural traditions are transmitted" },
+            { src: "https://images.unsplash.com/photo-1582735689699-18d6c0969ce4?w=800", caption: "Women weaving traditional thu garments from hibiscus fiber and cotton" },
+            { src: "https://images.unsplash.com/photo-1509233725247-49e657c54213?w=800", caption: "Lush tropical landscape of Yap with traditional stone platforms and coastal villages" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

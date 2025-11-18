@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentawai People: Tattoo Masters and Guardians of Indonesia's Surf Islands | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    <style>
+        :root { --mentawai-teal: #008080; --island-coral: #FF7F50; --jungle-green: #228B22; --white: #ecf0f1; --ocean-blue: #1E90FF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--mentawai-teal) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--mentawai-teal), var(--island-coral)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,128,128,0.5); border: 5px solid var(--island-coral); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--mentawai-teal); }
+        nav a { color: var(--mentawai-teal); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--mentawai-teal); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--mentawai-teal); border-right: 3px solid var(--island-coral); }
+        h2 { color: var(--mentawai-teal); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--mentawai-teal); }
+        h3 { color: var(--island-coral); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--mentawai-teal), var(--island-coral)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--island-coral); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--island-coral), var(--jungle-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--mentawai-teal), var(--island-coral)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--mentawai-teal); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--mentawai-teal); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--mentawai-teal); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🌊</span>
+            <h1>The Mentawai People</h1>
+            <p class="tagline">Full-Body Tattoo Masters - Teeth Sharpening Tradition - Guardians of Surf Islands</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Mentawai?</h2>
+            <p>The Mentawai are an indigenous Austronesian people numbering approximately 80,000, inhabiting the remote Mentawai Islands—Siberut, Sipora, North Pagai, and South Pagai—located 100 kilometers off Sumatra's west coast in Indonesia. Linguistically and culturally distinct from mainland Sumatrans, the Mentawai are believed to have been isolated for 3,000-12,000 years, developing unique traditions including extensive <strong>full-body tattoos</strong> (titi) created through painful hand-tapping techniques, <strong>teeth sharpening</strong> (sipatiti) for beauty and spiritual protection, and elaborate animistic beliefs centered on spiritual balance. Their traditional religion, <strong>Arat Sabulungan</strong> (religion of the leaves), venerates ancestral spirits and nature deities through shamanic rituals performed by <strong>sikerei</strong> (medicine men). The Mentawai live in communal longhouses (<strong>uma</strong>) deep in rainforests, practicing subsistence agriculture, hunting with poison arrows, and gathering. Since the 1970s, these pristine islands became legendary among surfers for world-class waves, bringing outside contact that both threatens and economically supports traditional culture. The Mentawai face ongoing challenges from government-mandated resettlement, religious conversion pressures, logging, and cultural erosion.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">80,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Mentawai</span><span>Austronesian language</span></div>
+                <div class="stat-card"><span class="stat-number">4 islands</span><span>Mentawai archipelago</span></div>
+                <div class="stat-card"><span class="stat-number">3,000+</span><span>Years of isolation</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Surfing Meets Tradition:</strong> The Mentawai Islands are considered the world's best surf destination, with waves like Macaronis, Lance's Right, and Telescopes. This ironic twist brings surfers to islands where indigenous people live as their ancestors did millennia ago!
+            </div>
+
+            <h3>Tattoo Tradition and Body Modification</h3>
+            <p>Mentawai <strong>titi</strong> (tattoos) cover the entire body in geometric patterns, dots, and lines symbolizing beauty, spiritual protection, and social status. Traditional tattooing uses sharpened bones, thorns, or nails to tap ink (made from sugar cane soot and water) into skin—an excruciating process taking years to complete. Men and women both receive tattoos, with designs varying by clan and region. <strong>Sipatiti</strong> (teeth sharpening) involves filing canines and incisors to sharp points, traditionally performed during adolescence as beauty enhancement and rite of passage. Elders traditionally wore elaborate beadwork, feathers, and flowers, creating stunning visual appearance. Christian missionary efforts and government "modernization" programs attempted to eliminate these practices, but cultural revival movements now work to preserve traditional body art knowledge before elder practitioners die.</p>
+
+            <h3>Arat Sabulungan Religion and Sikerei Shamans</h3>
+            <p><strong>Arat Sabulungan</strong> (religion of the leaves/flowers) centers on maintaining balance between visible and spirit worlds. The Mentawai believe all things—animals, plants, humans—possess spirits (<strong>simagere</strong>) requiring respect and ritual offerings. Violating taboos causes spiritual imbalance leading to illness, accidents, or death. <strong>Sikerei</strong> (shamans) mediate between worlds, diagnosing spiritual causes of misfortune through trance states, performing healing rituals, and conducting elaborate ceremonies involving animal sacrifice (pigs, chickens), dancing, and chanting. Major ceremonies like <strong>puliaijat</strong> (great feast) bring the entire community together for multi-day celebrations strengthening social bonds and spiritual protection. Despite Indonesian government pressure to convert to Islam or Christianity, many Mentawai maintain Arat Sabulungan practices, sometimes syncretizing them with introduced religions.</p>
+
+            <h3>Uma Longhouse and Forest Lifestyle</h3>
+            <p>Traditional Mentawai live in <strong>uma</strong>—elevated longhouses built without nails using forest materials, housing extended families (30-80 people) in communal space. The uma's main room hosts ceremonies, meals, and socializing, while family sections provide privacy. Men hunt wild pigs, deer, and monkeys using poison-tipped arrows and trained dogs, while women tend <strong>pumonean</strong> (forest gardens) cultivating taro, bananas, and sago palm. The Mentawai practice <strong>sago processing</strong>—extracting starch from palm pith through laborious pounding and washing, creating staple flour. They domesticate semi-wild pigs, chickens, and dogs living beneath uma floors. Forest knowledge includes medicinal plants, poison preparation, and sustainable harvesting techniques. This lifestyle requires minimal external inputs but depends on intact rainforest—increasingly threatened by logging and oil palm plantations.</p>
+
+            <h3>Social Structure and Gender Roles</h3>
+            <p>Mentawai society is relatively egalitarian, with <strong>rimata</strong> (uma elders) providing leadership through consensus rather than coercion. Clan systems (<strong>suku</strong>) determine marriage rules and land rights, with complex kinship terms governing social relationships. Men hunt, build structures, and perform ceremonial roles, while women manage agriculture, food preparation, and childcare—though these boundaries are flexible. Both genders participate in <strong>turuk</strong> (communal work parties) for major tasks like uma construction or sago processing. Shamanic power can be held by men or women, though male sikerei are more common. Children learn through observation and participation rather than formal instruction, gaining forest knowledge, ritual procedures, and survival skills from elders.</p>
+
+            <h3>Modern Challenges and Cultural Preservation</h3>
+            <p>The Mentawai face multiple pressures on traditional lifestyle. Indonesian government <strong>resettlement programs</strong> (begun in the 1950s) forcibly moved forest-dwelling Mentawai to coastal villages, disrupting social structures and subsistence patterns. <strong>Religious conversion</strong> campaigns by Christian and Muslim missionaries discouraged tattooing, teeth sharpening, and Arat Sabulungan rituals. <strong>Commercial logging</strong> destroys forests essential for hunting and gathering. However, <strong>surf tourism</strong> provides economic opportunities while attracting global attention to cultural preservation needs. Organizations like SurfAid and local NGOs promote healthcare, education, and cultural documentation. Some young Mentawai revive traditional tattoos, sikerei training, and uma lifestyles, seeing value in ancestral knowledge. The challenge remains balancing economic development with cultural integrity, securing land rights against extractive industries, and maintaining spiritual traditions in a modernizing Indonesia.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1566408539832-e4c05f9b2d97?w=800" alt="Mentawai traditional tattoos" loading="lazy">
+                    <div class="image-caption">Traditional Mentawai full-body tattoos (titi) created through hand-tapping techniques</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Mentawai sikerei shaman" loading="lazy">
+                    <div class="image-caption">Sikerei (shaman) performing Arat Sabulungan healing ritual with traditional dress</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1552055568-3a9b0142e93f?w=800" alt="Traditional uma longhouse" loading="lazy">
+                    <div class="image-caption">Traditional uma longhouse built on stilts in the rainforest without using nails</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Mentawai Islands surf" loading="lazy">
+                    <div class="image-caption">World-class surf breaks of the Mentawai Islands attracting international surfers</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Traditional hunter" loading="lazy">
+                    <div class="image-caption">Mentawai hunter with poison-tipped arrows and traditional ornaments</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" alt="Rainforest habitat" loading="lazy">
+                    <div class="image-caption">Pristine Mentawai rainforest providing resources for traditional subsistence lifestyle</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/dayak.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Dayak</h3>
+                    <p class="related-location">Borneo</p>
+                    <span class="relationship-badge similar">Tattoo Tradition</span>
+                    <p class="related-description">Indigenous Borneo people with elaborate tattooing and longhouse culture.</p>
+                </a>
+                <a href="/peoples/bajau-laut.html" class="related-card">
+                    <div class="related-icon">⛵</div>
+                    <h3>Bajau Laut</h3>
+                    <p class="related-location">Maritime Southeast Asia</p>
+                    <span class="relationship-badge regional">Island Neighbors</span>
+                    <p class="related-description">Sea nomads inhabiting Indonesian archipelago with unique maritime culture.</p>
+                </a>
+                <a href="/peoples/ifugao.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Ifugao</h3>
+                    <p class="related-location">Philippines</p>
+                    <span class="relationship-badge similar">Animist Traditions</span>
+                    <p class="related-description">Mountain people maintaining indigenous spiritual practices and rituals.</p>
+                </a>
+                <a href="/peoples/karen.html" class="related-card">
+                    <div class="related-icon">🎋</div>
+                    <h3>Karen</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge similar">Forest People</span>
+                    <p class="related-description">Hill people with deep forest knowledge and spiritual traditions.</p>
+                </a>
+                <a href="/peoples/ainu.html" class="related-card">
+                    <div class="related-icon">🐻</div>
+                    <h3>Ainu</h3>
+                    <p class="related-location">Japan/Russia</p>
+                    <span class="relationship-badge similar">Indigenous Culture</span>
+                    <p class="related-description">Indigenous people facing similar modernization and preservation challenges.</p>
+                </a>
+                <a href="/peoples/hmong.html" class="related-card">
+                    <div class="related-icon">🧵</div>
+                    <h3>Hmong</h3>
+                    <p class="related-location">Southeast Asia</p>
+                    <span class="relationship-badge regional">Southeast Asian Culture</span>
+                    <p class="related-description">Highland people maintaining distinct traditions despite pressures.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Schefold, Reimar. (1988). <em>Toys for the Souls: Life and Art on the Mentawai Islands</em>. Volkenkundig Museum Nusantara.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Persoon, Gerard A. (1994). <em>Vluchten of veranderen: Processen van verandering en ontwikkeling bij tribale groepen in Indonesië</em>. Leiden University.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Bakker, Laurens. (2008). <em>"Who Owns the Land?" Looking for Law in Indonesia</em>. Bijdragen tot de Taal-, Land- en Volkenkunde.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Nooy-Palm, Hetty. (1968). <em>The Culture of the Pagai Islands, Mentawai</em>. Royal Tropical Institute.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Tulius, Juniator. (2012). <em>Arat Sabulungan: Agama Asli Masyarakat Mentawai</em>. Yayasan Pendidikan Mentawai.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Mcwilliam, Andrew. (2013). <em>Marginal Governance in Frontiers and Hinterlands of Southeast Asia</em>. Pacific Affairs.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Erb, Maribeth. (2015). <em>The Power of Spectacle: Paradoxes of Preservation and Cultural Development in Highland Manggarai and Mentawai</em>. Indonesia and the Malay World.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Znoj, Heinzpeter. (2009). <em>Deep Trance and Ritual Trance. Religious Therapy and its Discontents in Siberut, Indonesia</em>. Bijdragen tot de Taal-, Land- en Volkenkunde.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1566408539832-e4c05f9b2d97?w=800", caption: "Traditional Mentawai full-body tattoos (titi) created through hand-tapping techniques" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Sikerei (shaman) performing Arat Sabulungan healing ritual with traditional dress" },
+            { src: "https://images.unsplash.com/photo-1552055568-3a9b0142e93f?w=800", caption: "Traditional uma longhouse built on stilts in the rainforest without using nails" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "World-class surf breaks of the Mentawai Islands attracting international surfers" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Mentawai hunter with poison-tipped arrows and traditional ornaments" },
+            { src: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", caption: "Pristine Mentawai rainforest providing resources for traditional subsistence lifestyle" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>
