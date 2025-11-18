@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selk'nam People: Lost Masters of Tierra del Fuego | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+    <style>
+        :root { --selknam-white: #ECEFF1; --body-paint: #E53935; --tierra-brown: #5D4037; --guanaco-tan: #D7CCC8; --ceremonial-black: #212121; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--selknam-white) 0%, var(--tierra-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--body-paint), var(--tierra-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(229,57,53,0.5); border: 5px solid var(--guanaco-tan); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--body-paint); }
+        nav a { color: var(--body-paint); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--body-paint); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--body-paint); border-right: 3px solid var(--tierra-brown); }
+        h2 { color: var(--body-paint); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--body-paint); }
+        h3 { color: var(--tierra-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--body-paint), var(--tierra-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--guanaco-tan); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--guanaco-tan), var(--body-paint)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--body-paint), var(--tierra-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--body-paint); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--body-paint); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--body-paint); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🎭</span>
+            <h1>The Selk'nam People (Ona)</h1>
+            <p class="tagline">Lost Masters of Body Painting - Nomadic Hunters of Tierra del Fuego - Victims of Genocide</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Were the Selk'nam?</h2>
+            <p>The Selk'nam (also called Ona) were an indigenous people who inhabited the main island of Tierra del Fuego in southernmost South America, primarily in what is now Argentina and Chile. For thousands of years, they developed a sophisticated nomadic culture adapted to the harsh sub-Antarctic steppe environment, hunting guanaco (wild relatives of llamas), gathering coastal and terrestrial resources, and creating one of the world's most spectacular body painting traditions. The Selk'nam were renowned for their elaborate <strong>Hain ceremony</strong>, a multi-day initiation ritual featuring stunning geometric body paint designs that transformed participants into spirits. Tragically, the Selk'nam suffered complete cultural genocide following European colonization. Beginning in the 1880s, sheep ranchers systematically exterminated the Selk'nam to clear land, paying bounties for indigenous ears and genitals. Introduced diseases, forced missionization, and cultural destruction completed the devastation. The last full-blooded Selk'nam died in 1974, though some descendants with mixed ancestry survive. The Selk'nam represent one of history's most tragic cultural extinctions—an entire sophisticated civilization deliberately destroyed within a single century.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">0</span><span>Full-blooded survivors</span></div>
+                <div class="stat-card"><span class="stat-number">Chon</span><span>Language family</span></div>
+                <div class="stat-card"><span class="stat-number">1974</span><span>Last speaker died</span></div>
+                <div class="stat-card"><span class="stat-number">Tierra del Fuego</span><span>Former homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Geometric Body Painting Masters:</strong> The Selk'nam created some of the world's most spectacular body painting traditions! During the sacred Hain ceremony, participants covered their entire bodies in intricate geometric designs—stripes, diamonds, and abstract patterns in red, white, and black—transforming into spirit beings. Each design had specific meanings, representing different supernatural entities in their complex cosmology.
+            </div>
+
+            <h3>Nomadic Hunter-Gatherer Lifeway</h3>
+            <p>The Selk'nam developed a nomadic <strong>hunter-gatherer</strong> culture superbly adapted to Tierra del Fuego's cold steppe environment. Their primary prey was the <strong>guanaco</strong>, a wild camelid providing meat, hides for clothing and shelters, and bones for tools. Selk'nam hunters used bows and arrows with remarkable accuracy, stalking guanaco across the windswept plains. They also hunted foxes, birds, and collected shellfish along coasts. The Selk'nam lived in portable dome-shaped windbreaks covered with guanaco hides, easily dismantled and transported as they followed game. Despite the harsh climate with freezing temperatures and constant winds, Selk'nam people wore minimal clothing—mostly guanaco hide capes—and covered their bodies with animal fat for insulation. Their territory was divided among approximately 40 named groups (haruwen), each with defined hunting territories respected through customary law.</p>
+
+            <h3>The Sacred Hain Ceremony</h3>
+            <p>The <strong>Hain</strong> was the Selk'nam's most important ceremonial complex, serving as a male initiation ritual and religious performance lasting weeks or months. During Hain, young men underwent ordeals teaching them sacred knowledge, hunting skills, and adult responsibilities. The ceremony's most spectacular aspect involved <strong>klóketen</strong>—masked and body-painted performers representing supernatural spirits from Selk'nam mythology. Participants created elaborate body paint designs in red ochre, white clay, and charcoal, transforming into spirits through geometric patterns of incredible complexity and beauty. According to Selk'nam tradition, the Hain ceremony commemorated a mythological gender war where men overthrew original female dominance by discovering women's use of masks and body paint to impersonate spirits. The ceremony reinforced male authority while transmitting cosmological knowledge, myths, and cultural values across generations.</p>
+
+            <h3>Genocide and Cultural Destruction</h3>
+            <p>The Selk'nam suffered one of history's most brutal and systematic genocides. When sheep ranchers colonized Tierra del Fuego in the 1880s, they viewed indigenous people as obstacles to profit. Ranchers organized <strong>hunting parties</strong> that massacred Selk'nam people, with some offering bounties of one pound sterling per indigenous person killed—proof provided by ears or genitals. Historians estimate thousands were murdered. Missionary Julius Popper photographed himself with piles of indigenous corpses. Survivors were rounded up and confined to missions like the Salesian Mission on Dawson Island, where introduced diseases (measles, tuberculosis, influenza) killed massive numbers. Forced cultural assimilation attempted destroying remaining traditions. By 1919, only 279 Selk'nam remained. The population continued declining until <strong>Lola Kiepja</strong>, one of the last speakers who preserved songs and knowledge, died in 1966, and <strong>Ángela Loij</strong>, considered the last full-blooded Selk'nam, died in 1974.</p>
+
+            <h3>Photographic Documentation and European Exhibitions</h3>
+            <p>Ironically, while the Selk'nam were being exterminated, European anthropologists were documenting their culture. Missionary and ethnographer <strong>Martin Gusinde</strong> lived with Selk'nam communities in the 1920s, participating in Hain ceremonies and taking extensive photographs of body painting, rituals, and daily life. Photographer <strong>Anne Chapman</strong> later recorded the last Selk'nam elders. Most infamously, in 1889, eleven Selk'nam people were kidnapped and displayed in a <strong>"human zoo"</strong> exhibition in Paris and across Europe. Most died from diseases contracted during this horrific display. These photographs, while documenting cultural richness, were taken during genocide—a painful contradiction highlighting how indigenous peoples were simultaneously destroyed and exoticized by colonial powers.</p>
+
+            <h3>Legacy and Contemporary Recognition</h3>
+            <p>Though the Selk'nam as a living culture are extinct, their legacy persists. <strong>Descendants</strong> with mixed Selk'nam ancestry survive in Argentina and Chile, increasingly reclaiming their heritage and demanding recognition. In 2020, Argentina officially recognized the Selk'nam genocide. Museums in Chile and Argentina house Selk'nam artifacts, photographs, and recordings. The spectacular body painting documented by Gusinde has influenced contemporary art worldwide. Indigenous rights activists invoke the Selk'nam genocide as a cautionary tale about cultural extinction and the urgency of protecting surviving indigenous peoples. The Selk'nam story represents the devastating consequences of colonialism—a sophisticated culture with unique artistic traditions, spiritual practices, and ecological knowledge, completely destroyed in pursuit of land and profit. Their memory serves as both memorial to what was lost and warning about ongoing threats to indigenous peoples globally.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Tierra del Fuego landscape" loading="lazy">
+                    <div class="image-caption">Windswept steppe of Tierra del Fuego, former Selk'nam homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800" alt="Guanaco" loading="lazy">
+                    <div class="image-caption">Guanaco, primary prey animal central to Selk'nam subsistence</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800" alt="Body painting patterns" loading="lazy">
+                    <div class="image-caption">Geometric patterns inspired by Selk'nam body painting traditions</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Patagonian wilderness" loading="lazy">
+                    <div class="image-caption">Wild Patagonian landscape similar to Selk'nam territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=800" alt="Historical documentation" loading="lazy">
+                    <div class="image-caption">Archives preserving photographic documentation of Selk'nam culture</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Tierra del Fuego coast" loading="lazy">
+                    <div class="image-caption">Coastal regions where Selk'nam gathered marine resources</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/kawesqar.html" class="related-card">
+                    <div class="related-icon">🛶</div>
+                    <h3>Kawésqar</h3>
+                    <p class="related-location">Chilean Patagonia</p>
+                    <span class="relationship-badge regional">Fuegian Neighbors</span>
+                    <p class="related-description">Neighboring canoe people from Patagonian fjords, critically endangered.</p>
+                </a>
+                <a href="/peoples/yamana.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Yámana (Yaghan)</h3>
+                    <p class="related-location">Tierra del Fuego</p>
+                    <span class="relationship-badge regional">Southern Neighbors</span>
+                    <p class="related-description">Canoe people from southern Tierra del Fuego, last speaker died 2022.</p>
+                </a>
+                <a href="/peoples/tehuelche.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Tehuelche (Aónikenk)</h3>
+                    <p class="related-location">Patagonia</p>
+                    <span class="relationship-badge similar">Patagonian Hunters</span>
+                    <p class="related-description">Nomadic hunters from mainland Patagonia, also devastated by colonization.</p>
+                </a>
+                <a href="/peoples/mapuche.html" class="related-card">
+                    <div class="related-icon">🌟</div>
+                    <h3>Mapuche</h3>
+                    <p class="related-location">Chile/Argentina</p>
+                    <span class="relationship-badge regional">Northern Neighbors</span>
+                    <p class="related-description">Major indigenous group from southern Chile who resisted colonization.</p>
+                </a>
+                <a href="/peoples/haush.html" class="related-card">
+                    <div class="related-icon">🦙</div>
+                    <h3>Haush (Mánekenk)</h3>
+                    <p class="related-location">Eastern Tierra del Fuego</p>
+                    <span class="relationship-badge similar">Fuegian Relatives</span>
+                    <p class="related-description">Related extinct group from eastern Tierra del Fuego.</p>
+                </a>
+                <a href="/peoples/wichi.html" class="related-card">
+                    <div class="related-icon">🍯</div>
+                    <h3>Wichí</h3>
+                    <p class="related-location">Gran Chaco, Argentina</p>
+                    <span class="relationship-badge regional">Argentine Indigenous</span>
+                    <p class="related-description">Surviving indigenous group from northern Argentina Gran Chaco.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Gusinde, Martin. (1931-1939). <em>Die Feuerland Indianer</em> (The Fireland Indians). 3 vols. Mödling bei Wien.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Chapman, Anne. (1982). <em>Drama and Power in a Hunting Society: The Selk'nam of Tierra del Fuego</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Borrero, Luis A. (2001). <em>Los Selk'nam (Onas): Su evolución cultural</em>. Búsqueda de Ayllu.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bridges, E. Lucas. (1948). <em>Uttermost Part of the Earth</em>. Hodder and Stoughton.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">McEwan, Colin, et al. (1997). <em>Patagonia: Natural History, Prehistory and Ethnography at the Uttermost End of the Earth</em>. Princeton University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Bascopé Julio, Joaquín. (2008). <em>Pasajeros del poder propietario: La sociedad explotadora de Tierra del Fuego y la biopolítica estanciera (1890-1920)</em>. Magallania.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Huygens, Ingrid, & García, Lorena. (2015). <em>Los Onas: Vida y Muerte en Tierra del Fuego</em>. Pehuén Editores.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Museo del Fin del Mundo. (2011). <em>Los Selk'nam en el Museo del Fin del Mundo</em>. Ushuaia.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Windswept steppe of Tierra del Fuego, former Selk'nam homeland" },
+            { src: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800", caption: "Guanaco, primary prey animal central to Selk'nam subsistence" },
+            { src: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800", caption: "Geometric patterns inspired by Selk'nam body painting traditions" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Wild Patagonian landscape similar to Selk'nam territory" },
+            { src: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=800", caption: "Archives preserving photographic documentation of Selk'nam culture" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Coastal regions where Selk'nam gathered marine resources" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

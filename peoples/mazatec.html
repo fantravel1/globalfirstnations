@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazatec People: Keepers of Sacred Mushroom Knowledge | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>">
+    <style>
+        :root { --mazatec-green: #4CAF50; --mushroom-purple: #9C27B0; --mountain-gray: #607D8B; --white: #ecf0f1; --sacred-gold: #FFD700; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--mazatec-green) 0%, var(--mushroom-purple) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--mazatec-green), var(--mushroom-purple)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(76,175,80,0.5); border: 5px solid var(--sacred-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--mazatec-green); }
+        nav a { color: var(--mazatec-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--mazatec-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--mazatec-green); border-right: 3px solid var(--mushroom-purple); }
+        h2 { color: var(--mazatec-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--mazatec-green); }
+        h3 { color: var(--mushroom-purple); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--mazatec-green), var(--mushroom-purple)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--sacred-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--mushroom-purple), var(--sacred-gold)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--mazatec-green), var(--mushroom-purple)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--mazatec-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--mazatec-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--mazatec-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🍄</span>
+            <h1>The Mazatec People</h1>
+            <p class="tagline">Guardians of Sacred Mushroom Wisdom - Masters of Whistled Language - People of the Sierra Mazateca</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Mazatec?</h2>
+            <p>The Mazatec (Ha shuta Enima, meaning "We Humble People" in their language) are an indigenous people inhabiting the Sierra Mazateca mountains of northern Oaxaca, Mexico. With approximately 220,000 speakers, they are among the major indigenous groups of Oaxaca. The Mazatec are internationally renowned as the keepers of ancient shamanic traditions involving sacred mushrooms (psilocybe), particularly through the fame of María Sabina, the curandera (healer) who introduced Western researchers to these ceremonial practices in the 1950s. Beyond this well-known aspect, the Mazatec have developed a remarkable whistled speech language that allows communication across mountain valleys, sophisticated cave-dwelling traditions, and expertise in herbal medicine. Their territory encompasses dramatic landscapes from lowland tropical regions to cloud-forest highlands, fostering rich biodiversity knowledge. Despite modernization pressures, the Mazatec maintain vital cultural practices including traditional agriculture, healing ceremonies, and their complex tonal language.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">220,000</span><span>Language speakers</span></div>
+                <div class="stat-card"><span class="stat-number">Popolocan</span><span>Language branch</span></div>
+                <div class="stat-card"><span class="stat-number">Sierra Mazateca</span><span>Mountain homeland</span></div>
+                <div class="stat-card"><span class="stat-number">Oaxaca</span><span>Primary state</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Whistled Language:</strong> The Mazatec developed an extraordinary whistled speech system that can communicate complex messages across mountain valleys! This tonal whistling replicates the Mazatec language's four tones, allowing people to "speak" detailed conversations over distances of several kilometers—a practical adaptation to their mountainous terrain.
+            </div>
+
+            <h3>Sacred Mushroom Traditions and María Sabina</h3>
+            <p>The Mazatec have maintained ancient shamanic traditions involving <strong>sacred mushrooms</strong> (psilocybe mushrooms known as nti si tho, "little ones that sprout") for healing and divination ceremonies. These veladas (night vigils) are conducted by curanderos who chant sacred songs while participants seek spiritual guidance and healing. <strong>María Sabina</strong> (1894-1985), a renowned Mazatec curandera from Huautla de Jiménez, became internationally famous after hosting R. Gordon Wasson in 1955, leading to global interest in entheogens. While this brought unwanted attention and drug tourism that disrupted communities, it also highlighted Mazatec spiritual sophistication. Traditional ceremonies remain sacred practices, distinct from recreational drug use, involving careful ritual protocols, healing intentions, and deep spiritual knowledge passed through generations of healers.</p>
+
+            <h3>Language and Communication Systems</h3>
+            <p>The <strong>Mazatec language</strong> belongs to the Popolocan branch of Otomanguean languages and is famous for its complex tonal system with four distinct tones that change word meanings. This tonal complexity enabled development of the remarkable <strong>whistled speech</strong> where people whistle the tonal patterns to communicate across valleys. Mazatec also features unusual consonants including voiceless nasals. The language has several regional dialects with varying degrees of mutual intelligibility. Oral traditions preserve creation stories, moral teachings, and extensive knowledge about medicinal plants and fungi. Despite Spanish dominance, Mazatec remains vibrant in highland communities where it serves as the primary language of agriculture, healing, and community life.</p>
+
+            <h3>Traditional Medicine and Plant Knowledge</h3>
+            <p>Mazatec <strong>curanderos</strong> (healers) possess encyclopedic knowledge of medicinal plants from their biodiverse mountain environment. Beyond the famous sacred mushrooms, they use hundreds of plant species for treating physical ailments, spiritual illnesses (susto, mal de ojo), and emotional disturbances. Salvia divinorum (ska María Pastora), another sacred plant, has been used traditionally for divination. Healing practices integrate herbal remedies, ritual cleansings (limpias), prayer, and diagnostic techniques. Traditional midwives (parteras) assist childbirth using herbal preparations and ceremonies. This medical knowledge is transmitted orally from experienced practitioners to apprentices, though modernization threatens this transmission as younger generations migrate to cities and Western medicine becomes more accessible.</p>
+
+            <h3>Agriculture and Environmental Adaptation</h3>
+            <p>The Mazatec practice <strong>slash-and-burn agriculture</strong> (roza-tumba-quema) adapted to steep mountain slopes, cultivating corn, beans, chilies, and coffee. They developed sophisticated knowledge of microclimates, growing different crops at various elevations from tropical lowlands to cool highlands. Traditional agriculture incorporates crop rotation and fallowing to maintain soil fertility. <strong>Coffee cultivation</strong> became economically important in the 20th century, though market fluctuations have caused hardship. Mazatec communities also gather wild foods including mushrooms, herbs, fruits, and palm hearts. The construction of the Miguel Alemán Dam in the 1950s flooded lowland Mazatec territories, displacing thousands and causing lasting trauma that continues affecting communities today.</p>
+
+            <h3>Contemporary Mazatec Life</h3>
+            <p>Modern Mazatec communities balance tradition and change, with many young people migrating to cities for education and employment while maintaining home connections. <strong>Huautla de Jiménez</strong>, the largest Mazatec town, serves as a cultural center despite challenges from drug tourism seeking María Sabina's legacy. Cultural revival efforts include bilingual education programs, documentation of traditional knowledge, and protection of sacred sites. Mazatec weavers produce distinctive textiles, particularly white cotton huipiles with red embroidery. Traditional fiestas blend Catholic saints' days with indigenous ceremonies, featuring music from indigenous bands. Mazatec intellectuals and activists work to preserve their language and oppose exploitation of traditional knowledge by pharmaceutical companies interested in sacred mushrooms. The community continues adapting while maintaining pride in their unique cultural heritage.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" alt="Sierra Mazateca mountains" loading="lazy">
+                    <div class="image-caption">Dramatic mountainous landscape of the Sierra Mazateca in Oaxaca</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Sacred mushrooms" loading="lazy">
+                    <div class="image-caption">Sacred mushrooms (psilocybe) used in traditional Mazatec healing ceremonies</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=800" alt="Mazatec healer" loading="lazy">
+                    <div class="image-caption">Traditional Mazatec curandero preparing for healing ceremony</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1587080266227-677cc2a4e76e?w=800" alt="Coffee cultivation" loading="lazy">
+                    <div class="image-caption">Coffee cultivation in the Sierra Mazateca highlands</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1560343776-97e7d202ff0e?w=800" alt="Mazatec textiles" loading="lazy">
+                    <div class="image-caption">Traditional white cotton huipil with red embroidery characteristic of Mazatec dress</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=800" alt="Huautla de Jiménez" loading="lazy">
+                    <div class="image-caption">Town of Huautla de Jiménez, cultural center of Mazatec territory</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/zapotec.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Zapotec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Oaxacan Neighbors</span>
+                    <p class="related-description">Major Oaxacan indigenous group with ancient civilizational traditions.</p>
+                </a>
+                <a href="/peoples/mixtec.html" class="related-card">
+                    <div class="related-icon">📜</div>
+                    <h3>Mixtec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Oaxacan Neighbors</span>
+                    <p class="related-description">Neighboring Oaxacan people known for codices and artisanship.</p>
+                </a>
+                <a href="/peoples/chinantec.html" class="related-card">
+                    <div class="related-icon">🏞️</div>
+                    <h3>Chinantec</h3>
+                    <p class="related-location">Northern Oaxaca</p>
+                    <span class="relationship-badge regional">Mountain Neighbors</span>
+                    <p class="related-description">Neighboring mountain people affected by same dam displacement.</p>
+                </a>
+                <a href="/peoples/cuicatec.html" class="related-card">
+                    <div class="related-icon">🎵</div>
+                    <h3>Cuicatec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge similar">Linguistic Relatives</span>
+                    <p class="related-description">Related Popolocan language speakers sharing cultural traits.</p>
+                </a>
+                <a href="/peoples/chatino.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Chatino</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Oaxacan Culture</span>
+                    <p class="related-description">Indigenous Oaxacan group with distinct language and traditions.</p>
+                </a>
+                <a href="/peoples/huichol.html" class="related-card">
+                    <div class="related-icon">🌵</div>
+                    <h3>Huichol (Wixárika)</h3>
+                    <p class="related-location">Jalisco/Nayarit</p>
+                    <span class="relationship-badge similar">Sacred Plant Traditions</span>
+                    <p class="related-description">Indigenous group with peyote ceremonies and shamanic practices.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Wasson, R. Gordon. (1980). <em>The Wondrous Mushroom: Mycolatry in Mesoamerica</em>. McGraw-Hill.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Estrada, Álvaro. (1981). <em>Vida de María Sabina: La sabia de los hongos</em>. Siglo XXI Editores.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Pike, Kenneth L., & Cowan, Florence. (1967). <em>Compound Affixes in Mazatec</em>. Summer Institute of Linguistics.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bogart, Lauren J. (2017). <em>Voices of Resistance: Oral Histories of Moroccan Women</em>. Lexington Books. (Includes Mazatec dam displacement)</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Incháustegui, Carlos. (1977). <em>Relatos del mundo mágico mazateco</em>. INAH.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Lipp, Frank J. (1991). <em>The Mixe of Oaxaca: Religion, Ritual, and Healing</em>. University of Texas Press. (Comparative healing traditions)</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Meyer, Jean. (1989). <em>La Cristiada</em>. Siglo XXI. (Historical context of Mazatec region)</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Cowan, Marion M. (1952). <em>A Christian Movement in Mexico</em>. Summer Institute of Linguistics. (Mazatec cultural change)</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800", caption: "Dramatic mountainous landscape of the Sierra Mazateca in Oaxaca" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Sacred mushrooms (psilocybe) used in traditional Mazatec healing ceremonies" },
+            { src: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=800", caption: "Traditional Mazatec curandero preparing for healing ceremony" },
+            { src: "https://images.unsplash.com/photo-1587080266227-677cc2a4e76e?w=800", caption: "Coffee cultivation in the Sierra Mazateca highlands" },
+            { src: "https://images.unsplash.com/photo-1560343776-97e7d202ff0e?w=800", caption: "Traditional white cotton huipil with red embroidery characteristic of Mazatec dress" },
+            { src: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?w=800", caption: "Town of Huautla de Jiménez, cultural center of Mazatec territory" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

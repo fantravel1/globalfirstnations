@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purépecha People: Ancient Rivals of the Aztecs | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
+    <style>
+        :root { --purepecha-purple: #7B2CBF; --copper: #B87333; --lake-blue: #4A90E2; --white: #ecf0f1; --forest-green: #2D5016; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--purepecha-purple) 0%, var(--copper) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--purepecha-purple), var(--copper)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(123,44,191,0.5); border: 5px solid var(--lake-blue); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--purepecha-purple); }
+        nav a { color: var(--purepecha-purple); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--purepecha-purple); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--purepecha-purple); border-right: 3px solid var(--copper); }
+        h2 { color: var(--purepecha-purple); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--purepecha-purple); }
+        h3 { color: var(--copper); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--purepecha-purple), var(--copper)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--lake-blue); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--copper), var(--lake-blue)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--purepecha-purple), var(--copper)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--purepecha-purple); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--purepecha-purple); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--purepecha-purple); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">⚔️</span>
+            <h1>The Purépecha People</h1>
+            <p class="tagline">Ancient Rivals of the Aztecs - Masters of Copper Metallurgy - Guardians of Lake Pátzcuaro</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Purépecha?</h2>
+            <p>The Purépecha (also known as Tarascan) are an indigenous people of Michoacán, western Mexico, who developed one of Mesoamerica's most powerful pre-Columbian kingdoms. Unlike most of their neighbors, the Purépecha successfully resisted Aztec conquest, maintaining their independence through superior military organization and advanced metallurgical techniques. Centered around Lake Pátzcuaro and the capital city of Tzintzuntzan, the Purépecha Empire controlled vast territories across western Mexico. They were pioneers in copper and bronze working, creating tools, weapons, and ceremonial objects that gave them technological advantages over their rivals. Today, approximately 140,000 Purépecha people maintain their distinct language (a linguistic isolate unrelated to other Mesoamerican languages), traditional crafts, and rich cultural heritage despite centuries of colonization.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">140,000</span><span>Population today</span></div>
+                <div class="stat-card"><span class="stat-number">Purépecha</span><span>Language isolate</span></div>
+                <div class="stat-card"><span class="stat-number">Tzintzuntzan</span><span>Ancient capital</span></div>
+                <div class="stat-card"><span class="stat-number">Michoacán</span><span>Homeland region</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Undefeated Warriors:</strong> The Purépecha were the only major Mesoamerican civilization that the Aztec Empire could never conquer! Their advanced copper weapons, strategic fortifications, and fierce warriors repelled multiple Aztec invasions, earning them legendary status as unconquerable defenders.
+            </div>
+
+            <h3>The Tarascan Empire and Military Prowess</h3>
+            <p>At its height in the 15th century, the <strong>Tarascan Empire</strong> rivaled the Aztecs in power and sophistication. The empire's military strength derived from superior metallurgy—copper and bronze weapons that were harder and more effective than the obsidian weapons used by their enemies. The Purépecha military was highly organized with specialized units, fortified border zones, and an intelligence network that monitored Aztec movements. Their capital, <strong>Tzintzuntzan</strong> (meaning "place of hummingbirds"), featured massive stepped pyramids called <em>yácatas</em> with distinctive rounded corners, unlike the angular pyramids of other Mesoamerican cultures.</p>
+
+            <h3>Advanced Metallurgy and Craftsmanship</h3>
+            <p>The Purépecha were Mesoamerica's finest metallurgists, developing sophisticated techniques for working <strong>copper, bronze, silver, and gold</strong>. They created bells, needles, fishhooks, axes, and ceremonial objects using lost-wax casting, cold hammering, and annealing. This technological advantage extended beyond warfare—Purépecha artisans produced exquisite jewelry, masks, and ornaments that were traded throughout Mesoamerica. Their craftwork also included exceptional <strong>feather mosaics</strong>, lacquerware (maque), and pottery featuring distinctive geometric designs and the characteristic "negative painting" technique.</p>
+
+            <h3>Lake Pátzcuaro and Ecological Adaptation</h3>
+            <p>The Purépecha developed a sophisticated culture centered on <strong>Lake Pátzcuaro</strong>, creating chinampas (floating gardens), fishing communities, and lake-based transportation networks. They constructed artificial islands and used dugout canoes carved from single trees for transportation and fishing. The lake provided fish, waterfowl, and frogs that formed essential parts of the Purépecha diet. Communities around the lake developed specialized crafts—some villages focused on pottery, others on fishing nets, creating an interconnected economy. This ecological adaptation allowed them to sustain large populations in the highlands of Michoacán.</p>
+
+            <h3>Language and Cultural Identity</h3>
+            <p>The <strong>Purépecha language</strong> is a linguistic isolate, meaning it has no known relationship to any other language family—a mystery that fascinates linguists. This linguistic uniqueness reinforces theories that the Purépecha may have migrated from a different region than their neighbors. The language has three distinct dialects but remains mutually intelligible. Despite pressure from Spanish and later Mexican national culture, Purépecha has survived with dedicated speakers maintaining oral traditions, songs, and the ancient calendar system that divided the year into 18 months of 20 days.</p>
+
+            <h3>Contemporary Purépecha Culture</h3>
+            <p>Modern Purépecha communities maintain vibrant traditions while adapting to contemporary Mexico. The region around Lake Pátzcuaro remains a cultural heartland where traditional festivals blend indigenous and Catholic elements. The <strong>Night of the Dead</strong> (Noche de Muertos) celebrations in Purépecha villages like Janitzio attract visitors worldwide with their haunting beauty—candlelit vigils in cemeteries, butterfly fishing nets, and offerings of traditional foods. Purépecha artisans continue producing renowned handicrafts: copper work in Santa Clara del Cobre, lacquerware in Uruapan, and pottery in diverse communities. Activists work to preserve the language through bilingual education programs and cultural centers, while Purépecha identity remains a source of pride and resistance against cultural homogenization.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" alt="Lake Pátzcuaro" loading="lazy">
+                    <div class="image-caption">Lake Pátzcuaro, spiritual and cultural center of the Purépecha world</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800" alt="Tzintzuntzan yácatas" loading="lazy">
+                    <div class="image-caption">Ancient yácatas (rounded pyramids) at Tzintzuntzan, the Purépecha capital</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800" alt="Purépecha copper work" loading="lazy">
+                    <div class="image-caption">Traditional copper craftsmanship from Santa Clara del Cobre</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800" alt="Night of the Dead ceremony" loading="lazy">
+                    <div class="image-caption">Noche de Muertos ceremony on Janitzio Island, Lake Pátzcuaro</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1611784728730-3954b95a4313?w=800" alt="Purépecha textiles" loading="lazy">
+                    <div class="image-caption">Traditional Purépecha textiles with geometric patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=800" alt="Purépecha pottery" loading="lazy">
+                    <div class="image-caption">Distinctive Purépecha pottery featuring negative painting technique</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/nahua.html" class="related-card">
+                    <div class="related-icon">🦅</div>
+                    <h3>Nahua (Aztec)</h3>
+                    <p class="related-location">Central Mexico</p>
+                    <span class="relationship-badge historical">Historic Rivals</span>
+                    <p class="related-description">The powerful Aztec Empire that never succeeded in conquering the Purépecha.</p>
+                </a>
+                <a href="/peoples/mixtec.html" class="related-card">
+                    <div class="related-icon">📜</div>
+                    <h3>Mixtec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge similar">Master Craftspeople</span>
+                    <p class="related-description">Renowned artisans and metallurgists like the Purépecha.</p>
+                </a>
+                <a href="/peoples/zapotec.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Zapotec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Mesoamerican Neighbors</span>
+                    <p class="related-description">Ancient civilization with sophisticated urban centers and crafts.</p>
+                </a>
+                <a href="/peoples/otomi.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Otomí</h3>
+                    <p class="related-location">Central Mexico</p>
+                    <span class="relationship-badge regional">Western Mexico</span>
+                    <p class="related-description">Indigenous group known for colorful textiles and embroidery.</p>
+                </a>
+                <a href="/peoples/maya.html" class="related-card">
+                    <div class="related-icon">📅</div>
+                    <h3>Maya</h3>
+                    <p class="related-location">Southern Mexico/Central America</p>
+                    <span class="relationship-badge similar">Mesoamerican Civilization</span>
+                    <p class="related-description">Advanced civilization with shared Mesoamerican cultural traits.</p>
+                </a>
+                <a href="/peoples/huichol.html" class="related-card">
+                    <div class="related-icon">🌵</div>
+                    <h3>Huichol (Wixárika)</h3>
+                    <p class="related-location">Jalisco/Nayarit</p>
+                    <span class="relationship-badge regional">Western Mexico</span>
+                    <p class="related-description">Neighboring indigenous group known for yarn paintings and peyote ceremonies.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Pollard, Helen Perlstein. (1993). <em>Taríacuri's Legacy: The Prehispanic Tarascan State</em>. University of Oklahoma Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Warren, J. Benedict. (1985). <em>The Conquest of Michoacán: The Spanish Domination of the Tarascan Kingdom in Western Mexico, 1521-1530</em>. University of Oklahoma Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Foster, Michael S., & Gorenstein, Shirley. (2000). <em>Greater Mesoamerica: The Archaeology of West and Northwest Mexico</em>. University of Utah Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Hosler, Dorothy. (1994). <em>The Sounds and Colors of Power: The Sacred Metallurgical Technology of Ancient West Mexico</em>. MIT Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Stone, Cynthia L. (2004). <em>In Place of Gods and Kings: Authorship and Identity in the Relación de Michoacán</em>. University of Oklahoma Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Friedrich, Paul. (1971). <em>The Tarascan Suffixes of Locative Space</em>. Indiana University Publications.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Beltrán, Ulises. (1982). <em>Estado y sociedad tarascos en la época prehispánica</em>. El Colegio de Michoacán.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Alcalá, Jerónimo de. (2000). <em>Relación de Michoacán</em>. El Colegio de Michoacán. (Originally 1540s)</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", caption: "Lake Pátzcuaro, spiritual and cultural center of the Purépecha world" },
+            { src: "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800", caption: "Ancient yácatas (rounded pyramids) at Tzintzuntzan, the Purépecha capital" },
+            { src: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800", caption: "Traditional copper craftsmanship from Santa Clara del Cobre" },
+            { src: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800", caption: "Noche de Muertos ceremony on Janitzio Island, Lake Pátzcuaro" },
+            { src: "https://images.unsplash.com/photo-1611784728730-3954b95a4313?w=800", caption: "Traditional Purépecha textiles with geometric patterns" },
+            { src: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=800", caption: "Distinctive Purépecha pottery featuring negative painting technique" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

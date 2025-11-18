@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaYaka People: Forest Dwellers and Masters of Polyphonic Music | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+    <style>
+        :root { --forest-deep-green: #006400; --music-purple: #8B008B; --canopy-teal: #008B8B; --white: #ecf0f1; --earth-brown: #8B4513; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--forest-deep-green) 0%, var(--earth-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--forest-deep-green), var(--music-purple)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,100,0,0.5); border: 5px solid var(--canopy-teal); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--forest-deep-green); }
+        nav a { color: var(--forest-deep-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--forest-deep-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--forest-deep-green); border-right: 3px solid var(--canopy-teal); }
+        h2 { color: var(--forest-deep-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--forest-deep-green); }
+        h3 { color: var(--music-purple); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--forest-deep-green), var(--music-purple)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--canopy-teal); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--canopy-teal), var(--forest-deep-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--forest-deep-green), var(--music-purple)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--forest-deep-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--forest-deep-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--forest-deep-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🎵</span>
+            <h1>The BaYaka People</h1>
+            <p class="tagline">Masters of Polyphonic Yodeling - Forest Hunter-Gatherers - Living Musical Heritage of Central Africa</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the BaYaka?</h2>
+            <p>The BaYaka (also called Aka, Baka, or simply "Pygmies"—a term many consider pejorative) are one of Central Africa's indigenous forest-dwelling peoples, numbering approximately 40,000-50,000 across the rainforests of the Central African Republic, Republic of Congo, Democratic Republic of Congo, and Cameroon. The BaYaka are world-renowned for their extraordinary musical traditions, particularly their polyphonic yodeling—complex multi-part singing where multiple voices interweave in intricate harmonies, creating soundscapes UNESCO designated as Masterpieces of the Oral and Intangible Heritage of Humanity. For millennia, the BaYaka lived as hunter-gatherers in complete harmony with the rainforest, developing encyclopedic knowledge of forest ecology, medicinal plants, and sustainable resource management. Their egalitarian society features gender equality rare in human cultures, with both men and women participating in hunting, gathering, decision-making, and music. Today, the BaYaka face severe threats from deforestation, conservation policies that evict them from ancestral forests, discrimination from Bantu neighbors, and loss of traditional territories. Despite these challenges, BaYaka communities fight to preserve their unique culture, language, and musical heritage.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">40,000+</span><span>Estimated population</span></div>
+                <div class="stat-card"><span class="stat-number">Aka/Baka</span><span>Language families</span></div>
+                <div class="stat-card"><span class="stat-number">UNESCO</span><span>Musical heritage status</span></div>
+                <div class="stat-card"><span class="stat-number">CAR/Congo/Cameroon</span><span>Rainforest territories</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>The Most Complex Music on Earth:</strong> BaYaka polyphonic yodeling is considered one of humanity's most sophisticated musical forms! A typical song features 4-5 simultaneous melodic lines, with each singer improvising variations while maintaining complex rhythmic and harmonic relationships. Ethnomusicologists can spend YEARS analyzing a single 3-minute BaYaka song and still discover new patterns. This musical complexity rivals Western classical fugues—yet BaYaka children learn it naturally through play!
+            </div>
+
+            <h3>Forest Hunter-Gatherers and Ecological Knowledge</h3>
+            <p>The BaYaka have inhabited Central Africa's tropical rainforests for thousands of years, developing one of humanity's most sustainable relationships with their environment. Their traditional economy combines <strong>net hunting</strong> (communal hunts where families cooperate to drive game into nets), bow-and-arrow hunting, gathering of wild yams, fruits, nuts, and honey (the BaYaka are expert honey collectors, climbing trees over 40 meters high), and fishing. The BaYaka possess extraordinary <strong>botanical knowledge</strong>, identifying hundreds of plant species and their uses—foods, medicines, poisons, construction materials, and ritual substances. They practice <strong>sustainable harvesting</strong>, taking only what they need and rotating collection areas to allow regeneration. Traditional BaYaka spirituality views the forest as a living entity (referred to as "Ndima" or "the Forest") that provides for those who respect it. The BaYaka lived nomadically, establishing temporary camps (kombeti) near seasonal resources, moving every few weeks or months. Their material culture emphasized portability: dome-shaped huts made from bent saplings and mongongo leaves, baskets, tools, and minimal possessions.</p>
+
+            <h3>Polyphonic Yodeling and Musical Excellence</h3>
+            <p>BaYaka music represents one of humanity's most remarkable cultural achievements. Their signature <strong>polyphonic yodeling</strong> features multiple singers performing different melodic lines simultaneously, creating complex harmonies through improvisation and intuitive musical understanding. Men and women both participate, with voices interweaving in patterns that shift and evolve throughout performances. The singing incorporates <strong>yodeling techniques</strong>—rapid alternation between chest and head voice creating distinctive sounds. BaYaka music has no formal leaders or composers; instead, knowledge is collective, with everyone contributing to the evolving musical tradition. Songs accompany all aspects of life: <strong>hunting ceremonies</strong>, <strong>spirit rituals</strong>, <strong>healing dances</strong>, <strong>storytelling</strong>, and <strong>daily work</strong>. Instruments include drums, the <strong>limbindi</strong> (water drum played by women), whistles, rattles, and the remarkable <strong>harp-zither</strong>. Ethnomusicologists consider BaYaka music revolutionary—it challenges Western assumptions about musical complexity and demonstrates that extraordinary artistic achievement requires neither written notation nor formal institutions.</p>
+
+            <h3>Egalitarian Society and Gender Relations</h3>
+            <p>BaYaka society is remarkably <strong>egalitarian</strong>, lacking the hierarchies characteristic of agricultural and state societies. There are no chiefs, formal leaders, or ruling classes. Decisions are made through <strong>consensus</strong>, with all adults (men and women) participating in discussions. <strong>Gender equality</strong> is extraordinary by global standards: both men and women hunt (net hunting requires cooperation between sexes), gather, make decisions, and perform spiritual roles. Women are not subordinated to men, domestic violence is extremely rare, and divorce is easily accessible to both sexes. Children are raised communally, with multiple adults caring for all camp children regardless of biological parentage. The BaYaka practice <strong>demand sharing</strong>—anyone can request anything from anyone else, and refusing is considered antisocial. This creates radical economic equality, preventing accumulation of wealth. Anthropologists consider BaYaka society a living example of immediate-return hunter-gatherer egalitarianism—a social organization that characterized most of human history before agriculture.</p>
+
+            <h3>Spiritual Beliefs and Healing Dances</h3>
+            <p>Traditional BaYaka religion centers on the <strong>Forest Spirit (Ndima)</strong> and ancestral spirits who inhabit the rainforest. The BaYaka practice <strong>molimo</strong> ceremonies—multi-day rituals featuring music, dance, and the molimo trumpet (a long wooden horn whose sounds represent the Forest Spirit's voice). These ceremonies heal illness, resolve conflicts, and maintain harmony with the forest. <strong>Spirit possession</strong> and trance states achieved through intensive drumming and dancing allow communication with spiritual realms. The BaYaka believe illness has spiritual causes, requiring <strong>healing dances</strong> where the community gathers to sing and dance until sick individuals enter trance and receive healing from spirits. <strong>Divination</strong>, <strong>herbalism</strong>, and <strong>magic</strong> are practiced by specialists who diagnose problems and prescribe treatments. The BaYaka maintain that the Forest provides everything needed—food, medicine, shelter, and spiritual sustenance—as long as humans respect it.</p>
+
+            <h3>Modern Threats and Cultural Survival</h3>
+            <p>The BaYaka face catastrophic threats in the 21st century. <strong>Deforestation</strong> from logging companies destroys their territories and depletes game and plant resources. <strong>Conservation initiatives</strong> paradoxically harm the BaYaka—national parks and protected areas evict them from ancestral forests, criminalizing traditional hunting and gathering. The creation of parks for gorilla and elephant conservation has displaced thousands of BaYaka, making them <strong>conservation refugees</strong>. Meanwhile, the very biodiversity parks claim to protect was maintained by BaYaka stewardship for millennia. BaYaka face severe <strong>discrimination</strong> from Bantu neighbors who view them as inferior "forest people," leading to exploitation, land theft, and enslavement (yes, slavery of BaYaka persists in some areas). Many BaYaka have been forced into sedentary villages on forest edges, losing traditional knowledge and culture while gaining poverty and alcohol dependence. <strong>Climate change</strong> alters forest ecology, disrupting seasonal patterns the BaYaka rely upon. Despite these challenges, BaYaka communities resist cultural erasure. Organizations document traditional music and knowledge, advocate for land rights and forest access, and support BaYaka self-representation. The BaYaka's struggle highlights fundamental questions about conservation ethics: whose interests do protected areas serve? Can conservation coexist with indigenous rights? The answer may determine whether one of humanity's most remarkable cultures survives or disappears.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" alt="Congo rainforest" loading="lazy">
+                    <div class="image-caption">Dense Central African rainforest, ancestral home of the BaYaka people</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Forest vegetation" loading="lazy">
+                    <div class="image-caption">Rainforest vegetation providing medicinal plants and food for BaYaka communities</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Traditional music" loading="lazy">
+                    <div class="image-caption">Traditional BaYaka polyphonic singing, UNESCO Intangible Heritage</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Forest dwelling" loading="lazy">
+                    <div class="image-caption">Traditional BaYaka forest dwelling made from branches and leaves</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Net hunting" loading="lazy">
+                    <div class="image-caption">Traditional net hunting, cooperative practice involving entire BaYaka community</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1551135049-8a33b5883817?w=800" alt="Wildlife in forest" loading="lazy">
+                    <div class="image-caption">Forest wildlife that BaYaka coexisted with sustainably for millennia</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/batwa.html" class="related-card">
+                    <div class="related-icon">🌳</div>
+                    <h3>Batwa</h3>
+                    <p class="related-location">Rwanda/Uganda/Burundi</p>
+                    <span class="relationship-badge similar">Related Forest Pygmies</span>
+                    <p class="related-description">Fellow forest-dwelling Pygmy group facing similar displacement.</p>
+                </a>
+                <a href="/peoples/mbuti.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Mbuti</h3>
+                    <p class="related-location">Democratic Republic of Congo</p>
+                    <span class="relationship-badge similar">Related Pygmy Group</span>
+                    <p class="related-description">Ituri Forest hunters with similar egalitarian social structure.</p>
+                </a>
+                <a href="/peoples/bongo.html" class="related-card">
+                    <div class="related-icon">🌲</div>
+                    <h3>Bongo</h3>
+                    <p class="related-location">Central African Republic</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Bantu agriculturalists sharing CAR territories with BaYaka.</p>
+                </a>
+                <a href="/peoples/bangombe.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Bangombe</h3>
+                    <p class="related-location">Congo Basin</p>
+                    <span class="relationship-badge regional">Congo Basin Neighbors</span>
+                    <p class="related-description">Bantu farmers with historical trading relationships with BaYaka.</p>
+                </a>
+                <a href="/peoples/san.html" class="related-card">
+                    <div class="related-icon">🏜️</div>
+                    <h3>San (Bushmen)</h3>
+                    <p class="related-location">Southern Africa</p>
+                    <span class="relationship-badge similar">Fellow Hunter-Gatherers</span>
+                    <p class="related-description">Ancient hunter-gatherers facing similar marginalization and displacement.</p>
+                </a>
+                <a href="/peoples/efe.html" class="related-card">
+                    <div class="related-icon">🌳</div>
+                    <h3>Efe</h3>
+                    <p class="related-location">Democratic Republic of Congo</p>
+                    <span class="relationship-badge similar">Related Pygmy Group</span>
+                    <p class="related-description">Forest hunter-gatherers of eastern DRC with similar lifeways.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Turnbull, Colin M. (1961). <em>The Forest People</em>. Simon & Schuster.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Lewis, Jerome. (2002). <em>Forest Hunter-Gatherers and Their World: A Study of the Mbendjele Yaka Pygmies of Congo-Brazzaville and Their Secular and Religious Activities and Representations</em>. PhD thesis, London School of Economics.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Bahuchet, Serge. (1985). <em>Les Pygmées Aka et la Forêt Centrafricaine</em>. SELAF.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Furniss, Susanne. (2014). "Aka Polyphonic Singing and Musical Theory." In <em>The Oxford Handbook of Music and World Christianities</em>, edited by Suzel Ana Reily and Jonathan M. Dueck. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Hewlett, Barry S. (1991). <em>Intimate Fathers: The Nature and Context of Aka Pygmy Paternal Infant Care</em>. University of Michigan Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Knight, John. (2003). "Relocated to the Roadside: Preliminary Observations on the Forest Peoples of Gabon." <em>African Study Monographs</em>, 24(1): 81-122.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Jerome Lewis. (2008). "Ekila: Blood, Bodies, and Egalitarian Societies." <em>Journal of the Royal Anthropological Institute</em>, 14(2): 297-315.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Sarno, Louis. (1993). <em>Song from the Forest: My Life Among the Ba-Benjellé Pygmies</em>. Houghton Mifflin.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", caption: "Dense Central African rainforest, ancestral home of the BaYaka people" },
+            { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800", caption: "Rainforest vegetation providing medicinal plants and food for BaYaka communities" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Traditional BaYaka polyphonic singing, UNESCO Intangible Heritage" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Traditional BaYaka forest dwelling made from branches and leaves" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Traditional net hunting, cooperative practice involving entire BaYaka community" },
+            { src: "https://images.unsplash.com/photo-1551135049-8a33b5883817?w=800", caption: "Forest wildlife that BaYaka coexisted with sustainably for millennia" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

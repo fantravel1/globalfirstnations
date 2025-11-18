@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machiguenga People: Geometric Textile Masters of the Urubamba | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+    <style>
+        :root { --textile-purple: #9370DB; --river-blue: #4682B4; --cotton-cream: #FFF8DC; --white: #ecf0f1; --forest-green: #2E8B57; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--river-blue) 0%, var(--forest-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--river-blue), var(--textile-purple)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(147,112,219,0.5); border: 5px solid var(--cotton-cream); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--river-blue); }
+        nav a { color: var(--river-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--river-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--river-blue); border-right: 3px solid var(--textile-purple); }
+        h2 { color: var(--river-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--river-blue); }
+        h3 { color: var(--textile-purple); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--river-blue), var(--textile-purple)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--forest-green); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--textile-purple), var(--forest-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--river-blue), var(--forest-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--river-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--river-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--river-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🧵</span>
+            <h1>The Machiguenga People</h1>
+            <p class="tagline">Weavers of Geometric Beauty - Children of the Urubamba River - Keepers of Amazonian Gardens</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Machiguenga?</h2>
+            <p>The Machiguenga (also spelled Matsigenka) are an indigenous Arawakan people inhabiting the tropical rainforests of southeastern Peru, primarily in the Urubamba River basin and tributaries of the Madre de Dios region. With a population of approximately 12,000-15,000, they represent one of Peru's larger Amazonian indigenous groups. The Machiguenga are renowned for their exquisite geometric textiles woven on backstrap looms, sophisticated horticulture combining dozens of cultivated species, and relatively autonomous social organization based on extended family groups rather than large villages or chiefdoms. Their name means "the people" or "human beings" in their language. Historically semi-nomadic, combining swidden agriculture with extensive hunting, fishing, and gathering, the Machiguenga maintained dispersed settlement patterns that allowed sustainable resource use across vast territories. Today, they navigate tensions between traditional forest-based livelihoods and pressures from colonization, timber extraction, natural gas development, and tourism in nearby Machu Picchu. Despite these challenges, many Machiguenga communities maintain strong cultural practices, language use, and connection to ancestral lands.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~13,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Matsigenka</span><span>Arawakan language</span></div>
+                <div class="stat-card"><span class="stat-number">Peru</span><span>Urubamba River basin</span></div>
+                <div class="stat-card"><span class="stat-number">50+</span><span>Cultivated plant species</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Textile Geometry:</strong> Machiguenga women create intricate geometric patterns on their cushmas (woven tunics) using just cotton thread and natural dyes. Each pattern has meaning—some represent animals, others river currents, paths, or cosmological concepts. No two cushmas are identical!
+            </div>
+
+            <h3>River People and Settlement Patterns</h3>
+            <p>The Machiguenga inhabit one of the world's most biodiverse regions, where the eastern slopes of the Andes descend into the Amazon basin. The <strong>Urubamba River</strong> (which they call Vilcanota) and its tributaries provide transportation routes, fishing grounds, and fertile floodplain soils. Traditionally, Machiguenga lived in small, dispersed settlements of one to several extended families, moving periodically as soils depleted or game became scarce. This pattern maximized resource access while preventing overexploitation. Houses were simple structures with palm-thatch roofs and open sides. Spanish colonial missions attempted to concentrate Machiguenga into larger villages (reducciones) with limited success. Even today, many communities maintain dispersed residence patterns, gathering periodically for ceremonies, meetings, or to trade. The headwaters of Machiguenga territory lie near the sacred Inca site of Machu Picchu, and some scholars speculate about ancient Inca-Machiguenga interactions, though the historical record remains limited.</p>
+
+            <h3>Weaving and Textile Arts</h3>
+            <p><strong>Machiguenga textiles</strong> rank among the Amazon's finest artistic achievements. Women weave on backstrap looms, creating cushmas (long tunics), bags, and other items from hand-spun wild and cultivated cotton. The distinctive feature is <strong>geometric patterns</strong>—diamonds, zigzags, crosses, and complex symmetrical designs—created using intricate supplementary weft techniques. Natural dyes come from forest plants: deep purple from logwood, red from achiote (annatto), yellow from turmeric, and black from charcoal or certain barks. Each weaver develops her own style and repertoire of patterns, though certain designs carry specific cultural meanings. Cushmas serve not just as clothing but as markers of identity—a well-made cushma announces the wearer's skill, cultural knowledge, and Machiguenga identity. Men traditionally wore cushmas too, though Western clothing has become common. Weaving knowledge passes from mothers to daughters through years of observation and practice.</p>
+
+            <h3>Horticulture and Forest Management</h3>
+            <p>The Machiguenga practice sophisticated <strong>swidden horticulture</strong> (slash-and-burn agriculture), cultivating an extraordinary diversity of crops. Gardens contain 30-50 different plant species: manioc (many varieties), sweet potatoes, plantains, bananas, corn, peanuts, beans, peppers, cotton, tobacco, coca, ayahuasca, medicinal plants, and numerous fruits. Gardens are polycultures rather than monocrops, mimicking forest structure with multiple canopy layers and intercropped species. This diversity provides food security, medicinal plants, fibers, and ritual materials while reducing pest problems. <strong>Manioc</strong> (yuca) is the dietary staple, processed into various foods including masato (fermented manioc beer). Men clear forest patches and help with heavy tasks, while women do most planting, weeding, and harvesting. Gardens are used for several years until yields decline, then allowed to regenerate into secondary forest. The Machiguenga also manage forest resources through selective planting, protection of useful trees, and creation of fruit groves around old settlement sites—transforming seemingly "wild" forest into anthropogenic landscapes.</p>
+
+            <h3>Hunting, Fishing, and Spiritual Relations</h3>
+            <p>Despite agricultural importance, hunting and fishing remain central to Machiguenga subsistence and cultural identity. <strong>Hunting</strong> uses bows and arrows (increasingly supplemented by shotguns) to pursue monkeys, peccaries, tapir, birds, and other game. Success requires intimate knowledge of animal behavior, forest ecology, and spiritual protocols. Animals have souls and spirit-masters who must be respected through proper behavior and ritual. <strong>Fishing</strong> employs multiple techniques: bows and arrows for large fish, hook and line, woven basket traps, and fish poison (barbasco/cube root) for collective harvests. The Machiguenga cosmology features numerous spirit beings including <strong>Tasorentsi</strong>, a powerful and dangerous deity associated with the forest and waterfalls, and various animal-spirit masters. <strong>Shamans</strong> (seripigari) use ayahuasca, tobacco, and other plants to communicate with spirits, heal illness, and maintain cosmic balance. Illness may result from soul loss, spirit attack, or sorcery, requiring shamanic intervention.</p>
+
+            <h3>Contemporary Challenges and Adaptations</h3>
+            <p>The Machiguenga face mounting pressures on their territories and culture. The <strong>Camisea Gas Project</strong>, one of Peru's largest natural gas developments, operates in the heart of Machiguenga territory, bringing roads, pollution, and social disruption. Illegal <strong>logging</strong> operations extract valuable mahogany and cedar. <strong>Tourism</strong> to Machu Picchu and the Inca Trail brings both economic opportunities and cultural commodification. Land titling processes have been slow and contentious, leaving many communities without legal protection. Despite these pressures, the Machiguenga show resilience. Many communities have formed political organizations to defend territorial rights and demand consultation on development projects. Some have established <strong>community-based tourism</strong> initiatives allowing cultural sharing on their terms. <strong>Bilingual education programs</strong> teach Matsigenka language and cultural knowledge alongside Spanish and national curriculum. Weaving traditions remain strong, with a new generation of weavers maintaining this art form. The Machiguenga continue to cultivate diverse gardens, hunt and fish according to traditional knowledge, and practice spiritual traditions, adapting to change while maintaining core cultural values and practices.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1601046668428-94ea13437736?w=800" alt="Urubamba River valley" loading="lazy">
+                    <div class="image-caption">Urubamba River valley, heartland of Machiguenga territory in Peru</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800" alt="Traditional textile weaving" loading="lazy">
+                    <div class="image-caption">Backstrap loom weaving technique used to create geometric cushmas</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1615671524827-c1fe3973b648?w=800" alt="Geometric textile patterns" loading="lazy">
+                    <div class="image-caption">Intricate geometric patterns characteristic of Machiguenga textiles</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1598130988226-c7d05e2d1ca4?w=800" alt="Manioc cultivation" loading="lazy">
+                    <div class="image-caption">Manioc (yuca) roots, dietary staple in Machiguenga gardens</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Amazon tributary river" loading="lazy">
+                    <div class="image-caption">Pristine tributary of the Urubamba providing fishing and transportation</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Machu Picchu mountains" loading="lazy">
+                    <div class="image-caption">Andean cloud forest transitions near Machiguenga highland territories</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/shipibo-konibo.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Shipibo-Konibo</h3>
+                    <p class="related-location">Peru Amazon</p>
+                    <span class="relationship-badge regional">Peruvian Neighbors</span>
+                    <p class="related-description">Geometric art specialists and ayahuasca shamanic tradition keepers.</p>
+                </a>
+                <a href="/peoples/ashaninka.html" class="related-card">
+                    <div class="related-icon">🌺</div>
+                    <h3>Asháninka</h3>
+                    <p class="related-location">Peru Amazon</p>
+                    <span class="relationship-badge regional">Amazonian Neighbors</span>
+                    <p class="related-description">Largest Peruvian Amazonian group with cushma weaving tradition.</p>
+                </a>
+                <a href="/peoples/yine.html" class="related-card">
+                    <div class="related-icon">🚣</div>
+                    <h3>Yine (Piro)</h3>
+                    <p class="related-location">Peru Amazon</p>
+                    <span class="relationship-badge similar">Arawakan Culture</span>
+                    <p class="related-description">Fellow Arawakan speakers of Peru's lowland rainforests.</p>
+                </a>
+                <a href="/peoples/inca-quechua.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Quechua</h3>
+                    <p class="related-location">Peru Andes</p>
+                    <span class="relationship-badge historical">Highland Neighbors</span>
+                    <p class="related-description">Andean people with historical connections to nearby Machu Picchu.</p>
+                </a>
+                <a href="/peoples/harakmbut.html" class="related-card">
+                    <div class="related-icon">🌲</div>
+                    <h3>Harakmbut</h3>
+                    <p class="related-location">Peru Madre de Dios</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Madre de Dios indigenous people facing mining pressures.</p>
+                </a>
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Brazil/Venezuela Amazon</p>
+                    <span class="relationship-badge similar">Amazonian Culture</span>
+                    <p class="related-description">Fellow Amazonian people maintaining traditional forest ways.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Johnson, Allen W. (2003). <em>Families of the Forest: The Matsigenka Indians of the Peruvian Amazon</em>. Berkeley: University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Henrich, Joseph, et al. (2001). "In Search of Homo Economicus: Behavioral Experiments in 15 Small-Scale Societies." <em>American Economic Review</em>, 91(2), 73-78.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Shepard Jr., Glenn H. (2002). "Three Days for Weeping: Dreams, Emotions, and Death in the Peruvian Amazon." <em>Medical Anthropology Quarterly</em>, 16(2), 200-229.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Izquierdo, Carolina, & Johnson, Allen. (2007). "Desire, Envy and Punishment: A Machiguenga Account." <em>Cross-Cultural Research</em>, 41(4), 363-381.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Snell, Betty A. (2011). <em>Diccionario Matsigenka-Castellano</em>. Lima: Instituto Lingüístico de Verano.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Baksh, Michael. (1984). "Cultural Ecology and Change of the Machiguenga Indians of the Peruvian Amazon." PhD Dissertation, UCLA.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Rengifo Vásquez, Grimaldo. (2003). <em>La enseñanza está en la tierra: La crianza mutua entre plantas y personas en los Andes</em>. Lima: PRATEC.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Rosengren, Dan. (2004). "Transdimensional Relations: On Human-Spirit Interaction in the Amazon." <em>Journal of the Royal Anthropological Institute</em>, 10(3), 537-555.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1601046668428-94ea13437736?w=800", caption: "Urubamba River valley, heartland of Machiguenga territory in Peru" },
+            { src: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800", caption: "Backstrap loom weaving technique used to create geometric cushmas" },
+            { src: "https://images.unsplash.com/photo-1615671524827-c1fe3973b648?w=800", caption: "Intricate geometric patterns characteristic of Machiguenga textiles" },
+            { src: "https://images.unsplash.com/photo-1598130988226-c7d05e2d1ca4?w=800", caption: "Manioc (yuca) roots, dietary staple in Machiguenga gardens" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Pristine tributary of the Urubamba providing fishing and transportation" },
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Andean cloud forest transitions near Machiguenga highland territories" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

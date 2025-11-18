@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beja People: Ancient Nomads of the Red Sea Hills | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏜️</text></svg>">
+    <style>
+        :root { --red-sea: #DC143C; --desert-gold: #DAA520; --mountain-gray: #696969; --white: #ecf0f1; --cushitic-blue: #4169E1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--red-sea) 0%, var(--desert-gold) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--red-sea), var(--mountain-gray)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(220,20,60,0.5); border: 5px solid var(--desert-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--red-sea); }
+        nav a { color: var(--red-sea); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--red-sea); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--red-sea); border-right: 3px solid var(--desert-gold); }
+        h2 { color: var(--red-sea); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--red-sea); }
+        h3 { color: var(--mountain-gray); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--red-sea), var(--mountain-gray)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--desert-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--desert-gold), var(--red-sea)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--red-sea), var(--mountain-gray)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--red-sea); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--red-sea); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--red-sea); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏜️</span>
+            <h1>The Beja People</h1>
+            <p class="tagline">Ancient Cushitic Nomads - Lords of the Red Sea Hills - Fuzzy-Wuzzy Warriors of Northeast Africa</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Beja?</h2>
+            <p>The Beja are one of Africa's most ancient peoples, Cushitic nomads who have inhabited the harsh Red Sea Hills region of eastern Sudan, northeastern Eritrea, and southeastern Egypt for over 4,000 years. Numbering approximately 2-3 million, the Beja maintain a distinct cultural and linguistic identity that predates Arab settlement in the region, with their language (Bedawiyet/To Bedawie) belonging to the Cushitic branch of Afro-Asiatic languages, related to Somali and Oromo rather than Arabic. Ancient Egyptians called them "Medjay" and employed Beja warriors as elite desert police and mercenaries. The Beja's traditional lifestyle centers on nomadic pastoralism, herding camels, goats, and sheep across one of Earth's most inhospitable environments—a landscape of rugged mountains, scorching deserts, and minimal rainfall. British colonial soldiers nicknamed them "Fuzzy-Wuzzies" for their distinctive Afro hairstyles, a term that became famous in Rudyard Kipling's poem celebrating their fearsome military prowess. Today, the Beja face marginalization in modern Sudan and Eritrea, fighting for political representation, resource rights, and cultural preservation.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">2-3M</span><span>Estimated population</span></div>
+                <div class="stat-card"><span class="stat-number">Bedawiyet</span><span>Cushitic language</span></div>
+                <div class="stat-card"><span class="stat-number">4,000+</span><span>Years in region</span></div>
+                <div class="stat-card"><span class="stat-number">Sudan/Eritrea/Egypt</span><span>Red Sea Hills homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>The Unbreakable Warriors:</strong> During the Mahdist War (1881-1898), Beja warriors armed with swords and spears repeatedly broke British infantry squares—a tactical feat almost unheard of in colonial warfare! Their courage so impressed British soldiers that Rudyard Kipling wrote: "So 'ere's to you, Fuzzy-Wuzzy, at your 'ome in the Soudan; You're a pore benighted 'eathen but a first-class fightin' man!"
+            </div>
+
+            <h3>Ancient Origins and Historical Continuity</h3>
+            <p>The Beja are among northeastern Africa's most ancient continuous populations, with archaeological and linguistic evidence suggesting they've inhabited the Red Sea Hills since at least 2000 BCE. Ancient Egyptian records mention the <strong>"Medjay"</strong> people from the Eastern Desert, whom Egyptians recruited as elite scouts, guards, and desert police from the Old Kingdom through the New Kingdom periods. The Beja's Cushitic language links them to the broader family of Horn of Africa peoples, predating the Arabization of Sudan. Unlike many Sudanese groups who adopted Arabic language and identity, the Beja maintained their distinct <strong>Bedawiyet language</strong>, though many are bilingual in Arabic. The Beja traditionally organized into tribal confederations including the <strong>Hadendowa</strong>, <strong>Bisharin</strong>, <strong>Amarar</strong>, <strong>Beni Amer</strong>, and <strong>Ababda</strong>, each controlling specific territories and migration routes.</p>
+
+            <h3>Nomadic Pastoralism in Extreme Environments</h3>
+            <p>The Beja mastered survival in one of Earth's harshest environments—the Red Sea Hills and Eastern Desert, where annual rainfall rarely exceeds 100mm and summer temperatures soar above 45°C (113°F). Their primary livestock are <strong>camels</strong>, perfectly adapted to extreme heat and water scarcity, supplemented by goats and sheep. The Beja developed extraordinary knowledge of <strong>desert ecology</strong>, identifying ephemeral water sources, edible desert plants, and grazing patterns invisible to outsiders. Their <strong>nomadic cycles</strong> follow seasonal rains and pasture availability, with families moving between dry-season wells and wet-season grazing areas. Traditional Beja dwellings are portable tents made from woven goat hair and palm mats, designed to be easily dismantled and transported by camel. Beja men traditionally wear the <strong>jalabia</strong> (long robe) and carry distinctive curved swords (<strong>kaskara</strong>), while women wear colorful dresses and intricate silver jewelry.</p>
+
+            <h3>Warrior Tradition and British Colonial Conflict</h3>
+            <p>The Beja earned legendary status as warriors during the <strong>Mahdist revolt</strong> (1881-1898) against Egyptian-British rule. Armed primarily with swords, spears, and shields, Beja cavalry and infantry under leaders like <strong>Osman Digna</strong> repeatedly defeated modern armies equipped with rifles and artillery. At the <strong>Battle of Tamai</strong> (1884), Beja warriors broke British infantry squares—a defensive formation considered nearly impenetrable—through sheer courage and tactical skill. Their distinctive hairstyles, created by coating hair in mutton fat and letting it grow into large Afros, earned them the British nickname "Fuzzy-Wuzzies." Despite eventual British victory, the Beja had demonstrated such martial prowess that they became subjects of respect and literary celebration. This warrior heritage remains central to Beja identity, though modern conflicts have marginalized rather than celebrated these traditions.</p>
+
+            <h3>Islamic Faith with Indigenous Customs</h3>
+            <p>The Beja gradually converted to <strong>Sunni Islam</strong> beginning in the 7th century, though they maintained pre-Islamic customs and beliefs that distinguish their practice from Arab Islam. Beja Islam incorporates elements of <strong>Sufi mysticism</strong>, particularly the Khatmiyya brotherhood, which commands strong loyalty. Religious festivals blend Islamic observances with traditional Beja celebrations including music and dance (activities some stricter Muslims discourage). The Beja maintain <strong>oral poetry traditions</strong> praising warriors, camels, and beautiful women, performed to the accompaniment of the <strong>tamburah</strong> (lyre) and drums. Despite Islam's patriarchal tendencies, Beja women traditionally enjoyed considerable <strong>independence</strong>, managing household economics, owning property, and influencing tribal decisions. Marriage involves elaborate ceremonies with bride-price negotiations, though Beja customs emphasize the bride's consent more than many neighboring cultures.</p>
+
+            <h3>Modern Marginalization and Political Struggle</h3>
+            <p>The Beja face severe marginalization in contemporary Sudan and Eritrea. Despite inhabiting mineral-rich territories (including gold mines), Beja communities remain among the poorest and least developed in both countries. The construction of the <strong>Port Sudan-Khartoum railway</strong> and highway disrupted traditional migration routes, while coastal development around <strong>Port Sudan</strong> (in traditional Beja territory) benefited outsiders rather than Beja communities. The <strong>Beja Congress</strong>, a political movement founded in 1958, advocates for Beja rights, resource-sharing, and political representation. In the early 2000s, Beja frustration led to armed conflict with the Sudanese government, blocking the Port Sudan highway to demand attention to their grievances. Climate change has intensified drought, threatening the viability of nomadic pastoralism. Many young Beja have migrated to cities, but face discrimination and lack educational opportunities. Organizations advocate for Beja cultural preservation, mother-tongue education, and equitable development that respects nomadic lifestyles rather than forcing sedentarization.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Red Sea Hills landscape" loading="lazy">
+                    <div class="image-caption">Rugged Red Sea Hills, ancestral homeland of the Beja people</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1583431409915-3b6d874fa949?w=800" alt="Desert camels" loading="lazy">
+                    <div class="image-caption">Camels, essential to Beja survival in the harsh desert environment</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Traditional nomadic life" loading="lazy">
+                    <div class="image-caption">Traditional Beja nomadic camp with goat-hair tents</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=800" alt="Red Sea coast" loading="lazy">
+                    <div class="image-caption">Red Sea coast, part of traditional Beja territories</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Traditional weapons" loading="lazy">
+                    <div class="image-caption">Kaskara sword and traditional weapons of Beja warriors</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Desert vegetation" loading="lazy">
+                    <div class="image-caption">Sparse desert vegetation that Beja herders expertly utilize</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/baggara.html" class="related-card">
+                    <div class="related-icon">🐄</div>
+                    <h3>Baggara</h3>
+                    <p class="related-location">Sudan/Chad</p>
+                    <span class="relationship-badge regional">Sudanese Neighbors</span>
+                    <p class="related-description">Arab cattle pastoralists sharing Sudanese territories with the Beja.</p>
+                </a>
+                <a href="/peoples/rashaida.html" class="related-card">
+                    <div class="related-icon">🐪</div>
+                    <h3>Rashaida</h3>
+                    <p class="related-location">Sudan/Eritrea</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Arab nomads who migrated to Red Sea region in 19th century.</p>
+                </a>
+                <a href="/peoples/somali.html" class="related-card">
+                    <div class="related-icon">🏜️</div>
+                    <h3>Somali</h3>
+                    <p class="related-location">Horn of Africa</p>
+                    <span class="relationship-badge similar">Fellow Cushitic People</span>
+                    <p class="related-description">Cushitic pastoralists sharing linguistic and cultural heritage.</p>
+                </a>
+                <a href="/peoples/afar.html" class="related-card">
+                    <div class="related-icon">🌋</div>
+                    <h3>Afar</h3>
+                    <p class="related-location">Ethiopia/Eritrea/Djibouti</p>
+                    <span class="relationship-badge similar">Cushitic Nomads</span>
+                    <p class="related-description">Cushitic pastoralists of the Danakil Desert and Afar Triangle.</p>
+                </a>
+                <a href="/peoples/nubians.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Nubians</h3>
+                    <p class="related-location">Sudan/Egypt</p>
+                    <span class="relationship-badge regional">Nile Valley Neighbors</span>
+                    <p class="related-description">Ancient Nile civilization sharing northern Sudan with Beja.</p>
+                </a>
+                <a href="/peoples/tigre.html" class="related-card">
+                    <div class="related-icon">🇪🇷</div>
+                    <h3>Tigre</h3>
+                    <p class="related-location">Eritrea</p>
+                    <span class="relationship-badge regional">Eritrean Neighbors</span>
+                    <p class="related-description">Semitic-speaking people of lowland Eritrea, neighbors to Beja.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Paul, Andrew. (1954). <em>A History of the Beja Tribes of the Sudan</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Morton, John. (1989). "Descent, Reciprocity and Inequality among the Northern Beja." In <em>The Ecology of Survival: Case Studies from Northeast African History</em>, edited by Douglas H. Johnson and David M. Anderson. Lester Crook Academic Publishing.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Hjort af Ornäs, Anders, & Dahl, Gudrun. (1991). <em>Responsible Man: The Atmaan Beja of North-Eastern Sudan</em>. Stockholm Studies in Social Anthropology.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Wedeen, Lisa. (2003). "Seeing Like a Citizen, Acting Like a State: Exemplary Events in Unified Yemen." <em>Comparative Studies in Society and History</em>, 45(4): 680-713.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Salih, M. A. Mohamed. (1990). "Pastoralism and the State in African Arid Lands: Beja in Sudan." <em>Nomadic Peoples</em>, 25-27: 91-106.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Vikor, Knut S. (2000). <em>Sufi and Scholar on the Desert Edge: Muhammad b. Ali al-Sanusi and his Brotherhood</em>. Northwestern University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Young, William. (1996). <em>The Rashaayda Bedouin: Arab Pastoralists of Eastern Sudan</em>. Harcourt Brace College Publishers.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Casciarri, Barbara. (2009). "Between Market Logic and Communal Practices: Pastoral Nomad Groups and 'Modern' Land Issues in Eastern Sudan." <em>Nomadic Peoples</em>, 13(1): 12-33.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Rugged Red Sea Hills, ancestral homeland of the Beja people" },
+            { src: "https://images.unsplash.com/photo-1583431409915-3b6d874fa949?w=800", caption: "Camels, essential to Beja survival in the harsh desert environment" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Traditional Beja nomadic camp with goat-hair tents" },
+            { src: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?w=800", caption: "Red Sea coast, part of traditional Beja territories" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Kaskara sword and traditional weapons of Beja warriors" },
+            { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800", caption: "Sparse desert vegetation that Beja herders expertly utilize" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

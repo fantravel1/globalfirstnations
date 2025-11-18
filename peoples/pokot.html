@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokot People: Body Decorators and Cattle Raiders of East Africa | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+    <style>
+        :root { --bead-red: #DC143C; --ochre-orange: #FF8C00; --savanna-green: #8FBC8F; --white: #ecf0f1; --warrior-gold: #DAA520; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--bead-red) 0%, var(--savanna-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--bead-red), var(--ochre-orange)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(220,20,60,0.5); border: 5px solid var(--warrior-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--bead-red); }
+        nav a { color: var(--bead-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--bead-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--bead-red); border-right: 3px solid var(--warrior-gold); }
+        h2 { color: var(--bead-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--bead-red); }
+        h3 { color: var(--ochre-orange); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--bead-red), var(--ochre-orange)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--warrior-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--warrior-gold), var(--bead-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--bead-red), var(--ochre-orange)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--bead-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--bead-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--bead-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">💎</span>
+            <h1>The Pokot People</h1>
+            <p class="tagline">Masters of Body Decoration - Cattle Raiders - Highland and Lowland Pastoralists</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Pokot?</h2>
+            <p>The Pokot (also called Suk) are a Kalenjin-speaking ethnic group numbering approximately 700,000-800,000 people, inhabiting the highlands and lowlands of northwestern Kenya (West Pokot County, Baringo County) and northeastern Uganda (Karamoja region). The Pokot are divided into two ecological and cultural subgroups: the Hill Pokot (Pokot pa Pögh) who practice agriculture in the Cherangani Hills, and the Plains Pokot (Pokot pa Kony) who are semi-nomadic pastoralists in the arid lowlands. The Pokot are renowned for their spectacular body decoration traditions—elaborate beadwork, intricate scarification patterns, ochre body painting, and distinctive hairstyles that communicate age, status, and social identity. Historically, Pokot warriors gained prestige through cattle raiding, which remains a culturally valued (though now officially illegal) practice. The Pokot maintained fierce independence, resisting both pre-colonial kingdoms and colonial conquest, with British authorities describing them as among the most difficult peoples to subdue. Today, the Pokot face challenges from climate change, resource conflicts with neighboring groups, development pressures, and tensions between traditional and modern governance systems.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">700,000+</span><span>Estimated population</span></div>
+                <div class="stat-card"><span class="stat-number">Pokoot</span><span>Kalenjin language</span></div>
+                <div class="stat-card"><span class="stat-number">Kenya/Uganda</span><span>Primary territories</span></div>
+                <div class="stat-card"><span class="stat-number">Hill/Plains</span><span>Two ecological groups</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Living Body Art:</strong> Pokot body decoration is extraordinarily elaborate! Women wear massive necklaces weighing up to 10 kg made from thousands of beads, covering from collarbone to chin. Men create intricate clay hairstyles (chignon) that can take weeks to perfect, decorated with ostrich feathers. Both sexes practice precise scarification—cutting raised patterns on torso, arms, and face that mark beauty, courage, and clan identity. The body becomes a living canvas!
+            </div>
+
+            <h3>Hill and Plains Pokot: Two Ecological Adaptations</h3>
+            <p>The Pokot exhibit remarkable ecological adaptation, with distinct subgroups occupying different environments. The <strong>Hill Pokot (Pokot pa Pögh)</strong> inhabit the fertile Cherangani Hills, practicing mixed <strong>agriculture</strong> including cultivation of millet, sorghum, maize, beans, and keeping small livestock (goats, sheep, chickens). They live in semi-permanent homesteads, maintain terraced gardens, and combine farming with limited cattle keeping. The <strong>Plains Pokot (Pokot pa Kony)</strong> occupy the hot, arid lowlands, practicing <strong>semi-nomadic pastoralism</strong> centered on cattle, camels, goats, and sheep. Plains Pokot move seasonally following water and pasture, living in easily dismantled dome-shaped houses made from sticks and hides. Despite these ecological differences, Hill and Plains Pokot share language, culture, and identity, maintaining kinship ties and intermarriage. Historically, the groups engaged in economic exchange—Hill Pokot trading agricultural products for Plains Pokot livestock. This dual adaptation demonstrates Pokot cultural flexibility, allowing the same ethnic group to thrive in vastly different environments.</p>
+
+            <h3>Body Decoration and Material Culture</h3>
+            <p>The Pokot are masters of <strong>body decoration</strong>, transforming the human body into art through beadwork, scarification, ochre painting, and hairstyling. Pokot women wear extraordinary <strong>beaded necklaces (ngololyo)</strong>—massive collars made from thousands of individually strung beads in intricate patterns, often weighing 5-10 kilograms and covering the neck from collarbone to chin. These necklaces represent wealth, beauty, and marital status. Women also wear beaded earrings, bracelets, and waist beads. Men create elaborate <strong>clay hairstyles (chignon)</strong> constructed from mud mixed with animal fat, shaped into buns or crests and decorated with ostrich feathers, beads, and shells. Creating these hairstyles requires artistic skill and can take days or weeks. Both sexes practice <strong>scarification (ngartua)</strong>—cutting raised decorative patterns on chest, abdomen, arms, and face. Each scar pattern has meaning: certain patterns mark warriors who killed enemies, others denote beauty ideals or clan affiliation. <strong>Ochre body painting</strong> using red and yellow earth mixed with fat creates patterns for ceremonies, raids, and daily beauty enhancement. This elaborate decoration serves multiple functions: beauty enhancement, social communication, identity marking, and spiritual protection.</p>
+
+            <h3>Cattle Culture and Raiding Traditions</h3>
+            <p>For Plains Pokot, cattle are the absolute center of existence. Cattle provide milk (the dietary staple), blood (extracted from live cattle and mixed with milk), meat, hides, and social capital. A man's wealth, marriage prospects, and social status depend on cattle ownership. <strong>Cattle raiding</strong> has been central to Pokot culture for centuries, with young warriors (moran) gaining prestige through successful raids against neighboring groups (particularly Turkana, Karamojong, and Marakwet). Raiding was (and to some extent remains) a rite of passage demonstrating courage, skill, and manhood. Successful raiders earned the right to marry, gained social status, and received ceremonial scarification marking their achievements. Modern states have criminalized raiding, but it persists due to deep cultural significance, economic importance (restocking herds lost to drought or disease), and revenge cycles. The proliferation of <strong>automatic weapons</strong> has transformed traditional raiding into deadly conflicts, killing hundreds annually and disrupting regional stability. NGOs and governments struggle to address raiding through development programs, disarmament initiatives, and peace-building, with mixed results.</p>
+
+            <h3>Age-Set System and Social Organization</h3>
+            <p>Traditional Pokot society is organized through <strong>age-set systems (ipindo)</strong>—cohorts of individuals initiated together who maintain lifelong bonds and shared responsibilities. Young men undergo <strong>initiation ceremonies</strong> involving circumcision, seclusion, teaching of cultural knowledge, warrior training, and eventual graduation to warrior status (moran). Warriors have distinctive dress (including elaborate hairstyles and ochre painting), rights to participate in cattle raiding, and responsibilities to defend the community. After years as warriors, men graduate to elder status, gaining authority to participate in governance and ritual leadership. Women also have age-set systems with initiation involving <strong>female circumcision</strong> (FGM), though this practice faces increasing opposition from health and human rights advocates. <strong>Elders (poghio)</strong> govern through councils (kokwo), making decisions about land use, conflict resolution, initiation timing, and community matters. The Pokot traditionally lacked centralized chiefs, instead governing through decentralized councils representing different clans and territorial sections. Colonial authorities attempted to impose chieftainship systems, with limited success.</p>
+
+            <h3>Modern Challenges and Conflicts</h3>
+            <p>The Pokot face multiple contemporary challenges. <strong>Climate change</strong> has intensified droughts, reducing pasture and water availability for pastoralists and creating food insecurity. <strong>Resource conflicts</strong> with neighboring groups (Turkana, Marakwet, Karamojong) over water, grazing lands, and cattle intensify during droughts, leading to deadly violence. The proliferation of <strong>automatic weapons</strong> has transformed traditional cattle raiding into militarized conflicts with high casualties. Pokot territories are among Kenya's most marginalized regions, with limited infrastructure, schools, and healthcare. Successive governments have neglected development, treating Pokot lands as peripheral badlands rather than integral parts of the nation. <strong>Cultural practices</strong> including FGM and cattle raiding face pressure from government, NGOs, and human rights advocates, creating tensions between tradition and modernization. Young Pokot increasingly seek education and urban migration, threatening cultural transmission. However, the Pokot maintain strong cultural identity, with beadwork, scarification, and age-set systems still vibrant. Organizations work to preserve Pokot heritage while addressing development needs, seeking approaches that respect culture while improving livelihoods. The Pokot's challenge is navigating modernity without sacrificing the rich cultural traditions that define their identity.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Pokot woman with beads" loading="lazy">
+                    <div class="image-caption">Pokot woman wearing traditional massive beaded necklace (ngololyo)</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Cattle herding" loading="lazy">
+                    <div class="image-caption">Cattle herding, central to Pokot pastoral economy and culture</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Traditional scarification" loading="lazy">
+                    <div class="image-caption">Traditional Pokot scarification patterns marking beauty and identity</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1553532435-93d532a45f15?w=800" alt="Arid lowlands landscape" loading="lazy">
+                    <div class="image-caption">Arid lowlands of Pokot territories in northwestern Kenya</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Traditional dwelling" loading="lazy">
+                    <div class="image-caption">Traditional Pokot pastoral dwelling, easily dismantled for nomadic movement</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Warrior with spear" loading="lazy">
+                    <div class="image-caption">Pokot warrior (moran) with traditional spear and body decoration</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/turkana.html" class="related-card">
+                    <div class="related-icon">🏜️</div>
+                    <h3>Turkana</h3>
+                    <p class="related-location">Kenya</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Neighboring pastoralists with historical raiding and trading relationships.</p>
+                </a>
+                <a href="/peoples/karamojong.html" class="related-card">
+                    <div class="related-icon">🐂</div>
+                    <h3>Karamojong</h3>
+                    <p class="related-location">Uganda</p>
+                    <span class="relationship-badge similar">Related Pastoralists</span>
+                    <p class="related-description">Neighboring cattle pastoralists sharing similar cultures and conflicts.</p>
+                </a>
+                <a href="/peoples/marakwet.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Marakwet</h3>
+                    <p class="related-location">Kenya</p>
+                    <span class="relationship-badge similar">Kalenjin Relatives</span>
+                    <p class="related-description">Fellow Kalenjin people practicing terraced agriculture in highlands.</p>
+                </a>
+                <a href="/peoples/samburu.html" class="related-card">
+                    <div class="related-icon">💎</div>
+                    <h3>Samburu</h3>
+                    <p class="related-location">Kenya</p>
+                    <span class="relationship-badge similar">Fellow Pastoralists</span>
+                    <p class="related-description">Maa-speaking pastoralists with similar beadwork and warrior traditions.</p>
+                </a>
+                <a href="/peoples/masai.html" class="related-card">
+                    <div class="related-icon">🛡️</div>
+                    <h3>Maasai</h3>
+                    <p class="related-location">Kenya/Tanzania</p>
+                    <span class="relationship-badge regional">Regional Pastoralists</span>
+                    <p class="related-description">Famous East African pastoralists with similar cattle culture.</p>
+                </a>
+                <a href="/peoples/nandi.html" class="related-card">
+                    <div class="related-icon">⚔️</div>
+                    <h3>Nandi</h3>
+                    <p class="related-location">Kenya</p>
+                    <span class="relationship-badge similar">Kalenjin Relatives</span>
+                    <p class="related-description">Kalenjin group known for fierce resistance to British colonialism.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Schneider, Harold K. (1953). "The Pakot (Suk) of Kenya with Special Reference to the Role of Livestock in Their Subsistence Economy." <em>American Anthropologist</em>, 55(5): 585-591.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Peristiany, J. G. (1951). "The Age-Set System of the Pastoral Pokot: The Sapana Initiation Ceremony." <em>Africa</em>, 21(3): 188-206.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Edgerton, Robert B., & Conant, Francis P. (1964). "Kilapat: The 'Shaming Party' among the Pokot of East Africa." <em>Southwestern Journal of Anthropology</em>, 20(4): 404-418.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bollig, Michael. (1992). "East Pokot Camel Husbandry." <em>Nomadic Peoples</em>, 30: 34-50.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Sobania, Neal. (1980). "The Historical Tradition of the Peoples of the Eastern Lake Turkana Basin c. 1840-1925." PhD dissertation, University of London.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Beech, Mervyn W. H. (1911). <em>The Suk: Their Language and Folklore</em>. Clarendon Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Waller, Richard. (1985). "Ecology, Migration, and Expansion in East Africa." <em>African Affairs</em>, 84(336): 347-370.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Bollig, Michael, & Österle, Matthias. (2013). "Changing Communal Land Tenure in an East African Pastoral System: Institutions and Socio-Economic Transformations among the Pokot of NW Kenya." <em>ZEF Working Papers</em>, 124.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800", caption: "Pokot woman wearing traditional massive beaded necklace (ngololyo)" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Cattle herding, central to Pokot pastoral economy and culture" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Traditional Pokot scarification patterns marking beauty and identity" },
+            { src: "https://images.unsplash.com/photo-1553532435-93d532a45f15?w=800", caption: "Arid lowlands of Pokot territories in northwestern Kenya" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Traditional Pokot pastoral dwelling, easily dismantled for nomadic movement" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Pokot warrior (moran) with traditional spear and body decoration" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

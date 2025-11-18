@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wichí People: Honey Hunters of the Gran Chaco | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍯</text></svg>">
+    <style>
+        :root { --honey-gold: #FFA500; --chaco-green: #228B22; --earth-brown: #8B4513; --white: #ecf0f1; --desert-tan: #D2B48C; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--chaco-green) 0%, var(--earth-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--chaco-green), var(--honey-gold)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(34,139,34,0.5); border: 5px solid var(--honey-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--chaco-green); }
+        nav a { color: var(--chaco-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--chaco-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--chaco-green); border-right: 3px solid var(--honey-gold); }
+        h2 { color: var(--chaco-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--chaco-green); }
+        h3 { color: var(--earth-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--chaco-green), var(--honey-gold)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--earth-brown); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--honey-gold), var(--desert-tan)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--chaco-green), var(--earth-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--chaco-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--chaco-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--chaco-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🍯</span>
+            <h1>The Wichí People</h1>
+            <p class="tagline">Master Honey Hunters - Guardians of the Gran Chaco - Keepers of Ancient Forest Knowledge</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Wichí?</h2>
+            <p>The Wichí (also known as Mataco) are an indigenous people inhabiting the Gran Chaco region spanning northern Argentina, western Paraguay, and southeastern Bolivia. Numbering approximately 50,000 people, the Wichí have developed remarkable adaptations to one of South America's most challenging environments—a vast, semi-arid lowland forest characterized by extreme temperatures, seasonal flooding, and thorny vegetation. Renowned as master honey hunters, the Wichí possess encyclopedic knowledge of over 300 plant species and numerous animal behaviors, allowing them to thrive where others struggle to survive. Their language, Wichí Lhamtés, belongs to the Matacoan language family and contains sophisticated ecological terminology reflecting their deep environmental understanding. Traditionally semi-nomadic hunter-gatherers and fishers, the Wichí moved seasonally following game, fish runs, and the fruiting cycles of algarrobo trees and wild honey sources. Their intricate fiber crafts, particularly woven bags made from caraguatá (bromeliad) fibers, are celebrated for their geometric beauty and durability.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~50,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Wichí Lhamtés</span><span>Matacoan language</span></div>
+                <div class="stat-card"><span class="stat-number">300+</span><span>Known plant species</span></div>
+                <div class="stat-card"><span class="stat-number">Argentina/Bolivia</span><span>Gran Chaco homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Honey Hunting Mastery:</strong> The Wichí can identify over 15 different species of native stingless bees and know the exact location of hundreds of hive trees across vast territories. Honey hunting is so central to their culture that their calendar is organized around honey seasons, and skilled honey hunters hold special status in the community!
+            </div>
+
+            <h3>Life in the Gran Chaco</h3>
+            <p>The Gran Chaco, one of South America's largest dry forests, presents formidable challenges: summer temperatures exceeding 45°C (113°F), winter frosts, months without rain followed by devastating floods, and vegetation dominated by thorny trees and impenetrable scrub. The Wichí developed sophisticated survival strategies for this harsh environment. They traditionally lived in small, mobile groups, establishing temporary camps near water sources and moving seasonally to exploit different resources. <strong>Fishing</strong> was crucial during the wet season when rivers like the Pilcomayo and Bermejo swelled with fish. The Wichí used woven fiber nets, traps, and fish poison from barbasco plants. During the dry season, they focused on <strong>hunting</strong> (armadillos, peccaries, rheas, iguanas) using bows and arrows, and <strong>gathering</strong> wild foods including algarrobo pods, mistol fruits, and chañar berries, which were processed into flour and fermented drinks.</p>
+
+            <h3>The Art of Honey Hunting</h3>
+            <p>Honey hunting represents the pinnacle of Wichí environmental knowledge. The Chaco hosts numerous native stingless bee species (Meliponini), each producing distinct honey varieties. Wichí hunters track bees by observing their flight paths, reading subtle signs in the landscape, and listening for the hum of hives inside tree trunks. They use smoke to calm bees and carefully extract honeycombs, always leaving enough for the colony to survive—a sustainable practice honed over millennia. <strong>Honey</strong> serves multiple purposes: food source, medicine, ritual offering, and trade good. The Wichí classify honey by bee species, tree host, season, and taste, maintaining a taxonomy more detailed than modern entomology. This knowledge is passed intergenerationally through apprenticeship, with experienced hunters teaching younger generations to "read" the forest.</p>
+
+            <h3>Fiber Arts and Material Culture</h3>
+            <p>Wichí women are master weavers, creating intricate bags, belts, and fishing nets from <strong>caraguatá</strong> (chaguar) fibers extracted from wild bromeliads. The process is labor-intensive: harvesting the spiny plants, extracting fibers by scraping leaves, dyeing with natural pigments, and weaving complex geometric patterns. Traditional colors include black (from tannin-rich woods), red (from brazilwood), and yellow (from cebil tree bark). The geometric designs are not merely decorative—they encode information about clan identity, regional origin, and cosmological concepts. These bags, called <strong>yica</strong>, are incredibly strong and water-resistant, used for carrying food, tools, and children. Wichí men traditionally worked with wood, creating bows, arrows, mortars, and canoes from quebracho and other hardwoods.</p>
+
+            <h3>Cosmology and Spiritual Life</h3>
+            <p>Wichí cosmology centers on the relationship between humans, animals, and powerful spirit-beings who inhabit the forest. <strong>Tawuks</strong> are shamanic specialists who communicate with spirit-owners of animals and mediate between human and non-human worlds. They use tobacco smoke, songs, and dreams to diagnose illness, ensure hunting success, and maintain cosmic balance. The Wichí believe that animals once lived as people and that boundaries between species remain permeable. This worldview informs strict hunting ethics: hunters must show respect, avoid waste, and maintain reciprocal relationships with animal-spirits. The <strong>pleiades constellation</strong> plays a central role in their calendar and mythology, marking seasonal transitions.</p>
+
+            <h3>Contemporary Challenges and Resilience</h3>
+            <p>Today, the Wichí face severe pressures from land dispossession, deforestation, and poverty. The Gran Chaco is experiencing one of the world's highest deforestation rates, as forests are cleared for soy plantations and cattle ranches. This destroys Wichí hunting grounds, fishing sites, and sources of wild foods and honey. Many communities have been forcibly settled, losing access to traditional territories. Poverty, malnutrition, and health problems plague Wichí settlements, exacerbated by inadequate government services and discrimination. Despite these challenges, the Wichí demonstrate remarkable resilience. They have organized political movements demanding land titles and territorial rights. Some communities have established bilingual schools teaching Wichí language and traditional ecological knowledge. Wichí fiber arts have gained recognition in international art markets, providing income for families. Young people are using digital tools to document traditional knowledge and advocate for indigenous rights. The Wichí continue to practice honey hunting, fishing, and gathering where possible, maintaining cultural identity in the face of ongoing colonialism.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1558642084-fd07fae5282e?w=800" alt="Gran Chaco landscape" loading="lazy">
+                    <div class="image-caption">The vast Gran Chaco dry forest, homeland of the Wichí people</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784422?w=800" alt="Wild honey collection" loading="lazy">
+                    <div class="image-caption">Native stingless bee honeycomb, Wichí's most prized forest resource</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1615671524827-c1fe3973b648?w=800" alt="Woven fiber bag" loading="lazy">
+                    <div class="image-caption">Traditional Wichí yica bag woven from caraguatá fibers with geometric patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" alt="Chaco dry forest" loading="lazy">
+                    <div class="image-caption">Thorny quebracho trees characteristic of Gran Chaco vegetation</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1611689342806-0863700ce1e4?w=800" alt="Fishing net" loading="lazy">
+                    <div class="image-caption">Traditional hand-woven fishing net used in Pilcomayo River</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1564758866169-4c6e4e4dcc0b?w=800" alt="Algarrobo tree pods" loading="lazy">
+                    <div class="image-caption">Algarrobo (Prosopis) pods, staple food processed into flour and drinks</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/guarani.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Guaraní</h3>
+                    <p class="related-location">Paraguay/Brazil/Argentina</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Major indigenous group of Paraguay with sophisticated agricultural knowledge.</p>
+                </a>
+                <a href="/peoples/ayoreo.html" class="related-card">
+                    <div class="related-icon">🌳</div>
+                    <h3>Ayoreo</h3>
+                    <p class="related-location">Gran Chaco</p>
+                    <span class="relationship-badge regional">Chaco Neighbors</span>
+                    <p class="related-description">Fellow Gran Chaco people, some groups remain uncontacted.</p>
+                </a>
+                <a href="/peoples/mapuche.html" class="related-card">
+                    <div class="related-icon">⚔️</div>
+                    <h3>Mapuche</h3>
+                    <p class="related-location">Argentina/Chile</p>
+                    <span class="relationship-badge regional">Southern Neighbors</span>
+                    <p class="related-description">Indigenous warriors of Patagonia maintaining territorial resistance.</p>
+                </a>
+                <a href="/peoples/aymara.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Aymara</h3>
+                    <p class="related-location">Bolivia/Peru</p>
+                    <span class="relationship-badge regional">Andean Neighbors</span>
+                    <p class="related-description">Highland people of Bolivia with strong cultural preservation.</p>
+                </a>
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Brazil/Venezuela Amazon</p>
+                    <span class="relationship-badge similar">Hunter-Gatherers</span>
+                    <p class="related-description">Amazonian people maintaining traditional forest subsistence.</p>
+                </a>
+                <a href="/peoples/tehuelche.html" class="related-card">
+                    <div class="related-icon">🦙</div>
+                    <h3>Tehuelche</h3>
+                    <p class="related-location">Patagonia, Argentina</p>
+                    <span class="relationship-badge regional">Patagonian Culture</span>
+                    <p class="related-description">Historic nomadic hunters of the Patagonian steppes.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Palmer, John H. (2005). <em>La buena voluntad Wichí: Una espiritualidad indígena</em>. Formosa: APCD-Grupo de Trabajo Ruta 81.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Arenas, Pastor. (2003). <em>Etnografía y alimentación entre los Toba-Ñachilamole#ek y Wichí-Lhuku'tas del Chaco Central (Argentina)</em>. Buenos Aires: Author's edition.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Alvarsson, Jan-Åke. (1988). <em>The Mataco of the Gran Chaco: An Ethnographic Account of Change and Continuity in Mataco Socio-Economic Organization</em>. Uppsala: Uppsala Research Reports in Cultural Anthropology.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Montani, Rodrigo. (2017). <em>El mundo de las cosas entre los wichís del Gran Chaco: Un estudio etnolingüístico</em>. Cochabamba: Itinerarios Editorial.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Braunstein, José. (1983). <em>Algunos rasgos de la organización social de los indígenas del Gran Chaco</em>. Buenos Aires: Universidad de Buenos Aires.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Dasso, María Cristina. (2012). <em>El shamanismo mataco</em>. Buenos Aires: Búsqueda.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Gordillo, Gastón. (2004). <em>Landscapes of Devils: Tensions of Place and Memory in the Argentinean Chaco</em>. Durham: Duke University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Valeggia, Claudia R., & Ellison, Peter T. (2009). "Interactions between metabolic and reproductive functions in the resumption of postpartum fecundity." <em>American Journal of Human Biology</em>, 21(4), 559-566.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1558642084-fd07fae5282e?w=800", caption: "The vast Gran Chaco dry forest, homeland of the Wichí people" },
+            { src: "https://images.unsplash.com/photo-1587049352846-4a222e784422?w=800", caption: "Native stingless bee honeycomb, Wichí's most prized forest resource" },
+            { src: "https://images.unsplash.com/photo-1615671524827-c1fe3973b648?w=800", caption: "Traditional Wichí yica bag woven from caraguatá fibers with geometric patterns" },
+            { src: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", caption: "Thorny quebracho trees characteristic of Gran Chaco vegetation" },
+            { src: "https://images.unsplash.com/photo-1611689342806-0863700ce1e4?w=800", caption: "Traditional hand-woven fishing net used in Pilcomayo River" },
+            { src: "https://images.unsplash.com/photo-1564758866169-4c6e4e4dcc0b?w=800", caption: "Algarrobo (Prosopis) pods, staple food processed into flour and drinks" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

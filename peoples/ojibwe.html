@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ojibwe People: Keepers of the Great Lakes | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛶</text></svg>">
+    <style>
+        :root { --lake-blue: #1E90FF; --birch-white: #F5F5DC; --wild-rice-green: #556B2F; --white: #ecf0f1; --forest-green: #2F4F2F; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--lake-blue) 0%, var(--forest-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--lake-blue), var(--wild-rice-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(30,144,255,0.5); border: 5px solid var(--birch-white); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--lake-blue); }
+        nav a { color: var(--lake-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--lake-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--lake-blue); border-right: 3px solid var(--wild-rice-green); }
+        h2 { color: var(--lake-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--lake-blue); }
+        h3 { color: var(--wild-rice-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--lake-blue), var(--wild-rice-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--birch-white); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--wild-rice-green), var(--forest-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--lake-blue), var(--forest-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmin(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--lake-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--lake-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--lake-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🛶</span>
+            <h1>The Ojibwe People</h1>
+            <p class="tagline">Anishinaabe of the Great Lakes - Masters of Birchbark Canoes - Keepers of Wild Rice Traditions</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Ojibwe?</h2>
+            <p>The Ojibwe (also called Ojibwa, Chippewa, or Anishinaabe) are one of the largest indigenous groups in North America, with over 200,000 members across the United States and Canada. They are part of the larger Anishinaabe cultural group, which also includes the Odawa and Potawatomi peoples. The Ojibwe traditionally inhabited the woodlands and lakes region around the Great Lakes—particularly Lake Superior—spanning present-day Ontario, Manitoba, Saskatchewan, Minnesota, Wisconsin, Michigan, and North Dakota. Their name "Ojibwe" possibly derives from a word meaning "to pucker," referring to the puckered seam of their distinctive moccasins. The Ojibwe developed a sophisticated culture adapted to the northern forests and waterways, becoming master canoe builders, expert fishers, and skilled harvesters of wild rice (manoomin), which holds sacred significance. They created birchbark scrolls recording spiritual teachings, developed the iconic dreamcatcher as a protective charm, and maintained a rich oral tradition of stories, songs, and teachings passed through generations. Despite centuries of colonization, forced removal, residential schools, and cultural suppression, the Ojibwe have maintained strong cultural identity, language revitalization programs, and sovereign tribal governance across numerous reservations and reserves.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">200,000+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Ojibwemowin</span><span>Algonquian language</span></div>
+                <div class="stat-card"><span class="stat-number">Great Lakes</span><span>Traditional homeland</span></div>
+                <div class="stat-card"><span class="stat-number">135+</span><span>Federally recognized bands</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Dreamcatcher Origins:</strong> The iconic dreamcatcher originated with the Ojibwe! Legend tells of Asibikaashi (Spider Woman) who protected children by weaving magical webs. As the Ojibwe spread across North America, mothers and grandmothers created dreamcatchers—willow hoops with woven nets—to filter dreams, catching nightmares while allowing good dreams to pass through to sleeping children.
+            </div>
+
+            <h3>People of the Three Fires and Great Lakes</h3>
+            <p>The Ojibwe are part of the <strong>Council of Three Fires</strong> (Niswi-mishkodewinan), a longstanding alliance with the Odawa and Potawatomi peoples. According to oral tradition, these three nations were once one people who separated but maintained close ties. The Ojibwe traditionally occupied the northern Great Lakes region, with Lake Superior's southern shore being the cultural heartland. They lived in semi-permanent villages during summer, gathering in larger communities for fishing, wild rice harvest, and ceremonies, then dispersing into smaller family groups for winter hunting. <strong>Seasonal migration</strong> followed resource availability: spring maple syrup production, summer fishing and berry gathering, fall wild rice harvest, and winter hunting and trapping. The Ojibwe developed intimate knowledge of their environment, identifying hundreds of plant species for food, medicine, and materials. Their social organization centered on clans (dodems) named after animals—crane, loon, bear, marten, and others—with each clan having specific roles and responsibilities in community life.</p>
+
+            <h3>Birchbark Canoes and Waterway Masters</h3>
+            <p>The Ojibwe are renowned as master builders of <strong>birchbark canoes</strong>, considered among the finest watercraft ever developed. These canoes were lightweight yet sturdy, constructed from birchbark sheets sewn with spruce root thread, sealed with pine pitch, and reinforced with cedar ribs and gunwales. A canoe could be carried by one or two people over portages between lakes and rivers, enabling travel across vast waterway networks. Different canoe styles served different purposes: small hunting canoes for one person, family canoes for transport, and large cargo canoes capable of carrying tons of goods. Canoe building required specialized knowledge passed through apprenticeship—when to harvest bark (late spring/early summer), how to bend and shape it, and ritual protocols honoring the birch tree's gift. Beyond canoes, the Ojibwe utilized <strong>birchbark for countless purposes</strong>: wigwam coverings, containers (makak), cooking vessels, torches, and scrolls for recording sacred teachings. The birch tree was so central to Ojibwe life that some scholars call them a "birchbark culture."</p>
+
+            <h3>Wild Rice: Sacred Food and Cultural Cornerstone</h3>
+            <p><strong>Manoomin</strong> (wild rice) holds profound spiritual and practical importance for the Ojibwe. This aquatic grass grows in shallow lakes and slow-moving streams across the Great Lakes region, producing nutritious grain harvested in late summer/early fall. Ojibwe prophecy speaks of finding the "food that grows on water," guiding their migration to the Great Lakes. Wild rice harvesting is a sacred practice governed by ceremony and tradition. Harvesters work in pairs from canoes: one person poles or paddles while the other uses wooden flails to knock ripe grain into the canoe. Harvest timing is critical—too early and grain isn't ripe; too late and it falls into the water. After harvest, rice is parched (dried), danced (hulled by foot), and winnowed. <strong>Wild rice continues to be a cornerstone of Ojibwe identity</strong>, though modern threats include habitat loss, industrial wild rice cultivation, and genetic modification attempts. Many Ojibwe communities actively defend wild rice beds, asserting treaty rights and fighting environmental degradation. Annual wild rice camps bring families together, teaching youth traditional harvesting methods and strengthening cultural connections.</p>
+
+            <h3>Midewiwin and Spiritual Traditions</h3>
+            <p>The <strong>Midewiwin</strong> (Grand Medicine Society) is the traditional spiritual and healing organization central to Ojibwe religious life. Midewiwin practitioners (Mide) are healers, herbalists, and spiritual leaders who undergo rigorous training in medicinal plants, ceremonies, songs, and sacred teachings. Knowledge is organized into degrees or levels, with initiates advancing through successive stages marked by elaborate ceremonies. <strong>Birchbark scrolls</strong> served as mnemonic devices recording Midewiwin teachings through pictographs—complex symbolic drawings representing songs, stories, and spiritual concepts. The Ojibwe worldview centers on maintaining balance and respectful relationships with all beings—animals, plants, spirits, and other humans. <strong>Vision quests</strong>, where young people fast alone in the wilderness seeking spiritual guidance, mark important life transitions. Tobacco is sacred, offered in prayers and ceremonies. The <strong>shaking tent ceremony</strong> involves a shaman entering a special lodge to communicate with spirits who shake the structure while providing guidance. Sweat lodges serve purification and healing purposes. These spiritual practices faced severe repression through Canadian and U.S. policies but have experienced revitalization in recent decades.</p>
+
+            <h3>Modern Ojibwe: Sovereignty, Language, and Cultural Continuity</h3>
+            <p>Today, the Ojibwe live on numerous reservations (U.S.) and reserves (Canada), maintaining tribal sovereignty and self-governance. Major communities include Red Lake, White Earth, and Leech Lake in Minnesota; Lac Courte Oreilles and Bad River in Wisconsin; and numerous Ontario First Nations. <strong>Treaty rights</strong> remain central to Ojibwe political and economic life. Historic treaties guaranteed hunting, fishing, and gathering rights across ceded territories, leading to ongoing legal battles when these rights conflict with state regulations or commercial interests. The 1980s-90s saw "treaty rights wars" in Wisconsin, where Ojibwe spearfishing was met with racist protests, but the Ojibwe prevailed in court, affirming treaty rights. <strong>Economic development</strong> varies widely among Ojibwe communities, from casino gaming revenues supporting education and infrastructure to persistent poverty and unemployment in remote areas. <strong>Language revitalization</strong> is a major priority, with immersion schools, language apps, and university programs working to reverse the dramatic decline in Ojibwemowin speakers caused by residential schools and cultural suppression. Cultural practices like powwows, wild rice harvesting, birchbark canoe building, and traditional arts remain vibrant. The Ojibwe continue to be powerful advocates for environmental protection, indigenous sovereignty, and cultural preservation, demonstrating that despite centuries of colonization, the Anishinaabe spirit endures strong.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Great Lakes landscape" loading="lazy">
+                    <div class="image-caption">Pristine Great Lakes waters, heartland of Ojibwe territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800" alt="Birchbark canoe" loading="lazy">
+                    <div class="image-caption">Traditional birchbark canoe, masterpiece of Ojibwe craftsmanship</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Wild rice" loading="lazy">
+                    <div class="image-caption">Wild rice (manoomin), sacred food prophesied by Ojibwe ancestors</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800" alt="Northern forest" loading="lazy">
+                    <div class="image-caption">Boreal forest of birch and pine, traditional Ojibwe homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Dreamcatcher" loading="lazy">
+                    <div class="image-caption">Traditional dreamcatcher protecting sleeping children from nightmares</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Lake Superior" loading="lazy">
+                    <div class="image-caption">Lake Superior shore, spiritual center of Ojibwe culture</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/cree.html" class="related-card">
+                    <div class="related-icon">🌲</div>
+                    <h3>Cree</h3>
+                    <p class="related-location">Canada</p>
+                    <span class="relationship-badge regional">Algonquian Neighbors</span>
+                    <p class="related-description">Fellow Algonquian speakers of Canadian subarctic forests.</p>
+                </a>
+                <a href="/peoples/blackfoot.html" class="related-card">
+                    <div class="related-icon">🦬</div>
+                    <h3>Blackfoot</h3>
+                    <p class="related-location">Great Plains</p>
+                    <span class="relationship-badge similar">Algonquian Family</span>
+                    <p class="related-description">Plains Algonquian people with buffalo hunting traditions.</p>
+                </a>
+                <a href="/peoples/menominee.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Menominee</h3>
+                    <p class="related-location">Wisconsin</p>
+                    <span class="relationship-badge regional">Wild Rice People</span>
+                    <p class="related-description">Great Lakes people named for wild rice harvesting.</p>
+                </a>
+                <a href="/peoples/haudenosaunee.html" class="related-card">
+                    <div class="related-icon">🦅</div>
+                    <h3>Haudenosaunee</h3>
+                    <p class="related-location">New York/Ontario</p>
+                    <span class="relationship-badge historical">Eastern Neighbors</span>
+                    <p class="related-description">Iroquois Confederacy with complex governance system.</p>
+                </a>
+                <a href="/peoples/dakota.html" class="related-card">
+                    <div class="related-icon">⚔️</div>
+                    <h3>Dakota</h3>
+                    <p class="related-location">Great Plains</p>
+                    <span class="relationship-badge historical">Historic Rivals</span>
+                    <p class="related-description">Siouan people historically in conflict over territory.</p>
+                </a>
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">❄️</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic Canada</p>
+                    <span class="relationship-badge regional">Northern Neighbors</span>
+                    <p class="related-description">Arctic people with distinct language and culture.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Warren, William W. (1984). <em>History of the Ojibway People</em>. St. Paul: Minnesota Historical Society Press. (Original work published 1885)</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Densmore, Frances. (1979). <em>Chippewa Customs</em>. St. Paul: Minnesota Historical Society Press. (Original work published 1929)</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Benton-Banai, Edward. (1988). <em>The Mishomis Book: The Voice of the Ojibway</em>. Hayward: Indian Country Communications.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Treuer, Anton. (2010). <em>Ojibwe in Minnesota</em>. St. Paul: Minnesota Historical Society Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Vennum, Thomas Jr. (1988). <em>Wild Rice and the Ojibway People</em>. St. Paul: Minnesota Historical Society Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Johnston, Basil. (1976). <em>Ojibway Heritage</em>. Toronto: McClelland and Stewart.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Peacock, Thomas, & Wisuri, Marlene. (2002). <em>Ojibwe Waasa Inaabidaa: We Look in All Directions</em>. Afton: Afton Historical Society Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Treuer, David. (2012). <em>Rez Life: An Indian's Journey Through Reservation Life</em>. New York: Atlantic Monthly Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Pristine Great Lakes waters, heartland of Ojibwe territory" },
+            { src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800", caption: "Traditional birchbark canoe, masterpiece of Ojibwe craftsmanship" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Wild rice (manoomin), sacred food prophesied by Ojibwe ancestors" },
+            { src: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800", caption: "Boreal forest of birch and pine, traditional Ojibwe homeland" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Traditional dreamcatcher protecting sleeping children from nightmares" },
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Lake Superior shore, spiritual center of Ojibwe culture" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

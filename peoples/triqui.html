@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triqui People: Basketball Champions of the Oaxaca Highlands | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏀</text></svg>">
+    <style>
+        :root { --triqui-red: #D32F2F; --highland-purple: #7B1FA2; --woven-orange: #F57C00; --white: #ecf0f1; --mountain-blue: #1976D2; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--triqui-red) 0%, var(--highland-purple) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--triqui-red), var(--highland-purple)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(211,47,47,0.5); border: 5px solid var(--woven-orange); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--triqui-red); }
+        nav a { color: var(--triqui-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--triqui-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--triqui-red); border-right: 3px solid var(--highland-purple); }
+        h2 { color: var(--triqui-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--triqui-red); }
+        h3 { color: var(--highland-purple); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--triqui-red), var(--highland-purple)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--woven-orange); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--woven-orange), var(--triqui-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--triqui-red), var(--highland-purple)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--triqui-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--triqui-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--triqui-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏀</span>
+            <h1>The Triqui People</h1>
+            <p class="tagline">Barefoot Basketball Champions - Master Weavers - People of the High Cloud Forests</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Triqui?</h2>
+            <p>The Triqui (Tinujei or Driqui, meaning "Supreme Language") are an indigenous people inhabiting the highlands of western Oaxaca, Mexico, particularly in the municipios of Putla, Juxtlahuaca, and Tlaxiaco. With approximately 29,000 speakers of the Triqui language (part of the Mixtecan branch of Otomanguean), they represent one of Mexico's smaller but culturally distinct indigenous groups. The Triqui have gained international attention for their extraordinary barefoot basketball teams, whose players—often young indigenous girls and boys from impoverished mountain communities—have defeated opponents worldwide despite playing without shoes on dirt courts. Beyond athletics, the Triqui are renowned for their spectacular woven huipiles featuring intricate purple, red, and white geometric designs that rank among Mexico's finest textiles. Their territory in the cloud-forest highlands faces challenges from poverty, political violence, land conflicts, and forced migration, yet Triqui cultural identity remains remarkably strong through language preservation, traditional weaving, and community organization.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">29,000</span><span>Language speakers</span></div>
+                <div class="stat-card"><span class="stat-number">Mixtecan</span><span>Language branch</span></div>
+                <div class="stat-card"><span class="stat-number">3,000m</span><span>Altitude (highlands)</span></div>
+                <div class="stat-card"><span class="stat-number">Oaxaca</span><span>Home state</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Barefoot Basketball Legends:</strong> Triqui youth basketball teams have achieved international fame by competing barefoot and defeating teams from around the world! The documentary "They Call Us Monsters" showcased these young players who practice on dirt courts at high altitude, developing exceptional skills despite poverty—their success challenging stereotypes and inspiring indigenous pride across Mexico.
+            </div>
+
+            <h3>Textile Excellence and Weaving Traditions</h3>
+            <p>Triqui women are celebrated as among Mexico's finest weavers, creating spectacular <strong>huipiles</strong> (traditional blouses) on backstrap looms using techniques passed through generations. Traditional Triqui huipiles feature bold geometric patterns in purple, red, white, and black, with designs varying between the three main Triqui regions (Copala, Chicahuaxtla, and Itunyoso). The weaving process is extraordinarily labor-intensive, taking months to complete a single garment using hand-spun cotton and natural or aniline dyes. The <strong>purple color</strong>, traditionally obtained from caracol púrpura (sea snails), holds special significance. Complex designs incorporate diamonds, zigzags, and stylized animals, each pattern carrying cultural meaning. These textiles serve not just as clothing but as markers of ethnic identity, artistic expression, and women's economic contribution to their communities.</p>
+
+            <h3>Language and Regional Variants</h3>
+            <p>The <strong>Triqui language</strong> belongs to the Mixtecan family within Otomanguean and exists in three main variants: Triqui of Copala, Triqui of Chicahuaxtla, and Triqui of Itunyoso. Like other Otomanguean languages, Triqui is tonal, with pitch patterns changing word meanings. The language features complex verb morphology and sophisticated systems for expressing aspect and evidentiality. Despite its relatively small speaker population, Triqui remains vital in highland communities where it serves as the primary language of daily life. Oral traditions preserve creation stories, historical narratives, and extensive ecological knowledge of highland plants and animals. However, migration to cities and agricultural labor camps threatens language transmission as younger Triqui people increasingly use Spanish.</p>
+
+            <h3>Political Conflict and Migration</h3>
+            <p>Triqui communities have endured decades of <strong>political violence</strong> stemming from land conflicts, disputes between municipalities, and tensions between political organizations. The Triqui region has experienced tragic violence between factions, leading to displacement and emigration. Many Triqui families have migrated to work as agricultural laborers in Sinaloa, Baja California, and the United States, often living in harsh conditions in labor camps. This forced migration has created diaspora communities maintaining Triqui language and culture far from their homeland. Organizations like the <strong>Movimiento de Unificación y Lucha Triqui (MULT)</strong> have organized for land rights, political autonomy, and an end to violence. Despite these challenges, Triqui activists continue fighting for justice, cultural preservation, and the right to live safely in their ancestral territories.</p>
+
+            <h3>Agriculture and Mountain Life</h3>
+            <p>The Triqui practice <strong>subsistence agriculture</strong> in the challenging environment of the high cloud forests, cultivating corn, beans, squash, and chilies on steep mountain slopes using traditional milpa methods. The highlands provide cool temperatures and abundant rainfall but also present difficulties with rocky terrain and limited flat land. Triqui farmers have developed sophisticated knowledge of microclimates and soil management. Many communities supplement agriculture with <strong>sheep herding</strong>, providing wool for weaving. Wild plant gathering includes medicinal herbs, edible greens, and mushrooms. Economic pressure has forced many Triqui to seek wage labor, disrupting traditional agricultural cycles and threatening food sovereignty.</p>
+
+            <h3>Contemporary Triqui Identity</h3>
+            <p>Modern Triqui people navigate between maintaining cultural traditions and confronting severe socioeconomic challenges. Basketball has emerged as a powerful source of pride and opportunity, with teams like <strong>Las Triquis</strong> gaining national recognition and providing positive role models. Traditional <strong>festivals</strong> blend Catholic and indigenous elements, featuring music from indigenous bands, traditional dancing, and elaborate food preparations. Triqui women's weaving cooperatives work to maintain textile traditions while creating economic opportunities. Bilingual education programs attempt to preserve the Triqui language while providing Spanish literacy. Migration continues affecting community cohesion, but Triqui migrants maintain strong homeland connections, sending remittances and returning for festivals. Despite facing marginalization, poverty, and violence, Triqui cultural identity remains resilient, expressed through language maintenance, spectacular textiles, basketball excellence, and organized struggles for indigenous rights and territorial autonomy.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=800" alt="Basketball game" loading="lazy">
+                    <div class="image-caption">Triqui youth playing basketball barefoot on mountain dirt court</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=800" alt="Triqui huipil" loading="lazy">
+                    <div class="image-caption">Traditional Triqui huipil with intricate purple and red geometric patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1615791784250-23e9dc5a26b3?w=800" alt="Backstrap loom weaving" loading="lazy">
+                    <div class="image-caption">Triqui woman weaving on traditional backstrap loom</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Oaxaca highlands" loading="lazy">
+                    <div class="image-caption">Misty cloud forests of the Triqui highlands in western Oaxaca</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800" alt="Mountain agriculture" loading="lazy">
+                    <div class="image-caption">Traditional milpa agriculture on steep Triqui mountain slopes</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800" alt="Triqui women" loading="lazy">
+                    <div class="image-caption">Triqui women in traditional dress at community gathering</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/mixtec.html" class="related-card">
+                    <div class="related-icon">📜</div>
+                    <h3>Mixtec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge similar">Linguistic Relatives</span>
+                    <p class="related-description">Closely related Mixtecan language speakers sharing Oaxacan highlands.</p>
+                </a>
+                <a href="/peoples/zapotec.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Zapotec</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Oaxacan Neighbors</span>
+                    <p class="related-description">Major Oaxacan indigenous group with ancient civilizational heritage.</p>
+                </a>
+                <a href="/peoples/chatino.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Chatino</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Western Oaxaca</span>
+                    <p class="related-description">Neighboring indigenous group from western Oaxaca highlands.</p>
+                </a>
+                <a href="/peoples/amuzgo.html" class="related-card">
+                    <div class="related-icon">🧶</div>
+                    <h3>Amuzgo</h3>
+                    <p class="related-location">Oaxaca/Guerrero</p>
+                    <span class="relationship-badge similar">Master Weavers</span>
+                    <p class="related-description">Renowned for brocade weaving with similar textile excellence.</p>
+                </a>
+                <a href="/peoples/mixe.html" class="related-card">
+                    <div class="related-icon">🗻</div>
+                    <h3>Mixe</h3>
+                    <p class="related-location">Oaxaca</p>
+                    <span class="relationship-badge regional">Oaxacan Highlands</span>
+                    <p class="related-description">Independent highland people maintaining cultural autonomy.</p>
+                </a>
+                <a href="/peoples/tzotzil.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Tzotzil</h3>
+                    <p class="related-location">Chiapas</p>
+                    <span class="relationship-badge similar">Textile Traditions</span>
+                    <p class="related-description">Maya group renowned for spectacular backstrap loom textiles.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Hollenbach, Barbara E. (2013). <em>A Lexicon of Copala Triqui</em>. SIL International.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Paris, Elena. (2008). <em>Exploring Triqui Textiles</em>. Textile Society of America Symposium Proceedings.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Lewin, Pedro, & García de León, Antonio. (1978). <em>Los Triquis: Economía, Cultura y Política</em>. INAH.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Cruz, Rufino Sánchez. (2011). <em>The Triqui Movement and Indigenous Autonomy</em>. University of Texas at Austin.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Holmes, Seth M. (2013). <em>Fresh Fruit, Broken Bodies: Migrant Farmworkers in the United States</em>. University of California Press. (Triqui migrant experiences)</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Velasco Ortiz, Laura. (2005). <em>Mixtec Transnational Identity</em>. University of Arizona Press. (Includes Triqui migration)</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Good Eshelman, Catharine. (2005). <em>Trabajando juntos: Los vivos, los muertos, la tierra y el maíz</em>. El Colegio de Michoacán. (Highland agriculture)</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">DiCanio, Christian T. (2012). <em>Coarticulation Between Tone and Glottal States in Itunyoso Triqui</em>. Journal of Phonetics.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=800", caption: "Triqui youth playing basketball barefoot on mountain dirt court" },
+            { src: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=800", caption: "Traditional Triqui huipil with intricate purple and red geometric patterns" },
+            { src: "https://images.unsplash.com/photo-1615791784250-23e9dc5a26b3?w=800", caption: "Triqui woman weaving on traditional backstrap loom" },
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Misty cloud forests of the Triqui highlands in western Oaxaca" },
+            { src: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800", caption: "Traditional milpa agriculture on steep Triqui mountain slopes" },
+            { src: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800", caption: "Triqui women in traditional dress at community gathering" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

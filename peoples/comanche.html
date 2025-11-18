@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comanche People: Lords of the Southern Plains | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐎</text></svg>">
+    <style>
+        :root { --plains-gold: #DAA520; --warrior-red: #8B0000; --sky-blue: #87CEEB; --white: #ecf0f1; --prairie-brown: #8B7355; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--sky-blue) 0%, var(--prairie-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--warrior-red), var(--plains-gold)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(139,0,0,0.5); border: 5px solid var(--sky-blue); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--warrior-red); }
+        nav a { color: var(--warrior-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--warrior-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--warrior-red); border-right: 3px solid var(--plains-gold); }
+        h2 { color: var(--warrior-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--warrior-red); }
+        h3 { color: var(--plains-gold); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--warrior-red), var(--plains-gold)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--sky-blue); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--plains-gold), var(--prairie-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--warrior-red), var(--prairie-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--warrior-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--warrior-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--warrior-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐎</span>
+            <h1>The Comanche People</h1>
+            <p class="tagline">Lords of the Southern Plains - Master Horsemen - The Comanche Empire</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Comanche?</h2>
+            <p>The Comanche (Nʉmʉnʉʉ, "the People") are a Native American nation whose mounted warriors dominated the Southern Plains from the early 1700s through the late 1800s, establishing what historians call the "Comanche Empire"—a vast territory stretching from Kansas to northern Mexico and from the Rocky Mountains to central Texas. Originally a branch of the Eastern Shoshone who migrated southward from Wyoming, the Comanche transformed themselves into history's most formidable light cavalry upon acquiring horses in the late 1600s. At their peak, they numbered perhaps 40,000-45,000 people organized into autonomous bands that controlled an empire called Comancheria. Today, approximately 17,000 enrolled tribal members belong to the Comanche Nation, headquartered in Lawton, Oklahoma. The Comanche were unmatched horsemen—children learned to ride before they could walk, and warriors could shoot arrows with deadly accuracy while riding at full gallop, hanging off their horses' sides for protection. They conducted lightning raids across thousands of miles, traded extensively, and successfully resisted Spanish, Mexican, Texan, and U.S. expansion for over a century. Their military prowess, diplomatic sophistication, and economic power made them the dominant force on the Southern Plains until overwhelming U.S. military pressure and buffalo extermination finally forced their confinement to a reservation in the 1870s.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~17,000</span><span>Enrolled members</span></div>
+                <div class="stat-card"><span class="stat-number">Comanche</span><span>Uto-Aztecan language</span></div>
+                <div class="stat-card"><span class="stat-number">Oklahoma</span><span>Current headquarters</span></div>
+                <div class="stat-card"><span class="stat-number">1700s-1870s</span><span>Comanche Empire era</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Supreme Horsemen:</strong> Comanche warriors were considered the finest light cavalry in the world. They could ride at full gallop while hanging off the side of their horse, using the animal's body as a shield while shooting arrows under its neck. One warrior could control up to 20 horses, and they developed breeding programs creating the fastest, most enduring horses on the Plains!
+            </div>
+
+            <h3>From Mountain Shoshone to Plains Empire</h3>
+            <p>The Comanche originated as a branch of the <strong>Eastern Shoshone</strong> people living in Wyoming's mountains in the late 1600s. When Spanish horses spread northward from New Mexico through trade and raiding, some Shoshone groups acquired them and recognized their transformative potential. By the early 1700s, groups that would become the Comanche had migrated southward onto the Southern Plains, drawn by vast buffalo herds and strategic positioning near Spanish settlements to raid and trade. The horse revolutionized their society: they abandoned the limited mountain resources for the buffalo-rich plains, developed supremely mobile lifeways, and became formidable raiders. By the mid-1700s, the Comanche had displaced or absorbed earlier Plains groups including the Apache (who they pushed southward through relentless warfare), establishing dominance over a territory called <strong>Comancheria</strong> that covered much of present-day western Texas, Oklahoma, New Mexico, Kansas, Colorado, and northern Mexico. This wasn't a unified political state but rather autonomous bands (12-15 major divisions) that shared language, culture, and general cooperation in defending their territory and conducting raids.</p>
+
+            <h3>The Comanche Empire: Power and Trade</h3>
+            <p>From roughly 1750-1850, the Comanche controlled one of North America's most powerful indigenous empires. Their power rested on several factors: <strong>military superiority</strong> derived from unmatched horsemanship and mobility; <strong>strategic geography</strong> controlling routes between New Mexico, Texas, Louisiana, and northern Mexico; and sophisticated <strong>economic networks</strong> trading horses, buffalo products, captives, and raided goods. The Comanche conducted massive horse and cattle raids deep into Mexico, sometimes traveling 1,000+ miles. They traded stolen horses and mules to French and American traders, becoming central to regional commerce. Spanish and later Mexican authorities paid tribute and made peace treaties acknowledging Comanche power. The Comanche also raided Texas settlements relentlessly, taking captives (particularly women and children) who were adopted into families or traded. This created a complex multiethnic society where many Comanche bands included adopted Mexicans, Texans, and members of other tribes. The Comanche practiced a <strong>flexible diplomacy</strong>: making peace with some groups while warring with others, forming temporary alliances, and adjusting strategies to maintain dominance. Their empire functioned through decentralized bands coordinating actions when needed but operating autonomously, making them difficult for centralized states to defeat or negotiate with comprehensively.</p>
+
+            <h3>Buffalo Hunters and Nomadic Lifeways</h3>
+            <p>The Comanche economy centered on <strong>buffalo hunting</strong>, which provided food, hides for tipis and clothing, sinew for thread, bones for tools, and numerous other materials. Communal buffalo hunts were highly organized affairs where mounted hunters drove herds and killed animals with bows, arrows, and later firearms. Women processed the carcasses, tanning hides through labor-intensive work, drying meat into jerky and pemmican, and crafting buffalo-hide tipis that could be assembled or disassembled in minutes. The Comanche were highly <strong>nomadic</strong>, following buffalo migrations and moving camp frequently. Bands consisted of extended family groups led by respected men (paraibos) whose authority derived from demonstrated wisdom, generosity, and success in war and hunting rather than hereditary position. <strong>Warrior societies</strong> provided social organization for young men, training them in martial skills and raiding techniques. Women held significant authority in family matters, controlled household property, and their labor was essential to processing buffalo and maintaining the mobile lifestyle. The Comanche practiced <strong>polygyny</strong> (multiple wives), with successful warriors and hunters able to support larger families, and sisters often married the same man.</p>
+
+            <h3>Warfare, Raiding, and Warrior Culture</h3>
+            <p><strong>Warfare and raiding</strong> were central to Comanche male identity and economic life. Young men gained prestige through demonstrated bravery, successful raids, and enemy kills or coup (touching enemies in battle). Raiding parties ranged from small groups stealing horses to large war parties of hundreds attacking settlements. The Comanche were feared for their ferocity and tactical skill, using speed, surprise, and superior horsemanship to overwhelm enemies. They practiced <strong>torture of captives</strong> taken in war, particularly adult male enemies, though women and children were typically adopted. The Comanche had complex relationships with different groups: they warred continuously with Apaches and Texans, had shifting alliances with Spanish/Mexicans, traded peacefully with Comanches (New Mexican traders), and maintained generally good relations with Americans until U.S. expansion threatened their territory. Their warrior culture emphasized individual bravery and autonomy—no central authority could command warriors, who chose whether to join raids based on personal judgment and the war leader's reputation.</p>
+
+            <h3>Reservation Era and Modern Comanche Nation</h3>
+            <p>The Comanche Empire's collapse came through multiple pressures: relentless U.S. military campaigns, systematic buffalo extermination (reducing buffalo from millions to near-extinction by the 1870s), and disease epidemics. The decisive moment came with the <strong>Red River War</strong> (1874-75), when U.S. forces defeated the last free Comanche bands. In 1875, the remaining Comanche were confined to a reservation in Indian Territory (Oklahoma) shared with Kiowa and Apache. The reservation period brought devastating changes: traditional lifeways became impossible without buffalo and horses; children were sent to boarding schools designed to erase Comanche culture; and poverty, disease, and demoralization plagued communities. The <strong>allotment era</strong> (1890s-1900s) broke up reservation lands, giving individual allotments to tribal members while opening "surplus" land to white settlement. Despite these traumas, the Comanche survived and adapted. Today, the <strong>Comanche Nation</strong> is a federally recognized tribe with sovereign status, operating businesses, educational programs, and health services. <strong>Language revitalization</strong> efforts work to preserve Comanche (nʉmʉ tekwapʉ), critically endangered with fewer than 100 fluent speakers. The tribe hosts annual powwows, maintains cultural programs teaching traditional arts and history, and advocates for tribal sovereignty and Native rights. Comanche Code Talkers served with distinction in World War II, using their language to transmit secure military communications. The Comanche continue honoring their warrior heritage while building a prosperous future, demonstrating that the Nʉmʉnʉʉ spirit remains unbroken despite historical traumas.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Great Plains landscape" loading="lazy">
+                    <div class="image-caption">Vast Southern Plains grasslands, heart of historic Comancheria</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800" alt="Wild horses" loading="lazy">
+                    <div class="image-caption">Wild horses on the plains, transformed Comanche into supreme cavalry</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1591291621164-2c36d1019f2b?w=800" alt="Buffalo/bison" loading="lazy">
+                    <div class="image-caption">American bison, foundation of Plains Indian economies and cultures</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800" alt="Plains sunset" loading="lazy">
+                    <div class="image-caption">Southern Plains sunset over former Comanche hunting grounds</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1509715513011-e394f0cb20c4?w=800" alt="Traditional tipi" loading="lazy">
+                    <div class="image-caption">Buffalo hide tipi, mobile home of nomadic Comanche bands</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?w=800" alt="Oklahoma landscape" loading="lazy">
+                    <div class="image-caption">Oklahoma landscape, current home of Comanche Nation</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/kiowa.html" class="related-card">
+                    <div class="related-icon">⚔️</div>
+                    <h3>Kiowa</h3>
+                    <p class="related-location">Southern Plains</p>
+                    <span class="relationship-badge similar">Plains Warriors</span>
+                    <p class="related-description">Allies and fellow Southern Plains mounted warriors.</p>
+                </a>
+                <a href="/peoples/apache.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Apache</h3>
+                    <p class="related-location">Southwest</p>
+                    <span class="relationship-badge historical">Historic Rivals</span>
+                    <p class="related-description">Pushed south by Comanche expansion onto Plains.</p>
+                </a>
+                <a href="/peoples/cheyenne.html" class="related-card">
+                    <div class="related-icon">🦅</div>
+                    <h3>Cheyenne</h3>
+                    <p class="related-location">Great Plains</p>
+                    <span class="relationship-badge similar">Plains Culture</span>
+                    <p class="related-description">Northern Plains buffalo hunters and warriors.</p>
+                </a>
+                <a href="/peoples/lakota.html" class="related-card">
+                    <div class="related-icon">🦬</div>
+                    <h3>Lakota</h3>
+                    <p class="related-location">Northern Plains</p>
+                    <span class="relationship-badge similar">Horse Warriors</span>
+                    <p class="related-description">Dominant Northern Plains power with similar horse culture.</p>
+                </a>
+                <a href="/peoples/shoshone.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Shoshone</h3>
+                    <p class="related-location">Great Basin/Rockies</p>
+                    <span class="relationship-badge historical">Ancestral Kin</span>
+                    <p class="related-description">Eastern Shoshone ancestors of Comanche people.</p>
+                </a>
+                <a href="/peoples/navajo.html" class="related-card">
+                    <div class="related-icon">🧵</div>
+                    <h3>Navajo</h3>
+                    <p class="related-location">Southwest</p>
+                    <span class="relationship-badge regional">Southwest Neighbors</span>
+                    <p class="related-description">Major Southwestern people with sheep herding and weaving.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Hämäläinen, Pekka. (2008). <em>The Comanche Empire</em>. New Haven: Yale University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Wallace, Ernest, & Hoebel, E. Adamson. (1952). <em>The Comanches: Lords of the South Plains</em>. Norman: University of Oklahoma Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Kavanagh, Thomas W. (1996). <em>The Comanches: A History, 1706-1875</em>. Lincoln: University of Nebraska Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Gwynne, S.C. (2010). <em>Empire of the Summer Moon: Quanah Parker and the Rise and Fall of the Comanches</em>. New York: Scribner.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">DeLay, Brian. (2008). <em>War of a Thousand Deserts: Indian Raids and the U.S.-Mexican War</em>. New Haven: Yale University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Fehrenbach, T.R. (1974). <em>Comanches: The Destruction of a People</em>. New York: Knopf.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Babb, T.A. "Dot." (1912). <em>In the Bosom of the Comanches</em>. Dallas: Hargraves Printing Company.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Hagan, William T. (1976). <em>United States-Comanche Relations: The Reservation Years</em>. Norman: University of Oklahoma Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Vast Southern Plains grasslands, heart of historic Comancheria" },
+            { src: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800", caption: "Wild horses on the plains, transformed Comanche into supreme cavalry" },
+            { src: "https://images.unsplash.com/photo-1591291621164-2c36d1019f2b?w=800", caption: "American bison, foundation of Plains Indian economies and cultures" },
+            { src: "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800", caption: "Southern Plains sunset over former Comanche hunting grounds" },
+            { src: "https://images.unsplash.com/photo-1509715513011-e394f0cb20c4?w=800", caption: "Buffalo hide tipi, mobile home of nomadic Comanche bands" },
+            { src: "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?w=800", caption: "Oklahoma landscape, current home of Comanche Nation" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

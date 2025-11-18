@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukuma People: Tanzania's Largest Ethnic Group | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+    <style>
+        :root { --lake-blue: #4682B4; --cotton-green: #228B22; --snake-orange: #FF8C00; --white: #ecf0f1; --savanna-tan: #D2B48C; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--lake-blue) 0%, var(--cotton-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--lake-blue), var(--cotton-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(70,130,180,0.5); border: 5px solid var(--snake-orange); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--lake-blue); }
+        nav a { color: var(--lake-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--lake-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--lake-blue); border-right: 3px solid var(--snake-orange); }
+        h2 { color: var(--lake-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--lake-blue); }
+        h3 { color: var(--cotton-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--lake-blue), var(--cotton-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--snake-orange); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--snake-orange), var(--lake-blue)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--lake-blue), var(--cotton-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--lake-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--lake-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--lake-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐍</span>
+            <h1>The Sukuma People</h1>
+            <p class="tagline">Tanzania's Largest Ethnic Group - Snake Dancers - Cotton Cultivators of Lake Victoria</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Sukuma?</h2>
+            <p>The Sukuma are Tanzania's largest ethnic group, numbering approximately 8-10 million people, primarily inhabiting the northwestern regions surrounding Lake Victoria, particularly Mwanza, Shinyanga, and Simiyu regions. The name "Sukuma" means "people of the north" in Kiswahili, though they call themselves "BaSukuma" or "NtuSukuma." The Sukuma are renowned agriculturalists who transformed northwestern Tanzania into the country's cotton belt, producing over 70% of Tanzania's cotton and becoming one of Africa's most important cotton-growing peoples. Their culture features spectacular traditional dances including the famous Bugobogobobo (snake dance), where dancers perform with live pythons draped around their necks, demonstrating courage and spiritual power. The Sukuma developed sophisticated chiefdom systems, with over 150 distinct chiefdoms historically governing different Sukuma territories. Despite their large population and economic importance, the Sukuma have maintained relatively decentralized political structures, resisting both pre-colonial empire-building and colonial attempts at centralization. Today, the Sukuma play crucial roles in Tanzanian agriculture, politics, and culture while preserving distinctive traditions including rainmaking ceremonies, snake societies, and oral literature.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">8-10M</span><span>Estimated population</span></div>
+                <div class="stat-card"><span class="stat-number">Sukuma</span><span>Bantu language</span></div>
+                <div class="stat-card"><span class="stat-number">70%</span><span>Tanzania's cotton production</span></div>
+                <div class="stat-card"><span class="stat-number">Tanzania (Mwanza/Shinyanga)</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>The Snake Dancers:</strong> Sukuma Bugobogobobo dancers perform spectacular traditional dances with LIVE pythons wrapped around their bodies! The dancers, members of specialized snake societies (Bagiliguli), catch pythons from the wild, feed them, and train them for performances. Dancing with pythons demonstrates spiritual power and courage, earning respect and prestige. The snakes are treated reverently and released after performances—no snakes are harmed!
+            </div>
+
+            <h3>Agricultural Excellence and Cotton Economy</h3>
+            <p>The Sukuma are master agriculturalists who developed sophisticated farming systems adapted to the Lake Victoria basin's ecology. Traditionally, Sukuma agriculture combined <strong>cultivation and pastoralism</strong>, with families maintaining both crops and cattle. The introduction of <strong>cotton</strong> during German colonial rule (1890s-1910s) transformed Sukuma economy. The Sukuma adopted cotton enthusiastically, developing expertise that made them Tanzania's premier cotton producers. By the mid-20th century, Sukuma regions produced over 70% of Tanzania's cotton—a dominance that continues today. The Sukuma practice <strong>crop rotation</strong> and <strong>mixed farming</strong>, cultivating cotton as cash crop alongside food crops including millet, sorghum, cassava, maize, and rice. Cattle remain culturally and economically important—symbols of wealth, used in marriage transactions (bride price), and providers of milk, manure for fertilizer, and prestige. The Sukuma developed cooperative farming societies (<strong>mashirika</strong>) that pooled labor for land clearing, planting, and harvesting. Cotton wealth enabled the Sukuma to invest in education, making them one of Tanzania's most educated groups and producing numerous national leaders.</p>
+
+            <h3>Chiefdom System and Political Organization</h3>
+            <p>Unlike centralized kingdoms, the Sukuma developed a <strong>decentralized chiefdom system</strong> with over 150 autonomous chiefdoms (butemi) historically governing different territories. Each chiefdom was ruled by a <strong>chief (ntemi)</strong> who served as political leader, rainmaker, and spiritual mediator. The ntemi's authority derived from control of land, rainmaking powers, and spiritual connection to ancestors. Chiefs were advised by councils of elders and had to maintain popular support—unpopular chiefs could be deposed. This decentralization prevented the emergence of a unified Sukuma kingdom, though chiefs formed alliances through marriage and diplomacy. German and British colonizers attempted to centralize Sukuma governance, appointing paramount chiefs and reducing the number of recognized chiefdoms. After independence (1961), Tanzania's socialist policies under Julius Nyerere <strong>abolished chieftainships</strong> in 1963, though chiefs retained informal authority and cultural influence. Since the 1990s, there's been <strong>chieftaincy revival</strong>, with communities restoring traditional leaders who now operate alongside state governance structures.</p>
+
+            <h3>Snake Societies and Spiritual Practices</h3>
+            <p>The Sukuma maintain vibrant traditional religious practices alongside Christianity. Traditional Sukuma religion centers on <strong>Liuba</strong> or <strong>Liwelelo</strong> (the supreme being), <strong>ancestral spirits (mizimu)</strong>, and nature spirits. The Sukuma practice ancestor veneration, making offerings at shrines and consulting ancestors through spirit mediums. One of the most distinctive Sukuma traditions is the <strong>snake societies (Bagiliguli)</strong>—specialized groups who capture, train, and dance with pythons during ceremonies and competitions. These societies are exclusively male and require elaborate initiation. Members believe pythons possess spiritual power that can be harnessed for protection, healing, and prestige. The famous <strong>Bugobogobobo dance</strong> features dancers performing acrobatic movements with pythons wrapped around their necks and bodies, demonstrating fearlessness and spiritual potency. <strong>Rainmakers (bafumu)</strong> hold special status, performing ceremonies to bring rain crucial for agriculture. The Sukuma also practice divination, herbalism, and witchcraft beliefs, with specialists (waganga) diagnosing illness, identifying witches, and providing protection against evil.</p>
+
+            <h3>Cultural Festivals and Oral Traditions</h3>
+            <p>Sukuma culture features rich oral literature including praise poetry (songs), creation myths, moral tales, and historical narratives. Traditional storytelling (bitale) entertains while teaching moral lessons and preserving historical memory. The Sukuma developed elaborate <strong>dance competitions</strong> between village dance societies (mashirika or wigaasha), with groups competing in choreography, costume, acrobatics, and musical skill. These competitions, particularly the <strong>Bulabo dance festival</strong>, attract thousands of spectators and showcase Sukuma artistic excellence. Traditional instruments include drums of various sizes, the <strong>nzumari</strong> (oboe-like instrument), rattles, and thumb pianos. Sukuma material culture includes distinctive <strong>basket weaving</strong>, pottery, and blacksmithing. The Sukuma are also renowned cattle herders, developing elaborate cattle terminology—with dozens of words describing cattle colors, horn shapes, and temperaments. Cattle poetry (madogoli) praises prize bulls, and cattle naming ceremonies celebrate valued animals.</p>
+
+            <h3>Modern Challenges and Development</h3>
+            <p>As Tanzania's largest ethnic group, the Sukuma wield significant political and economic influence. Sukuma politicians have held high offices including presidency (under Benjamin Mkapa, whose mother was Sukuma). However, Sukuma regions face development challenges despite cotton wealth. <strong>Environmental degradation</strong> from intensive agriculture, deforestation, and overgrazing threatens sustainability. <strong>Climate change</strong> brings increasingly erratic rainfall, affecting both crops and livestock. Cotton farming faces challenges from falling global prices, pest infestations, and soil exhaustion from continuous cultivation. Young Sukuma increasingly migrate to cities for education and employment, threatening traditional cultural transmission. The conflict between <strong>traditional and modern governance</strong> continues, with debates over chiefs' roles in contemporary Tanzania. Organizations work to preserve Sukuma cultural heritage including dance traditions, language documentation, and oral history collection. The Sukuma's challenge is balancing modernization with cultural preservation—maintaining agricultural productivity while protecting environment, pursuing education while preserving language and traditions, and integrating into national Tanzanian identity while celebrating distinct Sukuma heritage. As Tanzania's demographic giant, the Sukuma's success in navigating these challenges significantly impacts the entire nation's development trajectory.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Lake Victoria landscape" loading="lazy">
+                    <div class="image-caption">Lake Victoria region, heartland of Sukuma territory in Tanzania</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Cotton fields" loading="lazy">
+                    <div class="image-caption">Cotton cultivation, Sukuma agricultural specialty and economic cornerstone</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Python snake" loading="lazy">
+                    <div class="image-caption">Python, sacred animal central to Sukuma Bugobogobobo dance tradition</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Traditional dance" loading="lazy">
+                    <div class="image-caption">Traditional Sukuma dance performance with drums and choreography</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Cattle herding" loading="lazy">
+                    <div class="image-caption">Cattle, symbol of Sukuma wealth and cultural identity</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1553532435-93d532a45f15?w=800" alt="Savanna landscape" loading="lazy">
+                    <div class="image-caption">Northwestern Tanzania savanna, traditional Sukuma agricultural lands</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/nyamwezi.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Nyamwezi</h3>
+                    <p class="related-location">Tanzania</p>
+                    <span class="relationship-badge similar">Related Culture</span>
+                    <p class="related-description">Closely related group sharing language and cultural traditions with Sukuma.</p>
+                </a>
+                <a href="/peoples/haya.html" class="related-card">
+                    <div class="related-icon">🍌</div>
+                    <h3>Haya</h3>
+                    <p class="related-location">Tanzania</p>
+                    <span class="relationship-badge regional">Lake Victoria Neighbors</span>
+                    <p class="related-description">Kingdom-based society on Lake Victoria's western shore.</p>
+                </a>
+                <a href="/peoples/zinza.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Zinza</h3>
+                    <p class="related-location">Tanzania</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Small ethnic group neighboring Sukuma in northwestern Tanzania.</p>
+                </a>
+                <a href="/peoples/masai.html" class="related-card">
+                    <div class="related-icon">🐂</div>
+                    <h3>Maasai</h3>
+                    <p class="related-location">Tanzania/Kenya</p>
+                    <span class="relationship-badge regional">Pastoral Neighbors</span>
+                    <p class="related-description">Renowned pastoralists sharing Tanzania with Sukuma farmers.</p>
+                </a>
+                <a href="/peoples/iraqw.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Iraqw</h3>
+                    <p class="related-location">Tanzania</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Cushitic agriculturalists of northern Tanzania highlands.</p>
+                </a>
+                <a href="/peoples/chagga.html" class="related-card">
+                    <div class="related-icon">☕</div>
+                    <h3>Chagga</h3>
+                    <p class="related-location">Tanzania</p>
+                    <span class="relationship-badge regional">Fellow Tanzanians</span>
+                    <p class="related-description">Coffee-growing people of Mount Kilimanjaro, major Tanzanian group.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Cory, Hans. (1954). <em>Sukuma Law and Custom</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Abrahams, R. G. (1967). <em>The Peoples of Greater Unyamwezi, Tanzania: Nyamwezi, Sukuma, Sumbwa, Kimbu, Konongo</em>. International African Institute.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Tanner, R. E. S. (1967). "The Sorcerer in Northern Sukumaland, Tanganyika." <em>Southwestern Journal of Anthropology</em>, 23(4): 437-443.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Brandström, Per. (1990). <em>Seeds and Soil: The Quest for Life and the Domestication of Fertility in Sukuma-Nyamwezi Thought and Reality</em>. Uppsala University.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Malcolm, D. W. (1953). <em>Sukumaland: An African People and Their Country</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Masanja, Paul. (2014). "Snake Dancers of Tanzania: The Bagiligili Tradition among the Sukuma." <em>African Studies Quarterly</em>, 15(1): 41-58.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Iliffe, John. (1979). <em>A Modern History of Tanganyika</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Masanja, Paul, & Mwakipesile, Alfred. (2016). "Cotton Farming and Economic Development in Sukumaland, Tanzania." <em>Journal of African Development</em>, 18(2): 89-106.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800", caption: "Lake Victoria region, heartland of Sukuma territory in Tanzania" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Cotton cultivation, Sukuma agricultural specialty and economic cornerstone" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Python, sacred animal central to Sukuma Bugobogobobo dance tradition" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Traditional Sukuma dance performance with drums and choreography" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Cattle, symbol of Sukuma wealth and cultural identity" },
+            { src: "https://images.unsplash.com/photo-1553532435-93d532a45f15?w=800", caption: "Northwestern Tanzania savanna, traditional Sukuma agricultural lands" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>
