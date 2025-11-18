@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuar People: Tsantsa Masters and Amazon Defenders | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗿</text></svg>">
+    <style>
+        :root { --shuar-green: #2F4F2F; --warrior-orange: #FF8C00; --spirit-purple: #663399; --white: #ecf0f1; --earth-brown: #654321; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--shuar-green) 0%, var(--earth-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--shuar-green), var(--warrior-orange)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(47,79,47,0.5); border: 5px solid var(--spirit-purple); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--shuar-green); }
+        nav a { color: var(--shuar-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--shuar-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--shuar-green); border-right: 3px solid var(--warrior-orange); }
+        h2 { color: var(--shuar-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--shuar-green); }
+        h3 { color: var(--warrior-orange); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--shuar-green), var(--warrior-orange)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--spirit-purple); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--spirit-purple), var(--warrior-orange)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--shuar-green), var(--warrior-orange)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--shuar-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--shuar-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--shuar-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🗿</span>
+            <h1>The Shuar People</h1>
+            <p class="tagline">Tsantsa Creators - Unconquered Warriors - Guardians of Ecuador's Amazon</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Shuar?</h2>
+            <p>The Shuar are an indigenous people numbering approximately 110,000, primarily inhabiting the Amazon rainforest of southeastern Ecuador and northern Peru. Speaking a Jivaroan language, the Shuar are famous worldwide for their historical practice of creating tsantsa—shrunken heads made from defeated enemies' heads through an elaborate ritual process. This fearsome reputation helped them remain unconquered by the Inca Empire, Spanish conquistadors, and Ecuadorian authorities for centuries. The Shuar maintained a decentralized warrior society organized around extended family groups led by respected elders and shamans. Today they face pressures from oil extraction, mining, cattle ranching, and colonization of their ancestral territories, but have organized powerful federations to defend land rights, maintain their language and cultural practices, and develop sustainable economic alternatives including ecotourism and agroforestry.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">110,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Jivaroan</span><span>Language family</span></div>
+                <div class="stat-card"><span class="stat-number">900,000 ha</span><span>Titled territory</span></div>
+                <div class="stat-card"><span class="stat-number">Ecuador/Peru</span><span>Amazon homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Tsantsa Shrunken Heads:</strong> The Shuar created tsantsa by removing the skull from an enemy's severed head, boiling the skin, then shrinking it with hot rocks and sand to fist-size while retaining facial features. This trapped the victim's vengeful spirit and transferred power to the warrior. The practice ended in the 1950s but remains iconic—though most "shrunken heads" in museums are actually fakes made for the tourist trade!
+            </div>
+
+            <h3>Warriors Who Never Surrendered</h3>
+            <p>The Shuar successfully resisted all attempts at conquest throughout their history. The <strong>Inca Empire</strong> attempted expansion into Shuar territory in the 15th century but abandoned efforts after fierce resistance. Spanish conquistadors established settlements in Shuar lands in the 1540s-1550s, including Logroño, Sevilla del Oro, and Macas. In 1599, Shuar warriors led the <strong>Great Jivaro Revolt</strong>, destroying all Spanish settlements, killing thousands of colonists, and maintaining independence for over 300 years—one of the most successful indigenous resistances in the Americas. Spanish forces never returned in strength. Ecuador's government only established permanent presence in Shuar territory in the 1940s-1960s through military posts, missionary schools, and colonization projects. The Shuar fought back through legal organization—forming the <strong>Shuar Federation</strong> in 1964, one of Latin America's first indigenous political organizations, which secured land titles and continues defending territorial rights.</p>
+
+            <h3>Tsantsa Ritual and Warrior Culture</h3>
+            <p>Historical Shuar society organized around <strong>blood feuds</strong> and <strong>warfare</strong> between extended family groups. Conflicts arose from accusations of shamanic murder, territorial disputes, or revenge for past killings, creating cycles of violence lasting generations. Warriors who killed enemies held <strong>tsantsa feasts</strong> where the shrunken head was displayed, celebrated with chicha beer, music, and dancing for several days. The ritual transformed the enemy's <strong>muisak</strong> (avenging soul) into a controlled force granting the warrior power and prestige. Only enemy warriors' heads were taken—never women or children. <strong>Natem</strong> (ayahuasca) vision quests allowed boys to encounter <strong>arutam</strong> spirits who granted supernatural power making warriors invincible in battle. Women held important roles as agriculturalists, brewers of chicha (essential for all ceremonies), and peacemakers who could halt conflicts. This warrior culture largely ended in the mid-20th century with missionization and government control, though cultural pride in this heritage remains strong.</p>
+
+            <h3>Shamanism and Spirit World</h3>
+            <p>Shuar cosmology recognizes multiple soul types and a spirit-filled universe. Every person has <strong>wakán</strong> (ordinary soul), <strong>arutam</strong> (power soul acquired through vision quests), and <strong>muisak</strong> (vengeful soul created at death). <strong>Uwishín</strong> (shamans) are central to Shuar life, diagnosing illness, countering sorcery attacks, and communicating with spirits. Most illness is attributed to <strong>tsentsak</strong> (magical darts) shot by enemy shamans or to soul loss. Shamans extract tsentsak through sucking and retrieve lost souls from the spirit world. <strong>Natem</strong> (ayahuasca), <strong>maikua</strong> (toe/datura), and other visionary plants enable communication with the spirit realm. Sacred waterfalls are portals where arutam spirits appear to vision questers. The <strong>Tsunki</strong> (water spirits) live in rivers and can grant healing power or cause drowning. Evangelical Christianity spread widely among the Shuar since the 1960s, creating tension between converts and traditionalists maintaining indigenous spirituality.</p>
+
+            <h3>Sustainable Forest Living</h3>
+            <p>The Shuar practice <strong>swidden horticulture</strong>, clearing small forest plots, planting diverse crops including manioc, plantains, sweet potatoes, corn, and dozens of other species, then allowing regeneration after 2-3 years. Women manage gardens while men clear land, hunt, and fish. The forest provides hundreds of useful species—medicinal plants, construction materials, fibers for cordage and baskets, dyes, and foods. Hunting with blowguns and poisoned darts targets monkeys, birds, peccaries, and tapirs. River fishing uses barbasco poison, nets, and traps. Dogs assist in hunting peccaries and agoutis. The Shuar recognize detailed ecological knowledge passed through oral tradition—animal behaviors, plant uses, seasonal patterns, and sustainable harvesting. This traditional management contrasts with destructive cattle ranching and oil operations encroaching on Shuar territory. Some communities now operate ecotourism lodges showcasing traditional knowledge to generate income while preserving forests.</p>
+
+            <h3>Modern Challenges and Political Organization</h3>
+            <p>The <strong>Shuar Federation (FICSH)</strong>, founded in 1964, pioneered indigenous political organizing in Ecuador. It secured land titles for member communities, operates bilingual schools teaching Shuar and Spanish, runs radio stations broadcasting in Shuar language, and represents Shuar interests in national politics. However, Ecuadorian law permits oil and mineral extraction even on titled indigenous lands. Major conflicts erupted over the <strong>Cordillera del Cóndor</strong> mining project in southern Shuar territory, with violent clashes between communities and police in 2016. Oil spills contaminate rivers essential for drinking water and fishing. Cattle ranching by colonists fragments Shuar lands. Roads bring loggers, hunters, and settlers. Youth increasingly migrate to cities for education and employment, weakening cultural transmission. Yet Shuar cultural pride remains strong—language revitalization programs, traditional music and dance festivals, and intercultural education initiatives work to maintain identity. The Shuar continue adapting their traditional autonomy and warrior spirit into modern political resistance defending their Amazon homeland.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800" alt="Ecuador Amazon rainforest" loading="lazy">
+                    <div class="image-caption">Dense Amazon rainforest of southeastern Ecuador, Shuar ancestral territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1601376930704-b6961d6c0daf?w=800" alt="Traditional blowgun" loading="lazy">
+                    <div class="image-caption">Traditional blowgun with poison darts used for hunting in the rainforest</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?w=800" alt="Ayahuasca preparation" loading="lazy">
+                    <div class="image-caption">Natem (ayahuasca) vine used in shamanic ceremonies and arutam vision quests</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1542601098-3adb3b90228f?w=800" alt="Amazon waterfall" loading="lazy">
+                    <div class="image-caption">Sacred waterfalls where Shuar seek visions of arutam spirits granting power</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1596977884133-46a0b2d1b3a6?w=800" alt="Manioc garden" loading="lazy">
+                    <div class="image-caption">Manioc plants in traditional Shuar garden managed by women</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800" alt="Rainforest canopy" loading="lazy">
+                    <div class="image-caption">Multi-layered rainforest canopy providing countless resources for Shuar communities</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Brazil/Venezuela</p>
+                    <span class="relationship-badge similar">Amazon Warriors</span>
+                    <p class="related-description">Fellow Amazonian warrior culture with similar traditions and territorial struggles.</p>
+                </a>
+                <a href="/peoples/kayapo.html" class="related-card">
+                    <div class="related-icon">🦜</div>
+                    <h3>Kayapó</h3>
+                    <p class="related-location">Brazilian Amazon</p>
+                    <span class="relationship-badge similar">Environmental Defenders</span>
+                    <p class="related-description">Rainforest guardians fighting against dams, mining, and deforestation.</p>
+                </a>
+                <a href="/peoples/shipibo-konibo.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Shipibo-Konibo</h3>
+                    <p class="related-location">Peruvian Amazon</p>
+                    <span class="relationship-badge regional">Amazon Neighbors</span>
+                    <p class="related-description">Amazonian people renowned for geometric art and ayahuasca shamanism.</p>
+                </a>
+                <a href="/peoples/quechua.html" class="related-card">
+                    <div class="related-icon">🦙</div>
+                    <h3>Quechua</h3>
+                    <p class="related-location">Ecuador/Peru</p>
+                    <span class="relationship-badge regional">Andean Neighbors</span>
+                    <p class="related-description">Highland people with strong cultural identity in Ecuador and Peru.</p>
+                </a>
+                <a href="/peoples/embera.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Emberá</h3>
+                    <p class="related-location">Panama/Colombia</p>
+                    <span class="relationship-badge similar">Rainforest Culture</span>
+                    <p class="related-description">Tropical forest dwellers maintaining traditional riverside living.</p>
+                </a>
+                <a href="/peoples/guarani.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Guaraní</h3>
+                    <p class="related-location">South America</p>
+                    <span class="relationship-badge regional">Indigenous Resistance</span>
+                    <p class="related-description">Widespread people fighting for land rights across multiple countries.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Harner, Michael J. (1972). <em>The Jívaro: People of the Sacred Waterfalls</em>. Doubleday/Natural History Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Descola, Philippe. (1996). <em>The Spears of Twilight: Life and Death in the Amazon Jungle</em>. New Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Rubenstein, Steven L. (2002). <em>Alejandro Tsakimp: A Shuar Healer in the Margins of History</em>. University of Nebraska Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Taylor, Anne Christine. (1993). "Remembering to Forget: Identity, Mourning and Memory Among the Jivaro." <em>Man</em> 28(4): 653-678.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Karsten, Rafael. (1935). <em>The Head-Hunters of Western Amazonas: The Life and Culture of the Jibaro Indians of Eastern Ecuador and Peru</em>. Societas Scientiarum Fennica.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Hendricks, Janet Wall. (1993). <em>To Drink of Death: The Narrative of a Shuar Warrior</em>. University of Arizona Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Boster, James S. (1985). "Requiem for the Omniscient Informant: There's Life in the Old Girl Yet." In <em>Directions in Cognitive Anthropology</em>, edited by Janet W. D. Dougherty. University of Illinois Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Mader, Elke. (1999). <em>Metamorfosis del Poder: Persona, mito y visión en la sociedad Shuar y Achuar</em>. Abya-Yala.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800", caption: "Dense Amazon rainforest of southeastern Ecuador, Shuar ancestral territory" },
+            { src: "https://images.unsplash.com/photo-1601376930704-b6961d6c0daf?w=800", caption: "Traditional blowgun with poison darts used for hunting in the rainforest" },
+            { src: "https://images.unsplash.com/photo-1591768793355-74d04bb6608f?w=800", caption: "Natem (ayahuasca) vine used in shamanic ceremonies and arutam vision quests" },
+            { src: "https://images.unsplash.com/photo-1542601098-3adb3b90228f?w=800", caption: "Sacred waterfalls where Shuar seek visions of arutam spirits granting power" },
+            { src: "https://images.unsplash.com/photo-1596977884133-46a0b2d1b3a6?w=800", caption: "Manioc plants in traditional Shuar garden managed by women" },
+            { src: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800", caption: "Multi-layered rainforest canopy providing countless resources for Shuar communities" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

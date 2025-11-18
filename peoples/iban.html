@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iban People: Longhouse Dwellers and Pua Kumbu Weavers of Borneo | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+    <style>
+        :root { --iban-red: #C41E3A; --forest-green: #228B22; --bamboo-yellow: #E6BE8A; --white: #ecf0f1; --river-blue: #4682B4; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--forest-green) 0%, var(--river-blue) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--iban-red), var(--forest-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(196,30,58,0.5); border: 5px solid var(--bamboo-yellow); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--iban-red); }
+        nav a { color: var(--iban-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--iban-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--iban-red); border-right: 3px solid var(--bamboo-yellow); }
+        h2 { color: var(--iban-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--iban-red); }
+        h3 { color: var(--forest-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--iban-red), var(--forest-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--bamboo-yellow); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--bamboo-yellow), var(--forest-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--iban-red), var(--forest-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--iban-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--iban-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--iban-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏛️</span>
+            <h1>The Iban People</h1>
+            <p class="tagline">Longhouse Communities - Pua Kumbu Master Weavers - Guardians of Borneo's Rivers</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Iban?</h2>
+            <p>The Iban are the largest indigenous group in Sarawak, Malaysian Borneo, numbering over 800,000 people. Known historically as "Sea Dayaks" by colonial administrators, the Iban are riverine people who developed a sophisticated longhouse culture along the mighty rivers of Borneo. These communal structures, called "rumah panjai," can house entire villages of 20-100 families under one roof, stretching over 200 meters in length. The Iban are renowned for their <strong>pua kumbu</strong>—sacred textiles woven by women using intricate ikat techniques, with patterns that encode cosmological knowledge and spiritual protection. Historically fierce warriors who practiced headhunting (abolished in the early 20th century), the Iban developed elaborate rituals, tattoos, and festivals celebrating bravery. Today, they maintain strong cultural identity while actively participating in modern Malaysian society, balancing traditional longhouse life with urban professions, and working to preserve their unique Austronesian language and customs against pressures of globalization.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">800,000+</span><span>Population in Sarawak</span></div>
+                <div class="stat-card"><span class="stat-number">Iban</span><span>Austronesian language</span></div>
+                <div class="stat-card"><span class="stat-number">100+</span><span>Families per longhouse</span></div>
+                <div class="stat-card"><span class="stat-number">Sarawak</span><span>Malaysian Borneo</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Pua Kumbu Magic:</strong> The sacred pua kumbu textiles take months to weave and can only be created by women who have received dreams from the spirits. The dyes are made from forest plants, and the patterns must never touch the ground or lose their protective power!
+            </div>
+
+            <h3>Longhouse Architecture and Social Structure</h3>
+            <p>The Iban longhouse represents one of the world's most sophisticated communal living systems. Built on stilts along riverbanks, these structures feature a central covered gallery (<strong>ruai</strong>) running the entire length, where communal activities, ceremonies, and socializing occur. Each family occupies a private apartment (<strong>bilik</strong>) opening onto this shared space. The <strong>tanju</strong>, an open veranda, serves for drying rice, fish, and pepper. Longhouses function as autonomous communities with a headman (<strong>tuai rumah</strong>), shared resources, and collective decision-making. This architecture reflects Iban egalitarian values—all families have equal access to communal space, and the longhouse's continuity symbolizes community permanence across generations.</p>
+
+            <h3>Warrior Heritage and Headhunting Traditions</h3>
+            <p>Until the early 20th century, the Iban practiced <strong>ngayau</strong> (headhunting expeditions), integral to male initiation and spiritual belief. Taking an enemy's head was believed to capture life force for community prosperity and agricultural fertility. Warriors earned elaborate tattoos (<strong>bungai terung</strong>) marking achievements, with designs covering shoulders, arms, and thighs. The <strong>gawai festival</strong> celebrated successful raids with ritual dancing and offerings. While headhunting ended under British colonial rule, the cultural memory persists in festivals, oral traditions, and the occasional display of ancestor skulls in longhouses. The warrior ethos transformed into courage in World War II, when Iban trackers served Allied forces against Japanese occupation.</p>
+
+            <h3>Textile Arts and Spiritual Weaving</h3>
+            <p>Iban women are master weavers of <strong>pua kumbu</strong>, sacred blankets created through labor-intensive ikat dyeing and backstrap loom weaving. The patterns—depicting spiritual beings, crocodiles, and cosmic diagrams—derive from women's dreams and visions received during ritual preparation. Natural dyes from <strong>engkudu</strong> (morinda root) create deep reds, while indigo produces blues. These textiles serve ceremonial functions: wrapping sacred objects, receiving newborns, and shrouding the dead. Creating pua kumbu is spiritually dangerous work requiring ritual observances and taboos. The knowledge passes matrilineally, with master weavers (<strong>indu ngar</strong>) teaching daughters complex techniques over decades.</p>
+
+            <h3>Rice Cultivation and Spiritual Agriculture</h3>
+            <p>The Iban practice <strong>padi pun</strong> (swidden agriculture), clearing jungle plots for rice cultivation in rotation cycles. Rice is considered sacred, with its own spirit (<strong>Pulang Gana</strong>) requiring ritual respect. The agricultural year structures Iban spiritual life through festivals: <strong>Gawai Batu</strong> (whetstone festival) before clearing land, <strong>Gawai Benih</strong> (seed festival) at planting, and <strong>Gawai Dayak</strong> (harvest festival) celebrating abundance. Women select, store, and protect seed rice (<strong>padi pun</strong>) as community treasure. Traditional varieties number in the dozens, each with unique characteristics. The rice granary (<strong>tangga</strong>) holds spiritual significance, and stealing rice brings severe supernatural consequences in Iban belief.</p>
+
+            <h3>Contemporary Challenges and Cultural Preservation</h3>
+            <p>Modern Iban face pressures from <strong>plantation agriculture</strong> (oil palm, rubber) replacing traditional lands, logging impacting forests, and hydroelectric dams flooding ancestral territories. Young people increasingly migrate to cities for education and employment, leaving longhouses underpopulated. However, cultural renaissance movements promote <strong>Gawai Dayak</strong> as official state holiday, Iban language education, and documentation of oral traditions. Many urban Iban return to longhouses for festivals, maintaining kinship ties. Organizations work to preserve pua kumbu weaving knowledge and traditional music (<strong>sape</strong> lute). The Iban navigate modernity while asserting indigenous rights, seeking recognition for customary land tenure (<strong>pemakai menoa</strong>), and adapting longhouse values to contemporary contexts.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1552055568-3a9b0142e93f?w=800" alt="Traditional Iban longhouse" loading="lazy">
+                    <div class="image-caption">Traditional Iban longhouse (rumah panjai) built on stilts along a Borneo river</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1583225173914-8bb5b5126d80?w=800" alt="Pua kumbu textile" loading="lazy">
+                    <div class="image-caption">Sacred pua kumbu textile with intricate ikat patterns created through months of weaving</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1566408539832-e4c05f9b2d97?w=800" alt="Iban warrior tattoos" loading="lazy">
+                    <div class="image-caption">Traditional Iban warrior tattoos (bungai terung) marking achievements and spiritual protection</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?w=800" alt="Gawai Dayak festival" loading="lazy">
+                    <div class="image-caption">Gawai Dayak harvest festival celebration with traditional dance and ceremonial dress</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800" alt="Rice cultivation" loading="lazy">
+                    <div class="image-caption">Traditional swidden rice cultivation in hill plots cleared from Borneo rainforest</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1593969934905-d667064b93c6?w=800" alt="Sape musical instrument" loading="lazy">
+                    <div class="image-caption">Traditional sape lute carved from single wood piece, played during ceremonies and storytelling</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/dayak.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Dayak</h3>
+                    <p class="related-location">Borneo</p>
+                    <span class="relationship-badge regional">Borneo Relatives</span>
+                    <p class="related-description">Umbrella term for indigenous Borneo peoples including Iban and other groups.</p>
+                </a>
+                <a href="/peoples/bajau-laut.html" class="related-card">
+                    <div class="related-icon">⛵</div>
+                    <h3>Bajau Laut</h3>
+                    <p class="related-location">Maritime Southeast Asia</p>
+                    <span class="relationship-badge regional">Island Neighbors</span>
+                    <p class="related-description">Sea nomads navigating the same waters around Borneo and the Philippines.</p>
+                </a>
+                <a href="/peoples/karen.html" class="related-card">
+                    <div class="related-icon">🎋</div>
+                    <h3>Karen</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge similar">Weaving Tradition</span>
+                    <p class="related-description">Hill people known for intricate backstrap loom weaving similar to pua kumbu.</p>
+                </a>
+                <a href="/peoples/ifugao.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Ifugao</h3>
+                    <p class="related-location">Philippines</p>
+                    <span class="relationship-badge similar">Rice Culture</span>
+                    <p class="related-description">Rice terrace builders with sacred rice cultivation and textile traditions.</p>
+                </a>
+                <a href="/peoples/hmong.html" class="related-card">
+                    <div class="related-icon">🧵</div>
+                    <h3>Hmong</h3>
+                    <p class="related-location">Southeast Asia</p>
+                    <span class="relationship-badge similar">Textile Artisans</span>
+                    <p class="related-description">Master embroiderers and textile artists with rich spiritual traditions.</p>
+                </a>
+                <a href="/peoples/akha.html" class="related-card">
+                    <div class="related-icon">👒</div>
+                    <h3>Akha</h3>
+                    <p class="related-location">Southeast Asia Highlands</p>
+                    <span class="relationship-badge similar">Swidden Agriculture</span>
+                    <p class="related-description">Highland people practicing rotational rice farming and animist traditions.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Freeman, Derek. (1970). <em>Report on the Iban</em>. Athlone Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Sutlive, Vinson H. (1992). <em>The Iban of Sarawak: Chronicle of a Vanishing World</em>. S. Abdul Majeed & Co.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Gavin, Traude. (1996). <em>Iban Ritual Textiles</em>. Leiden: KITLV Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Sandin, Benedict. (1967). <em>The Sea Dayaks of Borneo Before White Rajah Rule</em>. Macmillan.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Pringle, Robert. (1970). <em>Rajahs and Rebels: The Ibans of Sarawak Under Brooke Rule, 1841-1941</em>. Cornell University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Sather, Clifford. (1993). <em>Posts, Hearths and Thresholds: The Iban Longhouse as a Ritual Structure</em>. Inside Austronesian Houses.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Kedit, Peter M. (1993). <em>Iban Bejalai</em>. Sarawak Museum Journal.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Wadley, Reed L. (2000). <em>Trouble on the Frontier: Dutch-Brooke Relations and Iban Rebellion in the West Borneo Borderlands (1841-1886)</em>. Modern Asian Studies.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1552055568-3a9b0142e93f?w=800", caption: "Traditional Iban longhouse (rumah panjai) built on stilts along a Borneo river" },
+            { src: "https://images.unsplash.com/photo-1583225173914-8bb5b5126d80?w=800", caption: "Sacred pua kumbu textile with intricate ikat patterns created through months of weaving" },
+            { src: "https://images.unsplash.com/photo-1566408539832-e4c05f9b2d97?w=800", caption: "Traditional Iban warrior tattoos (bungai terung) marking achievements and spiritual protection" },
+            { src: "https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?w=800", caption: "Gawai Dayak harvest festival celebration with traditional dance and ceremonial dress" },
+            { src: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800", caption: "Traditional swidden rice cultivation in hill plots cleared from Borneo rainforest" },
+            { src: "https://images.unsplash.com/photo-1593969934905-d667064b93c6?w=800", caption: "Traditional sape lute carved from single wood piece, played during ceremonies and storytelling" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

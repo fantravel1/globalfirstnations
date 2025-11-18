@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oromo People: Gadaa Democracy System and Ethiopia's Largest Ethnic Group | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+    <style>
+        :root { --oromo-green: #228B22; --earth-red: #B8341B; --golden-yellow: #DAA520; --white: #ecf0f1; --deep-brown: #654321; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--oromo-green) 0%, var(--earth-red) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--oromo-green), var(--earth-red)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(34,139,34,0.5); border: 5px solid var(--golden-yellow); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--oromo-green); }
+        nav a { color: var(--oromo-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--oromo-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--oromo-green); border-right: 3px solid var(--golden-yellow); }
+        h2 { color: var(--oromo-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--oromo-green); }
+        h3 { color: var(--earth-red); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--oromo-green), var(--earth-red)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--golden-yellow); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--golden-yellow), var(--earth-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--oromo-green), var(--earth-red)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--oromo-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--oromo-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--oromo-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🌾</span>
+            <h1>The Oromo People</h1>
+            <p class="tagline">Guardians of Gadaa Democracy - Ethiopia's Largest Ethnic Group - Ancient Pastoral Traditions</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Oromo?</h2>
+            <p>The Oromo are Ethiopia's largest ethnic group, comprising approximately 35-40% of the country's population with over 40 million people. Primarily inhabiting the Oromia region of central and southern Ethiopia, the Oromo are renowned for their sophisticated <strong>Gadaa system</strong>—one of Africa's oldest democratic political structures that governed Oromo society for centuries. Traditionally pastoralists and agriculturalists, the Oromo developed complex social organizations based on age-sets, generational classes, and egalitarian principles. Their language, Afaan Oromoo (Oromo language), is the third most widely spoken language in Africa after Arabic and Hausa. The Oromo possess rich oral traditions, including poetry, proverbs, and historical narratives transmitted through generations. Despite facing historical marginalization, the Oromo have maintained strong cultural identity and continue advocating for political representation and cultural rights within Ethiopia's diverse ethnic landscape.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">40M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Gadaa</span><span>Democratic system</span></div>
+                <div class="stat-card"><span class="stat-number">Afaan Oromoo</span><span>Cushitic language</span></div>
+                <div class="stat-card"><span class="stat-number">Ethiopia</span><span>Oromia region</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Ancient Democracy:</strong> The Gadaa system, which governed Oromo society for over 500 years, operated as a complex democratic structure where leaders were elected for 8-year terms and no one could hold power for life. UNESCO recognized Gadaa as an Intangible Cultural Heritage of Humanity in 2016!
+            </div>
+
+            <h3>The Gadaa Democratic System</h3>
+            <p>The <strong>Gadaa system</strong> represents one of humanity's most sophisticated indigenous democratic institutions. This age-grade system divided Oromo men into eleven grades, each lasting eight years, with the sixth grade (Gadaa) representing the ruling class. Leadership rotated every eight years through elections, preventing power concentration and ensuring fresh perspectives. The system included checks and balances, separation of powers between ritual, political, military, and judicial functions, and guaranteed participation rights for all eligible men. The <strong>Caffee</strong> (assembly) served as the legislative body where major decisions required consensus. Women held important roles through the <strong>Siqqee</strong> institution, which protected their rights and property. This remarkable system regulated everything from resource management to conflict resolution, demonstrating democratic principles long before Western democratic theories emerged.</p>
+
+            <h3>Pastoral Heritage and Agricultural Expertise</h3>
+            <p>Traditionally, the Oromo practiced both <strong>pastoralism</strong> and <strong>agriculture</strong>, adapting to diverse ecological zones from highlands to lowlands. Cattle held central cultural and economic importance—representing wealth, providing sustenance, and featuring prominently in social rituals. The Oromo developed sophisticated knowledge of animal husbandry, selective breeding, and sustainable grazing patterns. In agricultural regions, they cultivated grains, coffee, and enset (false banana), developing terracing and irrigation techniques for highland farming. The <strong>Irreecha</strong> thanksgiving festival, celebrated at the end of the rainy season, demonstrates the deep connection between Oromo spirituality and agricultural cycles, with millions gathering annually at sacred sites to give thanks for harvest and pray for prosperity.</p>
+
+            <h3>Waaqeffannaa Religion and Cultural Practices</h3>
+            <p>The traditional Oromo religion, <strong>Waaqeffannaa</strong>, centers on the worship of Waaqa (Sky God), believed to be the supreme creator. This monotheistic faith emphasizes the connection between humanity, nature, and the divine, with sacred sites like lakes, mountains, and giant trees serving as worship locations. The <strong>Qaalluu</strong> (spiritual leaders) served as intermediaries between Waaqa and the people, conducting rituals and maintaining spiritual order. Many Oromo later converted to Islam or Christianity, but Waaqeffannaa traditions persist, especially in the Irreecha festival. Oromo cultural practices include elaborate wedding ceremonies, naming rituals, and the <strong>Jila</strong> (blood brotherhood) covenant that creates lifelong bonds between families.</p>
+
+            <h3>Language, Literature, and Oral Traditions</h3>
+            <p><strong>Afaan Oromoo</strong> belongs to the Cushitic branch of the Afro-Asiatic language family and is spoken by over 40 million people, making it one of Africa's most widely spoken indigenous languages. The language uses the Latin script (Qubee) since 1991, after decades when its written use was suppressed. Oromo oral literature flourishes through <strong>geerarsa</strong> (war songs), <strong>weedduu</strong> (love songs), and extensive proverb collections that encode wisdom, history, and moral teachings. Epic narratives recount migration histories and heroic figures. Oromo poets and storytellers preserved historical knowledge through memorized genealogies extending back dozens of generations, maintaining collective memory without written records for centuries.</p>
+
+            <h3>Modern Challenges and Cultural Renaissance</h3>
+            <p>Throughout the 20th century, the Oromo faced political marginalization and cultural suppression under Ethiopian regimes that banned Afaan Oromoo in education and government. This sparked resistance movements advocating for Oromo rights, linguistic recognition, and political autonomy. The 1991 political changes brought some improvements, including official recognition of Afaan Oromoo and the establishment of Oromia as a federal region. However, tensions persist over land rights, political representation, and resource control. Despite challenges, Oromo culture experiences a renaissance—Afaan Oromoo thrives in education and media, traditional music and dance gain international recognition, and the Gadaa system inspires contemporary governance discussions. The Oromo diaspora in North America, Europe, and the Middle East maintains strong cultural connections while advocating for Oromo rights internationally.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1609198092358-8b8b0c0b6e5e?w=800" alt="Oromo traditional dress" loading="lazy">
+                    <div class="image-caption">Traditional Oromo clothing featuring vibrant colors and distinctive patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Gadaa assembly meeting" loading="lazy">
+                    <div class="image-caption">Oromo elders gathering for Gadaa council deliberations under sacred tree</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Irreecha celebration" loading="lazy">
+                    <div class="image-caption">Irreecha thanksgiving festival at Lake Hora Arsadi with thousands of participants</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Oromo cattle" loading="lazy">
+                    <div class="image-caption">Oromo pastoralists with cattle, central to traditional economy and culture</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Coffee ceremony" loading="lazy">
+                    <div class="image-caption">Traditional Oromo coffee ceremony, Ethiopia being the birthplace of coffee</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800" alt="Oromia landscape" loading="lazy">
+                    <div class="image-caption">Ethiopian highlands of Oromia region with fertile agricultural lands</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/amhara.html" class="related-card">
+                    <div class="related-icon">⛪</div>
+                    <h3>Amhara</h3>
+                    <p class="related-location">Ethiopia</p>
+                    <span class="relationship-badge regional">Ethiopian Neighbors</span>
+                    <p class="related-description">Major Ethiopian group with ancient Christian traditions and Ge'ez script.</p>
+                </a>
+                <a href="/peoples/somali.html" class="related-card">
+                    <div class="related-icon">🐪</div>
+                    <h3>Somali</h3>
+                    <p class="related-location">Somalia/Ethiopia</p>
+                    <span class="relationship-badge similar">Cushitic Relatives</span>
+                    <p class="related-description">Fellow Cushitic-speaking pastoralists with similar linguistic roots.</p>
+                </a>
+                <a href="/peoples/afar.html" class="related-card">
+                    <div class="related-icon">🔥</div>
+                    <h3>Afar</h3>
+                    <p class="related-location">Ethiopia/Eritrea</p>
+                    <span class="relationship-badge regional">Cushitic Cousins</span>
+                    <p class="related-description">Cushitic pastoralists of the Danakil Depression salt trade.</p>
+                </a>
+                <a href="/peoples/maasai.html" class="related-card">
+                    <div class="related-icon">🛡️</div>
+                    <h3>Maasai</h3>
+                    <p class="related-location">Kenya/Tanzania</p>
+                    <span class="relationship-badge similar">Pastoral Traditions</span>
+                    <p class="related-description">Renowned pastoralists with age-grade systems similar to Gadaa.</p>
+                </a>
+                <a href="/peoples/tigray.html" class="related-card">
+                    <div class="related-icon">⛰️</div>
+                    <h3>Tigray</h3>
+                    <p class="related-location">Ethiopia/Eritrea</p>
+                    <span class="relationship-badge regional">Northern Neighbors</span>
+                    <p class="related-description">Ancient highland civilization with rock-hewn churches.</p>
+                </a>
+                <a href="/peoples/kikuyu.html" class="related-card">
+                    <div class="related-icon">⛰️</div>
+                    <h3>Kikuyu</h3>
+                    <p class="related-location">Kenya</p>
+                    <span class="relationship-badge similar">Age-Set Systems</span>
+                    <p class="related-description">Kenya's largest group with age-grade social organization.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Legesse, Asmarom. (2006). <em>Oromo Democracy: An Indigenous African Political System</em>. Red Sea Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Baissa, Lemmu. (2004). <em>The Oromo and the War of Unification of Ethiopia</em>. Institute for Peace Research and Security Policy.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Hassen, Mohammed. (1990). <em>The Oromo of Ethiopia: A History 1570-1860</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bartels, Lambert. (1983). <em>Oromo Religion: Myths and Rites of the Western Oromo of Ethiopia</em>. Dietrich Reimer Verlag.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Jalata, Asafa. (2005). <em>Oromia and Ethiopia: State Formation and Ethnonational Conflict</em>. Red Sea Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Blackhurst, Hector. (1978). "Continuity and Change in the Shoa Galla Gada System." In <em>Age, Generation and Time</em>, edited by P.T.W. Baxter and Uri Almagor. Hurst.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Bassi, Marco. (2005). <em>Decisions in the Shade: Political and Juridical Processes Among the Oromo-Borana</em>. Red Sea Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">UNESCO. (2016). <em>Gada System, an Indigenous Democratic Socio-Political System of the Oromo</em>. Intangible Cultural Heritage Lists.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1609198092358-8b8b0c0b6e5e?w=800", caption: "Traditional Oromo clothing featuring vibrant colors and distinctive patterns" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Oromo elders gathering for Gadaa council deliberations under sacred tree" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Irreecha thanksgiving festival at Lake Hora Arsadi with thousands of participants" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Oromo pastoralists with cattle, central to traditional economy and culture" },
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Traditional Oromo coffee ceremony, Ethiopia being the birthplace of coffee" },
+            { src: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800", caption: "Ethiopian highlands of Oromia region with fertile agricultural lands" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

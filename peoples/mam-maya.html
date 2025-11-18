@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mam Maya People: Oldest Maya Language and Highland Traditions | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <style>
+        :root { --mam-blue: #1E90FF; --volcano-gray: #708090; --jade-green: #00A86B; --white: #ecf0f1; --earth-brown: #8B4513; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--mam-blue) 0%, var(--volcano-gray) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--mam-blue), var(--jade-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(30,144,255,0.5); border: 5px solid var(--volcano-gray); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--mam-blue); }
+        nav a { color: var(--mam-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--mam-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--mam-blue); border-right: 3px solid var(--jade-green); }
+        h2 { color: var(--mam-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--mam-blue); }
+        h3 { color: var(--jade-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--mam-blue), var(--jade-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--volcano-gray); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--jade-green), var(--volcano-gray)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--mam-blue), var(--jade-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--mam-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--mam-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--mam-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏔️</span>
+            <h1>The Mam Maya People</h1>
+            <p class="tagline">Speakers of the Oldest Maya Language - Highland Coffee Farmers - Volcano Guardians</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Mam Maya?</h2>
+            <p>The Mam Maya are one of Guatemala's largest indigenous groups, numbering over one million people, with their language considered the oldest continuously spoken Mayan language. Inhabiting the western highlands of Guatemala (particularly Huehuetenango and Quetzaltenango departments) and parts of Chiapas, Mexico, the Mam live in mountainous volcanic terrain, including areas around Tajumulco, Central America's highest peak. Their name possibly derives from "mam" meaning grandfather or ancestor, reflecting their ancient lineage. The Mam maintained relative autonomy even during Maya Classic period, with their own kingdoms and cultural traditions. Today they preserve their language, agricultural practices based on corn and coffee cultivation, traditional authority systems, and distinctive weaving patterns while facing challenges of poverty, land scarcity, and the legacy of Guatemala's brutal civil war that particularly targeted Mam communities in the 1980s.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">1M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Mam</span><span>Oldest Maya language</span></div>
+                <div class="stat-card"><span class="stat-number">4,220m</span><span>Tajumulco volcano height</span></div>
+                <div class="stat-card"><span class="stat-number">Guatemala/Mexico</span><span>Homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Ancient Language Preservation:</strong> The Mam language is considered the oldest branch of the Mayan language family, diverging from other Mayan languages over 3,000 years ago. Linguists study Mam to understand the evolution of all Mayan languages, making it a crucial link to understanding ancient Maya civilization!
+            </div>
+
+            <h3>Ancient Kingdoms and Pre-Columbian History</h3>
+            <p>The Mam established powerful kingdoms in the western highlands long before Spanish conquest. Their capital, <strong>Zaculeu</strong>, featured impressive stone pyramids and temples overlooking the Selegua River valley. Mam territory extended from Guatemala's Pacific coast into the highlands, controlling important trade routes for obsidian, jade, cacao, and quetzal feathers. Unlike lowland Maya cities that collapsed in the 9th century, Mam highland communities continued to flourish. The <strong>K'iche' Maya</strong> conquered much of Mam territory in the 15th century, though many Mam communities maintained autonomy through tribute payments. Spanish conquistador Pedro de Alvarado besieged Zaculeu in 1525, starving the defenders into submission. The ruined city remains an important cultural heritage site for the Mam people.</p>
+
+            <h3>Highland Agriculture and Coffee Economy</h3>
+            <p>The Mam inhabit some of Central America's most rugged terrain, farming steep volcanic slopes at elevations from 1,500 to 3,500 meters. Traditional <strong>milpa</strong> agriculture grows corn, beans, and squash on terraced plots, often intercropped with coffee plants. Coffee became central to the Mam economy in the late 19th century when wealthy ladino (non-indigenous) landowners established plantations using forced indigenous labor. This created a two-tier system—large coffee fincas (estates) owned by outsiders and small subsistence plots worked by Mam families. Many Mam work seasonally on coastal plantations during harvest, a pattern established over a century ago. Fair trade coffee cooperatives have empowered some Mam communities to control production and marketing, improving economic conditions while maintaining organic farming practices valued internationally.</p>
+
+            <h3>Traditional Governance and Costumbre</h3>
+            <p>Mam communities maintain <strong>costumbre</strong>, traditional customs and spiritual practices blending ancient Maya beliefs with Catholicism. <strong>Aj q'ij</strong> (daykeepers or spiritual guides) maintain the sacred 260-day Maya calendar, perform ceremonies at sacred mountains and caves, and make offerings of candles, incense, and aguardiente to ancestors and earth deities. The cargo system requires community members to serve rotating religious and civic positions, creating social cohesion. Traditional authorities (<strong>principales</strong>) continue to mediate disputes and maintain community standards alongside official government structures. Sacred sites include volcano peaks, particularly Tajumulco where pilgrims climb to perform New Year ceremonies, and natural springs considered portals to the underworld.</p>
+
+            <h3>Textile Traditions and Cultural Identity</h3>
+            <p>Mam weaving produces distinctive textiles instantly recognizable to other indigenous Guatemalans. Women weave on <strong>backstrap looms</strong>, creating <strong>huipiles</strong> (blouses) with unique patterns for each town. Todos Santos Cuchumatán is famous for its red-and-white striped pants worn by men, while women's huipiles feature elaborate brocaded collars representing sacred mountains. Purple and magenta colors predominate in Mam textiles, achieved through both natural dyes and commercial threads. The designs incorporate ancient Maya symbols—diamonds representing the universe, zigzags for lightning and mountains, and stylized human and animal forms. Beyond clothing, textiles serve as cultural identity markers, with specific patterns, colors, and weaving techniques transmitted from mothers to daughters across generations.</p>
+
+            <h3>Civil War Legacy and Contemporary Challenges</h3>
+            <p>Guatemala's 36-year civil war (1960-1996) devastated Mam communities. The army targeted Mam villages suspected of supporting guerrillas, committing massacres and forcing survivors into "model villages" under military control. Entire communities fled to Mexico as refugees. The 1999 <strong>UN Truth Commission</strong> documented genocide against Maya peoples, with Mam areas particularly affected. Post-war, Mam communities struggle with poverty, land disputes with plantations, lack of educational and health services, and environmental degradation from deforestation and climate change affecting coffee harvests. Youth migration to the U.S. depletes communities of young people. However, Mam cultural revitalization efforts include bilingual education programs, Maya language radio stations, documentation of traditional knowledge, and indigenous rights organizing. The 1996 Peace Accords recognized indigenous rights, though implementation remains incomplete.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=800" alt="Maya woman in traditional dress" loading="lazy">
+                    <div class="image-caption">Mam woman wearing traditional huipil with distinctive purple and magenta patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800" alt="Guatemala highlands" loading="lazy">
+                    <div class="image-caption">Volcanic highlands of western Guatemala where Mam communities farm steep slopes</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800" alt="Coffee plantation" loading="lazy">
+                    <div class="image-caption">Coffee plants growing in Mam highlands, central to community economy since 1800s</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1569103622565-113c369d5d5a?w=800" alt="Backstrap loom weaving" loading="lazy">
+                    <div class="image-caption">Traditional backstrap loom weaving technique used by Mam women for centuries</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Mountain landscape" loading="lazy">
+                    <div class="image-caption">Sacred mountains central to Mam cosmology and spiritual practices</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1584992236310-c67abb61f74e?w=800" alt="Corn field" loading="lazy">
+                    <div class="image-caption">Traditional milpa corn cultivation on terraced volcanic slopes of Mam territory</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/kiche-maya.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>K'iche' Maya</h3>
+                    <p class="related-location">Guatemala</p>
+                    <span class="relationship-badge similar">Maya Relatives</span>
+                    <p class="related-description">Largest Maya group in Guatemala, historical rivals and neighbors of Mam.</p>
+                </a>
+                <a href="/peoples/quechua.html" class="related-card">
+                    <div class="related-icon">🦙</div>
+                    <h3>Quechua</h3>
+                    <p class="related-location">Andes, South America</p>
+                    <span class="relationship-badge similar">Highland Indigenous</span>
+                    <p class="related-description">Andean people sharing highland agricultural traditions and cultural resilience.</p>
+                </a>
+                <a href="/peoples/aymara.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Aymara</h3>
+                    <p class="related-location">Bolivia/Peru</p>
+                    <span class="relationship-badge similar">Highland Farmers</span>
+                    <p class="related-description">Altiplano people with ancient language and mountain farming traditions.</p>
+                </a>
+                <a href="/peoples/zapotec.html" class="related-card">
+                    <div class="related-icon">⛰️</div>
+                    <h3>Zapotec</h3>
+                    <p class="related-location">Oaxaca, Mexico</p>
+                    <span class="relationship-badge regional">Mesoamerican Culture</span>
+                    <p class="related-description">Ancient civilization maintaining language and indigenous identity in Mexico.</p>
+                </a>
+                <a href="/peoples/mixtec.html" class="related-card">
+                    <div class="related-icon">📜</div>
+                    <h3>Mixtec</h3>
+                    <p class="related-location">Oaxaca, Mexico</p>
+                    <span class="relationship-badge regional">Mesoamerican Neighbors</span>
+                    <p class="related-description">Mountain people known for codices and resistance to Spanish conquest.</p>
+                </a>
+                <a href="/peoples/mapuche.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Mapuche</h3>
+                    <p class="related-location">Chile/Argentina</p>
+                    <span class="relationship-badge similar">Indigenous Resistance</span>
+                    <p class="related-description">Unconquered people fighting for land rights and cultural preservation.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">England, Nora C. (1983). <em>A Grammar of Mam, a Mayan Language</em>. University of Texas Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Lovell, W. George. (1985). <em>Conquest and Survival in Colonial Guatemala: A Historical Geography of the Cuchumatán Highlands, 1500-1821</em>. McGill-Queen's University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Oakes, Maud. (1951). <em>The Two Crosses of Todos Santos: Survivals of Mayan Religious Ritual</em>. Princeton University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Watanabe, John M. (1992). <em>Maya Saints and Souls in a Changing World</em>. University of Texas Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Burrell, Jennifer L. (2013). <em>Maya After War: Conflict, Power, and Politics in Guatemala</em>. University of Texas Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Grandin, Greg. (2000). <em>The Blood of Guatemala: A History of Race and Nation</em>. Duke University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Tedlock, Barbara. (1992). <em>Time and the Highland Maya</em>. University of New Mexico Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Carmack, Robert M. (Ed.). (1988). <em>Harvest of Violence: The Maya Indians and the Guatemalan Crisis</em>. University of Oklahoma Press.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=800", caption: "Mam woman wearing traditional huipil with distinctive purple and magenta patterns" },
+            { src: "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800", caption: "Volcanic highlands of western Guatemala where Mam communities farm steep slopes" },
+            { src: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800", caption: "Coffee plants growing in Mam highlands, central to community economy since 1800s" },
+            { src: "https://images.unsplash.com/photo-1569103622565-113c369d5d5a?w=800", caption: "Traditional backstrap loom weaving technique used by Mam women for centuries" },
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Sacred mountains central to Mam cosmology and spiritual practices" },
+            { src: "https://images.unsplash.com/photo-1584992236310-c67abb61f74e?w=800", caption: "Traditional milpa corn cultivation on terraced volcanic slopes of Mam territory" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

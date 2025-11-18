@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsilhqot'in People: Land Rights Victory and Chilcotin Warriors | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    <style>
+        :root { --tsilh-red: #8B0000; --plateau-tan: #D2B48C; --pine-green: #01796F; --white: #ecf0f1; --mountain-gray: #696969; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--pine-green) 0%, var(--mountain-gray) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--tsilh-red), var(--pine-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(139,0,0,0.5); border: 5px solid var(--plateau-tan); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--tsilh-red); }
+        nav a { color: var(--tsilh-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--tsilh-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--tsilh-red); border-right: 3px solid var(--pine-green); }
+        h2 { color: var(--tsilh-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--tsilh-red); }
+        h3 { color: var(--pine-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--tsilh-red), var(--pine-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--plateau-tan); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--plateau-tan), var(--pine-green)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--tsilh-red), var(--pine-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--tsilh-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--tsilh-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--tsilh-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">⚖️</span>
+            <h1>The Tsilhqot'in People</h1>
+            <p class="tagline">Landmark Land Rights Victory - Chilcotin Plateau Guardians - Fierce Defenders of Territory</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Tsilhqot'in?</h2>
+            <p>The Tsilhqot'in (pronounced "Sill-KOH-teen," also called Chilcotin) are an Athabaskan-speaking indigenous nation of approximately 5,000 people inhabiting the Chilcotin Plateau in central British Columbia, Canada. Semi-nomadic hunters and fishers adapted to the plateau's harsh winters and salmon-rich rivers, the Tsilhqot'in fiercely defended their territory against colonial encroachment, most famously in the 1864 Chilcotin War when they resisted road-building crews bringing smallpox and dispossessing land. For 150 years they fought through courts and political action for recognition of aboriginal title to ancestral territories. In 2014, the Tsilhqot'in achieved a landmark victory when Canada's Supreme Court granted them title to 1,750 square kilometers of traditional territory—the first time a Canadian court recognized indigenous land title rather than mere usage rights. This precedent-setting decision transformed Canadian indigenous law and empowered the Tsilhqot'in to manage forests, wildlife, and resources according to traditional laws while maintaining cultural practices including language revitalization, traditional fishing, and governance systems.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">5,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Tsilhqot'in</span><span>Athabaskan language</span></div>
+                <div class="stat-card"><span class="stat-number">2014</span><span>Title recognition year</span></div>
+                <div class="stat-card"><span class="stat-number">British Columbia</span><span>Chilcotin Plateau</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Supreme Court Land Title Victory:</strong> The 2014 <em>Tsilhqot'in Nation v. British Columbia</em> Supreme Court ruling was revolutionary—it granted aboriginal title to lands the Tsilhqot'in hadn't continuously occupied but used regularly, expanding legal definitions beyond narrow occupation to include seasonal territories. This precedent affected indigenous rights cases across Canada and internationally, demonstrating that determined legal action can reclaim stolen lands!
+            </div>
+
+            <h3>Traditional Life on the Chilcotin Plateau</h3>
+            <p>The Tsilhqot'in inhabited the Chilcotin Plateau, a semi-arid region of grasslands, forests, and mountains between the Coast Range and Fraser River. Unlike coastal peoples with abundant marine resources, the Tsilhqot'in were <strong>semi-nomadic hunters and fishers</strong>, following seasonal patterns. <strong>Salmon</strong> runs up the Chilcotin and Fraser rivers provided critical protein, dried and smoked for winter. The Tsilhqot'in built weirs and used dip nets, spears, and later gaff hooks to catch salmon. <strong>Caribou</strong> hunting was essential—meat for food, hides for clothing and shelter. Deer, mountain goats, bears, and smaller game supplemented diet. Women gathered roots, particularly balsamroot and spring beauty, and berries. The harsh winters required warm clothing—caribou hide with fur inside provided excellent insulation. The Tsilhqot'in lived in <strong>pit houses</strong> (semi-subterranean lodges) in winter and portable bark-covered structures in summer. Small family bands moved seasonally across vast territories, gathering at fishing sites in summer and fall.</p>
+
+            <h3>The Chilcotin War of 1864</h3>
+            <p>In 1864, road contractor Alfred Waddington hired workers to build a road from Bute Inlet to goldfields in the Cariboo, passing through Tsilhqot'in territory without consultation. The workers brought <strong>smallpox</strong>, devastating disease to which indigenous peoples had no immunity. Tensions escalated over land dispossession, disrespect for resources, and disease. A Tsilhqot'in chief named <strong>Klatsassin</strong> led warriors in attacking road camps, killing 19 workers. British Columbia authorities raised militias and pursued the Tsilhqot'in. Colonial Governor Frederick Seymour promised peace negotiations, but when Tsilhqot'in leaders arrived under truce flags, they were arrested—a notorious betrayal. Six chiefs, including Klatsassin, were tried and hanged in 1864-1865. For over a century this was portrayed as a "massacre" by "savages." In 2014, British Columbia Premier Christy Clark formally <strong>exonerated</strong> the war chiefs, acknowledging they were defending their people and land from invasion and disease, and that the promise of safe conduct was dishonored.</p>
+
+            <h3>Residential Schools and Cultural Suppression</h3>
+            <p>Like indigenous peoples across Canada, Tsilhqot'in children were forcibly removed to <strong>residential schools</strong>, a systematic attempt at cultural genocide. The <strong>St. Joseph's Mission Residential School</strong> operated from 1891-1981 near Williams Lake, incarcerating Tsilhqot'in and other indigenous children. Students faced physical and sexual abuse, malnutrition, and punishment for speaking native languages or practicing cultural traditions. Many died from disease, neglect, or abuse—their graves discovered decades later. Survivors carry intergenerational trauma affecting families and communities to this day. The residential school system aimed to "kill the Indian in the child" by severing connections to language, culture, and family. Despite this brutality, elders preserved knowledge through secret transmission. Canada's 2008 official apology and Truth and Reconciliation Commission (2008-2015) documented these crimes, though full justice and healing remain incomplete.</p>
+
+            <h3>The Fight for Land Title</h3>
+            <p>For decades, the Tsilhqot'in fought for recognition of aboriginal title to traditional territories. British Columbia claimed Crown ownership of all lands not formally ceded by treaty—but the Tsilhqot'in never signed treaties surrendering land. In 1983, the province approved a large-scale logging license in Tsilhqot'in territory without consultation. Chief <strong>Roger William</strong> and the Xeni Gwet'in (one of six Tsilhqot'in communities) initiated legal action, arguing they held aboriginal title. The case proceeded through courts for over 20 years. Evidence included oral histories, archaeological data, traditional land use maps, and testimony from elders about seasonal movements, place names, and resource management. On June 26, 2014, the <strong>Supreme Court of Canada</strong> unanimously ruled in favor of the Tsilhqot'in, granting aboriginal title to 1,750 km² and affirming that title included decision-making authority over land use, not merely hunting and fishing rights. This precedent established that indigenous peoples could prove title through regular use of territories, not just permanent settlement—transforming Canadian aboriginal law.</p>
+
+            <h3>Contemporary Sovereignty and Cultural Revival</h3>
+            <p>The 2014 title victory empowered the <strong>Tsilhqot'in National Government</strong> (representing six communities) to manage titled lands according to traditional laws and values. They regulate forestry, mining, and development, requiring consent for projects. The Tsilhqot'in emphasize sustainable resource management based on traditional ecological knowledge. <strong>Wild salmon conservation</strong> is a priority—climate change, logging, and development threaten salmon runs essential to culture and subsistence. The <strong>Tsilhqot'in language</strong>, an Athabaskan language related to Dene and Navajo, is endangered with few fluent speakers under age 50, but immersion programs, apps, and elder-youth mentorship work toward revitalization. Traditional practices like salmon fishing, hunting, and gathering continue. Cultural programs teach youth about history, governance, and values. The Tsilhqot'in demonstrate that indigenous nations can reclaim sovereignty through persistence, legal action, and unity while maintaining cultural identity connecting present generations to ancestors and ensuring future generations inherit both land and knowledge.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Chilcotin Plateau landscape" loading="lazy">
+                    <div class="image-caption">Chilcotin Plateau of central British Columbia, Tsilhqot'in ancestral territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?w=800" alt="Salmon" loading="lazy">
+                    <div class="image-caption">Salmon, centerpiece of Tsilhqot'in subsistence and cultural traditions</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800" alt="Caribou" loading="lazy">
+                    <div class="image-caption">Caribou hunted traditionally for meat, hides, and tools on the plateau</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800" alt="Boreal forest" loading="lazy">
+                    <div class="image-caption">Pine forests of Chilcotin region managed sustainably by Tsilhqot'in Nation</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Mountain landscape" loading="lazy">
+                    <div class="image-caption">Coast Mountains surrounding Tsilhqot'in traditional territories</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?w=800" alt="Grassland" loading="lazy">
+                    <div class="image-caption">Grasslands and semi-arid terrain characterizing Chilcotin Plateau ecosystem</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/haida.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Haida</h3>
+                    <p class="related-location">British Columbia</p>
+                    <span class="relationship-badge regional">BC First Nations</span>
+                    <p class="related-description">Fellow British Columbia indigenous nation with land rights victories.</p>
+                </a>
+                <a href="/peoples/tlingit.html" class="related-card">
+                    <div class="related-icon">🐻</div>
+                    <h3>Tlingit</h3>
+                    <p class="related-location">Alaska/British Columbia</p>
+                    <span class="relationship-badge regional">Northern Neighbors</span>
+                    <p class="related-description">Alaska/BC coastal people with territorial sovereignty struggles.</p>
+                </a>
+                <a href="/peoples/navajo.html" class="related-card">
+                    <div class="related-icon">🐑</div>
+                    <h3>Navajo (Diné)</h3>
+                    <p class="related-location">Southwest U.S.</p>
+                    <span class="relationship-badge similar">Athabaskan Relatives</span>
+                    <p class="related-description">Related Athabaskan-speaking people with land rights and sovereignty.</p>
+                </a>
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic Canada</p>
+                    <span class="relationship-badge regional">Canadian Indigenous</span>
+                    <p class="related-description">Northern Canadian indigenous people with land claims victories.</p>
+                </a>
+                <a href="/peoples/blackfoot.html" class="related-card">
+                    <div class="related-icon">🦬</div>
+                    <h3>Blackfoot</h3>
+                    <p class="related-location">Alberta/Montana</p>
+                    <span class="relationship-badge regional">Canadian Plains</span>
+                    <p class="related-description">Plains indigenous nation to the east maintaining cultural traditions.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Māori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge similar">Land Rights Victory</span>
+                    <p class="related-description">Indigenous people achieving major land rights through treaty settlements.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Supreme Court of Canada. (2014). <em>Tsilhqot'in Nation v. British Columbia</em>, 2014 SCC 44.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Hewlett, Edward Sleigh. (1974). "The Chilcotin Uprising of 1864." <em>BC Studies</em> 19: 50-72.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Lane, Robert B. (1953). <em>Cultural Relations of the Chilcotin Indians of West Central British Columbia</em>. PhD Dissertation, University of Washington.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Furniss, Elizabeth. (1993). "Resistance, Coercion, and Revitalization: The Shuswap Encounter with Roman Catholic Missionaries, 1860-1900." <em>Ethnohistory</em> 42(2): 231-263.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Tsilhqot'in National Government. (2013). <em>Dasiqox Tribal Park: A Tsilhqot'in Vision for Nexwagwez?an (Dasiqox-Taseko)</em>. TNG.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Morin, Brandi. (2014). "Landmark Supreme Court Ruling Grants Land Title to B.C. First Nation." <em>CBC News</em>, June 26, 2014.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Newman, Dwight G. (2014). "Reflections on the Tsilhqot'in Decision." <em>Saskatchewan Law Review</em> 77: 447-470.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Culhane, Dara. (1998). <em>The Pleasure of the Crown: Anthropology, Law and First Nations</em>. Talon Books.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Chilcotin Plateau of central British Columbia, Tsilhqot'in ancestral territory" },
+            { src: "https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?w=800", caption: "Salmon, centerpiece of Tsilhqot'in subsistence and cultural traditions" },
+            { src: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800", caption: "Caribou hunted traditionally for meat, hides, and tools on the plateau" },
+            { src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800", caption: "Pine forests of Chilcotin region managed sustainably by Tsilhqot'in Nation" },
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Coast Mountains surrounding Tsilhqot'in traditional territories" },
+            { src: "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=800", caption: "Grasslands and semi-arid terrain characterizing Chilcotin Plateau ecosystem" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

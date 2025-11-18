@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandinka People: Mali Empire Descendants and Griot Oral Historians | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+    <style>
+        :root { --mali-gold: #DAA520; --empire-red: #8B0000; --kora-brown: #8B7355; --white: #ecf0f1; --desert-tan: #D2B48C; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--mali-gold) 0%, var(--empire-red) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--mali-gold), var(--empire-red)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(218,165,32,0.5); border: 5px solid var(--desert-tan); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--mali-gold); }
+        nav a { color: var(--mali-gold); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--mali-gold); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--mali-gold); border-right: 3px solid var(--desert-tan); }
+        h2 { color: var(--mali-gold); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--mali-gold); }
+        h3 { color: var(--empire-red); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--mali-gold), var(--empire-red)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--desert-tan); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--desert-tan), var(--empire-red)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--mali-gold), var(--empire-red)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--mali-gold); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--mali-gold); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--mali-gold); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🎵</span>
+            <h1>The Mandinka People</h1>
+            <p class="tagline">Mali Empire Descendants - Griot Oral Historians - Kora Music Masters</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Mandinka?</h2>
+            <p>The Mandinka (also called Mandingo or Malinke) are a West African ethnic group numbering over 11 million people across Mali, Guinea, Senegal, Gambia, Guinea-Bissau, Sierra Leone, and Ivory Coast. They are the descendants and cultural heirs of the mighty <strong>Mali Empire</strong> (1235-1670 CE), one of Africa's greatest medieval states that controlled vast gold and salt trade routes and stretched from the Atlantic Ocean to the Niger River. The legendary emperor <strong>Sundiata Keita</strong>, founder of Mali Empire, remains central to Mandinka identity—his epic, preserved by griot oral historians, tells of his triumph over tyranny and establishment of justice. The Mandinka speak Mandinka language (part of the Mande family) and are predominantly Muslim, having adopted Islam through trans-Saharan trade. They are renowned for their <strong>griot tradition</strong>—hereditary oral historians who preserve genealogies, history, and cultural knowledge through song and storytelling accompanied by the kora (21-string harp-lute).</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">11M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">1235-1670</span><span>Mali Empire period</span></div>
+                <div class="stat-card"><span class="stat-number">Mandinka</span><span>Mande language</span></div>
+                <div class="stat-card"><span class="stat-number">West Africa</span><span>7+ countries</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Epic of Sundiata:</strong> The Epic of Sundiata, preserved orally for nearly 800 years by griots, tells how the "Lion King" overcame childhood paralysis, defeated the sorcerer-king Sumanguru, and founded Mali Empire. Griots can recite the epic for hours, with versions varying by region but maintaining core narrative—an oral literature tradition as significant as Homer's epics!
+            </div>
+
+            <h3>Mali Empire and Sundiata's Legacy</h3>
+            <p>The <strong>Mali Empire</strong> emerged in 1235 when Sundiata Keita united Mandinka kingdoms and defeated the oppressive Sosso king Sumanguru at the Battle of Kirina. At its height under Mansa Musa (1312-1337), Mali controlled West Africa's gold production and became one of the world's wealthiest states. Mansa Musa's pilgrimage to Mecca in 1324, during which he distributed so much gold that he temporarily crashed Cairo's economy, demonstrated Mali's immense wealth. The empire facilitated trans-Saharan trade, connecting sub-Saharan Africa with North Africa and the Mediterranean world. Timbuktu, though Songhai-dominated later, flourished under Malian control as a center of Islamic learning. The empire's political structure combined traditional Mandinka governance with Islamic administration, while the <strong>Kurukan Fuga</strong> (Mali's constitution proclaimed by Sundiata) established laws protecting human rights, environmental resources, and social harmony—remarkably progressive for the 13th century.</p>
+
+            <h3>Griot Tradition and Oral History</h3>
+            <p>The <strong>jeli</strong> (griot in French) occupy a unique hereditary position in Mandinka society as oral historians, musicians, praise-singers, and social mediators. Born into griot families, they undergo years of training, memorizing genealogies spanning centuries, historical narratives, social protocols, and musical repertoires. Griots perform at weddings, naming ceremonies, political events, and funerals, reciting family histories that connect individuals to illustrious ancestors. They serve as diplomats, mediating conflicts through knowledge of family relationships and historical precedents. The <strong>kora</strong>, a 21-string bridge-harp made from a large calabash gourd covered with cowhide, is the griot's primary instrument, producing cascading melodies that accompany epic narratives. Master kora players like Toumani Diabaté have brought Mandinka music to international audiences. Griots also play the balafon (wooden xylophone) and ngoni (lute). In Mandinka society, griots belong to the nyamakala (artisan class), socially separate from nobles and farmers but essential to cultural preservation.</p>
+
+            <h3>Islamic Culture and Syncretism</h3>
+            <p>The Mandinka gradually adopted Islam from the 11th century onward through peaceful trade contacts and the influence of Muslim scholars. Today, over 99% of Mandinka are Muslim, and Islamic practices deeply influence daily life—five daily prayers, Ramadan fasting, Quranic education, and pilgrimage to Mecca for those able. However, Mandinka Islam incorporates pre-Islamic traditions in a syncretic blend. Traditional beliefs in <strong>nyama</strong> (spiritual force) and ancestor veneration coexist with Islamic practice. <strong>Morike</strong> (traditional religious specialists) use Quranic verses for protection and healing alongside traditional medicine. The <strong>Kankurang</strong> masquerade tradition, recognized by UNESCO, combines Islamic and traditional elements—masked dancers protect boys during circumcision initiation ceremonies, representing spirits that enforce social order. This religious syncretism demonstrates Mandinka cultural flexibility, maintaining ancestral traditions while embracing Islamic identity.</p>
+
+            <h3>Social Organization and Village Life</h3>
+            <p>Traditional Mandinka society organizes through patrilineal clans, with villages led by elders and a village chief (alkalo). Extended families live in compounds where multiple generations share responsibilities. Social hierarchy includes nobles (horon), artisans (nyamakala including griots, blacksmiths, and leatherworkers), and historically, slaves—though slavery is now abolished. The <strong>kafoo</strong> (age-grade association) groups people born within similar time periods, creating social bonds and mutual support networks. Marriage involves elaborate negotiations, with bride-wealth (dowry) paid to the bride's family, and polygyny is common within Islamic guidelines. Women engage in farming, trading, food processing, and craft production while managing households. Mandinka agriculture traditionally focused on rice, millet, sorghum, and groundnuts (peanuts), with communal labor practices. The Gambia River region's Mandinka developed sophisticated rice cultivation techniques in swamplands.</p>
+
+            <h3>Modern Mandinka Culture and Diaspora</h3>
+            <p>Contemporary Mandinka maintain strong cultural identity across West Africa despite living in multiple nation-states created by colonial boundaries. In The Gambia, Mandinka comprise about 42% of the population and dominate national culture. Mandinka language thrives as a lingua franca in several countries, though French and English serve as official languages. The griot tradition continues, though modern griots also perform on radio, television, and international stages. <strong>Alex Haley's novel "Roots"</strong> (1976) brought Mandinka culture to global attention, tracing his ancestry to Kunta Kinte, a Mandinka man enslaved in 18th-century Gambia—millions of African Americans subsequently researched connections to Mandinka heritage. Urban migration challenges traditional structures, yet Mandinka communities maintain village ties, sending remittances and returning for major ceremonies. Environmental pressures, desertification, and economic challenges affect Mandinka farming regions, driving migration to cities and abroad. The Mandinka diaspora in Europe and North America preserves cultural practices through associations, music groups, and Islamic communities.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1541480551145-2370a440d585?w=800" alt="Kora player" loading="lazy">
+                    <div class="image-caption">Mandinka griot playing traditional 21-string kora harp-lute</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1609198092358-8b8b0c0b6e5e?w=800" alt="Traditional dress" loading="lazy">
+                    <div class="image-caption">Mandinka people in traditional boubou robes and head wraps</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Village ceremony" loading="lazy">
+                    <div class="image-caption">Traditional Mandinka village ceremony with griot performance</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Gambia River" loading="lazy">
+                    <div class="image-caption">Gambia River landscape, heartland of Mandinka settlement</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Kankurang mask" loading="lazy">
+                    <div class="image-caption">Kankurang masked dancer protecting circumcision initiation ceremony</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Traditional pottery" loading="lazy">
+                    <div class="image-caption">Mandinka women crafting traditional pottery with geometric designs</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/bambara.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Bambara</h3>
+                    <p class="related-location">Mali</p>
+                    <span class="relationship-badge similar">Mande Relatives</span>
+                    <p class="related-description">Fellow Mande people with rich masking traditions and farming culture.</p>
+                </a>
+                <a href="/peoples/songhai.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Songhai</h3>
+                    <p class="related-location">Mali/Niger</p>
+                    <span class="relationship-badge historical">Empire Successors</span>
+                    <p class="related-description">Built empire that succeeded Mali along Niger River.</p>
+                </a>
+                <a href="/peoples/fulani.html" class="related-card">
+                    <div class="related-icon">🐄</div>
+                    <h3>Fulani</h3>
+                    <p class="related-location">West Africa</p>
+                    <span class="relationship-badge regional">Regional Neighbors</span>
+                    <p class="related-description">Widespread pastoralist people sharing West African Islamic culture.</p>
+                </a>
+                <a href="/peoples/wolof.html" class="related-card">
+                    <div class="related-icon">🥁</div>
+                    <h3>Wolof</h3>
+                    <p class="related-location">Senegal/Gambia</p>
+                    <span class="relationship-badge regional">Senegambian Partners</span>
+                    <p class="related-description">Major Senegalese group with similar griot traditions.</p>
+                </a>
+                <a href="/peoples/yoruba.html" class="related-card">
+                    <div class="related-icon">👑</div>
+                    <h3>Yoruba</h3>
+                    <p class="related-location">Nigeria/Benin</p>
+                    <span class="relationship-badge similar">West African Culture</span>
+                    <p class="related-description">West African civilization with rich oral literature and art traditions.</p>
+                </a>
+                <a href="/peoples/ashanti.html" class="related-card">
+                    <div class="related-icon">🪙</div>
+                    <h3>Ashanti</h3>
+                    <p class="related-location">Ghana</p>
+                    <span class="relationship-badge historical">Gold Trade Partners</span>
+                    <p class="related-description">Akan people who dominated gold trade after Mali Empire's decline.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Niane, D.T. (1965). <em>Sundiata: An Epic of Old Mali</em>. Longman. [Classic griot narrative]</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Levtzion, Nehemia. (1973). <em>Ancient Ghana and Mali</em>. Methuen.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Conrad, David C. (1999). <em>Epic Ancestors of the Sunjata Era</em>. African Epic Series. Madison: University of Wisconsin.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Charry, Eric. (2000). <em>Mande Music: Traditional and Modern Music of the Maninka and Mandinka of Western Africa</em>. University of Chicago Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Haley, Alex. (1976). <em>Roots: The Saga of an American Family</em>. Doubleday.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Hale, Thomas A. (1998). <em>Griots and Griottes: Masters of Words and Music</em>. Indiana University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Imperato, Pascal James. (2001). <em>Legends, Sorcerers, and Enchanted Lizards: Door Locks of the Bamana of Mali</em>. Africana Publishing Company.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Wright, Donald R. (1997). <em>The World and a Very Small Place in Africa: A History of Globalization in Niumi, The Gambia</em>. M.E. Sharpe.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1541480551145-2370a440d585?w=800", caption: "Mandinka griot playing traditional 21-string kora harp-lute" },
+            { src: "https://images.unsplash.com/photo-1609198092358-8b8b0c0b6e5e?w=800", caption: "Mandinka people in traditional boubou robes and head wraps" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Traditional Mandinka village ceremony with griot performance" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Gambia River landscape, heartland of Mandinka settlement" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Kankurang masked dancer protecting circumcision initiation ceremony" },
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Mandinka women crafting traditional pottery with geometric designs" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shona People: Great Zimbabwe Builders and Mbira Music Masters | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+    <style>
+        :root { --stone-gray: #708090; --zimbabwe-gold: #FFD700; --earth-brown: #8B7355; --white: #ecf0f1; --deep-green: #2F4F2F; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--stone-gray) 0%, var(--earth-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--stone-gray), var(--earth-brown)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(112,128,144,0.5); border: 5px solid var(--zimbabwe-gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--stone-gray); }
+        nav a { color: var(--stone-gray); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--stone-gray); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--stone-gray); border-right: 3px solid var(--zimbabwe-gold); }
+        h2 { color: var(--stone-gray); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--stone-gray); }
+        h3 { color: var(--earth-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--stone-gray), var(--earth-brown)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--zimbabwe-gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--zimbabwe-gold), var(--earth-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--stone-gray), var(--earth-brown)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--stone-gray); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--stone-gray); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--stone-gray); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🏛️</span>
+            <h1>The Shona People</h1>
+            <p class="tagline">Builders of Great Zimbabwe - Masters of Mbira Music - Stone Architecture Legacy</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Shona?</h2>
+            <p>The Shona are the largest ethnic group in Zimbabwe, comprising approximately 80% of the country's population with over 14 million people. They are the descendants of the builders of <strong>Great Zimbabwe</strong>, the magnificent stone city that served as the capital of the Kingdom of Zimbabwe (11th-15th centuries) and remains Africa's most impressive medieval stone structure south of the Sahara. The Shona speak various dialects of chiShona, a Bantu language, and organized themselves historically into numerous kingdoms including the Mutapa, Rozvi, and Ndau states. Renowned for their <strong>mbira music</strong> (thumb piano), stone sculpture, and sophisticated agricultural systems, the Shona developed a rich cultural heritage that continues to influence Zimbabwean national identity. Their traditional religion centers on ancestor veneration and the supreme deity Mwari, with spirit mediums (n'anga and svikiro) playing crucial roles in connecting living communities with ancestral spirits.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">14M+</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">11th-15th C</span><span>Great Zimbabwe era</span></div>
+                <div class="stat-card"><span class="stat-number">chiShona</span><span>Bantu language</span></div>
+                <div class="stat-card"><span class="stat-number">Zimbabwe</span><span>Primary homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Architectural Marvel:</strong> Great Zimbabwe's stone walls, built without mortar using a technique called "dry-stone," reach heights of 11 meters (36 feet) and have stood for over 700 years! When European colonizers first encountered the ruins, they refused to believe Africans built them and invented false theories about Phoenicians or biblical King Solomon.
+            </div>
+
+            <h3>Great Zimbabwe and Ancient Kingdoms</h3>
+            <p>The <strong>Kingdom of Zimbabwe</strong> (1220-1450 CE) represented one of medieval Africa's most powerful states, controlling gold and ivory trade routes between the interior and the Indian Ocean coast. The capital, <strong>Great Zimbabwe</strong>, housed up to 18,000 people at its peak, featuring monumental dry-stone architecture including the famous Great Enclosure with its 250-meter-long curved wall. The kingdom's wealth derived from gold mining, cattle herding, and trade with Swahili coastal cities and eventually Arabia, India, and China—Chinese ceramics and Persian glass beads excavated at the site prove these connections. After Great Zimbabwe's decline, the <strong>Mutapa Empire</strong> (15th-19th centuries) emerged, controlling vast territories and continuing the gold trade. The <strong>Rozvi Empire</strong> later dominated the region until the 19th century Ndebele invasions, maintaining stone-building traditions at sites like Khami and Danangombe.</p>
+
+            <h3>Mbira Music and Spiritual Connection</h3>
+            <p>The <strong>mbira dzavadzimu</strong> (mbira of the ancestors) represents the soul of Shona musical culture. This thumb piano, featuring 22-28 metal keys mounted on a wooden board placed inside a gourd resonator, produces hypnotic, cyclical melodies that facilitate spiritual communication. During <strong>bira ceremonies</strong>, mbira music plays continuously for hours, inducing trance states in spirit mediums (svikiro) who become possessed by ancestral spirits (midzimu) or lion spirits (mhondoro). These ceremonies address community concerns, from drought to illness to social conflicts, with ancestral spirits providing guidance through possessed mediums. Mbira music follows complex patterns with multiple interlocking melodic lines, demonstrating mathematical sophistication. The tradition inspired chimurenga music during Zimbabwe's liberation struggle and influences contemporary world music, with Thomas Mapfumo and Stella Chiweshe gaining international recognition.</p>
+
+            <h3>Traditional Religion and Ancestor Veneration</h3>
+            <p>Shona traditional religion centers on <strong>Mwari</strong> (the supreme creator) who remains distant from daily affairs, with ancestor spirits serving as intermediaries. <strong>Vadzimu</strong> (family ancestors) watch over their descendants, requiring regular respect through offerings and ceremonies. More powerful <strong>mhondoro</strong> (lion spirits) represent ancient chiefs and clan founders, protecting entire regions and speaking through mediums on matters affecting whole communities. The <strong>n'anga</strong> (traditional healer) diagnoses illness, divines causes of misfortune, and prescribes remedies using herbal medicine and spiritual interventions. Sacred sites include caves, mountains, and pools where people make offerings to ancestors and territorial spirits. Despite widespread Christianity, traditional practices persist—many Shona people integrate both belief systems, attending church while maintaining ancestor veneration.</p>
+
+            <h3>Art, Sculpture, and Cultural Expression</h3>
+            <p>Shona stone sculpture emerged as a globally recognized art form in the 1950s-60s, though its roots extend to ancient traditions. Sculptors working in springstone, serpentine, and verdite create powerful abstract and figurative works exploring themes of spirituality, transformation, and human experience. Artists like Joram Mariga pioneered the contemporary movement, with works displayed in museums worldwide. Traditional Shona arts include pottery, basket weaving, wood carving, and body decoration. <strong>Totems (mutupo)</strong> organize Shona society into clan groups, each identified with specific animals that members cannot eat—over 60 totems exist, regulating marriage and social relationships. Oral literature thrives through folktales featuring Hare the trickster, historical narratives, praise poetry, and proverbs encoding wisdom and social values.</p>
+
+            <h3>Modern Shona Culture and Challenges</h3>
+            <p>The Shona played a central role in Zimbabwe's liberation struggle against white minority rule, with spirit mediums providing spiritual legitimacy to fighters and ancestral guidance interpreted as supporting independence. Post-independence Zimbabwe (1980) recognized chiShona as an official language alongside English, and Shona culture gained prominence in national identity. However, economic challenges, political instability, and environmental pressures strain traditional livelihoods. Many Shona people balance traditional farming with urban employment, maintaining strong family networks that support members across rural-urban divides. The Shona diaspora in South Africa, Botswana, the UK, and North America remains culturally connected, with churches and associations preserving language and traditions. Great Zimbabwe, a UNESCO World Heritage Site, serves as a powerful symbol of African achievement and Zimbabwean national pride, featured on the national flag and currency.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1484318571209-661cf29a69c3?w=800" alt="Great Zimbabwe ruins" loading="lazy">
+                    <div class="image-caption">Great Zimbabwe ruins showing impressive dry-stone wall construction</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" alt="Mbira instrument" loading="lazy">
+                    <div class="image-caption">Traditional mbira dzavadzimu (thumb piano) used in spiritual ceremonies</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800" alt="Shona stone sculpture" loading="lazy">
+                    <div class="image-caption">Contemporary Shona stone sculpture carved from serpentine</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Traditional ceremony" loading="lazy">
+                    <div class="image-caption">Shona spirit medium during bira ceremony with ancestral communication</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800" alt="Zimbabwe landscape" loading="lazy">
+                    <div class="image-caption">Zimbabwean plateau landscape where Shona people traditionally farm</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Traditional pottery" loading="lazy">
+                    <div class="image-caption">Shona traditional pottery with distinctive geometric patterns</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/ndebele.html" class="related-card">
+                    <div class="related-icon">🎨</div>
+                    <h3>Ndebele</h3>
+                    <p class="related-location">Zimbabwe/South Africa</p>
+                    <span class="relationship-badge regional">Zimbabwean Neighbors</span>
+                    <p class="related-description">Famous for geometric house painting and beadwork traditions.</p>
+                </a>
+                <a href="/peoples/swahili.html" class="related-card">
+                    <div class="related-icon">⛵</div>
+                    <h3>Swahili</h3>
+                    <p class="related-location">East African Coast</p>
+                    <span class="relationship-badge historical">Trade Partners</span>
+                    <p class="related-description">Historic trading partners who connected Great Zimbabwe to Indian Ocean commerce.</p>
+                </a>
+                <a href="/peoples/zulu.html" class="related-card">
+                    <div class="related-icon">🛡️</div>
+                    <h3>Zulu</h3>
+                    <p class="related-location">South Africa</p>
+                    <span class="relationship-badge regional">Southern Bantu</span>
+                    <p class="related-description">Fellow Bantu speakers with warrior traditions and strong kingdoms.</p>
+                </a>
+                <a href="/peoples/tonga.html" class="related-card">
+                    <div class="related-icon">🐘</div>
+                    <h3>Tonga</h3>
+                    <p class="related-location">Zambia/Zimbabwe</p>
+                    <span class="relationship-badge regional">Zambezi Neighbors</span>
+                    <p class="related-description">Zambezi River people displaced by Kariba Dam construction.</p>
+                </a>
+                <a href="/peoples/venda.html" class="related-card">
+                    <div class="related-icon">🥁</div>
+                    <h3>Venda</h3>
+                    <p class="related-location">South Africa/Zimbabwe</p>
+                    <span class="relationship-badge similar">Shared Heritage</span>
+                    <p class="related-description">Related group with similar ancestral veneration and musical traditions.</p>
+                </a>
+                <a href="/peoples/xhosa.html" class="related-card">
+                    <div class="related-icon">👔</div>
+                    <h3>Xhosa</h3>
+                    <p class="related-location">South Africa</p>
+                    <span class="relationship-badge regional">Southern Africa</span>
+                    <p class="related-description">Major South African Bantu group with click consonants and rich culture.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Beach, David N. (1980). <em>The Shona and Zimbabwe, 900-1850: An Outline of Shona History</em>. Heinemann.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Garlake, Peter S. (1973). <em>Great Zimbabwe</em>. Thames and Hudson.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Berliner, Paul F. (1978). <em>The Soul of Mbira: Music and Traditions of the Shona People of Zimbabwe</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bourdillon, Michael F.C. (1976). <em>The Shona Peoples: An Ethnography of the Contemporary Shona</em>. Mambo Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Lan, David. (1985). <em>Guns and Rain: Guerrillas and Spirit Mediums in Zimbabwe</em>. University of California Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Picton, John, et al. (1989). <em>African Textiles: Looms, Weaving and Design</em>. British Museum Publications.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Pikirayi, Innocent. (2001). <em>The Zimbabwe Culture: Origins and Decline of Southern Zambezian States</em>. AltaMira Press.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Winter-Irving, Celia. (1991). <em>Shona Sculpture: A Heritage in Stone</em>. Roblaw Publishers.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1484318571209-661cf29a69c3?w=800", caption: "Great Zimbabwe ruins showing impressive dry-stone wall construction" },
+            { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800", caption: "Traditional mbira dzavadzimu (thumb piano) used in spiritual ceremonies" },
+            { src: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800", caption: "Contemporary Shona stone sculpture carved from serpentine" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Shona spirit medium during bira ceremony with ancestral communication" },
+            { src: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800", caption: "Zimbabwean plateau landscape where Shona people traditionally farm" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Shona traditional pottery with distinctive geometric patterns" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

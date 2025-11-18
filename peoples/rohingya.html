@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohingya People: Stateless Minority and Refugee Crisis | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕊️</text></svg>">
+    <style>
+        :root { --rohingya-crimson: #9B111E; --peace-white: #F5F5F5; --hope-teal: #008B8B; --white: #ecf0f1; --refugee-gray: #696969; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--refugee-gray) 0%, var(--hope-teal) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--rohingya-crimson), var(--refugee-gray)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(155,17,30,0.5); border: 5px solid var(--peace-white); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--rohingya-crimson); }
+        nav a { color: var(--rohingya-crimson); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--rohingya-crimson); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--rohingya-crimson); border-right: 3px solid var(--hope-teal); }
+        h2 { color: var(--rohingya-crimson); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--rohingya-crimson); }
+        h3 { color: var(--refugee-gray); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--rohingya-crimson), var(--refugee-gray)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--peace-white); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--hope-teal), var(--refugee-gray)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--rohingya-crimson), var(--refugee-gray)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--rohingya-crimson); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--rohingya-crimson); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--rohingya-crimson); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🕊️</span>
+            <h1>The Rohingya People</h1>
+            <p class="tagline">Stateless Minority - Survivors of Persecution - Hope Amid the World's Largest Refugee Crisis</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Rohingya?</h2>
+            <p>The Rohingya are a predominantly Muslim ethnic minority indigenous to <strong>Rakhine State</strong> (formerly Arakan) in western Myanmar, whose population numbered approximately 1 million before the 2017 genocide forced over 740,000 to flee to Bangladesh in what the United Nations called "a textbook example of ethnic cleansing." Speaking <strong>Rohingya</strong>, an Indo-Aryan language related to Chittagonian Bengali, the Rohingya trace their presence in Rakhine to centuries of settlement, intermarriage, and cultural development, with historical evidence of Muslim communities in the region since the 8th century. Despite this long history, the Myanmar government stripped them of citizenship through the discriminatory 1982 Citizenship Law, rendering them stateless—described by the UN as "the world's most persecuted minority." The Rohingya traditionally practiced rice farming, fishing, and trade in Rakhine's coastal regions, maintaining a distinct cultural identity blending Islamic practices with local customs. Since the 1970s, they have endured systematic persecution including military campaigns (1978, 1991-1992, 2012, 2016-2017), restrictions on movement, marriage, education, and employment, forced labor, and violent pogroms. Today, over 1 million Rohingya live as refugees in overcrowded camps in Bangladesh's Cox's Bazar, while those remaining in Myanmar face apartheid-like conditions. Their ongoing crisis represents one of the 21st century's most urgent humanitarian catastrophes.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">1M+</span><span>Refugees displaced</span></div>
+                <div class="stat-card"><span class="stat-number">Rohingya</span><span>Indo-Aryan language</span></div>
+                <div class="stat-card"><span class="stat-number">Stateless</span><span>No citizenship since 1982</span></div>
+                <div class="stat-card"><span class="stat-number">600,000+</span><span>Remain in Myanmar</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Resilience Through Crisis:</strong> Despite unimaginable hardships, Rohingya refugees in Cox's Bazar have established schools, markets, and community organizations, with youth learning through informal education and some gaining international scholarships. Their resilience demonstrates the human spirit's capacity to maintain hope and dignity even in the world's largest refugee camp.
+            </div>
+
+            <h3>Historical Presence in Arakan/Rakhine</h3>
+            <p>The Rohingya's ancestors settled in Arakan (now Rakhine State) through waves of migration and local conversion to Islam over centuries. During the independent <strong>Arakan Kingdom</strong> (15th-18th centuries), Muslim communities thrived, with some kings employing Muslim titles and maintaining diplomatic ties with Bengal sultanates. British colonial rule (1826-1948) encouraged Bengali migration for labor, complicating modern identity questions. The Rohingya supported Allied forces during WWII while local Rakhine Buddhists often supported Japanese occupation, creating lasting tensions. After Burmese independence (1948), Rohingya initially participated in politics and were recognized as an ethnic group. However, the 1962 military coup began systematic marginalization. The <strong>1982 Citizenship Law</strong> excluded them from Myanmar's 135 recognized ethnic groups, declaring them "Bengali Muslims" illegally residing in Myanmar—erasing centuries of historical presence and rendering an entire population stateless.</p>
+
+            <h3>Culture, Language, and Religious Practices</h3>
+            <p>The Rohingya speak <strong>Rohingya</strong>, an Indo-Aryan language distinct from Burmese (Sino-Tibetan) and Rakhine (related to Burmese), with vocabulary from Arabic, Persian, and Urdu reflecting Islamic influences. Traditionally written in Arabic script with a modified alphabet (<strong>Hanifi</strong>), efforts now promote standardized orthography. Rohingya practice <strong>Sunni Islam</strong> following the Hanafi school, with religious life centered on mosques, madrasas, and Islamic festivals. Traditional practices include <strong>khatam</strong> (Quran recitation), <strong>mawlid</strong> (Prophet's birthday celebrations), and Sufi devotional music. Women's traditional dress features colorful <strong>longyi</strong> (wraparound skirts) and headscarves, while men wear lungyi and prayer caps. Rohingya cuisine blends Bengali, Burmese, and Middle Eastern influences—dishes like <strong>mezban</strong> (curry), <strong>falooda</strong> (sweet drink), and rice-based meals reflect multicultural heritage. Despite persecution attempts to erase their identity, Rohingya maintain strong cultural cohesion through religious practice, language preservation, and oral traditions.</p>
+
+            <h3>Systematic Persecution and Genocide</h3>
+            <p>The Rohingya have endured decades of state-sponsored persecution escalating to what international courts recognize as genocide. Restrictions include: requiring <strong>permission to marry</strong> (often denied or delayed), limits on childbearing (two-child policy in some areas), movement restrictions requiring travel permits, denial of higher education access, prohibition from certain professions, and forced labor. Military operations in <strong>1978 (Nagamin), 1991-1992 (Pyi Thaya), and 2016-2017 (clearance operations)</strong> involved mass killings, rape as a weapon, village burnings, and forced displacement. The August 2017 military crackdown following ARSA insurgent attacks resulted in systematic violence: over 24,000 killed, thousands of women raped, 392 villages destroyed, and 740,000 refugees fleeing to Bangladesh. Survivors report soldiers shooting fleeing civilians, burning people alive in houses, and throwing children into fires. The International Court of Justice ordered Myanmar to prevent genocide and preserve evidence. The International Criminal Court investigates crimes against humanity. Myanmar's military leaders face accountability proceedings, though justice remains distant for survivors.</p>
+
+            <h3>Refugee Crisis and Camp Life</h3>
+            <p>Cox's Bazar in Bangladesh hosts the world's largest refugee camp complex, housing over 900,000 Rohingya in overcrowded conditions. <strong>Kutupalong-Balukhali</strong> mega-camp features densely packed shelters on hillsides prone to landslides and flooding during monsoons. Refugees face: inadequate sanitation creating disease risk, food insecurity depending on aid distributions, limited livelihood opportunities (legally barred from formal employment), restricted movement, and vulnerability to trafficking and exploitation. Despite these conditions, refugees demonstrate remarkable resilience—organizing informal schools teaching Burmese, English, and Arabic; establishing markets and small businesses; creating art and literature documenting their experiences. Youth and women's groups advocate for education access and rights. However, life remains in limbo with no clear pathway to citizenship, voluntary return (unsafe without guarantees), or third-country resettlement (minimal opportunities). Bangladesh, itself densely populated and resource-constrained, hosts refugees with limited international support, creating tensions. The <strong>Bhasan Char relocation</strong> to a remote island raises concerns about isolation and living conditions.</p>
+
+            <h3>International Response and Path Forward</h3>
+            <p>The Rohingya crisis has generated international condemnation but limited effective action. The UN Fact-Finding Mission documented genocide, crimes against humanity, and war crimes, recommending prosecutions. <strong>The Gambia</strong> brought genocide charges against Myanmar at the International Court of Justice. The ICC investigates crimes. Western countries imposed sanctions on Myanmar military leaders. However, geopolitical interests—particularly China's and Russia's support for Myanmar at the UN Security Council—prevent stronger international intervention. Myanmar's 2021 military coup further complicated the situation. Advocacy organizations like <strong>Fortify Rights, Human Rights Watch</strong>, and Rohingya-led groups work tirelessly documenting abuses and seeking accountability. Solutions require: Myanmar recognizing Rohingya citizenship and rights; guarantees of safety for return; accountability for perpetrators; addressing root causes of discrimination; international pressure and support; and expanding resettlement opportunities. The Rohingya's struggle for justice, citizenship, and dignity continues, with their resilience inspiring global human rights movements. Young Rohingya emerging as leaders, scholars, and advocates give hope that their people's suffering will not be forgotten and that justice, though delayed, may eventually arrive.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1503595059197-b2c5f19ff9b6?w=800" alt="Rohingya refugee camp" loading="lazy">
+                    <div class="image-caption">Cox's Bazar refugee camp in Bangladesh, the world's largest sheltering Rohingya families</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Rohingya children" loading="lazy">
+                    <div class="image-caption">Rohingya children in refugee camp attending informal school to continue education</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800" alt="Traditional Rohingya family" loading="lazy">
+                    <div class="image-caption">Rohingya family maintaining cultural traditions and dignity despite displacement</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800" alt="Humanitarian aid distribution" loading="lazy">
+                    <div class="image-caption">Humanitarian aid distribution providing essential supplies to refugee families</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?w=800" alt="Traditional Rohingya dress" loading="lazy">
+                    <div class="image-caption">Traditional Rohingya women's dress featuring colorful longyi and cultural patterns</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=800" alt="Community resilience" loading="lazy">
+                    <div class="image-caption">Rohingya community members organizing education and support networks in camps</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/karen.html" class="related-card">
+                    <div class="related-icon">🎋</div>
+                    <h3>Karen</h3>
+                    <p class="related-location">Myanmar/Thailand</p>
+                    <span class="relationship-badge regional">Myanmar Minorities</span>
+                    <p class="related-description">Indigenous Myanmar people also facing persecution and displacement.</p>
+                </a>
+                <a href="/peoples/hmong.html" class="related-card">
+                    <div class="related-icon">🧵</div>
+                    <h3>Hmong</h3>
+                    <p class="related-location">Southeast Asia</p>
+                    <span class="relationship-badge similar">Refugee Experience</span>
+                    <p class="related-description">People who experienced mass displacement and refugee crisis following conflict.</p>
+                </a>
+                <a href="/peoples/tibetan.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Tibetan</h3>
+                    <p class="related-location">Tibet/Himalaya</p>
+                    <span class="relationship-badge similar">Persecution & Exile</span>
+                    <p class="related-description">People facing political persecution with large refugee population in exile.</p>
+                </a>
+                <a href="/peoples/ainu.html" class="related-card">
+                    <div class="related-icon">🐻</div>
+                    <h3>Ainu</h3>
+                    <p class="related-location">Japan/Russia</p>
+                    <span class="relationship-badge similar">Stateless History</span>
+                    <p class="related-description">Indigenous people who faced discrimination and denial of rights in nation-state.</p>
+                </a>
+                <a href="/peoples/dayak.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Dayak</h3>
+                    <p class="related-location">Borneo</p>
+                    <span class="relationship-badge regional">Southeast Asian Indigenous</span>
+                    <p class="related-description">Indigenous people navigating rights and recognition in modern Indonesia.</p>
+                </a>
+                <a href="/peoples/ifugao.html" class="related-card">
+                    <div class="related-icon">🌾</div>
+                    <h3>Ifugao</h3>
+                    <p class="related-location">Philippines</p>
+                    <span class="relationship-badge regional">Southeast Asian Culture</span>
+                    <p class="related-description">Indigenous people maintaining identity despite modernization pressures.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Ibrahim, Azeem. (2016). <em>The Rohingyas: Inside Myanmar's Hidden Genocide</em>. Hurst Publishers.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Ullah, A.K.M. Ahsan. (2011). <em>Rohingya Refugees to Bangladesh: Historical Exclusions and Contemporary Marginalization</em>. Journal of Immigrant & Refugee Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Wade, Francis. (2017). <em>Myanmar's Enemy Within: Buddhist Violence and the Making of a Muslim 'Other'</em>. Zed Books.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Farzana, Kazi Fahmida. (2017). <em>Memories of Burmese Rohingya Refugees: Contested Identity and Belonging</em>. Palgrave Macmillan.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Green, Penny, MacManus, Thomas, & de la Cour Venning, Alicia. (2015). <em>Countdown to Annihilation: Genocide in Myanmar</em>. International State Crime Initiative.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Lewa, Chris. (2009). <em>North Arakan: An Open Prison for the Rohingya in Burma</em>. Forced Migration Review.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Human Rights Watch. (2013). <em>"All You Can Do is Pray": Crimes Against Humanity and Ethnic Cleansing of Rohingya Muslims in Burma's Arakan State</em>. HRW.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">UN Fact-Finding Mission. (2018). <em>Report of the Independent International Fact-Finding Mission on Myanmar</em>. United Nations Human Rights Council.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1503595059197-b2c5f19ff9b6?w=800", caption: "Cox's Bazar refugee camp in Bangladesh, the world's largest sheltering Rohingya families" },
+            { src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800", caption: "Rohingya children in refugee camp attending informal school to continue education" },
+            { src: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800", caption: "Rohingya family maintaining cultural traditions and dignity despite displacement" },
+            { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800", caption: "Humanitarian aid distribution providing essential supplies to refugee families" },
+            { src: "https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?w=800", caption: "Traditional Rohingya women's dress featuring colorful longyi and cultural patterns" },
+            { src: "https://images.unsplash.com/photo-1509099863731-ef4bff19e808?w=800", caption: "Rohingya community members organizing education and support networks in camps" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

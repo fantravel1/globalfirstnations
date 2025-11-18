@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surma People: Lip Plate Tradition and Stick Fighting Champions | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <style>
+        :root { --surma-red: #8B0000; --earth-yellow: #DAA520; --tribal-green: #228B22; --white: #ecf0f1; --deep-brown: #654321; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--surma-red) 0%, var(--deep-brown) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--surma-red), var(--tribal-green)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(139,0,0,0.5); border: 5px solid var(--earth-yellow); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--surma-red); }
+        nav a { color: var(--surma-red); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--surma-red); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--surma-red); border-right: 3px solid var(--earth-yellow); }
+        h2 { color: var(--surma-red); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--surma-red); }
+        h3 { color: var(--tribal-green); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--surma-red), var(--tribal-green)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--earth-yellow); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--earth-yellow), var(--deep-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--surma-red), var(--tribal-green)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--surma-red); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--surma-red); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--surma-red); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🎨</span>
+            <h1>The Surma/Suri People</h1>
+            <p class="tagline">Lip Plate Tradition - Stick Fighting Champions - Body Art Masters</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Surma?</h2>
+            <p>The Surma (also called Suri) are a Nilotic agro-pastoralist people inhabiting the remote southwestern highlands of Ethiopia and the border regions of South Sudan, numbering approximately 200,000-300,000 people. They are internationally renowned for the dramatic <strong>lip plates</strong> (dhebi a tugoin) worn by women—large clay or wooden discs inserted into a cut in the lower lip, which can reach 12-15 cm in diameter. The Surma speak Surmic languages belonging to the Eastern Sudanic branch of Nilo-Saharan. Living in one of Africa's most isolated regions, the Surma maintained cultural autonomy until recently, practicing traditional religions, elaborate body decoration, and ritual stick fighting (<strong>donga</strong>). They combine cattle herding with cultivation of sorghum and maize in the fertile highlands. The Surma territory in the lower Omo Valley is characterized by dramatic landscapes, seasonal flooding, and rich biodiversity. Despite increasing external contact, the Surma preserve distinctive cultural practices including body painting, scarification, and ceremonial warfare.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">200K-300K</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">12-15cm</span><span>Lip plate diameter</span></div>
+                <div class="stat-card"><span class="stat-number">Surmic</span><span>Nilo-Saharan language</span></div>
+                <div class="stat-card"><span class="stat-number">Ethiopia/S. Sudan</span><span>Omo Valley region</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>The Lip Plate Tradition:</strong> When Surma girls reach about 15-18 years old, their lower lip is cut and progressively stretched over months using increasingly large clay plates. The larger the plate, traditionally the higher the bride-wealth payment. While often portrayed as "primitive," this practice is actually sophisticated body modification requiring skill, endurance, and cultural knowledge—similar to corsets, foot-binding, or modern cosmetic surgery in other cultures!
+            </div>
+
+            <h3>Lip Plates and Body Modification</h3>
+            <p>The <strong>lip plate</strong> (dhebi a tugoin) represents the Surma's most internationally recognized cultural practice. The process begins around age 15-20 when a girl's lower lip is cut by her mother or another woman. A small wooden peg is inserted, then progressively larger plates over months or years stretch the lip. Plates are made from fired clay, decorated with intricate designs, or carved from wood. Women remove plates when eating or sleeping, and insertion requires skill—the stretched lip must be folded to accommodate the large disc. Traditionally, larger plates correlated with higher bride-wealth, though this practice is changing. The origin of lip plates is debated—some oral traditions claim it began to make women unattractive to slave raiders, others see it as beauty enhancement or social status marker. Importantly, the practice is not universal—some Surma women choose not to undergo it, and attitudes are evolving. The Surma also practice <strong>scarification</strong>, with raised scars creating patterns on torsos and arms, and elaborate body painting using natural pigments from clay, ash, and plants.</p>
+
+            <h3>Donga: Ritual Stick Fighting</h3>
+            <p><strong>Donga</strong> (ceremonial stick fighting) is a crucial Surma cultural institution. Young unmarried men compete in ritualized combat using long wooden poles (donga), attempting to knock opponents down while demonstrating courage, strength, and fighting skill. Fighters wear minimal protection—perhaps a wrist guard or groin protection—and injuries are common, sometimes fatal. Donga tournaments occur after harvest season, bringing together villages for multi-day celebrations. The champion (winner of the tournament) gains tremendous prestige and becomes highly desirable to potential wives. Donga serves multiple functions: entertainment, courtship display (women watch and choose partners based on performance), conflict resolution mechanism (settling disputes through formalized combat), and warrior training. While criticized by outsiders for violence, Surma defend donga as essential cultural practice teaching bravery, self-discipline, and community bonds. The Ethiopian government has attempted to ban donga, with limited success—the practice continues in remote areas.</p>
+
+            <h3>Agro-Pastoral Economy and Cattle Culture</h3>
+            <p>The Surma practice mixed <strong>agro-pastoralism</strong>, combining cattle herding with cultivation. Cattle hold immense cultural and economic importance—representing wealth, providing milk and blood for sustenance, serving as bride-wealth, and featuring in religious ceremonies. Men focus on cattle management, taking herds to seasonal grazing areas, while women cultivate crops including sorghum, maize, and beans in highland areas with better rainfall. The Surma developed sophisticated flood-retreat agriculture along the Omo River, planting crops in nutrient-rich silt deposited by seasonal floods. This system sustained populations for generations but is now threatened by Ethiopian government dam construction on the Omo River, which disrupts natural flooding patterns. The Surma also practice hunting, gathering wild foods, and honey collection. Beekeeping using traditional hives provides honey for food and tej (honey wine). Resource management required careful cooperation between clans and age-sets.</p>
+
+            <h3>Social Organization and Traditional Religion</h3>
+            <p>Surma society organizes through <strong>patrilineal clans</strong> and <strong>age-sets</strong>, with elders holding decision-making authority. Unlike centralized states, Surma lack paramount chiefs—authority is dispersed among clan heads and ritual specialists. The <strong>komoru</strong> (rain priests) hold spiritual authority, conducting ceremonies to ensure rainfall and agricultural fertility. Traditional Surma religion is animistic, venerating <strong>Tumu</strong> (the sky god) and various spirits inhabiting natural features—rivers, mountains, large trees. Ancestor spirits require respect and offerings. Ritual specialists divine causes of illness, predict future events, and mediate between human and spiritual realms. Life cycle ceremonies mark birth, initiation (including lip plate insertion for girls and donga participation for boys), marriage, and death. Marriage involves elaborate bride-wealth negotiations, typically paid in cattle, with polygyny common among wealthy men.</p>
+
+            <h3>Modern Challenges and Cultural Tourism</h3>
+            <p>The Surma face dramatic contemporary challenges. The Ethiopian government's <strong>Gibe III Dam</strong> on the Omo River has devastated traditional flood-retreat agriculture, forcing sedentarization and creating food insecurity. Government development schemes, including forced villagization and sugar plantation establishment, displaced Surma communities from ancestral lands. <strong>Cultural tourism</strong> has become economically significant but controversial—tourists pay to photograph Surma people, particularly women with lip plates, creating economic dependency while some Surma feel exploited. Photography fees provide income but raise concerns about dignity, consent, and cultural commodification. Armed conflict with neighboring groups (Nyangatom, Dizi, Me'en) over cattle and grazing land intensified with automatic weapons availability. Evangelical Christian missions work to convert Surma, discouraging traditional practices like lip plates and donga. Despite pressures, many Surma maintain cultural practices and resist complete assimilation. Young people navigate tensions between traditional culture and modern education, Christianity versus traditional religion, and isolation versus integration into Ethiopian national society. Some Surma leaders advocate for cultural preservation while others embrace change, creating generational and ideological divisions within communities.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1549890762-1756c6e50e7c?w=800" alt="Surma woman with lip plate" loading="lazy">
+                    <div class="image-caption">Surma woman wearing traditional clay lip plate (dhebi a tugoin)</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800" alt="Donga stick fighting" loading="lazy">
+                    <div class="image-caption">Surma men engaged in donga ceremonial stick fighting tournament</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800" alt="Body painting" loading="lazy">
+                    <div class="image-caption">Surma people with elaborate body painting using natural pigments</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800" alt="Cattle herding" loading="lazy">
+                    <div class="image-caption">Surma pastoralists with cattle in the Omo Valley highlands</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Omo Valley landscape" loading="lazy">
+                    <div class="image-caption">Dramatic landscape of lower Omo Valley, Surma traditional territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Traditional village" loading="lazy">
+                    <div class="image-caption">Traditional Surma village with thatched huts in remote highlands</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/hamer.html" class="related-card">
+                    <div class="related-icon">🐂</div>
+                    <h3>Hamer</h3>
+                    <p class="related-location">Ethiopia</p>
+                    <span class="relationship-badge regional">Omo Valley Neighbors</span>
+                    <p class="related-description">Fellow Omo Valley people with bull-jumping initiation ceremonies.</p>
+                </a>
+                <a href="/peoples/mursi.html" class="related-card">
+                    <div class="related-icon">💄</div>
+                    <h3>Mursi</h3>
+                    <p class="related-location">Ethiopia</p>
+                    <span class="relationship-badge similar">Lip Plate Relatives</span>
+                    <p class="related-description">Close relatives who also practice lip plate tradition and stick fighting.</p>
+                </a>
+                <a href="/peoples/nyangatom.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Nyangatom</h3>
+                    <p class="related-location">Ethiopia/South Sudan</p>
+                    <span class="relationship-badge regional">Pastoralist Rivals</span>
+                    <p class="related-description">Neighboring pastoralists with historic cattle raiding conflicts.</p>
+                </a>
+                <a href="/peoples/dinka.html" class="related-card">
+                    <div class="related-icon">🐄</div>
+                    <h3>Dinka</h3>
+                    <p class="related-location">South Sudan</p>
+                    <span class="relationship-badge similar">Nilotic Relatives</span>
+                    <p class="related-description">Fellow Nilotic cattle herders with similar cultural values.</p>
+                </a>
+                <a href="/peoples/karo.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Karo</h3>
+                    <p class="related-location">Ethiopia</p>
+                    <span class="relationship-badge regional">Body Art Masters</span>
+                    <p class="related-description">Omo Valley people renowned for elaborate body painting.</p>
+                </a>
+                <a href="/peoples/turkana.html" class="related-card">
+                    <div class="related-icon">🐫</div>
+                    <h3>Turkana</h3>
+                    <p class="related-location">Kenya</p>
+                    <span class="relationship-badge similar">Nilotic Pastoralists</span>
+                    <p class="related-description">Nilotic pastoralists in similarly harsh environment.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Abbink, Jon. (2003). "Love and Death of Cattle: The Paradox in Suri Attitudes Toward Livestock." <em>Ethnos</em> 68(3): 341-364.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">LaTosky, Shauna. (2004). "Reflections on a Cut Lip: Girls and Lip Plates in Southern Ethiopia." <em>Ethnology</em> 43(4): 343-355.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Turton, David. (2004). "Lip-plates and 'the People Who Take Photographs': Uneasy Encounters between Mursi and Tourists in Southern Ethiopia." <em>Anthropology Today</em> 20(3): 3-8.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Abbink, Jon. (1994). "Changing Patterns of 'Ethnic' Violence: Peasant-Pastoralist Confrontation in Southern Ethiopia." <em>Sociologus</em> 44(1): 66-78.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Tornay, Serge. (2009). "Peoples and Cultures of the Lake Turkana-Omo Valley." In <em>Research on Lake Turkana</em>, edited by Nathalie Ginsburg. UNESCO.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Bassi, Marco. (2011). "Primary Identities in the Lower Omo Valley: Migration, Cataclysm, Conflict and Amalgamation, 1750-1910." <em>Journal of Eastern African Studies</em> 5(1): 129-157.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Lydall, Jean, & Strecker, Ivo. (1979). <em>The Hamar of Southern Ethiopia</em>. Arbeiten aus dem Institut für Völkerkunde. [Includes Surma comparisons]</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Human Rights Watch. (2012). <em>What Will Happen If Hunger Comes? Abuses Against the Indigenous Peoples of Ethiopia's Lower Omo Valley</em>. HRW.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1549890762-1756c6e50e7c?w=800", caption: "Surma woman wearing traditional clay lip plate (dhebi a tugoin)" },
+            { src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800", caption: "Surma men engaged in donga ceremonial stick fighting tournament" },
+            { src: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800", caption: "Surma people with elaborate body painting using natural pigments" },
+            { src: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800", caption: "Surma pastoralists with cattle in the Omo Valley highlands" },
+            { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800", caption: "Dramatic landscape of lower Omo Valley, Surma traditional territory" },
+            { src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800", caption: "Traditional Surma village with thatched huts in remote highlands" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

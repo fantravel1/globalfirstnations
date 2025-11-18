@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makah People: Treaty Whale Hunters of the Pacific Northwest | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐋</text></svg>">
+    <style>
+        :root { --makah-blue: #003f87; --whale-gray: #4A5568; --ocean-teal: #008B8B; --white: #ecf0f1; --cedar-brown: #8B7355; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--makah-blue) 0%, var(--whale-gray) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--makah-blue), var(--ocean-teal)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,63,135,0.5); border: 5px solid var(--cedar-brown); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--makah-blue); }
+        nav a { color: var(--makah-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--makah-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--makah-blue); border-right: 3px solid var(--ocean-teal); }
+        h2 { color: var(--makah-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--makah-blue); }
+        h3 { color: var(--ocean-teal); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--makah-blue), var(--ocean-teal)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--cedar-brown); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--whale-gray), var(--ocean-teal)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--makah-blue), var(--ocean-teal)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--makah-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--makah-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--makah-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🐋</span>
+            <h1>The Makah People</h1>
+            <p class="tagline">Treaty Whale Hunters - Cape Flattery Guardians - Ocean-Going Canoe Masters</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Makah?</h2>
+            <p>The Makah (Qʷidiččaʔa·tx̌, "people who live by the rocks and seagulls") are a Pacific Northwest indigenous nation of approximately 3,000 enrolled members, inhabiting the northwestern tip of Washington State's Olympic Peninsula at Cape Flattery—the most northwestern point in the contiguous United States. For over 4,000 years, the Makah have been renowned as master whale hunters, venturing into the Pacific Ocean in massive cedar canoes to hunt gray whales using harpoons, skill, and spiritual preparation. Their 1855 Treaty of Neah Bay uniquely guaranteed their right to whale hunting, making them the only U.S. tribe with explicit treaty-protected whaling rights. Though commercial whaling ended traditional hunts in the 1920s, the Makah successfully resumed limited gray whale hunting in 1999 under treaty rights, sparking international controversy but affirming indigenous sovereignty. Today the Makah maintain cultural traditions including cedar canoe carving, basketry, and language revitalization while managing fisheries, tourism, and advocating for treaty rights.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">3,000</span><span>Enrolled members</span></div>
+                <div class="stat-card"><span class="stat-number">Qʷidiččaʔa·tx̌</span><span>Makah language</span></div>
+                <div class="stat-card"><span class="stat-number">1855</span><span>Treaty of Neah Bay</span></div>
+                <div class="stat-card"><span class="stat-number">Washington State</span><span>Cape Flattery</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Ozette Archaeological Treasure:</strong> In 1970, a massive mudslide revealed the buried village of Ozette, preserved for 500 years like a Pacific Northwest Pompeii! Archaeologists recovered over 55,000 artifacts—whale harpoons, seal clubs, carved boxes, cedar baskets, even a complete cedar longhouse. This discovery revolutionized understanding of pre-contact Makah culture and now fills the Makah Cultural and Research Center museum!
+            </div>
+
+            <h3>Whale Hunting Tradition</h3>
+            <p>The Makah are among the few indigenous peoples worldwide who traditionally hunted the largest animals on Earth. <strong>Gray whale</strong> hunting required extraordinary skill, courage, and spiritual preparation. Whalers underwent rigorous training, ritual purification through bathing in cold streams, fasting, and prayer. Eight-man crews paddled huge <strong>cedar canoes</strong> (up to 40 feet long) miles offshore into dangerous Pacific swells. The harpooner stood in the bow with a 18-foot yew wood shaft tipped with a mussel-shell blade and secured with cedar bark rope and inflated seal skin floats. Striking a 30-40 ton whale required perfect timing and strength. The wounded whale dove deep, pulling floats underwater. Crews followed for hours or days, adding more harpoons and floats until the exhausted whale could be killed and towed to shore. A single whale provided tons of meat, blubber for oil, and bone for tools—feeding the entire village for months. Successful whalers gained immense prestige. This dangerous hunt required not just physical skill but spiritual power obtained through ritual and hereditary right.</p>
+
+            <h3>Cedar Canoes and Maritime Culture</h3>
+            <p>The Makah lived between forest and ocean, developing one of the Pacific Northwest's most sophisticated maritime cultures. They crafted enormous <strong>ocean-going canoes</strong> from single western red cedar logs, skillfully carved and steamed to widen the hull. These vessels, some over 40 feet long, could carry dozens of people or tons of cargo through violent ocean swells. Besides whaling, the Makah hunted seals, sea lions, sea otters (before commercial extinction), and porpoises. They caught halibut weighing hundreds of pounds using ingenious bent-wood hooks. Reef-netting and weirs captured salmon runs. The Makah were expert traders, traveling by canoe to Vancouver Island, the Columbia River, and throughout Puget Sound, exchanging whale oil, dentalia shells (traditional currency), and otter pelts for goods from inland tribes. Their five permanent villages—Neah Bay, Waatch, Sooes, Ozette, and Bahaada—consisted of massive <strong>cedar longhouses</strong> housing extended families, with carved posts and beams depicting family crests and histories.</p>
+
+            <h3>The Treaty of Neah Bay and Reservation Era</h3>
+            <p>The 1855 <strong>Treaty of Neah Bay</strong> between the Makah and the United States established a reservation at the traditional village site of Neah Bay but, critically, explicitly reserved the Makah's "right of taking fish and of whaling or sealing at usual and accustomed grounds and stations." This treaty language would become crucial 140+ years later. The reservation era brought massive changes—the U.S. government established a school, Christian missionaries arrived, and traditional practices faced suppression. However, the Makah's remote location and determination helped preserve cultural knowledge. Commercial whaling operations devastated Pacific gray whale populations by the early 1900s, and the Makah's last traditional whale hunt occurred in the 1920s as whales became too scarce. Boarding schools attempted to erase language and culture, though elders maintained traditional knowledge in private. The Makah developed commercial fishing enterprises, particularly halibut and salmon, which remain economically important today.</p>
+
+            <h3>Resumption of Whaling and Sovereignty Rights</h3>
+            <p>When gray whales recovered from near-extinction and were removed from the Endangered Species List in 1994, the Makah petitioned to resume treaty-protected whaling. This sparked intense controversy—animal rights groups protested, environmental organizations sued, and international media descended on Neah Bay. The Makah argued that whaling was central to cultural identity, protected by binding treaty, and that sustainable harvest of recovered whale populations honored ancestors and taught youth traditional values. After years of legal battles, environmental reviews, and training in both traditional methods and humane killing techniques, the Makah conducted their first hunt in over 70 years on May 17, 1999, successfully harvesting a gray whale. The event was livestreamed globally, celebrated by the community but protested by activists. Subsequent legal challenges halted hunts for years. In 2024, the Makah won renewed permits, though litigation continues. The whaling controversy encapsulates broader struggles over indigenous sovereignty, treaty rights, traditional practices versus modern environmentalism, and who controls indigenous cultural revival.</p>
+
+            <h3>Cultural Revitalization and Contemporary Life</h3>
+            <p>The <strong>Makah Cultural and Research Center</strong>, opened in 1979, houses artifacts from Ozette and maintains cultural knowledge. Traditional <strong>cedar canoe carving</strong> experienced revival—Makah youth learn ancient techniques from elders, carving ocean-going canoes that participate in Tribal Canoe Journeys, annual gatherings where dozens of Northwest Coast tribes paddle traditional canoes to host communities. The <strong>Makah language</strong>, a Wakashan language related to Nuu-chah-nulth, is critically endangered but being revitalized through immersion programs, digital apps, and elder-youth mentorship. Traditional arts—basketry, weaving, wood carving—are practiced and taught. The Makah manage commercial fisheries and a marina, operate tribal government services including schools and health clinics, and maintain territorial sovereignty. They fight for treaty-protected fishing rights and ocean resources threatened by commercial overfishing and climate change. The whaling rights struggle continues as a matter of principle—even if hunts don't occur annually, the treaty-protected right affirms Makah sovereignty and cultural continuity connecting them to ancestors and ensuring knowledge transmission to future generations.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Gray whale" loading="lazy">
+                    <div class="image-caption">Gray whale, centerpiece of Makah traditional culture and treaty-protected hunts</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Traditional canoe" loading="lazy">
+                    <div class="image-caption">Traditional ocean-going cedar canoe used for whaling and long-distance travel</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800" alt="Pacific Northwest coast" loading="lazy">
+                    <div class="image-caption">Rugged Pacific coast at Cape Flattery, Makah ancestral homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=800" alt="Halibut fishing" loading="lazy">
+                    <div class="image-caption">Halibut fishing continues as important subsistence and commercial practice</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Cedar trees" loading="lazy">
+                    <div class="image-caption">Western red cedar forests providing canoes, houses, and countless tools</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800" alt="Traditional basket" loading="lazy">
+                    <div class="image-caption">Intricate cedar bark basket weaving traditional art being revitalized today</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/haida.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Haida</h3>
+                    <p class="related-location">British Columbia/Alaska</p>
+                    <span class="relationship-badge regional">Northwest Coast Neighbors</span>
+                    <p class="related-description">Fellow Pacific Northwest maritime culture with ocean-going canoes and art.</p>
+                </a>
+                <a href="/peoples/tlingit.html" class="related-card">
+                    <div class="related-icon">🐻</div>
+                    <h3>Tlingit</h3>
+                    <p class="related-location">Southeast Alaska</p>
+                    <span class="relationship-badge regional">Pacific Northwest Culture</span>
+                    <p class="related-description">Alaska coastal people with sophisticated maritime and artistic traditions.</p>
+                </a>
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic Canada/Greenland</p>
+                    <span class="relationship-badge similar">Marine Hunters</span>
+                    <p class="related-description">Arctic whale hunters with similar maritime adaptation and cultural traditions.</p>
+                </a>
+                <a href="/peoples/yupik.html" class="related-card">
+                    <div class="related-icon">🐋</div>
+                    <h3>Yup'ik</h3>
+                    <p class="related-location">Alaska/Siberia</p>
+                    <span class="relationship-badge regional">Alaska Natives</span>
+                    <p class="related-description">Alaska Native whale hunters with subsistence maritime traditions.</p>
+                </a>
+                <a href="/peoples/navajo.html" class="related-card">
+                    <div class="related-icon">🐑</div>
+                    <h3>Navajo (Diné)</h3>
+                    <p class="related-location">Southwest U.S.</p>
+                    <span class="relationship-badge regional">U.S. Indigenous</span>
+                    <p class="related-description">Largest U.S. tribe maintaining language and sovereignty rights.</p>
+                </a>
+                <a href="/peoples/maori.html" class="related-card">
+                    <div class="related-icon">🌊</div>
+                    <h3>Māori</h3>
+                    <p class="related-location">New Zealand</p>
+                    <span class="relationship-badge similar">Ocean Voyagers</span>
+                    <p class="related-description">Polynesian people with ocean-going canoe traditions and treaty rights.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Colson, Elizabeth. (1953). <em>The Makah Indians: A Study of an Indian Tribe in Modern American Society</em>. University of Manchester Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Huelsbeck, David R. (1994). "Mammals and Fish in the Subsistence Economy of Ozette." In <em>Ozette Archaeological Project Research Reports, Volume II</em>. Washington State University.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Renker, Ann M., & Gunther, Erna. (1990). "Makah." In <em>Handbook of North American Indians, Vol. 7: Northwest Coast</em>, edited by Wayne Suttles. Smithsonian Institution.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Sullivan, Robert. (2000). <em>A Whale Hunt</em>. Scribner.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Erikson, Patricia Pierce. (1999). "A-Whaling We Will Go: Encounters of Knowledge and Memory at the Makah Cultural and Research Center." <em>Cultural Anthropology</em> 14(4): 556-583.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Kirk, Ruth, & Daugherty, Richard D. (1978). <em>Exploring Washington Archaeology</em>. University of Washington Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Bowechop, Janine, & Erikson, Patricia Pierce. (2004). "The Makah Cultural and Research Center: Collecting, Preserving, and Honoring Traditions." In <em>Museums and Source Communities</em>, edited by Laura Peers & Alison K. Brown. Routledge.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Happynook, Tom Mexsis. (2017). "Our Way of Life: Nuu-chah-nulth Whaling." In <em>Whaling and History: Perspectives on the Evolution of the Industry</em>, edited by Jan Erik Ringstad. Brill.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Gray whale, centerpiece of Makah traditional culture and treaty-protected hunts" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Traditional ocean-going cedar canoe used for whaling and long-distance travel" },
+            { src: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800", caption: "Rugged Pacific coast at Cape Flattery, Makah ancestral homeland" },
+            { src: "https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=800", caption: "Halibut fishing continues as important subsistence and commercial practice" },
+            { src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", caption: "Western red cedar forests providing canoes, houses, and countless tools" },
+            { src: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800", caption: "Intricate cedar bark basket weaving traditional art being revitalized today" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>

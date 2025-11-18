@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleut People: Baidarka Masters and Aleutian Island Survivors | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛶</text></svg>">
+    <style>
+        :root { --aleut-blue: #003366; --ocean-teal: #008B8B; --storm-gray: #778899; --white: #ecf0f1; --ice-white: #F0F8FF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--aleut-blue) 0%, var(--storm-gray) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--aleut-blue), var(--ocean-teal)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,51,102,0.5); border: 5px solid var(--ice-white); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--aleut-blue); }
+        nav a { color: var(--aleut-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--aleut-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--aleut-blue); border-right: 3px solid var(--ocean-teal); }
+        h2 { color: var(--aleut-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--aleut-blue); }
+        h3 { color: var(--ocean-teal); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--aleut-blue), var(--ocean-teal)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--storm-gray); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--ocean-teal), var(--storm-gray)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--aleut-blue), var(--ocean-teal)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--aleut-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--aleut-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--aleut-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="icon">🛶</span>
+            <h1>The Aleut (Unangan) People</h1>
+            <p class="tagline">Baidarka Kayak Masters - Aleutian Island Survivors - Ocean Hunters</p>
+        </header>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Aleut?</h2>
+            <p>The Aleut, who call themselves Unangan (coastal people) or Unangax̂, are the indigenous people of the Aleutian Islands, an archipelago stretching 1,200 miles from Alaska toward Russia through some of Earth's most treacherous waters. Numbering approximately 17,000 today, the Aleut developed one of the world's most sophisticated maritime cultures, hunting sea otters, whales, and seals from elegant skin-covered kayaks called baidarkas (igyax in Unangan). For over 9,000 years they thrived in a harsh environment of volcanic islands, fierce storms, and cold seas, creating complex societies with distinctive language, art, and technology. Russian colonization beginning in 1741 brought catastrophic population collapse through violence, disease, and forced labor harvesting sea otter pelts for the fur trade. During World War II, the U.S. government forcibly evacuated Aleut communities, leading to further cultural disruption. Today the Unangan maintain cultural identity through language revitalization, traditional crafts like basket weaving, and protection of ancestral lands and waters.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">17,000</span><span>Population</span></div>
+                <div class="stat-card"><span class="stat-number">Unangan</span><span>Aleut language</span></div>
+                <div class="stat-card"><span class="stat-number">1,200 mi</span><span>Aleutian chain length</span></div>
+                <div class="stat-card"><span class="stat-number">Alaska/Russia</span><span>Island homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Baidarka Kayak Excellence:</strong> Aleut baidarkas were engineering marvels—bifurcated bows split waves cleanly, frames of driftwood and whale bone were lashed without metal, and sea lion skin covers were waterproofed with sea mammal oil. Russian explorers were so impressed they adopted baidarkas for their own expeditions, and these kayaks influenced modern kayak design worldwide!
+            </div>
+
+            <h3>Ancient Maritime Adaptation</h3>
+            <p>Archaeological evidence shows Unangan ancestors colonized the Aleutian Islands at least 9,000 years ago, adapting to one of the most challenging environments humans have inhabited. The volcanic islands offered no trees (except occasional driftwood), limited land mammals, and violent weather—the Aleutians are called the "Cradle of Storms" for their constant gales and fog. The Aleut survived entirely on marine resources: sea otters, fur seals, sea lions, whales, halibut, salmon, octopus, sea urchins, clams, and seabirds. Villages (ulax) consisted of semi-subterranean houses (barabaras) built into hillsides for insulation, with whale bone and driftwood frames covered with sod and grass. These communal houses could shelter 40-50 people through harsh winters. <strong>Mummies</strong> of important individuals were preserved in volcanic caves using sophisticated techniques. The Aleut developed the <strong>Unangam tunuu</strong> language with eastern and western dialects, part of the Eskimo-Aleut language family though culturally and linguistically distinct from Inuit and Yupik peoples.</p>
+
+            <h3>Sea Hunting Technology and Expertise</h3>
+            <p>The Aleut were supreme maritime hunters, developing specialized equipment unmatched in the Arctic. The <strong>baidarka (igyax)</strong> kayak came in one, two, or three-hatch versions for different purposes. Hunters wore <strong>gut parkas</strong> (kamleika) made from sea lion or seal intestines sewn watertight, with hoods tied around the kayak hatch creating a waterproof seal allowing the kayaker to roll and survive capsizing in freezing seas. <strong>Throwing boards</strong> (atlatls) launched harpoons with deadly force at sea otters and seals. Poisoned harpoon points used aconite (monkshood plant toxin) that killed whales hours or days later when they washed ashore. <strong>Basketry</strong> reached extraordinary refinement—Aleut women wove grass baskets so tightly they held water, with intricate patterns and up to 2,500 stitches per square inch. These baskets are considered among the finest in the world. Wooden hunting visors protected eyes from sun and spray while providing spiritual power through painted designs and sea lion whiskers.</p>
+
+            <h3>Russian Colonization and the Fur Trade</h3>
+            <p>Vitus Bering's 1741 Russian expedition to Alaska made first contact with the Aleut, beginning a catastrophic era. Russian fur traders (promyshlenniki) systematically enslaved Aleut men as sea otter hunters, holding women and children hostage to force compliance. The <strong>Russian-American Company</strong> monopolized the fur trade, extracting millions of sea otter pelts that nearly drove the species to extinction. Aleut population collapsed from an estimated 15,000-25,000 in 1740 to fewer than 2,000 by 1900 due to Russian violence, forced labor, introduced diseases (smallpox, influenza, tuberculosis), and starvation when hunters were unable to provide for their families. The <strong>Russian Orthodox Church</strong> missionized the Aleut, creating a syncretic Christianity that incorporated Aleut beliefs and persists today as a core cultural identity. Father Ivan Veniaminov (later Saint Innocent) created the first written Aleut language in Cyrillic script in the 1820s. When the U.S. purchased Alaska in 1867, conditions improved slightly but cultural disruption continued.</p>
+
+            <h3>World War II Internment and Relocation</h3>
+            <p>World War II brought new trauma. After Japan bombed Dutch Harbor and occupied Attu and Kiska islands in 1942, the U.S. military forcibly evacuated nearly 900 Aleuts from the Aleutian and Pribilof Islands. They were transported to Southeast Alaska and imprisoned in abandoned fish canneries and gold mines with inadequate food, sanitation, and medical care. Approximately 10% died during the two-year internment from disease and poor conditions. Meanwhile, the U.S. military burned Aleut villages to prevent Japanese use, destroying homes, churches, and cultural artifacts accumulated over generations. When internees finally returned in 1945, they found communities devastated. The 1988 <strong>Civil Liberties Act</strong> finally acknowledged this injustice and provided reparations, but the cultural and psychological damage was immense. The abandoned village sites remain as stark reminders of this forgotten American concentration camp system.</p>
+
+            <h3>Cultural Revitalization and Contemporary Life</h3>
+            <p>Despite catastrophic population loss and cultural disruption, the Unangan persist. The <strong>Aleut language</strong>, critically endangered with fewer than 100 native speakers, is being revitalized through school programs, dictionaries, and digital resources. <strong>Traditional basket weaving</strong> experienced a renaissance, with master weavers teaching younger generations techniques nearly lost during the 20th century. The <strong>Museum of the Aleutians</strong> in Unalaska preserves archaeological and cultural heritage. Aleut organizations like the <strong>Aleut Corporation</strong> and <strong>Aleutian Pribilof Islands Association</strong> manage land claims, provide social services, and protect cultural resources. Commercial fishing and fish processing employ many Aleut in their traditional marine economy adapted to modern markets. <strong>Subsistence hunting</strong> of seals, sea lions, and fish continues under Alaska Native subsistence rights. Environmental activism protects the Bering Sea ecosystem from overfishing and climate change impacts. The Aleut maintain identity through Russian Orthodox faith traditions, storytelling, traditional foods, and pride in their ancestors' extraordinary adaptation to one of Earth's harshest environments.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Aleutian Islands landscape" loading="lazy">
+                    <div class="image-caption">Volcanic Aleutian Islands chain stretching through the North Pacific</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Kayak on water" loading="lazy">
+                    <div class="image-caption">Traditional baidarka-style kayak, engineered for treacherous Aleutian waters</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=800" alt="Sea otter" loading="lazy">
+                    <div class="image-caption">Sea otters hunted by Aleut for thousands of years until near-extinction in fur trade</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800" alt="Traditional basket" loading="lazy">
+                    <div class="image-caption">Exquisite Aleut grass basket weaving with thousands of stitches per square inch</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800" alt="Stormy ocean" loading="lazy">
+                    <div class="image-caption">Fierce storms of the "Cradle of Storms" that Aleut mariners navigated for millennia</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1578393815150-350526e4c475?w=800" alt="Orthodox church" loading="lazy">
+                    <div class="image-caption">Russian Orthodox church representing syncretic Aleut Christianity since 1700s</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic Canada/Greenland</p>
+                    <span class="relationship-badge regional">Arctic Relatives</span>
+                    <p class="related-description">Related Eskimo-Aleut people adapting to Arctic maritime environment.</p>
+                </a>
+                <a href="/peoples/yupik.html" class="related-card">
+                    <div class="related-icon">🐋</div>
+                    <h3>Yup'ik</h3>
+                    <p class="related-location">Alaska/Siberia</p>
+                    <span class="relationship-badge similar">Alaska Natives</span>
+                    <p class="related-description">Neighboring Alaska Native people with maritime hunting traditions.</p>
+                </a>
+                <a href="/peoples/haida.html" class="related-card">
+                    <div class="related-icon">🗿</div>
+                    <h3>Haida</h3>
+                    <p class="related-location">British Columbia/Alaska</p>
+                    <span class="relationship-badge similar">Maritime Culture</span>
+                    <p class="related-description">Pacific Northwest maritime people known for ocean-going canoes and art.</p>
+                </a>
+                <a href="/peoples/tlingit.html" class="related-card">
+                    <div class="related-icon">🐻</div>
+                    <h3>Tlingit</h3>
+                    <p class="related-location">Southeast Alaska</p>
+                    <span class="relationship-badge regional">Alaskan Neighbors</span>
+                    <p class="related-description">Alaska coastal people with sophisticated maritime traditions and art.</p>
+                </a>
+                <a href="/peoples/ainu.html" class="related-card">
+                    <div class="related-icon">🐻</div>
+                    <h3>Ainu</h3>
+                    <p class="related-location">Japan/Russia</p>
+                    <span class="relationship-badge similar">North Pacific Maritime</span>
+                    <p class="related-description">Indigenous people of northern Japan with maritime hunting culture.</p>
+                </a>
+                <a href="/peoples/sami.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Sámi</h3>
+                    <p class="related-location">Northern Europe</p>
+                    <span class="relationship-badge similar">Circumpolar Indigenous</span>
+                    <p class="related-description">Arctic indigenous people of Scandinavia maintaining traditional livelihoods.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Black, Lydia T. (2004). <em>Russians in Alaska, 1732-1867</em>. University of Alaska Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Laughlin, William S. (1980). <em>Aleuts: Survivors of the Bering Land Bridge</em>. Holt, Rinehart and Winston.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Kohlhoff, Dean. (1995). <em>When the Wind Was a River: Aleut Evacuation in World War II</em>. University of Washington Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bergsland, Knut. (1994). <em>Aleut Dictionary: Unangam Tunudgusii</em>. Alaska Native Language Center.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Hudson, Ray. (1999). <em>Moments Rightly Placed: An Aleutian Memoir</em>. Epicenter Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Crowell, Aron L., Steffian, Amy F., & Pullar, Gordon L. (Eds.). (2001). <em>Looking Both Ways: Heritage and Identity of the Alutiiq People</em>. University of Alaska Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Veltre, Douglas W., & McCartney, Allen P. (2002). "Russian Exploitation of Aleuts and Fur Seals." In <em>Smithsonian Contributions to Anthropology</em> 48: 1-699.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Lantis, Margaret. (1984). "Aleut." In <em>Handbook of North American Indians, Vol. 5: Arctic</em>, edited by David Damas. Smithsonian Institution.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Volcanic Aleutian Islands chain stretching through the North Pacific" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Traditional baidarka-style kayak, engineered for treacherous Aleutian waters" },
+            { src: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=800", caption: "Sea otters hunted by Aleut for thousands of years until near-extinction in fur trade" },
+            { src: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800", caption: "Exquisite Aleut grass basket weaving with thousands of stitches per square inch" },
+            { src: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800", caption: "Fierce storms of the \"Cradle of Storms\" that Aleut mariners navigated for millennia" },
+            { src: "https://images.unsplash.com/photo-1578393815150-350526e4c475?w=800", caption: "Russian Orthodox church representing syncretic Aleut Christianity since 1700s" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>
