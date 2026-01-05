@@ -2,33 +2,229 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nganasan People | Indigenous Peoples Repository</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nganasan People: Northernmost Indigenous People of Eurasia | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦌</text></svg>">
     <style>
-        :root { --primary: #1e3a8a; --secondary: #3b82f6; }
+        :root { --polar-blue: #1e3a8a; --aurora-purple: #7c3aed; --snow-white: #f8fafc; --arctic-teal: #0d9488; --midnight: #0f172a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(135deg, var(--primary), var(--secondary)); background-attachment: fixed; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 30px; border-radius: 15px; margin-bottom: 30px; }
-        h1 { font-size: 3em; }
-        nav { background: white; padding: 15px; border-radius: 10px; margin-bottom: 30px; }
-        nav a { color: var(--primary); text-decoration: none; margin: 0 15px; font-weight: 600; }
-        .content { background: white; padding: 40px; border-radius: 15px; }
-        h2 { color: var(--primary); font-size: 2.2em; margin-bottom: 20px; }
-        footer { background: var(--primary); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-top: 30px; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--midnight) 0%, var(--polar-blue) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--polar-blue), var(--aurora-purple)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(30,58,138,0.5); border: 5px solid var(--arctic-teal); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--polar-blue); }
+        nav a { color: var(--polar-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--polar-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--polar-blue); border-right: 3px solid var(--aurora-purple); }
+        h2 { color: var(--polar-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--polar-blue); }
+        h3 { color: var(--aurora-purple); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--polar-blue), var(--aurora-purple)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--arctic-teal); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--arctic-teal), var(--aurora-purple)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--polar-blue), var(--aurora-purple)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--polar-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--polar-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--polar-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🦌 Nganasan People</h1>
-            <p class="tagline">Northernmost Indigenous People of Eurasia</p>
+            <span class="icon">🦌</span>
+            <h1>The Nganasan People</h1>
+            <p class="tagline">Northernmost Indigenous People of Eurasia - Wild Reindeer Hunters - Masters of the Polar Night</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
-            <h2>Nganasan People</h2>
-            <p>The Nganasan (fewer than 1,000, ~125 fluent speakers) are the northernmost indigenous people of Eurasia, inhabiting the Taymyr Peninsula at 72-75°N. They endure the most extreme Arctic conditions: -50°C winters, 2-3 months of polar night, permafrost, and isolation. Wild reindeer hunting, powerful shamanic traditions, and survival at the very edge of human habitation characterize this critically endangered culture.</p>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Nganasan?</h2>
+            <p>The Nganasan are the northernmost indigenous people of Eurasia, inhabiting the remote Taymyr Peninsula in Arctic Russia at latitudes of 72-75°N—further north than any other permanent human settlement in the Eastern Hemisphere. Numbering fewer than 1,000 individuals (with only about 125 fluent speakers of their language remaining), the Nganasan represent one of Earth's most endangered cultures and one of humanity's most extreme adaptations to polar environments. For millennia, they survived by hunting wild reindeer, fishing Arctic rivers, and developing elaborate shamanic traditions that helped them endure winters where temperatures plunge below -50°C and the polar night lasts for months. Their culture offers unparalleled insights into human survival at the edge of habitability.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~800</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">~125</span><span>Fluent speakers</span></div>
+                <div class="stat-card"><span class="stat-number">75°N</span><span>Latitude homeland</span></div>
+                <div class="stat-card"><span class="stat-number">-50°C</span><span>Winter temperatures</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Life Beyond the Arctic Circle:</strong> The Nganasan live so far north that they experience 2-3 months of continuous polar night in winter—complete darkness 24 hours a day. Yet their shamans developed elaborate rituals to "bring back the sun" each spring, and their knowledge of the Arctic environment allowed survival where few humans could even imagine living!
+            </div>
+
+            <h3>The Taymyr Peninsula: Edge of the World</h3>
+            <p>The Taymyr Peninsula juts into the Arctic Ocean as the northernmost point of the Asian continent—a vast, treeless expanse of permafrost, tundra, and polar desert. This is among Earth's most extreme inhabited environments: winter temperatures routinely drop below -50°C, blizzards can rage for days, and the polar night brings months of darkness. Brief summers (6-8 weeks of continuous daylight) bring temperatures barely above freezing, vast mosquito swarms, and the annual wild reindeer migration that was central to Nganasan survival. The landscape is dotted with lakes and rivers, providing fish during the ice-free months. This harsh world, isolated from other human populations, allowed the Nganasan to develop their unique culture virtually undisturbed until the 20th century.</p>
+
+            <h3>Wild Reindeer Hunting Culture</h3>
+            <p>Unlike neighboring peoples who herded domesticated reindeer, the Nganasan traditionally relied on hunting <strong>wild reindeer</strong>—the vast herds that migrate across the Taymyr tundra each year. The fall hunt was the most important event of the year, determining whether families would survive the winter. Hunters used bows and spears, driving reindeer into lakes or rivers where they could be killed from kayaks, or into concealed corrals. Every part of the reindeer was used: meat for food (both fresh and cached frozen), hides for clothing and tent covers, sinew for thread, bones for tools, and antlers for equipment. The Nganasan developed intimate knowledge of reindeer behavior, migration routes, and the subtle environmental signs predicting herd movements.</p>
+
+            <h3>Shamanism: Negotiating with Spirits</h3>
+            <p>Nganasan shamanism is among the most elaborate and best-documented of all Siberian traditions. Shamans (<strong>ngaa</strong>) underwent dramatic initiation experiences—often severe illness interpreted as spiritual dismemberment and reconstruction. They wore spectacular costumes adorned with metal pendants, fringes, and symbolic objects representing their spirit helpers. Using frame drums, chanting, and ecstatic techniques, shamans traveled to spirit worlds to negotiate with powerful beings controlling game animals, weather, and disease. The <strong>Clean Tent ceremony</strong> (held each spring when the sun returned) was the most elaborate ritual, involving community purification and ensuring hunting success. Soviet suppression severely damaged shamanic traditions, though elements survive in memory and are being documented.</p>
+
+            <h3>Material Culture and Technology</h3>
+            <p>Nganasan material culture represents millennia of refinement for Arctic survival. Their <strong>clothing</strong> was made entirely from reindeer hide: inner and outer parkas worn fur-in and fur-out, boots with grass insulation, and distinctive pointed hoods. Women's parkas featured elaborate geometric decorations with symbolic meaning. <strong>Tents</strong> (mya) used conical pole frameworks covered with reindeer hides, similar to other Siberian peoples but adapted for the most extreme cold. Transport relied on dog sleds and, later, domestic reindeer. Tools included bows of composite construction, bone needles, and stone lamps burning reindeer fat. This technology, developed over thousands of years, allowed the Nganasan to thrive where most humans could not survive.</p>
+
+            <h3>Language and Origins</h3>
+            <p>The Nganasan language belongs to the Samoyedic branch of the Uralic language family, related to Nenets and Selkup but separated by thousands of years of independent development. With only about 125 fluent speakers remaining (most elderly), Nganasan is critically endangered. The language contains rich vocabulary for Arctic phenomena, reindeer anatomy and behavior, and spiritual concepts found nowhere else. Genetic and archaeological evidence suggests the Nganasan descended from ancient populations who moved north during the Mesolithic period, becoming increasingly isolated as they followed wild reindeer herds to the peninsula's extreme northern reaches. This isolation preserved archaic cultural elements lost elsewhere in Siberia.</p>
+
+            <h3>Contemporary Challenges</h3>
+            <p>The Nganasan face existential threats to their cultural survival. Soviet collectivization in the 1930s-50s forcibly settled nomadic families, suppressed shamanism, and imposed Russian education. Today, most Nganasan live in settlements like Ust-Avam and Volochanka, where alcoholism, unemployment, and cultural dislocation have taken severe tolls. The wild reindeer herds have declined dramatically due to overhunting during the Soviet period. Climate change is altering the tundra ecosystem in unpredictable ways. With the last fluent elders dying and youth increasingly assimilated into Russian culture, the Nganasan's unique knowledge of polar survival is disappearing. Urgent documentation efforts and cultural revitalization programs offer some hope, but time is running out for one of humanity's most remarkable Arctic cultures.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1520962922320-2038eebab146?w=800" alt="Arctic tundra" loading="lazy">
+                    <div class="image-caption">The vast Arctic tundra of the Taymyr Peninsula, Nganasan homeland</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1548963670-aaaa8f73a5e3?w=800" alt="Wild reindeer" loading="lazy">
+                    <div class="image-caption">Wild reindeer herds that sustained the Nganasan for millennia</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800" alt="Aurora borealis" loading="lazy">
+                    <div class="image-caption">Aurora borealis over the Arctic, a spiritual phenomenon in Nganasan belief</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800" alt="Arctic winter" loading="lazy">
+                    <div class="image-caption">Extreme Arctic winter conditions where Nganasan survived for millennia</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1485060937485-823a2d7be113?w=800" alt="Polar night" loading="lazy">
+                    <div class="image-caption">The polar night—months of darkness that shaped Nganasan culture</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800" alt="Arctic landscape" loading="lazy">
+                    <div class="image-caption">Frozen Arctic landscape at the northern edge of human habitation</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/dolgan.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Dolgan</h3>
+                    <p class="related-location">Taymyr, Russia</p>
+                    <span class="relationship-badge regional">Taymyr Neighbors</span>
+                    <p class="related-description">Fellow Taymyr people who invented the balok mobile heated home.</p>
+                </a>
+                <a href="/peoples/nenets.html" class="related-card">
+                    <div class="related-icon">❄️</div>
+                    <h3>Nenets</h3>
+                    <p class="related-location">Russian Arctic</p>
+                    <span class="relationship-badge similar">Samoyedic Relatives</span>
+                    <p class="related-description">Linguistically related Arctic reindeer herders to the west.</p>
+                </a>
+                <a href="/peoples/enets.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Enets</h3>
+                    <p class="related-location">Taymyr, Russia</p>
+                    <span class="relationship-badge regional">Closest Relatives</span>
+                    <p class="related-description">Closest linguistic relatives, also of the Taymyr Peninsula.</p>
+                </a>
+                <a href="/peoples/chukchi.html" class="related-card">
+                    <div class="related-icon">🐋</div>
+                    <h3>Chukchi</h3>
+                    <p class="related-location">Chukotka, Russia</p>
+                    <span class="relationship-badge similar">Arctic Peoples</span>
+                    <p class="related-description">Eastern Siberian Arctic people with reindeer herding traditions.</p>
+                </a>
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🏠</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic North America</p>
+                    <span class="relationship-badge similar">Polar Adaptation</span>
+                    <p class="related-description">North American Arctic peoples with parallel adaptations to polar life.</p>
+                </a>
+                <a href="/peoples/evenki.html" class="related-card">
+                    <div class="related-icon">🌲</div>
+                    <h3>Evenk</h3>
+                    <p class="related-location">Siberia</p>
+                    <span class="relationship-badge regional">Siberian Neighbors</span>
+                    <p class="related-description">Widespread Siberian people with shamanic traditions.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Popov, A.A. (1966). <em>The Nganasan: The Material Culture of the Tavgi Samoyeds</em>. Indiana University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Graceva, G.N. (1983). "Traditional Worldview of the Coastal Peoples of the Ob' North." <em>Siberian Studies</em>.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Lambert, Jean-Luc. (2003). <em>Chamanisme et Christianisme: Études d'histoire des religions chez les Nganassans, Sibérie</em>. CNRS.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Stern, Dieter. (2005). "Taimyr Pidgin Russian (Govorka)." <em>Russian Linguistics</em> 29(3):289-318.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Helimski, Eugene. (1998). "Nganasan." In <em>The Uralic Languages</em>, ed. Daniel Abondolo. Routledge.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Ziker, John P. (2002). <em>Peoples of the Tundra: Northern Siberians in the Post-Communist Transition</em>. Waveland Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Dolgikh, B.O. (1960). <em>Rodovoi i plemennoi sostav narodov Sibiri v XVII v.</em> USSR Academy of Sciences. [Clan and tribal composition of Siberian peoples]</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
     </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1520962922320-2038eebab146?w=800", caption: "The vast Arctic tundra of the Taymyr Peninsula, Nganasan homeland" },
+            { src: "https://images.unsplash.com/photo-1548963670-aaaa8f73a5e3?w=800", caption: "Wild reindeer herds that sustained the Nganasan for millennia" },
+            { src: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800", caption: "Aurora borealis over the Arctic, a spiritual phenomenon in Nganasan belief" },
+            { src: "https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800", caption: "Extreme Arctic winter conditions where Nganasan survived for millennia" },
+            { src: "https://images.unsplash.com/photo-1485060937485-823a2d7be113?w=800", caption: "The polar night—months of darkness that shaped Nganasan culture" },
+            { src: "https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800", caption: "Frozen Arctic landscape at the northern edge of human habitation" }
+        ];
+        let currentIndex = 0;
+        function openLightbox(index) { currentIndex = index; document.getElementById('lightbox').style.display = 'block'; updateLightbox(); }
+        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+        function changeLightbox(direction) { currentIndex += direction; if (currentIndex < 0) currentIndex = images.length - 1; if (currentIndex >= images.length) currentIndex = 0; updateLightbox(); }
+        function updateLightbox() { document.getElementById('lightboxImage').src = images[currentIndex].src; document.getElementById('lightboxCaption').textContent = images[currentIndex].caption; }
+        document.addEventListener('keydown', function(event) { if (document.getElementById('lightbox').style.display === 'block') { if (event.key === 'Escape') closeLightbox(); if (event.key === 'ArrowLeft') changeLightbox(-1); if (event.key === 'ArrowRight') changeLightbox(1); } });
+    </script>
 </body>
 </html>
