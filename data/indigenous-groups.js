@@ -1679,6 +1679,638 @@ const indigenousGroups = [
         description: "Volcanic peninsula people living among 30 active volcanoes, practicing fire shamanism, using volcanic hot springs for healing ceremonies.",
         tags: ["30 active volcanoes", "Fire shamanism", "Volcanic healing"],
         emoji: "🌋"
+    },
+    {
+        name: "Coptic",
+        region: "africa",
+        location: "Egypt",
+        description: "Indigenous descendants of ancient Egyptians, maintaining distinct ethno-religious identity through the Coptic Orthodox Church and preserving the Coptic language descended from hieroglyphics.",
+        tags: ["Ancient Egyptian", "Orthodox Christianity", "Coptic language"],
+        emoji: "☦️"
+    },
+    {
+        name: "Marsh Arabs (Ma'dan)",
+        region: "asia",
+        location: "Southern Iraq Wetlands",
+        description: "Indigenous wetland people of Mesopotamia living in floating reed houses for 5,000 years, survivors of environmental genocide when marshes were drained in 1990s.",
+        tags: ["Wetland culture", "Reed houses", "Buffalo herding"],
+        emoji: "🌾"
+    },
+    {
+        name: "Nahua",
+        region: "americas",
+        location: "Central Mexico",
+        description: "Descendants of the Aztec Empire and largest indigenous group in Mexico, speaking Nahuatl language and maintaining ancient cultural traditions.",
+        tags: ["Aztec descendants", "Nahuatl language", "Central Mexico"],
+        emoji: "🦅"
+    },
+    {
+        name: "Comanche",
+        region: "americas",
+        location: "Southern Great Plains, USA",
+        description: "Dominant horse warriors of the Southern Plains known as 'Lords of the Southern Plains,' fierce fighters who controlled vast territory called Comancheria.",
+        tags: ["Horse warriors", "Comancheria", "Plains nomads"],
+        emoji: "🐎"
+    },
+    {
+        name: "Icelanders",
+        region: "europe",
+        location: "Iceland",
+        description: "Norse descendants maintaining ancient sagas, Althing parliament (world's oldest), volcanic island adaptation, and genetic continuity from Viking settlers.",
+        tags: ["Viking heritage", "Ancient parliament", "Volcanic island"],
+        emoji: "🌋"
+    },
+    {
+        name: "Inupiat",
+        region: "americas",
+        location: "Northern Alaska",
+        description: "Arctic people of northern Alaska practicing whale hunting traditions, known for their sophisticated ice-navigation skills and subsistence hunting culture.",
+        tags: ["Whale hunting", "Arctic Alaska", "Subsistence culture"],
+        emoji: "🐋"
+    },
+    {
+        name: "Ryukyuan",
+        region: "asia",
+        location: "Okinawa and Ryukyu Islands, Japan",
+        description: "Indigenous people of the Ryukyu Kingdom, maintaining distinct languages, traditional martial arts (karate origins), and unique spiritual traditions separate from mainland Japan.",
+        tags: ["Ryukyu Kingdom", "Karate origins", "Distinct culture"],
+        emoji: "🏯"
+    },
+    {
+        name: "Khasi",
+        region: "asia",
+        location: "Meghalaya, Northeast India",
+        description: "Matrilineal highland people known for living root bridges, distinctive musical traditions, and maintaining one of the world's few surviving matriarchal societies.",
+        tags: ["Living root bridges", "Matrilineal", "Meghalaya"],
+        emoji: "🌿"
+    },
+    {
+        name: "Wakhi",
+        region: "asia",
+        location: "Wakhan Corridor, Afghanistan/Pakistan/Tajikistan/China",
+        description: "High-altitude people of the Pamir Mountains, speaking ancient Eastern Iranian language, living at extreme altitudes along the historic Silk Road.",
+        tags: ["Pamir Mountains", "High altitude", "Silk Road"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Toraja",
+        region: "asia",
+        location: "Sulawesi, Indonesia",
+        description: "Highland people famous for elaborate funeral ceremonies, distinctive tongkonan houses with boat-shaped roofs, and traditional animist beliefs alongside Christianity.",
+        tags: ["Funeral ceremonies", "Tongkonan houses", "Sulawesi"],
+        emoji: "🏠"
+    },
+    {
+        name: "Adivasi",
+        region: "asia",
+        location: "India (various states)",
+        description: "Umbrella term for India's 100+ million indigenous tribal peoples, comprising 8.6% of population, with distinct languages, cultures, and traditional forest-based livelihoods.",
+        tags: ["100+ million", "Tribal peoples", "Forest dwellers"],
+        emoji: "🌲"
+    },
+    {
+        name: "Dolgan",
+        region: "asia",
+        location: "Taymyr Peninsula, Arctic Russia",
+        description: "Arctic people blending Yakut, Evenk, and Russian heritage, living as reindeer herders and hunters in one of the world's coldest inhabited regions.",
+        tags: ["Arctic Russia", "Reindeer herders", "Taymyr Peninsula"],
+        emoji: "❄️"
+    },
+    {
+        name: "Koryak",
+        region: "asia",
+        location: "Kamchatka Peninsula, Russia",
+        description: "Indigenous reindeer herders and sea mammal hunters of Kamchatka, known for their shamanic traditions and adaptation to volcanic, subarctic environment.",
+        tags: ["Kamchatka", "Reindeer herding", "Sea hunting"],
+        emoji: "🦌"
+    },
+    {
+        name: "Yakut (Sakha)",
+        region: "asia",
+        location: "Sakha Republic, Eastern Siberia",
+        description: "Turkic-speaking people of Eastern Siberia surviving in the coldest inhabited place on Earth (-67.8°C recorded), known for horse culture and epic olonkho poetry.",
+        tags: ["Coldest inhabited", "Horse culture", "Olonkho epic"],
+        emoji: "🐴"
+    },
+    {
+        name: "Tuvan",
+        region: "asia",
+        location: "Tuva Republic, Southern Siberia",
+        description: "Central Asian people famous for throat singing (khoomei), maintaining Buddhist-shamanist traditions, yak herding, and connections to Mongolian culture.",
+        tags: ["Throat singing", "Buddhist-shamanism", "Yak herding"],
+        emoji: "🎵"
+    },
+    {
+        name: "Khanty",
+        region: "asia",
+        location: "Khanty-Mansi, Western Siberia",
+        description: "Uralic-speaking people of the Ob River basin, traditional hunters and fishers facing challenges from oil extraction on their ancestral lands.",
+        tags: ["Ob River", "Hunter-fishers", "Oil conflicts"],
+        emoji: "🐟"
+    },
+    {
+        name: "Qiang",
+        region: "asia",
+        location: "Sichuan, China",
+        description: "Ancient people of the Tibetan-Qiang mountain region, known for distinctive stone towers, sheep herding, and claims as ancestors of many Chinese ethnic groups.",
+        tags: ["Stone towers", "Ancient heritage", "Mountain dwellers"],
+        emoji: "🗼"
+    },
+    {
+        name: "Salar",
+        region: "asia",
+        location: "Qinghai/Gansu, China",
+        description: "Turkic Muslim people who migrated from Samarkand in 13th century, maintaining unique language and Islamic traditions in northwestern China.",
+        tags: ["Turkic Muslims", "Samarkand origins", "Northwest China"],
+        emoji: "🕌"
+    },
+    {
+        name: "Marwari",
+        region: "asia",
+        location: "Rajasthan, India",
+        description: "Desert people of Rajasthan known for distinctive architecture, merchant traditions, Marwari horse breeding, and vibrant textile arts.",
+        tags: ["Rajasthan", "Merchant culture", "Desert adaptation"],
+        emoji: "🐫"
+    },
+    {
+        name: "Bhutia-Sikkimese",
+        region: "asia",
+        location: "Sikkim, India",
+        description: "Tibetan Buddhist people of Sikkim, original rulers of the kingdom, maintaining Tibetan language, monasteries, and traditional culture in the Himalayas.",
+        tags: ["Tibetan Buddhist", "Sikkim rulers", "Himalayan culture"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Assyrian",
+        region: "asia",
+        location: "Iraq, Syria, Iran, Turkey",
+        description: "Ancient Mesopotamian people speaking Neo-Aramaic, maintaining one of Christianity's oldest traditions, survivors of genocide and displacement across the Middle East.",
+        tags: ["Neo-Aramaic", "Ancient Christians", "Mesopotamian"],
+        emoji: "⛪"
+    },
+    {
+        name: "Kalasha",
+        region: "asia",
+        location: "Chitral, Pakistan",
+        description: "Small polytheistic community in the Hindu Kush maintaining unique pre-Islamic religion, colorful festivals, and distinct culture amid Islamic surroundings.",
+        tags: ["Polytheistic", "Chitral valleys", "Ancient religion"],
+        emoji: "🎉"
+    },
+    {
+        name: "Navajo (Diné)",
+        region: "americas",
+        location: "Navajo Nation, Southwestern USA",
+        description: "Largest Native American nation with 400,000+ members, renowned for weaving, silversmithing, code talkers in WWII, and maintaining traditional Diné language and ceremonies.",
+        tags: ["Largest nation", "Code talkers", "Weaving tradition"],
+        emoji: "🌵"
+    },
+    {
+        name: "Mongolian Nomads",
+        region: "asia",
+        location: "Mongolia",
+        description: "Traditional herders maintaining nomadic lifestyle on the steppes, living in portable gers, practicing horse culture, and preserving Genghis Khan's heritage.",
+        tags: ["Nomadic herders", "Ger dwellers", "Horse culture"],
+        emoji: "🏕️"
+    },
+    {
+        name: "Greenlandic Inuit",
+        region: "americas",
+        location: "Greenland",
+        description: "Arctic people of the world's largest island, maintaining traditional hunting culture while navigating Danish colonial legacy and climate change impacts.",
+        tags: ["Arctic hunters", "Greenland", "Climate frontlines"],
+        emoji: "🧊"
+    },
+    {
+        name: "Fur Trade Métis",
+        region: "americas",
+        location: "Canadian Prairies",
+        description: "Mixed Indigenous-European people who emerged from the fur trade, developing distinct culture, language (Michif), and Red River cart traditions.",
+        tags: ["Mixed heritage", "Michif language", "Fur trade"],
+        emoji: "🦌"
+    },
+    {
+        name: "Yukon Dene",
+        region: "americas",
+        location: "Yukon Territory, Canada",
+        description: "Athabaskan people of the Yukon maintaining traditional hunting and trapping, potlatch ceremonies, and detailed knowledge of the northern boreal forest.",
+        tags: ["Athabaskan", "Northern hunters", "Potlatch"],
+        emoji: "🌲"
+    },
+    {
+        name: "Yakama",
+        region: "americas",
+        location: "Washington State, USA",
+        description: "Plateau people of the Columbia River region, known for salmon fishing traditions, horse culture, and successful maintenance of treaty rights.",
+        tags: ["Salmon fishing", "Treaty rights", "Columbia River"],
+        emoji: "🐟"
+    },
+    {
+        name: "Enets",
+        region: "asia",
+        location: "Taymyr, Arctic Russia",
+        description: "Small Samoyedic people of the Siberian Arctic, one of Russia's smallest indigenous groups with only about 200 speakers of the Enets language remaining.",
+        tags: ["Arctic Russia", "Endangered language", "Samoyedic"],
+        emoji: "❄️"
+    },
+    {
+        name: "Nganasan",
+        region: "asia",
+        location: "Taymyr Peninsula, Russia",
+        description: "Northernmost indigenous people of Eurasia, maintaining shamanic traditions, reindeer hunting (not herding), and adaptation to extreme polar conditions.",
+        tags: ["Northernmost people", "Shamanic", "Polar hunters"],
+        emoji: "🔮"
+    },
+    {
+        name: "Evenki",
+        region: "asia",
+        location: "Siberia, Russia/China/Mongolia",
+        description: "Tungusic-speaking reindeer herders spread across the largest territory of any indigenous Siberian group, known for shamanic traditions and taiga adaptation.",
+        tags: ["Largest territory", "Tungusic", "Taiga nomads"],
+        emoji: "🦌"
+    },
+    {
+        name: "Yamal Nenets",
+        region: "asia",
+        location: "Yamal Peninsula, Arctic Russia",
+        description: "Arctic reindeer herders of the Yamal Peninsula, maintaining world's largest reindeer herds while navigating gas extraction on their traditional lands.",
+        tags: ["Largest herds", "Arctic tundra", "Gas industry"],
+        emoji: "🦌"
+    },
+    {
+        name: "Sami Northern",
+        region: "europe",
+        location: "Northern Scandinavia",
+        description: "Reindeer herding Sami of the far north, maintaining traditional pastoral lifestyle, joik singing, and distinctive lavvu tent culture in the Arctic.",
+        tags: ["Reindeer herding", "Joik music", "Arctic Scandinavia"],
+        emoji: "🦌"
+    },
+    {
+        name: "Faroe Islanders",
+        region: "europe",
+        location: "Faroe Islands, North Atlantic",
+        description: "Norse descendants maintaining ancient traditions in the remote North Atlantic, known for communal grindadráp whale hunts and self-governance.",
+        tags: ["Norse heritage", "North Atlantic", "Self-governance"],
+        emoji: "🐋"
+    },
+    {
+        name: "Uyghur Turpan",
+        region: "asia",
+        location: "Turpan Depression, China",
+        description: "Oasis dwellers of the world's lowest desert depression, masters of karez underground irrigation, grape cultivation, and Silk Road trading heritage.",
+        tags: ["Karez irrigation", "Lowest depression", "Silk Road"],
+        emoji: "🍇"
+    },
+    {
+        name: "Quechua Highlands",
+        region: "americas",
+        location: "Andes Mountains",
+        description: "Highland Quechua communities maintaining traditional potato cultivation, textile traditions, and reciprocal ayllu community systems across the high Andes.",
+        tags: ["Potato cultivation", "High altitude", "Ayllu system"],
+        emoji: "🥔"
+    },
+    {
+        name: "Aymara Uyuni",
+        region: "americas",
+        location: "Bolivia Altiplano",
+        description: "High-altitude Aymara communities around the Uyuni salt flats, maintaining llama herding, quinoa cultivation, and traditional salt extraction.",
+        tags: ["Salt flats", "Llama herding", "Quinoa"],
+        emoji: "🦙"
+    },
+    {
+        name: "Tibetan Nomads",
+        region: "asia",
+        location: "Tibetan Plateau",
+        description: "Pastoral nomads of the world's highest plateau, herding yak and sheep while maintaining Buddhist traditions at altitudes above 4,000 meters.",
+        tags: ["Yak herding", "High plateau", "Buddhist nomads"],
+        emoji: "🐃"
+    },
+    {
+        name: "Dukha Tsaatan",
+        region: "asia",
+        location: "Northern Mongolia",
+        description: "Reindeer herders of the Mongolian taiga, one of the world's last nomadic reindeer cultures with only about 40 families remaining.",
+        tags: ["Reindeer herders", "Last nomads", "Mongolian taiga"],
+        emoji: "🦌"
+    },
+    {
+        name: "Pehuenche",
+        region: "americas",
+        location: "Chile-Argentina Andes",
+        description: "Mountain Mapuche people known as 'People of the Araucaria,' maintaining traditional gathering of piñon nuts and resistance to dam projects.",
+        tags: ["Araucaria people", "Piñon gatherers", "Dam resistance"],
+        emoji: "🌲"
+    },
+    {
+        name: "Atacama",
+        region: "americas",
+        location: "Atacama Desert, Chile",
+        description: "Desert people surviving in the world's driest desert, masters of fog-catching, traditional mining, and astronomical knowledge.",
+        tags: ["Driest desert", "Fog harvesting", "Ancient miners"],
+        emoji: "🏜️"
+    },
+    {
+        name: "Gobi Herders",
+        region: "asia",
+        location: "Gobi Desert, Mongolia",
+        description: "Nomadic herders of the Gobi Desert, maintaining camel and goat herding traditions in extreme temperature swings from -40°C to +50°C.",
+        tags: ["Desert nomads", "Camel herding", "Extreme climate"],
+        emoji: "🐪"
+    },
+    {
+        name: "Rub al-Khali Bedouin",
+        region: "asia",
+        location: "Empty Quarter, Arabian Peninsula",
+        description: "Desert nomads of the world's largest sand desert, masters of water-finding, camel navigation, and survival in Earth's most arid wilderness.",
+        tags: ["Empty Quarter", "Camel masters", "Desert survival"],
+        emoji: "🐪"
+    },
+    {
+        name: "Danakil Afar",
+        region: "africa",
+        location: "Danakil Depression, Ethiopia",
+        description: "People living in Earth's hottest place, extracting salt from ancient lake beds, navigating volcanic terrain, and surviving 50°C+ temperatures.",
+        tags: ["Hottest place", "Salt miners", "Volcanic terrain"],
+        emoji: "🌡️"
+    },
+    {
+        name: "Sahel Fulani",
+        region: "africa",
+        location: "Sahel Belt, West Africa",
+        description: "Pastoral Fulani of the Sahel region, long-distance cattle herders navigating between desert and savanna, maintaining oral traditions and Islamic scholarship.",
+        tags: ["Sahel herders", "Long-distance", "Islamic scholars"],
+        emoji: "🐄"
+    },
+    {
+        name: "Bushmen Kalahari",
+        region: "africa",
+        location: "Kalahari Desert, Southern Africa",
+        description: "San hunter-gatherers of the Kalahari, maintaining ancient tracking skills, healing dances, and intimate knowledge of desert survival.",
+        tags: ["Desert hunters", "Healing dances", "Ancient skills"],
+        emoji: "🏹"
+    },
+    {
+        name: "Japanese Coastal",
+        region: "asia",
+        location: "Coastal Japan",
+        description: "Traditional fishing communities of Japan including ama divers, maintaining ancient maritime traditions, seasonal fishing practices, and Shinto sea rituals.",
+        tags: ["Ama divers", "Maritime traditions", "Sea rituals"],
+        emoji: "🎣"
+    },
+    {
+        name: "Sinhalese Coastal",
+        region: "asia",
+        location: "Coastal Sri Lanka",
+        description: "Traditional fishing communities of Sri Lanka, practicing stilt fishing, traditional boat-building, and maintaining ancient maritime knowledge.",
+        tags: ["Stilt fishing", "Traditional boats", "Maritime culture"],
+        emoji: "🎣"
+    },
+    {
+        name: "Mekong Delta",
+        region: "asia",
+        location: "Mekong Delta, Vietnam",
+        description: "Floating market communities of the Mekong Delta, living on water, practicing wet rice cultivation, and maintaining traditional boat-based commerce.",
+        tags: ["Floating markets", "Water living", "Rice cultivation"],
+        emoji: "🛶"
+    },
+    {
+        name: "Sundarbans",
+        region: "asia",
+        location: "Sundarbans, Bangladesh/India",
+        description: "Mangrove forest communities living alongside Bengal tigers, practicing traditional honey-collecting, fishing, and adapting to rising seas.",
+        tags: ["Tiger country", "Honey collectors", "Climate refugees"],
+        emoji: "🐅"
+    },
+    {
+        name: "Bangladesh Delta",
+        region: "asia",
+        location: "Bangladesh",
+        description: "River delta communities living on shifting chars (islands), adapting to annual flooding, practicing flood-resistant agriculture, and facing climate displacement.",
+        tags: ["Char dwellers", "Flood adapted", "Climate frontlines"],
+        emoji: "🌊"
+    },
+    {
+        name: "Netherlands Delta",
+        region: "europe",
+        location: "Netherlands",
+        description: "Low-country communities with 1000-year tradition of water management, dike building, polder creation, and living below sea level.",
+        tags: ["Water management", "Dike builders", "Below sea level"],
+        emoji: "🌊"
+    },
+    {
+        name: "Polynesians Remote",
+        region: "oceania",
+        location: "Remote Pacific Islands",
+        description: "Traditional navigators of remote Pacific islands, maintaining star navigation, traditional fishing, and adapting to sea-level rise on low atolls.",
+        tags: ["Star navigation", "Remote islands", "Climate adaptation"],
+        emoji: "⛵"
+    },
+    {
+        name: "Tokelau",
+        region: "oceania",
+        location: "Tokelau Atolls, South Pacific",
+        description: "Polynesian people of three remote atolls, living communally, practicing traditional fishing, and facing existential threat from sea-level rise.",
+        tags: ["Atoll dwellers", "Communal living", "Sea-level threat"],
+        emoji: "🏝️"
+    },
+    {
+        name: "Tuvalu",
+        region: "oceania",
+        location: "Tuvalu, South Pacific",
+        description: "Polynesian nation on low-lying atolls, one of world's smallest countries, facing possible complete submersion from climate change.",
+        tags: ["Sinking nation", "Climate refugees", "Low atolls"],
+        emoji: "🏝️"
+    },
+    {
+        name: "Kiribati",
+        region: "oceania",
+        location: "Kiribati, Central Pacific",
+        description: "Micronesian nation spread across 33 atolls, first nation to see each new day (GMT+14), facing complete inundation from rising seas.",
+        tags: ["33 atolls", "First sunrise", "Rising seas"],
+        emoji: "🌅"
+    },
+    {
+        name: "Marshallese",
+        region: "oceania",
+        location: "Marshall Islands, Pacific",
+        description: "Micronesian navigators maintaining stick chart navigation traditions, survivors of nuclear testing at Bikini Atoll, facing sea-level displacement.",
+        tags: ["Stick charts", "Nuclear survivors", "Rising seas"],
+        emoji: "🗺️"
+    },
+    {
+        name: "Maldivians",
+        region: "asia",
+        location: "Maldives, Indian Ocean",
+        description: "Island nation with average elevation of 1.5 meters, world's lowest country, facing existential climate threat while preserving unique Indo-Islamic culture.",
+        tags: ["Lowest country", "Climate frontlines", "Island culture"],
+        emoji: "🏝️"
+    },
+    {
+        name: "Tristan da Cunha",
+        region: "africa",
+        location: "Tristan da Cunha, South Atlantic",
+        description: "World's most remote inhabited island community, 300 people descended from original settlers, maintaining self-sufficiency 2,400 km from nearest land.",
+        tags: ["Most remote", "300 residents", "Self-sufficient"],
+        emoji: "🏝️"
+    },
+    {
+        name: "Pitcairn-Norfolk",
+        region: "oceania",
+        location: "Pitcairn and Norfolk Islands",
+        description: "Descendants of Bounty mutineers and Tahitian women, speaking unique Pitkern/Norfolk language, split between two remote Pacific islands.",
+        tags: ["Bounty descendants", "Unique language", "Remote Pacific"],
+        emoji: "⛵"
+    },
+    {
+        name: "Saba Islanders",
+        region: "americas",
+        location: "Saba, Caribbean Netherlands",
+        description: "Tiny Caribbean island community of 2,000 on a volcanic peak, maintaining unique Dutch-Caribbean culture and sustainable small-island living.",
+        tags: ["Volcanic island", "Tiny community", "Dutch Caribbean"],
+        emoji: "🌋"
+    },
+    {
+        name: "Madeira-Azores",
+        region: "europe",
+        location: "Atlantic Islands, Portugal",
+        description: "Atlantic island communities maintaining traditional terraced agriculture, wine-making on volcanic slopes, and maritime traditions.",
+        tags: ["Atlantic islands", "Terraced farming", "Wine culture"],
+        emoji: "🍷"
+    },
+    {
+        name: "Svalbard",
+        region: "europe",
+        location: "Svalbard, Arctic Norway",
+        description: "Northernmost permanent settlement at 78°N, mining community adapting to climate change, polar bear encounters, and 24-hour darkness.",
+        tags: ["Northernmost settlement", "Polar bears", "Arctic mining"],
+        emoji: "🐻‍❄️"
+    },
+    {
+        name: "Chilean Patagonia",
+        region: "americas",
+        location: "Chilean Patagonia",
+        description: "Remote communities at the end of the world, maintaining gaucho traditions, sheep ranching, and adapting to extreme Patagonian weather.",
+        tags: ["End of world", "Gaucho culture", "Sheep ranching"],
+        emoji: "🐑"
+    },
+    {
+        name: "Aborigines Western Desert",
+        region: "oceania",
+        location: "Western Desert, Australia",
+        description: "Desert Aboriginal people maintaining traditional Dreamtime knowledge, water-finding skills, and hunting practices in Australia's harshest interior.",
+        tags: ["Dreamtime", "Desert survival", "Traditional hunters"],
+        emoji: "🏜️"
+    },
+    {
+        name: "Bajau Coastal",
+        region: "asia",
+        location: "Southeast Asian Coasts",
+        description: "Settled Bajau communities along Southeast Asian coasts, transitioning from sea nomad lifestyle while maintaining fishing traditions and maritime culture.",
+        tags: ["Settled nomads", "Fishing culture", "Maritime heritage"],
+        emoji: "🐚"
+    },
+    {
+        name: "Bajau Sama",
+        region: "asia",
+        location: "Sulu Archipelago, Philippines",
+        description: "Sama-Bajau people of the southern Philippines, maintaining stilt house villages, traditional boat-building, and fishing in the Sulu Sea.",
+        tags: ["Stilt villages", "Boat builders", "Sulu Sea"],
+        emoji: "🏠"
+    },
+    {
+        name: "Aleut-Unangan",
+        region: "americas",
+        location: "Aleutian Islands, Alaska",
+        description: "Indigenous people of the Aleutian chain, master sea hunters in extreme conditions, maintaining traditional knowledge of marine ecosystems.",
+        tags: ["Sea hunters", "Aleutian chain", "Marine masters"],
+        emoji: "🦭"
+    },
+    {
+        name: "Ethiopian Highlanders",
+        region: "africa",
+        location: "Ethiopian Highlands",
+        description: "Highland farming communities of Ethiopia's central plateau, maintaining ancient agricultural traditions, unique calendar, and coffee cultivation origins.",
+        tags: ["Highland farmers", "Coffee origins", "Ancient traditions"],
+        emoji: "☕"
+    },
+    {
+        name: "Pashtun Highland",
+        region: "asia",
+        location: "Afghanistan/Pakistan Highlands",
+        description: "Highland Pashtun communities maintaining Pashtunwali code of honor, traditional jirga councils, and mountain agricultural practices.",
+        tags: ["Pashtunwali code", "Mountain culture", "Jirga councils"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Karamojong",
+        region: "africa",
+        location: "Karamoja, Uganda",
+        description: "Semi-nomadic cattle herders of northeastern Uganda, known for distinctive body decoration, age-set systems, and adaptation to semi-arid conditions.",
+        tags: ["Cattle herders", "Body decoration", "Semi-arid"],
+        emoji: "🐄"
+    },
+    {
+        name: "Socotra",
+        region: "asia",
+        location: "Socotra Island, Yemen",
+        description: "Isolated island people maintaining unique Socotri language, living among endemic dragon blood trees, and preserving ancient Indian Ocean traditions.",
+        tags: ["Dragon blood trees", "Unique language", "Isolated island"],
+        emoji: "🌳"
+    },
+    {
+        name: "Awash Valley",
+        region: "africa",
+        location: "Awash Valley, Ethiopia",
+        description: "Afar and related peoples of the Awash River valley, living in one of Earth's geologically active regions with volcanic landscapes and extreme heat.",
+        tags: ["Awash River", "Volcanic landscape", "Extreme heat"],
+        emoji: "🌋"
+    },
+    {
+        name: "Andean Potato Farmers",
+        region: "americas",
+        location: "Andes Mountains",
+        description: "Traditional Andean communities maintaining 4,000+ potato varieties, ancient freeze-drying techniques, and sustainable high-altitude farming systems.",
+        tags: ["4,000 potato varieties", "Freeze-drying", "High-altitude"],
+        emoji: "🥔"
+    },
+    {
+        name: "Altiplano Freeze-Thaw",
+        region: "americas",
+        location: "Bolivian Altiplano",
+        description: "High-altitude communities using ancient freeze-drying techniques for food preservation, adapting to extreme temperature swings on the world's highest plateau.",
+        tags: ["Freeze preservation", "Extreme altitude", "Ancient techniques"],
+        emoji: "❄️"
+    },
+    {
+        name: "Sundanese Highland",
+        region: "asia",
+        location: "West Java, Indonesia",
+        description: "Highland Sundanese communities maintaining traditional agriculture, distinctive music (gamelan degung), and preserving Baduy communities refusing modernity.",
+        tags: ["Highland Java", "Gamelan music", "Baduy tradition"],
+        emoji: "🎵"
+    },
+    {
+        name: "Ladakhi",
+        region: "asia",
+        location: "Ladakh, India",
+        description: "Tibetan Buddhist people of the 'Land of High Passes,' maintaining traditional agriculture, monastery culture, and adapting to extreme Himalayan conditions.",
+        tags: ["High passes", "Buddhist culture", "Himalayan"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Yamana",
+        region: "americas",
+        location: "Tierra del Fuego",
+        description: "Canoe people of the world's southernmost lands, nearly extinct culture that survived Antarctic-like conditions through unique cold adaptation.",
+        tags: ["Southernmost", "Cold adaptation", "Nearly extinct"],
+        emoji: "🛶"
+    },
+    {
+        name: "Socotra",
+        region: "asia",
+        location: "Socotra Island, Yemen",
+        description: "Isolated island people with unique Socotri language, living among otherworldly dragon blood trees and endemic species found nowhere else on Earth.",
+        tags: ["Endemic species", "Unique language", "Isolated"],
+        emoji: "🌳"
     }
 ];
 

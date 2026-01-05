@@ -6,7 +6,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.globalfirstnations.com/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +14,7 @@
   <!-- About Page -->
   <url>
     <loc>https://www.globalfirstnations.com/about</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -22,51 +22,15 @@
   <!-- Contribute Page -->
   <url>
     <loc>https://www.globalfirstnations.com/contribute</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- Regional Pages -->
-  <url>
-    <loc>https://www.globalfirstnations.com/regions/americas</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.globalfirstnations.com/regions/africa</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.globalfirstnations.com/regions/asia</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.globalfirstnations.com/regions/oceania</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.globalfirstnations.com/regions/europe</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Browse Cultures Page -->
   <url>
     <loc>https://www.globalfirstnations.com/cultures.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -74,14 +38,14 @@
   <!-- Dashboard & Learning -->
   <url>
     <loc>https://www.globalfirstnations.com/dashboard.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.globalfirstnations.com/games.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -89,62 +53,297 @@
   <!-- Interactive Map -->
   <url>
     <loc>https://www.globalfirstnations.com/map.html</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Individual Culture Pages - Africa (12) -->
-  <url><loc>https://www.globalfirstnations.com/peoples/san.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/tuareg.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/himba.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/zulu.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/maasai.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/dogon.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/hadza.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/igbo.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/samburu.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/wodaabe.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/nuer.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/berber.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Individual Culture Pages (277 total) -->
+  <!-- Africa -->
+  <url><loc>https://www.globalfirstnations.com/peoples/afar.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/amhara.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ashanti.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/awash-valley.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/baggara.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bambuti.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/batwa.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bayaka.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/beja.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/berber.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/buganda.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bushmen-kalahari.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/coptic.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/danakil.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/dinka.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/dogon.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ethiopian-highlanders.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/fulani.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/hadza.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/hamer.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/hausa.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/herero.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/himba.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/igbo.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/karamojong.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/khoikhoi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kikuyu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/lobi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/luba.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/maasai.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/malagasy.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mandinka.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/matmata-berbers.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mossi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ndebele.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/nuer.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/oromo.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/pokot.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sahara-tubu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sahel-fulani.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sahrawi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/samburu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/san.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/serer.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/shona.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/songhai.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sukuma.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/surma.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tonga.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tristan-da-cunha.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tuareg.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/turkana.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/wodaabe.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/xhosa.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yoruba.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/zulu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Americas (15) -->
-  <url><loc>https://www.globalfirstnations.com/peoples/navajo.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/cherokee.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/lakota.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/inuit.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/quechua.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/mapuche.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/guarani.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/tlingit.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/haida.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/mixtec.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/zapotec.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/hopi.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/yanomami.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/yupik.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/rapanui.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Americas -->
+  <url><loc>https://www.globalfirstnations.com/peoples/aleut.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/aleut-unangan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/altiplano-freeze-thaw.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/andean-potato-farmers.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/atacama.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/awa.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/awajun.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/aymara.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/aymara-uyuni.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/blackfoot.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/chachapoyas.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/cherokee.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/chilean-patagonia.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/chinantec.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/chol.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/chontal.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/comanche.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/copper-inuit.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/cora.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/embera.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/fur-trade-metis.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/garifuna.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/greenlandic-inuit.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/guarani.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/haida.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/hopi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/huaorani.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/inca-quechua.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/inughuit.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/inuit.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/inupiat.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kalinago.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kawesqar.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kayapo.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kiche-maya.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kogi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kwakwakawakw.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/lakota.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/machiguenga.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/makah.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mam-maya.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mapuche.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mashco-piro.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/matses.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mazahua.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mazatec.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mixe.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mixtec.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/nahua.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/navajo.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/nuu-chah-nulth.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ojibwe.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/pehuenche.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/pirahã.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/purepecha.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/quechua.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/quechua-highlands.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/saba-islanders.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/selknam.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/seminole.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/shipibo-konibo.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/shuar.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/suruwaha.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/taino.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tarahumara.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tehuelche.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tepehuan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/thule.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tlingit.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/triqui.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tsilhqotin.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tzotzil-maya.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/wayuu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/wichi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/xingu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yaghan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yakama.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yamana.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yanomami.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yukon-dene.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yupik.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/zapotec.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/zoe.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Asia/Pacific (15) -->
-  <url><loc>https://www.globalfirstnations.com/peoples/maori.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/ainu.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/mongol.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/karen.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/moken.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/sherpa.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/kalash.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/dayak.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/bedouin.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/sami.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/hmong.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/tongan.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/fijian.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/papuan.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/aboriginal-australian.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/malagasy.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Asia -->
+  <url><loc>https://www.globalfirstnations.com/peoples/adivasi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/aeta.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ainu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/akha.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ama-divers.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/assyrian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bajau-coastal.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bajau-laut.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bajau-sama.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/balinese.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/balti.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bangladesh-delta.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/batak.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bedouin.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bhutia-sikkimese.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bontoc.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/bunong.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/cappadocian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/changpa.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/chenchu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/chukchi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/dayak.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/dolgan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/dukha-tsaatan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/enets.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/evenk.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/evenki.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/gobi-herders.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/han-chinese.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/hmong.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/iban.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ifugao.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/japanese-coastal.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/jarawa.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/javanese.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kalash.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kalasha.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kamchatka.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/karen.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kayan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kazakh.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/khanty.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/khasi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/khmer.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/koryak.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ladakhi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/lepcha.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/maldivians.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/marsh-arabs.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/marwari.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mekong-delta.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mentawai.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/moken.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mongol.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mongolian-nomads.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/naga.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/nanai.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/nenets.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/nganasan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/onge.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/orang-asli.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/pashtun-highland.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/qiang.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/raute.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/rohingya.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/rub-al-khali-bedouin.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/ryukyuan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/salar.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sherpa.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sinhalese-coastal.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/socotra.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sundanese-highland.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sundarbans.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/svaneti.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tibetan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tibetan-nomads.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/toda.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/toraja.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tsaatan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tuvan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/uyghur-taklamakan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/uyghur-turpan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/uzbek.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/veddah.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/wa.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/wakhi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yakut.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yamal-nenets.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Europe (3) -->
-  <url><loc>https://www.globalfirstnations.com/peoples/basque.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.globalfirstnations.com/peoples/nenets.html</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Oceania -->
+  <url><loc>https://www.globalfirstnations.com/peoples/aboriginal-australian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/aborigines-western-desert.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/asaro.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/chamorro.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/fayu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/fijian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kanaka-maoli.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kiribati.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/korowai.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/maori.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/marshallese.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/papuan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/pintupi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/pitcairn.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/pitcairn-norfolk.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/polynesians-remote.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/rapanui.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/samoan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sentinelese.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tahitian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tarkine.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tokelau.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tolai.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tongan.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/trobriand.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/tuvalu.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/yapese.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Europe -->
+  <url><loc>https://www.globalfirstnations.com/peoples/aromanian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/basque.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/breton.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/cornish.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/faroe-islanders.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/faroese.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/galician.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/icelanders.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/karelian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/kashubian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/komi.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/livonian.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/madeira-azores.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/manx.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/mari.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/netherlands-delta.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sami.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sami-northern.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/savoyard.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/sorbs.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/stromboli.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/svalbard.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.globalfirstnations.com/peoples/voro.html</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>
