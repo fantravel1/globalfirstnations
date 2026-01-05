@@ -2,33 +2,255 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kalasha People | Indigenous Peoples Repository</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalasha People: Last Pagans of the Hindu Kush | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍇</text></svg>">
     <style>
-        :root { --primary: #15803d; --secondary: #22c55e; }
+        :root { --mountain-green: #166534; --festive-red: #dc2626; --sky-blue: #0ea5e9; --white: #ecf0f1; --gold: #eab308; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(135deg, var(--primary), var(--secondary)); background-attachment: fixed; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 30px; border-radius: 15px; margin-bottom: 30px; }
-        h1 { font-size: 3em; }
-        nav { background: white; padding: 15px; border-radius: 10px; margin-bottom: 30px; }
-        nav a { color: var(--primary); text-decoration: none; margin: 0 15px; font-weight: 600; }
-        .content { background: white; padding: 40px; border-radius: 15px; }
-        h2 { color: var(--primary); font-size: 2.2em; margin-bottom: 20px; }
-        footer { background: var(--primary); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-top: 30px; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--sky-blue) 0%, var(--mountain-green) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--mountain-green), var(--sky-blue)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(22,101,52,0.5); border: 5px solid var(--gold); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--mountain-green); }
+        nav a { color: var(--mountain-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--mountain-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--mountain-green); border-right: 3px solid var(--festive-red); }
+        h2 { color: var(--mountain-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--mountain-green); }
+        h3 { color: var(--festive-red); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--mountain-green), var(--sky-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--gold); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--festive-red), var(--gold)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--mountain-green), var(--sky-blue)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--mountain-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--mountain-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--mountain-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🌺 Kalasha People</h1>
-            <p class="tagline">Isolated Pagan Mountain Culture</p>
+            <span class="icon">🍇</span>
+            <h1>The Kalasha People</h1>
+            <p class="tagline">Last Pagans of the Hindu Kush - Wine Makers of Pakistan - Guardians of Ancient Traditions</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
-            <h2>Kalasha People</h2>
-            <p>The Kalasha (3,000-4,000) inhabit three remote valleys in Pakistan's Hindu Kush mountains at 1,500-3,000 meters. They maintain pre-Islamic polytheistic religion, colorful traditional dress, and unique customs isolated for centuries. Surviving harsh winters, limited agricultural land, and cultural pressures, they represent one of South Asia's last non-Muslim indigenous groups in an extreme mountain environment.</p>
+        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+
+        <section class="content-section">
+            <h2>Who Are the Kalasha?</h2>
+            <p>The Kalasha are one of the world's most unique indigenous peoples—a small community of approximately 3,000-4,000 people who have maintained their ancient polytheistic religion, distinctive culture, and remarkable traditions for millennia in three remote valleys of Pakistan's Hindu Kush mountains. Surrounded by Muslim populations in Chitral District of Khyber Pakhtunkhwa province, the Kalasha represent the last surviving practitioners of an ancient Indo-European religious tradition that once spread across much of South and Central Asia. Their vibrant festivals, colorful traditional dress, wine-making traditions (unique in Islamic Pakistan), and complex spiritual beliefs make them one of Asia's most fascinating and endangered indigenous cultures.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~4,000</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">3</span><span>Valleys homeland</span></div>
+                <div class="stat-card"><span class="stat-number">Kalasha</span><span>Dardic language</span></div>
+                <div class="stat-card"><span class="stat-number">3,000m</span><span>Mountain elevation</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Wine in Islamic Pakistan:</strong> The Kalasha are the only people in Pakistan permitted to make and drink wine! Their grape-growing and wine-making traditions date back thousands of years, and wine plays an important role in religious ceremonies and festivals. Some scholars believe these traditions connect the Kalasha to ancient Dionysian worship.
+            </div>
+
+            <h3>The Three Valleys: Birir, Bumburet, and Rumbur</h3>
+            <p>The Kalasha inhabit three narrow valleys—<strong>Birir</strong>, <strong>Bumburet</strong>, and <strong>Rumbur</strong>—carved into the southern slopes of the Hindu Kush at elevations between 1,500 and 3,000 meters. These valleys, accessible only by winding mountain roads, feature terraced fields, walnut and mulberry orchards, and villages of distinctive wooden houses built into steep hillsides. The isolation of these valleys protected Kalasha culture from the waves of Islamization that converted surrounding populations over the past millennium. Today, tourism brings both economic opportunity and cultural pressures, as visitors come to witness the Kalasha's colorful festivals and unique way of life. Climate change increasingly threatens traditional agriculture as water patterns shift and glaciers recede.</p>
+
+            <h3>Polytheistic Religion and Spirituality</h3>
+            <p>Kalasha religion centers on a pantheon of gods, spirits, and supernatural beings that scholars connect to ancient Vedic and pre-Zoroastrian Indo-Iranian traditions. The supreme deity <strong>Dezau</strong> (or Khodai) created the world, while other important deities include <strong>Mahandeo</strong> (a protector god), <strong>Jestak</strong> (goddess of family and fertility), and <strong>Sajigor</strong> (warrior god). Ancestor spirits play important roles, and the distinction between <strong>onjesta</strong> (pure) and <strong>pragata</strong> (impure) governs much of daily life. Sacred sites called <strong>jestakhan</strong> serve as temples, while outdoor altars mark significant locations. Shamans (<strong>dehar</strong>) communicate with spirits, interpret dreams, and conduct healing ceremonies. This living polytheistic tradition represents an invaluable link to the religious practices of ancient Inner Asia.</p>
+
+            <h3>Festivals: Chilimjusht, Uchal, and Chaumos</h3>
+            <p>Kalasha life revolves around three major festivals celebrating the agricultural cycle and honoring the gods. <strong>Chilimjusht</strong> (May) marks spring's arrival with prayers for livestock and crops, featuring dancing, singing, and ritual sacrifices. <strong>Uchal</strong> (August) celebrates the harvest, with communities gathering to give thanks for the year's produce. The most important festival is <strong>Chaumos</strong> (December), a two-week winter solstice celebration featuring elaborate rituals, masked dancing, community feasting, and the welcoming of the demi-god <strong>Balimain</strong> who brings blessings for the new year. During these festivals, Kalasha women wear their most elaborate traditional dress, and communities come together in singing, dancing, and celebration that can continue through entire nights.</p>
+
+            <h3>Women's Dress and Identity</h3>
+            <p>Kalasha women's traditional dress is among the most distinctive in South Asia—a stark visual contrast to the surrounding Muslim populations where women typically cover conservatively. Kalasha women wear long black robes called <strong>piran</strong>, elaborately decorated with colorful embroidery, cowrie shells, buttons, and beads. Their most striking feature is the <strong>kupas</strong>—an elaborate headdress adorned with cowrie shells, beads, buttons, and woolen pompoms. Women also wear numerous necklaces, bracelets, and other jewelry. This distinctive dress serves as a powerful marker of Kalasha identity, and women's refusal to adopt Islamic dress has been central to cultural preservation. Girls begin wearing traditional dress from childhood, and the clothing's creation involves significant skill and community knowledge.</p>
+
+            <h3>Origins and the Alexander Legend</h3>
+            <p>The origins of the Kalasha have long fascinated scholars. Popular legend claims descent from Alexander the Great's soldiers, pointing to the Kalasha's sometimes lighter coloring (blue/green eyes, fair skin) as evidence. However, genetic and linguistic studies suggest the Kalasha are descended from ancient Dardic-speaking populations who inhabited this region long before Alexander's campaigns (327-325 BCE). The Kalasha language belongs to the Dardic branch of Indo-Aryan languages, related to other Hindu Kush language groups. Their religion shows connections to Vedic traditions that predate Alexander by centuries. Whatever their origins, the Kalasha represent a cultural survival of extraordinary significance—preserving traditions that illuminate the religious and cultural landscape of ancient Inner Asia.</p>
+
+            <h3>Contemporary Challenges</h3>
+            <p>The Kalasha face mounting pressures threatening their cultural survival. Conversion to Islam has reduced their population significantly over recent decades, with social and economic pressures encouraging young people to convert. Tourism, while providing income, exposes the community to outside influences and commodifies sacred traditions. Education in Urdu rather than Kalasha threatens language transmission. Intermarriage with Muslims typically results in children being raised Muslim. Climate change affects traditional agriculture. Despite these challenges, the Kalasha have established cultural organizations, work to document their language and traditions, and advocate for their rights as an indigenous minority. International attention has brought both support and new complications as the Kalasha navigate the difficult balance between cultural preservation and participation in modern Pakistan.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Hindu Kush mountains" loading="lazy">
+                    <div class="image-caption">The dramatic Hindu Kush mountains where the Kalasha valleys are hidden</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800" alt="Mountain valley" loading="lazy">
+                    <div class="image-caption">Remote mountain valleys preserve Kalasha culture from outside influence</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800" alt="Grapes and wine" loading="lazy">
+                    <div class="image-caption">Grape cultivation for wine-making, a unique Kalasha tradition in Pakistan</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800" alt="Traditional crafts" loading="lazy">
+                    <div class="image-caption">Intricate beadwork and embroidery characteristic of Kalasha women's dress</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800" alt="Mountain village" loading="lazy">
+                    <div class="image-caption">Traditional Kalasha houses built into steep mountain slopes</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800" alt="Walnut trees" loading="lazy">
+                    <div class="image-caption">Walnut orchards are vital to Kalasha economy and traditions</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/hunza.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Hunza</h3>
+                    <p class="related-location">Gilgit-Baltistan, Pakistan</p>
+                    <span class="relationship-badge regional">Mountain Neighbors</span>
+                    <p class="related-description">High-altitude Karakoram people with shared mountain culture.</p>
+                </a>
+                <a href="/peoples/wakhi.html" class="related-card">
+                    <div class="related-icon">⛰️</div>
+                    <h3>Wakhi</h3>
+                    <p class="related-location">Wakhan Corridor</p>
+                    <span class="relationship-badge regional">Hindu Kush Neighbors</span>
+                    <p class="related-description">High-altitude people of the Wakhan with ancient Iranian roots.</p>
+                </a>
+                <a href="/peoples/nuristani.html" class="related-card">
+                    <div class="related-icon">🌲</div>
+                    <h3>Nuristani</h3>
+                    <p class="related-location">Afghanistan</p>
+                    <span class="relationship-badge historical">Cultural Relatives</span>
+                    <p class="related-description">Former polytheists converted in 1896, sharing ancient religious connections.</p>
+                </a>
+                <a href="/peoples/balti.html" class="related-card">
+                    <div class="related-icon">🏇</div>
+                    <h3>Balti</h3>
+                    <p class="related-location">Baltistan, Pakistan</p>
+                    <span class="relationship-badge regional">Pakistani Highlands</span>
+                    <p class="related-description">High-altitude Tibetan-influenced people of the Karakoram.</p>
+                </a>
+                <a href="/peoples/pashtun.html" class="related-card">
+                    <div class="related-icon">🗡️</div>
+                    <h3>Pashtun</h3>
+                    <p class="related-location">Pakistan/Afghanistan</p>
+                    <span class="relationship-badge regional">Surrounding Culture</span>
+                    <p class="related-description">Dominant regional culture surrounding the Kalasha valleys.</p>
+                </a>
+                <a href="/peoples/kafir.html" class="related-card">
+                    <div class="related-icon">🏛️</div>
+                    <h3>Ancient Kafirs</h3>
+                    <p class="related-location">Historical Kafiristan</p>
+                    <span class="relationship-badge historical">Ancestral Tradition</span>
+                    <p class="related-description">The broader polytheistic tradition the Kalasha once shared.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Loude, Jean-Yves & Lièvre, Viviane. (1988). <em>Kalash Solstice: Winter Feasts of the Kalash of North Pakistan</em>. Lok Virsa Publishing.</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Cacopardo, Alberto M. & Cacopardo, Augusto S. (2001). <em>Gates of Peristan: History, Religion and Society in the Hindu Kush</em>. IsIAO.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Maggi, Wynne. (2001). <em>Our Women Are Free: Gender and Ethnicity in the Hindukush</em>. University of Michigan Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Bashir, Elena. (1988). "Topics in Kalasha Syntax." Ph.D. dissertation, University of Michigan.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Witzel, Michael. (2004). "The Rgvedic Religious System and its Central Asian and Hindukush Antecedents." In <em>The Vedas: Texts, Language and Ritual</em>. Brill.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Trail, Ronald L. & Cooper, Gregory R. (1999). <em>Kalasha Dictionary with English and Urdu</em>. National Institute of Pakistan Studies.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Parkes, Peter. (1987). "Livestock Symbolism and Pastoral Ideology Among the Kafirs of the Hindu Kush." <em>Man</em> 22(4):637-660.</span></div>
+                <div class="reference-item"><span class="reference-number">8.</span><span class="reference-text">Robertson, George Scott. (1896). <em>The Kafirs of the Hindu Kush</em>. Lawrence and Bullen. [Classic ethnography]</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+        </footer>
     </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "The dramatic Hindu Kush mountains where the Kalasha valleys are hidden" },
+            { src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800", caption: "Remote mountain valleys preserve Kalasha culture from outside influence" },
+            { src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Grape cultivation for wine-making, a unique Kalasha tradition in Pakistan" },
+            { src: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800", caption: "Intricate beadwork and embroidery characteristic of Kalasha women's dress" },
+            { src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800", caption: "Traditional Kalasha houses built into steep mountain slopes" },
+            { src: "https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=800", caption: "Walnut orchards are vital to Kalasha economy and traditions" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
 </body>
 </html>
