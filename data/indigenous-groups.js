@@ -2311,6 +2311,118 @@ const indigenousGroups = [
         description: "Isolated island people with unique Socotri language, living among otherworldly dragon blood trees and endemic species found nowhere else on Earth.",
         tags: ["Endemic species", "Unique language", "Isolated"],
         emoji: "🌳"
+    },
+    {
+        name: "Wolof",
+        region: "africa",
+        location: "Senegal, Gambia, Mauritania",
+        description: "West Africa's largest ethnic group known for griot tradition, sophisticated urban culture, and mbalax music that has influenced global genres from Afrobeat to hip-hop.",
+        tags: ["Griot tradition", "Mbalax music", "Jolof Empire"],
+        emoji: "🎵"
+    },
+    {
+        name: "Akan",
+        region: "africa",
+        location: "Ghana, Ivory Coast",
+        description: "Gold Coast civilization comprising Ashanti, Fante, and other groups, known for kente cloth, adinkra symbols, the Golden Stool, and matrilineal descent.",
+        tags: ["Kente cloth", "Golden Stool", "Matrilineal"],
+        emoji: "👑"
+    },
+    {
+        name: "Apache",
+        region: "americas",
+        location: "Southwestern USA",
+        description: "Warriors of the Southwest desert including Chiricahua, Mescalero, and Western Apache, known for guerrilla warfare and leaders like Geronimo and Cochise.",
+        tags: ["Desert warriors", "Geronimo", "Sunrise Ceremony"],
+        emoji: "🏜️"
+    },
+    {
+        name: "Crow (Apsáalooke)",
+        region: "americas",
+        location: "Montana, USA",
+        description: "Children of the Large-Beaked Bird, master horsemen of the Northern Plains known for Crow Fair, the largest Native American gathering in North America.",
+        tags: ["Crow Fair", "Horse culture", "Montana"],
+        emoji: "🦅"
+    },
+    {
+        name: "Cheyenne",
+        region: "americas",
+        location: "Montana and Oklahoma, USA",
+        description: "Keepers of the Sacred Arrows, Plains warriors who fought at Little Bighorn and endured the Sand Creek Massacre, known for Dog Soldier warrior society.",
+        tags: ["Sacred Arrows", "Dog Soldiers", "Little Bighorn"],
+        emoji: "🦬"
+    },
+    {
+        name: "Ewe",
+        region: "africa",
+        location: "Ghana, Togo, Benin",
+        description: "Masters of polyrhythmic drumming considered among the world's most complex, with 4-7 simultaneous rhythms, and source culture of Vodun religion.",
+        tags: ["Polyrhythmic drumming", "Vodun origins", "130+ dances"],
+        emoji: "🥁"
+    },
+    {
+        name: "Fon",
+        region: "africa",
+        location: "Benin (formerly Dahomey)",
+        description: "Founders of the Kingdom of Dahomey, known for the legendary Dahomey Amazons female warriors and as a source culture for Vodun/Voodoo religion.",
+        tags: ["Dahomey Kingdom", "Amazons", "Vodun"],
+        emoji: "🐍"
+    },
+    {
+        name: "Bambara (Bamana)",
+        region: "africa",
+        location: "Mali",
+        description: "Mali's largest ethnic group famous for Chi Wara antelope headdresses, sophisticated initiation societies, and resistance to Islamic conversion.",
+        tags: ["Chi Wara", "Secret societies", "Mudcloth"],
+        emoji: "🎭"
+    },
+    {
+        name: "Luo",
+        region: "africa",
+        location: "Kenya, Tanzania",
+        description: "Nilotic fishing people of Lake Victoria, creators of Benga music, and politically influential group that produced Barack Obama's father.",
+        tags: ["Lake Victoria", "Benga music", "Obama heritage"],
+        emoji: "🎸"
+    },
+    {
+        name: "Sioux (Očhéthi Šakówiŋ)",
+        region: "americas",
+        location: "Dakotas, Minnesota, Montana, Nebraska",
+        description: "The Great Sioux Nation of Seven Council Fires including Lakota, Dakota, and Nakota, who defeated Custer at Little Bighorn and continue fighting for the Black Hills.",
+        tags: ["Seven Council Fires", "Little Bighorn", "Black Hills"],
+        emoji: "🦅"
+    },
+    {
+        name: "Iroquois (Haudenosaunee)",
+        region: "americas",
+        location: "New York, Ontario, Quebec",
+        description: "People of the Longhouse whose Great Law of Peace influenced the US Constitution, a confederacy of six nations with powerful women's political rights.",
+        tags: ["Great Law of Peace", "Longhouse", "Clan Mothers"],
+        emoji: "🏠"
+    },
+    {
+        name: "Zuni (A:shiwi)",
+        region: "americas",
+        location: "New Mexico, USA",
+        description: "Pueblo people speaking a language isolate, world-renowned for intricate turquoise jewelry, kachina ceremonies, and 95% language retention.",
+        tags: ["Turquoise jewelry", "Kachinas", "Language isolate"],
+        emoji: "🌽"
+    },
+    {
+        name: "Paiute",
+        region: "americas",
+        location: "Nevada, California, Utah, Oregon",
+        description: "Great Basin desert masters including Northern, Southern, and Owens Valley groups, originators of the Ghost Dance religious movement.",
+        tags: ["Ghost Dance", "Pine nut culture", "Water rights"],
+        emoji: "🌾"
+    },
+    {
+        name: "Shoshone",
+        region: "americas",
+        location: "Nevada, Wyoming, Idaho",
+        description: "Snake People of the Great Basin and Plains, famous for Sacagawea who guided Lewis and Clark, and ongoing nuclear testing land rights struggles.",
+        tags: ["Sacagawea", "Nuclear testing", "Land rights"],
+        emoji: "🐍"
     }
 ];
 
