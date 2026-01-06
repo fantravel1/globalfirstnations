@@ -2423,6 +2423,110 @@ const indigenousGroups = [
         description: "Snake People of the Great Basin and Plains, famous for Sacagawea who guided Lewis and Clark, and ongoing nuclear testing land rights struggles.",
         tags: ["Sacagawea", "Nuclear testing", "Land rights"],
         emoji: "🐍"
+    },
+    {
+        name: "Choctaw",
+        region: "americas",
+        location: "Oklahoma, Mississippi",
+        description: "Third-largest Native American tribe, inventors of stickball, first on the Trail of Tears, and America's first code talkers in WWI.",
+        tags: ["Trail of Tears", "Stickball", "Code talkers"],
+        emoji: "🏈"
+    },
+    {
+        name: "Muscogee (Creek)",
+        region: "americas",
+        location: "Oklahoma, Alabama, Georgia",
+        description: "Fourth-largest tribe, keepers of the Green Corn Ceremony, whose 2020 McGirt Supreme Court victory reshaped Oklahoma's legal landscape.",
+        tags: ["Green Corn Ceremony", "McGirt decision", "Creek Confederacy"],
+        emoji: "🔥"
+    },
+    {
+        name: "Chickasaw",
+        region: "americas",
+        location: "Oklahoma, Mississippi, Alabama",
+        description: "The 'Unconquered and Unconquerable' who never lost a major battle against Europeans, now one of America's most economically successful tribes.",
+        tags: ["Unconquered", "Economic success", "Battle of Ackia"],
+        emoji: "⚔️"
+    },
+    {
+        name: "Nez Perce",
+        region: "americas",
+        location: "Idaho, Oregon, Washington, Montana",
+        description: "Breeders of the Appaloosa horse, famous for Chief Joseph's epic 1,170-mile fighting retreat toward Canada in 1877.",
+        tags: ["Appaloosa horse", "Chief Joseph", "1877 Flight"],
+        emoji: "🐴"
+    },
+    {
+        name: "Ute",
+        region: "americas",
+        location: "Colorado, Utah, New Mexico",
+        description: "Mountain warriors of the Rockies who gave Utah its name, known for the Bear Dance and modern energy wealth.",
+        tags: ["Bear Dance", "Mountain warriors", "Energy wealth"],
+        emoji: "🏔️"
+    },
+    {
+        name: "Potawatomi",
+        region: "americas",
+        location: "Oklahoma, Kansas, Wisconsin, Michigan",
+        description: "Keepers of the Sacred Fire of the Three Fires Confederacy, survivors of the 1838 Trail of Death forced march.",
+        tags: ["Three Fires", "Trail of Death", "Sacred Fire"],
+        emoji: "🔥"
+    },
+    {
+        name: "Kiowa",
+        region: "americas",
+        location: "Oklahoma",
+        description: "Keepers of unique pictographic calendar histories, speakers of a language isolate, famous for the Kiowa Six artists.",
+        tags: ["Calendar histories", "Kiowa Six", "Language isolate"],
+        emoji: "📜"
+    },
+    {
+        name: "Arapaho",
+        region: "americas",
+        location: "Wyoming, Oklahoma",
+        description: "Keepers of the Sacred Flat Pipe, allies of the Cheyenne, survivors of the Sand Creek Massacre of 1864.",
+        tags: ["Flat Pipe", "Sand Creek", "Age-grade societies"],
+        emoji: "⛺"
+    },
+    {
+        name: "Pawnee",
+        region: "americas",
+        location: "Oklahoma (originally Nebraska)",
+        description: "Star People of the Central Plains with sophisticated astronomical knowledge, US Army scouts who experienced 96% population collapse.",
+        tags: ["Star knowledge", "Earth lodges", "Pawnee Scouts"],
+        emoji: "⭐"
+    },
+    {
+        name: "Osage",
+        region: "americas",
+        location: "Oklahoma",
+        description: "Oil millionaires who survived America's 'Reign of Terror' murder conspiracy, subjects of Killers of the Flower Moon.",
+        tags: ["Oil wealth", "Reign of Terror", "Killers of Flower Moon"],
+        emoji: "🛢️"
+    },
+    {
+        name: "Cree",
+        region: "americas",
+        location: "Canada (Quebec to Alberta), Montana",
+        description: "One of North America's largest indigenous nations with 350,000 members, speaking one of the most vital Native languages with 96,000 speakers.",
+        tags: ["Largest nation", "96K speakers", "James Bay Agreement"],
+        emoji: "🌲"
+    },
+    {
+        name: "Mohawk",
+        region: "americas",
+        location: "New York, Ontario, Quebec",
+        description: "Keepers of the Eastern Door of the Haudenosaunee Confederacy, famous as 'Skywalkers' who built NYC's skyscrapers.",
+        tags: ["Eastern Door", "Skywalkers", "Oka Crisis"],
+        emoji: "🏗️"
+    },
+    {
+        name: "Lenape (Delaware)",
+        region: "americas",
+        location: "Oklahoma, Wisconsin, Ontario (originally New Jersey/Pennsylvania)",
+        description: "Original People of the Atlantic Coast, 'Grandfathers' of the Algonquian peoples, who sold Manhattan and experienced centuries of displacement.",
+        tags: ["Grandfathers", "Manhattan sale", "Long migration"],
+        emoji: "🦃"
     }
 ];
 
