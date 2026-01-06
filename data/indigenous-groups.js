@@ -2527,6 +2527,54 @@ const indigenousGroups = [
         description: "Original People of the Atlantic Coast, 'Grandfathers' of the Algonquian peoples, who sold Manhattan and experienced centuries of displacement.",
         tags: ["Grandfathers", "Manhattan sale", "Long migration"],
         emoji: "🦃"
+    },
+    {
+        name: "Wampanoag",
+        region: "americas",
+        location: "Massachusetts, Rhode Island",
+        description: "People of the First Light who hosted the 'First Thanksgiving' before King Philip's War nearly destroyed them, now reviving their language.",
+        tags: ["First Thanksgiving", "King Philip's War", "Language revival"],
+        emoji: "🦃"
+    },
+    {
+        name: "Coast Salish",
+        region: "americas",
+        location: "Washington State, British Columbia",
+        description: "Peoples of the Salish Sea including Duwamish, Tulalip, and Musqueam, known for weaving traditions and the Boldt Decision fishing rights victory.",
+        tags: ["Salish Sea", "Boldt Decision", "Weaving traditions"],
+        emoji: "🌊"
+    },
+    {
+        name: "Hmong",
+        region: "asia",
+        location: "Laos, Vietnam, Thailand, China, USA diaspora",
+        description: "Mountain people of Southeast Asia who fought as CIA's Secret Army in Laos, creating a 300,000-strong American diaspora community.",
+        tags: ["Secret War", "Story cloths", "Refugee diaspora"],
+        emoji: "🧵"
+    },
+    {
+        name: "Mandan",
+        region: "americas",
+        location: "North Dakota",
+        description: "Earth lodge dwellers of the Missouri River who hosted Lewis and Clark, devastated by the 1837 smallpox epidemic that killed 90% of their people.",
+        tags: ["Earth lodges", "Okipa ceremony", "1837 epidemic"],
+        emoji: "🌾"
+    },
+    {
+        name: "Hidatsa",
+        region: "americas",
+        location: "North Dakota",
+        description: "People of the Willows whose Buffalo Bird Woman's Garden provides the most detailed account of traditional Plains village agriculture.",
+        tags: ["Buffalo Bird Woman", "Three Affiliated Tribes", "Agriculture"],
+        emoji: "🛖"
+    },
+    {
+        name: "Arikara",
+        region: "americas",
+        location: "North Dakota",
+        description: "Corn People who once numbered 30,000, reduced to 2,000 by epidemics and the 1823 Arikara War, first US-Plains military conflict.",
+        tags: ["Corn culture", "1823 War", "Three Affiliated Tribes"],
+        emoji: "🌽"
     }
 ];
 
