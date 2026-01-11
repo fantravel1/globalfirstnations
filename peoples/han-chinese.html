@@ -2,39 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Han Chinese People | Indigenous Peoples Repository</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Han Chinese | Indigenous Peoples Repository</title>
     <style>
-        :root { --primary: #dc2626; --secondary: #d97706; }
+        :root {
+            --primary: #DE2910;
+            --secondary: #FFDE00;
+            --accent: #000000;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--primary), var(--secondary)); background-attachment: fixed; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(135deg, var(--primary), var(--secondary)); background-attachment: fixed; color: #333; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 50px 30px; border-radius: 15px; margin-bottom: 30px; }
-        h1 { font-size: 2.5em; }
-        nav { background: #fff; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-        nav a { color: var(--primary); text-decoration: none; margin: 0 10px; font-weight: 600; }
-        .content { background: #fff; padding: 30px; border-radius: 15px; }
-        h2 { color: var(--primary); font-size: 2em; margin-bottom: 15px; border-bottom: 3px solid var(--primary); padding-bottom: 10px; }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 10px; text-align: center; }
-        .stat-num { font-size: 2em; font-weight: bold; display: block; margin-bottom: 8px; }
-        footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+        header { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 60px 30px; border-radius: 15px; margin-bottom: 30px; text-align: center; }
+        h1 { font-size: 3em; margin-bottom: 10px; }
+        .tagline { font-size: 1.3em; opacity: 0.95; font-weight: 300; }
+        nav { background: white; padding: 15px; border-radius: 10px; margin-bottom: 30px; text-align: center; }
+        nav a { color: var(--primary); text-decoration: none; margin: 0 15px; font-weight: 600; }
+        .content { background: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; }
+        h2 { color: var(--primary); font-size: 2.2em; margin: 30px 0 20px 0; border-bottom: 3px solid var(--secondary); padding-bottom: 10px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+        .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
+        footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
     </style>
 </head>
 <body>
     <div class="container">
-        <header><h1>🏮 Han Chinese People</h1><p>World's Largest Ethnic Group - Ancient Civilization - Diverse Regional Cultures</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a></nav>
+        <header><h1>🐲 Han Chinese</h1><p class="tagline">World's Largest Ethnic Group</p></header>
+        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a><a href="/about.html">About</a></nav>
         <div class="content">
             <h2>Who Are the Han Chinese?</h2>
-            <p>The Han Chinese are the world's largest ethnic group numbering approximately 1.4 billion (about 18% of global population), primarily in China (92% of China's population), Taiwan, Singapore, and substantial diaspora communities globally. The Han speak varieties of Chinese language (Sinitic family) including Mandarin, Cantonese, Wu, Min, and other regional languages/dialects. The Han originated in Yellow River valley, developing one of world's oldest continuous civilizations with 4,000+ years of recorded history. Han culture profoundly influenced East Asia through writing system, Confucian philosophy, Buddhism adaptation, art, literature, cuisine, and technological innovations. While often treated as monolithic, Han encompass enormous regional diversity in languages, customs, cuisines, and identities. The term "Han" references the Han Dynasty (206 BCE-220 CE). Modern Han identity continues evolving through globalization, political changes, and diaspora experiences.</p>
+            <p>The Han Chinese are the world's largest ethnic group, numbering approximately 1.3 billion—92% of China's population and 18% of humanity. They speak Chinese languages (Sinitic)—including Mandarin, Cantonese, Wu, Min, and others—unified by shared writing (hanzi characters). Named after the Han Dynasty (206 BCE-220 CE), Han identity encompasses enormous regional diversity while maintaining cultural unity through shared script, Confucian heritage, and historical consciousness. Han civilization—one of humanity's oldest continuous cultures—produced paper, printing, gunpowder, compass, and countless innovations. Contemporary Han navigate China's rise while diaspora communities thrive globally.</p>
             <div class="stats">
-                <div class="stat"><span class="stat-num">~1.4B</span><span>Global population</span></div>
-                <div class="stat"><span class="stat-num">92%</span><span>Of China's population</span></div>
-                <div class="stat"><span class="stat-num">Sinitic</span><span>Language family</span></div>
-                <div class="stat"><span class="stat-num">4,000+ yrs</span><span>Recorded history</span></div>
+                <div class="stat"><span class="stat-num">1.3B</span>Population</div>
+                <div class="stat"><span class="stat-num">Chinese</span>Languages</div>
+                <div class="stat"><span class="stat-num">5000</span>Years Civilization</div>
+                <div class="stat"><span class="stat-num">汉字</span>Characters</div>
             </div>
+
+            <h2>Civilization and History</h2>
+            <p>Chinese civilization emerged along the Yellow River approximately 5,000 years ago. Successive dynasties—Shang, Zhou, Qin, Han, Tang, Song, Ming, Qing—created one of history's most enduring cultural traditions. The Han Dynasty established patterns: Confucian governance, imperial examination system, Chinese writing's standardization. Despite periods of division and foreign conquest (Mongol Yuan, Manchu Qing), Han cultural continuity persisted—indeed, conquerors often adopted Han culture. This historical depth creates powerful identity: Chinese see themselves inheriting millennia of civilization. The "Century of Humiliation" (1839-1949) under Western and Japanese imperialism shapes contemporary nationalism.</p>
+
+            <h2>Confucian Heritage</h2>
+            <p>Confucianism has shaped Han culture for 2,500 years. Emphasis on: filial piety (respect for parents and ancestors), education and examination, social harmony, hierarchical relationships, and moral cultivation. Though communist China officially rejected Confucianism, its values permeate society—family obligation, educational achievement, deference to authority. Buddhism and Daoism added religious dimensions; folk practices (ancestor veneration, festivals) persist. This philosophical heritage—practically rather than mystically oriented—shapes Chinese approaches to family, work, and society. Contemporary revival includes government promotion of Confucius Institutes and traditional values rhetoric.</p>
+
+            <h2>Regional Diversity</h2>
+            <p>Han "unity" encompasses vast diversity. Linguistically, Chinese "dialects" are mutually unintelligible languages—Cantonese speakers can't understand Mandarin verbally (though written Chinese unifies). Regional cuisines, customs, architecture, and identities vary dramatically—Sichuan vs. Cantonese vs. Shanghai cultures are quite distinct. Historical migration patterns created layered identities: Hakka (guest people), for instance, maintain distinctive traditions. Diaspora Han—in Southeast Asia, Americas, Europe, Australia—develop their own cultures. This diversity complicates "Han" as unified category; critics argue it obscures internal differences while homogenizing non-Han minorities.</p>
+
+            <h2>Contemporary Han</h2>
+            <p>Modern Han navigate China's transformation. Rapid economic development lifted hundreds of millions from poverty; urbanization relocated populations; one-child policy (1979-2015) reshaped families. Diaspora communities (approximately 50 million overseas Chinese) maintain connections while integrating globally. Tensions exist: Han dominance raises minority concerns in Tibet, Xinjiang, Inner Mongolia; nationalism can become chauvinism; relations between mainland, Taiwan, Hong Kong communities are complex. How Han Chinese—as China rises to superpower status—relate to minorities domestically and the world internationally will significantly shape 21st-century history. The world's largest ethnic group's future trajectory matters globally.</p>
+
+            <h2>References</h2>
+            <ul>
+                <li>Dikötter, F. (2015). The Discourse of Race in Modern China</li>
+                <li>Fairbank, J. K. & Goldman, M. (2006). China: A New History (2nd ed.)</li>
+                <li>Leibold, J. (2007). Reconfiguring Chinese Nationalism</li>
+            </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
     </div>
 </body>
 </html>
