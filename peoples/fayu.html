@@ -2,52 +2,249 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fayu | Indigenous Peoples Repository</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fayu People: Swamp Dwellers of Papua's Remote Interior | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
     <style>
-        :root { --primary: #047857; --secondary: #065f46; }
+        :root { --swamp-green: #047857; --water-blue: #0891b2; --mud-brown: #78350f; --white: #ecf0f1; --palm-green: #15803d; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--primary), var(--secondary)); background-attachment: fixed; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 50px 30px; border-radius: 15px; margin-bottom: 30px; }
-        h1 { font-size: 2.5em; }
-        nav { background: #fff; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-        nav a { color: var(--primary); text-decoration: none; margin: 0 10px; font-weight: 600; }
-        .content { background: #fff; padding: 30px; border-radius: 15px; }
-        h2 { color: var(--primary); font-size: 2em; margin-bottom: 15px; }
-        footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
-    
-        /* Dark Mode Support */
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--swamp-green) 0%, var(--water-blue) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--swamp-green), var(--water-blue)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(4,120,87,0.5); border: 5px solid var(--palm-green); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--swamp-green); }
+        nav a { color: var(--swamp-green); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--swamp-green); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--swamp-green); border-right: 3px solid var(--water-blue); }
+        h2 { color: var(--swamp-green); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--swamp-green); }
+        h3 { color: var(--mud-brown); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--swamp-green), var(--water-blue)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--palm-green); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--water-blue), var(--mud-brown)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--swamp-green), var(--water-blue)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--swamp-green); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--swamp-green); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--swamp-green); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+            /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
             body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
-            .container { }
-            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
             nav { background: #1f2937; }
             nav a { color: #e5e7eb; }
-            nav a:hover { color: var(--secondary); }
-            .content { background: #1f2937; color: #e5e7eb; }
-            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
-            .content p, .content li { color: #d1d5db; }
-            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            .content-section { background: #1f2937; color: #e5e7eb; }
+            .content-section h2, .content-section h3 { color: #e5e7eb; }
+            .content-section p { color: #d1d5db; }
+            .related-cultures { background: #1f2937; }
+            .related-card { background: #374151; }
+            .related-card h3, .related-description { color: #d1d5db; }
+            .references-list { background: #374151; }
+            .reference-text { color: #d1d5db; }
+            .image-caption { background: #374151; color: #d1d5db; }
             footer { background: #111827; }
         }
-        /* Accessibility - Skip Link */
-        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        /* Accessibility */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary, #006994); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
         .skip-link:focus { top: 0; }
-        /* Focus styles */
-        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
-
+        a:focus, button:focus { outline: 2px solid currentColor; outline-offset: 2px; }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
-        <header><h1>Fayu</h1><p>Swamp Dwellers</p></header>
+        <header>
+            <span class="icon">🌿</span>
+            <h1>The Fayu People</h1>
+            <p class="tagline">Swamp Dwellers of Papua - Recently Contacted (1979) - Floating House Builders</p>
+        </header>
         <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
-        <div class="content" id="main-content">
-            <h2>Fayu</h2>
-            <p>Extreme environment adaptation culture representing unique human resilience and specialized survival strategies.</p>
+
+        <section class="content-section" id="main-content">
+            <h2>Who Are the Fayu?</h2>
+            <p>The Fayu are one of the world's most recently contacted indigenous peoples, first encountered by outsiders in 1979 in the remote swamplands of Papua, Indonesia. Numbering only about 400-500 individuals, they inhabit an extraordinarily challenging environment—vast freshwater swamps in the Lakes Plain region of Papua province, where permanent dry land is virtually nonexistent. For thousands of years, the Fayu developed unique adaptations to this watery world, building houses on stilts over the swamp, traveling exclusively by dugout canoe, and subsisting on sago palm, fish, and wild game. Their late contact with the outside world means their traditional culture remains relatively intact, offering rare insights into human adaptation to extreme wetland environments.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~500</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">1979</span><span>First outside contact</span></div>
+                <div class="stat-card"><span class="stat-number">Fayu</span><span>Language isolate</span></div>
+                <div class="stat-card"><span class="stat-number">100%</span><span>Swamp environment</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Houses on Water:</strong> The Fayu build their entire lives on water! Their houses stand on stilts 2-3 meters above the swamp, connected by log walkways. They have no roads or trails—every journey, from visiting neighbors to hunting, is made by dugout canoe through the maze of waterways that only they can navigate.
+            </div>
+
+            <h3>The Lakes Plain Swamps</h3>
+            <p>The Fayu homeland lies in the Lakes Plain region of Papua's interior—a vast, nearly impenetrable expanse of freshwater swamps, meandering rivers, and scattered lakes fed by rainfall from the surrounding mountains. This region receives over 5,000mm of rain annually, creating a permanent wetland with almost no dry ground. The swamps are covered with stands of sago palm and dense vegetation, broken by channels of dark, tea-colored water. Temperatures hover around 30°C year-round with extreme humidity. This challenging environment remained essentially unknown to the outside world until the late 20th century, protecting the Fayu from contact but also isolating them from all other human populations.</p>
+
+            <h3>First Contact and the Schlener Family</h3>
+            <p>The Fayu's first sustained contact with outsiders came through German missionary linguists Doris and Klaus-Peter Kuegler, who established contact in 1979. Before this, the Fayu had been engaged in constant inter-clan warfare that had reduced their population to dangerously low levels—some estimates suggest only 200-300 individuals remained. The Kueglers' daughter, Sabine Kuegler, later wrote <em>Dschungelkind</em> (Jungle Child), a bestselling memoir about growing up among the Fayu that brought international attention to this isolated community. The Kueglers' intervention helped negotiate peace between warring clans, likely preventing the Fayu's extinction, though it also began the process of cultural change that continues today.</p>
+
+            <h3>Sago: The Tree of Life</h3>
+            <p>The sago palm is the foundation of Fayu survival, providing their primary source of carbohydrates in an environment where agriculture is impossible. Fayu women process sago by felling mature palms, splitting the trunks, and laboriously pounding and washing the pith to extract starchy flour. A single mature sago palm can yield 150-300 kg of starch—enough to feed a family for weeks. Sago is prepared as a thick paste, baked into cakes, or made into a porridge. The Fayu supplement sago with fish caught using traps and spears, wild pigs hunted with bows, and various forest products including larvae harvested from rotting sago trunks—a protein-rich delicacy. This diet, while monotonous, has sustained the Fayu for generations in their challenging swamp environment.</p>
+
+            <h3>Warfare and Social Organization</h3>
+            <p>Before outside contact, Fayu society was organized into small, dispersed clans that engaged in near-constant warfare with each other. Revenge killings created cycles of violence that lasted generations. The swamp environment, while protective against outside invasion, also prevented the development of larger political units or trade networks that might have reduced conflict. Each clan occupied a territory within the swamp, fiercely defending its sago groves and fishing areas. Men were warriors first; boys learned to use bows and arrows from early childhood. Women's primary roles centered on sago processing and childcare. The Kueglers' peace negotiations in the 1980s ended active warfare, but the legacy of inter-clan tensions continues to shape Fayu social relations.</p>
+
+            <h3>Spiritual Beliefs and Practices</h3>
+            <p>Traditional Fayu spirituality centers on a rich world of spirits inhabiting the swamp environment. Spirits dwell in significant trees, deep pools, and other notable locations. Shamans communicate with spirits to ensure successful hunts, cure illnesses, and protect against malevolent forces. Dreams are considered communications from the spirit world. Death rituals were elaborate, with bodies traditionally placed on platforms until decomposition, after which skulls were preserved as connections to ancestors. Christianity, introduced by missionaries, has significantly altered traditional beliefs, though elements of spirit belief persist. The Fayu language—a linguistic isolate unrelated to any known language family—contains rich vocabulary for their swamp environment and spiritual concepts.</p>
+
+            <h3>Contemporary Challenges</h3>
+            <p>Today, the Fayu face rapid and disorienting change. Christianity has largely replaced traditional beliefs. Indonesian education and language are transforming the younger generation. Some Fayu have relocated to mission settlements with access to schools and medical care, abandoning the traditional swamp lifestyle. Climate change threatens the delicate swamp ecosystem. Logging and development pressures from Indonesia's expansion into Papua's interior pose existential threats to both the environment and Fayu way of life. With a population of only around 500 and a unique language spoken nowhere else on Earth, the Fayu represent one of humanity's most vulnerable cultures—their survival depends on protecting both their swamp homeland and their right to determine their own future.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800" alt="Tropical swamp forest" loading="lazy">
+                    <div class="image-caption">Dense swamp forest similar to the Fayu homeland in Papua's interior</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Dugout canoe" loading="lazy">
+                    <div class="image-caption">Traditional dugout canoe, the only means of transportation in the swamps</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1501426026826-31c667bdf23d?w=800" alt="Tropical wetland" loading="lazy">
+                    <div class="image-caption">Waterlogged forest environment where the Fayu have lived for millennia</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1536147116438-62679a5e01f2?w=800" alt="Palm trees" loading="lazy">
+                    <div class="image-caption">Sago palms, the "tree of life" providing the Fayu's staple food</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800" alt="Aerial view of wetlands" loading="lazy">
+                    <div class="image-caption">Aerial view of vast swampland similar to Papua's Lakes Plain region</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800" alt="Misty forest" loading="lazy">
+                    <div class="image-caption">Mist-shrouded swamp forest, one of Earth's most isolated environments</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/korowai.html" class="related-card">
+                    <div class="related-icon">🌳</div>
+                    <h3>Korowai</h3>
+                    <p class="related-location">Papua, Indonesia</p>
+                    <span class="relationship-badge regional">Papuan Neighbors</span>
+                    <p class="related-description">Tree house builders of Papua's lowland forests.</p>
+                </a>
+                <a href="/peoples/asmat.html" class="related-card">
+                    <div class="related-icon">🎭</div>
+                    <h3>Asmat</h3>
+                    <p class="related-location">Papua, Indonesia</p>
+                    <span class="relationship-badge regional">Swamp Culture</span>
+                    <p class="related-description">Master woodcarvers of Papua's coastal swamps.</p>
+                </a>
+                <a href="/peoples/dani.html" class="related-card">
+                    <div class="related-icon">⛰️</div>
+                    <h3>Dani</h3>
+                    <p class="related-location">Papua Highlands</p>
+                    <span class="relationship-badge regional">Papuan Culture</span>
+                    <p class="related-description">Highland warriors of Papua's Baliem Valley.</p>
+                </a>
+                <a href="/peoples/sentinelese.html" class="related-card">
+                    <div class="related-icon">🏝️</div>
+                    <h3>Sentinelese</h3>
+                    <p class="related-location">Andaman Islands</p>
+                    <span class="relationship-badge similar">Uncontacted Peoples</span>
+                    <p class="related-description">One of Earth's last uncontacted peoples, fiercely isolated.</p>
+                </a>
+                <a href="/peoples/jarawa.html" class="related-card">
+                    <div class="related-icon">🏹</div>
+                    <h3>Jarawa</h3>
+                    <p class="related-location">Andaman Islands</p>
+                    <span class="relationship-badge similar">Recently Contacted</span>
+                    <p class="related-description">Recently contacted hunter-gatherers of the Andaman Islands.</p>
+                </a>
+                <a href="/peoples/yanomami.html" class="related-card">
+                    <div class="related-icon">🌿</div>
+                    <h3>Yanomami</h3>
+                    <p class="related-location">Amazon Basin</p>
+                    <span class="relationship-badge similar">Isolated Peoples</span>
+                    <p class="related-description">Recently contacted Amazon peoples facing similar challenges.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Kuegler, Sabine. (2005). <em>Dschungelkind</em> (Jungle Child). Droemer Knaur. [Memoir of growing up among the Fayu]</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Foley, William A. (1986). <em>The Papuan Languages of New Guinea</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Roscoe, Paul. (2005). "Foraging, Ethnographic Analogy, and Papuan Pasts." In <em>Papuan Pasts</em>. ANU Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Townsend, Patricia K. (1969). "Subsistence and Social Organization in a New Guinea Society." Ph.D. dissertation, University of Michigan. [On sago-dependent peoples]</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Knauft, Bruce M. (1993). <em>South Coast New Guinea Cultures</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Ellen, Roy F. (2004). "The Sago Palm and Its Role in the Ethnobiology of Papua." <em>Human Ecology</em> 32(5):539-572.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
-        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Databasecopy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education | Educational Resource</p>
+        </footer>
     </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800", caption: "Dense swamp forest similar to the Fayu homeland in Papua's interior" },
+            { src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800", caption: "Traditional dugout canoe, the only means of transportation in the swamps" },
+            { src: "https://images.unsplash.com/photo-1501426026826-31c667bdf23d?w=800", caption: "Waterlogged forest environment where the Fayu have lived for millennia" },
+            { src: "https://images.unsplash.com/photo-1536147116438-62679a5e01f2?w=800", caption: "Sago palms, the 'tree of life' providing the Fayu's staple food" },
+            { src: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800", caption: "Aerial view of vast swampland similar to Papua's Lakes Plain region" },
+            { src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800", caption: "Mist-shrouded swamp forest, one of Earth's most isolated environments" }
+        ];
+        let currentIndex = 0;
+        function openLightbox(index) { currentIndex = index; document.getElementById('lightbox').style.display = 'block'; updateLightbox(); }
+        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+        function changeLightbox(direction) { currentIndex += direction; if (currentIndex < 0) currentIndex = images.length - 1; if (currentIndex >= images.length) currentIndex = 0; updateLightbox(); }
+        function updateLightbox() { document.getElementById('lightboxImage').src = images[currentIndex].src; document.getElementById('lightboxCaption').textContent = images[currentIndex].caption; }
+        document.addEventListener('keydown', function(event) { if (document.getElementById('lightbox').style.display === 'block') { if (event.key === 'Escape') closeLightbox(); if (event.key === 'ArrowLeft') changeLightbox(-1); if (event.key === 'ArrowRight') changeLightbox(1); } });
+    </script>
 </body>
 </html>

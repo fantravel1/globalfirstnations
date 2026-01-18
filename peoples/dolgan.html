@@ -2,52 +2,275 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dolgan | Indigenous Peoples Repository</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolgan People: Arctic Reindeer Nomads of Siberia | Indigenous Peoples Repository</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦌</text></svg>">
     <style>
-        :root { --primary: #1e293b; --secondary: #0c4a6e; }
+        :root { --arctic-blue: #1e3a5f; --aurora-green: #00d4aa; --snow-white: #f8fafc; --twilight-purple: #4c1d95; --ice-blue: #bfdbfe; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--primary), var(--secondary)); background-attachment: fixed; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 50px 30px; border-radius: 15px; margin-bottom: 30px; }
-        h1 { font-size: 2.5em; }
-        nav { background: #fff; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-        nav a { color: var(--primary); text-decoration: none; margin: 0 10px; font-weight: 600; }
-        .content { background: #fff; padding: 30px; border-radius: 15px; }
-        h2 { color: var(--primary); font-size: 2em; margin-bottom: 15px; }
-        footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
-    
-        /* Dark Mode Support */
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.7; background: linear-gradient(180deg, var(--twilight-purple) 0%, var(--arctic-blue) 100%); background-attachment: fixed; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        header { background: linear-gradient(135deg, var(--arctic-blue), var(--twilight-purple)); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(30,58,95,0.5); border: 5px solid var(--aurora-green); }
+        h1 { font-size: 3.5em; text-shadow: 3px 3px 8px rgba(0,0,0,0.5); }
+        .icon { font-size: 4em; margin-right: 20px; }
+        .tagline { font-size: 1.3em; margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 10px; }
+        nav { background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 3px solid var(--arctic-blue); }
+        nav a { color: var(--arctic-blue); text-decoration: none; margin: 0 15px; font-weight: 600; padding: 8px 15px; border-radius: 8px; display: inline-block; transition: all 0.3s; }
+        nav a:hover { background: var(--arctic-blue); color: white; }
+        .content-section { background: rgba(255,255,255,0.95); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border-left: 8px solid var(--arctic-blue); border-right: 3px solid var(--aurora-green); }
+        h2 { color: var(--arctic-blue); font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 4px solid var(--arctic-blue); }
+        h3 { color: var(--twilight-purple); font-size: 1.8em; margin: 25px 0 15px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: linear-gradient(135deg, var(--arctic-blue), var(--twilight-purple)); color: white; padding: 25px; border-radius: 15px; text-align: center; border: 3px solid var(--aurora-green); }
+        .stat-number { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
+        .fun-fact { background: linear-gradient(135deg, var(--aurora-green), var(--arctic-blue)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; font-size: 1.1em; }
+        footer { background: linear-gradient(135deg, var(--arctic-blue), var(--twilight-purple)); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+        .image-gallery { margin: 4rem 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-item { cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .image-caption { padding: 1rem; background: white; font-size: 0.9rem; color: #333; min-height: 60px; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
+        .lightbox-image { max-width: 90%; max-height: 80vh; margin: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .lightbox-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; text-align: center; padding: 1rem 2rem; background: rgba(0,0,0,0.7); border-radius: 8px; max-width: 80%; }
+        .close-lightbox, .prev-lightbox, .next-lightbox { color: white; font-size: 40px; font-weight: bold; cursor: pointer; position: absolute; user-select: none; }
+        .close-lightbox { top: 20px; right: 40px; }
+        .close-lightbox:hover { color: #ccc; }
+        .prev-lightbox, .next-lightbox { top: 50%; transform: translateY(-50%); padding: 16px; background: rgba(0,0,0,0.5); border-radius: 4px; }
+        .prev-lightbox { left: 20px; }
+        .next-lightbox { right: 20px; }
+        .prev-lightbox:hover, .next-lightbox:hover { background: rgba(0,0,0,0.8); }
+        .related-cultures { margin: 4rem 0; padding: 3rem 2rem; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .related-card { background: white; padding: 1.5rem; border-radius: 8px; text-decoration: none; color: inherit; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; display: block; border: 2px solid var(--arctic-blue); }
+        .related-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .related-icon { font-size: 3rem; text-align: center; margin-bottom: 0.5rem; }
+        .related-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--arctic-blue); }
+        .related-location { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .relationship-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 0.5rem 0; }
+        .relationship-badge.similar { background: #d4edda; color: #155724; }
+        .relationship-badge.regional { background: #cce5ff; color: #004085; }
+        .relationship-badge.historical { background: #fff3cd; color: #856404; }
+        .related-description { font-size: 0.9rem; color: #555; line-height: 1.5; margin-top: 0.5rem; }
+        .academic-references { margin: 4rem 0 2rem; }
+        .references-list { margin-top: 2rem; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .reference-item { padding: 1rem 0; border-bottom: 1px solid #eee; display: flex; gap: 1rem; }
+        .reference-item:last-child { border-bottom: none; }
+        .reference-number { font-weight: 700; color: var(--arctic-blue); flex-shrink: 0; }
+        .reference-text { line-height: 1.6; color: #333; }
+        .reference-text em { font-style: italic; }
+        @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+            /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
             body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
-            .container { }
-            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
             nav { background: #1f2937; }
             nav a { color: #e5e7eb; }
-            nav a:hover { color: var(--secondary); }
-            .content { background: #1f2937; color: #e5e7eb; }
-            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
-            .content p, .content li { color: #d1d5db; }
-            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            .content-section { background: #1f2937; color: #e5e7eb; }
+            .content-section h2, .content-section h3 { color: #e5e7eb; }
+            .content-section p { color: #d1d5db; }
+            .related-cultures { background: #1f2937; }
+            .related-card { background: #374151; }
+            .related-card h3, .related-description { color: #d1d5db; }
+            .references-list { background: #374151; }
+            .reference-text { color: #d1d5db; }
+            .image-caption { background: #374151; color: #d1d5db; }
             footer { background: #111827; }
         }
-        /* Accessibility - Skip Link */
-        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        /* Accessibility */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary, #006994); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
         .skip-link:focus { top: 0; }
-        /* Focus styles */
-        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
-
+        a:focus, button:focus { outline: 2px solid currentColor; outline-offset: 2px; }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
-        <header><h1>Dolgan</h1><p>Arctic Nomads</p></header>
+        <header>
+            <span class="icon">🦌</span>
+            <h1>The Dolgan People</h1>
+            <p class="tagline">Arctic Reindeer Nomads - Masters of the Polar Night - Balok Sled Innovators</p>
+        </header>
         <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
-        <div class="content" id="main-content">
-            <h2>Dolgan</h2>
-            <p>Extreme environment adaptation culture representing unique human resilience and specialized survival strategies.</p>
+
+        <section class="content-section" id="main-content">
+            <h2>Who Are the Dolgans?</h2>
+            <p>The Dolgans are an indigenous Turkic-speaking people of the Russian Arctic, inhabiting the remote Taymyr Peninsula—the northernmost landmass on Earth. Numbering approximately 8,000 people, they are one of the youngest ethnic groups in Siberia, having formed as a distinct people only in the 18th-19th centuries from a mixture of Evenk, Yakut, Nenets, and Russian settlers. Despite their recent ethnogenesis, the Dolgans developed a unique culture perfectly adapted to life in one of the world's most extreme environments, where temperatures plunge below -50°C in winter and the polar night lasts for months. Their invention of the <strong>balok</strong>—a heated mobile dwelling mounted on sled runners—represents one of humanity's most ingenious adaptations to extreme cold.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">~8,000</span><span>Total population</span></div>
+                <div class="stat-card"><span class="stat-number">-50°C</span><span>Winter temperatures</span></div>
+                <div class="stat-card"><span class="stat-number">Dolgan</span><span>Turkic language</span></div>
+                <div class="stat-card"><span class="stat-number">Taymyr</span><span>Northernmost homeland</span></div>
+            </div>
+
+            <div class="fun-fact">
+                <strong>Mobile Heated Houses:</strong> The Dolgans invented the balok—essentially a small wooden cabin mounted on large sled runners, complete with a metal stove for heating. A team of reindeer can pull these heated mobile homes across the frozen tundra, allowing families to stay warm at -50°C while following their reindeer herds!
+            </div>
+
+            <h3>Life on the Taymyr Peninsula</h3>
+            <p>The Taymyr Peninsula extends north of the Arctic Circle into the Kara Sea, a vast treeless expanse of permafrost, tundra, and polar desert. For most of the year, the land is locked in ice and snow, with the polar night bringing months of continuous darkness in winter. Summers are brief—just 6-8 weeks of continuous daylight when temperatures can reach 10°C and the tundra explodes with wildflowers, migrating birds, and clouds of mosquitoes. The Dolgans have mastered this harsh environment through reindeer herding, hunting wild reindeer, fishing in the numerous rivers and lakes, and trapping Arctic fox for their valuable fur. The settlement of Dudinka serves as the administrative center, while most Dolgans continue to live nomadically or in small tundra communities.</p>
+
+            <h3>The Balok: Arctic Innovation</h3>
+            <p>The <strong>balok</strong> is the Dolgans' most distinctive cultural innovation—a small wooden cabin (roughly 3x4 meters) built on massive wooden sled runners. Inside, a metal stove provides heat, while the wooden walls and insulation of reindeer hides maintain warmth even in extreme cold. The balok can accommodate a family and their essential possessions, and is pulled by a team of 4-5 reindeer. This mobile home allowed Dolgans to follow their herds year-round while maintaining the comfort of an enclosed dwelling with heating—a significant advantage over the traditional conical tents (chum) used by neighboring peoples. The balok represents a synthesis of Russian log cabin technology, Evenk reindeer herding traditions, and ingenious Arctic engineering.</p>
+
+            <h3>Reindeer Herding Culture</h3>
+            <p>Reindeer are central to Dolgan life, providing transportation, food, clothing, and materials for shelter. Unlike some Arctic peoples who use reindeer primarily as draft animals, Dolgans maintain herds for multiple purposes. They consume reindeer meat (both fresh and dried), drink reindeer blood for nutrition in vitamin-poor environments, and use virtually every part of the animal—hides for clothing and bedding, sinew for thread, antlers for tools and handicrafts. The annual cycle follows reindeer needs: winter on the protected forest tundra, spring migration to calving grounds, summer on the open tundra where winds reduce mosquitoes, and autumn mating season. Wild reindeer hunting supplements herded animals, with hunts traditionally organized communally.</p>
+
+            <h3>Language and Origins</h3>
+            <p>The Dolgan language belongs to the Turkic family, closely related to Yakut (Sakha), though it incorporates significant vocabulary from Evenk, Nenets, and Russian. This linguistic mixing reflects the Dolgans' origins as a fusion of multiple peoples. Russian colonization of the region in the 17th-18th centuries brought Orthodox Christianity, which the Dolgans adopted while maintaining many traditional beliefs. Their name likely derives from the Evenk word "dolgaan" meaning "people living on the middle reaches of the river." The Dolgans developed a distinct ethnic identity through shared adaptation to the Taymyr environment, intermarriage, and the development of the balok-based nomadic lifestyle that distinguished them from neighboring groups.</p>
+
+            <h3>Shamanism and Spiritual Beliefs</h3>
+            <p>Traditional Dolgan spirituality blends elements from Evenk, Yakut, and other Siberian shamanic traditions with Russian Orthodox Christianity. Shamans (<strong>oyuun</strong>) served as intermediaries between the human and spirit worlds, conducting healing ceremonies, protecting communities from malevolent spirits, and ensuring successful hunts. The Dolgans believed in <strong>ichi</strong>—spirits inhabiting natural features like rivers, mountains, and notable rocks. Sacred places received offerings, and taboos regulated behavior to maintain spiritual balance. The Soviet period suppressed shamanic practices, but elements survive in folk beliefs and are experiencing revival today. Orthodox Christianity, introduced by Russian missionaries, became intertwined with traditional beliefs rather than replacing them entirely.</p>
+
+            <h3>Contemporary Challenges</h3>
+            <p>Modern Dolgans face significant challenges to their traditional way of life. Climate change is warming the Arctic faster than anywhere else on Earth, affecting reindeer migration patterns, melting permafrost, and altering the ecosystems Dolgans depend upon. Industrial development—particularly the massive Norilsk mining complex nearby—has brought pollution and environmental degradation. Younger generations increasingly move to towns for education and employment, threatening language transmission and traditional knowledge. However, Dolgans have demonstrated remarkable resilience, maintaining reindeer herding, adapting the balok to include modern conveniences, and working to preserve their language and culture through schools and cultural programs in the Taymyr Dolgano-Nenets District.</p>
+        </section>
+
+        <section class="content-section image-gallery">
+            <h2>Image Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1520962922320-2038eebab146?w=800" alt="Arctic tundra landscape" loading="lazy">
+                    <div class="image-caption">The vast Arctic tundra of the Taymyr Peninsula, homeland of the Dolgans</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1548963670-aaaa8f73a5e3?w=800" alt="Reindeer herd" loading="lazy">
+                    <div class="image-caption">Reindeer herds are central to Dolgan life and survival in the Arctic</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800" alt="Northern lights" loading="lazy">
+                    <div class="image-caption">Aurora borealis illuminates the polar night over Dolgan territory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800" alt="Arctic winter" loading="lazy">
+                    <div class="image-caption">Extreme Arctic winter conditions where Dolgans have thrived for centuries</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800" alt="Snowy wilderness" loading="lazy">
+                    <div class="image-caption">The frozen wilderness that Dolgans navigate with their reindeer-drawn baloks</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?w=800" alt="Arctic fox" loading="lazy">
+                    <div class="image-caption">Arctic fox, traditionally trapped by Dolgans for valuable winter pelts</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-cultures">
+            <h2>Explore Related Cultures</h2>
+            <div class="related-grid">
+                <a href="/peoples/nenets.html" class="related-card">
+                    <div class="related-icon">❄️</div>
+                    <h3>Nenets</h3>
+                    <p class="related-location">Russian Arctic</p>
+                    <span class="relationship-badge regional">Arctic Neighbors</span>
+                    <p class="related-description">Fellow Arctic reindeer herders sharing the Russian tundra.</p>
+                </a>
+                <a href="/peoples/evenki.html" class="related-card">
+                    <div class="related-icon">🌲</div>
+                    <h3>Evenk</h3>
+                    <p class="related-location">Siberia</p>
+                    <span class="relationship-badge historical">Ancestral Connection</span>
+                    <p class="related-description">One of the ancestral groups that formed the Dolgan people.</p>
+                </a>
+                <a href="/peoples/yakut.html" class="related-card">
+                    <div class="related-icon">🐎</div>
+                    <h3>Yakut (Sakha)</h3>
+                    <p class="related-location">Sakha Republic, Russia</p>
+                    <span class="relationship-badge similar">Linguistic Relatives</span>
+                    <p class="related-description">Fellow Turkic-speaking Siberian people with shared cultural elements.</p>
+                </a>
+                <a href="/peoples/nganasan.html" class="related-card">
+                    <div class="related-icon">🦌</div>
+                    <h3>Nganasan</h3>
+                    <p class="related-location">Taymyr Peninsula</p>
+                    <span class="relationship-badge regional">Taymyr Neighbors</span>
+                    <p class="related-description">Fellow Taymyr indigenous people, the northernmost in Eurasia.</p>
+                </a>
+                <a href="/peoples/chukchi.html" class="related-card">
+                    <div class="related-icon">🐋</div>
+                    <h3>Chukchi</h3>
+                    <p class="related-location">Chukotka, Russia</p>
+                    <span class="relationship-badge similar">Arctic Adaptation</span>
+                    <p class="related-description">Eastern Siberian Arctic people combining reindeer herding and marine hunting.</p>
+                </a>
+                <a href="/peoples/inuit.html" class="related-card">
+                    <div class="related-icon">🏔️</div>
+                    <h3>Inuit</h3>
+                    <p class="related-location">Arctic North America</p>
+                    <span class="relationship-badge similar">Circumpolar Peoples</span>
+                    <p class="related-description">Fellow Arctic peoples with parallel adaptations to extreme cold.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-section academic-references">
+            <h2>Academic References & Further Reading</h2>
+            <div class="references-list">
+                <div class="reference-item"><span class="reference-number">1.</span><span class="reference-text">Popov, A.A. (1966). <em>The Nganasan: The Material Culture of the Tavgi Samoyeds</em>. Indiana University Press. [Contains comparative material on Dolgans]</span></div>
+                <div class="reference-item"><span class="reference-number">2.</span><span class="reference-text">Ziker, John P. (2002). <em>Peoples of the Tundra: Northern Siberians in the Post-Communist Transition</em>. Waveland Press.</span></div>
+                <div class="reference-item"><span class="reference-number">3.</span><span class="reference-text">Anderson, David G. (2000). <em>Identity and Ecology in Arctic Siberia: The Number One Reindeer Brigade</em>. Oxford University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">4.</span><span class="reference-text">Forsyth, James. (1992). <em>A History of the Peoples of Siberia: Russia's North Asian Colony, 1581-1990</em>. Cambridge University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">5.</span><span class="reference-text">Vitebsky, Piers. (2005). <em>Reindeer People: Living with Animals and Spirits in Siberia</em>. Harper Collins.</span></div>
+                <div class="reference-item"><span class="reference-number">6.</span><span class="reference-text">Slezkine, Yuri. (1994). <em>Arctic Mirrors: Russia and the Small Peoples of the North</em>. Cornell University Press.</span></div>
+                <div class="reference-item"><span class="reference-number">7.</span><span class="reference-text">Stammler, Florian. (2005). <em>Reindeer Nomads Meet the Market: Culture, Property and Globalisation at the End of the Land</em>. LIT Verlag.</span></div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+            <span class="prev-lightbox" onclick="event.stopPropagation(); changeLightbox(-1)">&#10094;</span>
+            <span class="next-lightbox" onclick="event.stopPropagation(); changeLightbox(1)">&#10095;</span>
+            <img class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
-        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
+
+        <footer>
+            <p>&copy; 2024 Indigenous Peoples Research Databasecopy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education | Educational Resource</p>
+        </footer>
     </div>
+
+    <script>
+        const images = [
+            { src: "https://images.unsplash.com/photo-1520962922320-2038eebab146?w=800", caption: "The vast Arctic tundra of the Taymyr Peninsula, homeland of the Dolgans" },
+            { src: "https://images.unsplash.com/photo-1548963670-aaaa8f73a5e3?w=800", caption: "Reindeer herds are central to Dolgan life and survival in the Arctic" },
+            { src: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800", caption: "Aurora borealis illuminates the polar night over Dolgan territory" },
+            { src: "https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=800", caption: "Extreme Arctic winter conditions where Dolgans have thrived for centuries" },
+            { src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800", caption: "The frozen wilderness that Dolgans navigate with their reindeer-drawn baloks" },
+            { src: "https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?w=800", caption: "Arctic fox, traditionally trapped by Dolgans for valuable winter pelts" }
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            document.getElementById('lightbox').style.display = 'block';
+            updateLightbox();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function changeLightbox(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightboxImage').src = images[currentIndex].src;
+            document.getElementById('lightboxCaption').textContent = images[currentIndex].caption;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (document.getElementById('lightbox').style.display === 'block') {
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowLeft') changeLightbox(-1);
+                if (event.key === 'ArrowRight') changeLightbox(1);
+            }
+        });
+    </script>
 </body>
 </html>

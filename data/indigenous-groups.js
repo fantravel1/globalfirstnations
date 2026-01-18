@@ -897,14 +897,6 @@ const indigenousGroups = [
     emoji: "🐄"
     },
     {
-        name: "Maasai Mara",
-        region: "africa",
-        location: "Kenya and Tanzania border region",
-        description: "Subset of the Maasai people specifically from the famous Masai Mara ecosystem, maintaining traditional pastoralism alongside wildlife conservation.",
-        tags: ["Wildlife coexistence", "Traditional pastoralism", "Conservation"],
-        emoji: "🦒"
-    },
-    {
         name: "Herero",
         region: "africa",
         location: "Namibia and Botswana",
@@ -1201,14 +1193,6 @@ const indigenousGroups = [
         emoji: "🛶"
     },
     {
-        name: "Ona (Selk'nam)",
-        region: "americas",
-        location: "Tierra del Fuego, Argentina and Chile",
-        description: "Extinct hunter-gatherers known for their elaborate initiation ceremonies with body painting, shamanic traditions, and tragic genocide by sheep ranchers.",
-        tags: ["Extinct culture", "Body painting", "Initiation ceremonies"],
-        emoji: "🎭"
-    },
-    {
     name: "Jarawa",
     region: "asia",
     location: "Andaman Islands, India",
@@ -1295,14 +1279,6 @@ const indigenousGroups = [
         description: "Descendants of pre-Columbian Tairona civilization, calling themselves 'Elder Brothers' and warning the world about environmental destruction from their mountain isolation.",
         tags: ["Elder Brothers", "Environmental warnings", "Tairona descendants"],
         emoji: "⛰️"
-    },
-    {
-        name: "Penan Nomads",
-        region: "asia",
-        location: "Borneo rainforest, Malaysia",
-        description: "Last nomadic people of Borneo, hunter-gatherers with no permanent settlements, speaking in whispers to avoid scaring animals and sharing everything communally.",
-        tags: ["Last nomads", "Whisper hunting", "Communal sharing"],
-        emoji: "🤫"
     },
     {
         name: "Zo'é",
@@ -1431,14 +1407,6 @@ const indigenousGroups = [
         description: "Powerful Gold Coast empire known for the Golden Stool symbol, elaborate kente cloth weaving, sophisticated military organization, and resistance to British colonialism.",
         tags: ["Golden Stool", "Kente cloth", "Military organization"],
         emoji: "🪑"
-    },
-    {
-        name: "Buganda",
-        region: "africa",
-        location: "Uganda",
-        description: "Sophisticated kingdom with parliamentary democracy, elaborate royal court, distinctive drumming traditions, and maintaining monarchy within modern Uganda.",
-        tags: ["Parliamentary monarchy", "Royal court", "Traditional drumming"],
-        emoji: "🥁"
     },
     {
         name: "Songhai",
@@ -1615,14 +1583,6 @@ const indigenousGroups = [
         description: "Oasis people surviving in 'Sea of Death' desert, masters of underground irrigation (karez), navigating by sand dune patterns and buried cities.",
         tags: ["Sea of Death", "Underground irrigation", "Buried cities"],
         emoji: "🏜️"
-    },
-    {
-        name: "Kawésqar Storm Riders",
-        region: "americas",
-        location: "Patagonian Fjords, Chile",
-        description: "Canoe people navigating the world's stormiest seas year-round, reading weather in cloud formations, surviving 100+ mph winds in small boats.",
-        tags: ["Stormiest seas", "100mph winds", "Weather reading"],
-        emoji: "⛈️"
     },
     {
         name: "Seto Sky Burial",
