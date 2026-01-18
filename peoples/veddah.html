@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🏹 Veddah People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">First People of Sri Lanka - Forest Dwellers - Ancient Hunters</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Veddah?</h2>
             <p>The Veddah (Wanniyala-Aetto, "forest dwellers") are the indigenous people of <strong>Sri Lanka</strong>, numbering a few hundred to few thousand depending on definitions, representing the island's aboriginal inhabitants predating Sinhalese and Tamil arrivals. Genetic and archaeological evidence suggests Veddah descended from Mesolithic hunter-gatherers inhabiting Sri Lanka for at least 16,000-34,000 years, possibly related to Indian hunter-gatherer populations. Traditionally, the Veddah practiced <strong>hunter-gatherer lifestyle</strong> in Sri Lankan forests, hunting deer, wild boar, and small game with bows and arrows, gathering honey (Veddah were renowned honey hunters), yams, and forest products, and living in rock shelters or simple huts. Veddah society organized through patrilineal clans with animistic spiritual beliefs honoring ancestors (nae yakka) and forest spirits. The Veddah language (Vedda), possibly a creole mixing ancient substrate with Sinhalese, is nearly extinct with fewer than 10 elderly speakers. Centuries of <strong>marginalization</strong> eroded Veddah culture—Sinhalese colonization displaced them from forests, intermarriage blurred ethnic boundaries, and agricultural settlement replaced hunting-gathering. By the 20th century, most Veddah had assimilated into Sinhalese rural society. A core group claiming pure Veddah descent maintains cultural identity, though debates exist over authenticity given extensive admixture. Modern Veddah face poverty, landlessness, and cultural erosion, though cultural revival efforts and tourism create renewed interest in heritage.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">Sri Lanka</span><span>Island home</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

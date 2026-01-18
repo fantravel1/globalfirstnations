@@ -15,20 +15,42 @@
         .content { background: white; padding: 40px; border-radius: 15px; }
         h2 { color: var(--primary); font-size: 2.2em; margin-bottom: 20px; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 10px; text-align: center; margin-top: 30px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🏜️ Wayuu (Guajiro) People</h1>
             <p class="tagline">Guajira Desert Peninsula Pastoralists</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Wayuu People</h2>
             <p>The Wayuu (approximately 400,000) inhabit the arid Guajira Peninsula spanning Colombia and Venezuela—a harsh semi-desert with extreme heat (40°C+), scarce water, fierce trade winds, and drought. They endure water scarcity crises, desertification, and political instability. Traditional goat/sheep herding, matrilineal clan system, vibrant woven bags (mochilas), salt harvesting, and resistance culture define this desert peninsula people. Water access struggles, adaptation to Venezuela's crisis, and maintaining autonomy characterize their extreme desert existence.</p>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

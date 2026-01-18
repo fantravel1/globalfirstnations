@@ -18,13 +18,35 @@
         .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 10px; text-align: center; }
         .stat-num { font-size: 2em; font-weight: bold; display: block; margin-bottom: 8px; }
         footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>🐑 Aromanian People (Vlachs)</h1><p>Romance Balkan Nomads - Eastern Romance Language - Shepherd Heritage</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Aromanians?</h2>
             <p>The Aromanians (also Vlachs) are an Eastern Romance people numbering approximately 250,000-500,000 scattered across the Balkans, primarily in Greece, Albania, North Macedonia, Bulgaria, and Romania, speaking Aromanian language related to Romanian but distinct. Historically, the Aromanians were transhumant shepherds moving seasonally between mountains and lowlands, developing reputation as skilled traders. Traditional culture centered on pastoral nomadism, extended family structures, folk music, and Orthodox Christianity. The 20th century brought assimilation pressures and settlement ending nomadic lifestyle. Modern Aromanian cultural revival efforts include language standardization and advocacy for minority rights.</p>
             <div class="stats">
@@ -34,7 +56,7 @@
                 <div class="stat"><span class="stat-num">Shepherds</span><span>Traditional life</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

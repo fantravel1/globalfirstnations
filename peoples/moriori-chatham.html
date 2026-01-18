@@ -30,9 +30,31 @@
         li { margin-bottom: 8px; font-size: 1.05em; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
         footer a { color: #80d0f0; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🕊️ Moriori</h1>
@@ -46,7 +68,7 @@
             <a href="/about.html">About</a>
         </nav>
 
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Moriori?</h2>
             <p>The Moriori are the indigenous Polynesian people of the Chatham Islands (Rēkohu), located 800 kilometers east of New Zealand. They descend from Polynesian voyagers who arrived around 1500 CE, developing a unique culture adapted to the islands' harsh sub-Antarctic climate. By the 19th century, they numbered approximately 2,000—then suffered near-total destruction through invasion and colonization.</p>
             <p>Today, the Moriori population has revived to over 1,000 people, many living in mainland New Zealand while maintaining connections to Rēkohu. Their story represents both tragedy and resilience—the devastating consequences of colonialism and intergroup violence, followed by cultural revival against seemingly impossible odds.</p>

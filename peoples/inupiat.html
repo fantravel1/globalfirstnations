@@ -81,9 +81,31 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🐋 Iñupiat People</h1>
@@ -95,7 +117,7 @@
             <a href="/cultures.html">Cultures</a>
         </nav>
 
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Iñupiat?</h2>
             <p>The Iñupiat (singular: Iñupiaq) are an Inuit people inhabiting the North Slope of Alaska, the Northwest Arctic, and the Bering Straits region—some of the most extreme Arctic environments on Earth. With a population of approximately 19,000-25,000, they have survived and thrived for over 10,000 years in temperatures reaching -50°C (-58°F), navigating sea ice, hunting bowhead whales, and maintaining intricate knowledge of Arctic ecosystems. The name "Iñupiat" means "real people" in their language, Iñupiaq, which remains actively spoken across multiple dialects.</p>
 

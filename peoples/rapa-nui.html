@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🗿 Rapa Nui</h1>
             <p class="tagline">The Polynesian People of Easter Island and Their Monumental Legacy</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Rapa Nui?</h2>
             <p>The Rapa Nui are the Polynesian people of Easter Island (Rapa Nui in their language), the world's most isolated inhabited island, located over 2,000 kilometers from the nearest population center in the southeastern Pacific Ocean. Currently numbering approximately **7,000 people** (including diaspora in mainland Chile), they are descendants of Polynesian voyagers who settled the island between 1200-1300 CE. The Rapa Nui are globally famous for creating the **moai**—nearly 900 monumental stone statues, some reaching 10 meters tall and weighing 80 tons, that once stood on ceremonial platforms (ahu) around the island. Their history encompasses remarkable cultural achievements, ecological crisis, and devastating depopulation from slavery and disease, followed by modern cultural revival.</p>
 
@@ -60,7 +82,7 @@
                 <li>Boersema, J. J. (2015). <em>The Survival of Easter Island: Dwindling Resources and Cultural Resilience</em>. Cambridge University Press.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

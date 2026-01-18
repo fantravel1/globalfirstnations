@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🦌 Sámi Reindeer Herders</h1>
             <p class="tagline">Europe's Only Indigenous People and Their Arctic Livelihood</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Sámi Reindeer Herders?</h2>
             <p>The **Sámi** are the indigenous people of **Sápmi**, a region spanning northern Norway, Sweden, Finland, and Russia's Kola Peninsula—Europe's last indigenous population. Numbering approximately **80,000-100,000 people**, the Sámi are famous for their **reindeer herding** tradition, though only about 10% are actively involved in herding today. Reindeer pastoralism, developed over the past 400-500 years from earlier hunting practices, remains the cultural core of Sámi identity. The Sámi speak several related but distinct languages, practice a traditionally animist spirituality (largely Christianized but experiencing revival), and have fought for and gained significant cultural and political rights—including a Sámi Parliament in each Scandinavian country. Their distinctive **gákti** (traditional dress), **joik** (vocal music), and colorful crafts mark a culture that has survived centuries of assimilationist pressure.</p>
 
@@ -60,7 +82,7 @@
                 <li>Minde, H. (Ed.). (2008). <em>Indigenous Peoples: Self-determination, Knowledge, Indigeneity</em>. Eburon Academic Publishers.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

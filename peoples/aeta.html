@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌳 Aeta People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">First Peoples of Philippines - Negrito Hunter-Gatherers - Mountain Forest Dwellers</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Aeta?</h2>
             <p>The Aeta (also Ayta, Agta) are indigenous <strong>Negrito peoples</strong> numbering approximately 50,000-100,000 inhabiting mountainous regions of Luzon island, Philippines, representing among the earliest human inhabitants of the archipelago, arriving potentially 20,000-30,000 years ago. The Aeta are characterized by small stature, dark skin, curly hair, and physical features distinguishing them from later Austronesian migrants who now form Philippine majority. Traditionally, the Aeta practiced <strong>nomadic hunter-gatherer lifestyle</strong> in mountain forests, hunting with bows and arrows, gathering wild foods, and moving seasonally following resources. They possessed deep ecological knowledge of forest environments, sophisticated hunting techniques, and spiritual beliefs centered on nature spirits and shamanic practices. The 1991 eruption of <strong>Mount Pinatubo</strong> devastated Aeta communities, destroying traditional lands and forcing resettlement, dramatically accelerating cultural change. Modern Aeta face severe marginalization, landlessness (ancestral domains claimed by government and lowlanders), poverty, discrimination, and cultural erosion. Language retention varies—many Aeta languages critically endangered as younger generations shift to Tagalog or other Philippine languages. Despite challenges, Aeta communities work to preserve cultural identity through indigenous rights organizations, cultural education, and legal battles for ancestral domain recognition.</p>
 
@@ -49,7 +71,7 @@
             <h3>Traditional Lifestyle and Knowledge</h3>
             <p>Traditional Aeta culture centered on <strong>forest-based nomadic subsistence</strong>. Aeta excelled at hunting using sophisticated bows and arrows, snares, and detailed animal behavior knowledge, targeting wild pigs, deer, monkeys, and birds. Gathering provided substantial nutrition—wild yams, fruits, honey, and edible plants collected through intimate forest knowledge. Aeta practiced swidden horticulture in some areas, planting root crops and vegetables in forest clearings. Social organization featured small, mobile bands led by elders and skilled hunters, with egalitarian decision-making and flexible group composition. <strong>Spiritual beliefs</strong> centered on nature spirits inhabiting forests, mountains, and waters, with shamans (baylans) mediating between human and spirit worlds through rituals, healing, and divination. Aeta cosmology emphasized harmony with forest environment and respect for spiritual forces. Traditional material culture included simple shelters (lean-tos from leaves and bamboo), woven baskets, bark cloth, and minimal possessions suited to mobile lifestyle. The 1991 <strong>Pinatubo eruption</strong> catastrophically destroyed this lifestyle—massive ash falls buried forest environments, rendered lands uninhabitable, killed wildlife, and forced thousands of Aeta into resettlement camps, accelerating transition to sedentary agriculture and wage labor.
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

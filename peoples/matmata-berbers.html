@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🏠 Matmata Berbers</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Underground Dwelling Builders - Troglodyte Homes - Tunisia Highlanders</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Matmata Berbers?</h2>
             <p>The Matmata Berbers are a <strong>Berber group</strong> inhabiting the Matmata region of southern Tunisia, famous for their unique <strong>underground dwellings</strong> (troglodyte houses) carved into soft sandstone hillsides. These remarkable homes feature large circular pits dug into the ground (6-10 meters deep) with cave rooms excavated into the pit walls on multiple levels, connected by tunnels and stairs, providing natural insulation against extreme desert heat (summer) and cold (winter). The central courtyard pit serves as communal space with rooms for sleeping, storage, and livestock radiating outward. Some underground complexes house multiple families across generations. The Matmata speak <strong>Berber language</strong> (varieties of Tamazight) alongside Arabic, practice Islam, and maintain traditional Berber cultural practices including distinctive clothing, jewelry, and crafts. Traditional economy centered on pastoral nomadism (sheep, goats), dryland agriculture (olives, dates, grains), and crafts. The underground architecture represents ingenious adaptation to harsh semi-arid climate and historical defensive needs. The dwellings gained international fame when used as filming locations for Star Wars films (1977, 2002), transforming Matmata into tourist destination. Modern challenges include abandonment of traditional underground homes for modern surface housing, youth migration to cities, tourism\s cultural impacts, and balancing heritage preservation with development aspirations. Some families maintain underground homes as heritage sites or tourist accommodations.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">S. Tunisia</span><span>Location</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

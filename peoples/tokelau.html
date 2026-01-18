@@ -61,18 +61,39 @@
         .reference-text { line-height: 1.6; color: #333; }
         .reference-text em { font-style: italic; }
         @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+            /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            .content-section { background: #1f2937; color: #e5e7eb; }
+            .content-section h2, .content-section h3 { color: #e5e7eb; }
+            .content-section p { color: #d1d5db; }
+            .related-cultures { background: #1f2937; }
+            .related-card { background: #374151; }
+            .related-card h3, .related-description { color: #d1d5db; }
+            .references-list { background: #374151; }
+            .reference-text { color: #d1d5db; }
+            .image-caption { background: #374151; color: #d1d5db; }
+            footer { background: #111827; }
+        }
+        /* Accessibility */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary, #006994); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        a:focus, button:focus { outline: 2px solid currentColor; outline-offset: 2px; }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <span class="icon">🏝️</span>
             <h1>The Tokelau People</h1>
             <p class="tagline">Pacific Atoll Navigators - Climate Change Frontline - Masters of Sustainable Living</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
 
-        <section class="content-section">
+        <section class="content-section" id="main-content">
             <h2>Who Are the Tokelauans?</h2>
             <p>The Tokelauans are a Polynesian people inhabiting three tiny coral atolls—Atafu, Nukunonu, and Fakaofo—in the South Pacific Ocean, approximately halfway between Hawaii and New Zealand. With a total land area of just 12.2 square kilometers (smaller than many airports) and a population of roughly 1,500, Tokelau represents one of Earth's smallest and most remote inhabited territories. As a dependent territory of New Zealand, these islands have no airports, no harbors deep enough for large ships, and can only be reached by a 24-hour boat journey from Samoa. The Tokelauans have developed remarkable systems of communal living and sustainable resource management that have allowed them to thrive on these fragile coral islands for over 1,000 years—though climate change now threatens their very existence.</p>
 
@@ -203,7 +224,7 @@
         </div>
 
         <footer>
-            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+            <p>&copy; 2024 Indigenous Peoples Research Databasecopy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education | Educational Resource</p>
         </footer>
     </div>
 

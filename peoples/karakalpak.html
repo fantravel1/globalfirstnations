@@ -30,9 +30,31 @@
         li { margin-bottom: 8px; font-size: 1.05em; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
         footer a { color: #80cbc4; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🎭 Karakalpak</h1>
@@ -46,7 +68,7 @@
             <a href="/about.html">About</a>
         </nav>
 
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Karakalpaks?</h2>
             <p>The Karakalpaks are a Turkic people numbering approximately 700,000, primarily inhabiting the autonomous Republic of Karakalpakstan in northwestern Uzbekistan. Their name means "black hat" (kara kalpak), referring to the traditional headgear worn by men. Their homeland surrounds the southern shores of the Aral Sea—or what remains of it after one of the world's worst environmental disasters.</p>
             <p>Related to both Kazakhs and Uzbeks but maintaining distinct identity, the Karakalpaks have a complex history of migrations and political subordination. Their autonomous republic, while officially part of Uzbekistan, retains a formal right of secession—a provision that has caused tensions as Uzbek central government tightens control.</p>

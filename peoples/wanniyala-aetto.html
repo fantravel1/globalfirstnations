@@ -30,9 +30,31 @@
         li { margin-bottom: 8px; font-size: 1.05em; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
         footer a { color: #c0b0a0; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🏹 Wanniyala-Aetto (Vedda)</h1>
@@ -46,7 +68,7 @@
             <a href="/about.html">About</a>
         </nav>
 
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Wanniyala-Aetto?</h2>
             <p>The Wanniyala-Aetto—meaning "forest-dwelling people" in their own language, known to outsiders as Vedda—are the indigenous inhabitants of Sri Lanka. Archaeological and genetic evidence suggests their ancestors have lived on the island for at least 16,000 years, predating the arrival of Sinhalese and Tamil populations by millennia. Today, only a few hundred to a few thousand continue to identify culturally as Wanniyala-Aetto, though many more have Vedda ancestry.</p>
             <p>Traditionally hunter-gatherers living in the forests of eastern and central Sri Lanka, the Wanniyala-Aetto possessed extensive knowledge of the island's ecology. Their culture, language, and way of life have been devastated by colonial policies, post-independence development, and especially the establishment of national parks that denied them access to ancestral lands.</p>

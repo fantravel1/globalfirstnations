@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🏴 Cornish People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Reviving Britain's Celtic Language - Kernow Forever - Ancient Tin Miners</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Cornish?</h2>
             <p>The Cornish are the Celtic inhabitants of <strong>Cornwall</strong> (Kernow), the southwestern peninsula of England, with a distinct cultural identity and revived language. Cornwall was the last stronghold of Celtic Britain, resisting Anglo-Saxon conquest until the 9th century. The <strong>Cornish language</strong> (Kernewek), a Brythonic Celtic tongue related to Welsh and Breton, died as a community language by the late 18th century but has been successfully revived since the 20th century, now spoken by approximately 3,000+ people. Historically, Cornwall's economy centered on <strong>tin mining</strong>—the region supplied much of Europe's tin from Bronze Age through the 20th century, creating distinctive mining culture and expertise exported globally. Traditional Cornish culture includes unique customs: <strong>hurling</strong> (ancient ball game), Furry Dance in Helston, gorsedd ceremonies (bardic gatherings), distinctive cuisine including pasties, saffron cake, and cream teas, and strong Methodist religious traditions. Cornwall maintains separate identity from England, recognized as a Celtic nation alongside Wales, Scotland, Ireland, Brittany, and Isle of Man. Political movements advocate for Cornish devolution or autonomy, though Cornwall remains part of England without special constitutional status. In 2014, Cornish people gained recognition as a <strong>national minority</strong> under European Framework Convention, acknowledging distinct cultural identity.</p>
 
@@ -55,7 +77,7 @@
             <h3>Contemporary Identity and Recognition</h3>
             <p>Modern Cornwall balances integration into England/UK with maintaining distinct identity. The <strong>Cornish nationalist movement</strong> advocates for recognition ranging from cultural autonomy to independence, though most Cornish support remaining in the UK while seeking greater recognition. The 2014 national minority status represented significant victory. Political party Mebyon Kernow (Sons of Cornwall) advocates for Cornish autonomy similar to Wales or Scotland. Cultural symbols including the <strong>Saint Piran's Flag</strong> (white cross on black field) appear widely throughout Cornwall. Annual Saint Piran's Day celebrations (March 5) demonstrate Cornish identity with parades, language activities, and cultural events. Tourism presents complex dynamics—economically vital but potentially commodifying culture. Second-home ownership and high property prices create local tensions. Organizations including Gorseth Kernow (Cornish Gorsedd), Cornish Language Partnership, and numerous cultural societies work to preserve and promote Cornish culture. The Cornish demonstrate that extinguished cultures can be revived through dedicated effort, though full restoration of historical cultural continuity remains impossible.
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

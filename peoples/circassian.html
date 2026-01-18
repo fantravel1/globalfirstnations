@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>⚔️ Circassian People</h1>
             <p class="tagline">The Displaced Warriors of the Northwest Caucasus</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Circassians?</h2>
             <p>The **Circassians** (self-name: Adyghe) are an indigenous people of the Northwest Caucasus Mountains, comprising several closely related groups including the **Adyghe**, **Kabardians**, and **Cherkess**. Today numbering approximately **3-4 million people worldwide**, the vast majority—perhaps 90%—live in diaspora, primarily in Turkey (over 2 million), Jordan, Syria, and other Middle Eastern countries. Only about **700,000** remain in their ancestral Caucasian homeland in the Russian republics of Adygea, Kabardino-Balkaria, and Karachay-Cherkessia. This dramatic disproportion resulted from the **Circassian Genocide** (1864), when Russian imperial forces expelled or killed perhaps 1-1.5 million Circassians following their conquest of the Caucasus—one of history's largest ethnic cleansings.</p>
 
@@ -60,7 +82,7 @@
                 <li>Shami, S. (1998). "Circassian Encounters: The Self as Other and the Production of the Homeland in the North Caucasus." <em>Development and Change</em>, 29, 617-646.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

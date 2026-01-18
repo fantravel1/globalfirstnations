@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌍 Khoisan Peoples</h1>
             <p class="tagline">Africa's First Peoples and the World's Oldest Human Lineages</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Khoisan?</h2>
             <p>The Khoisan are the indigenous peoples of southern Africa, representing some of humanity's oldest genetic lineages—their ancestors separated from other human populations perhaps **100,000-150,000 years ago**. The term "Khoisan" combines two historically distinct groups: the **Khoi** (or Khoikhoi), who were pastoralists keeping cattle and sheep, and the **San** (sometimes called "Bushmen"), who were hunter-gatherers. Together they number approximately **100,000 people** today, primarily in Botswana, Namibia, South Africa, and Angola. The Khoisan are famous for their **click languages**—unique consonants found nowhere else except where borrowed—their rock art traditions spanning tens of thousands of years, and their intimate ecological knowledge of arid environments. After centuries of marginalization, Khoisan peoples are increasingly asserting cultural and political rights.</p>
 
@@ -60,7 +82,7 @@
                 <li>Suzman, J. (2017). <em>Affluence Without Abundance: The Disappearing World of the Bushmen</em>. Bloomsbury.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

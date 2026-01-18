@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌾 Võro People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Southern Estonian Culture - Language Revivalists - Võromaa Identity</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Võro?</h2>
             <p>The Võro (Võrokõsõq) are an ethnic and linguistic group numbering approximately 70,000-87,000 in southeastern Estonia (<strong>Võrumaa region</strong>), speaking <strong>Võro language</strong>, a Finnic language closely related to Estonian but with sufficient differences that mutual intelligibility is limited. The Võro language was historically considered a dialect of Estonian, but modern linguists and Võro activists argue it constitutes a separate language deserving recognition and protection. The Võro maintained distinct regional identity throughout Estonian history, with unique cultural traditions, folk songs (regilaulud), handicrafts, and cuisine. Traditional Võro culture centered on agriculture, animal husbandry, and forest utilization, with distinctive farmstead architecture and folk traditions. The <strong>Võro cultural movement</strong> emerged strongly after Estonian independence (1991), working to revive and standardize Võro language, establish Võro-medium education, publish literature and media, and gain official recognition. The Võro Institute, established 1995, promotes language and culture through research, education, and advocacy. Modern standard Võro was codified in the 1990s with Latin-based orthography distinct from Estonian. Despite these efforts, Võro faces endangerment from Estonian language dominance, urbanization drawing youth away from Võromaa, and debates over whether Võro constitutes separate language or Estonian dialect. The Võro represent minority linguistic community within small nation (Estonia) itself maintaining linguistic distinctiveness within larger Indo-European context.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">SE Estonia</span><span>Võrumaa region</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

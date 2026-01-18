@@ -18,13 +18,35 @@
         .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 10px; text-align: center; }
         .stat-num { font-size: 2em; font-weight: bold; display: block; margin-bottom: 8px; }
         footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>🌲 Tarkine Aboriginal People</h1><p>Tasmania Rainforest Heritage - Northwest Coast Traditions - Ancient Connection</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Tarkine Aboriginal People?</h2>
             <p>The Tarkine Aboriginal people are the indigenous inhabitants associated with the Tarkine region of northwestern Tasmania, Australia, one of the world's largest temperate rainforests. The Tarkine was inhabited for at least 40,000 years by Aboriginal groups including the Tarkiner, related to broader Tasmanian Aboriginal peoples. Archaeological evidence shows sophisticated adaptation to rainforest environment including specialized tools, coastal resource use, and cave occupation. European colonization devastated Tasmanian Aboriginal populations through disease, violence, and displacement. While full-blooded traditional Tarkine groups disappeared, descendants of Tasmanian Aboriginal peoples maintain cultural connection to the region. The Tarkine contains significant Aboriginal archaeological sites including middens, rock art, and tool scatters. Modern Tasmanian Aboriginal community advocates for Tarkine conservation and recognition of their ancestral connection to this unique wilderness.</p>
             <div class="stats">
@@ -34,7 +56,7 @@
                 <div class="stat"><span class="stat-num">NW Tasmania</span><span>Location</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

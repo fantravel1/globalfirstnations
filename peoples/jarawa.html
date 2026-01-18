@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌴 Jarawa People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Andaman Islands Hunter-Gatherers - Recently Contacted - Forest Protectors</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Jarawa?</h2>
             <p>The Jarawa are an indigenous people numbering approximately 400-500 individuals inhabiting the <strong>Andaman Islands</strong> in the Bay of Bengal, India. The Jarawa are one of four Negrito peoples of the Andamans (along with Great Andamanese, Onge, and Sentinelese), descended from early human migrations out of Africa 50,000-60,000 years ago. Until the 1990s, the Jarawa maintained <strong>hostile isolation</strong> from outsiders, attacking intruders to their forest territories. Beginning in 1997-1998, some Jarawa groups initiated peaceful contact, though they remain semi-isolated with limited interaction. The Jarawa practice traditional <strong>hunter-gatherer lifestyle</strong> in reserved forest lands, hunting pigs and monitor lizards with bows and arrows, fishing in coastal waters, and gathering honey, fruits, and tubers. They live in temporary shelters, maintain nomadic movement patterns, and preserve complex knowledge of forest ecology. The Jarawa speak their own language (unwritten, unrelated to other language families) and maintain spiritual beliefs centered on forest spirits. Contact has brought severe challenges—disease vulnerability (no immunity to common illnesses), cultural disruption, land encroachment from settlers and tourism, and  exploitation. The Andaman Trunk Road bisects Jarawa territory, creating dangerous contact situations despite government restrictions. Advocacy groups work to protect Jarawa rights, lands, and self-determination.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">Andaman</span><span>Islands location</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

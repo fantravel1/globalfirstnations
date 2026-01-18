@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌽 Nahua People</h1>
             <p class="tagline">Aztec Descendants and Mexico's Largest Indigenous Group</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Nahua People?</h2>
             <p>The Nahua (Nahuatl speakers) are Mexico's largest indigenous group with approximately 1.7 million speakers of Nahuatl, descendants of the Mexica (Aztecs) and other Nahua-speaking peoples who dominated Central Mexico before Spanish conquest. Recognized as one of Mexico's 68 constitutionally protected indigenous peoples, they maintain vibrant communities across central Mexico, particularly in Puebla, Veracruz, Hidalgo, and Guerrero states. The Nahua created sophisticated pre-Columbian civilizations including the Aztec Empire, developed advanced agriculture (chinampas), astronomy, writing systems, and urban planning. Today they navigate between traditional culture and modern Mexican society while maintaining Nahuatl language, agricultural traditions, religious practices blending indigenous and Catholic elements, and strong community governance.</p>
 
@@ -60,7 +82,7 @@
                 <li>Hill, J. H., & Hill, K. C. (1986). <em>Speaking Mexicano: Dynamics of Syncretic Language in Central Mexico</em>. University of Arizona Press.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

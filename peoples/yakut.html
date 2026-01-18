@@ -18,13 +18,35 @@
         .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 10px; text-align: center; }
         .stat-num { font-size: 2em; font-weight: bold; display: block; margin-bottom: 8px; }
         footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>❄️ Yakut (Sakha) People</h1><p>World's Coldest Inhabited Region - Extreme Cold Adaptation - Diamond Miners of Siberia</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Yakut?</h2>
             <p>The Yakut (self-name Sakha) are a Turkic people numbering approximately 480,000, primarily in the Sakha Republic (Yakutia), northeastern Siberia, Russia, inhabiting the coldest permanently inhabited region on Earth where winter temperatures reach -60°C to -71°C in Verkhoyansk and Oymyakon (coldest inhabited places). The Yakut migrated from Central Asian steppes to Siberia around 13th-14th centuries, adapting remarkably to extreme subarctic conditions. Traditional Yakut culture centered on cattle and horse breeding (uniquely adapting livestock to severe cold), hunting, and fishing, with distinctive cultural practices including kumis (fermented mare's milk), elaborate epic poetry Olonkho (UNESCO heritage), and shamanic traditions. Yakut developed sophisticated survival technologies: fur clothing, ice fishing, permafrost cellars for food storage, and breeding hardy Yakut horses that survive -60°C. The Sakha Republic contains vast diamond, gold, and mineral deposits, creating modern resource extraction economy. Contemporary Yakut navigate between traditional culture, resource economy, and climate change threatening permafrost infrastructure. The Yakut demonstrate extraordinary human cold tolerance and cultural adaptation to most extreme inhabited climate on Earth.</p>
             <div class="stats">
@@ -34,7 +56,7 @@
                 <div class="stat"><span class="stat-num">Siberia</span><span>Sakha Republic</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌾 Sorbian People (Wends)</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Slavic Heart of Germany - Dual Language Speakers - Wendish Traditions</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Sorbs?</h2>
             <p>The Sorbs (Serbja/Serby), also known as Wends, are a <strong>West Slavic minority</strong> numbering approximately 60,000 in eastern Germany (Saxony and Brandenburg), the last remaining Slavic people west of Poland-Czech border. The Sorbs speak two related Slavic languages: <strong>Upper Sorbian</strong> (hornjoserbšćina, ~20,000 speakers) in Saxony around Bautzen, and <strong>Lower Sorbian</strong> (dolnoserbšćina, ~7,000 speakers) in Brandenburg around Cottbus. These languages are most closely related to Czech and Polish. The Sorbs represent remnants of Polabian Slavs who inhabited much of eastern Germany before Germanic expansion. Despite centuries of Germanization pressure, the Sorbs maintained distinct identity through language, customs, and strong regional attachment. Sorbian culture features distinctive <strong>Easter traditions</strong> including elaborately decorated eggs (pisanici), Easter processions with hymn-singing, and colorful folk costumes worn during festivals. The Sorbs practice unique customs including the Bird Wedding (Ptači kwas) children's festival and Zapust (pre-Lenten carnival) with traditional masked figures. Bilingual signage appears throughout Lusatia (Sorbian homeland), and German law protects Sorbian language and culture as recognized national minority. However, Sorbian faces ongoing challenges from demographic decline, German linguistic dominance, and assimilation pressures.</p>
 
@@ -52,7 +74,7 @@
             <h3>Historical Survival and Modern Status</h3>
             <p>Sorbian survival represents remarkable resilience against Germanization. Medieval German eastward expansion (Ostsiedlung) displaced or assimilated most Polabian Slavs, but Sorbs in Lusatia retained distinct identity partly through Protestant Reformation (Upper Sorbs remain predominantly Catholic, Lower Sorbs Protestant, creating different cultural trajectories). The 19th century brought Sorbian national awakening with language codification, cultural societies, and newspapers. The Nazi era brutally suppressed Sorbian culture, though full assimilation failed. Communist East Germany officially supported Sorbian culture as showcase of GDR's multinational character, establishing institutions and language rights that continue post-reunification. United Germany constitutionally protects Sorbian rights under Framework Convention for National Minorities. Brandenburg and Saxony provide funding, bilingual education, and cultural support. The Domowina (federation of Sorbian organizations) advocates for Sorbian interests. Modern challenges include <strong>coal mining</strong> in Lower Lusatia destroying Sorbian villages, demographic decline from low birth rates and emigration, and generational language shift. Yet Sorbian cultural vitality persists through festivals, music, literature, and strong community identity demonstrating minority culture can survive within larger state through institutional support and community determination.
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

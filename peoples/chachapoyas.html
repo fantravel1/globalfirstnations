@@ -18,13 +18,35 @@
         .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 10px; text-align: center; }
         .stat-num { font-size: 2em; font-weight: bold; display: block; margin-bottom: 8px; }
         footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>☁️ Chachapoyas People</h1><p>Cloud Warriors - Perpetual Mist Dwellers - Andean Cloud Forest Builders</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Chachapoyas?</h2>
             <p>The Chachapoyas (Cloud Warriors) were a pre-Columbian Andean civilization inhabiting cloud forests of northern Peru at 2,000-3,000m altitude in perpetual mist, building spectacular mountaintop fortresses including Kuelap and cliff tombs with mummy bundles. The Chachapoyas thrived from 900-1470 CE before Inca conquest, developing sophisticated architecture adapted to extreme cloud forest environment with high rainfall, constant fog, steep terrain, and landslide risk. They constructed massive stone complexes with intricate friezes, sarcophagi placed on impossible cliff faces, and agricultural terraces. Modern descendants numbering thousands maintain Quechua language and mestizo culture, though specific Chachapoyan ethnic identity largely disappeared after Spanish conquest. The cloud forest environment features 3,000-4,000mm annual rainfall, near-constant cloud cover creating perpetual twilight, unique biodiversity, and challenging agricultural conditions. Archaeological sites continue revealing Chachapoyan achievements including mummies preserved by dry microclimates, elaborate pottery, and defensive architecture. The Chachapoyas represent adaptation to one of Earth's most unique environments—high-altitude cloud forests requiring specialized construction, agriculture, and cultural practices.</p>
             <div class="stats">
@@ -34,7 +56,7 @@
                 <div class="stat"><span class="stat-num">N. Peru</span><span>Cloud forests</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 25px; border-radius: 15px; text-align: center; }
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌊 Livonian People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Baltic Sea Finnic Group - Nearly Extinct Language - Latvia Coast Dwellers</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Livonians?</h2>
             <p>The Livonians are a Finnic people indigenous to the coastal regions of Latvia, speaking Livonian language closely related to Estonian, now critically endangered with fewer than 10 fluent elderly speakers and approximately 250 ethnic Livonians. The Livonians historically inhabited extensive territories along Baltic coast. Traditional Livonian culture centered on fishing, maritime activities, and coastal life. The Livonian language belongs to Finnic branch of Uralic family. The last native speaker, Grizelda Kristina, died in 2013, though language revival efforts continue. The Livonian Coast in northwestern Latvia is designated cultural-historical territory with special protections. The Livonians represent one of Europe's most endangered indigenous peoples.</p>
 
@@ -40,7 +62,7 @@
                 <div class="stat"><span class="stat-num">Latvia</span><span>Baltic coast</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

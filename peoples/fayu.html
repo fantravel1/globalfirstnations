@@ -61,18 +61,39 @@
         .reference-text { line-height: 1.6; color: #333; }
         .reference-text em { font-style: italic; }
         @media (max-width: 768px) { .gallery-grid, .related-grid { grid-template-columns: 1fr; } }
+            /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            .content-section { background: #1f2937; color: #e5e7eb; }
+            .content-section h2, .content-section h3 { color: #e5e7eb; }
+            .content-section p { color: #d1d5db; }
+            .related-cultures { background: #1f2937; }
+            .related-card { background: #374151; }
+            .related-card h3, .related-description { color: #d1d5db; }
+            .references-list { background: #374151; }
+            .reference-text { color: #d1d5db; }
+            .image-caption { background: #374151; color: #d1d5db; }
+            footer { background: #111827; }
+        }
+        /* Accessibility */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary, #006994); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        a:focus, button:focus { outline: 2px solid currentColor; outline-offset: 2px; }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <span class="icon">🌿</span>
             <h1>The Fayu People</h1>
             <p class="tagline">Swamp Dwellers of Papua - Recently Contacted (1979) - Floating House Builders</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
 
-        <section class="content-section">
+        <section class="content-section" id="main-content">
             <h2>Who Are the Fayu?</h2>
             <p>The Fayu are one of the world's most recently contacted indigenous peoples, first encountered by outsiders in 1979 in the remote swamplands of Papua, Indonesia. Numbering only about 400-500 individuals, they inhabit an extraordinarily challenging environment—vast freshwater swamps in the Lakes Plain region of Papua province, where permanent dry land is virtually nonexistent. For thousands of years, the Fayu developed unique adaptations to this watery world, building houses on stilts over the swamp, traveling exclusively by dugout canoe, and subsisting on sago palm, fish, and wild game. Their late contact with the outside world means their traditional culture remains relatively intact, offering rare insights into human adaptation to extreme wetland environments.</p>
 
@@ -205,7 +226,7 @@
         </div>
 
         <footer>
-            <p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p>
+            <p>&copy; 2024 Indigenous Peoples Research Databasecopy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education | Educational Resource</p>
         </footer>
     </div>
 

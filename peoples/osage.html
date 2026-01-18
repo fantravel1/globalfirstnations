@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🛢️ Osage People</h1>
             <p class="tagline">The Oil Millionaires Who Survived America's Most Deadly Reign of Terror</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Osage?</h2>
             <p>The Osage (Wazhazhe, "Ones from the Middle Waters") are a Dhegihan Siouan-speaking people originally inhabiting the Missouri and Osage River valleys, today numbering approximately 20,000 enrolled members in the **Osage Nation** of Oklahoma. A powerful nation controlling trade across the lower Missouri region through the 18th and early 19th centuries, the Osage were forced to cede their vast homeland and relocate to Kansas, then Oklahoma. In a twist of fate, their Oklahoma reservation sat atop the Burbank Oil Field—making the Osage the wealthiest people per capita in the world by the 1920s. This wealth triggered the **Osage Reign of Terror**: a conspiracy of murder by whites seeking Osage oil money, documented in David Grann's <em>Killers of the Flower Moon</em> and Martin Scorsese's 2023 film adaptation.</p>
 
@@ -60,7 +82,7 @@
                 <li>Rollings, W. H. (1992). <em>The Osage: An Ethnohistorical Study of Hegemony on the Prairie-Plains</em>. University of Missouri Press.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

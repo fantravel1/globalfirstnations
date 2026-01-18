@@ -18,13 +18,35 @@
         .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 10px; text-align: center; }
         .stat-num { font-size: 2em; font-weight: bold; display: block; margin-bottom: 8px; }
         footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>🔥 Afar People</h1><p>Hottest Inhabited Place on Earth - Danakil Depression Dwellers - Salt Miners of Hell</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Afar?</h2>
             <p>The Afar are a Cushitic ethnic group numbering approximately 1.5-2 million inhabiting the Afar Triangle in the Horn of Africa (eastern Ethiopia, Eritrea, Djibouti), including the Danakil Depression, one of Earth's hottest inhabited regions where temperatures exceed 50°C (122°F) regularly and average above 34°C year-round. The Afar are predominantly nomadic pastoralists herding camels, goats, and cattle across volcanic deserts, lava fields, and salt flats. Traditional Afar culture features patriarchal clan systems, warrior traditions, Islam mixed with pre-Islamic customs, and distinctive curved knives (jile). The Afar mine salt from ancient evaporated lakes in Danakil Depression, continuing thousand-year-old tradition of cutting salt blocks and transporting them via camel caravans. The region contains active volcanoes, sulfur lakes, lava lakes (Erte Ale), and geothermal features creating alien landscape. The Afar region is also paleontologically significant—Lucy (Australopithecus afarensis) fossil was discovered in Afar region. Modern Afar face conflicts over territory, water scarcity, climate change intensifying heat and drought, and marginalization. The Afar demonstrate remarkable adaptation to Earth's most extreme heat.</p>
             <div class="stats">
@@ -34,7 +56,7 @@
                 <div class="stat"><span class="stat-num">E. Africa</span><span>Danakil Depression</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>
