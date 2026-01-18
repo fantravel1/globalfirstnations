@@ -24,13 +24,35 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>🌿 Kurumba</h1><p class="tagline">Forest Spirits of the Nilgiri Hills</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a><a href="/about.html">About</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Kurumba?</h2>
             <p>The Kurumba are an indigenous tribal people of the Nilgiri Hills in Tamil Nadu, South India, numbering approximately 20,000-30,000. They speak Kurumba, a Dravidian language. The Kurumba are one of several Nilgiri tribes (alongside Toda, Kota, Badaga, and Irula) who formed an interconnected socioeconomic system before British colonization. The Kurumba were forest-dwelling gatherers and cultivators, feared by neighboring tribes for their reputation as sorcerers and healers. This liminal position—respected and feared—gave them a unique role in Nilgiri society.</p>
             <div class="stats">
@@ -56,7 +78,7 @@
                 <li>Kapp, D. B. (1985). "The Kurumbas' Relationship to the 'Megalithic' Cult of the Nilgiri Hills"</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

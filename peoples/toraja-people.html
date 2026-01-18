@@ -24,13 +24,35 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>⚰️ Toraja</h1><p class="tagline">Masters of the Death Ritual</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a><a href="/about.html">About</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Toraja?</h2>
             <p>The Toraja (To Riaja, "people of the uplands") are an Austronesian ethnic group inhabiting the highlands of South Sulawesi, Indonesia, numbering approximately 1.1-1.2 million. They speak Toraja-Sa'dan, a Malayo-Polynesian language with several dialects. The Toraja are internationally famous for their elaborate funeral ceremonies, cliff-side grave sites, carved wooden effigies (tau tau), and distinctive tongkonan houses with sweeping saddleback roofs. Isolated in their mountainous homeland until the 20th century, the Toraja maintained animist traditions (Aluk To Dolo) that remained largely intact until Dutch missionary activity. Today most Toraja are Christian, but traditional funeral practices continue and draw tourists worldwide.</p>
             <div class="stats">
@@ -56,7 +78,7 @@
                 <li>Adams, K. M. (2006). Art as Politics: Re-crafting Identities, Tourism, and Power in Tana Toraja</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

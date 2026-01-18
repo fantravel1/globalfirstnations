@@ -24,13 +24,35 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>🎭 Idoma</h1><p class="tagline">Masquerade Keepers of the Benue Valley</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a><a href="/about.html">About</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Idoma?</h2>
             <p>The Idoma are an ethnic group of central Nigeria, primarily inhabiting Benue State in the lower Benue River valley. Numbering approximately 4-5 million, they are one of the major ethnic groups in the Middle Belt region. The Idoma speak Idoma, an Idomoid language of the Niger-Congo family, related to neighboring Igede and Tiv languages. Their traditional homeland lies south of the Benue River, in relatively hilly terrain suited to agriculture. The Idoma are known for their elaborate masquerade traditions, including the Alekwu ancestor cult and various ekpo masquerades that play important social and religious roles. Their position in the Middle Belt has shaped their politics in Nigeria's complex ethnic landscape.</p>
             <div class="stats">
@@ -56,7 +78,7 @@
                 <li>Okwu, V. O. (1989). The History and Culture of the Idoma</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

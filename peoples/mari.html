@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌳 Mari People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Volga Finnic Group - Last Pagans of Europe - Nature Worship Keepers</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Mari?</h2>
             <p>The Mari (also Cheremis) are a <strong>Finno-Ugric people</strong> numbering approximately 550,000-600,000, primarily inhabiting the <strong>Mari El Republic</strong> in the Volga region of Russia, speaking Mari language (two literary standards: Hill Mari and Meadow Mari). The Mari are remarkable for maintaining <strong>pre-Christian paganism</strong> as living religion longer than any other European people—approximately 60-70% of Mari practice traditional religion alongside or instead of Orthodox Christianity. Mari traditional religion centers on nature worship honoring numerous gods and spirits including Osh Kugu Jumo (White Great God), with sacred groves (küsoto) serving as worship sites where priests conduct elaborate ceremonies involving animal sacrifice, prayer, and offerings. Traditional Mari culture emphasized forest-based subsistence combining agriculture, beekeeping, hunting, and gathering. The Mari maintained distinctive folk traditions including elaborate embroidered costumes, musical traditions featuring unique instruments, and rich oral poetry. Soviet persecution targeted Mari religion and culture, destroying sacred groves, imprisoning priests, and promoting atheism, though traditional practices survived underground. Post-Soviet religious revival saw renewed sacred grove worship, though conflicts emerged with Orthodox Church and Russian authorities viewing paganism as primitive. Modern Mari face challenges from Russian cultural dominance, language decline among youth, environmental destruction of sacred lands, and discrimination against traditional religious practices.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">Mari El</span><span>Republic in Russia</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

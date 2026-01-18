@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌳 Zo'\''é People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Recently Contacted Amazonian - 1987 First Contact - Traditional Forest Dwellers</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Zo'é?</h2>
             <p>The Zo'é (also Zo'e, Poturu) are an indigenous <strong>Tupi people</strong> numbering approximately 250-300 inhabiting the Terra Indígena Zo'é in the state of Pará, Brazilian Amazon. The Zo'é remained uncontacted until <strong>1987</strong> when FUNAI (Brazil's indigenous affairs agency) established contact, though some Zo'é groups maintain voluntary isolation. The Zo'é practice traditional <strong>hunter-gatherer and horticultural lifestyle</strong> in pristine Amazon rainforest, hunting with bows and arrows, fishing, gathering forest products, and cultivating manioc and other crops in small gardens. They live in communal longhouses (malocas), maintain minimal material culture suited to rainforest environment, and go largely unclothed except for distinctive <strong>embe</strong>—wooden plugs inserted through lower lips of initiated individuals (both men and women), a unique cultural practice. Zo'é spiritual beliefs center on shamanic practices, forest spirits, and ancestral traditions. Contact brought severe challenges—disease epidemics killed significant portions of population (especially malaria), cultural disruption, and dependency on outside goods. FUNAI provides healthcare and protection but contact fundamentally altered Zo'é lifestyle. Modern Zo'é face threats from illegal logging, land invasions, and ongoing disease vulnerability. Their territory was officially demarcated in 1998, providing legal protection, though enforcement remains challenging. The Zo'é demonstrate both fragility and resilience of recently contacted Amazonian peoples.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">Amazon</span><span>Pará, Brazil</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

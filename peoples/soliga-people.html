@@ -24,13 +24,35 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>🐘 Soliga</h1><p class="tagline">Forest Children of the Biligiriranga Hills</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a><a href="/about.html">About</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Soliga?</h2>
             <p>The Soliga are an indigenous tribal people of Karnataka state in southern India, primarily inhabiting the Biligiriranga (BRT) Hills, Male Mahadeshwara Hills, and surrounding forest areas. Numbering approximately 20,000-25,000, they are among the few tribal groups still living within and around protected forests in southern India. The Soliga speak Soliga, a Dravidian language closely related to Kannada. Their homeland, now the BRT Tiger Reserve, has been the center of pioneering efforts to integrate tribal rights with wildlife conservation. The Soliga became the first community in India to receive rights within a tiger reserve under the Forest Rights Act, making them important in debates about indigenous peoples and conservation.</p>
             <div class="stats">
@@ -56,7 +78,7 @@
                 <li>Thekaekara, T. et al. (2017). Sacred Groves and Tribal Communities: A Case Study of the Soliga of BRT</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

@@ -24,13 +24,35 @@
         .stat { background: linear-gradient(135deg, var(--accent), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>❄️ Inuit</h1><p class="tagline">People of the Arctic</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a><a href="/about.html">About</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Inuit?</h2>
             <p>The Inuit are the indigenous people of the Arctic, numbering approximately 180,000 across Greenland (51,000—majority population), Canada (65,000—in Nunavut, Nunavik, Nunatsiavut, Inuvialuit), Alaska (16,000 Iñupiat), and Russia's Chukotka (1,500). They speak Inuit languages (Inuktitut, Inupiaq, Kalaallisut, others)—part of the Eskimo-Aleut family—with varying vitality. The term "Inuit" means "the people" and has replaced "Eskimo" in Canada and Greenland. Inuit developed remarkable adaptations to Arctic life—kayaks, igloos, dog sleds, hunting technologies—enabling survival in Earth's harshest inhabited environment. Their circumpolar homeland now faces climate change's most dramatic impacts.</p>
             <div class="stats">
@@ -59,7 +81,7 @@
                 <li>Watt-Cloutier, S. (2015). The Right to Be Cold: One Woman's Story of Protecting Her Culture, the Arctic, and the Whole Planet</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

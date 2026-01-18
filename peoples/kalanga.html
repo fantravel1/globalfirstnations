@@ -30,9 +30,31 @@
         li { margin-bottom: 8px; font-size: 1.05em; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
         footer a { color: #deb887; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🏰 Kalanga</h1>
@@ -46,7 +68,7 @@
             <a href="/about.html">About</a>
         </nav>
 
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Kalanga?</h2>
             <p>The Kalanga are a Bantu-speaking people of southern Africa, primarily residing in northeastern Botswana and western Zimbabwe. They are descendants of the builders of Great Zimbabwe and the Rozvi Empire, two of Africa's most sophisticated pre-colonial civilizations. Their ancestors constructed massive stone structures without mortar, developed extensive trade networks, and created complex state systems.</p>
             <p>Today, the Kalanga number approximately 1 million people across Botswana and Zimbabwe. Despite being the second-largest ethnic group in Botswana, they faced historical marginalization, with their language only recently gaining official recognition. The Kalanga maintain strong cultural identity through their language, religious practices, and pride in their monumental heritage.</p>

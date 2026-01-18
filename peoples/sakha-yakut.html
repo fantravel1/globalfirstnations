@@ -30,9 +30,31 @@
         li { margin-bottom: 8px; font-size: 1.05em; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
         footer a { color: #a0cfff; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>❄️ Sakha (Yakut)</h1>
@@ -46,7 +68,7 @@
             <a href="/about.html">About</a>
         </nav>
 
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Sakha?</h2>
             <p>The Sakha, also known as Yakut, are a Turkic-speaking people native to the Sakha Republic (Yakutia) in northeastern Siberia, Russia. They inhabit the coldest permanently inhabited region on Earth, where temperatures can plummet to -60°C (-76°F). Despite these extreme conditions, the Sakha have developed a sophisticated culture centered around horse and cattle breeding, adapting their livestock and lifestyles to thrive in the frozen taiga and tundra.</p>
             <p>Their origins trace to Turkic migrations from the Lake Baikal region around the 13th-14th centuries. The Sakha brought with them horse culture to the Arctic, developing the cold-resistant Yakutian horse breed that can survive without shelter in temperatures that would kill other horses.</p>

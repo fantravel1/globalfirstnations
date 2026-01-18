@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>❄️ Inughuit People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Northernmost People - Polar Inuit - High Arctic Hunters</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Inughuit?</h2>
             <p>The Inughuit (Polar Inuit, Avanersuarmiut) are the <strong>northernmost permanently inhabited people</strong> on Earth, numbering approximately 800-1,000 inhabiting the Qaanaaq/Thule region of northwestern Greenland above 77°N latitude. The Inughuit represent descendants of Inuit peoples who migrated to this extreme environment, developing sophisticated adaptations to survive in one of Earth's harshest climates—winter darkness lasts 4 months, temperatures reach -50°C, and the region lies far above the Arctic Circle. Traditional Inughuit culture centered on <strong>hunting marine mammals</strong> including seals, walrus, narwhals, and polar bears using kayaks, dog sleds, and harpoons, supplemented by hunting musk oxen and Arctic foxes. The Inughuit lived in stone-and-turf winter houses and summer skin tents, crafted sophisticated cold-weather clothing from animal furs, and maintained oral traditions, shamanic spiritual practices, and complex kinship systems. The Inughuit were isolated from other Inuit groups and Europeans until the 1818 John Ross expedition "rediscovered" them. Contact brought dramatic changes including metal tools, firearms, Christianity, and diseases. The American Thule Air Base establishment (1951) forced relocation of Inughuit from traditional lands. Modern Inughuit combine traditional hunting with modern technology, maintain Greenlandic/Inuktun language, and navigate between subsistence traditions and global influences including climate change severely impacting ice-dependent hunting.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">4 months</span><span>Winter darkness</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

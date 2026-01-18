@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌿 Xingu Peoples</h1>
             <p class="tagline">Guardians of Brazil's Amazon Indigenous Reserve</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Xingu Peoples?</h2>
             <p>The Xingu peoples are the indigenous inhabitants of the **Xingu Indigenous Park** (Parque Indígena do Xingu) in Brazil's Mato Grosso state—the first indigenous territory officially protected in Brazil and one of the world's most important reserves for cultural and biological diversity. The park is home to approximately **7,000 people** from **16 distinct ethnic groups** speaking languages from four different language families: Arawak, Carib, Tupi, and Gê, plus isolates. These include the **Kamayurá**, **Kuikuro**, **Yawalapiti**, **Kayapó**, and many others. Despite their diversity, Upper Xingu peoples share cultural traits developed through centuries of interaction: similar village patterns, the famous **Kuarup** ceremony, and a "pan-Xingu" identity fostered by the reserve system, while maintaining distinct languages and tribal affiliations.</p>
 
@@ -60,7 +82,7 @@
                 <li>Schwartzman, S., & Zimmerman, B. (2005). "Conservation Alliances with Indigenous Peoples of the Amazon." <em>Conservation Biology</em>, 19(3), 721-727.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

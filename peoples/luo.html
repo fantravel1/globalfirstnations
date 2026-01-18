@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🎸 Luo People</h1>
             <p class="tagline">Fishers of Lake Victoria and Musical Innovators</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Luo?</h2>
             <p>The Luo (Joluo, meaning "people" in Dholuo) are a Nilotic ethnic group of approximately 6 million people, primarily in western Kenya around Lake Victoria (where they constitute Kenya's fourth-largest ethnic group at about 13%) and northeastern Tanzania. Related Luo peoples live throughout East Africa and Sudan, together forming the wider Luo nation of 10+ million. Known for their fishing expertise on Lake Victoria, distinctive burial traditions, vibrant musical culture (particularly Benga music), and strong presence in Kenyan politics and education, the Luo have produced internationally notable figures including Barack Obama's father, Nobel laureate Wangari Maathai (by marriage), and numerous Kenyan political leaders.</p>
 
@@ -60,7 +82,7 @@
                 <li>Odhiambo, E.S.A., & Cohen, D. W. (1992). <em>Burying SM: The Politics of Knowledge and the Sociology of Power in Africa</em>. James Currey.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

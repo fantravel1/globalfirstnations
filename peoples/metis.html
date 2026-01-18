@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🎻 Métis People</h1>
             <p class="tagline">A Distinct Indigenous Nation Born from Two Worlds</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Métis?</h2>
             <p>The Métis are one of Canada's three recognized Indigenous peoples (alongside First Nations and Inuit), numbering approximately **600,000 self-identified members**—though definitions of Métis identity are contested. Descended from unions between French-Canadian and Scottish fur traders and Cree, Ojibwe, and other First Nations women during the 18th-19th centuries, the Métis developed a distinct culture, language (**Michif**), and national identity centered on the Red River Settlement (present-day Manitoba). They famously resisted Canadian annexation under **Louis Riel** in 1869-70 and 1885, seeking recognition of their land rights and self-government. The Métis flag—a white infinity symbol on blue—represents the joining of two cultures into a people that will exist forever.</p>
 
@@ -60,7 +82,7 @@
                 <li>Andersen, C. (2014). <em>"Métis": Race, Recognition, and the Struggle for Indigenous Peoplehood</em>. UBC Press.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

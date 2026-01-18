@@ -25,9 +25,31 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌾 Zhuang People</h1>
@@ -39,7 +61,7 @@
             <a href="/map.html">Map</a>
             <a href="/about.html">About</a>
         </nav>
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Zhuang?</h2>
             <p>The Zhuang are the largest ethnic minority in China, numbering approximately 18 million people, primarily inhabiting the Guangxi Zhuang Autonomous Region in southern China. As Tai-speaking peoples related to the Thai and Lao, the Zhuang have inhabited the dramatic karst mountain landscapes of Guangxi for over 2,000 years, developing a sophisticated rice-cultivation civilization, distinctive singing traditions, and a rich cultural heritage that has profoundly influenced southern Chinese culture while maintaining its own identity.</p>
 

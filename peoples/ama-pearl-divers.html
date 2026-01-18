@@ -20,16 +20,38 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: white; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🐚 Ama Pearl Divers</h1>
             <p class="tagline">Japan's Traditional Women Freedivers</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Ama?</h2>
             <p>The **Ama** (海女, literally "sea women") are traditional Japanese women freedivers who have harvested seafood—particularly abalone, sea urchins, and historically pearls—from coastal waters for at least **2,000 years**. Concentrated along the Shima Peninsula in Mie Prefecture and other coastal areas of Japan and Korea (where they are called **haenyeo**), the Ama represent one of the world's oldest diving traditions. At their peak in the early 20th century, perhaps **30,000 Ama** worked Japan's coasts; today only about **2,000** remain, mostly elderly women, making this a critically endangered cultural practice. The tradition of women diving while men remained ashore in boats developed from practical advantages—women's higher body fat provides better cold water insulation—and evolved into a distinctive occupation passed from mother to daughter.</p>
 
@@ -60,7 +82,7 @@
                 <li>Kim, J. Y. (2019). "Haenyeo of Jeju Island: Sustaining an Ocean-Based Traditional Lifestyle." <em>Geographical Review</em>, 109(2), 277-292.</li>
             </ul>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Repository</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

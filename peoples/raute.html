@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌲 Raute People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Nepal'\''s Last Nomads - Forest Hunter-Gatherers - Wooden Bowl Makers</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Raute?</h2>
             <p>The Raute are Nepal's last remaining <strong>nomadic hunter-gatherer people</strong>, numbering approximately 150-200 individuals living in northwestern Nepal (Dailekh, Jajarkot, Salyan, and Surkhet districts). The Raute maintain almost entirely traditional <strong>nomadic lifestyle</strong>, moving through forests in small family groups, building temporary shelters from branches and leaves, hunting monkeys and small game with homemade weapons, gathering forest products, and crafting distinctive wooden bowls and boxes from tree wood which they trade with settled villagers for grain and metal tools. The Raute speak their own language (Raute/Raji), distinct though related to Tibeto-Burman family, practiced orally with no written tradition. Raute society organizes through clan system led by a hereditary chief (Mukhiya), maintains strict <strong>endogamy</strong> (marriage only within Raute community), and practices animistic spirituality venerating forest spirits and ancestors. The Raute deliberately reject settled agriculture and permanent housing, viewing nomadic forest life as superior and settled existence as polluting. They have resisted government and NGO attempts at settlement, education, and "development." The Nepali government officially respects Raute autonomy and provides support without forcing settlement. However, deforestation, forest reserve restrictions, declining wildlife, and shrinking forests threaten their lifestyle. The Raute represent extraordinary cultural persistence—maintaining Pleistocene-style hunter-gatherer nomadism in 21st century South Asia against overwhelming pressures toward modernization.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">Nepal forests</span><span>Territory</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

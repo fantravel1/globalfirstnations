@@ -81,9 +81,31 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🏜️ Rub' al Khali Bedouin</h1>
@@ -95,7 +117,7 @@
             <a href="/cultures.html">Cultures</a>
         </nav>
 
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Rub' al Khali Bedouin?</h2>
             <p>The Rub' al Khali (Arabic: الربع الخالي, "Empty Quarter") Bedouin are nomadic Arab tribes who traditionally inhabited the world's largest continuous sand desert—a 650,000 km² hyperarid wilderness spanning parts of Saudi Arabia, Oman, Yemen, and the UAE. With summer temperatures exceeding 55°C (131°F), sand dunes reaching 250 meters high, and annual rainfall averaging less than 35mm, the Rub' al Khali represents one of Earth's most inhospitable environments. Despite these extremes, Bedouin tribes including the Al Murrah, Bani Yas, Rashidi, and Manasir developed sophisticated survival strategies enabling centuries of nomadic pastoralism across this forbidding landscape.</p>
 

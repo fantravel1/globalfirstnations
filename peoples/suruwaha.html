@@ -22,16 +22,38 @@
         .stat-num { font-size: 2.5em; font-weight: bold; display: block; margin-bottom: 10px; }
         .fact { background: linear-gradient(135deg, var(--secondary), var(--primary)); color: white; padding: 25px; border-radius: 15px; margin: 25px 0; }
         footer { background: var(--primary); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>🌿 Suruwahá People</h1>
             <p style="font-size: 1.2em; margin-top: 15px;">Isolated Amazonians - Complex Mortuary Practices - Rainforest Dwellers</p>
         </header>
-        <nav><a href="/">Home</a><a href="/cultures.html">All Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Suruwahá?</h2>
             <p>The Suruwahá are an indigenous Amazonian people numbering approximately 150-200 inhabiting the <strong>Suruwahá Indigenous Territory</strong> in Amazonas state, Brazil. The Suruwahá speak an Arawan language and maintained near-complete isolation until peaceful contact in the 1980s. They practice traditional <strong>rainforest subsistence</strong> combining horticulture (manioc, plantains, sweet potatoes), hunting with bows and poisoned arrows, fishing, and gathering. The Suruwahá live in a large communal maloca housing the entire community, practice polygamous marriages, and maintain complex spiritual beliefs involving shamanic practices and mythology. The Suruwahá gained international attention for their practice of <strong>ritual suicide</strong> (kuni-ha) and infanticide under specific cultural circumstances—when individuals commit serious transgressions, experience profound shame, or when twins/deformed infants are born, death is considered culturally appropriate resolution. This practice has created ethical dilemmas for outsiders including FUNAI workers and missionaries torn between respecting cultural autonomy and preventing deaths. The Suruwahá faced severe population decline from disease following contact. Modern challenges include ongoing disease vulnerability, cultural disruption from missionary presence, pressures to abandon traditional practices deemed problematic by outsiders, and land protection against illegal resource extraction. The Suruwahá represent complex ethical questions about cultural relativism, intervention, and indigenous rights to maintain practices conflicting with universal human rights norms.</p>
 
@@ -42,7 +64,7 @@
                 <div class="stat"><span class="stat-num">Amazonas</span><span>Brazil location</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database | Educational Resource</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

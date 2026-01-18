@@ -18,13 +18,35 @@
         .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 10px; text-align: center; }
         .stat-num { font-size: 2em; font-weight: bold; display: block; margin-bottom: 8px; }
         footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>🦫 Fur Trade Métis</h1><p>Mixed Indigenous-European Heritage - Voyageurs and Traders - Red River Settlers</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Fur Trade Métis?</h2>
             <p>The Métis are a distinct Indigenous people of Canada and northern United States numbering approximately 600,000 in Canada (per 2021 census), descended from unions between European fur traders (primarily French and Scottish) and Indigenous women (primarily Cree, Ojibwe, and Saulteaux) beginning in 17th-18th centuries. The Métis developed unique culture blending Indigenous and European elements, including the Michif language (mixing French and Cree), distinctive clothing (finger-woven sashes, floral beadwork), fiddle music traditions, and Red River cart transportation. The Métis established the Red River Settlement (modern Manitoba) and played crucial roles as fur trade intermediaries, buffalo hunters, and voyageurs. In 1885, Louis Riel led Métis resistance against Canadian government encroachment, resulting in Northwest Rebellion. Canada recognizes Métis as one of three distinct Indigenous peoples (alongside First Nations and Inuit) with constitutional rights, though status and land claims remain contested.</p>
             <div class="stats">
@@ -34,7 +56,7 @@
                 <div class="stat"><span class="stat-num">Canada</span><span>Primary location</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>

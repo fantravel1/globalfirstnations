@@ -25,9 +25,31 @@
         .stat { background: linear-gradient(135deg, var(--secondary), var(--primary)); padding: 25px; border-radius: 10px; text-align: center; color: #333; }
         .stat-num { display: block; font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
         footer { background: var(--accent); color: white; padding: 30px; border-radius: 10px; text-align: center; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header>
             <h1>☸️ Kalmyk People</h1>
@@ -39,7 +61,7 @@
             <a href="/map.html">Map</a>
             <a href="/about.html">About</a>
         </nav>
-        <div class="content">
+        <div class="content" id="main-content">
             <h2>Who Are the Kalmyks?</h2>
             <p>The Kalmyks are a Mongolic people who migrated from Central Asia to the Caspian steppe in the early 17th century, creating Europe's only Buddhist nation. Numbering approximately 180,000 in Russia's Kalmyk Republic, they practice Tibetan Buddhism, speak a Mongolic language, and maintain pastoral nomadic traditions on the semi-arid grasslands between the Volga River and the Caspian Sea. Their presence in Europe resulted from one of history's great migrations—and their survival despite genocide during World War II testifies to remarkable resilience.</p>
 

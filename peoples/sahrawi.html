@@ -18,13 +18,35 @@
         .stat { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 10px; text-align: center; }
         .stat-num { font-size: 2em; font-weight: bold; display: block; margin-bottom: 8px; }
         footer { background: var(--primary); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+    
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+            .container { }
+            header { background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--accent)); }
+            nav { background: #1f2937; }
+            nav a { color: #e5e7eb; }
+            nav a:hover { color: var(--secondary); }
+            .content { background: #1f2937; color: #e5e7eb; }
+            .content h2 { color: var(--secondary); border-bottom-color: var(--accent); }
+            .content p, .content li { color: #d1d5db; }
+            .stat { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+            footer { background: #111827; }
+        }
+        /* Accessibility - Skip Link */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px 16px; text-decoration: none; z-index: 100; border-radius: 0 0 5px 0; }
+        .skip-link:focus { top: 0; }
+        /* Focus styles */
+        a:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
         <header><h1>🏜️ Sahrawi People</h1><p>Western Sahara Natives - Refugee Camp Dwellers - Self-Determination Seekers</p></header>
-        <nav><a href="/">Home</a><a href="/cultures.html">Cultures</a><a href="/map.html">Map</a></nav>
-        <div class="content">
+        <nav><a href="/">Home</a><a href="/about.html">About</a><a href="/contribute.html">Contribute</a><a href="mailto:info@play4tomorrow.com">Contact</a></nav>
+        <div class="content" id="main-content">
             <h2>Who Are the Sahrawi?</h2>
             <p>The Sahrawi are the indigenous people of Western Sahara numbering approximately 500,000-600,000, with significant populations living in refugee camps in southwestern Algeria since 1975. The Sahrawi are Arab-Berber people traditionally practicing nomadic pastoralism in the Sahara Desert. Following Spanish colonial withdrawal in 1975, Morocco claimed Western Sahara, leading to conflict with Polisario Front independence movement. Over 100,000 Sahrawi fled to refugee camps near Tindouf, Algeria, where multiple generations have now lived. The camps are administered by Polisario-led Sahrawi Arab Democratic Republic. Traditional Sahrawi culture centered on camel herding, trade, poetry, and music. Modern Sahrawi identity forged through conflict and displacement. The Western Sahara remains disputed territory with unresolved status, making Sahrawi one of world's most protracted refugee situations.</p>
             <div class="stats">
@@ -34,7 +56,7 @@
                 <div class="stat"><span class="stat-num">W. Sahara</span><span>Disputed territory</span></div>
             </div>
         </div>
-        <footer><p>&copy; 2024 Indigenous Peoples Research Database</p></footer>
+        <footer><p>&copy; 2025 Indigenous Peoples Database. Committed to cultural preservation and education.</p></footer>
     </div>
 </body>
 </html>
